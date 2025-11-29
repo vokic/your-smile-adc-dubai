@@ -1,0 +1,64 @@
+1. Hero blok
+Vizual: Full-width fotografija (ordinacija)
+Headline (H1): Trusted Dental Clinic in Dubai for Advanced & Cosmetic Dentistry
+Podnaslov (H2): From veneers and implants to Invisalign and whitening – expert care tailored to your smile.
+Glavni CTA: Book Your Appointment – da vodi ka contact form ili whatsapp -
+
+2. Why Choose Us
+Vizual: Ikonice ili brojevi (experience, technology, patients).
+Headline (H2): Why We’re Among the Best Dentists in Dubai?
+Benefiti:
++ 15 years of experience
+Team of internationally trained dentists
+Latest technology & pain-free treatments
+Over 5,000 smiles transformed
+
+Our Services
+Grid sa ikonama ili slikama (svaka ikona povezana sa landing page-om).
+Headline (H2): Comprehensive Dental Services in Dubai
+Kartice + SEO opis:
+Veneers in Dubai – Achieve a flawless smile with natural-looking porcelain or composite veneers, designed for long-lasting results.
+Dental Implants in Dubai – Restore missing teeth permanently with advanced implant systems, ensuring strength and natural aesthetics.
+Invisalign Dubai – Straighten your teeth discreetly with clear aligners, the most popular orthodontic solution for adults and teens in Dubai.
+Teeth Whitening in Dubai – Safe, fast, and effective whitening treatments for a brighter, more confident smile.
+Emergency Dentist Dubai – 24/7 emergency dental care for pain relief, broken teeth, and urgent treatments.
+Pediatric Dentist Dubai – Gentle and caring dental treatments for children, ensuring healthy smiles from an early age.
+CTA: Explore All Services – vodi na stranicu Services
+
+Before & After
+Vizual: Slider sa fotografijama transformacija (za svaku sliku staviti alt tagove: veneers before after Dubai, dental implant results Dubai, Invisalign transformations Dubai, itd..).
+Headline (H2): Smile Transformations - Before & After Results in Dubai
+Microcopy: Discover real results from our patients who chose veneers, implants, and Invisalign in Dubai. Each smile tells a story of confidence and lasting change.
+
+Our Doctors 
+Vizual: Thumbnail fotografije doktora 
+Headline (H2): Meet Our Expert Dentists in Dubai
+Microcopy: Our team of internationally trained dentists in Dubai specializes in cosmetic dentistry, dental implants, orthodontics, and family care. Each doctor combines years of experience with a passion for creating healthy, confident smiles.
+CTA: Book Your Appointment – da vodi ka contact form ili whatsapp
+
+Reviews
+Vizual: Google Reviews widget + testimonials pacijenata (slajder ili kartice).
+Headline (H2): 5.0 ★ Rated Dental Clinic in Dubai - Patient Reviews
+Microcopy: Our dental clinic in Dubai is rated ★5.0 on Google, trusted by patients for veneers, implants, Invisalign, and family care. Read real reviews and discover why we’re among the top-rated dentists in Dubai.
+CTA: Book Your Appointment – da vodi ka contact form ili whatsapp
+
+Insurance & Payment
+Vizual: Logoi osiguravajućih partnera 
+Headline (H2): Dental Insurance & Flexible Payment Plans in Dubai
+Microcopy: We accept major UAE dental insurance providers and offer flexible installment plans for cosmetic treatments such as veneers, dental implants, Invisalign, and whitening. Affordable dental care in Dubai has never been easier.
+
+Locations & Contact Info
+Google Maps embed sa tačnom lokacijom + ikone za WhatsApp i Call.
+Headline (H2): Find Our Dental Clinic in Dubai
+Microcopy: Conveniently located in Dubai with easy access, free parking, and nearby metro stations. Visit our dental clinic for veneers, implants, Invisalign, and family dentistry.
+CTA icons: Book on WhatsApp | Call Now
+Working Hours: Mon – Sat: 9:00 AM – 9:00 PM | Sun: Closed
+Kontakt info: Phone, WhatsApp number, Email, Full Address
+
+Newsletter / Blog CTA
+Vizual: Forma za unos email-a + preview 2–3 blog posta (naslovi + slike).
+Headline (H2): Dental Blog & Expert Tips from Our Dubai Dentists
+Microcopy: Stay updated with the latest dental tips, cosmetic dentistry trends, and guides on veneers, implants, Invisalign, and whitening in Dubai. 
+
+
+
