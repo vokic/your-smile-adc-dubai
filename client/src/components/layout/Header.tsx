@@ -47,23 +47,11 @@ export function Header() {
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuTrigger>Services</NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-                    {services.map((service) => (
-                      <li key={service}>
-                        <NavigationMenuLink asChild>
-                          <a
-                            href="#"
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                          >
-                            <div className="text-sm font-medium leading-none">{service}</div>
-                          </a>
-                        </NavigationMenuLink>
-                      </li>
-                    ))}
-                  </ul>
-                </NavigationMenuContent>
+                <Link href="/services">
+                  <a className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50 cursor-pointer">
+                    Services
+                  </a>
+                </Link>
               </NavigationMenuItem>
               {["About Us", "Our Doctors", "Blog / News", "FAQ", "Contact Us"].map((item) => (
                 <NavigationMenuItem key={item}>
