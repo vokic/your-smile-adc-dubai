@@ -7,9 +7,9 @@ export default function Contact() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* 1. Hero Block */}
-      <section className="relative h-[50vh] w-full overflow-hidden bg-secondary">
+      <section className="relative h-[60vh] w-full overflow-hidden bg-secondary">
         <div className="absolute inset-0 opacity-40 flex items-center justify-center bg-muted">
-          <span className="text-4xl font-bold text-muted-foreground/20">CLINIC EXTERIOR/INTERIOR</span>
+          <span className="text-4xl font-bold text-muted-foreground/20">CONTACT HERO IMAGE</span>
         </div>
         <div className="absolute inset-0 bg-gradient-to-r from-secondary via-secondary/90 to-transparent" />
         
@@ -22,13 +22,13 @@ export default function Contact() {
               We're here for your dental needs - whether you're booking an appointment or need emergency care.
             </h2>
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-secondary gap-2">
-                <Phone className="h-5 w-5" />
-                Call Now
-              </Button>
               <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 gap-2">
                 <MessageCircle className="h-5 w-5" />
                 Book on WhatsApp
+              </Button>
+              <Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-secondary gap-2">
+                <Phone className="h-5 w-5" />
+                Call Now
               </Button>
             </div>
           </div>
