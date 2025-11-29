@@ -85,15 +85,25 @@ export function Header() {
         </div>
 
         {/* 3. CTA Buttons */}
-        <div className="hidden lg:flex items-center gap-4">
-          <a href="tel:+971585828257" className="flex items-center gap-2 text-sm font-medium text-foreground hover:text-primary transition-colors">
-            <Phone className="h-4 w-4" />
-            <span>+971 58 582 82 57</span>
-          </a>
+        <div className="hidden md:flex items-center gap-3">
+          <Button variant="ghost" size="icon" asChild className="text-foreground hover:text-primary">
+            <a href="tel:+971585828257">
+              <Phone className="h-5 w-5" />
+            </a>
+          </Button>
           <Button asChild className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold shadow-lg shadow-primary/20">
             <a href="https://wa.me/971585828257" target="_blank" rel="noopener noreferrer">
               <MessageCircle className="mr-2 h-4 w-4" />
               Book Now
+            </a>
+          </Button>
+        </div>
+
+        {/* Mobile CTA Icon */}
+        <div className="md:hidden">
+          <Button variant="ghost" size="icon" asChild className="text-foreground hover:text-primary">
+            <a href="https://wa.me/971585828257" target="_blank" rel="noopener noreferrer">
+              <MessageCircle className="h-5 w-5" />
             </a>
           </Button>
         </div>
