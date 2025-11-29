@@ -5,63 +5,87 @@ import { useState } from "react";
 export default function Implants() {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
 
+  const implantServices = [
+    { title: "Single-Tooth Implants in Dubai", desc: "Replace one missing tooth with a natural-looking implant and crown" },
+    { title: "Full-Mouth Implants", desc: "Restore an entire arch of teeth with advanced implant systems" },
+    { title: "Implant-Supported Dentures", desc: "Secure, comfortable dentures anchored by implants" },
+    { title: "Bone Grafting in Dubai", desc: "Build up lost bone to support implants" },
+    { title: "3D Implant Planning", desc: "Digital scans ensure precision and safety" },
+    { title: "Biocompatible Materials", desc: "Titanium and ceramic options for maximum comfort and health" }
+  ];
+
   const benefits = [
-    "Permanent solution for missing teeth",
-    "Looks, feels, and functions like natural teeth",
-    "Prevents bone loss and maintains facial structure",
-    "Durable - lasts 15+ years with proper care",
-    "No impact on adjacent healthy teeth",
-    "5.0★ Google rated clinic"
+    "Permanent, stable, and durable",
+    "Natural look and feel",
+    "Prevents bone loss",
+    "Improves chewing and speaking",
+    "Long-lasting investment in your health"
   ];
 
   const faqs = [
     {
-      question: "What is a dental implant?",
-      answer: "A dental implant is an artificial tooth root made of titanium that is surgically placed into the jawbone. Once the implant fuses with the bone, a crown is attached on top, creating a permanent, natural-looking replacement tooth."
-    },
-    {
-      question: "How long does the implant process take?",
-      answer: "The complete process typically takes 3-6 months. This includes the surgical placement of the implant, bone integration (osseointegration), and the placement of the final crown. Some cases can be completed faster with advanced techniques."
+      question: "How long do dental implants last?",
+      answer: "With proper care, dental implants can last a lifetime. The implant post itself is designed to integrate with your jawbone permanently (osseointegration). The crown attached to the implant may need replacement after 10–15 years, depending on wear, but the implant foundation is built to last for decades."
     },
     {
       question: "Are dental implants painful?",
-      answer: "The surgical procedure is performed under anesthesia, so you won't feel pain during placement. After surgery, you may experience mild discomfort for a few days, which is manageable with pain relief medication."
+      answer: "The procedure is performed under local anesthesia, so patients do not feel pain during surgery. Afterward, mild discomfort, swelling, or sensitivity can occur, but this usually subsides within a few days. Most patients describe implant surgery as far less painful than they expected, and recovery is generally smooth."
     },
     {
-      question: "Who is a good candidate for implants?",
-      answer: "Most people with good overall health and sufficient jawbone density can receive implants. If you have bone loss, bone grafting may be required first. We evaluate each patient individually with advanced imaging."
+      question: "What is the recovery time for dental implants?",
+      answer: "Initial healing usually takes 1–2 weeks. However, the full integration of the implant with the bone (osseointegration) can take 3–6 months, depending on your health and bone density. During this period, temporary crowns or dentures may be used, and once healing is complete, the permanent crown is placed."
     },
     {
-      question: "How do I care for dental implants?",
-      answer: "Implants require the same care as natural teeth - brush twice daily, floss, and visit your dentist regularly. Avoid smoking and maintain good oral hygiene for optimal longevity."
+      question: "Do I need bone grafting before getting implants?",
+      answer: "If your jawbone has thinned or weakened due to tooth loss, gum disease, or trauma, bone grafting may be required to build enough bone for stable implant placement. Thanks to advanced 3D scans, our dentists can quickly determine whether bone grafting is necessary during your consultation."
     },
     {
-      question: "How long do dental implants last?",
-      answer: "With proper care and maintenance, dental implants can last 15-25 years or even a lifetime. The crown may need replacement after 10-15 years due to normal wear."
+      question: "How much do dental implants cost in Dubai?",
+      answer: "The cost varies depending on how many teeth you are replacing, the type of implant system used, and whether additional treatments (such as bone grafting or sinus lift) are required. Contact us for a personalized quote based on your specific needs."
+    },
+    {
+      question: "Are dental implants better than dentures or bridges?",
+      answer: "Yes, implants offer advantages that dentures and bridges cannot: they are permanent, stable, and preserve bone health. Unlike dentures, implants do not slip or require adhesives. Unlike bridges, they don't rely on grinding down adjacent teeth. Implants function and look like natural teeth, making them the gold standard for tooth replacement."
+    },
+    {
+      question: "Am I a good candidate for dental implants?",
+      answer: "Most adults with missing teeth are good candidates. Ideal candidates have healthy gums and enough bone density to support implants. Even if bone is lacking, bone grafting can often make implants possible. Patients with uncontrolled diabetes, heavy smoking habits, or untreated gum disease may require additional preparation before implant surgery."
+    },
+    {
+      question: "How safe are dental implants?",
+      answer: "Dental implants are one of the safest and most predictable procedures in modern dentistry, with a success rate of over 95%. Using biocompatible titanium or ceramic materials ensures long-term safety and compatibility with your body. With proper hygiene and regular check-ups, implant complications are rare."
+    },
+    {
+      question: "How do I take care of dental implants?",
+      answer: "Implants should be cared for like natural teeth: brush twice daily, floss regularly, and visit your dentist for check-ups. Avoid smoking and excessive alcohol consumption, as these can slow healing and affect long-term success. With proper maintenance, implants remain healthy and functional for decades."
+    },
+    {
+      question: "Can implants replace all my teeth?",
+      answer: "Yes. Full-mouth dental implants or implant-supported dentures can restore an entire arch of missing teeth. Depending on your case, as few as 4-6 implants can support a full arch (All-on-4 or All-on-6 technique), providing a strong, stable, and natural-looking solution."
     }
   ];
 
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Hero Section */}
+      {/* 1. Hero Block */}
       <section className="relative h-[60vh] w-full overflow-hidden bg-secondary">
         <div className="absolute inset-0 opacity-40 flex items-center justify-center bg-muted">
-          <span className="text-4xl font-bold text-muted-foreground/20">IMPLANTS HERO IMAGE</span>
+          <span className="text-4xl font-bold text-muted-foreground/20">PATIENT WITH NATURAL SMILE</span>
         </div>
         <div className="absolute inset-0 bg-gradient-to-r from-secondary via-secondary/90 to-transparent" />
         
         <div className="container relative h-full mx-auto px-4 flex items-center">
           <div className="max-w-3xl space-y-6 animate-in fade-in slide-in-from-left-10 duration-700">
             <h1 className="text-4xl md:text-6xl font-serif font-bold text-white leading-tight">
-              Dental Implants in Dubai - Permanent <span className="text-primary">Tooth Replacement</span>
+              Dental Implants in <span className="text-primary">Dubai</span>
             </h1>
             <h2 className="text-xl text-gray-200 font-light max-w-2xl">
-              Replace missing teeth with natural-looking, permanent implants designed to last a lifetime.
+              Permanent, natural-looking tooth replacement solutions that restore your smile and confidence.
             </h2>
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 gap-2">
                 <MessageCircle className="h-5 w-5" />
-                Book Your Consultation
+                Book Implant Consultation
               </Button>
               <Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-secondary gap-2">
                 <Phone className="h-5 w-5" />
@@ -72,20 +96,20 @@ export default function Implants() {
         </div>
       </section>
 
-      {/* Why Implants Section */}
+      {/* 2. What Are Dental Implants */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="h-[350px] rounded-2xl overflow-hidden bg-muted border border-border flex items-center justify-center">
-              <span className="text-xl font-bold text-muted-foreground">IMPLANT PROCEDURE IMAGE</span>
+              <span className="text-xl font-bold text-muted-foreground">IMPLANT ILLUSTRATION</span>
             </div>
             <div className="space-y-6">
-              <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary">Why Choose Dental Implants?</h2>
+              <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary">A Permanent Solution for Missing Teeth</h2>
               <p className="text-muted-foreground text-lg leading-relaxed">
-                Dental implants are the gold standard for replacing missing teeth. Unlike dentures or bridges, implants are anchored directly into your jawbone, providing unmatched stability and functionality.
+                Dental implants replace missing teeth with artificial roots made from biocompatible titanium. They look, feel, and function just like natural teeth, offering unmatched stability and durability compared to bridges or dentures.
               </p>
               <div className="space-y-3">
-                {["Permanent solution", "Maintain bone structure", "Natural appearance", "Eat and speak with confidence"].map((item) => (
+                {["Biocompatible titanium", "Permanent integration", "Natural appearance", "Durable solution", "Restores functionality"].map((item) => (
                   <div key={item} className="flex items-center gap-3">
                     <CheckCircle2 className="h-5 w-5 text-primary" />
                     <span className="font-medium text-secondary">{item}</span>
@@ -97,50 +121,108 @@ export default function Implants() {
         </div>
       </section>
 
-      {/* Benefits Grid */}
+      {/* 3. Types of Implant Treatments */}
       <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary mb-12 text-center">Benefits of Dental Implants</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {benefits.map((benefit, index) => (
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary">Our Implant Solutions in Dubai</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            {implantServices.map((service, index) => (
               <div key={index} className="p-6 bg-card rounded-xl border border-border hover:shadow-md transition-all space-y-3">
-                <CheckCircle2 className="h-6 w-6 text-primary" />
-                <p className="text-secondary font-medium">{benefit}</p>
+                <h3 className="text-lg font-bold text-secondary">{service.title}</h3>
+                <p className="text-muted-foreground">{service.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* The Process */}
-      <section className="py-20 bg-secondary text-white">
+      {/* 4. Why Choose Implants */}
+      <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-serif font-bold text-center mb-12">The Implant Process</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            <div className="p-6 bg-white/10 rounded-xl border border-white/20">
-              <div className="w-10 h-10 rounded-full bg-primary text-secondary font-bold flex items-center justify-center mb-4">1</div>
-              <h3 className="text-lg font-bold mb-2">Assessment</h3>
-              <p className="text-gray-200 text-sm">We evaluate your jawbone with 3D imaging to ensure you're a suitable candidate.</p>
+          <div className="max-w-3xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary">Why Choose Dental Implants?</h2>
             </div>
-            <div className="p-6 bg-white/10 rounded-xl border border-white/20">
-              <div className="w-10 h-10 rounded-full bg-primary text-secondary font-bold flex items-center justify-center mb-4">2</div>
-              <h3 className="text-lg font-bold mb-2">Implant Placement</h3>
-              <p className="text-gray-200 text-sm">The titanium implant is surgically placed into the jawbone under anesthesia.</p>
-            </div>
-            <div className="p-6 bg-white/10 rounded-xl border border-white/20">
-              <div className="w-10 h-10 rounded-full bg-primary text-secondary font-bold flex items-center justify-center mb-4">3</div>
-              <h3 className="text-lg font-bold mb-2">Crown Placement</h3>
-              <p className="text-gray-200 text-sm">Once the implant fuses with bone, a custom crown is attached.</p>
+            <div className="space-y-4">
+              {benefits.map((benefit, index) => (
+                <div key={index} className="flex items-start gap-4 p-5 bg-card rounded-xl border border-border hover:shadow-md transition-all">
+                  <CheckCircle2 className="h-6 w-6 text-primary shrink-0 mt-0.5" />
+                  <p className="text-secondary font-medium text-lg">{benefit}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* FAQ Section */}
+      {/* 5. Before & After Transformations */}
+      <section className="py-20 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary">Real Dental Implant Results in Dubai</h2>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto mt-4">
+              See how dental implants have restored confidence and function for our patients.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[1, 2, 3].map((item) => (
+              <div key={item} className="rounded-2xl overflow-hidden bg-muted border border-border h-[400px] flex items-center justify-center">
+                <span className="text-lg font-bold text-muted-foreground">IMPLANT RESULT {item}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 6. Dental Implant Cost */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center space-y-6 p-10 md:p-16 bg-card rounded-2xl border border-border">
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary">How Much Do Dental Implants Cost in Dubai?</h2>
+            <p className="text-muted-foreground text-lg leading-relaxed">
+              The cost of implants depends on the number of teeth, type of implant, and whether additional procedures (like bone grafting) are needed. Full-mouth implants and implant-supported dentures are quoted after consultation.
+            </p>
+            <Button className="bg-primary text-primary-foreground hover:bg-primary/90">
+              Get Your Free Implant Quote
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* 7. Trust & Expertise */}
+      <section className="py-20 bg-secondary text-white">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="space-y-8">
+              <div>
+                <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4">Dubai's Implant Specialists</h2>
+                <p className="text-gray-200 text-lg leading-relaxed">
+                  Our implantologists are internationally trained, using 3D planning and premium implant systems to ensure safety, comfort, and long-lasting results. Rated ★5.0 on Google by Dubai patients.
+                </p>
+              </div>
+              <div className="space-y-3">
+                {["Internationally trained specialists", "Advanced 3D planning", "Premium implant systems", "95%+ success rate", "Expert aftercare"].map((item) => (
+                  <div key={item} className="flex items-center gap-3">
+                    <CheckCircle2 className="h-5 w-5 text-primary" />
+                    <span className="text-gray-200 font-medium">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="h-[400px] rounded-2xl overflow-hidden bg-muted/20 border border-white/10 flex items-center justify-center">
+              <span className="text-lg font-bold text-muted-foreground">DOCTORS & TECHNOLOGY IMAGE</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 8. FAQ Section */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary mb-12 text-center">Frequently Asked Questions</h2>
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary mb-12 text-center">Frequently Asked Questions About Dental Implants</h2>
             
             <div className="space-y-3">
               {faqs.map((faq, index) => (
@@ -157,7 +239,7 @@ export default function Implants() {
                     />
                   </button>
                   {openFaqIndex === index && (
-                    <div className="px-6 py-5 bg-muted/30 border-t border-border">
+                    <div className="px-6 py-5 bg-white border-t border-border animate-in fade-in slide-in-from-top-2 duration-300">
                       <p className="text-muted-foreground leading-relaxed">{faq.answer}</p>
                     </div>
                   )}
@@ -168,18 +250,18 @@ export default function Implants() {
         </div>
       </section>
 
-      {/* Final CTA */}
-      <section className="py-20 bg-primary/5">
+      {/* 9. Final CTA */}
+      <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center space-y-6 p-10 md:p-16 bg-card rounded-2xl border border-border">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary">Restore Your Smile Today</h2>
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary">Book Your Implant Consultation Today</h2>
             <p className="text-muted-foreground text-lg">
-              Don't let missing teeth hold you back. Schedule a consultation with our implant specialists and discover your smile restoration options.
+              Don't let missing teeth affect your life. Book your consultation today and restore your smile with advanced dental implants in Dubai.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
               <Button className="bg-primary text-primary-foreground hover:bg-primary/90 gap-2">
                 <MessageCircle className="h-4 w-4" />
-                Book Consultation
+                Book on WhatsApp
               </Button>
               <Button variant="outline" className="gap-2">
                 <Phone className="h-4 w-4" />
