@@ -53,7 +53,7 @@ export function Footer() {
             <h4 className="text-lg font-bold mb-4">Quick Links</h4>
             <ul className="space-y-2 text-sm opacity-90">
               <li><Link href="/services"><a className="hover:text-primary transition-colors cursor-pointer">Services</a></Link></li>
-              <li><Link href="#"><a className="hover:text-primary transition-colors cursor-pointer">Our Doctors</a></Link></li>
+              <li><Link href="/doctors"><a className="hover:text-primary transition-colors cursor-pointer">Our Doctors</a></Link></li>
               <li><Link href="#" className="hover:text-primary transition-colors cursor-pointer">Blog</Link></li>
               <li><Link href="#" className="hover:text-primary transition-colors cursor-pointer">FAQ</Link></li>
               <li><Link href="#" className="hover:text-primary transition-colors cursor-pointer">Contact Us</Link></li>

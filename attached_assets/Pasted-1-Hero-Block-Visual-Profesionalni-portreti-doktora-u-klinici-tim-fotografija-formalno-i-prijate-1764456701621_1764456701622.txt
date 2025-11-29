@@ -1,0 +1,40 @@
+1. Hero Block
+Visual: Profesionalni portreti doktora u klinici (tim fotografija, formalno i prijateljski).
+Headline (H1): Meet Our Dentists in Dubai
+Subheadline (H2): Experienced, caring, and internationally trained dental specialists for your smile.
+CTA Buttons: Book Consultation on WhatsApp | Call Now
+2. Intro Section
+Visual: Group photo or clinic environment showing team.
+Headline (H2): Your Smile Team - Expertise You Can Trust
+Microcopy:
+Our team comprises highly qualified dental specialists, trained internationally, dedicated to providing personalized, gentle, and advanced care in a comfortable environment.
+3. Meet Our Specialists
+Headline (H2): Our Dental Experts in Dubai
+Dr. Nemanja Kukoljac - Specialist Dentist | Implantologist | Oral Surgery & Cosmetic Dentistry
+With over 10 years of experience, Dr. Kukoljac specializes in implantology, oral surgery, and cosmetic dentistry. He continually enhances his skills through advanced training and emerges at the forefront of modern dental techniques. 
+Dr. Upasana Khemka - Oral & Maxillofacial Surgeon | Cosmetic & Restorative Dentistry
+With nearly two decades of experience, Dr. Khemka excels in complex oral surgical procedures, full-mouth rehabilitations, and smile makeovers, delivering both functionality and beauty with precision and care.
+Dr. Amelio Tommaso - General Dentist | Implantologist | Dental Prosthetics & Aesthetic Dentistry
+A veteran dentist with a technical background, Dr. Tommaso specializes in aesthetic restorations, implantology, and prosthetics. His dual skill set ensures that each treatment is both functional and beautifully designed.
+Dr. Youssef Saweres - General Dentist | Advanced Veneers & Holistic Aesthetic Smile Solutions
+An expert in smile design and cosmetic dentistry, Dr. Saweres brings advanced certification in veneers and aesthetic solutions, blending functional precision with holistic smile transformations.
+Dr. Mileva Karabasil Jovanovic - General Dentist | BDS, MDS (Orthodontics), PhD
+With over 20 years of experience across Serbia, Japan, and the UAE, Dr. Mileva combines orthodontic expertise and scientific rigor. She provides compassionate, personalized care and excels in restorative and cosmetic dentistry.
+4. Why Our Team Stands Out
+Headline (H2): Why Patients Choose Our Dentists
+Benefits (H3):
+Advanced international training & specializations
+Expertise across cosmetic, restorative, orthodontic, and surgical disciplines
+Compassionate, multilingual patient care
+Use of cutting-edge digital technology for treatments
+5. Patient Reviews
+Visual: Carousel sa testimonijalima, ili slajder..
+Headline (H2): What Patients Say About Our Dentists
+Microcopy:
+“From the moment I walked in, I felt welcomed... the treatment was painless and precise.” – Marko. (na primer)
+6. Final CTA
+Headline (H2): Book a Consultation with Our Expert Dentists
+Microcopy:
+Choose the right specialist for your smile goals-cosmetic, restorative, surgical, or orthodontic. Schedule your consultation today.
+CTA: Book on WhatsApp | Call Now
+
