@@ -13,6 +13,13 @@ import About from "@/pages/About";
 import Veneers from "@/pages/Veneers";
 import DentalSurgery from "@/pages/DentalSurgery";
 import Orthodontics from "@/pages/Orthodontics";
+import Implants from "@/pages/Implants";
+import GeneralAndPreventive from "@/pages/GeneralAndPreventive";
+import DentalXrayOPG from "@/pages/DentalXrayOPG";
+import CrownsAndBridges from "@/pages/CrownsAndBridges";
+import Cosmetic from "@/pages/Cosmetic";
+import Whitening from "@/pages/Whitening";
+import Emergency from "@/pages/Emergency";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 
@@ -31,6 +38,13 @@ function Router() {
           <Route path="/veneers" component={Veneers}/>
           <Route path="/dental-surgery" component={DentalSurgery}/>
           <Route path="/orthodontics" component={Orthodontics}/>
+          <Route path="/implants" component={Implants}/>
+          <Route path="/general-preventive" component={GeneralAndPreventive}/>
+          <Route path="/xray-opg" component={DentalXrayOPG}/>
+          <Route path="/crowns-bridges" component={CrownsAndBridges}/>
+          <Route path="/cosmetic" component={Cosmetic}/>
+          <Route path="/whitening" component={Whitening}/>
+          <Route path="/emergency" component={Emergency}/>
           <Route component={NotFound} />
         </Switch>
       </main>
