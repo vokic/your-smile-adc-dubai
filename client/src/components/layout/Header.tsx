@@ -63,7 +63,12 @@ export function Header() {
                   Our Doctors
                 </Link>
               </NavigationMenuItem>
-              {["Blog / News", "FAQ"].map((item) => (
+              <NavigationMenuItem>
+                <Link href="/faq" className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50 cursor-pointer">
+                  FAQ
+                </Link>
+              </NavigationMenuItem>
+              {["Blog / News"].map((item) => (
                 <NavigationMenuItem key={item}>
                   <Link href="#" className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50 cursor-pointer">
                     {item}
@@ -111,10 +116,10 @@ export function Header() {
                   ))}
                 </div>
                 <a href="#" className="text-lg font-medium">About Us</a>
-                <a href="#" className="text-lg font-medium">Our Doctors</a>
+                <Link href="/doctors" className="text-lg font-medium cursor-pointer">Our Doctors</Link>
                 <a href="#" className="text-lg font-medium">Blog / News</a>
-                <a href="#" className="text-lg font-medium">FAQ</a>
-                <a href="#" className="text-lg font-medium">Contact Us</a>
+                <Link href="/faq" className="text-lg font-medium cursor-pointer">FAQ</Link>
+                <Link href="/contact" className="text-lg font-medium cursor-pointer">Contact Us</Link>
                 <div className="mt-4 flex flex-col gap-4">
                   <Button asChild className="w-full bg-primary">
                     <a href="https://wa.me/971585828257">Book Now</a>

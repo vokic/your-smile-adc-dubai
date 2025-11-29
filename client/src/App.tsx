@@ -8,6 +8,7 @@ import Home from "@/pages/Home";
 import Services from "@/pages/Services";
 import Doctors from "@/pages/Doctors";
 import Contact from "@/pages/Contact";
+import FAQ from "@/pages/FAQ";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 
@@ -21,6 +22,7 @@ function Router() {
           <Route path="/services" component={Services}/>
           <Route path="/doctors" component={Doctors}/>
           <Route path="/contact" component={Contact}/>
+          <Route path="/faq" component={FAQ}/>
           <Route component={NotFound} />
         </Switch>
       </main>
