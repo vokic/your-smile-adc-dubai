@@ -9,6 +9,7 @@ import Services from "@/pages/Services";
 import Doctors from "@/pages/Doctors";
 import Contact from "@/pages/Contact";
 import FAQ from "@/pages/FAQ";
+import About from "@/pages/About";
 import Veneers from "@/pages/Veneers";
 import DentalSurgery from "@/pages/DentalSurgery";
 import Orthodontics from "@/pages/Orthodontics";
@@ -26,6 +27,7 @@ function Router() {
           <Route path="/doctors" component={Doctors}/>
           <Route path="/contact" component={Contact}/>
           <Route path="/faq" component={FAQ}/>
+          <Route path="/about" component={About}/>
           <Route path="/veneers" component={Veneers}/>
           <Route path="/dental-surgery" component={DentalSurgery}/>
           <Route path="/orthodontics" component={Orthodontics}/>

@@ -51,13 +51,11 @@ export function Header() {
                   Services
                 </Link>
               </NavigationMenuItem>
-              {["About Us"].map((item) => (
-                <NavigationMenuItem key={item}>
-                  <Link href="#" className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50 cursor-pointer">
-                    {item}
-                  </Link>
-                </NavigationMenuItem>
-              ))}
+              <NavigationMenuItem>
+                <Link href="/about" className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50 cursor-pointer">
+                  About Us
+                </Link>
+              </NavigationMenuItem>
               <NavigationMenuItem>
                 <Link href="/doctors" className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50 cursor-pointer">
                   Our Doctors
@@ -127,7 +125,7 @@ export function Header() {
                     <a key={s} href="#" className="pl-4 text-sm py-1 hover:text-primary transition-colors">{s}</a>
                   ))}
                 </div>
-                <a href="#" className="text-lg font-medium">About Us</a>
+                <Link href="/about" className="text-lg font-medium cursor-pointer">About Us</Link>
                 <Link href="/doctors" className="text-lg font-medium cursor-pointer">Our Doctors</Link>
                 <a href="#" className="text-lg font-medium">Blog / News</a>
                 <Link href="/faq" className="text-lg font-medium cursor-pointer">FAQ</Link>

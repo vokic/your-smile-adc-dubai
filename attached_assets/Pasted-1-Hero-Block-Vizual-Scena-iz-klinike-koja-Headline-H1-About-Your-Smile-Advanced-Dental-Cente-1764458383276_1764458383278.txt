@@ -1,0 +1,45 @@
+1. Hero Block
+Vizual: Scena iz klinike koja 
+Headline (H1): About Your Smile Advanced Dental Center - JLT, Dubai
+Subheadline (H2): Experienced, internationally-certified dental professionals dedicated to your confidence and care.
+CTA Buttons: Meet Our Doctors | Book Your Visit
+2. Who We Are
+Visual: Srećan tim u ordinaciji
+Headline (H2): Personalized Dental Care from a Trusted Team
+Microcopy:
+Our team - including dentists, hygienists, assistants, and support staff, combines international training with a patient-first philosophy. We deliver high-quality, safe care tailored to each individual's needs.
+3. Our Vision & Mission
+Headline (H2): Our Vision & Mission
+Vision (H3): To become a superior and trusted healthcare provider delivering excellence to all community members in Dubai.
+Mission (H3): Fostering innovation, continuous learning, and international-standard care through excellence and compassion.
+4. Our Core Values
+Headline (H2): What Makes Us Unique
+Key Values (H3):
+Comprehensive Care: Full suite of dental services, from prevention to advanced surgery.
+24/7 Emergency Coverage: We ensure urgent dental support, even on weekends and holidays.
+Digital & Safe Diagnostics: Advanced X-ray and OPG technology for precise, comfortable screenings.
+International Expertise: Our specialists bring global training and high standards across orthodontics, surgery, and esthetics.
+Patient-Centered Approach: We prioritize your comfort with tailored plans and gentle treatments.
+5. Our Story - One-Stop Dental Excellence
+Visual: Dijagram usluga (ikone: preventiva, estetska, restorativna).
+Headline (H2): All-in-One Premium Dental Destination
+Microcopy:
+From routine checkups, cosmetic enhancements like veneers and whitening, to implants, orthodontics, and full-mouth rehab, we offer seamless, high-end dental care under one roof.
+6. Our Process: Your Smile Journey
+Headline (H2): How It Works
+Steps (H3):
+Book Your Visit - Online, via phone, or walk-in with your preferred date and insurance ready.
+Visit & Consult - Personalized consultation in a comfortable environment.
+Receive Free Smile Plan - Transparent proposal tailored to your goals.
+Enjoy Your New Smile - Transformational care from start to finish.
+7. Patient Testimonials
+Headline (H2): Hear From Our Patients
+Microcopy:
+“The team’s professionalism and kindness made my treatment smooth and comfortable. My smile has never looked better.” – Miloš, Software Engineer
+8. Final CTA
+Visual: Osmeh pacijenta u ogledalu, ili doktor i pacijent u razgovoru
+Headline (H2): Join Thousands of Happy Smiles in Dubai
+Microcopy:
+Experience exceptional dental care with our expert team. Book your free consultation today and unlock your best smile.
+CTA: Book on WhatsApp | Call Now
+
