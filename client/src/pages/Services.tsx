@@ -8,44 +8,44 @@ export default function Services() {
     {
       title: "Cosmetic Dentistry",
       items: [
-        { name: "Veneers", desc: "Achieve a flawless smile with porcelain or composite veneers." },
-        { name: "Teeth Whitening", desc: "Brighten your smile safely and effectively." },
-        { name: "Smile Makeover", desc: "Transform your entire smile with customized treatments." }
+        { name: "Veneers", desc: "Achieve a flawless smile with porcelain or composite veneers.", href: "/veneers" },
+        { name: "Teeth Whitening", desc: "Brighten your smile safely and effectively.", href: "#" },
+        { name: "Smile Makeover", desc: "Transform your entire smile with customized treatments.", href: "#" }
       ]
     },
     {
       title: "Restorative Dentistry",
       items: [
-        { name: "Dental Implants", desc: "Permanent replacements for missing teeth." },
-        { name: "Crowns & Bridges", desc: "Strengthen damaged teeth and replace missing ones." },
-        { name: "Expert Dental Surgery", desc: "Wisdom tooth extraction, gum surgery, bone grafting." }
+        { name: "Dental Implants", desc: "Permanent replacements for missing teeth.", href: "#" },
+        { name: "Crowns & Bridges", desc: "Strengthen damaged teeth and replace missing ones.", href: "#" },
+        { name: "Expert Dental Surgery", desc: "Wisdom tooth extraction, gum surgery, bone grafting.", href: "/dental-surgery" }
       ]
     },
     {
       title: "Orthodontics",
       items: [
-        { name: "Braces & Clear Aligners", desc: "Metal, ceramic, and Invisalign options for all ages." },
-        { name: "Bite Correction", desc: "Treat overbites, underbites, and crossbites." }
+        { name: "Braces & Clear Aligners", desc: "Metal, ceramic, and Invisalign options for all ages.", href: "/orthodontics" },
+        { name: "Bite Correction", desc: "Treat overbites, underbites, and crossbites.", href: "/orthodontics" }
       ]
     },
     {
       title: "Preventive Dentistry",
       items: [
-        { name: "Routine Check-Ups", desc: "Regular exams to maintain oral health." },
-        { name: "Professional Cleanings", desc: "Scaling & polishing for healthy gums and fresh breath." },
-        { name: "Gum Disease Treatment", desc: "Early detection and therapy for healthy gums." }
+        { name: "Routine Check-Ups", desc: "Regular exams to maintain oral health.", href: "#" },
+        { name: "Professional Cleanings", desc: "Scaling & polishing for healthy gums and fresh breath.", href: "#" },
+        { name: "Gum Disease Treatment", desc: "Early detection and therapy for healthy gums.", href: "#" }
       ]
     },
     {
       title: "Specialized Diagnostics",
       items: [
-        { name: "Digital X-Ray & OPG", desc: "Low-radiation imaging for accurate treatment planning." }
+        { name: "Digital X-Ray & OPG", desc: "Low-radiation imaging for accurate treatment planning.", href: "#" }
       ]
     },
     {
       title: "Emergency Dentistry",
       items: [
-        { name: "24/7 Emergency Care", desc: "Immediate relief for toothaches, injuries, and trauma." }
+        { name: "24/7 Emergency Care", desc: "Immediate relief for toothaches, injuries, and trauma.", href: "#" }
       ]
     }
   ];
@@ -130,7 +130,7 @@ export default function Services() {
                 <h3 className="text-xl font-bold text-primary border-b border-primary/20 pb-2">{category.title}</h3>
                 <div className="space-y-3">
                   {category.items.map((item, j) => (
-                    <Link key={j} href="#">
+                    <Link key={j} href={item.href}>
                       <a className="block p-4 bg-white rounded-lg border border-border shadow-sm hover:shadow-md hover:border-primary/50 transition-all group">
                         <div className="flex justify-between items-start">
                           <h4 className="font-bold text-secondary group-hover:text-primary transition-colors">{item.name}</h4>

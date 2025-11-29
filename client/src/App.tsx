@@ -9,6 +9,9 @@ import Services from "@/pages/Services";
 import Doctors from "@/pages/Doctors";
 import Contact from "@/pages/Contact";
 import FAQ from "@/pages/FAQ";
+import Veneers from "@/pages/Veneers";
+import DentalSurgery from "@/pages/DentalSurgery";
+import Orthodontics from "@/pages/Orthodontics";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 
@@ -23,6 +26,9 @@ function Router() {
           <Route path="/doctors" component={Doctors}/>
           <Route path="/contact" component={Contact}/>
           <Route path="/faq" component={FAQ}/>
+          <Route path="/veneers" component={Veneers}/>
+          <Route path="/dental-surgery" component={DentalSurgery}/>
+          <Route path="/orthodontics" component={Orthodontics}/>
           <Route component={NotFound} />
         </Switch>
       </main>
