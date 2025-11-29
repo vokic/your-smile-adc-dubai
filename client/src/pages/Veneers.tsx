@@ -54,10 +54,10 @@ export default function Veneers() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Hero Section */}
+      {/* 1. Hero Block */}
       <section className="relative h-[60vh] w-full overflow-hidden bg-secondary">
         <div className="absolute inset-0 opacity-40 flex items-center justify-center bg-muted">
-          <span className="text-4xl font-bold text-muted-foreground/20">VENEERS HERO IMAGE</span>
+          <span className="text-4xl font-bold text-muted-foreground/20">PATIENT SMILE - LIFESTYLE</span>
         </div>
         <div className="absolute inset-0 bg-gradient-to-r from-secondary via-secondary/90 to-transparent" />
         
@@ -83,7 +83,7 @@ export default function Veneers() {
         </div>
       </section>
 
-      {/* Emotional Hook */}
+      {/* 2. Emotional Hook */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -103,16 +103,16 @@ export default function Veneers() {
         </div>
       </section>
 
-      {/* Benefits Section */}
+      {/* 3. Benefits Section */}
       <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary mb-4">Why Choose Veneers in Dubai With Us?</h2>
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary">Why Choose Veneers in Dubai With Us?</h2>
             </div>
             <div className="space-y-4">
               {benefits.map((benefit, index) => (
-                <div key={index} className="flex items-start gap-4 p-5 bg-card rounded-xl border border-border">
+                <div key={index} className="flex items-start gap-4 p-5 bg-card rounded-xl border border-border hover:shadow-md transition-all">
                   <CheckCircle2 className="h-6 w-6 text-primary shrink-0 mt-0.5" />
                   <p className="text-secondary font-medium text-lg">{benefit}</p>
                 </div>
@@ -122,12 +122,12 @@ export default function Veneers() {
         </div>
       </section>
 
-      {/* Real Results */}
+      {/* 5. Before & After Transformations */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary mb-4">Real Veneers Results in Dubai</h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary">Real Veneers Results in Dubai</h2>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto mt-4">
               Nothing speaks louder than results. Explore real smile makeovers done by our cosmetic dentists - natural, stunning, and life-changing.
             </p>
           </div>
@@ -141,7 +141,7 @@ export default function Veneers() {
         </div>
       </section>
 
-      {/* Trust Section */}
+      {/* 7. Trust Elements */}
       <section className="py-20 bg-secondary text-white">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -163,7 +163,7 @@ export default function Veneers() {
         </div>
       </section>
 
-      {/* FAQ Section */}
+      {/* 8. FAQ Section */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
@@ -195,7 +195,7 @@ export default function Veneers() {
         </div>
       </section>
 
-      {/* Final CTA */}
+      {/* 9. Final CTA */}
       <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center space-y-6 p-10 md:p-16 bg-card rounded-2xl border border-border">
