@@ -56,7 +56,7 @@ export function Footer() {
               <li><Link href="/doctors"><a className="hover:text-primary transition-colors cursor-pointer">Our Doctors</a></Link></li>
               <li><Link href="#" className="hover:text-primary transition-colors cursor-pointer">Blog</Link></li>
               <li><Link href="#" className="hover:text-primary transition-colors cursor-pointer">FAQ</Link></li>
-              <li><Link href="#" className="hover:text-primary transition-colors cursor-pointer">Contact Us</Link></li>
+              <li><Link href="/contact"><a className="hover:text-primary transition-colors cursor-pointer">Contact Us</a></Link></li>
             </ul>
           </div>
 
