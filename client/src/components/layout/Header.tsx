@@ -47,9 +47,35 @@ export function Header() {
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <Link href="/services" className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50 cursor-pointer">
-                  Services
-                </Link>
+                <NavigationMenuTrigger className="text-sm font-medium">Services</NavigationMenuTrigger>
+                <NavigationMenuContent className="left-0 top-0 w-[400px] p-4 md:w-[500px] lg:w-[600px]">
+                  <div className="grid gap-3">
+                    <Link href="/veneers" className="group block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground cursor-pointer">
+                      <div className="text-sm font-medium leading-none">Veneers</div>
+                      <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                        Achieve a flawless smile with porcelain or composite veneers
+                      </p>
+                    </Link>
+                    <Link href="/dental-surgery" className="group block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground cursor-pointer">
+                      <div className="text-sm font-medium leading-none">Dental Surgery</div>
+                      <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                        Wisdom tooth extraction, gum surgery, bone grafting
+                      </p>
+                    </Link>
+                    <Link href="/orthodontics" className="group block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground cursor-pointer">
+                      <div className="text-sm font-medium leading-none">Orthodontics</div>
+                      <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                        Braces, clear aligners, and bite correction
+                      </p>
+                    </Link>
+                    <Link href="/services" className="group block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground cursor-pointer border-t border-border pt-3 mt-2">
+                      <div className="text-sm font-medium leading-none">View All Services</div>
+                      <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                        Explore our complete range of dental treatments
+                      </p>
+                    </Link>
+                  </div>
+                </NavigationMenuContent>
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <Link href="/about" className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50 cursor-pointer">
