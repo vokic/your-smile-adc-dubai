@@ -1,23 +1,71 @@
 import { Button } from "@/components/ui/button";
-import { MessageCircle, Phone, CheckCircle2 } from "lucide-react";
+import { MessageCircle, Phone, CheckCircle2, ChevronDown } from "lucide-react";
+import { useState } from "react";
 
 export default function CrownsAndBridges() {
+  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
+
+  const services = [
+    { title: "Same-Day Crowns", desc: "CAD/CAM technology for crowns in a single visit" },
+    { title: "Porcelain & Zirconia Crowns", desc: "Strong, natural-looking, and stain resistant" },
+    { title: "Traditional Fixed Bridges", desc: "Replace missing teeth using adjacent crowns as anchors" },
+    { title: "Implant-Supported Bridges", desc: "Stable, long-lasting bridges that do not require grinding down neighboring teeth" }
+  ];
+
+  const benefits = [
+    "CAD/CAM precision for perfect fit",
+    "High-quality biocompatible materials",
+    "Gentle, pain-free procedures",
+    "★5.0 rated dental clinic in Dubai"
+  ];
+
+  const faqs = [
+    {
+      question: "What is the difference between a crown and a bridge?",
+      answer: "A crown covers and protects a single damaged tooth, while a bridge fills the gap of one or more missing teeth using neighboring teeth or implants for support."
+    },
+    {
+      question: "Is the procedure painful?",
+      answer: "No. Procedures are performed under local anesthesia. Patients may feel mild sensitivity after treatment, but this is temporary and easily managed."
+    },
+    {
+      question: "What materials are used?",
+      answer: "We use porcelain, zirconia, and porcelain-fused-to-metal. Porcelain and zirconia provide the most natural aesthetics and durability."
+    },
+    {
+      question: "How long do crowns and bridges last?",
+      answer: "With proper care, crowns and bridges typically last 10–15 years or longer. Good oral hygiene and regular dental check-ups extend their lifespan."
+    },
+    {
+      question: "Can crowns or bridges be repaired?",
+      answer: "Minor issues can sometimes be fixed, but in many cases replacement is recommended for long-term success."
+    },
+    {
+      question: "Why choose implant-supported bridges?",
+      answer: "They provide stability without affecting adjacent teeth, preserve jawbone health, and feel more natural compared to traditional bridges."
+    },
+    {
+      question: "Who is a good candidate?",
+      answer: "Ideal candidates are those with damaged, weakened, or missing teeth who have healthy gums and good oral hygiene. Implant-supported solutions may also require adequate bone density."
+    }
+  ];
+
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Hero Section */}
+      {/* 1. Hero Block */}
       <section className="relative h-[60vh] w-full overflow-hidden bg-secondary">
         <div className="absolute inset-0 opacity-40 flex items-center justify-center bg-muted">
-          <span className="text-4xl font-bold text-muted-foreground/20">CROWNS & BRIDGES HERO IMAGE</span>
+          <span className="text-4xl font-bold text-muted-foreground/20">SMILING PATIENT AFTER TREATMENT</span>
         </div>
         <div className="absolute inset-0 bg-gradient-to-r from-secondary via-secondary/90 to-transparent" />
         
         <div className="container relative h-full mx-auto px-4 flex items-center">
           <div className="max-w-3xl space-y-6 animate-in fade-in slide-in-from-left-10 duration-700">
             <h1 className="text-4xl md:text-6xl font-serif font-bold text-white leading-tight">
-              Crowns & Bridges - Restore Your <span className="text-primary">Smile Function</span>
+              Dental Crowns & Bridges in <span className="text-primary">Dubai</span>
             </h1>
             <h2 className="text-xl text-gray-200 font-light max-w-2xl">
-              Strengthen damaged teeth and replace missing ones with natural-looking crowns and bridges.
+              Restore strength, function, and aesthetics with custom crowns and bridges tailored to your smile.
             </h2>
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 gap-2">
@@ -33,20 +81,20 @@ export default function CrownsAndBridges() {
         </div>
       </section>
 
-      {/* Crowns Overview */}
+      {/* 2. Crowns & Bridges Explained */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="h-[350px] rounded-2xl overflow-hidden bg-muted border border-border flex items-center justify-center">
-              <span className="text-xl font-bold text-muted-foreground">CROWN IMAGE</span>
+              <span className="text-xl font-bold text-muted-foreground">CROWN & BRIDGE ILLUSTRATION</span>
             </div>
             <div className="space-y-6">
-              <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary">Dental Crowns</h2>
+              <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary">Crowns & Bridges Explained</h2>
               <p className="text-muted-foreground text-lg leading-relaxed">
-                A crown is a tooth-shaped cap that covers a damaged, discolored, or weakened tooth. Crowns restore strength, function, and aesthetics while protecting your natural tooth.
+                Dental crowns act as protective caps that cover and strengthen damaged teeth, while dental bridges replace one or more missing teeth by anchoring to surrounding teeth or implants. Both provide durable, natural-looking restorations that restore oral health and confidence.
               </p>
               <div className="space-y-3">
-                {["Protect weak teeth", "Cover discoloration", "Restore function", "Improve appearance", "Last 10-15 years"].map((item) => (
+                {["Protect damaged teeth", "Replace missing teeth", "Restore function", "Natural aesthetics", "Long-lasting solutions"].map((item) => (
                   <div key={item} className="flex items-center gap-3">
                     <CheckCircle2 className="h-5 w-5 text-primary" />
                     <span className="font-medium text-secondary">{item}</span>
@@ -58,23 +106,37 @@ export default function CrownsAndBridges() {
         </div>
       </section>
 
-      {/* Bridges Section */}
+      {/* 3. Types of Crowns & Bridges We Offer */}
       <section className="py-20 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary">Types of Crowns & Bridges We Offer in Dubai</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            {services.map((service, index) => (
+              <div key={index} className="p-6 bg-card rounded-xl border border-border hover:shadow-md transition-all space-y-3">
+                <h3 className="text-lg font-bold text-secondary">{service.title}</h3>
+                <p className="text-muted-foreground">{service.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 4. Why Choose Us */}
+      <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center lg:order-reverse">
             <div className="h-[350px] rounded-2xl overflow-hidden bg-muted border border-border flex items-center justify-center">
-              <span className="text-xl font-bold text-muted-foreground">BRIDGE IMAGE</span>
+              <span className="text-xl font-bold text-muted-foreground">DENTIST WITH PATIENT & LAB TECHNOLOGY</span>
             </div>
             <div className="space-y-6">
-              <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary">Dental Bridges</h2>
-              <p className="text-muted-foreground text-lg leading-relaxed">
-                A bridge replaces one or more missing teeth by anchoring to adjacent teeth. It restores your bite, prevents remaining teeth from shifting, and improves your smile.
-              </p>
-              <div className="space-y-3">
-                {["Fill missing gaps", "Restore smile appearance", "Maintain facial structure", "Fixed permanent solution", "Improved chewing"].map((item) => (
-                  <div key={item} className="flex items-center gap-3">
-                    <CheckCircle2 className="h-5 w-5 text-primary" />
-                    <span className="font-medium text-secondary">{item}</span>
+              <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary">Dubai's Trusted Restorative Specialists</h2>
+              <div className="space-y-4">
+                {benefits.map((benefit, index) => (
+                  <div key={index} className="flex items-start gap-4 p-4 bg-muted/30 rounded-lg">
+                    <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-1" />
+                    <p className="text-secondary font-medium">{benefit}</p>
                   </div>
                 ))}
               </div>
@@ -83,61 +145,74 @@ export default function CrownsAndBridges() {
         </div>
       </section>
 
-      {/* Crown & Bridge Options */}
-      <section className="py-20 bg-secondary text-white">
+      {/* 5. Before & After Results */}
+      <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-serif font-bold text-center mb-12">Our Crown & Bridge Options</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              { title: "Porcelain Crowns", desc: "Most natural-looking, stain-resistant, perfect for front teeth" },
-              { title: "Metal Crowns", desc: "Extremely durable, best for back teeth, long-lasting" },
-              { title: "Porcelain-Fused Metal", desc: "Strong and aesthetic, great all-around option" },
-              { title: "Traditional Bridges", desc: "Anchored to adjacent teeth, proven and reliable" },
-              { title: "Implant Bridges", desc: "Supported by implants, no need for adjacent teeth" },
-              { title: "Cantilever Bridges", desc: "For missing teeth at the end of a row" }
-            ].map((option, index) => (
-              <div key={index} className="p-6 bg-white/10 rounded-xl border border-white/20 space-y-2">
-                <h3 className="font-bold text-lg">{option.title}</h3>
-                <p className="text-gray-200 text-sm">{option.desc}</p>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary">Smile Transformations with Crowns & Bridges</h2>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto mt-4">
+              See how our patients regained function and aesthetics with customized crowns and bridges.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[1, 2, 3].map((item) => (
+              <div key={item} className="rounded-2xl overflow-hidden bg-muted border border-border h-[400px] flex items-center justify-center hover:shadow-lg transition-all">
+                <span className="text-lg font-bold text-muted-foreground">BEFORE & AFTER {item}</span>
               </div>
             ))}
+          </div>
+          <div className="text-center mt-8">
+            <Button variant="outline" className="gap-2">
+              View Full Gallery
+            </Button>
           </div>
         </div>
       </section>
 
-      {/* The Process */}
+      {/* 6. FAQ Section */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary mb-12 text-center">The Crown & Bridge Process</h2>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-            {[
-              { num: "1", title: "Preparation", desc: "Tooth is shaped and impression taken" },
-              { num: "2", title: "Temporary", desc: "Temporary crown placed while restoration is made" },
-              { num: "3", title: "Fabrication", desc: "Custom crown or bridge created in lab" },
-              { num: "4", title: "Placement", desc: "Final restoration cemented in place" }
-            ].map((step) => (
-              <div key={step.num} className="p-6 bg-card rounded-xl border border-border space-y-3">
-                <div className="w-10 h-10 rounded-full bg-primary text-white font-bold flex items-center justify-center">{step.num}</div>
-                <h3 className="font-bold text-secondary">{step.title}</h3>
-                <p className="text-sm text-muted-foreground">{step.desc}</p>
-              </div>
-            ))}
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary mb-12 text-center">Frequently Asked Questions</h2>
+            
+            <div className="space-y-3">
+              {faqs.map((faq, index) => (
+                <div key={index} className="border border-border rounded-lg overflow-hidden hover:shadow-md transition-all">
+                  <button
+                    onClick={() => setOpenFaqIndex(openFaqIndex === index ? null : index)}
+                    className="w-full px-6 py-5 flex items-center justify-between bg-card hover:bg-card/80 transition-colors text-left"
+                  >
+                    <span className="font-medium text-secondary text-lg pr-4">{faq.question}</span>
+                    <ChevronDown
+                      className={`h-5 w-5 text-primary shrink-0 transition-transform duration-300 ${
+                        openFaqIndex === index ? "rotate-180" : ""
+                      }`}
+                    />
+                  </button>
+                  {openFaqIndex === index && (
+                    <div className="px-6 py-5 bg-white border-t border-border animate-in fade-in slide-in-from-top-2 duration-300">
+                      <p className="text-muted-foreground leading-relaxed">{faq.answer}</p>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Final CTA */}
-      <section className="py-20 bg-primary/5">
+      {/* 7. Final CTA */}
+      <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center space-y-6 p-10 md:p-16 bg-card rounded-2xl border border-border">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary">Restore Your Smile Today</h2>
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary">Restore Your Smile with Crowns & Bridges in Dubai</h2>
             <p className="text-muted-foreground text-lg">
-              Schedule a consultation to discuss crowns and bridges and find the best solution for your dental needs.
+              Book your consultation today and discover the best restorative solution for your smile.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
               <Button className="bg-primary text-primary-foreground hover:bg-primary/90 gap-2">
                 <MessageCircle className="h-4 w-4" />
-                Book Consultation
+                Book on WhatsApp
               </Button>
               <Button variant="outline" className="gap-2">
                 <Phone className="h-4 w-4" />
