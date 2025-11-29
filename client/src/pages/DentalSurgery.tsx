@@ -40,6 +40,10 @@ export default function DentalSurgery() {
       answer: "Gum surgery treats advanced periodontal disease, reshapes gum tissue, and restores oral health. It's needed when gums recede, become infected, or cause loose teeth. Surgical treatment helps prevent further damage and tooth loss, while also improving smile aesthetics."
     },
     {
+      question: "What is a frenectomy, and who needs it?",
+      answer: "A frenectomy is a minor surgical procedure that removes or adjusts the small fold of tissue (frenum) under the tongue or upper lip. It's commonly performed in children with tongue-tie or lip-tie, but adults can also benefit if the frenum restricts movement or causes gaps between teeth."
+    },
+    {
       question: "Is oral surgery safe?",
       answer: "Yes. When performed by qualified oral surgeons in a sterile, modern clinic, dental surgeries are safe and predictable. Our team uses advanced anesthesia options, strict sterilization protocols, and digital imaging to ensure precision and comfort at every step."
     },
@@ -59,10 +63,10 @@ export default function DentalSurgery() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Hero Section */}
+      {/* 1. Hero Block */}
       <section className="relative h-[60vh] w-full overflow-hidden bg-secondary">
         <div className="absolute inset-0 opacity-40 flex items-center justify-center bg-muted">
-          <span className="text-4xl font-bold text-muted-foreground/20">DENTAL SURGERY HERO IMAGE</span>
+          <span className="text-4xl font-bold text-muted-foreground/20">DOCTOR IN SURGICAL EQUIPMENT</span>
         </div>
         <div className="absolute inset-0 bg-gradient-to-r from-secondary via-secondary/90 to-transparent" />
         
@@ -88,7 +92,7 @@ export default function DentalSurgery() {
         </div>
       </section>
 
-      {/* What Is Dental Surgery */}
+      {/* 2. What Is Dental Surgery */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -97,21 +101,31 @@ export default function DentalSurgery() {
               <p className="text-muted-foreground text-lg leading-relaxed">
                 Dental surgery covers a wide range of specialized procedures that address complex oral health conditions. Our goal is to restore function, relieve pain, and enhance your overall oral health with the latest surgical techniques.
               </p>
+              <div className="space-y-3">
+                {["Address complex conditions", "Restore oral function", "Relieve pain", "Advanced techniques", "Expert surgeons"].map((item) => (
+                  <div key={item} className="flex items-center gap-3">
+                    <CheckCircle2 className="h-5 w-5 text-primary" />
+                    <span className="font-medium text-secondary">{item}</span>
+                  </div>
+                ))}
+              </div>
             </div>
             <div className="h-[350px] rounded-2xl overflow-hidden bg-muted border border-border flex items-center justify-center">
-              <span className="text-xl font-bold text-muted-foreground">DENTAL SURGERY ILLUSTRATION</span>
+              <span className="text-xl font-bold text-muted-foreground">ORAL PROCEDURES ILLUSTRATION</span>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Surgery Types */}
+      {/* 3. Types of Dental Surgery We Offer */}
       <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary mb-12 text-center">Our Dental Surgery Services in Dubai</h2>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary">Our Dental Surgery Services in Dubai</h2>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {surgeryTypes.map((surgery, index) => (
-              <div key={index} className="p-8 bg-card rounded-xl border border-border hover:shadow-md transition-all text-center space-y-3">
+              <div key={index} className="p-8 bg-card rounded-xl border border-border hover:shadow-md transition-all text-center space-y-4">
                 <div className="text-5xl">{surgery.icon}</div>
                 <h3 className="text-xl font-bold text-secondary">{surgery.title}</h3>
               </div>
@@ -120,47 +134,59 @@ export default function DentalSurgery() {
         </div>
       </section>
 
-      {/* Trust Section */}
+      {/* 4. Why Choose Our Clinic */}
       <section className="py-20 bg-secondary text-white">
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6">Trusted Oral Surgeons in Dubai</h2>
-            <p className="text-gray-200 text-lg">
-              With 15 years of surgical excellence, internationally trained oral surgeons, and state-of-the-art facilities, we deliver safe, predictable outcomes with patient comfort at every step.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
-            {benefits.map((benefit, index) => (
-              <div key={index} className="flex items-start gap-3 p-4 bg-white/10 rounded-lg border border-white/20">
-                <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                <p className="text-sm font-medium">{benefit}</p>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="space-y-8">
+              <div>
+                <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4">Trusted Oral Surgeons in Dubai</h2>
+                <p className="text-gray-200 text-lg leading-relaxed">
+                  With extensive experience and advanced surgical facilities, our team delivers safe, predictable results with patient comfort at the forefront.
+                </p>
               </div>
-            ))}
+              <div className="space-y-3">
+                {benefits.map((benefit, index) => (
+                  <div key={index} className="flex items-start gap-3">
+                    <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-1" />
+                    <p className="text-gray-200 font-medium">{benefit}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="h-[400px] rounded-2xl overflow-hidden bg-muted/20 border border-white/10 flex items-center justify-center">
+              <span className="text-lg font-bold text-muted-foreground">SURGEON AT WORK IMAGE</span>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Patient Experience */}
+      {/* 5. Patient Experience */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center lg:order-reverse">
             <div className="h-[350px] rounded-2xl overflow-hidden bg-muted border border-border flex items-center justify-center">
-              <span className="text-xl font-bold text-muted-foreground">PATIENT TESTIMONIAL/VIDEO</span>
+              <span className="text-xl font-bold text-muted-foreground">PATIENT AFTER RECOVERY IMAGE</span>
             </div>
             <div className="space-y-6">
               <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary">Comfort, Care & Lasting Results</h2>
               <p className="text-muted-foreground text-lg leading-relaxed">
                 From your first consultation to post-surgery follow-up, we focus on patient comfort, safety, and predictable outcomes. Our oral surgeons ensure every step of your treatment is explained and stress-free.
               </p>
-              <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">
-                Schedule Your Consultation
-              </Button>
+              <div className="space-y-3">
+                {["Comprehensive consultation", "Advanced anesthesia", "Expert surgical technique", "Detailed aftercare", "Follow-up support"].map((item) => (
+                  <div key={item} className="flex items-center gap-3">
+                    <CheckCircle2 className="h-5 w-5 text-primary" />
+                    <span className="font-medium text-secondary">{item}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* FAQ Section */}
+      {/* 6. FAQ Section */}
       <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
@@ -192,7 +218,7 @@ export default function DentalSurgery() {
         </div>
       </section>
 
-      {/* Final CTA */}
+      {/* 7. Final CTA */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center space-y-6 p-10 md:p-16 bg-card rounded-2xl border border-border">
