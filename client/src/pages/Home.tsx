@@ -1,8 +1,3 @@
-import heroImage from '@assets/generated_images/luxury_dental_clinic_reception_area_with_modern_lighting_and_gold_accents.png';
-import beforeAfterImage from '@assets/generated_images/before_and_after_smile_transformation_comparison_slider.png';
-import doctorMale from '@assets/generated_images/portrait_of_a_friendly_professional_male_dentist.png';
-import doctorFemale from '@assets/generated_images/portrait_of_a_friendly_professional_female_dentist.png';
-import mapImage from '@assets/generated_images/map_location_placeholder_with_dental_clinic_context.png';
 
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle2, Star, MapPin, Phone, MessageCircle, Clock, CreditCard, ShieldCheck } from "lucide-react";
@@ -12,15 +7,11 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* 1. Hero Section */}
-      <section className="relative h-[85vh] w-full overflow-hidden">
-        <div className="absolute inset-0">
-          <img 
-            src={heroImage} 
-            alt="Trusted Dental Clinic in Dubai" 
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent" />
+      <section className="relative h-[85vh] w-full overflow-hidden bg-muted">
+        <div className="absolute inset-0 flex items-center justify-center bg-muted text-muted-foreground/20 text-9xl font-bold select-none">
+          HERO IMAGE
         </div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent" />
         
         <div className="container relative h-full mx-auto px-4 flex items-center">
           <div className="max-w-3xl space-y-8 animate-in fade-in slide-in-from-left-10 duration-700">
@@ -153,12 +144,8 @@ export default function Home() {
                 </Button>
               </div>
             </div>
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white rotate-1 hover:rotate-0 transition-transform duration-500">
-               <img 
-                src={beforeAfterImage} 
-                alt="Veneers before after Dubai, Dental implant results Dubai" 
-                className="w-full h-full object-cover"
-              />
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white rotate-1 hover:rotate-0 transition-transform duration-500 bg-muted aspect-square flex items-center justify-center">
+               <span className="text-muted-foreground font-bold text-xl">BEFORE / AFTER IMAGE</span>
               <div className="absolute bottom-6 left-6 bg-white/90 backdrop-blur px-4 py-2 rounded-md text-sm font-bold text-secondary shadow-lg">
                 Porcelain Veneers Transformation
               </div>
@@ -179,17 +166,13 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
             {[
-              { name: "Dr. Sarah Johnson", role: "Cosmetic Specialist", img: doctorFemale },
-              { name: "Dr. Michael Chen", role: "Implantologist", img: doctorMale },
-              { name: "Dr. Emily Roberts", role: "Orthodontist", img: doctorFemale },
+              { name: "Dr. Sarah Johnson", role: "Cosmetic Specialist" },
+              { name: "Dr. Michael Chen", role: "Implantologist" },
+              { name: "Dr. Emily Roberts", role: "Orthodontist" },
             ].map((doc, i) => (
               <div key={i} className="group bg-background rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-border">
-                <div className="aspect-[4/5] overflow-hidden">
-                  <img 
-                    src={doc.img} 
-                    alt={doc.name} 
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
+                <div className="aspect-[4/5] overflow-hidden bg-muted flex items-center justify-center">
+                  <span className="text-muted-foreground font-medium">DOCTOR IMAGE</span>
                 </div>
                 <div className="p-6 text-center">
                   <h3 className="text-xl font-bold text-secondary mb-1">{doc.name}</h3>
@@ -331,12 +314,8 @@ export default function Home() {
                 </Button>
               </div>
             </div>
-            <div className="h-full min-h-[400px] bg-gray-100 relative">
-              <img 
-                src={mapImage} 
-                alt="JLT Dubai Location Map" 
-                className="w-full h-full object-cover"
-              />
+            <div className="h-full min-h-[400px] bg-muted relative flex items-center justify-center">
+              <span className="text-muted-foreground font-bold text-xl">MAP PLACEHOLDER</span>
               <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                  <div className="bg-primary text-white px-4 py-2 rounded-lg shadow-lg font-bold animate-bounce">
                    We are here!
@@ -362,9 +341,8 @@ export default function Home() {
                  "5 Tips for Long-Lasting Teeth Whitening"
                ].map((title, i) => (
                  <div key={i} className="bg-white/5 border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-colors cursor-pointer group">
-                    <div className="h-40 bg-white/10 rounded-lg mb-4 w-full overflow-hidden">
-                       {/* Placeholder for blog thumb */}
-                       <div className="w-full h-full bg-gradient-to-br from-primary/20 to-secondary/50 group-hover:scale-105 transition-transform duration-500"></div>
+                    <div className="h-40 bg-white/10 rounded-lg mb-4 w-full overflow-hidden flex items-center justify-center text-white/30 font-medium">
+                       BLOG THUMB
                     </div>
                     <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">{title}</h3>
                     <p className="text-sm text-white/50">Read Article &rarr;</p>

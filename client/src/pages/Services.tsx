@@ -1,6 +1,3 @@
-import heroImage from '@assets/generated_images/collage_of_various_dental_treatments_like_veneers_implants_and_whitening.png';
-import happyPatient from '@assets/generated_images/happy_patient_shaking_hands_with_dentist_in_modern_clinic.png';
-import consultationImage from '@assets/generated_images/dentist_showing_a_treatment_plan_to_a_smiling_patient.png';
 
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle2, ShieldCheck, Phone, MessageCircle, Star } from "lucide-react";
@@ -57,12 +54,8 @@ export default function Services() {
     <div className="flex flex-col min-h-screen">
       {/* 1. Hero Block */}
       <section className="relative h-[60vh] w-full overflow-hidden bg-secondary">
-        <div className="absolute inset-0 opacity-40">
-          <img 
-            src={heroImage} 
-            alt="Comprehensive Dental Services" 
-            className="w-full h-full object-cover"
-          />
+        <div className="absolute inset-0 opacity-40 flex items-center justify-center bg-muted">
+          <span className="text-4xl font-bold text-muted-foreground/20">SERVICES HERO</span>
         </div>
         <div className="absolute inset-0 bg-gradient-to-r from-secondary via-secondary/90 to-transparent" />
         
@@ -92,12 +85,8 @@ export default function Services() {
       <section className="py-24 bg-background">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl">
-              <img 
-                src={happyPatient} 
-                alt="Happy patients and dentists" 
-                className="w-full h-full object-cover"
-              />
+            <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl bg-muted flex items-center justify-center">
+              <span className="text-2xl font-bold text-muted-foreground">WHY CHOOSE US IMAGE</span>
             </div>
             <div className="space-y-6">
               <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary">Your Trusted Dental Clinic in Dubai</h2>
@@ -212,12 +201,8 @@ export default function Services() {
       <section className="py-24 bg-primary/5">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center gap-12 bg-white rounded-3xl p-8 md:p-12 shadow-xl border border-primary/10">
-            <div className="w-full md:w-1/2 h-[400px] rounded-2xl overflow-hidden">
-              <img 
-                src={consultationImage} 
-                alt="Book Your Dental Appointment" 
-                className="w-full h-full object-cover"
-              />
+            <div className="w-full md:w-1/2 h-[400px] rounded-2xl overflow-hidden bg-muted flex items-center justify-center">
+              <span className="text-2xl font-bold text-muted-foreground">CTA IMAGE</span>
             </div>
             <div className="w-full md:w-1/2 space-y-8">
               <h2 className="text-3xl md:text-5xl font-serif font-bold text-secondary">Book Your Dental Appointment in Dubai Today</h2>
