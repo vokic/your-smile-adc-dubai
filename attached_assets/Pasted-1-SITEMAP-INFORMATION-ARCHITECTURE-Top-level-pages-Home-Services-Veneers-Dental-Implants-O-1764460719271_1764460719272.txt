@@ -1,0 +1,927 @@
+1. SITEMAP & INFORMATION ARCHITECTURE
+
+Top-level pages:
+
+Home
+
+Services
+
+Veneers
+
+Dental Implants
+
+Orthodontics & Clear Aligners
+
+Teeth Whitening
+
+Crowns & Bridges
+
+Cosmetic Dentistry
+
+General & Preventive Dentistry
+
+Expert Dental Surgery
+
+Digital X-Ray & OPG
+
+Emergency Dentistry
+
+About Us
+
+Our Doctors
+
+Blog / News
+
+FAQ
+
+Contact
+
+Global elements:
+
+Sticky header with logo, main nav, and two CTAs:
+
+Book on WhatsApp
+
+Call Now
+
+Footer with:
+
+Contact details
+
+Working hours
+
+Quick links
+
+Social media
+
+Google Reviews widget
+
+Newsletter
+
+Legal links
+
+2. DESIGN & UI SYSTEM (FOR LOVABLE / DESIGNER)
+
+Overall style
+
+Feel: Premium, modern, clean, medical, not cold
+
+Colors:
+
+Primary: Deep teal or blue (trust + medical)
+
+Secondary: Warm neutral / sand or soft grey
+
+Accent: Gold or turquoise for CTAs
+
+Typography:
+
+Headings: Modern sans-serif (e.g. Poppins / Montserrat style)
+
+Body: Clean, highly readable sans-serif
+
+Spacing:
+
+Generous white space
+
+Sections clearly separated
+
+Max content width ~1200–1300px
+
+Buttons / CTAs
+
+Primary button: Filled, rounded corners, label like:
+
+“Book on WhatsApp”
+
+“Book Your Appointment”
+
+Secondary button: Outline or ghost, for “Call Now”
+
+Imagery
+
+Real people, real smiles
+
+Mix of:
+
+Lifestyle patients
+
+Doctors in clinic
+
+Close-ups of smiles
+
+Before/after sliders
+
+3. REWRITTEN WEBSITE COPY (PAGE BY PAGE)
+
+You can literally copy-paste this per page.
+
+🏠 HOME PAGE
+
+H1: Trusted Dental Clinic in Dubai for Advanced & Cosmetic Dentistry
+
+Subheadline (H2): From veneers and implants to Invisalign and whitening – expert care tailored to your smile.
+
+Primary CTA: Book Your Appointment (WhatsApp)
+Secondary CTA: Call Now
+
+Section: Why Choose Us
+
+H2: Why Patients Choose Us in Dubai
+
+Short intro:
+At Your Smile Advanced Dental Center in JLT, Dubai, we combine international expertise, advanced technology, and a warm, caring approach to help you feel confident every time you smile.
+
+Key points (icons / stats):
+
+15+ years of clinical experience
+
+Internationally trained dentists
+
+Gentle, pain-minimized treatments
+
+5,000+ smiles transformed
+
+★5.0 Google-rated dental clinic in Dubai
+
+Section: Our Services
+
+H2: Comprehensive Dental Services in Dubai
+
+Short intro:
+Whether you’re looking for a routine check-up or a complete smile makeover, we offer the full spectrum of dental care under one roof.
+
+Service cards (each links to its page):
+
+Veneers in Dubai – Natural-looking porcelain and composite veneers for a flawless, long-lasting smile.
+
+Dental Implants in Dubai – Permanent tooth replacement that looks, feels, and functions like natural teeth.
+
+Orthodontics & Invisalign – Braces and clear aligners for straighter teeth and a healthier bite.
+
+Teeth Whitening in Dubai – Safe, fast, and effective whitening treatments for a brighter smile in 45–60 minutes.
+
+Crowns & Bridges – Restore damaged or missing teeth with custom-made restorations.
+
+General & Preventive Dentistry – Check-ups, cleanings, fillings, root canal treatment, and gum therapy.
+
+Emergency Dentist in Dubai – 24/7 urgent care for toothaches, injuries, and dental trauma.
+
+Pediatric Dentistry – Gentle care for children’s growing smiles.
+
+CTA: Explore All Services
+
+Section: Smile Transformations
+
+H2: Smile Transformations – Before & After
+
+Microcopy:
+See how real patients transformed their smiles with veneers, implants, orthodontics, and whitening in our Dubai clinic. Every before-and-after result tells a story of renewed confidence.
+
+(Use slider with alt tags optimized for SEO.)
+
+Section: Our Doctors
+
+H2: Meet Our Expert Dentists in Dubai
+
+Microcopy:
+Our team of specialists brings international training and years of experience across cosmetic, restorative, surgical, and orthodontic dentistry – all focused on creating healthy, confident smiles.
+
+CTA: Meet Our Doctors
+
+Section: Patient Reviews
+
+H2: 5.0 ★ Rated Dental Clinic in Dubai
+
+Microcopy:
+Patients trust us for gentle care, honest advice, and long-lasting results. Read real reviews from people who chose us for veneers, implants, Invisalign, family dentistry, and more.
+
+CTA: Book Your Appointment
+
+Section: Insurance & Payments
+
+H2: Dental Insurance & Flexible Payment Options
+
+Microcopy:
+We work with major UAE dental insurance providers and offer flexible installment plans for cosmetic treatments such as veneers, implants, Invisalign, and whitening – making high-quality care easier to access.
+
+Section: Location & Contact
+
+H2: Visit Our Dental Clinic in JLT, Dubai
+
+Microcopy:
+Conveniently located in HDS Business Centre, Jumeirah Lake Towers, with easy access, nearby metro stations, and parking.
+
+Address: HDS Business Centre, Jumeirah Lake Towers (JLT), Dubai
+
+Phone: +971 58 828 2432
+
+Emergency: +971 52 330 1356
+
+Email: info@yoursmileadcdubai.com
+
+Working Hours:
+Mon–Fri: 9:00 AM – 9:00 PM
+Sat: 9:00 AM – 6:00 PM
+Sun: Closed
+
+CTA icons: Book on WhatsApp | Call Now
+
+Section: Blog & Tips
+
+H2: Dental Blog & Expert Tips
+
+Microcopy:
+Stay updated with the latest advice on cosmetic dentistry, veneers, implants, Invisalign, whitening, and preventive care from our Dubai dentists.
+
+📄 SERVICES PAGE
+
+H1: Comprehensive Dental Services in Dubai
+
+H2: Complete Dental Solutions for a Healthy, Confident Smile
+
+Intro:
+From preventive care and children’s dentistry to complex surgery and full smile makeovers, Your Smile Advanced Dental Center offers all major dental treatments in one modern clinic in JLT, Dubai.
+
+CTA: Book Your Consultation on WhatsApp | Call Now
+
+Section: Why Choose Our Services
+
+H2: Your Trusted Dental Clinic in Dubai
+
+Microcopy:
+With 15+ years of experience, internationally trained specialists, and ★5.0 patient ratings, we provide safe, comfortable, and long-lasting dental results – whether you need a simple filling or a full-mouth rehabilitation.
+
+Bullet points:
+
+15+ years of clinical experience
+
+Advanced CAD/CAM, 3D implant planning, and digital X-rays
+
+Gentle, pain-minimized treatments
+
+Multilingual, family-friendly team
+
+Comprehensive care under one roof
+
+Section: Service Categories
+
+H2: Explore Our Dental Treatments
+
+Cosmetic Dentistry
+
+Veneers
+
+Teeth Whitening
+
+Smile Makeover
+
+Restorative Dentistry
+
+Dental Implants
+
+Crowns & Bridges
+
+Expert Dental Surgery (wisdom teeth, bone grafts, gum surgery)
+
+Orthodontics
+
+Metal & Ceramic Braces
+
+Invisalign & Clear Aligners
+
+Bite Correction, Retainers, Space Maintainers
+
+General & Preventive Dentistry
+
+Routine Check-Ups
+
+Professional Cleanings
+
+Root Canal Treatment
+
+Gum Disease Treatment
+
+Fluoride & Sealants
+
+Diagnostics
+
+Digital X-Ray & OPG
+
+3D Imaging for surgical planning
+
+Emergency Dentistry
+
+24/7 urgent dental care
+
+Section: Testimonials Preview
+
+H2: What Our Patients Say
+
+Microcopy:
+Thousands of patients across Dubai have trusted us with their smiles – from everyday dentistry to complex implant and orthodontic cases.
+
+Final CTA
+
+H2: Book Your Dental Appointment in Dubai
+
+Microcopy:
+From preventive check-ups to advanced cosmetic treatments, our team is ready to provide the care you deserve.
+
+CTA: Book on WhatsApp | Call Now
+
+✨ VENEERS PAGE
+
+H1: Veneers in Dubai – Your Dream Smile Starts Here
+
+H2: Achieve a flawless, natural-looking smile with premium porcelain and composite veneers tailored to you.
+
+CTA: Book Your Veneers Consultation
+
+Emotional Hook
+
+H2: Tired of Hiding Your Smile?
+
+Microcopy:
+Stains, chips, gaps, and uneven teeth can hold you back in photos, at work, and in social situations. Veneers can completely refresh your smile in just a few visits – giving you the shape, color, and symmetry you’ve always wanted.
+
+CTA: Start Your Smile Journey Today
+
+Benefits / USPs
+
+H2: Why Choose Veneers at Our Dubai Clinic?
+
+Smile makeover in as little as 2 visits
+
+Natural, durable porcelain veneers that last 10–15 years
+
+Digital Smile Design – preview your results before treatment
+
+15+ years of cosmetic dentistry experience
+
+★5.0 Google-rated clinic trusted by Dubai patients
+
+Before & After
+
+H2: Real Veneer Transformations in Dubai
+
+Microcopy:
+Discover real smile makeovers created by our cosmetic dentists. Our veneers are designed to look beautiful, natural, and in harmony with your face.
+
+Trust Section
+
+H2: Dubai’s Trusted Veneers Specialists
+
+Microcopy:
+Our internationally trained cosmetic dentists have transformed thousands of smiles using high-quality materials and precise planning. We focus on natural aesthetics – not “fake-looking” teeth.
+
+CTA: Book with Our Veneers Experts
+
+FAQ – Veneers in Dubai
+
+(Keep answers concise but clear.)
+
+H2: Frequently Asked Questions About Veneers
+
+Q1: How long do veneers last?
+Porcelain veneers typically last 10–15 years, and composite veneers around 4–7 years. Their longevity depends on your oral hygiene, habits, and regular dental check-ups.
+
+Q2: Will my veneers look natural?
+Yes. Veneers are custom-made to match your tooth shape, size, and color. Porcelain veneers mimic natural enamel, giving a realistic, translucent appearance.
+
+Q3: Is getting veneers painful?
+The procedure is performed under local anesthesia and is usually pain-free. You might feel mild sensitivity for a few days, which quickly settles.
+
+Q4: Porcelain vs composite veneers – what’s the difference?
+Porcelain is more durable, stain-resistant, and natural-looking; composite is more affordable and faster but may require touch-ups sooner. We’ll recommend the best option based on your goals and budget.
+
+Q5: Do veneers damage my natural teeth?
+We remove only a very thin layer of enamel to create space and ensure a perfect fit. When done by experienced dentists, veneers do not harm your dental health.
+
+Final CTA
+
+H2: Your Perfect Smile Is Just One Click Away
+
+Microcopy:
+Don’t wait to love your smile. Book a consultation today and discover how veneers can transform your appearance and confidence.
+
+CTA: Book on WhatsApp | Call Now
+
+🦷 DENTAL IMPLANTS PAGE
+
+H1: Dental Implants in Dubai
+
+H2: Permanent, natural-looking tooth replacements that restore your smile, function, and confidence.
+
+CTA: Book Implant Consultation on WhatsApp | Call Now
+
+What Are Dental Implants?
+
+H2: A Permanent Solution for Missing Teeth
+
+Microcopy:
+Dental implants replace missing teeth with titanium or ceramic roots that integrate with your jawbone. They feel, function, and look like natural teeth – without slipping, adhesives, or compromising nearby teeth.
+
+Types of Implant Treatments
+
+H2: Dental Implant Solutions in Dubai
+
+Single-Tooth Implants
+
+Multiple / Full-Arch Implants
+
+Implant-Supported Dentures
+
+Bone Grafting & Sinus Lifts
+
+3D Implant Planning
+
+Biocompatible titanium and ceramic options
+
+Why Choose Implants
+
+H2: Why Choose Dental Implants?
+
+Permanent, stable, and durable solution
+
+Prevent bone loss and facial sagging
+
+Restore chewing comfort and clear speech
+
+Look and feel like natural teeth
+
+Long-term investment in your health
+
+Before & After
+
+H2: Real Implant Results in Dubai
+
+Microcopy:
+See how dental implants have helped patients eat, speak, and smile with renewed confidence.
+
+Trust Section
+
+H2: Dubai’s Dental Implant Specialists
+
+Microcopy:
+Our implantologists are internationally trained and use advanced 3D planning and high-quality implant systems for safe, predictable, and long-lasting results.
+
+FAQ – Dental Implants in Dubai
+
+H2: Frequently Asked Questions About Dental Implants
+
+(Shortened versions)
+
+How long do implants last?
+With proper care, implants can last a lifetime. The crown may need replacement after 10–15 years.
+
+Is implant surgery painful?
+No – it’s done under local anesthesia. Most patients report only mild discomfort afterward.
+
+Do I need bone grafting?
+Only if your jawbone is too thin or weak. We confirm this with 3D scans during your consultation.
+
+Are implants better than dentures?
+Implants are more stable, comfortable, and preserve bone, unlike removable dentures.
+
+Can implants replace all my teeth?
+Yes. Full-arch solutions (such as All-on-4 or All-on-6) can restore an entire jaw with a fixed bridge supported by implants.
+
+Final CTA
+
+H2: Restore Your Smile with Dental Implants in Dubai
+
+Microcopy:
+Book your implant consultation today and explore your options for permanent, natural tooth replacement.
+
+CTA: Book on WhatsApp | Call Now
+
+😁 ORTHODONTICS & CLEAR ALIGNERS PAGE
+
+H1: Orthodontics & Clear Aligners in Dubai
+
+H2: Braces and Invisalign treatments for straighter teeth and a healthier bite.
+
+What Is Orthodontics?
+
+H2: Straight Teeth, Healthy Bite
+
+Microcopy:
+Orthodontic treatment corrects misaligned teeth and jaw positions, improving both your smile and your oral health.
+
+Our Orthodontic Options
+
+H2: Orthodontic Treatments in Dubai
+
+Metal Braces
+
+Ceramic (tooth-colored) Braces
+
+Invisalign & Clear Aligners
+
+Retainers
+
+Space Maintainers for children
+
+Bite Correction (overbite, underbite, crossbite)
+
+Fast-Track Orthodontics
+
+Why Choose Us
+
+H2: Dubai’s Orthodontic Experts
+
+15+ years of orthodontic experience
+
+Certified Invisalign providers
+
+Digital scans instead of messy impressions
+
+5.0 ★ rated clinic
+
+Before & After
+
+H2: Real Orthodontic Results
+
+Microcopy:
+See transformations achieved with braces and Invisalign for both teens and adults.
+
+Invisalign Highlight
+
+H2: Invisalign in Dubai
+
+Microcopy:
+Nearly invisible, removable aligners designed for modern lifestyles. Eat, brush, and live normally while your teeth gradually move into place.
+
+FAQ – Orthodontics & Clear Aligners
+
+(Short, SEO-friendly)
+
+How long will treatment take?
+6–12 months for mild cases with aligners; 18–24 months for more complex cases with braces.
+
+Are braces painful?
+You may feel pressure for a few days after adjustments, but this is temporary.
+
+Can children have orthodontic treatment?
+Yes – early evaluation from age 7 helps prevent more serious issues later.
+
+Do results last forever?
+With proper retainer wear, orthodontic results can last a lifetime.
+
+Final CTA
+
+H2: Book Your Orthodontic Consultation
+
+CTA: Book on WhatsApp | Call Now
+
+✴ TEETH WHITENING PAGE
+
+H1: Teeth Whitening in Dubai
+
+H2: Brighten your smile safely and effectively with professional whitening treatments.
+
+What Is Professional Whitening?
+
+H2: Safe, Fast & Professional Whitening
+
+Microcopy:
+In just 45–60 minutes, our in-office whitening can noticeably brighten your smile using safe, enamel-friendly systems supervised by a dentist.
+
+Whitening Options
+
+H2: Teeth Whitening Options
+
+Laser / Light-Activated Whitening
+
+In-Office Whitening Session
+
+Custom Take-Home Whitening Kits
+
+Why Choose Us
+
+H2: Whitening with Confidence
+
+Safe for enamel and gums
+
+Visible results after one session
+
+Tailored intensity to your sensitivity and goals
+
+Performed by ★5.0 rated dental professionals
+
+Before & After
+
+H2: Teeth Whitening Before & After
+
+Microcopy:
+Explore how patients achieved a brighter, fresher smile after professional whitening.
+
+FAQ – Teeth Whitening
+
+(Summarized)
+
+Is whitening safe?
+
+How long do results last (6–12 months)?
+
+Will it make my teeth sensitive (temporary)?
+
+Can all stains be removed (some intrinsic stains may need veneers)?
+
+Final CTA
+
+H2: Get a Brighter Smile Today
+
+CTA: Book on WhatsApp | Call Now
+
+🚨 EMERGENCY DENTISTRY PAGE
+
+H1: Emergency Dentistry in Dubai
+
+H2: 24/7 urgent dental care for toothaches, injuries, and dental emergencies.
+
+What Is Emergency Dentistry?
+
+H2: Immediate Relief When You Need It Most
+
+Microcopy:
+Severe tooth pain, swelling, broken teeth, and accidents can’t wait. Our emergency dentists provide fast, targeted treatment to relieve pain and protect your oral health.
+
+Common Emergencies
+
+H2: When to See an Emergency Dentist
+
+Severe toothache
+
+Broken or chipped tooth
+
+Knocked-out tooth
+
+Lost filling or crown
+
+Abscess or facial swelling
+
+Bleeding after trauma
+
+Why Choose Our Emergency Clinic
+
+H2: Dubai’s Trusted Emergency Dentists
+
+24/7 availability for urgent cases
+
+Immediate pain relief and treatment
+
+Advanced diagnostics for quick decisions
+
+Experienced in trauma and infection management
+
+Final CTA
+
+H2: Call Our Emergency Dentists in Dubai Now
+
+CTA: Call Now for Urgent Care | Book on WhatsApp
+
+🩺 GENERAL & PREVENTIVE DENTISTRY PAGE
+
+H1: General & Preventive Dentistry in Dubai
+
+H2: Protect your smile with regular check-ups, cleanings, and preventive care.
+
+What Is Preventive Dentistry?
+
+H2: Prevent Problems Before They Start
+
+Microcopy:
+Preventive dentistry focuses on keeping your teeth and gums healthy so you avoid more complex and costly treatments later.
+
+Our Preventive Services
+
+H2: General & Preventive Dental Services
+
+Routine Check-Ups
+
+Professional Cleanings (scaling & polishing)
+
+Root Canal Treatment
+
+Gum Disease Treatment
+
+Cavity Fillings
+
+Fluoride & Sealants (especially for children)
+
+Benefits
+
+H2: Benefits of Preventive Care
+
+Early detection of dental problems
+
+Lower treatment costs long-term
+
+Fresher breath and stronger gums
+
+Maintain a confident, healthy smile for life
+
+FAQ – Preventive Dentistry
+
+(Shortened highlights)
+
+How often should I visit the dentist? (Every 6 months for most patients.)
+
+Are professional cleanings painful? (Usually no; gentle techniques used.)
+
+What are signs of gum disease? (Bleeding gums, bad breath, swelling.)
+
+Final CTA
+
+H2: Book Your Preventive Check-Up Today
+
+CTA: Book on WhatsApp | Call Now
+
+👑 CROWNS & BRIDGES PAGE
+
+(Use your improved version – this is already strong; here’s a slightly tightened version.)
+
+H1: Dental Crowns & Bridges in Dubai
+
+H2: Restore strength, function, and aesthetics with custom-made crowns and bridges.
+
+What Are Crowns & Bridges?
+
+H2: Crowns & Bridges Explained
+
+Short clear copy, similar to your draft but polished.
+
+Our Treatments
+
+H2: Types of Crowns & Bridges We Offer
+
+Same-Day CAD/CAM Crowns
+
+Porcelain & Zirconia Crowns
+
+Traditional Fixed Bridges
+
+Implant-Supported Bridges
+
+Why Choose Us
+
+H2: Dubai’s Trusted Restorative Specialists
+
+CAD/CAM precision for perfect fit
+
+High-quality, biocompatible materials
+
+Gentle, pain-minimized procedures
+
+★5.0 rated clinic
+
+Final CTA
+
+H2: Restore Your Smile with Crowns & Bridges in Dubai
+
+CTA: Book on WhatsApp | Call Now
+
+🎨 COSMETIC DENTISTRY PAGE
+
+H1: Cosmetic Dentistry in Dubai
+
+H2: Transform your smile with veneers, whitening, orthodontics, implants, and full smile makeovers.
+
+…and then follow your existing structure with tightened copy (benefits, smile makeover highlight, FAQs, final CTA).
+
+🛠 EXPERT DENTAL SURGERY PAGE
+
+Use your existing outline but cleaned up; emphasize safety, technology, and clear FAQs.
+
+📸 DIGITAL X-RAY & OPG PAGE (FIXING THE OLD MISTAKE)
+
+Right now this section duplicated crowns & bridges. I would change it to:
+
+H1: Digital X-Ray & OPG in Dubai
+
+H2: Low-radiation imaging for precise, safe, and comfortable dental diagnostics.
+
+Sections:
+
+What is Digital X-Ray & OPG
+
+Why it’s safer and faster than traditional X-rays
+
+How it helps planning implants, surgery, orthodontics
+
+FAQ (Is it safe? How often do I need X-rays? etc.)
+
+🧑‍⚕️ ABOUT US PAGE
+
+Your structure is already good; cleaned version:
+
+H1: About Your Smile Advanced Dental Center – JLT, Dubai
+
+H2: Internationally trained dental professionals dedicated to your comfort and confidence.
+
+…and then Vision, Mission, Core Values, Story, Process, Testimonials, CTA.
+
+👨‍⚕️ OUR DOCTORS PAGE
+
+Keep each doctor’s bio, just polish wording (avoid repetition, keep it human and credible).
+
+📞 CONTACT PAGE
+
+H1: Contact Your Smile Advanced Dental Center – JLT, Dubai
+
+H2: Book an appointment, ask a question, or get emergency support.
+
+Sections: contact details, hours, map, form, WhatsApp/Call CTAs.
+
+❓ FAQ PAGE
+
+You already have a very solid FAQ. Just keep Q1–Q12, fix English, and use accordion.
+
+4. SEO KEYWORD PLAN (SUMMARY)
+
+Brand / Location Core:
+
+your smile advanced dental center dubai
+
+dental clinic jlt dubai
+
+dentist in dubai / jlt dentist
+
+Key service keywords:
+
+veneers in dubai
+
+porcelain veneers dubai
+
+dental implants in dubai
+
+full mouth implants dubai
+
+invisalign dubai / clear aligners dubai
+
+orthodontist in dubai
+
+teeth whitening dubai
+
+emergency dentist dubai 24/7
+
+pediatric dentist dubai
+
+crowns and bridges dubai
+
+cosmetic dentistry dubai
+
+preventive dentistry dubai
+
+root canal treatment dubai
+
+gum disease treatment dubai
+
+On-page placement:
+
+Primary keyword in H1
+
+Secondary keywords in H2 + first paragraph
+
+Use city + service (e.g. “veneers in Dubai”) in meta titles, descriptions, alt tags, and CTAs when natural.
+
+5. LOVABLE.AI MASTER PROMPT
+
+You can paste this as a single prompt into Lovable:
+
+Prompt for Lovable:
+Build a modern, premium website for Your Smile Advanced Dental Center, a full-service dental clinic in JLT, Dubai.
+
+Brand style: Clean, medical, high-end, but warm and friendly. Use a deep teal/blue primary color, a soft neutral secondary, and a subtle accent color for CTAs. Use modern sans-serif fonts. Layout should be airy, with strong typography and generous spacing.
+
+Navigation (sticky header): Logo (links to Home), then: Home, Services (dropdown: Veneers, Dental Implants, Orthodontics & Clear Aligners, Teeth Whitening, Crowns & Bridges, Cosmetic Dentistry, General & Preventive Dentistry, Expert Dental Surgery, Digital X-Ray & OPG, Emergency Dentistry), About Us, Our Doctors, Blog, FAQ, Contact. Include two CTAs in the header: “Book on WhatsApp” (link to https://wa.me/971585828257
+
+) and “Call Now” (+971 58 582 82 57).
+
+Footer: Show clinic name, address (HDS Business Centre, Jumeirah Lake Towers, Dubai, UAE), phone (+971 58 828 2432), emergency number (+971 52 330 1356), email (info@yoursmileadcdubai.com
+
+), working hours, quick links (Services, Our Doctors, Blog, FAQ, Contact), social icons (Instagram, Facebook, TikTok, YouTube, LinkedIn), a Google Reviews ★★★★★ widget, newsletter signup, and links to Privacy Policy, Terms & Conditions, and Sitemap.
+
+Pages and content:
+Use the following structure and write sections exactly as described (hero, why choose us, services grid, before & after, doctors, reviews, insurance & payments, location/contact, blog CTA). Each service (Veneers, Dental Implants, Orthodontics, Teeth Whitening, Emergency Dentistry, Crowns & Bridges, Cosmetic Dentistry, General & Preventive Dentistry, Expert Dental Surgery, Digital X-Ray & OPG) gets its own landing page with:
+– Hero (H1 + subheadline + CTA)
+– Emotional/pain point section where relevant
+– Benefits/USP section with bullet points
+– Before & After gallery section
+– Trust elements (doctors, technology, Google rating)
+– FAQ section with 4–8 questions
+– Final CTA section leading to WhatsApp + Call
+
+SEO: Optimize page titles and H1s for “{service} in Dubai” and “dental clinic in Dubai / JLT Dubai”. Use internal links between related pages and include descriptive alt text for all images (e.g. “veneers before and after Dubai”).
+
+Design details:
+– Use sections with clear visual hierarchy.
+– Use iconography for benefits and service overviews.
+– Include sliders for Before & After and Reviews.
+– Make CTAs prominent and sticky on mobile.
+
+Use a tone that is professional, reassuring, and patient-focused. Avoid medical jargon where possible and focus on benefits and outcomes.
+
+You can then paste page-specific copy from above into the respective page prompts or let Lovable generate body text following this structure.

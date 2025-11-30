@@ -1,22 +1,43 @@
 import { Button } from "@/components/ui/button";
-import { MessageCircle, Phone, CheckCircle2 } from "lucide-react";
+import { MessageCircle, Phone, CheckCircle2, ChevronDown, Smile } from "lucide-react";
+import { useState } from "react";
 
 export default function Orthodontics() {
+  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
+
   const treatments = [
-    { title: "Metal Braces", description: "Reliable and effective", icon: "⚙️" },
-    { title: "Ceramic Braces", description: "Discreet and tooth-colored", icon: "🎨" },
-    { title: "Invisalign & Clear Aligners", description: "Virtually invisible and removable", icon: "✨" },
-    { title: "Retainers", description: "Maintain results long-term", icon: "🔒" },
-    { title: "Space Maintainers", description: "Guide proper tooth eruption for kids", icon: "👶" },
-    { title: "Bite Correction", description: "Treat overbite, underbite, crossbite", icon: "🧩" }
+    { title: "Metal Braces", description: "Reliable and effective" },
+    { title: "Ceramic Braces", description: "Discreet and tooth-colored" },
+    { title: "Invisalign & Clear Aligners", description: "Virtually invisible and removable" },
+    { title: "Retainers", description: "Maintain results long-term" },
+    { title: "Space Maintainers", description: "Guide proper tooth eruption for kids" },
+    { title: "Bite Correction", description: "Treat overbite, underbite, crossbite" }
   ];
 
   const benefits = [
-    "15 years of experience",
+    "15+ years of orthodontic experience",
     "Certified Invisalign providers",
-    "Digital scans, no messy impressions",
-    "5.0 ★ rated clinic",
-    "Personalized treatment plans"
+    "Digital scans instead of messy impressions",
+    "★5.0 rated clinic trusted by Dubai families"
+  ];
+
+  const faqs = [
+    {
+      question: "How long will treatment take?",
+      answer: "6–12 months for mild cases with aligners; 18–24 months for more complex cases with braces."
+    },
+    {
+      question: "Are braces painful?",
+      answer: "You may feel pressure for a few days after adjustments, but this is temporary. Most patients adapt quickly."
+    },
+    {
+      question: "Can children have orthodontic treatment?",
+      answer: "Yes – early evaluation from age 7 helps prevent more serious issues later. Early intervention often results in better outcomes."
+    },
+    {
+      question: "Do results last forever?",
+      answer: "With proper retainer wear, orthodontic results can last a lifetime. We provide clear guidance on retainer care."
+    }
   ];
 
   return (
@@ -65,12 +86,11 @@ export default function Orthodontics() {
       {/* Treatment Options */}
       <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary mb-12 text-center">Orthodontic Options in Dubai</h2>
+          <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary mb-12 text-center">Orthodontic Treatments in Dubai</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {treatments.map((treatment, index) => (
               <div key={index} className="p-8 bg-card rounded-xl border border-border hover:shadow-md transition-all space-y-4">
-                <div className="text-4xl">{treatment.icon}</div>
-                <h3 className="text-xl font-bold text-secondary">{treatment.title}</h3>
+                <h3 className="text-lg font-bold text-secondary">{treatment.title}</h3>
                 <p className="text-muted-foreground">{treatment.description}</p>
               </div>
             ))}
@@ -79,15 +99,17 @@ export default function Orthodontics() {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-20 bg-secondary text-white">
+      <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold mb-12 text-center">Dubai's Orthodontic Experts</h2>
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary">Dubai's Orthodontic Experts</h2>
+            </div>
             <div className="space-y-4">
               {benefits.map((benefit, index) => (
-                <div key={index} className="flex items-start gap-4 p-5 bg-white/10 rounded-lg border border-white/20">
+                <div key={index} className="flex items-start gap-4 p-5 bg-card rounded-xl border border-border hover:shadow-md transition-all">
                   <CheckCircle2 className="h-6 w-6 text-primary shrink-0 mt-0.5" />
-                  <p className="text-lg font-medium">{benefit}</p>
+                  <p className="text-secondary font-medium text-lg">{benefit}</p>
                 </div>
               ))}
             </div>
@@ -96,17 +118,17 @@ export default function Orthodontics() {
       </section>
 
       {/* Before & After */}
-      <section className="py-20 bg-background">
+      <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary mb-4">Real Orthodontic Results</h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              See transformations achieved with braces and Invisalign in Dubai.
+              See transformations achieved with braces and Invisalign for both teens and adults.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[1, 2, 3].map((item) => (
-              <div key={item} className="rounded-2xl overflow-hidden bg-muted border border-border h-[350px] flex items-center justify-center">
+              <div key={item} className="rounded-2xl overflow-hidden bg-muted border border-border h-[400px] flex items-center justify-center hover:shadow-lg transition-all">
                 <span className="text-lg font-bold text-muted-foreground">BEFORE & AFTER {item}</span>
               </div>
             ))}
@@ -115,23 +137,57 @@ export default function Orthodontics() {
       </section>
 
       {/* Invisalign Highlight */}
-      <section className="py-20 bg-muted/30">
+      <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-              <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary">Invisalign Dubai</h2>
+              <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary">Invisalign in Dubai</h2>
               <p className="text-muted-foreground text-lg leading-relaxed">
-                Clear aligners that are removable, comfortable, and nearly invisible. Designed for teens and adults who want discreet treatment without the commitment of traditional braces.
+                Nearly invisible, removable aligners designed for modern lifestyles. Eat, brush, and live normally while your teeth gradually move into place. Perfect for professionals and active adults.
               </p>
-              <p className="text-muted-foreground text-lg leading-relaxed">
-                With digital scans and custom-made aligners, you'll see results faster with minimal impact on your daily life.
-              </p>
-              <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">
-                Book Your Invisalign Consultation
-              </Button>
+              <div className="space-y-3">
+                {["No visible brackets or wires", "Remove for eating and drinking", "Easy to maintain oral hygiene", "Comfortable and effective", "Discreet treatment option"].map((item) => (
+                  <div key={item} className="flex items-center gap-3">
+                    <Smile className="h-5 w-5 text-primary" />
+                    <span className="font-medium text-secondary">{item}</span>
+                  </div>
+                ))}
+              </div>
             </div>
-            <div className="h-[350px] rounded-2xl overflow-hidden bg-muted border border-border flex items-center justify-center">
-              <span className="text-xl font-bold text-muted-foreground">INVISALIGN IMAGE</span>
+            <div className="h-[400px] rounded-2xl overflow-hidden bg-muted border border-border flex items-center justify-center">
+              <span className="text-xl font-bold text-muted-foreground">INVISALIGN CLEAR ALIGNERS</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-20 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary mb-12 text-center">Frequently Asked Questions</h2>
+            
+            <div className="space-y-3">
+              {faqs.map((faq, index) => (
+                <div key={index} className="border border-border rounded-lg overflow-hidden hover:shadow-md transition-all">
+                  <button
+                    onClick={() => setOpenFaqIndex(openFaqIndex === index ? null : index)}
+                    className="w-full px-6 py-5 flex items-center justify-between bg-card hover:bg-card/80 transition-colors text-left"
+                  >
+                    <span className="font-medium text-secondary text-lg pr-4">{faq.question}</span>
+                    <ChevronDown
+                      className={`h-5 w-5 text-primary shrink-0 transition-transform duration-300 ${
+                        openFaqIndex === index ? "rotate-180" : ""
+                      }`}
+                    />
+                  </button>
+                  {openFaqIndex === index && (
+                    <div className="px-6 py-5 bg-white border-t border-border animate-in fade-in slide-in-from-top-2 duration-300">
+                      <p className="text-muted-foreground leading-relaxed">{faq.answer}</p>
+                    </div>
+                  )}
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -141,14 +197,14 @@ export default function Orthodontics() {
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center space-y-6 p-10 md:p-16 bg-card rounded-2xl border border-border">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary">Get Started with Your Perfect Smile</h2>
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary">Book Your Orthodontic Consultation</h2>
             <p className="text-muted-foreground text-lg">
-              Schedule a free consultation today and let our orthodontic experts design a treatment plan just for you.
+              Discover the best treatment option for your smile – braces or Invisalign. Schedule your consultation today with our orthodontic experts.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
               <Button className="bg-primary text-primary-foreground hover:bg-primary/90 gap-2">
                 <MessageCircle className="h-4 w-4" />
-                Book Consultation
+                Book on WhatsApp
               </Button>
               <Button variant="outline" className="gap-2">
                 <Phone className="h-4 w-4" />
