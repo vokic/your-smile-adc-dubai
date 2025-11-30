@@ -13,9 +13,9 @@ export function LanguageSwitcher({ isDark = false }: LanguageSwitcherProps) {
   const ref = useRef<HTMLDivElement>(null);
 
   const languages = [
-    { code: 'en' as const, label: 'English' },
-    { code: 'ru' as const, label: 'Русский' },
-    { code: 'de' as const, label: 'Deutsch' },
+    { code: 'en' as const, label: 'EN' },
+    { code: 'ru' as const, label: 'RU' },
+    { code: 'de' as const, label: 'DE' },
   ];
 
   useEffect(() => {
