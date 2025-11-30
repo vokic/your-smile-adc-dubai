@@ -1,176 +1,332 @@
-import { useState, useEffect } from "react";
-import { Star, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { ArrowRight, CheckCircle2, Star, MapPin, Phone, MessageCircle, Clock, CreditCard, ShieldCheck, ChevronLeft, ChevronRight } from "lucide-react";
+import { Link } from "wouter";
+import { useState } from "react";
+import { useLanguage } from "@/hooks/useLanguage";
+import { TestimonialCarousel } from "@/components/TestimonialCarousel";
+import { AnimatedStats } from "@/components/AnimatedStats";
+import { TrustBadges } from "@/components/TrustBadges";
+import { GoogleReviewsCarousel } from "@/components/GoogleReviewsCarousel";
 
-interface GoogleReview {
-  id: string;
-  text: string;
-  author: string;
-  initials: string;
-  verified?: boolean;
-}
-
-interface GoogleReviewsCarouselProps {
-  reviews?: GoogleReview[];
-  title?: string;
-  subtitle?: string;
-}
-
-export function GoogleReviewsCarousel({
-  reviews,
-  title = "★5.0 Google Reviews - Dental Clinic Dubai",
-  subtitle = "Trusted by hundreds of patients. Read our verified Google reviews."
-}: GoogleReviewsCarouselProps) {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isMobile, setIsMobile] = useState(false);
-
-  const defaultReviews: GoogleReview[] = [
-    {
-      id: "1",
-      text: "Best experience ever! The veneers look so natural. Highly recommend Dr. Sarah.",
-      author: "Google Patient",
-      initials: "GP",
-      verified: true
-    },
-    {
-      id: "2",
-      text: "Painless implant procedure. The team is so professional and kind.",
-      author: "Google Patient",
-      initials: "GP",
-      verified: true
-    },
-    {
-      id: "3",
-      text: "My kids actually love coming to the dentist now. Great pediatric care!",
-      author: "Google Patient",
-      initials: "GP",
-      verified: true
-    },
-    {
-      id: "4",
-      text: "Outstanding service! Invisalign treatment exceeded all my expectations.",
-      author: "Google Patient",
-      initials: "GP",
-      verified: true
-    },
-    {
-      id: "5",
-      text: "Dr. Nemanja is absolutely brilliant. Very professional and caring.",
-      author: "Google Patient",
-      initials: "GP",
-      verified: true
-    },
+export default function Home() {
+  const { t } = useLanguage();
+  const [currentSlide, setCurrentSlide] = useState(0);
+  
+  const beforeAfterSlides = [
+    { title: "Porcelain Veneers Transformation", before: "BEFORE VENEERS", after: "AFTER VENEERS" },
+    { title: "Dental Implants Restoration", before: "BEFORE IMPLANTS", after: "AFTER IMPLANTS" },
+    { title: "Invisalign Alignment", before: "BEFORE INVISALIGN", after: "AFTER INVISALIGN" },
+    { title: "Complete Smile Makeover", before: "BEFORE MAKEOVER", after: "AFTER MAKEOVER" },
   ];
 
-  const displayReviews = reviews || defaultReviews;
-  const itemsPerPage = isMobile ? 1 : 3;
-  const totalPages = Math.ceil(displayReviews.length / itemsPerPage);
-  const showArrows = displayReviews.length > 3;
-
-  useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth < 768);
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
   const handlePrev = () => {
-    setCurrentIndex((prev) => (prev > 0 ? prev - 1 : totalPages - 1));
+    setCurrentSlide(prev => (prev > 0 ? prev - 1 : beforeAfterSlides.length - 1));
   };
 
   const handleNext = () => {
-    setCurrentIndex((prev) => (prev + 1) % totalPages);
+    setCurrentSlide(prev => (prev < beforeAfterSlides.length - 1 ? prev + 1 : 0));
   };
 
-  const getVisibleReviews = () => {
-    const start = currentIndex * itemsPerPage;
-    return displayReviews.slice(start, start + itemsPerPage);
-  };
-
-  const visibleReviews = getVisibleReviews();
-
+  const current = beforeAfterSlides[currentSlide];
   return (
-    <section className="py-24 bg-secondary text-secondary-foreground relative overflow-hidden">
-      <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5 mix-blend-overlay"></div>
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="flex flex-col items-center text-center space-y-8 mb-12">
-          <div className="flex gap-1">
-            {[1, 2, 3, 4, 5].map((i) => (
-              <Star key={i} className="h-8 w-8 text-yellow-400 fill-current" />
+    <div className="flex flex-col min-h-screen">
+      {/* 1. Hero Section */}
+      <section className="relative min-h-[75vh] md:h-[85vh] w-full overflow-hidden bg-muted pt-10 md:pt-0">
+        <div className="absolute inset-0 flex items-center justify-center bg-muted text-muted-foreground/20 text-9xl font-bold select-none">
+          HERO IMAGE
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent" />
+        
+        <div className="container relative h-full mx-auto px-4 flex items-center py-12 md:py-0">
+          <div className="max-w-3xl space-y-8 animate-in fade-in slide-in-from-left-10 duration-700">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-white leading-tight drop-shadow-lg">
+              Trusted Dental Clinic in Dubai for <span className="text-primary italic">{t('home.heroTitleAccent')}</span>
+            </h1>
+            <h2 className="text-xl md:text-2xl text-gray-200 font-light max-w-2xl leading-relaxed">
+              {t('home.heroSubtitle')}
+            </h2>
+            <div className="pt-6">
+              <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 text-lg px-10 h-16 font-bold shadow-xl shadow-primary/20 transition-transform hover:scale-105 rounded-full">
+                <a href="https://wa.me/971585828257" target="_blank" rel="noopener noreferrer">
+                  {t('home.bookAppointment')}
+                </a>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 2. Animated Stats */}
+      <AnimatedStats 
+        title="Trusted by Thousands Across Dubai & UAE"
+        stats={[
+          { label: "Happy Patients", value: "500", suffix: "+" },
+          { label: "Years Experience", value: "15", suffix: "+" },
+          { label: "Success Rate", value: "95", suffix: "%" },
+          { label: "Treatments Completed", value: "5000", suffix: "+" }
+        ]}
+      />
+
+      {/* 3. Trust Badges */}
+      <TrustBadges title="Why We're Among Dubai's Best Dentists" bgColor="bg-background" />
+
+      {/* 4. Our Services */}
+      <section className="py-24 bg-secondary text-secondary-foreground">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+            <div className="max-w-2xl space-y-4">
+              <h2 className="text-3xl md:text-5xl font-serif font-bold text-white">Comprehensive Dental Services in Dubai</h2>
+              <p className="text-white/70 text-lg">World-class treatments designed for your health and beauty.</p>
+            </div>
+            <Button variant="outline" className="text-white border-white/20 hover:bg-white hover:text-secondary rounded-full" asChild>
+              <Link href="/services">Explore All Services</Link>
+            </Button>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              { title: "Veneers in Dubai", desc: "Achieve a flawless smile with natural-looking porcelain or composite veneers.", link: "/veneers" },
+              { title: "Dental Implants in Dubai", desc: "Restore missing teeth permanently with advanced implant systems.", link: "/implants" },
+              { title: "Orthodontics & Invisalign", desc: "Straighten your teeth discreetly with clear aligners.", link: "/orthodontics" },
+              { title: "Teeth Whitening in Dubai", desc: "Safe, fast, and effective whitening treatments.", link: "/whitening" },
+              { title: "Crowns & Bridges", desc: "Restore damaged or missing teeth with custom-made restorations.", link: "/crowns-bridges" },
+              { title: "Cosmetic Dentistry", desc: "Complete smile transformations combining multiple treatments.", link: "/cosmetic" },
+            ].map((service, i) => (
+              <Link key={i} href={service.link} className="group p-8 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-primary/50 transition-all duration-300 cursor-pointer">
+                <div className="flex justify-between items-start mb-4">
+                  <h3 className="text-xl font-bold text-primary group-hover:text-white transition-colors">{service.title}</h3>
+                  <ArrowRight className="h-5 w-5 text-white/30 group-hover:text-primary group-hover:translate-x-1 transition-all" />
+                </div>
+                <p className="text-white/70 leading-relaxed text-sm">{service.desc}</p>
+              </Link>
             ))}
           </div>
-          <div className="space-y-2">
-            <h2 className="text-3xl md:text-5xl font-serif font-bold text-white">{title}</h2>
-            <p className="text-white/80 text-lg max-w-2xl leading-relaxed mx-auto">{subtitle}</p>
-          </div>
         </div>
+      </section>
 
-        {/* Reviews Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full mb-8 max-w-5xl mx-auto">
-          {visibleReviews.map((review, idx) => (
-            <div
-              key={review.id}
-              className="bg-white/10 backdrop-blur p-8 rounded-xl border border-white/10 text-left hover:bg-white/15 transition-all animate-in fade-in slide-in-from-bottom-4"
-            >
-              <p className="italic text-white/90 mb-6 leading-relaxed">"{review.text}"</p>
-              <div className="flex items-center gap-3">
-                <div className="h-10 w-10 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold text-sm">
-                  {review.initials}
+      {/* 5. Before & After */}
+      <section className="py-24 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16 space-y-4 max-w-3xl mx-auto">
+            <h2 className="text-3xl md:text-5xl font-serif font-bold text-secondary">Smile Transformations</h2>
+            <p className="text-muted-foreground text-lg">Real results from real patients. Discover the impact of our treatments.</p>
+          </div>
+
+          <div className="max-w-4xl mx-auto">
+            <div className="space-y-6">
+              <div className="grid grid-cols-2 gap-4">
+                <div className="relative rounded-2xl overflow-hidden shadow-lg bg-muted h-72 md:h-96 lg:h-[480px] flex items-center justify-center border-2 border-secondary/20">
+                  <span className="text-muted-foreground font-bold text-sm">{current.before}</span>
+                  <div className="absolute top-4 left-4 bg-secondary text-white px-3 py-1 rounded-full text-xs font-bold">BEFORE</div>
                 </div>
-                <div>
-                  <p className="text-sm font-bold text-white">{review.author}</p>
-                  {review.verified && (
-                    <p className="text-xs text-green-400">✓ Verified Review</p>
-                  )}
+                
+                <div className="relative rounded-2xl overflow-hidden shadow-lg bg-muted h-72 md:h-96 lg:h-[480px] flex items-center justify-center border-2 border-primary/20">
+                  <span className="text-muted-foreground font-bold text-sm">{current.after}</span>
+                  <div className="absolute top-4 left-4 bg-primary text-white px-3 py-1 rounded-full text-xs font-bold">AFTER</div>
                 </div>
               </div>
+
+              <p className="text-center text-sm font-semibold text-primary">{current.title}</p>
+
+              <div className="flex items-center justify-center gap-6">
+                <Button onClick={handlePrev} size="sm" className="rounded-full bg-secondary hover:bg-secondary/90 text-white">
+                  <ChevronLeft className="h-4 w-4" />
+                </Button>
+
+                <div className="flex gap-1.5">
+                  {beforeAfterSlides.map((_, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => setCurrentSlide(idx)}
+                      className={`rounded-full transition-all ${
+                        currentSlide === idx ? "bg-primary h-2 w-8" : "bg-primary/30 hover:bg-primary/50 h-2 w-2"
+                      }`}
+                    />
+                  ))}
+                </div>
+
+                <Button onClick={handleNext} size="sm" className="rounded-full bg-secondary hover:bg-secondary/90 text-white">
+                  <ChevronRight className="h-4 w-4" />
+                </Button>
+              </div>
+
+              <div className="text-center pt-4">
+                <Button size="lg" className="bg-primary text-white hover:bg-primary/90 rounded-full font-semibold" asChild>
+                  <Link href="/gallery">View Full Gallery</Link>
+                </Button>
+              </div>
             </div>
-          ))}
+          </div>
         </div>
+      </section>
 
-        {/* Navigation Arrows - Only show if more than 3 items */}
-        {showArrows && (
-          <div className="flex items-center justify-center gap-4 mb-8">
-            <Button
-              onClick={handlePrev}
-              size="icon"
-              className="rounded-full bg-white/10 border border-white/20 text-white hover:bg-white hover:text-secondary transition-all"
-            >
-              <ChevronLeft className="h-5 w-5" />
-            </Button>
+      {/* 6. Our Doctors */}
+      <section className="py-24 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+            <h2 className="text-3xl md:text-5xl font-serif font-bold text-secondary">Meet Our Expert Dentists in Dubai</h2>
+            <p className="text-muted-foreground text-lg">Our team of internationally trained dentists specializes in cosmetic dentistry, dental implants, orthodontics, and family care.</p>
+          </div>
 
-            <div className="flex gap-2">
-              {Array.from({ length: totalPages }).map((_, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => setCurrentIndex(idx)}
-                  className={`h-2 rounded-full transition-all ${
-                    idx === currentIndex ? "bg-yellow-400 w-8" : "bg-white/30 hover:bg-white/50 w-2"
-                  }`}
-                  aria-label={`Go to reviews page ${idx + 1}`}
-                />
-              ))}
-            </div>
-
-            <Button
-              onClick={handleNext}
-              size="icon"
-              className="rounded-full bg-white/10 border border-white/20 text-white hover:bg-white hover:text-secondary transition-all"
-            >
-              <ChevronRight className="h-5 w-5" />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            {[
+              { name: "Dr. Sarah Johnson", role: "Cosmetic Specialist" },
+              { name: "Dr. Michael Chen", role: "Implantologist" },
+              { name: "Dr. Emily Roberts", role: "Orthodontist" },
+            ].map((doc, i) => (
+              <div key={i} className="group bg-background rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-border">
+                <div className="aspect-[4/5] overflow-hidden bg-muted flex items-center justify-center">
+                  <span className="text-muted-foreground font-medium">DOCTOR IMAGE</span>
+                </div>
+                <div className="p-6 text-center">
+                  <h3 className="text-xl font-bold text-secondary mb-1">{doc.name}</h3>
+                  <p className="text-primary font-medium text-sm uppercase tracking-wider">{doc.role}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          
+          <div className="text-center">
+            <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold px-10 rounded-full">
+              <a href="https://wa.me/971585828257" target="_blank" rel="noopener noreferrer">
+                Book Your Appointment
+              </a>
             </Button>
           </div>
-        )}
+        </div>
+      </section>
 
-        {/* Page Counter */}
-        {showArrows && (
-          <p className="text-center text-white/60 text-sm">
-            {isMobile
-              ? `${currentIndex + 1} of ${totalPages}`
-              : `Showing ${currentIndex * itemsPerPage + 1}-${Math.min((currentIndex + 1) * itemsPerPage, displayReviews.length)} of ${displayReviews.length}`}
+      {/* 7. Patient Testimonials Carousel */}
+      <TestimonialCarousel />
+
+      {/* 8. Google Reviews Carousel */}
+      <GoogleReviewsCarousel 
+        reviews={[
+          { id: "1", text: "Best experience ever! The veneers look so natural. Highly recommend Dr. Sarah.", author: "Google Patient", initials: "GP", verified: true },
+          { id: "2", text: "Painless implant procedure. The team is so professional and kind.", author: "Google Patient", initials: "GP", verified: true },
+          { id: "3", text: "My kids actually love coming to the dentist now. Great pediatric care!", author: "Google Patient", initials: "GP", verified: true },
+          { id: "4", text: "Outstanding service! Invisalign treatment exceeded all my expectations.", author: "Google Patient", initials: "GP", verified: true },
+          { id: "5", text: "Dr. Nemanja is absolutely brilliant. Very professional and caring.", author: "Google Patient", initials: "GP", verified: true },
+        ]}
+        title="★5.0 Google Reviews - Dental Clinic Dubai"
+        subtitle="Our dental clinic in Dubai is rated ★5.0 on Google, trusted by patients for veneers, implants, Invisalign, and family care."
+      />
+
+      {/* 9. Insurance & Payment */}
+      <section className="py-24 bg-background">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary mb-6">Dental Insurance & Flexible Payment Plans in Dubai</h2>
+          <p className="text-muted-foreground text-lg max-w-3xl mx-auto mb-12">
+            We accept major UAE dental insurance providers and offer flexible installment plans for cosmetic treatments.
           </p>
-        )}
-      </div>
-    </section>
+          
+          <div className="flex flex-wrap justify-center gap-8 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+            <div className="flex items-center gap-2 text-xl font-bold text-secondary border px-6 py-3 rounded-full">
+              <CreditCard className="h-6 w-6" /> Tabby
+            </div>
+            <div className="flex items-center gap-2 text-xl font-bold text-secondary border px-6 py-3 rounded-full">
+              <CreditCard className="h-6 w-6" /> Tamara
+            </div>
+            <div className="flex items-center gap-2 text-xl font-bold text-secondary border px-6 py-3 rounded-full">
+              <ShieldCheck className="h-6 w-6" /> AXA
+            </div>
+            <div className="flex items-center gap-2 text-xl font-bold text-secondary border px-6 py-3 rounded-full">
+              <ShieldCheck className="h-6 w-6" /> MetLife
+            </div>
+            <div className="flex items-center gap-2 text-xl font-bold text-secondary border px-6 py-3 rounded-full">
+              <ShieldCheck className="h-6 w-6" /> NextCare
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 10. Blog Section with "View All Articles" Button */}
+      <section className="py-24 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-16 gap-6">
+            <div className="space-y-4 flex-1">
+              <h2 className="text-3xl md:text-5xl font-serif font-bold text-secondary">Dental Health Insights & Tips</h2>
+              <p className="text-muted-foreground text-lg">Read our latest articles about dental care, smile transformations, and oral health.</p>
+            </div>
+            <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full font-bold whitespace-nowrap">
+              <Link href="/blog">View All Articles</Link>
+            </Button>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              { title: "5 Tips for Maintaining Your Veneers", date: "Nov 28, 2024", category: "Cosmetic Care" },
+              { title: "Dental Implants: A Lifetime Investment", date: "Nov 25, 2024", category: "Implants" },
+              { title: "Invisalign vs Traditional Braces", date: "Nov 22, 2024", category: "Orthodontics" },
+            ].map((article, i) => (
+              <div key={i} className="bg-card rounded-xl p-6 border border-border hover:shadow-lg transition-all group cursor-pointer">
+                <div className="mb-4">
+                  <span className="inline-block text-xs font-bold text-primary bg-primary/10 px-3 py-1 rounded-full">
+                    {article.category}
+                  </span>
+                </div>
+                <h3 className="text-xl font-bold text-secondary mb-3 group-hover:text-primary transition-colors">
+                  {article.title}
+                </h3>
+                <p className="text-xs text-muted-foreground">{article.date}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 11. Locations & Contact */}
+      <section className="py-24 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 rounded-3xl overflow-hidden bg-white shadow-xl border border-border">
+            <div className="p-8 md:p-12 space-y-8">
+              <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary">Find Our Dental Clinic in Dubai</h2>
+              <p className="text-muted-foreground text-lg">Conveniently located in Dubai with easy access, free parking, and nearby metro stations.</p>
+              
+              <div className="space-y-6">
+                <div className="flex items-start gap-4">
+                  <MapPin className="h-6 w-6 text-primary shrink-0 mt-1" />
+                  <div>
+                    <h4 className="font-bold text-secondary">Address</h4>
+                    <p className="text-muted-foreground">HDS Business Centre, Jumeirah Lake Towers, Dubai, UAE</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <Clock className="h-6 w-6 text-primary shrink-0 mt-1" />
+                  <div>
+                    <h4 className="font-bold text-secondary">Working Hours</h4>
+                    <p className="text-muted-foreground">Mon – Sat: 9:00 AM – 9:00 PM <br/> Sun: Closed</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <Phone className="h-6 w-6 text-primary shrink-0 mt-1" />
+                  <div>
+                    <h4 className="font-bold text-secondary">Contact</h4>
+                    <p className="text-muted-foreground">+971 58 828 2432</p>
+                    <p className="text-muted-foreground">info@yoursmileadcdubai.com</p>
+                  </div>
+                </div>
+              </div>
+
+              <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full font-bold" asChild>
+                <Link href="/contact">Send us a Message</Link>
+              </Button>
+            </div>
+
+            <div className="h-[400px] rounded-2xl overflow-hidden">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3611.0524823!2d55.14507!3d25.08543!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f6c8f8f8f8f%3A0x12345678!2sHDS%20Business%20Centre%2C%20Jumeirah%20Lake%20Towers%2C%20Dubai!5e0!3m2!1sen!2sae!4v1700000000000" 
+                width="100%" 
+                height="100%" 
+                style={{ border: 0 }} 
+                allowFullScreen
+                loading="lazy" 
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
   );
 }
