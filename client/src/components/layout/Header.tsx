@@ -97,11 +97,11 @@ export function Header() {
                       <div className="text-sm font-medium">Orthodontics</div>
                       <p className="text-xs text-muted-foreground">Braces & clear aligners</p>
                     </Link>
-                    <Link href="/gallery" className="group block select-none space-y-1 rounded-xl p-3 leading-none no-underline outline-none transition-colors text-foreground hover:text-primary hover:bg-transparent cursor-pointer md:col-span-2 border-t pt-3">
+                    <Link href="/gallery" className="group block select-none space-y-1 rounded-xl p-3 leading-none no-underline outline-none transition-colors text-foreground hover:text-primary hover:bg-transparent cursor-pointer border-t pt-3">
                       <div className="text-sm font-medium text-primary">✨ Smile Transformation Gallery</div>
                       <p className="text-xs text-muted-foreground">Before & after results</p>
                     </Link>
-                    <Link href="/dental-tourism" className="group block select-none space-y-1 rounded-xl p-3 leading-none no-underline outline-none transition-colors text-foreground hover:text-primary hover:bg-transparent cursor-pointer md:col-span-2 border-t pt-3">
+                    <Link href="/dental-tourism" className="group block select-none space-y-1 rounded-xl p-3 leading-none no-underline outline-none transition-colors text-foreground hover:text-primary hover:bg-transparent cursor-pointer border-t pt-3">
                       <div className="text-sm font-medium text-primary">✈️ Dental Tourism Packages</div>
                       <p className="text-xs text-muted-foreground">All-inclusive international smile packages</p>
                     </Link>
