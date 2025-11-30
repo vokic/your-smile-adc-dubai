@@ -131,7 +131,7 @@ export default function Services() {
                 <div className="space-y-3">
                   {category.items.map((item, j) => (
                     <Link key={j} href={item.href}>
-                      <a className="block p-4 bg-white rounded-lg border border-border shadow-sm hover:shadow-md hover:border-primary/50 transition-all group">
+                      <a className="block p-4 bg-white rounded-2xl border border-border shadow-sm hover:shadow-md hover:border-primary/50 transition-all group">
                         <div className="flex justify-between items-start">
                           <h4 className="font-bold text-secondary group-hover:text-primary transition-colors">{item.name}</h4>
                           <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-transform" />
