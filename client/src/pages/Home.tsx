@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, CheckCircle2, Star, MapPin, Phone, MessageCircle, Clock, CreditCard, ShieldCheck, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowRight, CheckCircle2, Star, MapPin, Phone, MessageCircle, Clock, CreditCard, ShieldCheck } from "lucide-react";
 import { Link } from "wouter";
-import { useState } from "react";
 import { useLanguage } from "@/hooks/useLanguage";
 import { TestimonialCarousel } from "@/components/TestimonialCarousel";
 import { AnimatedStats } from "@/components/AnimatedStats";
@@ -10,24 +9,7 @@ import { GoogleReviewsCarousel } from "@/components/GoogleReviewsCarousel";
 
 export default function Home() {
   const { t } = useLanguage();
-  const [currentSlide, setCurrentSlide] = useState(0);
   
-  const beforeAfterSlides = [
-    { title: "Porcelain Veneers Transformation", before: "BEFORE VENEERS", after: "AFTER VENEERS", story: "Sarah's discolored and chipped teeth were holding her back. With 8 porcelain veneers, she achieved a naturally bright smile in just 3 visits. Result: Confidence restored, 10+ years durability.", duration: "3 weeks", procedure: "Porcelain Veneers" },
-    { title: "Dental Implants Restoration", before: "BEFORE IMPLANTS", after: "AFTER IMPLANTS", story: "Ahmed lost a tooth in an accident. A single dental implant with crown restored his smile and functionality. Now he smiles confidently without worrying about slipping or gaps.", duration: "6 months", procedure: "Dental Implant + Crown" },
-    { title: "Invisalign Alignment", before: "BEFORE INVISALIGN", after: "AFTER INVISALIGN", story: "Layla had crowded teeth but wanted a discreet solution. 18 months of Invisalign gave her perfectly aligned teeth without anyone noticing. Clear, comfortable, effective.", duration: "18 months", procedure: "Invisalign Clear Aligners" },
-    { title: "Complete Smile Makeover", before: "BEFORE MAKEOVER", after: "AFTER MAKEOVER", story: "Omar combined 6 veneers, professional whitening, and gum contouring for a Hollywood-level smile. From shy to show-stopping in 8 weeks. Complete transformation with natural results.", duration: "8 weeks", procedure: "Veneers + Whitening + Contouring" },
-  ];
-
-  const handlePrev = () => {
-    setCurrentSlide(prev => (prev > 0 ? prev - 1 : beforeAfterSlides.length - 1));
-  };
-
-  const handleNext = () => {
-    setCurrentSlide(prev => (prev < beforeAfterSlides.length - 1 ? prev + 1 : 0));
-  };
-
-  const current = beforeAfterSlides[currentSlide];
   return (
     <div className="flex flex-col min-h-screen">
       {/* 1. Hero Section */}
@@ -112,73 +94,15 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 5. Before & After */}
+      {/* 5. Call to View Gallery */}
       <section className="py-24 bg-background">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16 space-y-4 max-w-3xl mx-auto">
+          <div className="max-w-4xl mx-auto text-center space-y-6">
             <h2 className="text-3xl md:text-5xl font-serif font-bold text-secondary">Smile Transformations</h2>
-            <p className="text-muted-foreground text-lg">Real results from real patients. Discover the impact of our treatments.</p>
-          </div>
-
-          <div className="max-w-4xl mx-auto">
-            <div className="space-y-6">
-              <div className="grid grid-cols-2 gap-4">
-                <div className="relative rounded-2xl overflow-hidden shadow-lg bg-muted h-72 md:h-96 lg:h-[480px] flex items-center justify-center border-2 border-secondary/20">
-                  <span className="text-muted-foreground font-bold text-sm">{current.before}</span>
-                  <div className="absolute top-4 left-4 bg-secondary text-white px-3 py-1 rounded-full text-xs font-bold">BEFORE</div>
-                </div>
-                
-                <div className="relative rounded-2xl overflow-hidden shadow-lg bg-muted h-72 md:h-96 lg:h-[480px] flex items-center justify-center border-2 border-primary/20">
-                  <span className="text-muted-foreground font-bold text-sm">{current.after}</span>
-                  <div className="absolute top-4 left-4 bg-primary text-white px-3 py-1 rounded-full text-xs font-bold">AFTER</div>
-                </div>
-              </div>
-
-              <div className="text-center space-y-3">
-                <p className="text-sm font-semibold text-primary">{current.title}</p>
-                <div className="bg-primary/5 rounded-lg p-4 border border-primary/20">
-                  <p className="text-sm text-secondary leading-relaxed mb-3">{current.story}</p>
-                  <div className="flex flex-wrap gap-4 justify-center text-xs font-medium">
-                    <div className="flex items-center gap-1 text-primary">
-                      <span className="font-bold">Procedure:</span>
-                      <span className="text-secondary">{current.procedure}</span>
-                    </div>
-                    <div className="flex items-center gap-1 text-secondary">
-                      <span className="font-bold">Duration:</span>
-                      <span>{current.duration}</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="flex items-center justify-center gap-6">
-                <Button onClick={handlePrev} size="sm" className="rounded-full bg-secondary hover:bg-secondary/90 text-white">
-                  <ChevronLeft className="h-4 w-4" />
-                </Button>
-
-                <div className="flex gap-1.5">
-                  {beforeAfterSlides.map((_, idx) => (
-                    <button
-                      key={idx}
-                      onClick={() => setCurrentSlide(idx)}
-                      className={`rounded-full transition-all ${
-                        currentSlide === idx ? "bg-primary h-2 w-8" : "bg-primary/30 hover:bg-primary/50 h-2 w-2"
-                      }`}
-                    />
-                  ))}
-                </div>
-
-                <Button onClick={handleNext} size="sm" className="rounded-full bg-secondary hover:bg-secondary/90 text-white">
-                  <ChevronRight className="h-4 w-4" />
-                </Button>
-              </div>
-
-              <div className="text-center pt-4">
-                <Button size="lg" className="bg-primary text-white hover:bg-primary/90 rounded-full font-semibold" asChild>
-                  <Link href="/gallery">View Full Gallery</Link>
-                </Button>
-              </div>
-            </div>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">Real results from real patients with detailed case stories. Discover the impact of our treatments and see how we've transformed hundreds of smiles.</p>
+            <Button size="lg" className="bg-primary text-white hover:bg-primary/90 rounded-full font-semibold" asChild>
+              <Link href="/gallery">Explore Full Transformation Gallery</Link>
+            </Button>
           </div>
         </div>
       </section>
