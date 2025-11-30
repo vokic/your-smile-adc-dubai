@@ -13,9 +13,9 @@ export function LanguageSwitcher({ isDark = false }: LanguageSwitcherProps) {
   const ref = useRef<HTMLDivElement>(null);
 
   const languages = [
-    { code: 'en' as const, label: 'EN' },
-    { code: 'ru' as const, label: 'RU' },
-    { code: 'de' as const, label: 'DE' },
+    { code: 'en' as const, label: 'EN', fullName: 'English' },
+    { code: 'ru' as const, label: 'RU', fullName: 'Русский' },
+    { code: 'de' as const, label: 'DE', fullName: 'Deutsch' },
   ];
 
   useEffect(() => {
@@ -70,7 +70,7 @@ export function LanguageSwitcher({ isDark = false }: LanguageSwitcherProps) {
               }`}
               data-testid={`button-lang-${lang.code}`}
             >
-              {lang.label}
+              {lang.fullName}
             </button>
           ))}
         </div>
