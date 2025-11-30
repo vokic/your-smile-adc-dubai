@@ -49,7 +49,7 @@ export function Header() {
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <NavigationMenuTrigger className="text-sm font-medium hover:text-primary hover:bg-transparent transition-colors px-2 py-1">Services</NavigationMenuTrigger>
-                <NavigationMenuContent className="left-0 top-0 w-[400px] p-4 md:w-[700px]">
+                <NavigationMenuContent className="left-0 top-0 w-[400px] p-4 md:w-[700px] bg-white/95 backdrop-blur">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                     <Link href="/veneers" className="group block select-none space-y-1 rounded-xl p-3 leading-none no-underline outline-none transition-colors text-foreground hover:text-primary hover:bg-transparent cursor-pointer">
                       <div className="text-sm font-medium">Veneers</div>
