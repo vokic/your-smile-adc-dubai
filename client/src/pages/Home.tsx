@@ -103,7 +103,7 @@ export default function Home() {
               <p className="text-white/70 text-lg">World-class treatments designed for your health and beauty.</p>
             </div>
             <Button variant="outline" className="text-white border-white/20 hover:bg-white hover:text-secondary rounded-full rounded-full" asChild>
-              <Link href="#">Explore All Services</Link>
+              <Link href="/services">Explore All Services</Link>
             </Button>
           </div>
 

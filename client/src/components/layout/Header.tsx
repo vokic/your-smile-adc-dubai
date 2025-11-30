@@ -27,6 +27,7 @@ export function Header() {
     { name: "Dental Surgery", path: "/dental-surgery" },
     { name: "Cosmetic Dentistry", path: "/cosmetic" },
     { name: "General & Preventive", path: "/general-preventive" },
+    { name: "Dental Tourism", path: "/services" },
   ];
 
   return (
@@ -50,6 +51,11 @@ export function Header() {
               <NavigationMenuItem>
                 <NavigationMenuTrigger className="text-sm font-medium text-foreground hover:text-primary !bg-transparent !hover:bg-transparent data-[state=open]:!bg-transparent transition-colors px-2 py-1">Services</NavigationMenuTrigger>
                 <NavigationMenuContent className="left-0 top-0 w-[400px] p-4 md:w-[700px] bg-white/95 backdrop-blur">
+                  <div className="mb-4 pb-4 border-b border-border">
+                    <Link href="/services" className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-primary/10 hover:bg-primary/20 transition-colors text-primary font-semibold text-sm">
+                      View All Services →
+                    </Link>
+                  </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                     <Link href="/veneers" className="group block select-none space-y-1 rounded-xl p-3 leading-none no-underline outline-none transition-colors text-foreground hover:text-primary hover:bg-transparent cursor-pointer">
                       <div className="text-sm font-medium">Veneers</div>
@@ -94,6 +100,10 @@ export function Header() {
                     <Link href="/gallery" className="group block select-none space-y-1 rounded-xl p-3 leading-none no-underline outline-none transition-colors text-foreground hover:text-primary hover:bg-transparent cursor-pointer md:col-span-2 border-t pt-3">
                       <div className="text-sm font-medium text-primary">✨ Smile Transformation Gallery</div>
                       <p className="text-xs text-muted-foreground">Before & after results</p>
+                    </Link>
+                    <Link href="/services" className="group block select-none space-y-1 rounded-xl p-3 leading-none no-underline outline-none transition-colors text-foreground hover:text-primary hover:bg-transparent cursor-pointer md:col-span-2 border-t pt-3">
+                      <div className="text-sm font-medium text-primary">✈️ Dental Tourism Packages</div>
+                      <p className="text-xs text-muted-foreground">All-inclusive international smile packages</p>
                     </Link>
                   </div>
                 </NavigationMenuContent>

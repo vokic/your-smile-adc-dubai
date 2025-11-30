@@ -9,15 +9,15 @@ export default function Services() {
       title: "Cosmetic Dentistry",
       items: [
         { name: "Veneers", desc: "Achieve a flawless smile with porcelain or composite veneers.", href: "/veneers" },
-        { name: "Teeth Whitening", desc: "Brighten your smile safely and effectively.", href: "#" },
-        { name: "Smile Makeover", desc: "Transform your entire smile with customized treatments.", href: "#" }
+        { name: "Teeth Whitening", desc: "Brighten your smile safely and effectively.", href: "/whitening" },
+        { name: "Smile Makeover", desc: "Transform your entire smile with customized treatments.", href: "/cosmetic" }
       ]
     },
     {
       title: "Restorative Dentistry",
       items: [
-        { name: "Dental Implants", desc: "Permanent replacements for missing teeth.", href: "#" },
-        { name: "Crowns & Bridges", desc: "Strengthen damaged teeth and replace missing ones.", href: "#" },
+        { name: "Dental Implants", desc: "Permanent replacements for missing teeth.", href: "/implants" },
+        { name: "Crowns & Bridges", desc: "Strengthen damaged teeth and replace missing ones.", href: "/crowns-bridges" },
         { name: "Expert Dental Surgery", desc: "Wisdom tooth extraction, gum surgery, bone grafting.", href: "/dental-surgery" }
       ]
     },
@@ -31,21 +31,29 @@ export default function Services() {
     {
       title: "Preventive Dentistry",
       items: [
-        { name: "Routine Check-Ups", desc: "Regular exams to maintain oral health.", href: "#" },
-        { name: "Professional Cleanings", desc: "Scaling & polishing for healthy gums and fresh breath.", href: "#" },
-        { name: "Gum Disease Treatment", desc: "Early detection and therapy for healthy gums.", href: "#" }
+        { name: "Routine Check-Ups", desc: "Regular exams to maintain oral health.", href: "/general-preventive" },
+        { name: "Professional Cleanings", desc: "Scaling & polishing for healthy gums and fresh breath.", href: "/general-preventive" },
+        { name: "Gum Disease Treatment", desc: "Early detection and therapy for healthy gums.", href: "/general-preventive" }
       ]
     },
     {
       title: "Specialized Diagnostics",
       items: [
-        { name: "Digital X-Ray & OPG", desc: "Low-radiation imaging for accurate treatment planning.", href: "#" }
+        { name: "Digital X-Ray & OPG", desc: "Low-radiation imaging for accurate treatment planning.", href: "/xray-opg" }
+      ]
+    },
+    {
+      title: "Dental Tourism",
+      items: [
+        { name: "All-Inclusive Smile Packages", desc: "Complete treatment plans with accommodation and travel assistance for international patients.", href: "#" },
+        { name: "VIP Patient Experience", desc: "Personalized care, flexible scheduling, and professional translation services.", href: "#" },
+        { name: "Medical Tourism Coordination", desc: "Seamless coordination with hotels, transportation, and post-treatment support.", href: "#" }
       ]
     },
     {
       title: "Emergency Dentistry",
       items: [
-        { name: "24/7 Emergency Care", desc: "Immediate relief for toothaches, injuries, and trauma.", href: "#" }
+        { name: "24/7 Emergency Care", desc: "Immediate relief for toothaches, injuries, and trauma.", href: "/emergency" }
       ]
     }
   ];
@@ -117,26 +125,27 @@ export default function Services() {
       </section>
 
       {/* 3. Our Services Overview */}
-      <section className="py-24 bg-muted/30">
+      <section className="py-32 bg-muted/30">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-serif font-bold text-secondary mb-4">Explore Our Dental Treatments in Dubai</h2>
+          <div className="text-center mb-20 space-y-6">
+            <h2 className="text-3xl md:text-5xl font-serif font-bold text-secondary">Explore Our Dental Treatments in Dubai</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">From cosmetic enhancements to restorative procedures and specialized dental tourism packages, we offer comprehensive solutions for every smile.</p>
             <div className="h-1 w-24 bg-primary mx-auto rounded-full" />
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             {serviceCategories.map((category, i) => (
-              <div key={i} className="space-y-4">
-                <h3 className="text-xl font-bold text-primary border-b border-primary/20 pb-2">{category.title}</h3>
-                <div className="space-y-3">
+              <div key={i} className="space-y-5 p-8 bg-white rounded-2xl border border-border/50 hover:border-primary/30 hover:shadow-lg transition-all h-full">
+                <h3 className="text-xl font-bold text-primary border-b border-primary/20 pb-3">{category.title}</h3>
+                <div className="space-y-4">
                   {category.items.map((item, j) => (
                     <Link key={j} href={item.href}>
-                      <a className="block p-4 bg-white rounded-2xl border border-border shadow-sm hover:shadow-md hover:border-primary/50 transition-all group">
+                      <a className="block p-4 rounded-xl border border-border/50 hover:border-primary/50 hover:bg-primary/5 transition-all group">
                         <div className="flex justify-between items-start">
-                          <h4 className="font-bold text-secondary group-hover:text-primary transition-colors">{item.name}</h4>
-                          <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-transform" />
+                          <h4 className="font-semibold text-secondary group-hover:text-primary transition-colors">{item.name}</h4>
+                          <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-transform shrink-0 mt-0.5" />
                         </div>
-                        <p className="text-sm text-muted-foreground mt-1">{item.desc}</p>
+                        <p className="text-sm text-muted-foreground mt-2 leading-relaxed">{item.desc}</p>
                       </a>
                     </Link>
                   ))}
