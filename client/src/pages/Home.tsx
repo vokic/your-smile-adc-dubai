@@ -1,9 +1,28 @@
 
 import { Button } from "@/components/ui/button";
-import { ArrowRight, CheckCircle2, Star, MapPin, Phone, MessageCircle, Clock, CreditCard, ShieldCheck } from "lucide-react";
+import { ArrowRight, CheckCircle2, Star, MapPin, Phone, MessageCircle, Clock, CreditCard, ShieldCheck, ChevronLeft, ChevronRight } from "lucide-react";
 import { Link } from "wouter";
+import { useState } from "react";
 
 export default function Home() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  
+  const beforeAfterSlides = [
+    { title: "Porcelain Veneers Transformation", before: "BEFORE VENEERS", after: "AFTER VENEERS" },
+    { title: "Dental Implants Restoration", before: "BEFORE IMPLANTS", after: "AFTER IMPLANTS" },
+    { title: "Invisalign Alignment", before: "BEFORE INVISALIGN", after: "AFTER INVISALIGN" },
+    { title: "Complete Smile Makeover", before: "BEFORE MAKEOVER", after: "AFTER MAKEOVER" },
+  ];
+
+  const handlePrev = () => {
+    setCurrentSlide(prev => (prev > 0 ? prev - 1 : beforeAfterSlides.length - 1));
+  };
+
+  const handleNext = () => {
+    setCurrentSlide(prev => (prev < beforeAfterSlides.length - 1 ? prev + 1 : 0));
+  };
+
+  const current = beforeAfterSlides[currentSlide];
   return (
     <div className="flex flex-col min-h-screen">
       {/* 1. Hero Section */}
@@ -170,10 +189,62 @@ export default function Home() {
                 </Button>
               </div>
             </div>
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white rotate-1 hover:rotate-0 transition-transform duration-500 bg-muted aspect-square flex items-center justify-center">
-               <span className="text-muted-foreground font-bold text-xl">BEFORE / AFTER IMAGE</span>
-              <div className="absolute bottom-6 left-6 bg-white/90 backdrop-blur px-4 py-2 rounded-md text-sm font-bold text-secondary shadow-lg">
-                Porcelain Veneers Transformation
+            <div className="space-y-6">
+              {/* Carousel Images */}
+              <div className="grid grid-cols-2 gap-4">
+                {/* Before */}
+                <div className="relative rounded-xl overflow-hidden shadow-lg border-4 border-red-200 bg-muted h-64 flex items-center justify-center">
+                  <span className="text-muted-foreground font-bold">{current.before}</span>
+                  <div className="absolute top-3 left-3 bg-red-500 text-white px-2 py-1 rounded text-xs font-bold">BEFORE</div>
+                </div>
+                
+                {/* After */}
+                <div className="relative rounded-xl overflow-hidden shadow-lg border-4 border-green-200 bg-muted h-64 flex items-center justify-center">
+                  <span className="text-muted-foreground font-bold">{current.after}</span>
+                  <div className="absolute top-3 left-3 bg-green-600 text-white px-2 py-1 rounded text-xs font-bold">AFTER</div>
+                </div>
+              </div>
+
+              {/* Carousel Label */}
+              <div className="bg-primary/10 border border-primary/20 rounded-lg p-4 text-center">
+                <p className="text-sm font-semibold text-primary">{current.title}</p>
+              </div>
+
+              {/* Navigation Controls */}
+              <div className="flex items-center justify-between">
+                <Button
+                  onClick={handlePrev}
+                  variant="outline"
+                  size="sm"
+                  className="gap-2"
+                >
+                  <ChevronLeft className="h-4 w-4" />
+                  Prev
+                </Button>
+
+                <div className="flex gap-2">
+                  {beforeAfterSlides.map((_, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => setCurrentSlide(idx)}
+                      className={`h-2 rounded-full transition-all ${
+                        currentSlide === idx
+                          ? "bg-primary w-6"
+                          : "bg-border hover:bg-primary/50"
+                      }`}
+                    />
+                  ))}
+                </div>
+
+                <Button
+                  onClick={handleNext}
+                  variant="outline"
+                  size="sm"
+                  className="gap-2"
+                >
+                  Next
+                  <ChevronRight className="h-4 w-4" />
+                </Button>
               </div>
             </div>
           </div>
