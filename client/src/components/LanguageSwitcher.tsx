@@ -36,11 +36,10 @@ export function LanguageSwitcher({ isDark = false }: LanguageSwitcherProps) {
   return (
     <div className="relative" ref={ref}>
       <Button
-        size="sm"
         onClick={() => setIsOpen(!isOpen)}
-        className={`gap-2 rounded-full ${
+        className={`gap-2 rounded-full px-6 py-2.5 h-auto font-semibold ${
           isDark 
-            ? 'bg-white/20 text-white hover:bg-white/30 border border-white/20' 
+            ? 'bg-white/25 text-white hover:bg-white/40 border-2 border-white/40 backdrop-blur-sm' 
             : 'bg-background border border-border text-foreground hover:bg-muted'
         }`}
         data-testid="button-language-toggle"

@@ -43,13 +43,15 @@ export default function Home() {
             <h2 className="text-xl md:text-2xl text-gray-200 font-light max-w-2xl leading-relaxed">
               {t('home.heroSubtitle')}
             </h2>
-            <div className="pt-6 flex flex-col sm:flex-row gap-4 items-start">
-              <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 text-lg px-10 h-16 font-bold shadow-xl shadow-primary/20 transition-transform hover:scale-105 rounded-full rounded-full">
+            <div className="pt-6 flex flex-col sm:flex-row gap-4 items-center sm:items-start">
+              <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 text-lg px-10 h-16 font-bold shadow-xl shadow-primary/20 transition-transform hover:scale-105 rounded-full">
                 <a href="https://wa.me/971585828257" target="_blank" rel="noopener noreferrer">
                   {t('home.bookAppointment')}
                 </a>
               </Button>
-              <LanguageSwitcher isDark={true} />
+              <div className="h-16 flex items-center">
+                <LanguageSwitcher isDark={true} />
+              </div>
             </div>
           </div>
         </div>
