@@ -1,0 +1,27 @@
+User-agent: *
+Allow: /
+Allow: /veneers
+Allow: /implants
+Allow: /orthodontics
+Allow: /whitening
+Allow: /crowns-bridges
+Allow: /xray-opg
+Allow: /dental-surgery
+Allow: /cosmetic
+Allow: /general-preventive
+Allow: /emergency
+Allow: /blog
+Allow: /gallery
+Allow: /about
+Allow: /doctors
+Allow: /faq
+Allow: /contact
+
+Disallow: /admin
+Disallow: /private
+Disallow: /api/
+
+Sitemap: https://yoursmileadvanceddental.ae/sitemap.xml
+Sitemap: https://yoursmileadvanceddental.ae/sitemap-blog.xml
+
+Crawl-delay: 1
