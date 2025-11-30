@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { MessageCircle, Phone, CheckCircle2, Star, ChevronDown } from "lucide-react";
 import { useState } from "react";
 import { ProcedureSteps } from "@/components/ProcedureSteps";
+import { TestimonialsGallery } from "@/components/TestimonialsGallery";
 
 export default function Veneers() {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
@@ -155,24 +156,18 @@ export default function Veneers() {
         </div>
       </section>
 
-      {/* 5. Before & After Transformations */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary">Real Veneers Results in Dubai</h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto mt-4">
-              Nothing speaks louder than results. Explore real smile makeovers done by our cosmetic dentists - natural, stunning, and life-changing.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[1, 2, 3].map((item) => (
-              <div key={item} className="rounded-2xl overflow-hidden bg-muted border border-border h-[400px] flex items-center justify-center">
-                <span className="text-lg font-bold text-muted-foreground">VENEER RESULT {item}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* 5. Before & After Transformations & Video Testimonials */}
+      <TestimonialsGallery
+        beforeAfterItems={[
+          { id: "veneer-1", title: "Complete Smile Makeover", category: "Full Mouth Veneers" },
+          { id: "veneer-2", title: "Stain Correction", category: "Porcelain Veneers" },
+          { id: "veneer-3", title: "Gap & Alignment Fix", category: "Cosmetic Veneers" },
+        ]}
+        videoTestimonials={[
+          { id: "vid-1", title: "Life-Changing Transformation", patientName: "Fatima M." },
+          { id: "vid-2", title: "Confidence Restored", patientName: "Sarah A." },
+        ]}
+      />
 
       {/* 7. Trust Elements */}
       <section className="py-20 bg-secondary text-white">

@@ -3,6 +3,7 @@ import { MessageCircle, Phone, CheckCircle2, ChevronDown, Smile } from "lucide-r
 import { useState } from "react";
 import { ServiceComparison } from "@/components/ServiceComparison";
 import { ProcedureSteps } from "@/components/ProcedureSteps";
+import { TestimonialsGallery } from "@/components/TestimonialsGallery";
 
 export default function Orthodontics() {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
@@ -195,24 +196,18 @@ export default function Orthodontics() {
         </div>
       </section>
 
-      {/* Before & After */}
-      <section className="py-20 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary mb-4">Real Orthodontic Results</h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              See transformations achieved with braces and Invisalign for both teens and adults.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[1, 2, 3].map((item) => (
-              <div key={item} className="rounded-2xl overflow-hidden bg-muted border border-border h-[400px] flex items-center justify-center hover:shadow-lg transition-all">
-                <span className="text-lg font-bold text-muted-foreground">BEFORE & AFTER {item}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Before & After & Video Testimonials */}
+      <TestimonialsGallery
+        beforeAfterItems={[
+          { id: "ortho-1", title: "Severe Crowding Corrected", category: "Full Braces Treatment" },
+          { id: "ortho-2", title: "Invisalign Success", category: "Adult Alignment" },
+          { id: "ortho-3", title: "Bite Correction", category: "Overbite Fix" },
+        ]}
+        videoTestimonials={[
+          { id: "vid-1", title: "Teen Transformation with Braces", patientName: "Layla M." },
+          { id: "vid-2", title: "Adult Invisalign Journey", patientName: "Karim A." },
+        ]}
+      />
 
       {/* Invisalign Highlight */}
       <section className="py-20 bg-background">

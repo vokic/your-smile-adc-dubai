@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { MessageCircle, Phone, CheckCircle2, ChevronDown } from "lucide-react";
 import { useState } from "react";
 import { ProcedureSteps } from "@/components/ProcedureSteps";
+import { TestimonialsGallery } from "@/components/TestimonialsGallery";
 
 export default function Implants() {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
@@ -190,24 +191,18 @@ export default function Implants() {
         </div>
       </section>
 
-      {/* 5. Before & After Transformations */}
-      <section className="py-20 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary">Real Dental Implant Results in Dubai</h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto mt-4">
-              See how dental implants have restored confidence and function for our patients.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[1, 2, 3].map((item) => (
-              <div key={item} className="rounded-2xl overflow-hidden bg-muted border border-border h-[400px] flex items-center justify-center">
-                <span className="text-lg font-bold text-muted-foreground">IMPLANT RESULT {item}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* 5. Before & After Transformations & Video Testimonials */}
+      <TestimonialsGallery
+        beforeAfterItems={[
+          { id: "implant-1", title: "Single Tooth Restoration", category: "Single Implant" },
+          { id: "implant-2", title: "Multiple Missing Teeth", category: "Full Mouth Implants" },
+          { id: "implant-3", title: "Bone Grafting Success", category: "Complex Case" },
+        ]}
+        videoTestimonials={[
+          { id: "vid-1", title: "Eating Again with Confidence", patientName: "Ahmed K." },
+          { id: "vid-2", title: "Smile Restored", patientName: "Noor R." },
+        ]}
+      />
 
       {/* 6. Dental Implant Cost */}
       <section className="py-20 bg-background">
