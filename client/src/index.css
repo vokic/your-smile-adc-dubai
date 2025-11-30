@@ -135,3 +135,9 @@
     @apply font-serif tracking-tight;
   }
 }
+
+@layer components {
+  .container {
+    @apply max-w-5xl;
+  }
+}
