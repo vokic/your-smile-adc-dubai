@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { MessageCircle, Phone, CheckCircle2, ChevronDown, Smile } from "lucide-react";
 import { useState } from "react";
 import { ServiceComparison } from "@/components/ServiceComparison";
+import { ProcedureSteps } from "@/components/ProcedureSteps";
 
 export default function Orthodontics() {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
@@ -112,6 +113,38 @@ export default function Orthodontics() {
             feature: "Effective for all cases",
             invisalign: "Mild to moderate",
             braces: "All severity levels",
+          },
+        ]}
+      />
+
+      {/* Orthodontic Procedure Timeline */}
+      <ProcedureSteps
+        title="Your Teeth Straightening Journey"
+        subtitle="From consultation to your perfect smile"
+        steps={[
+          {
+            number: 1,
+            title: "Comprehensive Consultation",
+            description: "We take digital scans and photos, discuss your concerns, and present treatment options including braces and Invisalign. Your custom treatment plan is designed during this visit.",
+            duration: "1 hour",
+          },
+          {
+            number: 2,
+            title: "Treatment Begins",
+            description: "For braces: We bond brackets to your teeth and place wires. For Invisalign: You receive your first set of aligners. Both methods are comfortable and easy to adapt to.",
+            duration: "1-2 hours for braces / 30 min for Invisalign",
+          },
+          {
+            number: 3,
+            title: "Regular Check-ups & Adjustments",
+            description: "Monthly visits for braces adjustments or new aligner trays. We monitor progress and make fine adjustments to keep your treatment on track.",
+            duration: "30 min every 4-6 weeks",
+          },
+          {
+            number: 4,
+            title: "Braces Off / Retainer Phase",
+            description: "Your orthodontic appliances are removed, and custom retainers are fitted. Wearing retainers ensures your beautiful new smile lasts a lifetime!",
+            duration: "1 hour",
           },
         ]}
       />

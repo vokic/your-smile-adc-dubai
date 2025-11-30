@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { MessageCircle, Phone, CheckCircle2, ChevronDown } from "lucide-react";
 import { useState } from "react";
+import { ProcedureSteps } from "@/components/ProcedureSteps";
 
 export default function Implants() {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
@@ -138,7 +139,39 @@ export default function Implants() {
         </div>
       </section>
 
-      {/* 4. Why Choose Implants */}
+      {/* 4. Implant Procedure Timeline */}
+      <ProcedureSteps
+        title="Your Dental Implant Journey"
+        subtitle="From consultation to your new smile - typically 4-6 months"
+        steps={[
+          {
+            number: 1,
+            title: "3D Consultation & Planning",
+            description: "We perform 3D imaging (CBCT) to evaluate bone density and plan precise implant placement. You'll see a digital preview of your final result.",
+            duration: "45 min",
+          },
+          {
+            number: 2,
+            title: "Implant Surgery",
+            description: "Under local anesthesia, we place the titanium implant into your jawbone. The procedure is painless, and most patients return to normal activities within days.",
+            duration: "30-60 min",
+          },
+          {
+            number: 3,
+            title: "Osseointegration (Healing)",
+            description: "Your implant bonds with the bone over 3-6 months. Temporary crowns or dentures are worn during this period to maintain function and aesthetics.",
+            duration: "3-6 months",
+          },
+          {
+            number: 4,
+            title: "Permanent Crown Placement",
+            description: "Once integration is complete, we create and attach your custom-made crown. Your new tooth is now fully functional and looks completely natural.",
+            duration: "1-2 hours",
+          },
+        ]}
+      />
+
+      {/* 5. Why Choose Implants */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">

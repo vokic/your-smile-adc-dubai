@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { MessageCircle, Phone, CheckCircle2, Star, ChevronDown } from "lucide-react";
 import { useState } from "react";
+import { ProcedureSteps } from "@/components/ProcedureSteps";
 
 export default function Veneers() {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
@@ -103,7 +104,39 @@ export default function Veneers() {
         </div>
       </section>
 
-      {/* 3. Benefits Section */}
+      {/* 3. Procedure Timeline */}
+      <ProcedureSteps
+        title="Your Veneers Journey"
+        subtitle="4 simple steps to your perfect smile"
+        steps={[
+          {
+            number: 1,
+            title: "Digital Consultation",
+            description: "We analyze your smile and discuss your goals. Using digital smile design, you'll see a preview of your new smile before treatment begins.",
+            duration: "30-45 min",
+          },
+          {
+            number: 2,
+            title: "Tooth Preparation",
+            description: "A thin layer of enamel is gently removed from the front surface of your teeth (less than 1mm). We take impressions and place temporary veneers while your permanent ones are crafted.",
+            duration: "1 hour",
+          },
+          {
+            number: 3,
+            title: "Permanent Placement",
+            description: "Your custom veneers arrive from our lab. We place them permanently using special bonding agents, ensuring perfect fit, color, and alignment.",
+            duration: "1-2 hours",
+          },
+          {
+            number: 4,
+            title: "Final Adjustments",
+            description: "We polish your veneers, adjust your bite, and provide aftercare instructions. Your smile is now ready to shine!",
+            duration: "30 min",
+          },
+        ]}
+      />
+
+      {/* 4. Benefits Section */}
       <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
