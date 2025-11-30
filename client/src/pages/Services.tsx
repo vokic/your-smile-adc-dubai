@@ -45,9 +45,9 @@ export default function Services() {
     {
       title: "Dental Tourism",
       items: [
-        { name: "All-Inclusive Smile Packages", desc: "Complete treatment plans with accommodation and travel assistance for international patients.", href: "#" },
-        { name: "VIP Patient Experience", desc: "Personalized care, flexible scheduling, and professional translation services.", href: "#" },
-        { name: "Medical Tourism Coordination", desc: "Seamless coordination with hotels, transportation, and post-treatment support.", href: "#" }
+        { name: "All-Inclusive Smile Packages", desc: "Complete treatment plans with accommodation and travel assistance for international patients.", href: "/dental-tourism" },
+        { name: "VIP Patient Experience", desc: "Personalized care, flexible scheduling, and professional translation services.", href: "/dental-tourism" },
+        { name: "Medical Tourism Coordination", desc: "Seamless coordination with hotels, transportation, and post-treatment support.", href: "/dental-tourism" }
       ]
     },
     {
@@ -137,10 +137,10 @@ export default function Services() {
             {serviceCategories.map((category, i) => (
               <div key={i} className="space-y-6">
                 <h3 className="text-xl font-bold text-primary border-b border-primary/20 pb-3">{category.title}</h3>
-                <div className="space-y-4">
+                <div className="space-y-5">
                   {category.items.map((item, j) => (
                     <Link key={j} href={item.href}>
-                      <a className="block group">
+                      <a className="block group p-4 border border-border rounded-lg hover:border-primary/50 hover:bg-primary/5 transition-all">
                         <div className="flex justify-between items-start gap-3">
                           <h4 className="font-semibold text-secondary group-hover:text-primary transition-colors">{item.name}</h4>
                           <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-transform shrink-0 mt-0.5" />

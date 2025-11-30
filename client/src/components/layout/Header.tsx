@@ -27,7 +27,7 @@ export function Header() {
     { name: "Dental Surgery", path: "/dental-surgery" },
     { name: "Cosmetic Dentistry", path: "/cosmetic" },
     { name: "General & Preventive", path: "/general-preventive" },
-    { name: "Dental Tourism", path: "/services" },
+    { name: "Dental Tourism", path: "/dental-tourism" },
   ];
 
   return (
@@ -101,7 +101,7 @@ export function Header() {
                       <div className="text-sm font-medium text-primary">✨ Smile Transformation Gallery</div>
                       <p className="text-xs text-muted-foreground">Before & after results</p>
                     </Link>
-                    <Link href="/services" className="group block select-none space-y-1 rounded-xl p-3 leading-none no-underline outline-none transition-colors text-foreground hover:text-primary hover:bg-transparent cursor-pointer md:col-span-2 border-t pt-3">
+                    <Link href="/dental-tourism" className="group block select-none space-y-1 rounded-xl p-3 leading-none no-underline outline-none transition-colors text-foreground hover:text-primary hover:bg-transparent cursor-pointer md:col-span-2 border-t pt-3">
                       <div className="text-sm font-medium text-primary">✈️ Dental Tourism Packages</div>
                       <p className="text-xs text-muted-foreground">All-inclusive international smile packages</p>
                     </Link>
