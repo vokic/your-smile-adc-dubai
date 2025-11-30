@@ -154,6 +154,7 @@ export function Header() {
               {t('nav.book')}
             </a>
           </Button>
+          <LanguageSwitcher isDark={false} />
         </div>
 
         {/* Mobile CTA Button */}

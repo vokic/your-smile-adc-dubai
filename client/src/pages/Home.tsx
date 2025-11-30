@@ -4,7 +4,6 @@ import { ArrowRight, CheckCircle2, Star, MapPin, Phone, MessageCircle, Clock, Cr
 import { Link } from "wouter";
 import { useState } from "react";
 import { useLanguage } from "@/hooks/useLanguage";
-import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 
 export default function Home() {
   const { t } = useLanguage();
@@ -43,15 +42,12 @@ export default function Home() {
             <h2 className="text-xl md:text-2xl text-gray-200 font-light max-w-2xl leading-relaxed">
               {t('home.heroSubtitle')}
             </h2>
-            <div className="pt-6 flex flex-col sm:flex-row gap-4 items-center sm:items-start">
+            <div className="pt-6">
               <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 text-lg px-10 h-16 font-bold shadow-xl shadow-primary/20 transition-transform hover:scale-105 rounded-full">
                 <a href="https://wa.me/971585828257" target="_blank" rel="noopener noreferrer">
                   {t('home.bookAppointment')}
                 </a>
               </Button>
-              <div className="h-16 flex items-center">
-                <LanguageSwitcher isDark={true} />
-              </div>
             </div>
           </div>
         </div>
