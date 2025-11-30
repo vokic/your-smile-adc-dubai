@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { MessageCircle, Phone, CheckCircle2, Star } from "lucide-react";
+import { MessageCircle, Phone, CheckCircle2, Star, Lightbulb, Heart, Trophy } from "lucide-react";
 import { Link } from "wouter";
 
 export default function About() {
@@ -130,9 +130,7 @@ export default function About() {
               <div className="relative p-10 md:p-12 bg-gradient-to-br from-white to-primary/5 rounded-3xl border-2 border-primary/20 hover:border-primary/40 transition-all duration-300 shadow-lg hover:shadow-xl">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center">
-                    <svg className="h-6 w-6 text-primary" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M11.3 1.046A1 1 0 0010 2v5H5V2a1 1 0 00-1.82.364l-2.5 7.5A1 1 0 003 11h2v6a1 1 0 001 1h4a1 1 0 001-1v-6h2a1 1 0 00.98-1.276l-2.5-7.5zM14 12a1 1 0 00-1 1v3h-2v-3a1 1 0 00-2 0v3a2 2 0 002 2h2a2 2 0 002-2v-3a1 1 0 00-1-1z" />
-                    </svg>
+                    <Lightbulb className="h-6 w-6 text-primary" />
                   </div>
                   <h3 className="text-2xl md:text-3xl font-serif font-bold text-primary">Our Vision</h3>
                 </div>
@@ -148,9 +146,7 @@ export default function About() {
               <div className="relative p-10 md:p-12 bg-gradient-to-br from-white to-secondary/5 rounded-3xl border-2 border-secondary/20 hover:border-secondary/40 transition-all duration-300 shadow-lg hover:shadow-xl">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="h-12 w-12 rounded-full bg-secondary/10 flex items-center justify-center">
-                    <svg className="h-6 w-6 text-secondary" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 3.062v2.332c0 .017-.002.033-.006.049v.001a.75.75 0 00.75.75h.sup 2.25a.75.75 0 00.75-.75v-.001c0 .016.002.032.006.048v-2.332a3.066 3.066 0 012.812-3.062 3.066 3.066 0 011.745.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745-.723 3.066 3.066 0 012.812 3.062v2.332a.75.75 0 00.75.75h1.5a.75.75 0 00.75-.75v-2.332a4.566 4.566 0 00-1.077-2.891 4.566 4.566 0 00-2.891-1.077 4.566 4.566 0 00-2.891 1.077 4.566 4.566 0 00-1.077 2.891v1.5h-2v-1.5a4.566 4.566 0 00-1.077-2.891 4.566 4.566 0 00-2.891-1.077 4.566 4.566 0 00-2.891 1.077 4.566 4.566 0 00-1.077 2.891v1.5h-2v-1.5a3.066 3.066 0 012.812-3.062z" clipRule="evenodd" />
-                    </svg>
+                    <Heart className="h-6 w-6 text-secondary" />
                   </div>
                   <h3 className="text-2xl md:text-3xl font-serif font-bold text-secondary">Our Mission</h3>
                 </div>
@@ -166,9 +162,7 @@ export default function About() {
               <div className="relative p-10 md:p-12 bg-gradient-to-br from-white to-yellow-50/5 rounded-3xl border-2 border-yellow-200/30 hover:border-yellow-300/50 transition-all duration-300 shadow-lg hover:shadow-xl">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="h-12 w-12 rounded-full bg-yellow-100/50 flex items-center justify-center">
-                    <svg className="h-6 w-6 text-yellow-600" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
+                    <Trophy className="h-6 w-6 text-yellow-600" />
                   </div>
                   <h3 className="text-2xl md:text-3xl font-serif font-bold text-yellow-700">Core Values</h3>
                 </div>
