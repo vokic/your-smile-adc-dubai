@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, CheckCircle2, Star, MapPin, Phone, MessageCircle, Clock, CreditCard, ShieldCheck } from "lucide-react";
+import { ArrowRight, CheckCircle2, Star, MapPin, Phone, MessageCircle, Clock, CreditCard, ShieldCheck, ChevronLeft, ChevronRight } from "lucide-react";
 import { Link } from "wouter";
+import { useState } from "react";
 import { useLanguage } from "@/hooks/useLanguage";
 import { TestimonialCarousel } from "@/components/TestimonialCarousel";
 import { AnimatedStats } from "@/components/AnimatedStats";
@@ -9,6 +10,25 @@ import { GoogleReviewsCarousel } from "@/components/GoogleReviewsCarousel";
 
 export default function Home() {
   const { t } = useLanguage();
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const transformations = [
+    { before: "BEFORE VENEERS", after: "AFTER VENEERS" },
+    { before: "BEFORE IMPLANTS", after: "AFTER IMPLANTS" },
+    { before: "BEFORE INVISALIGN", after: "AFTER INVISALIGN" },
+    { before: "BEFORE MAKEOVER", after: "AFTER MAKEOVER" },
+    { before: "BEFORE WHITENING", after: "AFTER WHITENING" },
+  ];
+
+  const handlePrev = () => {
+    setCurrentSlide(prev => (prev > 0 ? prev - 1 : transformations.length - 1));
+  };
+
+  const handleNext = () => {
+    setCurrentSlide(prev => (prev < transformations.length - 1 ? prev + 1 : 0));
+  };
+
+  const current = transformations[currentSlide];
   
   return (
     <div className="flex flex-col min-h-screen">
@@ -94,15 +114,70 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 5. Call to View Gallery */}
+      {/* 5. Smile Transformations Gallery */}
       <section className="py-24 bg-background">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center space-y-6">
+          <div className="text-center mb-16 space-y-4 max-w-3xl mx-auto">
             <h2 className="text-3xl md:text-5xl font-serif font-bold text-secondary">Smile Transformations</h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">Real results from real patients with detailed case stories. Discover the impact of our treatments and see how we've transformed hundreds of smiles.</p>
-            <Button size="lg" className="bg-primary text-white hover:bg-primary/90 rounded-full font-semibold" asChild>
-              <Link href="/gallery">Explore Full Transformation Gallery</Link>
-            </Button>
+            <p className="text-muted-foreground text-lg">Real results from real patients. Scroll through our transformation gallery to see the impact of our treatments.</p>
+          </div>
+
+          <div className="max-w-5xl mx-auto">
+            {/* Before & After Images */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-8">
+              <div className="rounded-xl overflow-hidden border-2 border-secondary/20 bg-muted h-72 md:h-96 flex items-center justify-center relative">
+                <span className="text-muted-foreground font-bold text-sm">{current.before}</span>
+                <div className="absolute top-4 left-4 bg-secondary/40 text-secondary px-3 py-1 rounded-full text-xs font-bold">
+                  BEFORE
+                </div>
+              </div>
+              
+              <div className="rounded-xl overflow-hidden border-2 border-primary/20 bg-muted h-72 md:h-96 flex items-center justify-center relative">
+                <span className="text-muted-foreground font-bold text-sm">{current.after}</span>
+                <div className="absolute top-4 left-4 bg-primary/20 text-primary px-3 py-1 rounded-full text-xs font-bold">
+                  AFTER
+                </div>
+              </div>
+            </div>
+
+            {/* Navigation */}
+            <div className="flex items-center justify-center gap-6 mb-8">
+              <Button 
+                onClick={handlePrev} 
+                size="sm" 
+                className="rounded-full bg-secondary hover:bg-secondary/90 text-white"
+              >
+                <ChevronLeft className="h-4 w-4" />
+              </Button>
+
+              <div className="flex gap-1.5">
+                {transformations.map((_, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => setCurrentSlide(idx)}
+                    className={`rounded-full transition-all ${
+                      currentSlide === idx ? "bg-primary h-2 w-8" : "bg-primary/30 hover:bg-primary/50 h-2 w-2"
+                    }`}
+                    data-testid={`gallery-dot-${idx}`}
+                  />
+                ))}
+              </div>
+
+              <Button 
+                onClick={handleNext} 
+                size="sm" 
+                className="rounded-full bg-secondary hover:bg-secondary/90 text-white"
+              >
+                <ChevronRight className="h-4 w-4" />
+              </Button>
+            </div>
+
+            {/* CTA Button */}
+            <div className="text-center">
+              <Button size="lg" className="bg-primary text-white hover:bg-primary/90 rounded-full font-semibold" asChild>
+                <Link href="/gallery">View Full Gallery with Patient Stories</Link>
+              </Button>
+            </div>
           </div>
         </div>
       </section>
