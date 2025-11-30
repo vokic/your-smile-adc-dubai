@@ -419,7 +419,7 @@ export default function Home() {
               allowFullScreen="" 
               loading="lazy" 
               referrerPolicy="no-referrer-when-downgrade"
-              className="rounded-lg"
+              className="rounded-2xl"
             />
             
           </div>
