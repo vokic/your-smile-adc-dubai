@@ -414,9 +414,7 @@ export default function Home() {
             <div className="h-full min-h-[400px] bg-muted relative flex items-center justify-center">
               <span className="text-muted-foreground font-bold text-xl">MAP PLACEHOLDER</span>
               <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                 <div className="bg-primary text-white px-4 py-2 rounded-lg shadow-lg font-bold animate-bounce">
-                   We are here!
-                 </div>
+                 <MapPin className="h-12 w-12 text-primary fill-primary drop-shadow-lg animate-bounce" />
               </div>
             </div>
           </div>
