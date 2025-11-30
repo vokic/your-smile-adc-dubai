@@ -1,9 +1,22 @@
+import { useState } from "react";
 import { Facebook, Instagram, Linkedin, Youtube, MapPin, Phone, Mail, Clock, Star } from "lucide-react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { EmergencyConfirmModal } from "@/components/EmergencyConfirmModal";
 
 export function Footer() {
+  const [showEmergencyModal, setShowEmergencyModal] = useState(false);
+  const emergencyNumber = "+971523301356";
+
+  const handleEmergencyClick = () => {
+    setShowEmergencyModal(true);
+  };
+
+  const handleConfirmEmergency = () => {
+    setShowEmergencyModal(false);
+    window.location.href = `tel:${emergencyNumber}`;
+  };
   return (
     <footer className="bg-secondary text-secondary-foreground pt-16 pb-8">
       <div className="container mx-auto px-4">
@@ -20,7 +33,13 @@ export function Footer() {
               <Phone className="h-5 w-5 shrink-0 text-primary" />
               <div>
                 <p><a href="tel:+971588282432" className="hover:text-primary transition-colors">+971 58 828 2432</a></p>
-                <p className="text-xs text-red-400 mt-1">Emergency: +971 52 330 1356</p>
+                <button
+                  onClick={handleEmergencyClick}
+                  className="text-xs text-red-400 mt-1 hover:text-red-300 transition-colors font-semibold underline cursor-pointer"
+                  data-testid="button-footer-emergency"
+                >
+                  Emergency: +971 52 330 1356
+                </button>
               </div>
             </div>
             <div className="flex items-center gap-3 text-sm opacity-90">
@@ -104,6 +123,14 @@ export function Footer() {
           </div>
         </div>
       </div>
+
+      {/* Emergency Confirmation Modal */}
+      <EmergencyConfirmModal
+        isOpen={showEmergencyModal}
+        onClose={() => setShowEmergencyModal(false)}
+        onConfirm={handleConfirmEmergency}
+        phoneNumber={emergencyNumber}
+      />
     </footer>
   );
 }
