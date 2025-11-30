@@ -85,19 +85,27 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { title: "Veneers in Dubai", desc: "Achieve a flawless smile with natural-looking porcelain or composite veneers.", link: "/veneers" },
-              { title: "Dental Implants in Dubai", desc: "Restore missing teeth permanently with advanced implant systems.", link: "/implants" },
-              { title: "Orthodontics & Invisalign", desc: "Straighten your teeth discreetly with clear aligners.", link: "/orthodontics" },
-              { title: "Teeth Whitening in Dubai", desc: "Safe, fast, and effective whitening treatments.", link: "/whitening" },
-              { title: "Crowns & Bridges", desc: "Restore damaged or missing teeth with custom-made restorations.", link: "/crowns-bridges" },
-              { title: "Cosmetic Dentistry", desc: "Complete smile transformations combining multiple treatments.", link: "/cosmetic" },
+              { title: "Veneers in Dubai", desc: "Achieve a flawless smile with natural-looking porcelain or composite veneers.", link: "/veneers", image: "VENEERS PROCEDURE" },
+              { title: "Dental Implants in Dubai", desc: "Restore missing teeth permanently with advanced implant systems.", link: "/implants", image: "IMPLANT SURGERY" },
+              { title: "Orthodontics & Invisalign", desc: "Straighten your teeth discreetly with clear aligners.", link: "/orthodontics", image: "ORTHODONTICS" },
+              { title: "Teeth Whitening in Dubai", desc: "Safe, fast, and effective whitening treatments.", link: "/whitening", image: "WHITENING LAMP" },
+              { title: "Crowns & Bridges", desc: "Restore damaged or missing teeth with custom-made restorations.", link: "/crowns-bridges", image: "CROWNS BRIDGE" },
+              { title: "Cosmetic Dentistry", desc: "Complete smile transformations combining multiple treatments.", link: "/cosmetic", image: "SMILE DESIGN" },
             ].map((service, i) => (
-              <Link key={i} href={service.link} className="group p-8 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-primary/50 transition-all duration-300 cursor-pointer">
-                <div className="flex justify-between items-start mb-4">
-                  <h3 className="text-xl font-bold text-primary group-hover:text-white transition-colors">{service.title}</h3>
-                  <ArrowRight className="h-5 w-5 text-white/30 group-hover:text-primary group-hover:translate-x-1 transition-all" />
+              <Link key={i} href={service.link} className="group rounded-xl overflow-hidden border border-white/10 hover:border-primary/50 transition-all duration-300 cursor-pointer bg-white/5 hover:bg-white/10 flex flex-col md:flex-row">
+                {/* Image - 1/3 on left (or full width on mobile) */}
+                <div className="w-full md:w-1/3 h-48 md:h-auto bg-muted/40 flex items-center justify-center border-b md:border-b-0 md:border-r border-white/10 shrink-0">
+                  <span className="text-muted-foreground text-sm font-medium text-center px-2">{service.image}</span>
                 </div>
-                <p className="text-white/70 leading-relaxed text-sm">{service.desc}</p>
+                
+                {/* Content - 2/3 on right */}
+                <div className="w-full md:w-2/3 p-6 md:p-8 flex flex-col justify-between">
+                  <div className="flex justify-between items-start mb-4 gap-4">
+                    <h3 className="text-lg md:text-xl font-bold text-primary group-hover:text-white transition-colors flex-1">{service.title}</h3>
+                    <ArrowRight className="h-5 w-5 text-white/30 group-hover:text-primary group-hover:translate-x-1 transition-all shrink-0 mt-1" />
+                  </div>
+                  <p className="text-white/70 leading-relaxed text-sm">{service.desc}</p>
+                </div>
               </Link>
             ))}
           </div>
