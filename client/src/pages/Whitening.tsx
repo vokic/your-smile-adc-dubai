@@ -71,11 +71,11 @@ export default function Whitening() {
               Brighten your smile safely and effectively with professional whitening treatments.
             </h2>
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 gap-2">
+              <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 gap-2 rounded-full">
                 <MessageCircle className="h-5 w-5" />
                 Book Whitening Session
               </Button>
-              <Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-secondary gap-2">
+              <Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-secondary gap-2 rounded-full">
                 <Phone className="h-5 w-5" />
                 Call Now
               </Button>

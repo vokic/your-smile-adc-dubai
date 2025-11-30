@@ -83,11 +83,11 @@ export default function Implants() {
               Permanent, natural-looking tooth replacement solutions that restore your smile and confidence.
             </h2>
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 gap-2">
+              <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 gap-2 rounded-full">
                 <MessageCircle className="h-5 w-5" />
                 Book Implant Consultation
               </Button>
-              <Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-secondary gap-2">
+              <Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-secondary gap-2 rounded-full">
                 <Phone className="h-5 w-5" />
                 Call Now
               </Button>
@@ -184,7 +184,7 @@ export default function Implants() {
             <p className="text-muted-foreground text-lg leading-relaxed">
               The cost of implants depends on the number of teeth, type of implant, and whether additional procedures (like bone grafting) are needed. Full-mouth implants and implant-supported dentures are quoted after consultation.
             </p>
-            <Button className="bg-primary text-primary-foreground hover:bg-primary/90">
+            <Button className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full">
               Get Your Free Implant Quote
             </Button>
           </div>

@@ -22,11 +22,11 @@ export default function Contact() {
               We're here for your dental needs - whether you're booking an appointment or need emergency care.
             </h2>
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 gap-2">
+              <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 gap-2 rounded-full">
                 <MessageCircle className="h-5 w-5" />
                 Book on WhatsApp
               </Button>
-              <Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-secondary gap-2">
+              <Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-secondary gap-2 rounded-full">
                 <Phone className="h-5 w-5" />
                 Call Now
               </Button>
@@ -130,7 +130,7 @@ export default function Contact() {
                     <label htmlFor="message" className="text-sm font-medium text-secondary">Message</label>
                     <Textarea id="message" placeholder="How can we help you?" className="min-h-[120px] resize-none" />
                   </div>
-                  <Button type="submit" className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-bold h-11">
+                  <Button type="submit" className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-bold h-11 rounded-full">
                     Submit Message
                   </Button>
                 </form>

@@ -67,11 +67,11 @@ export default function Emergency() {
               24/7 urgent dental care for toothaches, injuries, and dental emergencies.
             </h2>
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Button size="lg" className="bg-yellow-400 text-red-600 hover:bg-yellow-300 font-bold gap-2">
+              <Button size="lg" className="bg-yellow-400 text-red-600 hover:bg-yellow-300 font-bold gap-2 rounded-full">
                 <Phone className="h-5 w-5" />
                 Call Now for Emergency Care
               </Button>
-              <Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-red-600 gap-2">
+              <Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-red-600 gap-2 rounded-full">
                 <MessageCircle className="h-5 w-5" />
                 Book on WhatsApp
               </Button>
@@ -212,11 +212,11 @@ export default function Emergency() {
               Don't wait in pain, our emergency dental team is ready 24/7 to provide immediate care and relief.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-              <Button className="bg-red-500 hover:bg-red-600 text-white gap-2 text-lg font-bold" size="lg">
+              <Button className="bg-red-500 hover:bg-red-600 text-white gap-2 text-lg font-bold rounded-full" size="lg">
                 <Phone className="h-5 w-5" />
                 Call Now for Urgent Care
               </Button>
-              <Button variant="outline" className="gap-2 border-2 border-red-300">
+              <Button variant="outline" className="gap-2 border-2 border-red-300 rounded-full">
                 <MessageCircle className="h-4 w-4" />
                 Book on WhatsApp
               </Button>
