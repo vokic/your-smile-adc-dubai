@@ -227,10 +227,10 @@ export default function Home() {
                     <button
                       key={idx}
                       onClick={() => setCurrentSlide(idx)}
-                      className={`h-2 rounded-full transition-all ${
+                      className={`h-3 rounded-full transition-all ${
                         currentSlide === idx
-                          ? "bg-primary w-6"
-                          : "bg-border hover:bg-primary/50"
+                          ? "bg-primary w-8"
+                          : "bg-primary/30 hover:bg-primary/60 w-3"
                       }`}
                     />
                   ))}
