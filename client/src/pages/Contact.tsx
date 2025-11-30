@@ -1,65 +1,26 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Phone, MessageCircle, MapPin, Mail, AlertTriangle, X } from "lucide-react";
+import { Phone, MessageCircle, MapPin, Mail } from "lucide-react";
 import { useState } from "react";
+import { EmergencyConfirmModal } from "@/components/EmergencyConfirmModal";
 
 export default function Contact() {
   const [showEmergencyModal, setShowEmergencyModal] = useState(false);
 
+  const handleEmergencyConfirm = () => {
+    window.location.href = "tel:+971523301356";
+  };
+
   return (
     <div className="flex flex-col min-h-screen">
       {/* Emergency Modal */}
-      {showEmergencyModal && (
-        <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4 animate-in fade-in">
-          <div className="bg-white rounded-2xl p-8 max-w-md w-full shadow-2xl animate-in scale-95 duration-200">
-            <div className="flex items-center justify-between mb-4">
-              <div className="flex items-center gap-3">
-                <AlertTriangle className="h-6 w-6 text-red-500" />
-                <h3 className="text-2xl font-bold text-secondary">Emergency Contact</h3>
-              </div>
-              <button onClick={() => setShowEmergencyModal(false)} className="p-2 hover:bg-muted rounded-full">
-                <X className="h-5 w-5 text-muted-foreground" />
-              </button>
-            </div>
-            
-            <div className="space-y-4 mb-6">
-              <p className="text-muted-foreground">For urgent dental emergencies, call immediately:</p>
-              <div className="bg-red-50 border-2 border-red-200 rounded-xl p-4">
-                <p className="text-xs text-muted-foreground mb-2">Emergency Hotline (24/7):</p>
-                <a href="tel:+971523301356" className="text-2xl font-bold text-red-600 hover:text-red-700 transition-colors">
-                  +971 52 330 1356
-                </a>
-              </div>
-
-              <div className="space-y-3 text-sm text-muted-foreground">
-                <div className="flex items-start gap-2">
-                  <span className="text-primary font-bold mt-0.5">✓</span>
-                  <span>Available 24/7 for urgent cases</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <span className="text-primary font-bold mt-0.5">✓</span>
-                  <span>Severe pain, broken teeth, infections</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <span className="text-primary font-bold mt-0.5">✓</span>
-                  <span>Experienced emergency team standing by</span>
-                </div>
-              </div>
-            </div>
-
-            <div className="flex gap-3">
-              <Button className="flex-1 bg-red-600 hover:bg-red-700 rounded-full gap-2">
-                <Phone className="h-4 w-4" />
-                Call Now
-              </Button>
-              <Button variant="outline" className="flex-1 rounded-full" onClick={() => setShowEmergencyModal(false)}>
-                Close
-              </Button>
-            </div>
-          </div>
-        </div>
-      )}
+      <EmergencyConfirmModal
+        isOpen={showEmergencyModal}
+        onClose={() => setShowEmergencyModal(false)}
+        onConfirm={handleEmergencyConfirm}
+        phoneNumber="+971 52 330 1356"
+      />
 
       {/* 1. Hero Block */}
       <section className="relative min-h-[50vh] md:h-[60vh] w-full overflow-hidden bg-secondary pt-10 md:pt-0">
