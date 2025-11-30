@@ -133,23 +133,27 @@ export default function Services() {
             <div className="h-1 w-24 bg-primary mx-auto rounded-full" />
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+          <div className="space-y-12">
             {serviceCategories.map((category, i) => (
-              <div key={i} className="space-y-6">
-                <h3 className="text-xl font-bold text-primary border-b border-primary/20 pb-3">{category.title}</h3>
-                <div className="space-y-6">
+              <div key={i}>
+                <h3 className="text-2xl font-bold text-primary border-b-2 border-primary/30 pb-4 mb-8">{category.title}</h3>
+                <div className="grid grid-cols-1 gap-6">
                   {category.items.map((item, j) => (
-                    <div key={j} className="mb-8">
-                      <Link href={item.href}>
-                        <a className="block group p-6 border border-border rounded-lg hover:border-primary/50 hover:bg-primary/5 transition-all">
-                          <div className="flex justify-between items-start gap-3">
-                            <h4 className="font-semibold text-secondary group-hover:text-primary transition-colors">{item.name}</h4>
-                            <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-transform shrink-0 mt-1" />
-                          </div>
-                          <p className="text-sm text-muted-foreground mt-4 leading-relaxed">{item.desc}</p>
-                        </a>
-                      </Link>
-                    </div>
+                    <Link key={j} href={item.href} className="group rounded-xl overflow-hidden border border-border hover:border-primary/50 transition-all bg-card hover:bg-card/80 flex flex-col md:flex-row h-full">
+                      {/* Image - 1/3 on left (or full width on mobile) */}
+                      <div className="w-full md:w-1/3 h-48 md:h-auto bg-muted/50 flex items-center justify-center border-b md:border-b-0 md:border-r border-border shrink-0">
+                        <span className="text-muted-foreground text-sm font-medium text-center px-4">{item.name.toUpperCase()}</span>
+                      </div>
+                      
+                      {/* Content - 2/3 on right */}
+                      <div className="w-full md:w-2/3 p-6 md:p-8 flex flex-col justify-between">
+                        <div className="flex justify-between items-start gap-4 mb-3">
+                          <h4 className="text-lg font-bold text-secondary group-hover:text-primary transition-colors flex-1">{item.name}</h4>
+                          <ArrowRight className="h-5 w-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all shrink-0 mt-1" />
+                        </div>
+                        <p className="text-muted-foreground leading-relaxed">{item.desc}</p>
+                      </div>
+                    </Link>
                   ))}
                 </div>
               </div>
