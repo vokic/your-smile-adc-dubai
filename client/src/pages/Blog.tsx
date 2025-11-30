@@ -293,7 +293,7 @@ export default function Blog() {
               <input
                 type="email"
                 placeholder="Enter your email address"
-                className="px-4 py-3 rounded-lg bg-white text-secondary placeholder:text-muted-foreground focus:outline-none flex-grow"
+                className="px-4 py-3 rounded-full bg-white text-secondary placeholder:text-muted-foreground focus:outline-none flex-grow"
               />
               <Button className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold rounded-full">
                 Subscribe

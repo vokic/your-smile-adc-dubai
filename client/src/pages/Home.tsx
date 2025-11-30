@@ -342,19 +342,19 @@ export default function Home() {
           
           <div className="flex flex-wrap justify-center gap-8 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
             {/* Placeholders for Insurance Logos - using text for now as icons */}
-            <div className="flex items-center gap-2 text-xl font-bold text-secondary border px-6 py-3 rounded-lg">
+            <div className="flex items-center gap-2 text-xl font-bold text-secondary border px-6 py-3 rounded-full">
               <CreditCard className="h-6 w-6" /> Tabby
             </div>
-            <div className="flex items-center gap-2 text-xl font-bold text-secondary border px-6 py-3 rounded-lg">
+            <div className="flex items-center gap-2 text-xl font-bold text-secondary border px-6 py-3 rounded-full">
               <CreditCard className="h-6 w-6" /> Tamara
             </div>
-            <div className="flex items-center gap-2 text-xl font-bold text-secondary border px-6 py-3 rounded-lg">
+            <div className="flex items-center gap-2 text-xl font-bold text-secondary border px-6 py-3 rounded-full">
               <ShieldCheck className="h-6 w-6" /> AXA
             </div>
-            <div className="flex items-center gap-2 text-xl font-bold text-secondary border px-6 py-3 rounded-lg">
+            <div className="flex items-center gap-2 text-xl font-bold text-secondary border px-6 py-3 rounded-full">
               <ShieldCheck className="h-6 w-6" /> MetLife
             </div>
-            <div className="flex items-center gap-2 text-xl font-bold text-secondary border px-6 py-3 rounded-lg">
+            <div className="flex items-center gap-2 text-xl font-bold text-secondary border px-6 py-3 rounded-full">
               <ShieldCheck className="h-6 w-6" /> NextCare
             </div>
           </div>
