@@ -125,9 +125,13 @@ export default function About() {
           <h2 className="text-3xl md:text-5xl font-serif font-bold text-secondary mb-16 text-center">Our Vision & Mission</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {/* Vision */}
-            <div className="group relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-primary/5 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-300" />
-              <div className="relative p-10 md:p-12 bg-gradient-to-br from-white to-primary/5 rounded-3xl border-2 border-primary/20 hover:border-primary/40 transition-all duration-300 shadow-lg hover:shadow-xl">
+            <div className="group relative overflow-hidden rounded-3xl">
+              <div className="absolute inset-0 bg-muted flex items-center justify-center z-0">
+                <span className="text-muted-foreground font-medium">TEAM VISION IMAGE</span>
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-white via-white/80 to-white/30 z-10" />
+              <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-primary/5 blur-xl group-hover:blur-2xl transition-all duration-300" />
+              <div className="relative p-10 md:p-12 bg-gradient-to-br from-white/95 to-primary/10 rounded-3xl border-2 border-primary/20 hover:border-primary/40 transition-all duration-300 shadow-lg hover:shadow-xl z-20">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center">
                     <Lightbulb className="h-6 w-6 text-primary" />
@@ -141,9 +145,13 @@ export default function About() {
             </div>
 
             {/* Mission */}
-            <div className="group relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-secondary/10 to-secondary/5 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-300" />
-              <div className="relative p-10 md:p-12 bg-gradient-to-br from-white to-secondary/5 rounded-3xl border-2 border-secondary/20 hover:border-secondary/40 transition-all duration-300 shadow-lg hover:shadow-xl">
+            <div className="group relative overflow-hidden rounded-3xl">
+              <div className="absolute inset-0 bg-muted flex items-center justify-center z-0">
+                <span className="text-muted-foreground font-medium">DENTIST WITH PATIENT IMAGE</span>
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-white via-white/80 to-white/30 z-10" />
+              <div className="absolute inset-0 bg-gradient-to-r from-secondary/10 to-secondary/5 blur-xl group-hover:blur-2xl transition-all duration-300" />
+              <div className="relative p-10 md:p-12 bg-gradient-to-br from-white/95 to-secondary/10 rounded-3xl border-2 border-secondary/20 hover:border-secondary/40 transition-all duration-300 shadow-lg hover:shadow-xl z-20">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="h-12 w-12 rounded-full bg-secondary/10 flex items-center justify-center">
                     <Heart className="h-6 w-6 text-secondary" />
@@ -157,9 +165,13 @@ export default function About() {
             </div>
 
             {/* Core Values */}
-            <div className="group relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-yellow-100/20 to-yellow-50/10 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-300" />
-              <div className="relative p-10 md:p-12 bg-gradient-to-br from-white to-yellow-50/5 rounded-3xl border-2 border-yellow-200/30 hover:border-yellow-300/50 transition-all duration-300 shadow-lg hover:shadow-xl">
+            <div className="group relative overflow-hidden rounded-3xl">
+              <div className="absolute inset-0 bg-muted flex items-center justify-center z-0">
+                <span className="text-muted-foreground font-medium">HAPPY PATIENT SMILE IMAGE</span>
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-white via-white/80 to-white/30 z-10" />
+              <div className="absolute inset-0 bg-gradient-to-r from-yellow-100/20 to-yellow-50/10 blur-xl group-hover:blur-2xl transition-all duration-300" />
+              <div className="relative p-10 md:p-12 bg-gradient-to-br from-white/95 to-yellow-50/10 rounded-3xl border-2 border-yellow-200/30 hover:border-yellow-300/50 transition-all duration-300 shadow-lg hover:shadow-xl z-20">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="h-12 w-12 rounded-full bg-yellow-100/50 flex items-center justify-center">
                     <Trophy className="h-6 w-6 text-yellow-600" />
