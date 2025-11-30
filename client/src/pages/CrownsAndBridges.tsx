@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { MessageCircle, Phone, CheckCircle2, ChevronDown } from "lucide-react";
 import { useState } from "react";
+import { TestimonialsGallery } from "@/components/TestimonialsGallery";
 
 export default function CrownsAndBridges() {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
@@ -145,29 +146,18 @@ export default function CrownsAndBridges() {
         </div>
       </section>
 
-      {/* 5. Before & After Results */}
-      <section className="py-20 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary">Smile Transformations with Crowns & Bridges</h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto mt-4">
-              See how our patients regained function and aesthetics with customized crowns and bridges.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[1, 2, 3].map((item) => (
-              <div key={item} className="rounded-2xl overflow-hidden bg-muted border border-border h-[400px] flex items-center justify-center hover:shadow-lg transition-all">
-                <span className="text-lg font-bold text-muted-foreground">BEFORE & AFTER {item}</span>
-              </div>
-            ))}
-          </div>
-          <div className="text-center mt-8">
-            <Button variant="outline" className="gap-2 rounded-full">
-              View Full Gallery
-            </Button>
-          </div>
-        </div>
-      </section>
+      {/* 5. Before & After Results & Video Testimonials */}
+      <TestimonialsGallery
+        beforeAfterItems={[
+          { id: "crown-1", title: "Damaged Tooth Restoration", category: "Single Crown" },
+          { id: "crown-2", title: "Multiple Teeth Bridge", category: "Dental Bridge" },
+          { id: "crown-3", title: "Full Smile Restoration", category: "Multiple Crowns" },
+        ]}
+        videoTestimonials={[
+          { id: "vid-1", title: "Back to Smiling Confidently", patientName: "Hassan M." },
+          { id: "vid-2", title: "Stronger & More Beautiful", patientName: "Amira S." },
+        ]}
+      />
 
       {/* 6. FAQ Section */}
       <section className="py-20 bg-background">
