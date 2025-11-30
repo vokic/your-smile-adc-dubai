@@ -28,13 +28,13 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* 1. Hero Section */}
-      <section className="relative h-[85vh] w-full overflow-hidden bg-muted">
+      <section className="relative min-h-[75vh] md:h-[85vh] w-full overflow-hidden bg-muted pt-10 md:pt-0">
         <div className="absolute inset-0 flex items-center justify-center bg-muted text-muted-foreground/20 text-9xl font-bold select-none">
           HERO IMAGE
         </div>
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent" />
         
-        <div className="container relative h-full mx-auto px-4 flex items-center">
+        <div className="container relative h-full mx-auto px-4 flex items-center py-12 md:py-0">
           <div className="max-w-3xl space-y-8 animate-in fade-in slide-in-from-left-10 duration-700">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-white leading-tight drop-shadow-lg">
               Trusted Dental Clinic in Dubai for <span className="text-primary italic">{t('home.heroTitleAccent')}</span>
