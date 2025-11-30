@@ -49,7 +49,7 @@ export default function Home() {
                   {t('home.bookAppointment')}
                 </a>
               </Button>
-              <LanguageSwitcher />
+              <LanguageSwitcher isDark={true} />
             </div>
           </div>
         </div>

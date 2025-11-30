@@ -3,7 +3,11 @@ import { Button } from '@/components/ui/button';
 import { ChevronDown } from 'lucide-react';
 import { useState, useRef, useEffect } from 'react';
 
-export function LanguageSwitcher() {
+interface LanguageSwitcherProps {
+  isDark?: boolean;
+}
+
+export function LanguageSwitcher({ isDark = false }: LanguageSwitcherProps) {
   const { language, setLanguage } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -32,10 +36,13 @@ export function LanguageSwitcher() {
   return (
     <div className="relative" ref={ref}>
       <Button
-        variant="outline"
         size="sm"
         onClick={() => setIsOpen(!isOpen)}
-        className="gap-2 rounded-full"
+        className={`gap-2 rounded-full ${
+          isDark 
+            ? 'bg-white/20 text-white hover:bg-white/30 border border-white/20' 
+            : 'bg-background border border-border text-foreground hover:bg-muted'
+        }`}
         data-testid="button-language-toggle"
       >
         {currentLang?.label}
@@ -43,7 +50,11 @@ export function LanguageSwitcher() {
       </Button>
 
       {isOpen && (
-        <div className="absolute top-full right-0 mt-2 bg-background border border-border rounded-lg shadow-lg z-50 min-w-[140px]">
+        <div className={`absolute top-full right-0 mt-2 rounded-lg shadow-lg z-50 min-w-[140px] ${
+          isDark
+            ? 'bg-white/95 border border-white/20'
+            : 'bg-background border border-border'
+        }`}>
           {languages.map(lang => (
             <button
               key={lang.code}
@@ -54,8 +65,10 @@ export function LanguageSwitcher() {
               className={`w-full text-left px-4 py-2 text-sm transition-colors ${
                 language === lang.code
                   ? 'bg-primary text-white font-semibold'
-                  : 'hover:bg-muted'
-              } ${lang.code === 'en' ? 'rounded-t-lg' : ''} ${lang.code === 'de' ? 'rounded-b-lg' : ''}`}
+                  : isDark ? 'hover:bg-black/5' : 'hover:bg-muted'
+              } ${lang.code === 'en' ? 'rounded-t-lg' : ''} ${lang.code === 'de' ? 'rounded-b-lg' : ''} ${
+                isDark ? 'text-foreground' : ''
+              }`}
               data-testid={`button-lang-${lang.code}`}
             >
               {lang.label}
