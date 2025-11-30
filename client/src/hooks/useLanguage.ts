@@ -43,10 +43,10 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     return value || key;
   };
 
-  return (
-    <LanguageContext.Provider value={{ language, setLanguage: handleSetLanguage, t }}>
-      {children}
-    </LanguageContext.Provider>
+  return React.createElement(
+    LanguageContext.Provider,
+    { value: { language, setLanguage: handleSetLanguage, t } },
+    children
   );
 }
 
