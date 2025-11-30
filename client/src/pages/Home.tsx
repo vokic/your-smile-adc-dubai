@@ -179,73 +179,72 @@ export default function Home() {
       {/* 4. Before & After */}
       <section className="py-24 bg-background">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-8">
-              <h2 className="text-3xl md:text-5xl font-serif font-bold text-secondary">Smile Transformations - Before & After Results in Dubai</h2>
-              <p className="text-muted-foreground text-lg leading-relaxed">
-                Discover real results from our patients who chose veneers, implants, and Invisalign in Dubai. Each smile tells a story of confidence and lasting change.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-secondary text-white hover:bg-secondary/90 rounded-full" asChild>
-                  <Link href="/gallery">View Transformation Gallery</Link>
-                </Button>
-              </div>
-            </div>
+          <div className="text-center mb-16 space-y-4 max-w-3xl mx-auto">
+            <h2 className="text-3xl md:text-5xl font-serif font-bold text-secondary">Smile Transformations</h2>
+            <p className="text-muted-foreground text-lg">
+              Real results from real patients. Discover the impact of our treatments.
+            </p>
+          </div>
+
+          <div className="max-w-4xl mx-auto">
+            {/* Carousel */}
             <div className="space-y-6">
-              {/* Carousel Images */}
               <div className="grid grid-cols-2 gap-4">
                 {/* Before */}
-                <div className="relative rounded-xl overflow-hidden shadow-lg border border-muted-foreground/20 bg-muted h-64 flex items-center justify-center">
-                  <span className="text-muted-foreground font-bold">{current.before}</span>
-                  <div className="absolute top-3 left-3 bg-secondary/40 text-secondary px-2 py-1 rounded text-xs font-bold">BEFORE</div>
+                <div className="relative rounded-2xl overflow-hidden shadow-lg bg-muted h-72 flex items-center justify-center border-2 border-secondary/20">
+                  <span className="text-muted-foreground font-bold text-sm">{current.before}</span>
+                  <div className="absolute top-4 left-4 bg-secondary text-white px-3 py-1 rounded-full text-xs font-bold">BEFORE</div>
                 </div>
                 
                 {/* After */}
-                <div className="relative rounded-xl overflow-hidden shadow-lg border border-primary/20 bg-muted h-64 flex items-center justify-center">
-                  <span className="text-muted-foreground font-bold">{current.after}</span>
-                  <div className="absolute top-3 left-3 bg-primary/20 text-primary px-2 py-1 rounded text-xs font-bold">AFTER</div>
+                <div className="relative rounded-2xl overflow-hidden shadow-lg bg-muted h-72 flex items-center justify-center border-2 border-primary/20">
+                  <span className="text-muted-foreground font-bold text-sm">{current.after}</span>
+                  <div className="absolute top-4 left-4 bg-primary text-white px-3 py-1 rounded-full text-xs font-bold">AFTER</div>
                 </div>
               </div>
 
-              {/* Carousel Label */}
-              <div className="bg-primary/10 border border-primary/20 rounded-lg p-4 text-center">
-                <p className="text-sm font-semibold text-primary">{current.title}</p>
-              </div>
+              {/* Title */}
+              <p className="text-center text-sm font-semibold text-primary">{current.title}</p>
 
-              {/* Navigation Controls */}
-              <div className="flex items-center justify-between">
+              {/* Navigation */}
+              <div className="flex items-center justify-center gap-6">
                 <Button
                   onClick={handlePrev}
-                  variant="outline"
                   size="sm"
-                  className="gap-2 rounded-full"
+                  className="rounded-full bg-secondary hover:bg-secondary/90 text-white"
+                  data-testid="button-prev-slide"
                 >
                   <ChevronLeft className="h-4 w-4" />
-                  Prev
                 </Button>
 
-                <div className="flex gap-2">
+                <div className="flex gap-1.5">
                   {beforeAfterSlides.map((_, idx) => (
                     <button
                       key={idx}
                       onClick={() => setCurrentSlide(idx)}
-                      className={`h-3 rounded-full transition-all ${
+                      className={`rounded-full transition-all ${
                         currentSlide === idx
-                          ? "bg-primary w-8"
-                          : "bg-primary/30 hover:bg-primary/60 w-3"
+                          ? "bg-primary h-2 w-8"
+                          : "bg-primary/30 hover:bg-primary/50 h-2 w-2"
                       }`}
+                      data-testid={`button-slide-${idx}`}
                     />
                   ))}
                 </div>
 
                 <Button
                   onClick={handleNext}
-                  variant="outline"
                   size="sm"
-                  className="gap-2 rounded-full"
+                  className="rounded-full bg-secondary hover:bg-secondary/90 text-white"
+                  data-testid="button-next-slide"
                 >
-                  Next
                   <ChevronRight className="h-4 w-4" />
+                </Button>
+              </div>
+
+              <div className="text-center pt-4">
+                <Button size="lg" className="bg-primary text-white hover:bg-primary/90 rounded-full font-semibold" asChild>
+                  <Link href="/gallery">View Full Gallery</Link>
                 </Button>
               </div>
             </div>
