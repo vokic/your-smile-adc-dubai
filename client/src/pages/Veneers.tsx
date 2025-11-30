@@ -1,12 +1,12 @@
 import { Button } from "@/components/ui/button";
-import { MessageCircle, Phone, CheckCircle2, Star, ChevronDown } from "lucide-react";
-import { useState } from "react";
+import { MessageCircle, Phone } from "lucide-react";
 import { ProcedureSteps } from "@/components/ProcedureSteps";
 import { TestimonialsGallery } from "@/components/TestimonialsGallery";
+import { ServiceHero } from "@/components/ServiceHero";
+import { BenefitsSection } from "@/components/BenefitsSection";
+import { FAQSection } from "@/components/FAQSection";
 
 export default function Veneers() {
-  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
-
   const benefits = [
     "Same-Day Results: Smile makeover in as little as 2 visits",
     "Natural & Durable: Porcelain veneers last 10–15 years",
@@ -57,33 +57,11 @@ export default function Veneers() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* 1. Hero Block */}
-      <section className="relative min-h-[50vh] md:h-[60vh] w-full overflow-hidden bg-secondary pt-10 md:pt-0">
-        <div className="absolute inset-0 opacity-40 flex items-center justify-center bg-muted">
-          <span className="text-4xl font-bold text-muted-foreground/20">PATIENT SMILE - LIFESTYLE</span>
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-r from-secondary via-secondary/90 to-transparent" />
-        
-        <div className="container relative h-full mx-auto px-4 flex items-center py-12 md:py-0">
-          <div className="max-w-3xl space-y-6 animate-in fade-in slide-in-from-left-10 duration-700">
-            <h1 className="text-4xl md:text-6xl font-serif font-bold text-white leading-tight">
-              Veneers in Dubai - Your Dream <span className="text-primary">Smile Starts Here</span>
-            </h1>
-            <h2 className="text-xl text-gray-200 font-light max-w-2xl">
-              Achieve a flawless, natural-looking smile with premium porcelain & composite veneers - tailored just for you.
-            </h2>
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 gap-2 rounded-full rounded-full">
-                <MessageCircle className="h-5 w-5" />
-                Book Your Consultation
-              </Button>
-              <Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-secondary gap-2 rounded-full rounded-full">
-                <Phone className="h-5 w-5" />
-                Call Now
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ServiceHero
+        title="Veneers in Dubai - Your Dream Smile Starts Here"
+        subtitle="Achieve a flawless, natural-looking smile with premium porcelain & composite veneers - tailored just for you."
+        backgroundImage="PATIENT SMILE - LIFESTYLE"
+      />
 
       {/* 2. Emotional Hook */}
       <section className="py-20 bg-background">
@@ -138,23 +116,11 @@ export default function Veneers() {
       />
 
       {/* 4. Benefits Section */}
-      <section className="py-20 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary">Why Choose Veneers in Dubai With Us?</h2>
-            </div>
-            <div className="space-y-4">
-              {benefits.map((benefit, index) => (
-                <div key={index} className="flex items-start gap-4 p-5 bg-card rounded-xl border border-border hover:shadow-md transition-all">
-                  <CheckCircle2 className="h-6 w-6 text-primary shrink-0 mt-0.5" />
-                  <p className="text-secondary font-medium text-lg">{benefit}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <BenefitsSection
+        title="Why Choose Veneers in Dubai With Us?"
+        benefits={benefits}
+        bgColor="bg-muted/30"
+      />
 
       {/* 5. Before & After Transformations & Video Testimonials */}
       <TestimonialsGallery
@@ -192,10 +158,7 @@ export default function Veneers() {
       </section>
 
       {/* 8. FAQ Section */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary mb-12 text-center">Frequently Asked Questions About Veneers</h2>
+      <FAQSection title="Frequently Asked Questions About Veneers" faqs={faqs} />
             
             <div className="space-y-3">
               {faqs.map((faq, index) => (
