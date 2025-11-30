@@ -30,28 +30,25 @@ export function EmergencyConfirmModal({
         </div>
         
         <div className="space-y-4 mb-6">
-          <p className="text-muted-foreground">For urgent dental emergencies, call immediately:</p>
-          <div className="bg-red-50 border-2 border-red-200 rounded-xl p-4">
-            <p className="text-xs text-muted-foreground mb-2">Emergency Hotline (24/7):</p>
-            <p className="text-2xl font-bold text-red-600">
-              {phoneNumber}
-            </p>
-          </div>
-
-          <div className="space-y-3 text-sm text-muted-foreground">
-            <div className="flex items-start gap-2">
-              <span className="text-primary font-bold mt-0.5">✓</span>
-              <span>Available 24/7 for urgent cases</span>
-            </div>
-            <div className="flex items-start gap-2">
-              <span className="text-primary font-bold mt-0.5">✓</span>
-              <span>Severe pain, broken teeth, infections</span>
-            </div>
-            <div className="flex items-start gap-2">
-              <span className="text-primary font-bold mt-0.5">✓</span>
-              <span>Experienced emergency team standing by</span>
-            </div>
-          </div>
+          <p className="font-semibold text-foreground text-lg">
+            This service is for genuine dental emergencies only.
+          </p>
+          <p className="text-foreground">
+            Please use this line only for urgent dental situations such as:
+          </p>
+          <ul className="list-disc list-inside space-y-2 ml-2 text-foreground text-sm">
+            <li>Severe dental pain or toothache</li>
+            <li>Broken or knocked-out teeth</li>
+            <li>Oral injuries or significant bleeding</li>
+            <li>Swelling, infection, or fever symptoms</li>
+            <li>Trauma to mouth or jaw</li>
+          </ul>
+          <p className="text-sm text-muted-foreground pt-3 bg-amber-50 p-3 rounded-lg border border-amber-200">
+            For routine appointments, consultations, or non-emergency inquiries, please use the regular booking options available on our website.
+          </p>
+          <p className="pt-4 font-bold text-foreground text-lg">
+            Emergency Number: <span className="text-red-600 text-xl">{phoneNumber}</span>
+          </p>
         </div>
 
         <div className="flex gap-3">
