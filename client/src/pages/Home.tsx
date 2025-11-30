@@ -3,8 +3,10 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle2, Star, MapPin, Phone, MessageCircle, Clock, CreditCard, ShieldCheck, ChevronLeft, ChevronRight } from "lucide-react";
 import { Link } from "wouter";
 import { useState } from "react";
+import { useLanguage } from "@/hooks/useLanguage";
 
 export default function Home() {
+  const { t } = useLanguage();
   const [currentSlide, setCurrentSlide] = useState(0);
   
   const beforeAfterSlides = [
@@ -35,15 +37,15 @@ export default function Home() {
         <div className="container relative h-full mx-auto px-4 flex items-center">
           <div className="max-w-3xl space-y-8 animate-in fade-in slide-in-from-left-10 duration-700">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-white leading-tight drop-shadow-lg">
-              Trusted Dental Clinic in Dubai for <span className="text-primary italic">Advanced & Cosmetic Dentistry</span>
+              {t('home.heroTitle')}
             </h1>
             <h2 className="text-xl md:text-2xl text-gray-200 font-light max-w-2xl leading-relaxed">
-              From veneers and implants to Invisalign and whitening – expert care tailored to your smile.
+              {t('home.heroSubtitle')}
             </h2>
             <div className="pt-6">
               <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 text-lg px-10 h-16 font-bold shadow-xl shadow-primary/20 transition-transform hover:scale-105 rounded-full rounded-full">
                 <a href="https://wa.me/971585828257" target="_blank" rel="noopener noreferrer">
-                  Book Your Appointment
+                  {t('home.bookAppointment')}
                 </a>
               </Button>
             </div>
