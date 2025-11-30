@@ -1,17 +1,17 @@
 import { Button } from "@/components/ui/button";
-import { MessageCircle, Phone, CheckCircle2, ChevronDown } from "lucide-react";
+import { MessageCircle, Phone, CheckCircle2, ChevronDown, Tooth, Cog, Dna, Scissors, Zap, Wand2 } from "lucide-react";
 import { useState } from "react";
 
 export default function DentalSurgery() {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
 
   const surgeryTypes = [
-    { title: "Wisdom Tooth Extraction", icon: "🦷" },
-    { title: "Dental Implants", icon: "⚙️" },
-    { title: "Bone Grafting", icon: "🧬" },
-    { title: "Gum Surgery", icon: "🩺" },
-    { title: "Jaw Correction", icon: "⚡" },
-    { title: "Frenectomy", icon: "✨" }
+    { title: "Wisdom Tooth Extraction", icon: Tooth },
+    { title: "Dental Implants", icon: Cog },
+    { title: "Bone Grafting", icon: Dna },
+    { title: "Gum Surgery", icon: Scissors },
+    { title: "Jaw Correction", icon: Zap },
+    { title: "Frenectomy", icon: Wand2 }
   ];
 
   const benefits = [
@@ -124,12 +124,17 @@ export default function DentalSurgery() {
             <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary">Our Dental Surgery Services in Dubai</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {surgeryTypes.map((surgery, index) => (
-              <div key={index} className="p-8 bg-card rounded-xl border border-border hover:shadow-md transition-all text-center space-y-4">
-                <div className="text-5xl">{surgery.icon}</div>
-                <h3 className="text-xl font-bold text-secondary">{surgery.title}</h3>
-              </div>
-            ))}
+            {surgeryTypes.map((surgery, index) => {
+              const IconComponent = surgery.icon;
+              return (
+                <div key={index} className="p-8 bg-card rounded-xl border border-border hover:shadow-md transition-all text-center space-y-4">
+                  <div className="flex justify-center">
+                    <IconComponent className="h-12 w-12 text-primary" />
+                  </div>
+                  <h3 className="text-xl font-bold text-secondary">{surgery.title}</h3>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
