@@ -21,7 +21,7 @@ export function Footer() {
     <footer className="bg-secondary text-secondary-foreground pt-16 pb-8">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-          
+
           {/* 1. Contact Info */}
           <div className="space-y-4">
             <h3 className="text-xl font-serif font-bold text-primary mb-4">Your Smile</h3>
@@ -91,7 +91,7 @@ export function Footer() {
                  <a href="#" className="bg-white/10 p-2 rounded-full hover:bg-primary hover:text-white transition-colors"><Youtube className="h-5 w-5" /></a>
                </div>
             </div>
-            
+
             <div className="bg-white/5 p-4 rounded-lg border border-white/10">
               <div className="flex items-center gap-1 text-yellow-400 mb-2">
                 <Star className="fill-current h-4 w-4" />

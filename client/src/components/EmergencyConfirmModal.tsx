@@ -26,7 +26,7 @@ export function EmergencyConfirmModal({
 }: EmergencyConfirmModalProps) {
   return (
     <AlertDialog open={isOpen} onOpenChange={onClose}>
-      <AlertDialogContent className="max-w-lg sm:max-w-2xl w-full">
+      <AlertDialogContent className="max-w-lg sm:max-max-w-2xl w-full">
         <AlertDialogHeader className="space-y-4">
           <div className="flex items-start gap-4">
             <AlertCircle className="h-8 w-8 text-red-600 shrink-0 mt-1" />

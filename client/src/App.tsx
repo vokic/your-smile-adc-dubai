@@ -5,6 +5,9 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { LanguageProvider } from "@/hooks/useLanguage";
 import { useEffect } from "react";
+import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
+import { FloatingActionButton } from "@/components/FloatingActionButton";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
 import Services from "@/pages/Services";
@@ -26,9 +29,6 @@ import Blog from "@/pages/Blog";
 import BlogPost from "@/pages/BlogPost";
 import DentalTourism from "@/pages/DentalTourism";
 import Gallery from "@/pages/Gallery";
-import { Header } from "@/components/layout/Header";
-import { Footer } from "@/components/layout/Footer";
-import { FloatingActionButton } from "@/components/FloatingActionButton";
 
 function Router() {
   const [location] = useLocation();
