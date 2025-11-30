@@ -133,15 +133,15 @@ export default function Services() {
             <div className="h-1 w-24 bg-primary mx-auto rounded-full" />
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
             {serviceCategories.map((category, i) => (
-              <div key={i} className="space-y-5 p-8 bg-white rounded-2xl border border-border/50 hover:border-primary/30 hover:shadow-lg transition-all h-full">
+              <div key={i} className="space-y-6">
                 <h3 className="text-xl font-bold text-primary border-b border-primary/20 pb-3">{category.title}</h3>
                 <div className="space-y-4">
                   {category.items.map((item, j) => (
                     <Link key={j} href={item.href}>
-                      <a className="block p-4 rounded-xl border border-border/50 hover:border-primary/50 hover:bg-primary/5 transition-all group">
-                        <div className="flex justify-between items-start">
+                      <a className="block group">
+                        <div className="flex justify-between items-start gap-3">
                           <h4 className="font-semibold text-secondary group-hover:text-primary transition-colors">{item.name}</h4>
                           <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-transform shrink-0 mt-0.5" />
                         </div>
