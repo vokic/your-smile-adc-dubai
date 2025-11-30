@@ -5,6 +5,8 @@ import { Link } from "wouter";
 import { useState } from "react";
 import { useLanguage } from "@/hooks/useLanguage";
 import { TestimonialCarousel } from "@/components/TestimonialCarousel";
+import { AnimatedStats } from "@/components/AnimatedStats";
+import { TrustBadges } from "@/components/TrustBadges";
 
 export default function Home() {
   const { t } = useLanguage();
