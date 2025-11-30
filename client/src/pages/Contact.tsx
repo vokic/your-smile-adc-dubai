@@ -7,13 +7,13 @@ export default function Contact() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* 1. Hero Block */}
-      <section className="relative h-[60vh] w-full overflow-hidden bg-secondary">
+      <section className="relative min-h-[50vh] md:h-[60vh] w-full overflow-hidden bg-secondary pt-10 md:pt-0">
         <div className="absolute inset-0 opacity-40 flex items-center justify-center bg-muted">
           <span className="text-4xl font-bold text-muted-foreground/20">CONTACT HERO IMAGE</span>
         </div>
         <div className="absolute inset-0 bg-gradient-to-r from-secondary via-secondary/90 to-transparent" />
         
-        <div className="container relative h-full mx-auto px-4 flex items-center">
+        <div className="container relative h-full mx-auto px-4 flex items-center py-12 md:py-0">
           <div className="max-w-3xl space-y-6 animate-in fade-in slide-in-from-left-10 duration-700">
             <h1 className="text-4xl md:text-6xl font-serif font-bold text-white leading-tight">
               Contact Your Smile <span className="text-primary">Advanced Dental Center</span>
@@ -147,7 +147,7 @@ export default function Contact() {
                   width="100%" 
                   height="350px" 
                   style={{ border: 0 }} 
-                  allowFullScreen="" 
+                  allowFullScreen
                   loading="lazy" 
                   referrerPolicy="no-referrer-when-downgrade"
                   className="rounded-2xl"
