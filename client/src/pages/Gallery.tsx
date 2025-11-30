@@ -103,7 +103,7 @@ export default function Gallery() {
                   setCurrentSlide(0);
                 }}
                 variant={currentCategory === idx ? "default" : "outline"}
-                className={currentCategory === idx ? "bg-primary text-primary-foreground" : ""}
+                className={`rounded-full ${currentCategory === idx ? "bg-primary text-primary-foreground" : ""}`}
               >
                 {gallery.category}
               </Button>
