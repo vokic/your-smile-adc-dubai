@@ -193,15 +193,15 @@ export default function Home() {
               {/* Carousel Images */}
               <div className="grid grid-cols-2 gap-4">
                 {/* Before */}
-                <div className="relative rounded-xl overflow-hidden shadow-lg border-4 border-red-200 bg-muted h-64 flex items-center justify-center">
+                <div className="relative rounded-xl overflow-hidden shadow-lg border border-muted-foreground/20 bg-muted h-64 flex items-center justify-center">
                   <span className="text-muted-foreground font-bold">{current.before}</span>
-                  <div className="absolute top-3 left-3 bg-red-500 text-white px-2 py-1 rounded text-xs font-bold">BEFORE</div>
+                  <div className="absolute top-3 left-3 bg-secondary/40 text-secondary px-2 py-1 rounded text-xs font-bold">BEFORE</div>
                 </div>
                 
                 {/* After */}
-                <div className="relative rounded-xl overflow-hidden shadow-lg border-4 border-green-200 bg-muted h-64 flex items-center justify-center">
+                <div className="relative rounded-xl overflow-hidden shadow-lg border border-primary/20 bg-muted h-64 flex items-center justify-center">
                   <span className="text-muted-foreground font-bold">{current.after}</span>
-                  <div className="absolute top-3 left-3 bg-green-600 text-white px-2 py-1 rounded text-xs font-bold">AFTER</div>
+                  <div className="absolute top-3 left-3 bg-primary/20 text-primary px-2 py-1 rounded text-xs font-bold">AFTER</div>
                 </div>
               </div>
 
