@@ -137,17 +137,19 @@ export default function Services() {
             {serviceCategories.map((category, i) => (
               <div key={i} className="space-y-6">
                 <h3 className="text-xl font-bold text-primary border-b border-primary/20 pb-3">{category.title}</h3>
-                <div className="space-y-8">
+                <div className="space-y-6">
                   {category.items.map((item, j) => (
-                    <Link key={j} href={item.href}>
-                      <a className="block group p-5 border border-border rounded-lg hover:border-primary/50 hover:bg-primary/5 transition-all">
-                        <div className="flex justify-between items-start gap-3">
-                          <h4 className="font-semibold text-secondary group-hover:text-primary transition-colors">{item.name}</h4>
-                          <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-transform shrink-0 mt-1" />
-                        </div>
-                        <p className="text-sm text-muted-foreground mt-3 leading-relaxed">{item.desc}</p>
-                      </a>
-                    </Link>
+                    <div key={j} className="mb-8">
+                      <Link href={item.href}>
+                        <a className="block group p-6 border border-border rounded-lg hover:border-primary/50 hover:bg-primary/5 transition-all">
+                          <div className="flex justify-between items-start gap-3">
+                            <h4 className="font-semibold text-secondary group-hover:text-primary transition-colors">{item.name}</h4>
+                            <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-transform shrink-0 mt-1" />
+                          </div>
+                          <p className="text-sm text-muted-foreground mt-4 leading-relaxed">{item.desc}</p>
+                        </a>
+                      </Link>
+                    </div>
                   ))}
                 </div>
               </div>
