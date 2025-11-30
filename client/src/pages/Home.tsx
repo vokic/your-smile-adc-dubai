@@ -4,6 +4,7 @@ import { ArrowRight, CheckCircle2, Star, MapPin, Phone, MessageCircle, Clock, Cr
 import { Link } from "wouter";
 import { useState } from "react";
 import { useLanguage } from "@/hooks/useLanguage";
+import { TestimonialCarousel } from "@/components/TestimonialCarousel";
 
 export default function Home() {
   const { t } = useLanguage();
@@ -290,7 +291,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 6. Reviews */}
+      {/* 6. Patient Testimonials Carousel */}
+      <TestimonialCarousel />
+
+      {/* 7. Reviews */}
       <section className="py-24 bg-secondary text-secondary-foreground relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5 mix-blend-overlay"></div>
         <div className="container mx-auto px-4 relative z-10">

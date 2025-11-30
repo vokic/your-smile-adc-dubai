@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { MessageCircle, Phone, CheckCircle2, ChevronDown, Smile } from "lucide-react";
 import { useState } from "react";
+import { ServiceComparison } from "@/components/ServiceComparison";
 
 export default function Orthodontics() {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
@@ -70,6 +71,50 @@ export default function Orthodontics() {
           </div>
         </div>
       </section>
+
+      {/* Treatment Comparison */}
+      <ServiceComparison
+        title="Invisalign vs Braces"
+        subtitle="Compare the most popular teeth straightening options"
+        showThirdColumn={false}
+        rows={[
+          {
+            feature: "Duration of treatment",
+            invisalign: "6-12 months",
+            braces: "18-24 months",
+          },
+          {
+            feature: "Visibility",
+            invisalign: "Virtually invisible",
+            braces: "Visible brackets & wires",
+          },
+          {
+            feature: "Removable",
+            invisalign: true,
+            braces: false,
+          },
+          {
+            feature: "Cost",
+            invisalign: "AED 8,000-15,000",
+            braces: "AED 5,000-10,000",
+          },
+          {
+            feature: "Maintenance",
+            invisalign: "Remove daily, clean tray",
+            braces: "Extra brushing needed",
+          },
+          {
+            feature: "Dietary restrictions",
+            invisalign: "None",
+            braces: "Avoid hard, sticky foods",
+          },
+          {
+            feature: "Effective for all cases",
+            invisalign: "Mild to moderate",
+            braces: "All severity levels",
+          },
+        ]}
+      />
 
       {/* What Is Orthodontics */}
       <section className="py-20 bg-background">
