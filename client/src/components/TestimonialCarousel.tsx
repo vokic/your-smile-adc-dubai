@@ -17,6 +17,7 @@ interface TestimonialCarouselProps {
 export function TestimonialCarousel({ testimonials }: TestimonialCarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [autoScroll, setAutoScroll] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
 
   const defaultTestimonials: Testimonial[] = [
     {
@@ -54,24 +55,39 @@ export function TestimonialCarousel({ testimonials }: TestimonialCarouselProps) 
   const items = testimonials || defaultTestimonials;
 
   useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
     if (!autoScroll) return;
     const timer = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % items.length);
+      setCurrentIndex((prev) => (prev + 1) % (isMobile ? items.length : Math.ceil(items.length / 3)));
     }, 5000);
     return () => clearInterval(timer);
-  }, [autoScroll, items.length]);
+  }, [autoScroll, items.length, isMobile]);
 
   const handlePrev = () => {
     setAutoScroll(false);
-    setCurrentIndex((prev) => (prev > 0 ? prev - 1 : items.length - 1));
+    setCurrentIndex((prev) => (prev > 0 ? prev - 1 : (isMobile ? items.length : Math.ceil(items.length / 3)) - 1));
   };
 
   const handleNext = () => {
     setAutoScroll(false);
-    setCurrentIndex((prev) => (prev + 1) % items.length);
+    setCurrentIndex((prev) => (prev + 1) % (isMobile ? items.length : Math.ceil(items.length / 3)));
   };
 
-  const current = items[currentIndex];
+  const getVisibleTestimonials = () => {
+    if (isMobile) {
+      return [items[currentIndex]];
+    }
+    return items.slice(currentIndex * 3, currentIndex * 3 + 3);
+  };
+
+  const visibleItems = getVisibleTestimonials();
+  const totalSlides = isMobile ? items.length : Math.ceil(items.length / 3);
 
   return (
     <section className="py-24 bg-muted/50">
@@ -85,79 +101,75 @@ export function TestimonialCarousel({ testimonials }: TestimonialCarouselProps) 
           </p>
         </div>
 
-        <div className="max-w-2xl mx-auto">
-          <div
-            className="relative h-auto bg-white rounded-2xl p-8 md:p-12 shadow-lg border border-border transition-all duration-500"
-            key={currentIndex}
-          >
-            {/* Stars */}
-            <div className="flex gap-1 mb-4">
-              {Array.from({ length: current.rating }).map((_, i) => (
-                <Star
-                  key={i}
-                  className="h-5 w-5 fill-primary text-primary"
-                />
-              ))}
-            </div>
-
-            {/* Testimonial Text */}
-            <p className="text-lg md:text-xl text-foreground mb-8 italic leading-relaxed">
-              "{current.text}"
-            </p>
-
-            {/* Author */}
-            <div className="border-t border-border pt-6">
-              <p className="font-bold text-secondary text-lg">{current.name}</p>
-              <p className="text-sm text-muted-foreground">{current.title}</p>
-            </div>
-
-            {/* Navigation Dots */}
-            <div className="absolute -bottom-16 left-1/2 -translate-x-1/2 flex gap-2">
-              {items.map((_, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => {
-                    setAutoScroll(false);
-                    setCurrentIndex(idx);
-                  }}
-                  className={`w-2 h-2 rounded-full transition-all ${
-                    idx === currentIndex
-                      ? "bg-primary w-8"
-                      : "bg-border hover:bg-muted-foreground"
-                  }`}
-                  data-testid={`testimonial-dot-${idx}`}
-                />
-              ))}
-            </div>
-          </div>
-
-          {/* Navigation Buttons */}
-          <div className="flex justify-center gap-4 mt-20">
-            <Button
-              onClick={handlePrev}
-              variant="outline"
-              size="icon"
-              className="rounded-full"
-              data-testid="button-testimonial-prev"
+        {/* Desktop: 3 Cards, Mobile: 1 Card */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 max-w-5xl mx-auto">
+          {visibleItems.map((testimonial, idx) => (
+            <div
+              key={idx}
+              className="bg-white rounded-2xl p-8 shadow-lg border border-border transition-all duration-500 hover:shadow-xl animate-in fade-in slide-in-from-bottom-4"
             >
-              <ChevronLeft className="h-5 w-5" />
-            </Button>
-            <Button
-              onClick={handleNext}
-              variant="outline"
-              size="icon"
-              className="rounded-full"
-              data-testid="button-testimonial-next"
-            >
-              <ChevronRight className="h-5 w-5" />
-            </Button>
-          </div>
+              {/* Stars */}
+              <div className="flex gap-1 mb-4">
+                {Array.from({ length: testimonial.rating }).map((_, i) => (
+                  <Star key={i} className="h-5 w-5 fill-primary text-primary" />
+                ))}
+              </div>
 
-          {/* Testimonial Count */}
-          <p className="text-center text-sm text-muted-foreground mt-8">
-            {currentIndex + 1} / {items.length}
-          </p>
+              {/* Testimonial Text */}
+              <p className="text-lg text-foreground mb-8 italic leading-relaxed">
+                "{testimonial.text}"
+              </p>
+
+              {/* Author */}
+              <div className="border-t border-border pt-6">
+                <p className="font-bold text-secondary text-lg">{testimonial.name}</p>
+                <p className="text-sm text-muted-foreground">{testimonial.title}</p>
+              </div>
+            </div>
+          ))}
         </div>
+
+        {/* Navigation */}
+        <div className="flex items-center justify-center gap-4">
+          <Button
+            onClick={handlePrev}
+            variant="outline"
+            size="icon"
+            className="rounded-full"
+          >
+            <ChevronLeft className="h-5 w-5" />
+          </Button>
+
+          {/* Dots */}
+          <div className="flex gap-2">
+            {Array.from({ length: totalSlides }).map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => {
+                  setAutoScroll(false);
+                  setCurrentIndex(idx);
+                }}
+                className={`h-2 rounded-full transition-all ${
+                  idx === currentIndex ? "bg-primary w-8" : "bg-muted hover:bg-primary/50 w-2"
+                }`}
+              />
+            ))}
+          </div>
+
+          <Button
+            onClick={handleNext}
+            variant="outline"
+            size="icon"
+            className="rounded-full"
+          >
+            <ChevronRight className="h-5 w-5" />
+          </Button>
+        </div>
+
+        {/* Counter */}
+        <p className="text-center text-muted-foreground text-sm mt-6">
+          {isMobile ? `${currentIndex + 1} of ${items.length}` : `Showing ${currentIndex * 3 + 1}-${Math.min((currentIndex + 1) * 3, items.length)} of ${items.length}`}
+        </p>
       </div>
     </section>
   );

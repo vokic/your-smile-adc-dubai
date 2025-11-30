@@ -5,6 +5,8 @@ import { ServiceHero } from "@/components/ServiceHero";
 import { BenefitsSection } from "@/components/BenefitsSection";
 import { FAQSection } from "@/components/FAQSection";
 import { ServiceGrid } from "@/components/ServiceGrid";
+import { PricingTables } from "@/components/PricingTables";
+import { TrustBadges } from "@/components/TrustBadges";
 
 export default function CrownsAndBridges() {
   const services = [
@@ -84,6 +86,17 @@ export default function CrownsAndBridges() {
         </div>
       </section>
 
+      <section className="py-20 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary mb-12 text-center">Real Transformations, Real Smiles</h2>
+          <div className="text-center mb-12 max-w-3xl mx-auto">
+            <p className="text-muted-foreground text-lg leading-relaxed">
+              See how our custom crowns and bridges restore strength, function, and beauty to damaged or missing teeth. Each transformation represents a patient's renewed confidence.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <TestimonialsGallery
         beforeAfterItems={[
           { id: "crown-1", title: "Damaged Tooth Restoration", category: "Single Crown" },
@@ -95,6 +108,14 @@ export default function CrownsAndBridges() {
           { id: "vid-2", title: "Stronger & More Beautiful", patientName: "Amira S." },
         ]}
       />
+
+      <PricingTables title="Crowns & Bridges Pricing in Dubai" subtitle="Affordable restorative solutions" tiers={[
+        { name: "Single Crown", price: "AED 1,800", description: "Porcelain or zirconia crown", features: ["Natural aesthetics", "Custom color matching", "Durable material", "2-year warranty"] },
+        { name: "Dental Bridge", price: "AED 4,500", description: "Replace 1-3 missing teeth", features: ["Tooth-colored restoration", "Precision fit", "Natural appearance", "3-year warranty"], highlighted: true },
+        { name: "Implant Bridge", price: "AED 8,000", description: "Premium implant-supported solution", features: ["No tooth grinding", "Bone preservation", "Most durable option", "Lifetime support"] }
+      ]} />
+
+      <TrustBadges title="Why Choose Our Crowns & Bridges" bgColor="bg-background" />
 
       <FAQSection title="Frequently Asked Questions" faqs={faqs} />
 

@@ -6,6 +6,8 @@ import { ServiceHero } from "@/components/ServiceHero";
 import { BenefitsSection } from "@/components/BenefitsSection";
 import { FAQSection } from "@/components/FAQSection";
 import { ServiceGrid } from "@/components/ServiceGrid";
+import { PricingTables } from "@/components/PricingTables";
+import { TrustBadges } from "@/components/TrustBadges";
 
 export default function Implants() {
   const implantServices = [
@@ -83,6 +85,17 @@ export default function Implants() {
 
       <BenefitsSection title="Why Choose Dental Implants?" benefits={benefits} bgColor="bg-background" />
 
+      <section className="py-20 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary mb-12 text-center">Real Transformations, Real Smiles</h2>
+          <div className="text-center mb-12 max-w-3xl mx-auto">
+            <p className="text-muted-foreground text-lg leading-relaxed">
+              See the life-changing results of our dental implant treatments. These before-and-after transformations represent restored confidence, improved functionality, and beautiful natural-looking smiles.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <TestimonialsGallery
         beforeAfterItems={[
           { id: "implant-1", title: "Single Tooth Restoration", category: "Single Implant" },
@@ -94,6 +107,14 @@ export default function Implants() {
           { id: "vid-2", title: "Smile Restored", patientName: "Noor R." },
         ]}
       />
+
+      <PricingTables title="Dental Implants Pricing in Dubai" subtitle="Transparent pricing for your smile restoration" tiers={[
+        { name: "Single Implant", price: "AED 4,500", description: "One tooth replacement", features: ["Implant post + crown", "Titanium biocompatible", "Lifetime warranty", "Free consultation"] },
+        { name: "Full-Mouth Implants", price: "AED 35,000", description: "All-on-4 or All-on-6 restoration", features: ["4-6 implants per arch", "Precision 3D planning", "Custom bridgework", "Premium materials"], highlighted: true },
+        { name: "Bone Grafting", price: "AED 2,000", description: "Additional bone support", features: ["Preparation for implants", "Advanced techniques", "3-6 months integration", "Expert surgical team"] }
+      ]} />
+
+      <TrustBadges title="Why Choose Us for Dental Implants" bgColor="bg-background" />
 
       <FAQSection title="Frequently Asked Questions About Dental Implants" faqs={faqs} />
     </div>

@@ -1,11 +1,66 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Phone, MessageCircle, MapPin, Mail } from "lucide-react";
+import { Phone, MessageCircle, MapPin, Mail, AlertTriangle, X } from "lucide-react";
+import { useState } from "react";
 
 export default function Contact() {
+  const [showEmergencyModal, setShowEmergencyModal] = useState(false);
+
   return (
     <div className="flex flex-col min-h-screen">
+      {/* Emergency Modal */}
+      {showEmergencyModal && (
+        <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4 animate-in fade-in">
+          <div className="bg-white rounded-2xl p-8 max-w-md w-full shadow-2xl animate-in scale-95 duration-200">
+            <div className="flex items-center justify-between mb-4">
+              <div className="flex items-center gap-3">
+                <AlertTriangle className="h-6 w-6 text-red-500" />
+                <h3 className="text-2xl font-bold text-secondary">Emergency Contact</h3>
+              </div>
+              <button onClick={() => setShowEmergencyModal(false)} className="p-2 hover:bg-muted rounded-full">
+                <X className="h-5 w-5 text-muted-foreground" />
+              </button>
+            </div>
+            
+            <div className="space-y-4 mb-6">
+              <p className="text-muted-foreground">For urgent dental emergencies, call immediately:</p>
+              <div className="bg-red-50 border-2 border-red-200 rounded-xl p-4">
+                <p className="text-xs text-muted-foreground mb-2">Emergency Hotline (24/7):</p>
+                <a href="tel:+971523301356" className="text-2xl font-bold text-red-600 hover:text-red-700 transition-colors">
+                  +971 52 330 1356
+                </a>
+              </div>
+
+              <div className="space-y-3 text-sm text-muted-foreground">
+                <div className="flex items-start gap-2">
+                  <span className="text-primary font-bold mt-0.5">✓</span>
+                  <span>Available 24/7 for urgent cases</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <span className="text-primary font-bold mt-0.5">✓</span>
+                  <span>Severe pain, broken teeth, infections</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <span className="text-primary font-bold mt-0.5">✓</span>
+                  <span>Experienced emergency team standing by</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex gap-3">
+              <Button className="flex-1 bg-red-600 hover:bg-red-700 rounded-full gap-2">
+                <Phone className="h-4 w-4" />
+                Call Now
+              </Button>
+              <Button variant="outline" className="flex-1 rounded-full" onClick={() => setShowEmergencyModal(false)}>
+                Close
+              </Button>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* 1. Hero Block */}
       <section className="relative min-h-[50vh] md:h-[60vh] w-full overflow-hidden bg-secondary pt-10 md:pt-0">
         <div className="absolute inset-0 opacity-40 flex items-center justify-center bg-muted">
@@ -22,11 +77,11 @@ export default function Contact() {
               We're here for your dental needs - whether you're booking an appointment or need emergency care.
             </h2>
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 gap-2 rounded-full rounded-full">
+              <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 gap-2 rounded-full">
                 <MessageCircle className="h-5 w-5" />
                 Book on WhatsApp
               </Button>
-              <Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-secondary gap-2 rounded-full rounded-full">
+              <Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-secondary gap-2 rounded-full">
                 <Phone className="h-5 w-5" />
                 Call Now
               </Button>
@@ -53,13 +108,17 @@ export default function Contact() {
                       <a href="tel:+971585828257" className="text-muted-foreground hover:text-primary transition-colors font-medium">+971 58 582 82 57</a>
                     </div>
                   </div>
-                  <div className="flex items-start gap-4 p-5 bg-card rounded-xl border border-border hover:shadow-md transition-all">
-                    <Phone className="h-6 w-6 text-red-500 shrink-0 mt-1" />
-                    <div>
-                      <p className="font-bold text-secondary">Emergency Phone</p>
-                      <a href="tel:+971523301356" className="text-muted-foreground hover:text-primary transition-colors font-medium">+971 52 330 1356</a>
+                  <button 
+                    onClick={() => setShowEmergencyModal(true)}
+                    className="w-full flex items-start gap-4 p-5 bg-red-50 rounded-xl border-2 border-red-200 hover:shadow-md transition-all cursor-pointer group"
+                  >
+                    <Phone className="h-6 w-6 text-red-600 shrink-0 mt-1 group-hover:scale-110 transition-transform" />
+                    <div className="text-left">
+                      <p className="font-bold text-red-700">Emergency Phone (24/7)</p>
+                      <p className="text-red-600 hover:text-red-700 transition-colors font-medium">+971 52 330 1356</p>
+                      <p className="text-xs text-red-500 mt-1">Click for emergency details</p>
                     </div>
-                  </div>
+                  </button>
                   <div className="flex items-start gap-4 p-5 bg-card rounded-xl border border-border hover:shadow-md transition-all">
                     <Mail className="h-6 w-6 text-primary shrink-0 mt-1" />
                     <div>
@@ -152,7 +211,6 @@ export default function Contact() {
                   referrerPolicy="no-referrer-when-downgrade"
                   className="rounded-2xl"
                 />
-                
               </div>
             </div>
 

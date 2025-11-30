@@ -119,21 +119,45 @@ export default function About() {
       </section>
 
       {/* Vision & Mission */}
-      <section className="py-20 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary mb-12 text-center">Our Vision & Mission</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-3xl mx-auto">
-            <div className="space-y-4 p-8 bg-card rounded-2xl border border-border">
-              <h3 className="text-2xl font-serif font-bold text-primary">Our Vision</h3>
-              <p className="text-muted-foreground text-lg leading-relaxed">
-                To become a superior and trusted healthcare provider delivering excellence to all community members in Dubai.
-              </p>
+      <section className="py-24 bg-gradient-to-b from-background to-secondary/5 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5 mix-blend-overlay"></div>
+        <div className="container mx-auto px-4 relative z-10">
+          <h2 className="text-3xl md:text-5xl font-serif font-bold text-secondary mb-16 text-center">Our Vision & Mission</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {/* Vision */}
+            <div className="group relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-primary/5 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-300" />
+              <div className="relative p-10 md:p-12 bg-gradient-to-br from-white to-primary/5 rounded-3xl border-2 border-primary/20 hover:border-primary/40 transition-all duration-300 shadow-lg hover:shadow-xl">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <svg className="h-6 w-6 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M11.3 1.046A1 1 0 0010 2v5H5V2a1 1 0 00-1.82.364l-2.5 7.5A1 1 0 003 11h2v6a1 1 0 001 1h4a1 1 0 001-1v-6h2a1 1 0 00.98-1.276l-2.5-7.5zM14 12a1 1 0 00-1 1v3h-2v-3a1 1 0 00-2 0v3a2 2 0 002 2h2a2 2 0 002-2v-3a1 1 0 00-1-1z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-2xl md:text-3xl font-serif font-bold text-primary">Our Vision</h3>
+                </div>
+                <p className="text-secondary text-lg leading-relaxed font-medium">
+                  To become Dubai's premier dental destination - a trusted partner in creating beautiful, healthy smiles that transform lives and build confidence.
+                </p>
+              </div>
             </div>
-            <div className="space-y-4 p-8 bg-card rounded-2xl border border-border">
-              <h3 className="text-2xl font-serif font-bold text-primary">Our Mission</h3>
-              <p className="text-muted-foreground text-lg leading-relaxed">
-                Fostering innovation, continuous learning, and international-standard care through excellence and compassion.
-              </p>
+
+            {/* Mission */}
+            <div className="group relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-secondary/10 to-secondary/5 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-300" />
+              <div className="relative p-10 md:p-12 bg-gradient-to-br from-white to-secondary/5 rounded-3xl border-2 border-secondary/20 hover:border-secondary/40 transition-all duration-300 shadow-lg hover:shadow-xl">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="h-12 w-12 rounded-full bg-secondary/10 flex items-center justify-center">
+                    <svg className="h-6 w-6 text-secondary" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 3.062v2.332c0 .017-.002.033-.006.049v.001a.75.75 0 00.75.75h.sup 2.25a.75.75 0 00.75-.75v-.001c0 .016.002.032.006.048v-2.332a3.066 3.066 0 012.812-3.062 3.066 3.066 0 011.745.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745-.723 3.066 3.066 0 012.812 3.062v2.332a.75.75 0 00.75.75h1.5a.75.75 0 00.75-.75v-2.332a4.566 4.566 0 00-1.077-2.891 4.566 4.566 0 00-2.891-1.077 4.566 4.566 0 00-2.891 1.077 4.566 4.566 0 00-1.077 2.891v1.5h-2v-1.5a4.566 4.566 0 00-1.077-2.891 4.566 4.566 0 00-2.891-1.077 4.566 4.566 0 00-2.891 1.077 4.566 4.566 0 00-1.077 2.891v1.5h-2v-1.5a3.066 3.066 0 012.812-3.062z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <h3 className="text-2xl md:text-3xl font-serif font-bold text-secondary">Our Mission</h3>
+                </div>
+                <p className="text-secondary text-lg leading-relaxed font-medium">
+                  Delivering world-class dental care through innovation, compassion, and continuous excellence - combining international expertise with personalized, patient-centered treatment.
+                </p>
+              </div>
             </div>
           </div>
         </div>
