@@ -1,17 +1,17 @@
 import { Button } from "@/components/ui/button";
-import { MessageCircle, Phone, CheckCircle2, ChevronDown, Tooth, Cog, Dna, Scissors, Zap, Wand2 } from "lucide-react";
+import { MessageCircle, Phone, CheckCircle2, ChevronDown, Smile, Settings, Activity, Scissors, Zap, Wand } from "lucide-react";
 import { useState } from "react";
 
 export default function DentalSurgery() {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
 
   const surgeryTypes = [
-    { title: "Wisdom Tooth Extraction", icon: Tooth },
-    { title: "Dental Implants", icon: Cog },
-    { title: "Bone Grafting", icon: Dna },
+    { title: "Wisdom Tooth Extraction", icon: Smile },
+    { title: "Dental Implants", icon: Settings },
+    { title: "Bone Grafting", icon: Activity },
     { title: "Gum Surgery", icon: Scissors },
     { title: "Jaw Correction", icon: Zap },
-    { title: "Frenectomy", icon: Wand2 }
+    { title: "Frenectomy", icon: Wand }
   ];
 
   const benefits = [
