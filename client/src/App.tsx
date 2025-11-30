@@ -29,6 +29,9 @@ import Blog from "@/pages/Blog";
 import BlogPost from "@/pages/BlogPost";
 import DentalTourism from "@/pages/DentalTourism";
 import Gallery from "@/pages/Gallery";
+import Privacy from "@/pages/Privacy";
+import Terms from "@/pages/Terms";
+import Sitemap from "@/pages/Sitemap";
 
 function Router() {
   const [location] = useLocation();
@@ -62,6 +65,9 @@ function Router() {
           <Route path="/blog-post" component={BlogPost}/>
           <Route path="/dental-tourism" component={DentalTourism}/>
           <Route path="/gallery" component={Gallery}/>
+          <Route path="/privacy" component={Privacy}/>
+          <Route path="/terms" component={Terms}/>
+          <Route path="/sitemap" component={Sitemap}/>
           <Route component={NotFound} />
         </Switch>
       </main>

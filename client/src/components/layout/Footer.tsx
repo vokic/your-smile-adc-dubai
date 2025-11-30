@@ -117,9 +117,9 @@ export function Footer() {
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs opacity-60">
           <p>&copy; {new Date().getFullYear()} Your Smile Advanced Dental Center. All rights reserved.</p>
           <div className="flex gap-6">
-            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-white transition-colors">Terms & Conditions</a>
-            <a href="#" className="hover:text-white transition-colors">Sitemap</a>
+            <a href="/privacy" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors cursor-pointer">Privacy Policy</a>
+            <a href="/terms" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors cursor-pointer">Terms & Conditions</a>
+            <a href="/sitemap" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors cursor-pointer">Sitemap</a>
           </div>
         </div>
       </div>
