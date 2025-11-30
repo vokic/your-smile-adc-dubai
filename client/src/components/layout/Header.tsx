@@ -39,16 +39,16 @@ export function Header() {
         </Link>
 
         {/* 2. Main Navigation (Desktop) */}
-        <div className="hidden lg:flex items-center gap-6">
+        <div className="hidden lg:flex items-center gap-10">
           <NavigationMenu>
             <NavigationMenuList>
               <NavigationMenuItem>
-                <Link href="/" className="text-sm font-medium text-foreground hover:text-primary transition-colors cursor-pointer">
+                <Link href="/" className="text-sm font-medium text-foreground hover:text-primary transition-colors cursor-pointer px-2 py-1">
                   Home
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="text-sm font-medium hover:text-primary transition-colors">Services</NavigationMenuTrigger>
+                <NavigationMenuTrigger className="text-sm font-medium hover:text-primary transition-colors px-2 py-1">Services</NavigationMenuTrigger>
                 <NavigationMenuContent className="left-0 top-0 w-[400px] p-4 md:w-[700px]">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                     <Link href="/veneers" className="group block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground cursor-pointer">
@@ -99,27 +99,27 @@ export function Header() {
                 </NavigationMenuContent>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <Link href="/about" className="text-sm font-medium text-foreground hover:text-primary transition-colors cursor-pointer">
+                <Link href="/about" className="text-sm font-medium text-foreground hover:text-primary transition-colors cursor-pointer px-2 py-1">
                   About Us
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <Link href="/doctors" className="text-sm font-medium text-foreground hover:text-primary transition-colors cursor-pointer">
+                <Link href="/doctors" className="text-sm font-medium text-foreground hover:text-primary transition-colors cursor-pointer px-2 py-1">
                   Our Doctors
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <Link href="/faq" className="text-sm font-medium text-foreground hover:text-primary transition-colors cursor-pointer">
+                <Link href="/faq" className="text-sm font-medium text-foreground hover:text-primary transition-colors cursor-pointer px-2 py-1">
                   FAQ
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <Link href="/blog" className="text-sm font-medium text-foreground hover:text-primary transition-colors cursor-pointer">
+                <Link href="/blog" className="text-sm font-medium text-foreground hover:text-primary transition-colors cursor-pointer px-2 py-1">
                   Blog / News
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <Link href="/contact" className="text-sm font-medium text-foreground hover:text-primary transition-colors cursor-pointer">
+                <Link href="/contact" className="text-sm font-medium text-foreground hover:text-primary transition-colors cursor-pointer px-2 py-1">
                   Contact Us
                 </Link>
               </NavigationMenuItem>
