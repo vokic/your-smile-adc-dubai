@@ -71,7 +71,7 @@ export default function Emergency() {
                 <Phone className="h-5 w-5" />
                 Call Now for Emergency Care
               </Button>
-              <Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-red-600 gap-2 rounded-full">
+              <Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-red-600 gap-2 rounded-full rounded-full">
                 <MessageCircle className="h-5 w-5" />
                 Book on WhatsApp
               </Button>
@@ -216,7 +216,7 @@ export default function Emergency() {
                 <Phone className="h-5 w-5" />
                 Call Now for Urgent Care
               </Button>
-              <Button variant="outline" className="gap-2 border-2 border-red-300 rounded-full">
+              <Button variant="outline" className="gap-2 border-2 border-red-300 rounded-full rounded-full">
                 <MessageCircle className="h-4 w-4" />
                 Book on WhatsApp
               </Button>

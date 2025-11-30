@@ -224,11 +224,11 @@ export default function Gallery() {
               Schedule a consultation with our expert dentists and discover which treatment is perfect for your smile.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-              <Button className="bg-primary text-primary-foreground hover:bg-primary/90 gap-2">
+              <Button className="bg-primary text-primary-foreground hover:bg-primary/90 gap-2 rounded-full rounded-full">
                 <MessageCircle className="h-4 w-4" />
                 Book on WhatsApp
               </Button>
-              <Button variant="outline" className="text-white border-white hover:bg-white hover:text-secondary gap-2">
+              <Button variant="outline" className="text-white border-white hover:bg-white hover:text-secondary gap-2 rounded-full rounded-full">
                 <Phone className="h-4 w-4" />
                 Call Now
               </Button>

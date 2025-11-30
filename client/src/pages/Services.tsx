@@ -68,11 +68,11 @@ export default function Services() {
               From preventive care to advanced cosmetic treatments, we provide complete dental solutions for a healthy, confident smile.
             </h2>
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 gap-2 rounded-full">
+              <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 gap-2 rounded-full rounded-full">
                 <MessageCircle className="h-5 w-5" />
                 Book Your Consultation on WhatsApp
               </Button>
-              <Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-secondary gap-2 rounded-full">
+              <Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-secondary gap-2 rounded-full rounded-full">
                 <Phone className="h-5 w-5" />
                 Call Now
               </Button>
@@ -210,11 +210,11 @@ export default function Services() {
                 From preventive check-ups to advanced smile makeovers, our team is ready to provide the dental care you deserve. Schedule your consultation now.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 gap-2 w-full sm:w-auto">
+                <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 gap-2 w-full sm:w-auto rounded-full">
                   <MessageCircle className="h-5 w-5" />
                   Book on WhatsApp
                 </Button>
-                <Button size="lg" variant="outline" className="gap-2 w-full sm:w-auto">
+                <Button size="lg" variant="outline" className="gap-2 w-full sm:w-auto rounded-full">
                   <Phone className="h-5 w-5" />
                   Call Now
                 </Button>

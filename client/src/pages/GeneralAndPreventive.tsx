@@ -74,11 +74,11 @@ export default function GeneralAndPreventive() {
               Protect your smile with routine check-ups, cleanings, and preventive care for lifelong oral health.
             </h2>
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 gap-2 rounded-full">
+              <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 gap-2 rounded-full rounded-full">
                 <MessageCircle className="h-5 w-5" />
                 Book Appointment
               </Button>
-              <Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-secondary gap-2 rounded-full">
+              <Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-secondary gap-2 rounded-full rounded-full">
                 <Phone className="h-5 w-5" />
                 Call Now
               </Button>
@@ -208,11 +208,11 @@ export default function GeneralAndPreventive() {
               Regular check-ups and cleanings are the key to a healthy smile. Schedule your preventive dentistry appointment now and protect your teeth for life.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-              <Button className="bg-primary text-primary-foreground hover:bg-primary/90 gap-2">
+              <Button className="bg-primary text-primary-foreground hover:bg-primary/90 gap-2 rounded-full">
                 <MessageCircle className="h-4 w-4" />
                 Book on WhatsApp
               </Button>
-              <Button variant="outline" className="gap-2">
+              <Button variant="outline" className="gap-2 rounded-full">
                 <Phone className="h-4 w-4" />
                 Call Now
               </Button>

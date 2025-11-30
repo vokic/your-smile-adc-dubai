@@ -50,11 +50,11 @@ export default function Doctors() {
               Experienced, caring, and internationally trained dental specialists for your smile.
             </h2>
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 gap-2 rounded-full">
+              <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 gap-2 rounded-full rounded-full">
                 <MessageCircle className="h-5 w-5" />
                 Book Consultation on WhatsApp
               </Button>
-              <Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-secondary gap-2 rounded-full">
+              <Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-secondary gap-2 rounded-full rounded-full">
                 <Phone className="h-5 w-5" />
                 Call Now
               </Button>
@@ -181,11 +181,11 @@ export default function Doctors() {
                 Choose the right specialist for your smile goals—cosmetic, restorative, surgical, or orthodontic. Schedule your consultation today.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 gap-2 w-full sm:w-auto">
+                <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 gap-2 w-full sm:w-auto rounded-full">
                   <MessageCircle className="h-5 w-5" />
                   Book on WhatsApp
                 </Button>
-                <Button size="lg" variant="outline" className="gap-2 w-full sm:w-auto">
+                <Button size="lg" variant="outline" className="gap-2 w-full sm:w-auto rounded-full">
                   <Phone className="h-5 w-5" />
                   Call Now
                 </Button>

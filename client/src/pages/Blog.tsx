@@ -295,7 +295,7 @@ export default function Blog() {
                 placeholder="Enter your email address"
                 className="px-4 py-3 rounded-lg bg-white text-secondary placeholder:text-muted-foreground focus:outline-none flex-grow"
               />
-              <Button className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold rounded-full">
+              <Button className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold rounded-full rounded-full">
                 Subscribe
               </Button>
             </div>
@@ -314,11 +314,11 @@ export default function Blog() {
               Schedule a consultation with our expert dentists and discover the perfect treatment plan for you.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-              <Button className="bg-primary text-primary-foreground hover:bg-primary/90 gap-2">
+              <Button className="bg-primary text-primary-foreground hover:bg-primary/90 gap-2 rounded-full">
                 <MessageCircle className="h-4 w-4" />
                 Book on WhatsApp
               </Button>
-              <Button variant="outline" className="gap-2">
+              <Button variant="outline" className="gap-2 rounded-full">
                 <Phone className="h-4 w-4" />
                 Call Now
               </Button>

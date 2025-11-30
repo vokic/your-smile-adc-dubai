@@ -74,11 +74,11 @@ export default function FAQ() {
               Find answers to common questions about our services, procedures, and how we can help your dental health.
             </h2>
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 gap-2 rounded-full">
+              <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 gap-2 rounded-full rounded-full">
                 <MessageCircle className="h-5 w-5" />
                 Ask a Question
               </Button>
-              <Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-secondary gap-2 rounded-full">
+              <Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-secondary gap-2 rounded-full rounded-full">
                 <Phone className="h-5 w-5" />
                 Call Us
               </Button>
@@ -127,11 +127,11 @@ export default function FAQ() {
                 Our dental team is ready to answer any additional questions. Reach out to us via phone, WhatsApp, or email.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                <Button className="bg-primary text-primary-foreground hover:bg-primary/90 gap-2">
+                <Button className="bg-primary text-primary-foreground hover:bg-primary/90 gap-2 rounded-full">
                   <MessageCircle className="h-4 w-4" />
                   Message on WhatsApp
                 </Button>
-                <Button variant="outline" className="gap-2">
+                <Button variant="outline" className="gap-2 rounded-full">
                   <Phone className="h-4 w-4" />
                   Call +971 58 828 2432
                 </Button>
