@@ -51,47 +51,47 @@ export function Header() {
                 <NavigationMenuTrigger className="text-sm font-medium hover:text-primary transition-colors px-2 py-1">Services</NavigationMenuTrigger>
                 <NavigationMenuContent className="left-0 top-0 w-[400px] p-4 md:w-[700px]">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                    <Link href="/veneers" className="group block select-none space-y-1 rounded-xl p-3 leading-none no-underline outline-none transition-colors hover:text-primary cursor-pointer">
+                    <Link href="/veneers" className="group block select-none space-y-1 rounded-xl p-3 leading-none no-underline outline-none transition-colors text-foreground hover:text-primary hover:bg-transparent cursor-pointer">
                       <div className="text-sm font-medium">Veneers</div>
                       <p className="text-xs text-muted-foreground">Flawless smile transformations</p>
                     </Link>
-                    <Link href="/dental-surgery" className="group block select-none space-y-1 rounded-xl p-3 leading-none no-underline outline-none transition-colors hover:text-primary cursor-pointer">
+                    <Link href="/dental-surgery" className="group block select-none space-y-1 rounded-xl p-3 leading-none no-underline outline-none transition-colors text-foreground hover:text-primary hover:bg-transparent cursor-pointer">
                       <div className="text-sm font-medium">Dental Surgery</div>
                       <p className="text-xs text-muted-foreground">Expert oral procedures</p>
                     </Link>
-                    <Link href="/implants" className="group block select-none space-y-1 rounded-xl p-3 leading-none no-underline outline-none transition-colors hover:text-primary cursor-pointer">
+                    <Link href="/implants" className="group block select-none space-y-1 rounded-xl p-3 leading-none no-underline outline-none transition-colors text-foreground hover:text-primary hover:bg-transparent cursor-pointer">
                       <div className="text-sm font-medium">Dental Implants</div>
                       <p className="text-xs text-muted-foreground">Permanent tooth replacement</p>
                     </Link>
-                    <Link href="/general-preventive" className="group block select-none space-y-1 rounded-xl p-3 leading-none no-underline outline-none transition-colors hover:text-primary cursor-pointer">
+                    <Link href="/general-preventive" className="group block select-none space-y-1 rounded-xl p-3 leading-none no-underline outline-none transition-colors text-foreground hover:text-primary hover:bg-transparent cursor-pointer">
                       <div className="text-sm font-medium">General & Preventive</div>
                       <p className="text-xs text-muted-foreground">Check-ups and cleanings</p>
                     </Link>
-                    <Link href="/xray-opg" className="group block select-none space-y-1 rounded-xl p-3 leading-none no-underline outline-none transition-colors hover:text-primary cursor-pointer">
+                    <Link href="/xray-opg" className="group block select-none space-y-1 rounded-xl p-3 leading-none no-underline outline-none transition-colors text-foreground hover:text-primary hover:bg-transparent cursor-pointer">
                       <div className="text-sm font-medium">Digital X-Ray & OPG</div>
                       <p className="text-xs text-muted-foreground">Advanced diagnostics</p>
                     </Link>
-                    <Link href="/crowns-bridges" className="group block select-none space-y-1 rounded-xl p-3 leading-none no-underline outline-none transition-colors hover:text-primary cursor-pointer">
+                    <Link href="/crowns-bridges" className="group block select-none space-y-1 rounded-xl p-3 leading-none no-underline outline-none transition-colors text-foreground hover:text-primary hover:bg-transparent cursor-pointer">
                       <div className="text-sm font-medium">Crowns & Bridges</div>
                       <p className="text-xs text-muted-foreground">Restore teeth function</p>
                     </Link>
-                    <Link href="/cosmetic" className="group block select-none space-y-1 rounded-xl p-3 leading-none no-underline outline-none transition-colors hover:text-primary cursor-pointer">
+                    <Link href="/cosmetic" className="group block select-none space-y-1 rounded-xl p-3 leading-none no-underline outline-none transition-colors text-foreground hover:text-primary hover:bg-transparent cursor-pointer">
                       <div className="text-sm font-medium">Cosmetic Dentistry</div>
                       <p className="text-xs text-muted-foreground">Beautiful smile design</p>
                     </Link>
-                    <Link href="/whitening" className="group block select-none space-y-1 rounded-xl p-3 leading-none no-underline outline-none transition-colors hover:text-primary cursor-pointer">
+                    <Link href="/whitening" className="group block select-none space-y-1 rounded-xl p-3 leading-none no-underline outline-none transition-colors text-foreground hover:text-primary hover:bg-transparent cursor-pointer">
                       <div className="text-sm font-medium">Teeth Whitening</div>
                       <p className="text-xs text-muted-foreground">Professional brightening</p>
                     </Link>
-                    <Link href="/emergency" className="group block select-none space-y-1 rounded-xl p-3 leading-none no-underline outline-none transition-colors hover:text-primary cursor-pointer">
+                    <Link href="/emergency" className="group block select-none space-y-1 rounded-xl p-3 leading-none no-underline outline-none transition-colors text-foreground hover:text-primary hover:bg-transparent cursor-pointer">
                       <div className="text-sm font-medium">Emergency Care</div>
                       <p className="text-xs text-muted-foreground">24/7 urgent support</p>
                     </Link>
-                    <Link href="/orthodontics" className="group block select-none space-y-1 rounded-xl p-3 leading-none no-underline outline-none transition-colors hover:text-primary cursor-pointer">
+                    <Link href="/orthodontics" className="group block select-none space-y-1 rounded-xl p-3 leading-none no-underline outline-none transition-colors text-foreground hover:text-primary hover:bg-transparent cursor-pointer">
                       <div className="text-sm font-medium">Orthodontics</div>
                       <p className="text-xs text-muted-foreground">Braces & clear aligners</p>
                     </Link>
-                    <Link href="/gallery" className="group block select-none space-y-1 rounded-xl p-3 leading-none no-underline outline-none transition-colors hover:text-primary cursor-pointer md:col-span-2 border-t pt-3">
+                    <Link href="/gallery" className="group block select-none space-y-1 rounded-xl p-3 leading-none no-underline outline-none transition-colors text-foreground hover:text-primary hover:bg-transparent cursor-pointer md:col-span-2 border-t pt-3">
                       <div className="text-sm font-medium text-primary">✨ Smile Transformation Gallery</div>
                       <p className="text-xs text-muted-foreground">Before & after results</p>
                     </Link>
