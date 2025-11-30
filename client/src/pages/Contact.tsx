@@ -115,22 +115,22 @@ export default function Contact() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <label htmlFor="name" className="text-sm font-medium text-secondary">Name</label>
-                      <Input id="name" placeholder="Your full name" className="h-10" />
+                      <Input id="name" placeholder="Your full name" className="h-10 rounded-full" />
                     </div>
                     <div className="space-y-2">
                       <label htmlFor="phone" className="text-sm font-medium text-secondary">Phone</label>
-                      <Input id="phone" placeholder="+971..." className="h-10" />
+                      <Input id="phone" placeholder="+971..." className="h-10 rounded-full" />
                     </div>
                   </div>
                   <div className="space-y-2">
                     <label htmlFor="email" className="text-sm font-medium text-secondary">Email</label>
-                    <Input id="email" type="email" placeholder="your@email.com" className="h-10" />
+                    <Input id="email" type="email" placeholder="your@email.com" className="h-10 rounded-full" />
                   </div>
                   <div className="space-y-2">
                     <label htmlFor="message" className="text-sm font-medium text-secondary">Message</label>
-                    <Textarea id="message" placeholder="How can we help you?" className="min-h-[120px] resize-none" />
+                    <Textarea id="message" placeholder="How can we help you?" className="min-h-[120px] resize-none rounded-2xl" />
                   </div>
-                  <Button type="submit" className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-bold h-11 rounded-full rounded-full">
+                  <Button type="submit" className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-bold h-11 rounded-full">
                     Submit Message
                   </Button>
                 </form>
