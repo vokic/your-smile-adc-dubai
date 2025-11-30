@@ -14,6 +14,7 @@ import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { useLanguage } from "@/hooks/useLanguage";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
+import logoImage from '@assets/logo_1764501679029.png';
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -37,9 +38,8 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
       <div className="container mx-auto px-4 h-20 flex items-center justify-between">
         {/* 1. Logo */}
-        <Link href="/" className="flex flex-col items-start cursor-pointer">
-          <span className="text-2xl font-serif font-bold text-primary leading-none">Your Smile</span>
-          <span className="text-xs text-muted-foreground font-medium mt-1">Advanced Dental Center</span>
+        <Link href="/" className="flex items-center gap-3 cursor-pointer group">
+          <img src={logoImage} alt="Your Smile Advanced Dental Center" className="h-14 w-auto transition-opacity group-hover:opacity-80" />
         </Link>
 
         {/* 2. Main Navigation (Desktop) */}
