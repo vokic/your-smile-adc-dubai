@@ -43,12 +43,12 @@ export function Header() {
           <NavigationMenu>
             <NavigationMenuList>
               <NavigationMenuItem>
-                <Link href="/" className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50 cursor-pointer">
+                <Link href="/" className="text-sm font-medium text-foreground hover:text-primary transition-colors cursor-pointer">
                   Home
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="text-sm font-medium">Services</NavigationMenuTrigger>
+                <NavigationMenuTrigger className="text-sm font-medium hover:text-primary transition-colors">Services</NavigationMenuTrigger>
                 <NavigationMenuContent className="left-0 top-0 w-[400px] p-4 md:w-[700px]">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                     <Link href="/veneers" className="group block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground cursor-pointer">
@@ -99,27 +99,27 @@ export function Header() {
                 </NavigationMenuContent>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <Link href="/about" className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50 cursor-pointer">
+                <Link href="/about" className="text-sm font-medium text-foreground hover:text-primary transition-colors cursor-pointer">
                   About Us
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <Link href="/doctors" className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50 cursor-pointer">
+                <Link href="/doctors" className="text-sm font-medium text-foreground hover:text-primary transition-colors cursor-pointer">
                   Our Doctors
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <Link href="/faq" className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50 cursor-pointer">
+                <Link href="/faq" className="text-sm font-medium text-foreground hover:text-primary transition-colors cursor-pointer">
                   FAQ
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <Link href="/blog" className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50 cursor-pointer">
+                <Link href="/blog" className="text-sm font-medium text-foreground hover:text-primary transition-colors cursor-pointer">
                   Blog / News
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <Link href="/contact" className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50 cursor-pointer">
+                <Link href="/contact" className="text-sm font-medium text-foreground hover:text-primary transition-colors cursor-pointer">
                   Contact Us
                 </Link>
               </NavigationMenuItem>
@@ -129,13 +129,13 @@ export function Header() {
 
         {/* 3. CTA Buttons */}
         <div className="hidden md:flex items-center gap-3">
-          <Button variant="outline" asChild className="text-foreground hover:bg-accent hover:text-primary">
+          <Button variant="outline" asChild className="text-foreground hover:bg-accent hover:text-primary rounded-full">
             <a href="tel:+971585828257">
               <Phone className="mr-2 h-4 w-4" />
               Call
             </a>
           </Button>
-          <Button asChild className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold shadow-lg shadow-primary/20">
+          <Button asChild className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold shadow-lg shadow-primary/20 rounded-full">
             <a href="https://wa.me/971585828257" target="_blank" rel="noopener noreferrer">
               <MessageCircle className="mr-2 h-4 w-4" />
               Book Now
@@ -145,7 +145,7 @@ export function Header() {
 
         {/* Mobile CTA Button */}
         <div className="md:hidden">
-          <Button asChild className="bg-primary text-primary-foreground hover:bg-primary/90 gap-2">
+          <Button asChild className="bg-primary text-primary-foreground hover:bg-primary/90 gap-2 rounded-full">
             <a href="https://wa.me/971585828257" target="_blank" rel="noopener noreferrer">
               <MessageCircle className="h-4 w-4" />
               Book
@@ -179,10 +179,10 @@ export function Header() {
                 <Link href="/faq" className="text-lg font-medium cursor-pointer" onClick={() => setIsOpen(false)}>FAQ</Link>
                 <Link href="/contact" className="text-lg font-medium cursor-pointer" onClick={() => setIsOpen(false)}>Contact Us</Link>
                 <div className="mt-4 flex flex-col gap-4">
-                  <Button asChild className="w-full bg-primary">
+                  <Button asChild className="w-full bg-primary rounded-full">
                     <a href="https://wa.me/971585828257">Book Now</a>
                   </Button>
-                  <Button variant="outline" asChild className="w-full">
+                  <Button variant="outline" asChild className="w-full rounded-full">
                     <a href="tel:+971585828257">Call Now</a>
                   </Button>
                 </div>
