@@ -12,9 +12,12 @@ import { Menu, Phone, MessageCircle } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
+import { useLanguage } from "@/hooks/useLanguage";
+import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const { t } = useLanguage();
 
   const services = [
     { name: "Veneers", path: "/veneers" },
@@ -45,11 +48,11 @@ export function Header() {
             <NavigationMenuList>
               <NavigationMenuItem>
                 <Link href="/" className="text-sm font-medium text-foreground hover:text-primary transition-colors cursor-pointer px-2 py-1">
-                  Home
+                  {t('nav.home')}
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="text-sm font-medium text-foreground hover:text-primary !bg-transparent !hover:bg-transparent data-[state=open]:!bg-transparent transition-colors px-2 py-1">Services</NavigationMenuTrigger>
+                <NavigationMenuTrigger className="text-sm font-medium text-foreground hover:text-primary !bg-transparent !hover:bg-transparent data-[state=open]:!bg-transparent transition-colors px-2 py-1">{t('nav.services')}</NavigationMenuTrigger>
                 <NavigationMenuContent className="left-0 top-0 w-[400px] p-4 md:w-[700px] bg-white/95 backdrop-blur">
                   <div className="mb-4 pb-4 border-b border-border">
                     <Link href="/services" className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-primary/10 hover:bg-primary/20 transition-colors text-primary font-semibold text-sm">
@@ -110,28 +113,33 @@ export function Header() {
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <Link href="/about" className="text-sm font-medium text-foreground hover:text-primary transition-colors cursor-pointer px-2 py-1">
-                  About Us
+                  {t('nav.aboutUs')}
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <Link href="/doctors" className="text-sm font-medium text-foreground hover:text-primary transition-colors cursor-pointer px-2 py-1">
-                  Our Doctors
+                  {t('nav.ourDoctors')}
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <Link href="/faq" className="text-sm font-medium text-foreground hover:text-primary transition-colors cursor-pointer px-2 py-1">
-                  FAQ
+                  {t('nav.faq')}
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <Link href="/blog" className="text-sm font-medium text-foreground hover:text-primary transition-colors cursor-pointer px-2 py-1">
-                  Blog / News
+                  {t('nav.blogNews')}
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <Link href="/contact" className="text-sm font-medium text-foreground hover:text-primary transition-colors cursor-pointer px-2 py-1">
-                  Contact Us
+                  {t('nav.contactUs')}
                 </Link>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <div className="pl-2">
+                  <LanguageSwitcher />
+                </div>
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
@@ -142,13 +150,13 @@ export function Header() {
           <Button variant="outline" asChild className="text-foreground hover:bg-accent hover:text-primary rounded-full">
             <a href="tel:+971585828257">
               <Phone className="mr-2 h-4 w-4" />
-              Call
+              {t('nav.call')}
             </a>
           </Button>
           <Button asChild className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold shadow-lg shadow-primary/20 rounded-full">
             <a href="https://wa.me/971585828257" target="_blank" rel="noopener noreferrer">
               <MessageCircle className="mr-2 h-4 w-4" />
-              Book Now
+              {t('nav.book')}
             </a>
           </Button>
         </div>
@@ -173,27 +181,30 @@ export function Header() {
             </SheetTrigger>
             <SheetContent side="right" className="w-[300px] sm:w-[400px]">
               <nav className="flex flex-col gap-4 mt-8">
-                <Link href="/" className="text-lg font-medium cursor-pointer" onClick={() => setIsOpen(false)}>Home</Link>
+                <div className="mb-4 pb-4 border-b border-border">
+                  <LanguageSwitcher />
+                </div>
+                <Link href="/" className="text-lg font-medium cursor-pointer" onClick={() => setIsOpen(false)}>{t('nav.home')}</Link>
                 <div className="flex flex-col gap-2">
-                  <span className="text-lg font-medium text-muted-foreground">Services</span>
+                  <span className="text-lg font-medium text-muted-foreground">{t('nav.services')}</span>
                   {services.map(s => (
                     <Link key={s.name} href={s.path} className="pl-4 text-sm py-1 hover:text-primary transition-colors cursor-pointer" onClick={() => setIsOpen(false)}>
                       {s.name}
                     </Link>
                   ))}
                 </div>
-                <Link href="/gallery" className="text-lg font-medium cursor-pointer" onClick={() => setIsOpen(false)}>Transformation Gallery</Link>
-                <Link href="/about" className="text-lg font-medium cursor-pointer" onClick={() => setIsOpen(false)}>About Us</Link>
-                <Link href="/doctors" className="text-lg font-medium cursor-pointer" onClick={() => setIsOpen(false)}>Our Doctors</Link>
-                <Link href="/blog" className="text-lg font-medium cursor-pointer" onClick={() => setIsOpen(false)}>Blog / News</Link>
-                <Link href="/faq" className="text-lg font-medium cursor-pointer" onClick={() => setIsOpen(false)}>FAQ</Link>
-                <Link href="/contact" className="text-lg font-medium cursor-pointer" onClick={() => setIsOpen(false)}>Contact Us</Link>
+                <Link href="/gallery" className="text-lg font-medium cursor-pointer" onClick={() => setIsOpen(false)}>{t('services.transformationGallery')}</Link>
+                <Link href="/about" className="text-lg font-medium cursor-pointer" onClick={() => setIsOpen(false)}>{t('nav.aboutUs')}</Link>
+                <Link href="/doctors" className="text-lg font-medium cursor-pointer" onClick={() => setIsOpen(false)}>{t('nav.ourDoctors')}</Link>
+                <Link href="/blog" className="text-lg font-medium cursor-pointer" onClick={() => setIsOpen(false)}>{t('nav.blogNews')}</Link>
+                <Link href="/faq" className="text-lg font-medium cursor-pointer" onClick={() => setIsOpen(false)}>{t('nav.faq')}</Link>
+                <Link href="/contact" className="text-lg font-medium cursor-pointer" onClick={() => setIsOpen(false)}>{t('nav.contactUs')}</Link>
                 <div className="mt-4 flex flex-col gap-4">
                   <Button asChild className="w-full bg-primary rounded-full">
-                    <a href="https://wa.me/971585828257">Book Now</a>
+                    <a href="https://wa.me/971585828257">{t('nav.book')}</a>
                   </Button>
                   <Button variant="outline" asChild className="w-full rounded-full">
-                    <a href="tel:+971585828257">Call Now</a>
+                    <a href="tel:+971585828257">{t('nav.call')}</a>
                   </Button>
                 </div>
               </nav>

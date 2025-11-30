@@ -1,0 +1,56 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "aboutUs": "About Us",
+    "ourDoctors": "Our Doctors",
+    "faq": "FAQ",
+    "blogNews": "Blog / News",
+    "contactUs": "Contact Us",
+    "book": "Book Now",
+    "call": "Call"
+  },
+  "services": {
+    "veneers": "Veneers",
+    "dentalImplants": "Dental Implants",
+    "orthodontics": "Orthodontics",
+    "teethWhitening": "Teeth Whitening",
+    "crownsAndBridges": "Crowns & Bridges",
+    "digitalXray": "Digital X-Ray & OPG",
+    "emergencyCare": "Emergency Care",
+    "dentalSurgery": "Dental Surgery",
+    "cosmeticDentistry": "Cosmetic Dentistry",
+    "generalPreventive": "General & Preventive",
+    "dentalTourism": "Dental Tourism",
+    "transformationGallery": "Smile Transformation Gallery",
+    "exploreAllServices": "Explore All Services"
+  },
+  "home": {
+    "heroTitle": "Trusted Dental Clinic in Dubai for Advanced & Cosmetic Dentistry",
+    "heroSubtitle": "From veneers and implants to Invisalign and whitening – expert care tailored to your smile.",
+    "bookAppointment": "Book Your Appointment",
+    "whyChooseUs": "Why We're Among the Best Dentists in Dubai?",
+    "yearsExperience": "15+ Years Experience",
+    "yearsDesc": "Decades of trusted expertise in Dubai",
+    "internationallyTrained": "Internationally Trained",
+    "trainedDesc": "Team of expert certified dentists",
+    "latestTechnology": "Latest Technology",
+    "techDesc": "Pain-free & advanced treatments",
+    "smilesTransformed": "5,000+ Smiles",
+    "smilesDesc": "Transformed lives across the UAE"
+  },
+  "footer": {
+    "address": "HDS Business Centre, Jumeirah Lake Towers, Dubai, UAE",
+    "emergency": "Emergency",
+    "openingHours": "Opening Hours",
+    "mondayFriday": "Monday – Friday",
+    "saturday": "Saturday",
+    "sunday": "Sunday",
+    "closed": "Closed",
+    "quickLinks": "Quick Links",
+    "stayConnected": "Stay Connected",
+    "about": "About Us",
+    "blog": "Blog",
+    "contact": "Contact Us"
+  }
+}
