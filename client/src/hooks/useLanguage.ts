@@ -1,8 +1,9 @@
 import React, { createContext, useContext, useState, ReactNode } from 'react';
 import enJson from '../locales/en.json';
 import ruJson from '../locales/ru.json';
+import deJson from '../locales/de.json';
 
-type Language = 'en' | 'ru';
+type Language = 'en' | 'ru' | 'de';
 
 interface LanguageContextType {
   language: Language;
@@ -15,6 +16,7 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 const translations = {
   en: enJson,
   ru: ruJson,
+  de: deJson,
 };
 
 export function LanguageProvider({ children }: { children: ReactNode }) {

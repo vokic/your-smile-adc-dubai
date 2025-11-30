@@ -4,6 +4,7 @@ import { ArrowRight, CheckCircle2, Star, MapPin, Phone, MessageCircle, Clock, Cr
 import { Link } from "wouter";
 import { useState } from "react";
 import { useLanguage } from "@/hooks/useLanguage";
+import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 
 export default function Home() {
   const { t } = useLanguage();
@@ -42,12 +43,13 @@ export default function Home() {
             <h2 className="text-xl md:text-2xl text-gray-200 font-light max-w-2xl leading-relaxed">
               {t('home.heroSubtitle')}
             </h2>
-            <div className="pt-6">
+            <div className="pt-6 flex flex-col sm:flex-row gap-4 items-start">
               <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 text-lg px-10 h-16 font-bold shadow-xl shadow-primary/20 transition-transform hover:scale-105 rounded-full rounded-full">
                 <a href="https://wa.me/971585828257" target="_blank" rel="noopener noreferrer">
                   {t('home.bookAppointment')}
                 </a>
               </Button>
+              <LanguageSwitcher />
             </div>
           </div>
         </div>
@@ -417,8 +419,8 @@ export default function Home() {
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3611.0524823!2d55.14507!3d25.08543!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f6c8f8f8f8f%3A0x12345678!2sHDS%20Business%20Centre%2C%20Jumeirah%20Lake%20Towers%2C%20Dubai!5e0!3m2!1sen!2sae!4v1700000000000" 
               width="100%" 
               height="100%" 
-              style={{ border: 0, minHeight: "400px" }} 
-              allowFullScreen="" 
+              style={{ border: 0, minHeight: "400px" } as React.CSSProperties} 
+              allowFullScreen 
               loading="lazy" 
               referrerPolicy="no-referrer-when-downgrade"
               className="rounded-2xl"

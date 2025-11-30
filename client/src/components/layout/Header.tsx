@@ -136,11 +136,6 @@ export function Header() {
                   {t('nav.contactUs')}
                 </Link>
               </NavigationMenuItem>
-              <NavigationMenuItem>
-                <div className="pl-2">
-                  <LanguageSwitcher />
-                </div>
-              </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
         </div>
