@@ -17,15 +17,16 @@ export function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   const services = [
-    "Veneers",
-    "Implants",
-    "Orthodontics",
-    "Whitening",
-    "Crowns & Bridges",
-    "Digital X-Ray",
-    "Emergency",
-    "Pediatric",
-    "Preventive",
+    { name: "Veneers", path: "/veneers" },
+    { name: "Dental Implants", path: "/implants" },
+    { name: "Orthodontics", path: "/orthodontics" },
+    { name: "Teeth Whitening", path: "/whitening" },
+    { name: "Crowns & Bridges", path: "/crowns-bridges" },
+    { name: "Digital X-Ray & OPG", path: "/xray-opg" },
+    { name: "Emergency Care", path: "/emergency" },
+    { name: "Dental Surgery", path: "/dental-surgery" },
+    { name: "Cosmetic Dentistry", path: "/cosmetic" },
+    { name: "General & Preventive", path: "/general-preventive" },
   ];
 
   return (
@@ -164,14 +165,16 @@ export function Header() {
                 <div className="flex flex-col gap-2">
                   <span className="text-lg font-medium text-muted-foreground">Services</span>
                   {services.map(s => (
-                    <a key={s} href="#" className="pl-4 text-sm py-1 hover:text-primary transition-colors">{s}</a>
+                    <Link key={s.name} href={s.path} className="pl-4 text-sm py-1 hover:text-primary transition-colors cursor-pointer" onClick={() => setIsOpen(false)}>
+                      {s.name}
+                    </Link>
                   ))}
                 </div>
-                <Link href="/about" className="text-lg font-medium cursor-pointer">About Us</Link>
-                <Link href="/doctors" className="text-lg font-medium cursor-pointer">Our Doctors</Link>
+                <Link href="/about" className="text-lg font-medium cursor-pointer" onClick={() => setIsOpen(false)}>About Us</Link>
+                <Link href="/doctors" className="text-lg font-medium cursor-pointer" onClick={() => setIsOpen(false)}>Our Doctors</Link>
                 <a href="#" className="text-lg font-medium">Blog / News</a>
-                <Link href="/faq" className="text-lg font-medium cursor-pointer">FAQ</Link>
-                <Link href="/contact" className="text-lg font-medium cursor-pointer">Contact Us</Link>
+                <Link href="/faq" className="text-lg font-medium cursor-pointer" onClick={() => setIsOpen(false)}>FAQ</Link>
+                <Link href="/contact" className="text-lg font-medium cursor-pointer" onClick={() => setIsOpen(false)}>Contact Us</Link>
                 <div className="mt-4 flex flex-col gap-4">
                   <Button asChild className="w-full bg-primary">
                     <a href="https://wa.me/971585828257">Book Now</a>
