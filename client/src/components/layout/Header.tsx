@@ -91,6 +91,10 @@ export function Header() {
                       <div className="text-sm font-medium">Orthodontics</div>
                       <p className="text-xs text-muted-foreground">Braces & clear aligners</p>
                     </Link>
+                    <Link href="/gallery" className="group block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground cursor-pointer md:col-span-2 border-t pt-3">
+                      <div className="text-sm font-medium text-primary">✨ Smile Transformation Gallery</div>
+                      <p className="text-xs text-muted-foreground">Before & after results</p>
+                    </Link>
                   </div>
                 </NavigationMenuContent>
               </NavigationMenuItem>
@@ -109,13 +113,11 @@ export function Header() {
                   FAQ
                 </Link>
               </NavigationMenuItem>
-              {["Blog / News"].map((item) => (
-                <NavigationMenuItem key={item}>
-                  <Link href="#" className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50 cursor-pointer">
-                    {item}
-                  </Link>
-                </NavigationMenuItem>
-              ))}
+              <NavigationMenuItem>
+                <Link href="/blog" className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50 cursor-pointer">
+                  Blog / News
+                </Link>
+              </NavigationMenuItem>
               <NavigationMenuItem>
                 <Link href="/contact" className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50 cursor-pointer">
                   Contact Us
@@ -170,9 +172,10 @@ export function Header() {
                     </Link>
                   ))}
                 </div>
+                <Link href="/gallery" className="text-lg font-medium cursor-pointer" onClick={() => setIsOpen(false)}>Transformation Gallery</Link>
                 <Link href="/about" className="text-lg font-medium cursor-pointer" onClick={() => setIsOpen(false)}>About Us</Link>
                 <Link href="/doctors" className="text-lg font-medium cursor-pointer" onClick={() => setIsOpen(false)}>Our Doctors</Link>
-                <a href="#" className="text-lg font-medium">Blog / News</a>
+                <Link href="/blog" className="text-lg font-medium cursor-pointer" onClick={() => setIsOpen(false)}>Blog / News</Link>
                 <Link href="/faq" className="text-lg font-medium cursor-pointer" onClick={() => setIsOpen(false)}>FAQ</Link>
                 <Link href="/contact" className="text-lg font-medium cursor-pointer" onClick={() => setIsOpen(false)}>Contact Us</Link>
                 <div className="mt-4 flex flex-col gap-4">

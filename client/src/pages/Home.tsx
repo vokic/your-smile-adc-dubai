@@ -93,29 +93,55 @@ export default function Home() {
               {
                 title: "Veneers in Dubai",
                 desc: "Achieve a flawless smile with natural-looking porcelain or composite veneers, designed for long-lasting results.",
+                link: "/veneers"
               },
               {
                 title: "Dental Implants in Dubai",
                 desc: "Restore missing teeth permanently with advanced implant systems, ensuring strength and natural aesthetics.",
+                link: "/implants"
               },
               {
-                title: "Invisalign Dubai",
+                title: "Orthodontics & Invisalign",
                 desc: "Straighten your teeth discreetly with clear aligners, the most popular orthodontic solution for adults and teens in Dubai.",
+                link: "/orthodontics"
               },
               {
                 title: "Teeth Whitening in Dubai",
                 desc: "Safe, fast, and effective whitening treatments for a brighter, more confident smile.",
+                link: "/whitening"
+              },
+              {
+                title: "Crowns & Bridges",
+                desc: "Restore damaged or missing teeth with custom-made restorations for strength and beauty.",
+                link: "/crowns-bridges"
+              },
+              {
+                title: "Cosmetic Dentistry",
+                desc: "Complete smile transformations combining multiple treatments for your dream smile.",
+                link: "/cosmetic"
+              },
+              {
+                title: "General & Preventive",
+                desc: "Check-ups, cleanings, and preventive care to keep your smile healthy for life.",
+                link: "/general-preventive"
+              },
+              {
+                title: "Dental Surgery",
+                desc: "Expert surgical treatments including wisdom teeth extraction and bone grafts.",
+                link: "/dental-surgery"
+              },
+              {
+                title: "Digital X-Ray & OPG",
+                desc: "Advanced low-radiation imaging for precise diagnosis and treatment planning.",
+                link: "/xray-opg"
               },
               {
                 title: "Emergency Dentist Dubai",
                 desc: "24/7 emergency dental care for pain relief, broken teeth, and urgent treatments.",
-              },
-              {
-                title: "Pediatric Dentist Dubai",
-                desc: "Gentle and caring dental treatments for children, ensuring healthy smiles from an early age.",
+                link: "/emergency"
               },
             ].map((service, i) => (
-              <div key={i} className="group p-8 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-primary/50 transition-all duration-300 cursor-pointer">
+              <Link key={i} href={service.link} className="group p-8 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-primary/50 transition-all duration-300 cursor-pointer">
                 <div className="flex justify-between items-start mb-4">
                   <h3 className="text-xl font-bold text-primary group-hover:text-white transition-colors">{service.title}</h3>
                   <ArrowRight className="h-5 w-5 text-white/30 group-hover:text-primary group-hover:translate-x-1 transition-all" />
@@ -123,7 +149,7 @@ export default function Home() {
                 <p className="text-white/70 leading-relaxed text-sm">
                   {service.desc}
                 </p>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
@@ -139,8 +165,8 @@ export default function Home() {
                 Discover real results from our patients who chose veneers, implants, and Invisalign in Dubai. Each smile tells a story of confidence and lasting change.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-secondary text-white hover:bg-secondary/90">
-                  View Transformation Gallery
+                <Button size="lg" className="bg-secondary text-white hover:bg-secondary/90" asChild>
+                  <Link href="/gallery">View Transformation Gallery</Link>
                 </Button>
               </div>
             </div>

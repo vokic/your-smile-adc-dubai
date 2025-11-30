@@ -21,6 +21,7 @@ import Cosmetic from "@/pages/Cosmetic";
 import Whitening from "@/pages/Whitening";
 import Emergency from "@/pages/Emergency";
 import Blog from "@/pages/Blog";
+import Gallery from "@/pages/Gallery";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 
@@ -47,6 +48,7 @@ function Router() {
           <Route path="/whitening" component={Whitening}/>
           <Route path="/emergency" component={Emergency}/>
           <Route path="/blog" component={Blog}/>
+          <Route path="/gallery" component={Gallery}/>
           <Route component={NotFound} />
         </Switch>
       </main>
