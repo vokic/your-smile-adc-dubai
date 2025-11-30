@@ -20,6 +20,7 @@ import CrownsAndBridges from "@/pages/CrownsAndBridges";
 import Cosmetic from "@/pages/Cosmetic";
 import Whitening from "@/pages/Whitening";
 import Emergency from "@/pages/Emergency";
+import Blog from "@/pages/Blog";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 
@@ -45,6 +46,7 @@ function Router() {
           <Route path="/cosmetic" component={Cosmetic}/>
           <Route path="/whitening" component={Whitening}/>
           <Route path="/emergency" component={Emergency}/>
+          <Route path="/blog" component={Blog}/>
           <Route component={NotFound} />
         </Switch>
       </main>
