@@ -94,7 +94,29 @@ export default function Doctors() {
         </div>
       </section>
 
-      {/* 3. Meet Our Specialists */}
+      {/* 3. Credentials & Certifications */}
+      <section className="py-24 bg-secondary text-white">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-serif font-bold text-center mb-12">Professional Credentials & Certifications</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {[
+              { title: "International Training", desc: "BDS, MDS, PhD qualifications from leading dental schools worldwide" },
+              { title: "Specialist Certifications", desc: "Advanced credentials in Implantology, Orthodontics, and Oral Surgery" },
+              { title: "Continuous Education", desc: "Active participation in dental conferences, workshops, and research" },
+              { title: "5.0★ Patient Rated", desc: "Trusted by 500+ patients with exceptional clinical outcomes" },
+              { title: "Digital Dentistry Experts", desc: "Certified in CAD/CAM, 3D implant planning, and advanced diagnostics" },
+              { title: "Multilingual Care", desc: "Fluent in English, Russian, German, and other languages for patient comfort" },
+            ].map((cred, i) => (
+              <div key={i} className="p-6 bg-white/5 rounded-xl border border-white/10 hover:bg-white/10 transition-all space-y-3">
+                <h3 className="text-lg font-bold">{cred.title}</h3>
+                <p className="text-gray-200 text-sm leading-relaxed">{cred.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 4. Meet Our Specialists */}
       <section className="py-24 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">

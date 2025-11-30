@@ -13,10 +13,10 @@ export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
   
   const beforeAfterSlides = [
-    { title: "Porcelain Veneers Transformation", before: "BEFORE VENEERS", after: "AFTER VENEERS" },
-    { title: "Dental Implants Restoration", before: "BEFORE IMPLANTS", after: "AFTER IMPLANTS" },
-    { title: "Invisalign Alignment", before: "BEFORE INVISALIGN", after: "AFTER INVISALIGN" },
-    { title: "Complete Smile Makeover", before: "BEFORE MAKEOVER", after: "AFTER MAKEOVER" },
+    { title: "Porcelain Veneers Transformation", before: "BEFORE VENEERS", after: "AFTER VENEERS", story: "Sarah's discolored and chipped teeth were holding her back. With 8 porcelain veneers, she achieved a naturally bright smile in just 3 visits. Result: Confidence restored, 10+ years durability.", duration: "3 weeks", procedure: "Porcelain Veneers" },
+    { title: "Dental Implants Restoration", before: "BEFORE IMPLANTS", after: "AFTER IMPLANTS", story: "Ahmed lost a tooth in an accident. A single dental implant with crown restored his smile and functionality. Now he smiles confidently without worrying about slipping or gaps.", duration: "6 months", procedure: "Dental Implant + Crown" },
+    { title: "Invisalign Alignment", before: "BEFORE INVISALIGN", after: "AFTER INVISALIGN", story: "Layla had crowded teeth but wanted a discreet solution. 18 months of Invisalign gave her perfectly aligned teeth without anyone noticing. Clear, comfortable, effective.", duration: "18 months", procedure: "Invisalign Clear Aligners" },
+    { title: "Complete Smile Makeover", before: "BEFORE MAKEOVER", after: "AFTER MAKEOVER", story: "Omar combined 6 veneers, professional whitening, and gum contouring for a Hollywood-level smile. From shy to show-stopping in 8 weeks. Complete transformation with natural results.", duration: "8 weeks", procedure: "Veneers + Whitening + Contouring" },
   ];
 
   const handlePrev = () => {
@@ -134,7 +134,22 @@ export default function Home() {
                 </div>
               </div>
 
-              <p className="text-center text-sm font-semibold text-primary">{current.title}</p>
+              <div className="text-center space-y-3">
+                <p className="text-sm font-semibold text-primary">{current.title}</p>
+                <div className="bg-primary/5 rounded-lg p-4 border border-primary/20">
+                  <p className="text-sm text-secondary leading-relaxed mb-3">{current.story}</p>
+                  <div className="flex flex-wrap gap-4 justify-center text-xs font-medium">
+                    <div className="flex items-center gap-1 text-primary">
+                      <span className="font-bold">Procedure:</span>
+                      <span className="text-secondary">{current.procedure}</span>
+                    </div>
+                    <div className="flex items-center gap-1 text-secondary">
+                      <span className="font-bold">Duration:</span>
+                      <span>{current.duration}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
               <div className="flex items-center justify-center gap-6">
                 <Button onClick={handlePrev} size="sm" className="rounded-full bg-secondary hover:bg-secondary/90 text-white">

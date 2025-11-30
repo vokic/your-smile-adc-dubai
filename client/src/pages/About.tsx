@@ -118,12 +118,12 @@ export default function About() {
         </div>
       </section>
 
-      {/* Vision & Mission */}
+      {/* Vision & Mission & Values */}
       <section className="py-24 bg-gradient-to-b from-background to-secondary/5 relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5 mix-blend-overlay"></div>
         <div className="container mx-auto px-4 relative z-10">
           <h2 className="text-3xl md:text-5xl font-serif font-bold text-secondary mb-16 text-center">Our Vision & Mission</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {/* Vision */}
             <div className="group relative">
               <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-primary/5 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-300" />
@@ -157,6 +157,26 @@ export default function About() {
                 <p className="text-secondary text-lg leading-relaxed font-medium">
                   Delivering world-class dental care through innovation, compassion, and continuous excellence - combining international expertise with personalized, patient-centered treatment.
                 </p>
+              </div>
+            </div>
+
+            {/* Core Values */}
+            <div className="group relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-yellow-100/20 to-yellow-50/10 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-300" />
+              <div className="relative p-10 md:p-12 bg-gradient-to-br from-white to-yellow-50/5 rounded-3xl border-2 border-yellow-200/30 hover:border-yellow-300/50 transition-all duration-300 shadow-lg hover:shadow-xl">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="h-12 w-12 rounded-full bg-yellow-100/50 flex items-center justify-center">
+                    <svg className="h-6 w-6 text-yellow-600" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-2xl md:text-3xl font-serif font-bold text-yellow-700">Core Values</h3>
+                </div>
+                <div className="space-y-3 text-secondary text-base leading-relaxed font-medium">
+                  <p>✓ Excellence in every treatment</p>
+                  <p>✓ Integrity & transparency</p>
+                  <p>✓ Patient comfort & safety</p>
+                </div>
               </div>
             </div>
           </div>
