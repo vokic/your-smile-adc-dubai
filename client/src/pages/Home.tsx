@@ -102,7 +102,7 @@ export default function Home() {
               <h2 className="text-3xl md:text-5xl font-serif font-bold text-white">Comprehensive Dental Services in Dubai</h2>
               <p className="text-white/70 text-lg">World-class treatments designed for your health and beauty.</p>
             </div>
-            <Button variant="outline" className="text-white border-white/20 hover:bg-white hover:text-secondary" asChild>
+            <Button variant="outline" className="text-white border-white/20 hover:bg-white hover:text-secondary rounded-full" asChild>
               <Link href="#">Explore All Services</Link>
             </Button>
           </div>
@@ -280,7 +280,7 @@ export default function Home() {
           </div>
           
           <div className="text-center">
-            <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold px-10">
+            <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold px-10 rounded-full">
               <a href="https://wa.me/971585828257" target="_blank" rel="noopener noreferrer">
                 Book Your Appointment
               </a>
@@ -323,7 +323,7 @@ export default function Home() {
               ))}
             </div>
 
-            <Button size="lg" className="bg-white text-secondary hover:bg-gray-100 font-bold mt-8">
+            <Button size="lg" className="bg-white text-secondary hover:bg-gray-100 font-bold mt-8 rounded-full">
               <a href="https://wa.me/971585828257" target="_blank" rel="noopener noreferrer">
                 Book Your Appointment
               </a>
@@ -397,13 +397,13 @@ export default function Home() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                <Button size="lg" className="bg-green-600 hover:bg-green-700 text-white gap-2">
+                <Button size="lg" className="bg-green-600 hover:bg-green-700 text-white gap-2 rounded-full">
                   <a href="https://wa.me/971585828257" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                     <MessageCircle className="h-5 w-5" />
                     Book on WhatsApp
                   </a>
                 </Button>
-                <Button size="lg" variant="outline" className="gap-2">
+                <Button size="lg" variant="outline" className="gap-2 rounded-full">
                   <a href="tel:+971585828257" className="flex items-center gap-2">
                     <Phone className="h-5 w-5" />
                     Call Now
@@ -453,7 +453,7 @@ export default function Home() {
                 placeholder="Enter your email address" 
                 className="flex-1 bg-transparent border-none px-6 py-2 text-secondary placeholder:text-gray-400 focus:outline-none"
               />
-              <Button className="rounded-full px-8">Subscribe</Button>
+              <Button className="rounded-full px-8 bg-primary text-primary-foreground hover:bg-primary/90">Subscribe</Button>
             </div>
          </div>
       </section>
