@@ -137,7 +137,7 @@ export default function Services() {
             {serviceCategories.map((category, i) => (
               <div key={i}>
                 <h3 className="text-2xl font-bold text-primary border-b-2 border-primary/30 pb-4 mb-8">{category.title}</h3>
-                <div className="grid grid-cols-1 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {category.items.map((item, j) => (
                     <Link key={j} href={item.href} className="group rounded-xl overflow-hidden border border-border hover:border-primary/50 transition-all bg-card hover:bg-card/80 flex flex-col md:flex-row h-full">
                       {/* Image - 1/3 on left (or full width on mobile) */}
