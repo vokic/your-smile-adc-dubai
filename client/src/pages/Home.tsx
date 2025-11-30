@@ -37,7 +37,7 @@ export default function Home() {
         <div className="container relative h-full mx-auto px-4 flex items-center">
           <div className="max-w-3xl space-y-8 animate-in fade-in slide-in-from-left-10 duration-700">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-white leading-tight drop-shadow-lg">
-              {t('home.heroTitle')}
+              Trusted Dental Clinic in Dubai for <span className="text-primary italic">{t('home.heroTitleAccent')}</span>
             </h1>
             <h2 className="text-xl md:text-2xl text-gray-200 font-light max-w-2xl leading-relaxed">
               {t('home.heroSubtitle')}
