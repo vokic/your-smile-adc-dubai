@@ -1,15 +1,5 @@
-import { useState } from "react";
-import { AlertCircle } from "lucide-react";
-import {
-  AlertDialog,
-  AlertDialogAction,
-  AlertDialogCancel,
-  AlertDialogContent,
-  AlertDialogDescription,
-  AlertDialogFooter,
-  AlertDialogHeader,
-  AlertDialogTitle,
-} from "@/components/ui/alert-dialog";
+import { Phone, AlertTriangle, X } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 interface EmergencyConfirmModalProps {
   isOpen: boolean;
@@ -24,48 +14,56 @@ export function EmergencyConfirmModal({
   onConfirm,
   phoneNumber,
 }: EmergencyConfirmModalProps) {
+  if (!isOpen) return null;
+
   return (
-    <AlertDialog open={isOpen} onOpenChange={onClose}>
-      <AlertDialogContent className="max-w-lg sm:max-max-w-2xl w-full rounded-3xl animate-in scale-95 duration-200">
-        <AlertDialogHeader className="space-y-4">
-          <div className="flex items-start gap-4">
-            <AlertCircle className="h-8 w-8 text-red-600 shrink-0 mt-1" />
-            <AlertDialogTitle className="text-2xl">
-              Emergency Dental Care
-            </AlertDialogTitle>
+    <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4 animate-in fade-in">
+      <div className="bg-white rounded-[32px] p-8 max-w-md w-full shadow-2xl animate-in scale-95 duration-200">
+        <div className="flex items-center justify-between mb-4">
+          <div className="flex items-center gap-3">
+            <AlertTriangle className="h-6 w-6 text-red-500" />
+            <h3 className="text-2xl font-bold text-secondary">Emergency Contact</h3>
           </div>
-        </AlertDialogHeader>
-        <AlertDialogDescription className="space-y-4 text-base">
-          <p className="font-semibold text-foreground text-lg">
-            This service is for genuine dental emergencies only.
-          </p>
-          <p className="text-foreground">
-            Please use this line only for urgent dental situations such as:
-          </p>
-          <ul className="list-disc list-inside space-y-2 ml-2 text-foreground">
-            <li>Severe dental pain or toothache</li>
-            <li>Broken or knocked-out teeth</li>
-            <li>Oral injuries or significant bleeding</li>
-            <li>Swelling, infection, or fever symptoms</li>
-            <li>Trauma to mouth or jaw</li>
-          </ul>
-          <p className="text-sm text-muted-foreground pt-3 bg-amber-50 p-3 rounded-lg border border-amber-200">
-            For routine appointments, consultations, or non-emergency inquiries, please use the regular booking options available on our website.
-          </p>
-          <p className="pt-4 font-bold text-foreground text-lg">
-            Emergency Number: <span className="text-red-600 text-xl">{phoneNumber}</span>
-          </p>
-        </AlertDialogDescription>
-        <AlertDialogFooter className="gap-3 sm:gap-0 flex-col-reverse sm:flex-row">
-          <AlertDialogCancel className="w-full sm:w-auto">Cancel</AlertDialogCancel>
-          <AlertDialogAction
-            onClick={onConfirm}
-            className="w-full sm:w-auto bg-red-600 hover:bg-red-700 text-white font-bold h-11"
-          >
-            Call Emergency Now
-          </AlertDialogAction>
-        </AlertDialogFooter>
-      </AlertDialogContent>
-    </AlertDialog>
+          <button onClick={onClose} className="p-2 hover:bg-muted rounded-full">
+            <X className="h-5 w-5 text-muted-foreground" />
+          </button>
+        </div>
+        
+        <div className="space-y-4 mb-6">
+          <p className="text-muted-foreground">For urgent dental emergencies, call immediately:</p>
+          <div className="bg-red-50 border-2 border-red-200 rounded-xl p-4">
+            <p className="text-xs text-muted-foreground mb-2">Emergency Hotline (24/7):</p>
+            <p className="text-2xl font-bold text-red-600">
+              {phoneNumber}
+            </p>
+          </div>
+
+          <div className="space-y-3 text-sm text-muted-foreground">
+            <div className="flex items-start gap-2">
+              <span className="text-primary font-bold mt-0.5">✓</span>
+              <span>Available 24/7 for urgent cases</span>
+            </div>
+            <div className="flex items-start gap-2">
+              <span className="text-primary font-bold mt-0.5">✓</span>
+              <span>Severe pain, broken teeth, infections</span>
+            </div>
+            <div className="flex items-start gap-2">
+              <span className="text-primary font-bold mt-0.5">✓</span>
+              <span>Experienced emergency team standing by</span>
+            </div>
+          </div>
+        </div>
+
+        <div className="flex gap-3">
+          <Button onClick={onConfirm} className="flex-1 bg-red-600 hover:bg-red-700 rounded-full gap-2">
+            <Phone className="h-4 w-4" />
+            Call Now
+          </Button>
+          <Button variant="outline" className="flex-1 rounded-full" onClick={onClose}>
+            Close
+          </Button>
+        </div>
+      </div>
+    </div>
   );
 }
