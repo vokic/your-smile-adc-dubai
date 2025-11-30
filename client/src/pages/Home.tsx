@@ -249,12 +249,12 @@ export default function Home() {
       </section>
 
       {/* 10. Blog Section with "View All Articles" Button */}
-      <section className="py-24 bg-muted/30">
+      <section className="py-24 bg-secondary text-secondary-foreground">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-16 gap-6">
             <div className="space-y-4 flex-1">
-              <h2 className="text-3xl md:text-5xl font-serif font-bold text-secondary">Dental Health Insights & Tips</h2>
-              <p className="text-muted-foreground text-lg">Read our latest articles about dental care, smile transformations, and oral health.</p>
+              <h2 className="text-3xl md:text-5xl font-serif font-bold text-white">Dental Health Insights & Tips</h2>
+              <p className="text-white/70 text-lg">Read our latest articles about dental care, smile transformations, and oral health.</p>
             </div>
             <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full font-bold whitespace-nowrap">
               <Link href="/blog">View All Articles</Link>
@@ -267,16 +267,16 @@ export default function Home() {
               { title: "Dental Implants: A Lifetime Investment", date: "Nov 25, 2024", category: "Implants" },
               { title: "Invisalign vs Traditional Braces", date: "Nov 22, 2024", category: "Orthodontics" },
             ].map((article, i) => (
-              <div key={i} className="bg-card rounded-xl p-6 border border-border hover:shadow-lg transition-all group cursor-pointer">
+              <div key={i} className="bg-white/5 border border-white/10 hover:bg-white/10 hover:border-primary/50 rounded-xl p-6 transition-all group cursor-pointer">
                 <div className="mb-4">
-                  <span className="inline-block text-xs font-bold text-primary bg-primary/10 px-3 py-1 rounded-full">
+                  <span className="inline-block text-xs font-bold text-primary bg-primary/20 px-3 py-1 rounded-full">
                     {article.category}
                   </span>
                 </div>
-                <h3 className="text-xl font-bold text-secondary mb-3 group-hover:text-primary transition-colors">
+                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-primary transition-colors">
                   {article.title}
                 </h3>
-                <p className="text-xs text-muted-foreground">{article.date}</p>
+                <p className="text-xs text-white/60">{article.date}</p>
               </div>
             ))}
           </div>
