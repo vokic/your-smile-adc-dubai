@@ -50,78 +50,78 @@
   --radius: 0.25rem;
 }
 
-/* LIGHT MODE - Green, White & Cream */
+/* LIGHT MODE - Blue & White */
 :root {
-  /* Clean White base with Green accents */
+  /* Clean White base with Blue accents */
   
   --background: 0 0% 100%; /* Pure White */
-  --foreground: 170 50% 20%; /* Deep Green */
+  --foreground: 219 32% 41%; /* Deep Blue */
 
   --card: 0 0% 100%; /* White */
-  --card-foreground: 170 50% 20%; /* Deep Green */
+  --card-foreground: 219 32% 41%; /* Deep Blue */
 
   --popover: 0 0% 100%;
-  --popover-foreground: 170 50% 20%;
+  --popover-foreground: 219 32% 41%;
 
-  /* Primary: Vibrant Teal Green */
-  --primary: 170 88% 29%; /* Vibrant Teal from clinic chairs */
-  --primary-foreground: 0 0% 100%; /* White text on teal */
+  /* Primary: Vibrant Blue */
+  --primary: 201 72% 55%; /* #37A8E3 - Vibrant Blue */
+  --primary-foreground: 0 0% 100%; /* White text on blue */
 
-  /* Secondary: Deep Forest Green */
-  --secondary: 170 50% 25%; /* Forest Green */
-  --secondary-foreground: 0 0% 100%; /* White text on green */
+  /* Secondary: Dark Blue */
+  --secondary: 219 32% 41%; /* #394C6F - Dark Blue */
+  --secondary-foreground: 0 0% 100%; /* White text on dark blue */
 
   --muted: 60 37% 94%; /* Cream background */
-  --muted-foreground: 170 30% 40%;
+  --muted-foreground: 219 32% 50%;
 
-  --accent: 170 88% 85%; /* Very light teal for hover states */
-  --accent-foreground: 170 50% 20%;
+  --accent: 201 72% 85%; /* Very light blue for hover states */
+  --accent-foreground: 219 32% 41%;
 
   --destructive: 0 84.2% 60.2%;
   --destructive-foreground: 210 40% 98%;
 
   --border: 60 37% 88%; /* Light cream borders */
   --input: 60 37% 94%;
-  --ring: 170 88% 29%; /* Teal ring */
+  --ring: 201 72% 55%; /* Blue ring */
 
-  --chart-1: 170 88% 29%;
-  --chart-2: 170 50% 40%;
-  --chart-3: 170 50% 25%;
-  --chart-4: 120 70% 50%;
-  --chart-5: 170 70% 35%;
+  --chart-1: 201 72% 55%;
+  --chart-2: 219 32% 41%;
+  --chart-3: 201 72% 65%;
+  --chart-4: 201 72% 45%;
+  --chart-5: 219 32% 50%;
 
   --radius: 0.25rem;
 }
 
 .dark {
-  /* Dark Mode - Green & White with Cream Accents */
-  --background: 170 50% 10%; /* Deep Green background */
+  /* Dark Mode - Blue & White with Cream Accents */
+  --background: 219 40% 15%; /* Deep Blue background */
   --foreground: 60 100% 95%; /* Off-white/cream text */
 
-  --card: 170 50% 12%;
+  --card: 219 40% 18%;
   --card-foreground: 60 100% 95%;
 
-  --popover: 170 50% 10%;
+  --popover: 219 40% 15%;
   --popover-foreground: 60 100% 95%;
 
-  --primary: 170 88% 40%; /* Bright Teal */
-  --primary-foreground: 60 100% 95%; /* Cream text on teal */
+  --primary: 201 72% 60%; /* Bright Blue */
+  --primary-foreground: 60 100% 95%; /* Cream text on blue */
 
-  --secondary: 170 60% 45%; /* Lighter green */
+  --secondary: 219 32% 50%; /* Lighter dark blue */
   --secondary-foreground: 60 100% 95%; /* Cream text */
 
-  --muted: 170 50% 18%;
+  --muted: 219 40% 22%;
   --muted-foreground: 60 100% 80%;
 
-  --accent: 170 88% 50%;
+  --accent: 201 72% 65%;
   --accent-foreground: 60 100% 95%;
 
   --destructive: 0 62.8% 30.6%;
   --destructive-foreground: 210 40% 98%;
 
-  --border: 170 50% 18%;
-  --input: 170 50% 18%;
-  --ring: 170 88% 40%;
+  --border: 219 40% 22%;
+  --input: 219 40% 22%;
+  --ring: 201 72% 60%;
 }
 
 @layer base {

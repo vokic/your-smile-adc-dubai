@@ -1,0 +1,101 @@
+{
+  "colorScheme": "light",
+  "fonts": [
+    {
+      "family": "Lato",
+      "role": "body"
+    }
+  ],
+  "colors": {
+    "primary": "#37A8E3",
+    "accent": "#394C6F",
+    "background": "#FFFFFF",
+    "textPrimary": "#394C6F",
+    "link": "#394C6F"
+  },
+  "typography": {
+    "fontFamilies": {
+      "primary": "Lato",
+      "heading": "Lato"
+    },
+    "fontStacks": {
+      "heading": [
+        "Lato",
+        "sans-serif"
+      ],
+      "body": [
+        "Lato",
+        "sans-serif"
+      ],
+      "paragraph": [
+        "Lato",
+        "sans-serif"
+      ]
+    },
+    "fontSizes": {
+      "h1": "20px",
+      "h2": "38px",
+      "body": "16px"
+    }
+  },
+  "spacing": {
+    "baseUnit": 4,
+    "borderRadius": "0px"
+  },
+  "components": {
+    "input": {
+      "borderColor": "#CCCCCC",
+      "borderRadius": "0px"
+    },
+    "buttonPrimary": {
+      "background": "#37A8E3",
+      "textColor": "#FFFFFF",
+      "borderRadius": "0px",
+      "shadow": "none"
+    },
+    "buttonSecondary": {
+      "background": "#B7BBBA",
+      "textColor": "#FFFFFF",
+      "borderRadius": "0px",
+      "shadow": "none"
+    }
+  },
+  "images": {
+    "logo": "https://yoursmile.rs/img/logo.png",
+    "favicon": null,
+    "ogImage": null
+  },
+  "__framework_hints": [],
+  "__llm_logo_reasoning": {
+    "selectedIndex": 0,
+    "reasoning": "The logo in the header matches the brand name 'YourSmile' and is prominently displayed, making it the main brand logo.",
+    "confidence": 0.98
+  },
+  "__llm_button_reasoning": {
+    "primary": {
+      "index": 1,
+      "text": "Preuzmite cenovnik",
+      "reasoning": "Button #1 has a vibrant blue background (#37A8E3), which is the brand color, and action-oriented text 'Preuzmite cenovnik', making it the primary call-to-action."
+    },
+    "secondary": {
+      "index": 0,
+      "text": "Usluge\n\t\t\t\t\t\tKontakt",
+      "reasoning": "Button #0 has a green background (#B7BBBA), which is different from the primary button's blue color, and serves as a less prominent action, making it the secondary button."
+    },
+    "confidence": 0.95
+  },
+  "personality": {
+    "tone": "modern",
+    "energy": "medium",
+    "targetAudience": "Individuals seeking dental services or information."
+  },
+  "designSystem": {
+    "framework": "custom",
+    "componentLibrary": null
+  },
+  "confidence": {
+    "buttons": 0.95,
+    "colors": 0.9,
+    "overall": 0.925
+  }
+}
