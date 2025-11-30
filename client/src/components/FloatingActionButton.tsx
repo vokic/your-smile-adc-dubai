@@ -59,14 +59,13 @@ export function FloatingActionButton() {
       {/* Main Toggle Button */}
       <Button
         onClick={() => setIsOpen(!isOpen)}
-        size="lg"
-        className="rounded-full w-14 h-14 bg-primary hover:bg-primary/90 text-white shadow-2xl flex items-center justify-center"
+        className="rounded-full w-16 h-16 p-0 bg-primary hover:bg-primary/90 text-white shadow-2xl flex items-center justify-center"
         data-testid="button-floating-action-toggle"
       >
         {isOpen ? (
-          <X className="h-6 w-6" />
+          <X className="h-7 w-7" />
         ) : (
-          <Plus className="h-6 w-6" />
+          <Plus className="h-7 w-7" />
         )}
       </Button>
     </div>
