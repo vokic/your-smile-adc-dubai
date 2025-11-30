@@ -37,7 +37,7 @@ export function LanguageSwitcher({ isDark = false }: LanguageSwitcherProps) {
     <div className="relative" ref={ref}>
       <Button
         onClick={() => setIsOpen(!isOpen)}
-        className={`gap-2 rounded-full px-6 py-2.5 h-auto font-semibold ${
+        className={`gap-2 rounded-full px-4 py-1.5 h-9 font-semibold text-sm ${
           isDark 
             ? 'bg-white/25 text-white hover:bg-white/40 border-2 border-white/40 backdrop-blur-sm' 
             : 'bg-background border border-border text-foreground hover:bg-muted'

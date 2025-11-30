@@ -191,13 +191,13 @@ export default function Home() {
             <div className="space-y-6">
               <div className="grid grid-cols-2 gap-4">
                 {/* Before */}
-                <div className="relative rounded-2xl overflow-hidden shadow-lg bg-muted h-72 flex items-center justify-center border-2 border-secondary/20">
+                <div className="relative rounded-2xl overflow-hidden shadow-lg bg-muted h-72 md:h-96 lg:h-[480px] flex items-center justify-center border-2 border-secondary/20">
                   <span className="text-muted-foreground font-bold text-sm">{current.before}</span>
                   <div className="absolute top-4 left-4 bg-secondary text-white px-3 py-1 rounded-full text-xs font-bold">BEFORE</div>
                 </div>
                 
                 {/* After */}
-                <div className="relative rounded-2xl overflow-hidden shadow-lg bg-muted h-72 flex items-center justify-center border-2 border-primary/20">
+                <div className="relative rounded-2xl overflow-hidden shadow-lg bg-muted h-72 md:h-96 lg:h-[480px] flex items-center justify-center border-2 border-primary/20">
                   <span className="text-muted-foreground font-bold text-sm">{current.after}</span>
                   <div className="absolute top-4 left-4 bg-primary text-white px-3 py-1 rounded-full text-xs font-bold">AFTER</div>
                 </div>
