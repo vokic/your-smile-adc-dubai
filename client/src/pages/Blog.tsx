@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { MessageCircle, Phone, Calendar, Clock, Tag, ChevronLeft, ChevronRight, Search } from "lucide-react";
+import { Link } from "wouter";
 
 export default function Blog() {
   const [currentPage, setCurrentPage] = useState(1);
@@ -163,8 +164,9 @@ export default function Blog() {
           {paginatedArticles.length > 0 ? (
             <div className="flex flex-col gap-8 max-w-4xl mx-auto">
               {paginatedArticles.map((article) => (
-                <article key={article.id} className="bg-card rounded-xl border border-border overflow-hidden hover:shadow-lg transition-all hover:-translate-y-1 group cursor-pointer">
-                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-0">
+                <Link key={article.id} href="/blog-post">
+                  <article className="bg-card rounded-xl border border-border overflow-hidden hover:shadow-lg transition-all hover:-translate-y-1 group cursor-pointer">
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-0">
                     {/* Image */}
                     <div className="sm:col-span-1 h-48 sm:h-auto rounded-t-xl sm:rounded-none sm:rounded-l-xl bg-muted border-b sm:border-b-0 sm:border-r border-border flex items-center justify-center overflow-hidden group-hover:bg-primary/5 transition-colors">
                       <span className="text-sm font-bold text-muted-foreground text-center px-4">{article.image}</span>
@@ -210,7 +212,8 @@ export default function Blog() {
                       </div>
                     </div>
                   </div>
-                </article>
+                  </article>
+                </Link>
               ))}
             </div>
           ) : (
