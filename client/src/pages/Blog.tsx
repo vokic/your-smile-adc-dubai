@@ -150,7 +150,7 @@ export default function Blog() {
                 placeholder="Search articles by title, topic, or category..."
                 value={searchTerm}
                 onChange={handleSearch}
-                className="w-full pl-12 pr-4 py-3 rounded-lg border border-border bg-card text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50"
+                className="w-full pl-12 pr-4 py-3 rounded-full border border-border bg-card text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50"
               />
             </div>
           </div>
@@ -237,7 +237,7 @@ export default function Blog() {
                 onClick={handlePrevPage}
                 disabled={currentPage === 1}
                 variant="outline"
-                className="gap-2"
+                className="gap-2 rounded-full"
               >
                 <ChevronLeft className="h-4 w-4" />
                 Previous
@@ -249,7 +249,7 @@ export default function Blog() {
                     key={page}
                     onClick={() => setCurrentPage(page)}
                     variant={currentPage === page ? "default" : "outline"}
-                    className={currentPage === page ? "bg-primary text-primary-foreground" : ""}
+                    className={currentPage === page ? "bg-primary text-primary-foreground rounded-full" : "rounded-full"}
                     size="sm"
                   >
                     {page}
@@ -261,7 +261,7 @@ export default function Blog() {
                 onClick={handleNextPage}
                 disabled={currentPage === totalPages}
                 variant="outline"
-                className="gap-2"
+                className="gap-2 rounded-full"
               >
                 Next
                 <ChevronRight className="h-4 w-4" />
@@ -295,7 +295,7 @@ export default function Blog() {
                 placeholder="Enter your email address"
                 className="px-4 py-3 rounded-lg bg-white text-secondary placeholder:text-muted-foreground focus:outline-none flex-grow"
               />
-              <Button className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold rounded-full rounded-full">
+              <Button className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold rounded-full">
                 Subscribe
               </Button>
             </div>
