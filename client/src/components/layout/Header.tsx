@@ -8,8 +8,9 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
-import { Menu, Phone, MessageCircle } from "lucide-react";
+import { Menu, Phone, MessageCircle, ChevronDown } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { useLanguage } from "@/hooks/useLanguage";
@@ -20,6 +21,7 @@ export function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [servicesOpen, setServicesOpen] = useState(false);
   const { t } = useLanguage();
 
   useEffect(() => {
@@ -202,35 +204,54 @@ export function Header() {
                 <Menu className="h-6 w-6" />
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[300px] sm:w-[400px]">
-              <nav className="flex flex-col gap-4 mt-8">
-                <div className="mb-4 pb-4 border-b border-border">
-                  <LanguageSwitcher />
-                </div>
-                <Link href="/" className="text-lg font-medium cursor-pointer" onClick={() => setIsOpen(false)}>{t('nav.home')}</Link>
-                <div className="flex flex-col gap-2">
-                  <span className="text-lg font-medium text-muted-foreground">{t('nav.services')}</span>
-                  {services.map(s => (
-                    <Link key={s.name} href={s.path} className="pl-4 text-sm py-1 hover:text-primary transition-colors cursor-pointer" onClick={() => setIsOpen(false)}>
-                      {s.name}
-                    </Link>
-                  ))}
-                </div>
-                <Link href="/gallery" className="text-lg font-medium cursor-pointer" onClick={() => setIsOpen(false)}>{t('services.transformationGallery')}</Link>
-                <Link href="/about" className="text-lg font-medium cursor-pointer" onClick={() => setIsOpen(false)}>{t('nav.aboutUs')}</Link>
-                <Link href="/doctors" className="text-lg font-medium cursor-pointer" onClick={() => setIsOpen(false)}>{t('nav.ourDoctors')}</Link>
-                <Link href="/blog" className="text-lg font-medium cursor-pointer" onClick={() => setIsOpen(false)}>{t('nav.blogNews')}</Link>
-                <Link href="/faq" className="text-lg font-medium cursor-pointer" onClick={() => setIsOpen(false)}>{t('nav.faq')}</Link>
-                <Link href="/contact" className="text-lg font-medium cursor-pointer" onClick={() => setIsOpen(false)}>{t('nav.contactUs')}</Link>
-                <div className="mt-4 flex flex-col gap-4">
-                  <Button asChild className="w-full bg-primary rounded-full">
-                    <a href="https://wa.me/971585828257">{t('nav.book')}</a>
-                  </Button>
-                  <Button variant="outline" asChild className="w-full rounded-full">
-                    <a href="tel:+971585828257">{t('nav.call')}</a>
-                  </Button>
-                </div>
-              </nav>
+            <SheetContent side="right" className="w-[300px] sm:w-[400px] flex flex-col p-0">
+              <div className="flex-1 overflow-y-auto">
+                <nav className="flex flex-col gap-1 mt-8 px-6 pb-8">
+                  <div className="mb-4 pb-4 border-b border-border">
+                    <LanguageSwitcher />
+                  </div>
+                  <Link href="/" className="text-lg font-medium cursor-pointer py-3" onClick={() => setIsOpen(false)}>{t('nav.home')}</Link>
+                  
+                  {/* Expandable Services */}
+                  <Collapsible open={servicesOpen} onOpenChange={setServicesOpen} className="w-full">
+                    <CollapsibleTrigger className="flex items-center justify-between w-full text-lg font-medium py-3 hover:text-primary transition-colors">
+                      <span>{t('nav.services')}</span>
+                      <ChevronDown className={`h-5 w-5 transition-transform ${servicesOpen ? 'rotate-180' : ''}`} />
+                    </CollapsibleTrigger>
+                    <CollapsibleContent className="flex flex-col gap-1 pl-4 pt-1">
+                      {services.map(s => (
+                        <Link 
+                          key={s.name} 
+                          href={s.path} 
+                          className="text-sm py-2 hover:text-primary transition-colors cursor-pointer" 
+                          onClick={() => {
+                            setIsOpen(false);
+                            setServicesOpen(false);
+                          }}
+                        >
+                          {s.name}
+                        </Link>
+                      ))}
+                    </CollapsibleContent>
+                  </Collapsible>
+
+                  <Link href="/gallery" className="text-lg font-medium cursor-pointer py-3" onClick={() => setIsOpen(false)}>{t('services.transformationGallery')}</Link>
+                  <Link href="/about" className="text-lg font-medium cursor-pointer py-3" onClick={() => setIsOpen(false)}>{t('nav.aboutUs')}</Link>
+                  <Link href="/doctors" className="text-lg font-medium cursor-pointer py-3" onClick={() => setIsOpen(false)}>{t('nav.ourDoctors')}</Link>
+                  <Link href="/blog" className="text-lg font-medium cursor-pointer py-3" onClick={() => setIsOpen(false)}>{t('nav.blogNews')}</Link>
+                  <Link href="/faq" className="text-lg font-medium cursor-pointer py-3" onClick={() => setIsOpen(false)}>{t('nav.faq')}</Link>
+                  <Link href="/contact" className="text-lg font-medium cursor-pointer py-3" onClick={() => setIsOpen(false)}>{t('nav.contactUs')}</Link>
+                </nav>
+              </div>
+              
+              <div className="border-t border-border px-6 py-4 flex flex-col gap-3">
+                <Button asChild className="w-full bg-primary text-primary-foreground rounded-full">
+                  <a href="https://wa.me/971585828257" onClick={() => setIsOpen(false)}>{t('nav.book')}</a>
+                </Button>
+                <Button variant="outline" asChild className="w-full rounded-full">
+                  <a href="tel:+971585828257" onClick={() => setIsOpen(false)}>{t('nav.call')}</a>
+                </Button>
+              </div>
             </SheetContent>
           </Sheet>
         </div>
