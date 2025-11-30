@@ -270,7 +270,7 @@ export default function Home() {
               { name: "Dr. Emily Roberts", role: "Orthodontist" },
             ].map((doc, i) => (
               <div key={i} className="group bg-background rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-border">
-                <div className="aspect-[4/5] overflow-hidden bg-muted flex items-center justify-center">
+                <div className="aspect-[4/5] overflow-hidden bg-muted flex items-center justify-center" role="img" aria-label={`Dr. ${doc.name}, ${doc.role} at Your Smile Dental Clinic`}>
                   <span className="text-muted-foreground font-medium">DOCTOR IMAGE</span>
                 </div>
                 <div className="p-6 text-center">

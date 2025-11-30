@@ -66,7 +66,7 @@ export function Header() {
       <div className="container mx-auto px-4 h-20 flex items-center justify-between">
         {/* 1. Logo */}
         <Link href="/" className="flex items-center gap-3 cursor-pointer group">
-          <img src={logoImage} alt="Your Smile Advanced Dental Center" className="h-14 w-auto transition-opacity group-hover:opacity-80" />
+          <img src={logoImage} alt="Your Smile Advanced Dental Center - Premium Dental Clinic in Dubai JLT" className="h-14 w-auto transition-opacity group-hover:opacity-80" />
         </Link>
 
         {/* 2. Main Navigation (Desktop) */}
