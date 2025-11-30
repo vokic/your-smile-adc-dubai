@@ -411,12 +411,17 @@ export default function Home() {
                 </Button>
               </div>
             </div>
-            <div className="h-full min-h-[400px] bg-muted relative flex items-center justify-center">
-              <span className="text-muted-foreground font-bold text-xl">MAP PLACEHOLDER</span>
-              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                 <MapPin className="h-12 w-12 text-primary fill-primary drop-shadow-lg animate-bounce" />
-              </div>
-            </div>
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3611.0524823!2d55.14507!3d25.08543!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f6c8f8f8f8f%3A0x12345678!2sHDS%20Business%20Centre%2C%20Jumeirah%20Lake%20Towers%2C%20Dubai!5e0!3m2!1sen!2sae!4v1700000000000" 
+              width="100%" 
+              height="100%" 
+              style={{ border: 0, minHeight: "400px" }} 
+              allowFullScreen="" 
+              loading="lazy" 
+              referrerPolicy="no-referrer-when-downgrade"
+              className="rounded-lg"
+            />
+            
           </div>
         </div>
       </section>

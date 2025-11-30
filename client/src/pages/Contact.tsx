@@ -142,12 +142,17 @@ export default function Contact() {
                   <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary mb-3">Find Us Easily</h2>
                   <p className="text-muted-foreground">Located at HDS Business Centre in JLT, easily accessible by car or public transport.</p>
                 </div>
-                <div className="h-[350px] w-full rounded-2xl overflow-hidden bg-muted border border-border flex items-center justify-center relative">
-                  <span className="text-xl font-bold text-muted-foreground">GOOGLE MAP EMBED</span>
-                  <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-30">
-                    <MapPin className="h-16 w-16 text-primary" />
-                  </div>
-                </div>
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3611.0524823!2d55.14507!3d25.08543!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f6c8f8f8f8f%3A0x12345678!2sHDS%20Business%20Centre%2C%20Jumeirah%20Lake%20Towers%2C%20Dubai!5e0!3m2!1sen!2sae!4v1700000000000" 
+                  width="100%" 
+                  height="350px" 
+                  style={{ border: 0 }} 
+                  allowFullScreen="" 
+                  loading="lazy" 
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="rounded-2xl"
+                />
+                
               </div>
             </div>
 
