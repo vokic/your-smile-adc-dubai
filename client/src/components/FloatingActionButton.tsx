@@ -10,19 +10,22 @@ export function FloatingActionButton() {
       icon: <MessageCircle className="h-5 w-5" />,
       label: "Book Now",
       href: "https://wa.me/971585828257",
-      bg: "bg-primary hover:bg-primary/90",
+      bg: "bg-primary hover:bg-primary/90 text-white",
+      textColor: "text-white",
     },
     {
       icon: <Phone className="h-5 w-5" />,
       label: "Call Now",
       href: "tel:+971588282432",
-      bg: "bg-blue-600 hover:bg-blue-700",
+      bg: "bg-muted hover:bg-muted/80 border-2 border-secondary/30",
+      textColor: "text-secondary",
     },
     {
       icon: <AlertCircle className="h-5 w-5" />,
       label: "Emergency",
       href: "tel:+971523301356",
-      bg: "bg-red-600 hover:bg-red-700",
+      bg: "bg-accent hover:bg-accent/80 border-2 border-primary/30",
+      textColor: "text-primary",
     },
   ];
 
@@ -44,7 +47,7 @@ export function FloatingActionButton() {
           >
             <Button
               size="lg"
-              className={`${action.bg} text-white shadow-lg gap-2 whitespace-nowrap`}
+              className={`${action.bg} ${action.textColor} rounded-full shadow-lg gap-2 whitespace-nowrap`}
             >
               {action.icon}
               <span className="hidden sm:inline">{action.label}</span>
@@ -58,6 +61,7 @@ export function FloatingActionButton() {
         onClick={() => setIsOpen(!isOpen)}
         size="lg"
         className="rounded-full w-14 h-14 bg-primary hover:bg-primary/90 text-white shadow-2xl flex items-center justify-center"
+        data-testid="button-floating-action-toggle"
       >
         {isOpen ? (
           <X className="h-6 w-6" />

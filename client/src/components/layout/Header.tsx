@@ -33,9 +33,9 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
       <div className="container mx-auto px-4 h-20 flex items-center justify-between">
         {/* 1. Logo */}
-        <Link href="/" className="flex items-center space-x-2 cursor-pointer">
-          <span className="text-2xl font-serif font-bold text-primary">Your Smile</span>
-          <span className="text-sm text-muted-foreground hidden md:inline-block">Advanced Dental Center</span>
+        <Link href="/" className="flex flex-col items-start cursor-pointer">
+          <span className="text-2xl font-serif font-bold text-primary leading-none">Your Smile</span>
+          <span className="text-xs text-muted-foreground font-medium mt-1">Advanced Dental Center</span>
         </Link>
 
         {/* 2. Main Navigation (Desktop) */}
