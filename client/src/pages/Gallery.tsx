@@ -128,18 +128,18 @@ export default function Gallery() {
 
             {/* Carousel */}
             <div className="relative">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                 {/* Before Image */}
-                <div className="rounded-xl overflow-hidden border-4 border-red-200 bg-muted h-[400px] flex items-center justify-center relative">
-                  <span className="text-lg font-bold text-muted-foreground">{currentImage.before}</span>
+                <div className="rounded-xl overflow-hidden border-4 border-red-200 bg-muted h-[300px] md:h-[400px] flex items-center justify-center relative">
+                  <span className="text-base md:text-lg font-bold text-muted-foreground text-center px-4">{currentImage.before}</span>
                   <div className="absolute top-4 left-4 bg-red-500 text-white px-3 py-1 rounded-full text-xs font-bold">
                     BEFORE
                   </div>
                 </div>
 
                 {/* After Image */}
-                <div className="rounded-xl overflow-hidden border-4 border-green-200 bg-muted h-[400px] flex items-center justify-center relative">
-                  <span className="text-lg font-bold text-muted-foreground">{currentImage.after}</span>
+                <div className="rounded-xl overflow-hidden border-4 border-green-200 bg-muted h-[300px] md:h-[400px] flex items-center justify-center relative">
+                  <span className="text-base md:text-lg font-bold text-muted-foreground text-center px-4">{currentImage.after}</span>
                   <div className="absolute top-4 left-4 bg-green-500 text-white px-3 py-1 rounded-full text-xs font-bold">
                     AFTER
                   </div>

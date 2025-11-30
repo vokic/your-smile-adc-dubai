@@ -161,17 +161,17 @@ export default function Blog() {
       <section className="py-16 bg-muted/30 flex-grow">
         <div className="container mx-auto px-4">
           {paginatedArticles.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-8 max-w-4xl mx-auto">
+            <div className="flex flex-col gap-8 max-w-4xl mx-auto">
               {paginatedArticles.map((article) => (
                 <article key={article.id} className="bg-card rounded-xl border border-border overflow-hidden hover:shadow-lg transition-all hover:-translate-y-1 group cursor-pointer">
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-0">
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-0">
                     {/* Image */}
-                    <div className="md:col-span-1 h-48 md:h-auto rounded-t-xl md:rounded-none md:rounded-l-xl bg-muted border-b md:border-b-0 md:border-r border-border flex items-center justify-center overflow-hidden group-hover:bg-primary/5 transition-colors">
+                    <div className="sm:col-span-1 h-48 sm:h-auto rounded-t-xl sm:rounded-none sm:rounded-l-xl bg-muted border-b sm:border-b-0 sm:border-r border-border flex items-center justify-center overflow-hidden group-hover:bg-primary/5 transition-colors">
                       <span className="text-sm font-bold text-muted-foreground text-center px-4">{article.image}</span>
                     </div>
 
                     {/* Content */}
-                    <div className="md:col-span-2 p-6 md:p-8 flex flex-col justify-between">
+                    <div className="sm:col-span-2 p-6 sm:p-8 flex flex-col justify-between">
                       <div>
                         {/* Category and Read Time */}
                         <div className="flex items-center justify-between gap-4 mb-3">

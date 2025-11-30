@@ -1,0 +1,70 @@
+import { useState } from "react";
+import { MessageCircle, Phone, AlertCircle, Plus, X } from "lucide-react";
+import { Button } from "@/components/ui/button";
+
+export function FloatingActionButton() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const actions = [
+    {
+      icon: <MessageCircle className="h-5 w-5" />,
+      label: "Book Now",
+      href: "https://wa.me/971585828257",
+      bg: "bg-primary hover:bg-primary/90",
+    },
+    {
+      icon: <Phone className="h-5 w-5" />,
+      label: "Call Now",
+      href: "tel:+971588282432",
+      bg: "bg-blue-600 hover:bg-blue-700",
+    },
+    {
+      icon: <AlertCircle className="h-5 w-5" />,
+      label: "Emergency",
+      href: "tel:+971523301356",
+      bg: "bg-red-600 hover:bg-red-700",
+    },
+  ];
+
+  return (
+    <div className="fixed bottom-6 right-6 z-40">
+      {/* Secondary Buttons */}
+      <div
+        className={`absolute bottom-20 right-0 flex flex-col gap-3 transition-all duration-300 ${
+          isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+        }`}
+      >
+        {actions.map((action, idx) => (
+          <a
+            key={idx}
+            href={action.href}
+            target={action.label === "Book Now" ? "_blank" : undefined}
+            rel={action.label === "Book Now" ? "noopener noreferrer" : undefined}
+            onClick={() => setIsOpen(false)}
+          >
+            <Button
+              size="lg"
+              className={`${action.bg} text-white shadow-lg gap-2 whitespace-nowrap`}
+            >
+              {action.icon}
+              <span className="hidden sm:inline">{action.label}</span>
+            </Button>
+          </a>
+        ))}
+      </div>
+
+      {/* Main Toggle Button */}
+      <Button
+        onClick={() => setIsOpen(!isOpen)}
+        size="lg"
+        className="rounded-full w-14 h-14 bg-primary hover:bg-primary/90 text-white shadow-2xl flex items-center justify-center"
+      >
+        {isOpen ? (
+          <X className="h-6 w-6" />
+        ) : (
+          <Plus className="h-6 w-6" />
+        )}
+      </Button>
+    </div>
+  );
+}

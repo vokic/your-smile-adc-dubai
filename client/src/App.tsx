@@ -24,6 +24,7 @@ import Blog from "@/pages/Blog";
 import Gallery from "@/pages/Gallery";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { FloatingActionButton } from "@/components/FloatingActionButton";
 
 function Router() {
   return (
@@ -53,6 +54,7 @@ function Router() {
         </Switch>
       </main>
       <Footer />
+      <FloatingActionButton />
     </div>
   );
 }
