@@ -14,7 +14,7 @@ import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { useLanguage } from "@/hooks/useLanguage";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
-import logoImage from '@assets/logo_1764501679029.png';
+import logoImage from '@assets/ays logo_1764501542023.avif';
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
