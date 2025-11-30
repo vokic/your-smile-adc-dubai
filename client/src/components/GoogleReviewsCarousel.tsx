@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Star, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-interface GoogleReview {
+export interface GoogleReview {
   id: string;
   text: string;
   author: string;
@@ -19,7 +19,7 @@ interface GoogleReviewsCarouselProps {
 export function GoogleReviewsCarousel({
   reviews,
   title = "★5.0 Google Reviews - Dental Clinic Dubai",
-  subtitle = "Trusted by hundreds of patients. Read our verified Google reviews."
+  subtitle = "Our dental clinic in Dubai is rated ★5.0 on Google, trusted by patients for veneers, implants, Invisalign, and family care."
 }: GoogleReviewsCarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
@@ -107,7 +107,7 @@ export function GoogleReviewsCarousel({
 
         {/* Reviews Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full mb-8 max-w-5xl mx-auto">
-          {visibleReviews.map((review, idx) => (
+          {visibleReviews.map((review) => (
             <div
               key={review.id}
               className="bg-white/10 backdrop-blur p-8 rounded-xl border border-white/10 text-left hover:bg-white/15 transition-all animate-in fade-in slide-in-from-bottom-4"
