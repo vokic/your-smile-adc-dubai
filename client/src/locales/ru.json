@@ -77,6 +77,96 @@
     "review3": "Моим детям теперь нравится ходить к стоматологу. Отличная детская помощь!",
     "verifiedReview": "Проверенный отзыв"
   },
+  "services": {
+    "heroTitle": "",
+    "heroSubtitle": "",
+    "heroImageAlt": "Стоматологические услуги в клинике Your Smile"
+  },
+  "veneers": {
+    "heroTitle": "",
+    "heroSubtitle": "",
+    "heroImageAlt": "Преображение улыбки с винирами"
+  },
+  "implants": {
+    "heroTitle": "",
+    "heroSubtitle": "",
+    "heroImageAlt": "Процедура зубной имплантации"
+  },
+  "orthodontics": {
+    "heroTitle": "",
+    "heroSubtitle": "",
+    "heroImageAlt": "Ортодонтическое лечение и Invisalign"
+  },
+  "whitening": {
+    "heroTitle": "",
+    "heroSubtitle": "",
+    "heroImageAlt": "Профессиональное отбеливание зубов"
+  },
+  "crownsAndBridges": {
+    "heroTitle": "",
+    "heroSubtitle": "",
+    "heroImageAlt": "Восстановление коронок и мостов"
+  },
+  "cosmeticDentistry": {
+    "heroTitle": "",
+    "heroSubtitle": "",
+    "heroImageAlt": "Дизайн улыбки эстетической стоматологии"
+  },
+  "generalPreventive": {
+    "heroTitle": "",
+    "heroSubtitle": "",
+    "heroImageAlt": "Общая и профилактическая стоматология"
+  },
+  "dentalSurgery": {
+    "heroTitle": "",
+    "heroSubtitle": "",
+    "heroImageAlt": "Стоматологическая хирургия"
+  },
+  "xrayOpg": {
+    "heroTitle": "",
+    "heroSubtitle": "",
+    "heroImageAlt": "Цифровое рентгеновское и ОПГ сканирование"
+  },
+  "emergency": {
+    "heroTitle": "",
+    "heroSubtitle": "",
+    "heroImageAlt": "Скорая стоматологическая помощь"
+  },
+  "dentalTourism": {
+    "heroTitle": "",
+    "heroSubtitle": "",
+    "heroImageAlt": "Пакеты стоматологического туризма"
+  },
+  "gallery": {
+    "heroTitle": "",
+    "heroSubtitle": "",
+    "heroImageAlt": "Галерея преображения улыбки"
+  },
+  "about": {
+    "heroTitle": "",
+    "heroSubtitle": "",
+    "heroImageAlt": "О клинике Your Smile Advanced Dental Center"
+  },
+  "doctors": {
+    "heroTitle": "",
+    "heroSubtitle": "",
+    "heroImageAlt": "Наша опытная команда стоматологов"
+  },
+  "blog": {
+    "heroTitle": "",
+    "heroSubtitle": "",
+    "heroImageAlt": "Стоматологический блог и новости"
+  },
+  "contact": {
+    "heroTitle": "",
+    "heroSubtitle": "",
+    "heroImageAlt": "Свяжитесь с клиникой Your Smile"
+  },
+  "faq": {
+    "heroTitle": "",
+    "heroSubtitle": "",
+    "heroImageAlt": "Часто задаваемые вопросы"
+  },
   "footer": {
     "address": "Бизнес-центр HDS, Джумейра Лейк Тауэрс, Дубай, ОАЭ",
     "emergency": "Скорая помощь",

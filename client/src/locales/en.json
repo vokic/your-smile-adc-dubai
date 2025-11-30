@@ -77,6 +77,96 @@
     "review3": "My kids actually love coming to the dentist now. Great pediatric care!",
     "verifiedReview": "Verified Review"
   },
+  "services": {
+    "heroTitle": "",
+    "heroSubtitle": "",
+    "heroImageAlt": "Dental services at Your Smile clinic"
+  },
+  "veneers": {
+    "heroTitle": "",
+    "heroSubtitle": "",
+    "heroImageAlt": "Veneer smile transformation"
+  },
+  "implants": {
+    "heroTitle": "",
+    "heroSubtitle": "",
+    "heroImageAlt": "Dental implant procedure"
+  },
+  "orthodontics": {
+    "heroTitle": "",
+    "heroSubtitle": "",
+    "heroImageAlt": "Orthodontics and Invisalign treatment"
+  },
+  "whitening": {
+    "heroTitle": "",
+    "heroSubtitle": "",
+    "heroImageAlt": "Professional teeth whitening"
+  },
+  "crownsAndBridges": {
+    "heroTitle": "",
+    "heroSubtitle": "",
+    "heroImageAlt": "Dental crowns and bridges restoration"
+  },
+  "cosmeticDentistry": {
+    "heroTitle": "",
+    "heroSubtitle": "",
+    "heroImageAlt": "Cosmetic dentistry smile design"
+  },
+  "generalPreventive": {
+    "heroTitle": "",
+    "heroSubtitle": "",
+    "heroImageAlt": "General and preventive dental care"
+  },
+  "dentalSurgery": {
+    "heroTitle": "",
+    "heroSubtitle": "",
+    "heroImageAlt": "Dental surgery procedure"
+  },
+  "xrayOpg": {
+    "heroTitle": "",
+    "heroSubtitle": "",
+    "heroImageAlt": "Digital X-ray and OPG imaging"
+  },
+  "emergency": {
+    "heroTitle": "",
+    "heroSubtitle": "",
+    "heroImageAlt": "Emergency dental care"
+  },
+  "dentalTourism": {
+    "heroTitle": "",
+    "heroSubtitle": "",
+    "heroImageAlt": "Dental tourism packages"
+  },
+  "gallery": {
+    "heroTitle": "",
+    "heroSubtitle": "",
+    "heroImageAlt": "Smile transformation gallery"
+  },
+  "about": {
+    "heroTitle": "",
+    "heroSubtitle": "",
+    "heroImageAlt": "About Your Smile Advanced Dental Center"
+  },
+  "doctors": {
+    "heroTitle": "",
+    "heroSubtitle": "",
+    "heroImageAlt": "Our experienced dental team"
+  },
+  "blog": {
+    "heroTitle": "",
+    "heroSubtitle": "",
+    "heroImageAlt": "Dental blog and news"
+  },
+  "contact": {
+    "heroTitle": "",
+    "heroSubtitle": "",
+    "heroImageAlt": "Contact us at Your Smile clinic"
+  },
+  "faq": {
+    "heroTitle": "",
+    "heroSubtitle": "",
+    "heroImageAlt": "Frequently asked questions"
+  },
   "footer": {
     "address": "HDS Business Centre, Jumeirah Lake Towers, Dubai, UAE",
     "emergency": "Emergency",

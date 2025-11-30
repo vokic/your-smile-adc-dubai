@@ -77,6 +77,96 @@
     "review3": "Meine Kinder lieben es, zum Zahnarzt zu gehen. Großartige pädiatrische Versorgung!",
     "verifiedReview": "Verifizierte Bewertung"
   },
+  "services": {
+    "heroTitle": "",
+    "heroSubtitle": "",
+    "heroImageAlt": "Zahnklinik-Dienstleistungen bei Your Smile"
+  },
+  "veneers": {
+    "heroTitle": "",
+    "heroSubtitle": "",
+    "heroImageAlt": "Lächel-Transformation mit Veneers"
+  },
+  "implants": {
+    "heroTitle": "",
+    "heroSubtitle": "",
+    "heroImageAlt": "Zahnimplantat-Verfahren"
+  },
+  "orthodontics": {
+    "heroTitle": "",
+    "heroSubtitle": "",
+    "heroImageAlt": "Kieferorthopädische Behandlung und Invisalign"
+  },
+  "whitening": {
+    "heroTitle": "",
+    "heroSubtitle": "",
+    "heroImageAlt": "Professionelle Zahnaufhellung"
+  },
+  "crownsAndBridges": {
+    "heroTitle": "",
+    "heroSubtitle": "",
+    "heroImageAlt": "Restauration von Zahnkronen und Brücken"
+  },
+  "cosmeticDentistry": {
+    "heroTitle": "",
+    "heroSubtitle": "",
+    "heroImageAlt": "Lächeln-Design in der kosmetischen Zahnheilkunde"
+  },
+  "generalPreventive": {
+    "heroTitle": "",
+    "heroSubtitle": "",
+    "heroImageAlt": "Allgemeine und präventive Zahnmedizin"
+  },
+  "dentalSurgery": {
+    "heroTitle": "",
+    "heroSubtitle": "",
+    "heroImageAlt": "Zahnchirurgisches Verfahren"
+  },
+  "xrayOpg": {
+    "heroTitle": "",
+    "heroSubtitle": "",
+    "heroImageAlt": "Digitales Röntgen- und OPG-Scannen"
+  },
+  "emergency": {
+    "heroTitle": "",
+    "heroSubtitle": "",
+    "heroImageAlt": "Zahnnotfall-Versorgung"
+  },
+  "dentalTourism": {
+    "heroTitle": "",
+    "heroSubtitle": "",
+    "heroImageAlt": "Zahntourismus-Pakete"
+  },
+  "gallery": {
+    "heroTitle": "",
+    "heroSubtitle": "",
+    "heroImageAlt": "Lächel-Transformations-Galerie"
+  },
+  "about": {
+    "heroTitle": "",
+    "heroSubtitle": "",
+    "heroImageAlt": "Über Your Smile Advanced Dental Center"
+  },
+  "doctors": {
+    "heroTitle": "",
+    "heroSubtitle": "",
+    "heroImageAlt": "Unser erfahrenes Zahnarzt-Team"
+  },
+  "blog": {
+    "heroTitle": "",
+    "heroSubtitle": "",
+    "heroImageAlt": "Zahn-Blog und Nachrichten"
+  },
+  "contact": {
+    "heroTitle": "",
+    "heroSubtitle": "",
+    "heroImageAlt": "Kontaktieren Sie die Your Smile-Klinik"
+  },
+  "faq": {
+    "heroTitle": "",
+    "heroSubtitle": "",
+    "heroImageAlt": "Häufig gestellte Fragen"
+  },
   "footer": {
     "address": "HDS Business Centre, Jumeirah Lake Towers, Dubai, VAE",
     "emergency": "Notfall",
