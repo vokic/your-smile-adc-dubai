@@ -219,6 +219,7 @@ export default function Blog() {
               <Button
                 onClick={() => setSearchTerm("")}
                 variant="outline"
+                className="rounded-full"
               >
                 Clear Search
               </Button>
@@ -294,7 +295,7 @@ export default function Blog() {
                 placeholder="Enter your email address"
                 className="px-4 py-3 rounded-lg bg-white text-secondary placeholder:text-muted-foreground focus:outline-none flex-grow"
               />
-              <Button className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold">
+              <Button className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold rounded-full">
                 Subscribe
               </Button>
             </div>

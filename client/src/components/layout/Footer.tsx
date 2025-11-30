@@ -88,7 +88,7 @@ export function Footer() {
               <h5 className="text-sm font-medium">Subscribe for dental tips & offers</h5>
               <div className="flex gap-2">
                 <Input placeholder="Email address" className="bg-white/10 border-white/20 text-white placeholder:text-white/50" />
-                <Button size="icon" className="bg-primary hover:bg-primary/90"><Mail className="h-4 w-4" /></Button>
+                <Button size="icon" className="bg-primary hover:bg-primary/90 rounded-full"><Mail className="h-4 w-4" /></Button>
               </div>
             </div>
           </div>

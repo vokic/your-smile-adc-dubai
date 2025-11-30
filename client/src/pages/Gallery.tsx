@@ -152,7 +152,7 @@ export default function Gallery() {
                   onClick={handlePrev}
                   variant="outline"
                   size="lg"
-                  className="gap-2"
+                  className="gap-2 rounded-full"
                 >
                   <ChevronLeft className="h-5 w-5" />
                   Previous
@@ -168,7 +168,7 @@ export default function Gallery() {
                   onClick={handleNext}
                   variant="outline"
                   size="lg"
-                  className="gap-2"
+                  className="gap-2 rounded-full"
                 >
                   Next
                   <ChevronRight className="h-5 w-5" />

@@ -41,7 +41,7 @@ export default function Home() {
               From veneers and implants to Invisalign and whitening – expert care tailored to your smile.
             </h2>
             <div className="pt-6">
-              <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 text-lg px-10 h-16 font-bold shadow-xl shadow-primary/20 transition-transform hover:scale-105">
+              <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 text-lg px-10 h-16 font-bold shadow-xl shadow-primary/20 transition-transform hover:scale-105 rounded-full">
                 <a href="https://wa.me/971585828257" target="_blank" rel="noopener noreferrer">
                   Book Your Appointment
                 </a>
@@ -184,7 +184,7 @@ export default function Home() {
                 Discover real results from our patients who chose veneers, implants, and Invisalign in Dubai. Each smile tells a story of confidence and lasting change.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-secondary text-white hover:bg-secondary/90" asChild>
+                <Button size="lg" className="bg-secondary text-white hover:bg-secondary/90 rounded-full" asChild>
                   <Link href="/gallery">View Transformation Gallery</Link>
                 </Button>
               </div>
@@ -216,7 +216,7 @@ export default function Home() {
                   onClick={handlePrev}
                   variant="outline"
                   size="sm"
-                  className="gap-2"
+                  className="gap-2 rounded-full"
                 >
                   <ChevronLeft className="h-4 w-4" />
                   Prev
@@ -240,7 +240,7 @@ export default function Home() {
                   onClick={handleNext}
                   variant="outline"
                   size="sm"
-                  className="gap-2"
+                  className="gap-2 rounded-full"
                 >
                   Next
                   <ChevronRight className="h-4 w-4" />

@@ -70,11 +70,11 @@ export default function Veneers() {
               Achieve a flawless, natural-looking smile with premium porcelain & composite veneers - tailored just for you.
             </h2>
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 gap-2">
+              <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 gap-2 rounded-full">
                 <MessageCircle className="h-5 w-5" />
                 Book Your Consultation
               </Button>
-              <Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-secondary gap-2">
+              <Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-secondary gap-2 rounded-full">
                 <Phone className="h-5 w-5" />
                 Call Now
               </Button>
@@ -95,7 +95,7 @@ export default function Veneers() {
               <p className="text-muted-foreground text-lg leading-relaxed">
                 Stains, chips, or gaps can hold you back. With veneers, you can transform your smile and your confidence in just a few visits. Our Dubai cosmetic dentists design veneers that look and feel like your natural teeth.
               </p>
-              <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">
+              <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full">
                 Start Your Smile Journey Today
               </Button>
             </div>
@@ -152,7 +152,7 @@ export default function Veneers() {
                   Our internationally trained cosmetic dentists have transformed thousands of smiles. With ★5.0 rating on Google, we're proud to be among Dubai's top-rated dental clinics.
                 </p>
               </div>
-              <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">
+              <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full">
                 Book with Our Veneers Experts Today
               </Button>
             </div>
