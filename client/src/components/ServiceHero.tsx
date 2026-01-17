@@ -22,7 +22,7 @@ export function ServiceHero({
 }: ServiceHeroProps) {
   return (
     <section className="relative min-h-[50vh] md:h-[60vh] w-full overflow-hidden bg-secondary pt-10 md:pt-0">
-      <div className="absolute inset-0 opacity-40 flex items-center justify-center bg-muted">
+      <div className="absolute inset-0 opacity-40 flex items-center justify-center bg-muted" aria-hidden="true">
         <span className="text-4xl font-bold text-muted-foreground/20">
           {backgroundImage || "SERVICE HERO IMAGE"}
         </span>

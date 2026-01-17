@@ -8,6 +8,7 @@ import { useEffect } from "react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { FloatingActionButton } from "@/components/FloatingActionButton";
+import { ErrorBoundary } from "@/components/ErrorBoundary";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
 import Services from "@/pages/Services";
@@ -37,7 +38,7 @@ function Router() {
   const [location] = useLocation();
   
   useEffect(() => {
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [location]);
 
   return (
@@ -79,14 +80,16 @@ function Router() {
 
 function App() {
   return (
-    <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <LanguageProvider>
-          <Toaster />
-          <Router />
-        </LanguageProvider>
-      </TooltipProvider>
-    </QueryClientProvider>
+    <ErrorBoundary>
+      <QueryClientProvider client={queryClient}>
+        <TooltipProvider>
+          <LanguageProvider>
+            <Toaster />
+            <Router />
+          </LanguageProvider>
+        </TooltipProvider>
+      </QueryClientProvider>
+    </ErrorBoundary>
   );
 }
 

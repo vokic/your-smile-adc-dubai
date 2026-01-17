@@ -5,6 +5,12 @@ import deJson from '../locales/de.json';
 
 type Language = 'en' | 'ru' | 'de';
 
+// Type for translation values - can be string or nested object
+type TranslationValue = string | { [key: string]: TranslationValue };
+
+// Type for the translation object structure
+type TranslationObject = typeof enJson;
+
 interface LanguageContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
@@ -13,7 +19,7 @@ interface LanguageContextType {
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
-const translations = {
+const translations: Record<Language, TranslationObject> = {
   en: enJson,
   ru: ruJson,
   de: deJson,
@@ -22,7 +28,11 @@ const translations = {
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [language, setLanguage] = useState<Language>(() => {
     if (typeof window !== 'undefined') {
-      return (localStorage.getItem('language') as Language) || 'en';
+      const stored = localStorage.getItem('language') as Language | null;
+      if (stored && (stored === 'en' || stored === 'ru' || stored === 'de')) {
+        return stored;
+      }
+      return 'en';
     }
     return 'en';
   });
@@ -36,13 +46,27 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 
   const t = (key: string): string => {
     const keys = key.split('.');
-    let value: any = translations[language];
+    let value: TranslationValue | undefined = translations[language];
 
     for (const k of keys) {
-      value = value?.[k];
+      if (value && typeof value === 'object' && k in value) {
+        value = value[k];
+      } else {
+        // Key not found, return the key itself or log in development
+        if (process.env.NODE_ENV === 'development') {
+          console.warn(`Translation key not found: ${key} for language: ${language}`);
+        }
+        return key;
+      }
     }
 
-    return value || key;
+    // Ensure we return a string
+    if (typeof value === 'string') {
+      return value;
+    }
+    
+    // Fallback to key if value is not a string
+    return key;
   };
 
   return React.createElement(

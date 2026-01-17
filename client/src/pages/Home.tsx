@@ -7,34 +7,34 @@ import { TestimonialCarousel } from "@/components/TestimonialCarousel";
 import { AnimatedStats } from "@/components/AnimatedStats";
 import { TrustBadges } from "@/components/TrustBadges";
 import { GoogleReviewsCarousel } from "@/components/GoogleReviewsCarousel";
+import { WHATSAPP_PHONE, REGULAR_PHONE, CLINIC_ADDRESS, CLINIC_EMAIL, WORKING_HOURS } from "@/lib/constants";
+import { TRANSFORMATIONS, SERVICES, DOCTORS, GOOGLE_REVIEWS, BLOG_POSTS } from "@/lib/content";
+import { usePageTitle } from "@/hooks/usePageTitle";
 
 export default function Home() {
   const { t } = useLanguage();
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  const transformations = [
-    { before: "BEFORE VENEERS", after: "AFTER VENEERS" },
-    { before: "BEFORE IMPLANTS", after: "AFTER IMPLANTS" },
-    { before: "BEFORE INVISALIGN", after: "AFTER INVISALIGN" },
-    { before: "BEFORE MAKEOVER", after: "AFTER MAKEOVER" },
-    { before: "BEFORE WHITENING", after: "AFTER WHITENING" },
-  ];
+  usePageTitle({
+    title: "Home",
+    description: "Your Smile Advanced Dental Center in Dubai JLT offers premium dental services: veneers, implants, Invisalign, teeth whitening, and emergency care. 5-star rated dentist clinic.",
+  });
 
   const handlePrev = () => {
-    setCurrentSlide(prev => (prev > 0 ? prev - 1 : transformations.length - 1));
+    setCurrentSlide(prev => (prev > 0 ? prev - 1 : TRANSFORMATIONS.length - 1));
   };
 
   const handleNext = () => {
-    setCurrentSlide(prev => (prev < transformations.length - 1 ? prev + 1 : 0));
+    setCurrentSlide(prev => (prev < TRANSFORMATIONS.length - 1 ? prev + 1 : 0));
   };
 
-  const current = transformations[currentSlide];
+  const current = TRANSFORMATIONS[currentSlide];
   
   return (
     <div className="flex flex-col min-h-screen">
       {/* 1. Hero Section */}
       <section className="relative min-h-[75vh] md:h-[85vh] w-full overflow-hidden bg-muted pt-10 md:pt-0">
-        <div className="absolute inset-0 flex items-center justify-center bg-muted text-muted-foreground/20 text-9xl font-bold select-none">
+        <div className="absolute inset-0 flex items-center justify-center bg-muted text-muted-foreground/20 text-9xl font-bold select-none" aria-hidden="true">
           HERO IMAGE
         </div>
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent" />
@@ -49,7 +49,7 @@ export default function Home() {
             </h2>
             <div className="pt-6">
               <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 text-lg px-10 h-16 font-bold shadow-xl shadow-primary/20 transition-transform hover:scale-105 rounded-full">
-                <a href="https://wa.me/971585828257" target="_blank" rel="noopener noreferrer">
+                <a href={`https://wa.me/${WHATSAPP_PHONE.replace('+', '')}`} target="_blank" rel="noopener noreferrer">
                   {t('home.bookAppointment')}
                 </a>
               </Button>
@@ -86,14 +86,7 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              { title: "Veneers in Dubai", desc: "Achieve a flawless smile with natural-looking porcelain or composite veneers.", link: "/veneers", image: "VENEERS PROCEDURE" },
-              { title: "Dental Implants in Dubai", desc: "Restore missing teeth permanently with advanced implant systems.", link: "/implants", image: "IMPLANT SURGERY" },
-              { title: "Orthodontics & Invisalign", desc: "Straighten your teeth discreetly with clear aligners.", link: "/orthodontics", image: "ORTHODONTICS" },
-              { title: "Teeth Whitening in Dubai", desc: "Safe, fast, and effective whitening treatments.", link: "/whitening", image: "WHITENING LAMP" },
-              { title: "Crowns & Bridges", desc: "Restore damaged or missing teeth with custom-made restorations.", link: "/crowns-bridges", image: "CROWNS BRIDGE" },
-              { title: "Cosmetic Dentistry", desc: "Complete smile transformations combining multiple treatments.", link: "/cosmetic", image: "SMILE DESIGN" },
-            ].map((service, i) => (
+            {SERVICES.map((service, i) => (
               <Link key={i} href={service.link} className="group rounded-xl overflow-hidden border border-white/10 hover:border-primary/50 transition-all duration-300 cursor-pointer bg-white/5 hover:bg-white/10 flex flex-col md:flex-row">
                 {/* Image - 1/3 on left (or full width on mobile) */}
                 <div className="w-full md:w-1/3 h-48 md:h-auto bg-muted/40 flex items-center justify-center border-b md:border-b-0 md:border-r border-white/10 shrink-0">
@@ -151,7 +144,7 @@ export default function Home() {
               </Button>
 
               <div className="flex gap-1.5">
-                {transformations.map((_, idx) => (
+                {TRANSFORMATIONS.map((_, idx) => (
                   <button
                     key={idx}
                     onClick={() => setCurrentSlide(idx)}
@@ -191,14 +184,10 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-            {[
-              { name: "Dr. Sarah Johnson", role: "Cosmetic Specialist" },
-              { name: "Dr. Michael Chen", role: "Implantologist" },
-              { name: "Dr. Emily Roberts", role: "Orthodontist" },
-            ].map((doc, i) => (
+            {DOCTORS.map((doc, i) => (
               <div key={i} className="group bg-background rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-border">
-                <div className="aspect-[4/5] overflow-hidden bg-muted flex items-center justify-center">
-                  <span className="text-muted-foreground font-medium">DOCTOR IMAGE</span>
+                <div className="aspect-[4/5] overflow-hidden bg-muted flex items-center justify-center" aria-label={`${doc.name}, ${doc.role}`}>
+                  <span className="text-muted-foreground font-medium" aria-hidden="true">DOCTOR IMAGE</span>
                 </div>
                 <div className="p-6 text-center">
                   <h3 className="text-xl font-bold text-secondary mb-1">{doc.name}</h3>
@@ -210,7 +199,7 @@ export default function Home() {
           
           <div className="text-center">
             <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold px-10 rounded-full">
-              <a href="https://wa.me/971585828257" target="_blank" rel="noopener noreferrer">
+              <a href={`https://wa.me/${WHATSAPP_PHONE.replace('+', '')}`} target="_blank" rel="noopener noreferrer">
                 Book Your Appointment
               </a>
             </Button>
@@ -223,13 +212,7 @@ export default function Home() {
 
       {/* 8. Google Reviews Carousel */}
       <GoogleReviewsCarousel 
-        reviews={[
-          { id: "1", text: "Best experience ever! The veneers look so natural. Highly recommend Dr. Sarah.", author: "Google Patient", initials: "GP", verified: true },
-          { id: "2", text: "Painless implant procedure. The team is so professional and kind.", author: "Google Patient", initials: "GP", verified: true },
-          { id: "3", text: "My kids actually love coming to the dentist now. Great pediatric care!", author: "Google Patient", initials: "GP", verified: true },
-          { id: "4", text: "Outstanding service! Invisalign treatment exceeded all my expectations.", author: "Google Patient", initials: "GP", verified: true },
-          { id: "5", text: "Dr. Nemanja is absolutely brilliant. Very professional and caring.", author: "Google Patient", initials: "GP", verified: true },
-        ]}
+        reviews={GOOGLE_REVIEWS}
         title="★5.0 Google Reviews - Dental Clinic Dubai"
         subtitle="Our dental clinic in Dubai is rated ★5.0 on Google, trusted by patients for veneers, implants, Invisalign, and family care."
       />
@@ -276,11 +259,7 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              { title: "5 Tips for Maintaining Your Veneers", date: "Nov 28, 2024", category: "Cosmetic Care" },
-              { title: "Dental Implants: A Lifetime Investment", date: "Nov 25, 2024", category: "Implants" },
-              { title: "Invisalign vs Traditional Braces", date: "Nov 22, 2024", category: "Orthodontics" },
-            ].map((article, i) => (
+            {BLOG_POSTS.map((article, i) => (
               <div key={i} className="bg-white/5 border border-white/10 hover:bg-white/10 hover:border-primary/50 rounded-xl p-6 transition-all group cursor-pointer">
                 <div className="mb-4">
                   <span className="inline-block text-xs font-bold text-primary bg-primary/20 px-3 py-1 rounded-full">
@@ -310,22 +289,25 @@ export default function Home() {
                   <MapPin className="h-6 w-6 text-primary shrink-0 mt-1" />
                   <div>
                     <h4 className="font-bold text-secondary">Address</h4>
-                    <p className="text-muted-foreground">HDS Business Centre, Jumeirah Lake Towers, Dubai, UAE</p>
+                    <p className="text-muted-foreground">{CLINIC_ADDRESS}</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
                   <Clock className="h-6 w-6 text-primary shrink-0 mt-1" />
                   <div>
                     <h4 className="font-bold text-secondary">Working Hours</h4>
-                    <p className="text-muted-foreground">Mon – Sat: 9:00 AM – 9:00 PM <br/> Sun: Closed</p>
+                    <p className="text-muted-foreground">
+                      {WORKING_HOURS.filter(h => h.day !== "Sunday").map(h => `${h.day === "Monday" ? "Mon – Fri" : h.day}: ${h.hours}`).join(" | ")}<br/>
+                      Sun: Closed
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
                   <Phone className="h-6 w-6 text-primary shrink-0 mt-1" />
                   <div>
                     <h4 className="font-bold text-secondary">Contact</h4>
-                    <p className="text-muted-foreground">+971 58 828 2432</p>
-                    <p className="text-muted-foreground">info@yoursmileadcdubai.com</p>
+                    <p className="text-muted-foreground">{REGULAR_PHONE}</p>
+                    <p className="text-muted-foreground">{CLINIC_EMAIL}</p>
                   </div>
                 </div>
               </div>
@@ -344,6 +326,8 @@ export default function Home() {
                 allowFullScreen
                 loading="lazy" 
                 referrerPolicy="no-referrer-when-downgrade"
+                title="Your Smile Advanced Dental Center Location - HDS Business Centre, Jumeirah Lake Towers, Dubai"
+                aria-label="Interactive map showing the location of Your Smile Advanced Dental Center at HDS Business Centre, Jumeirah Lake Towers, Dubai"
               />
             </div>
           </div>

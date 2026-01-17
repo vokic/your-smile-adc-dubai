@@ -2,11 +2,11 @@ import { useState } from "react";
 import { MessageCircle, Phone, AlertCircle, Plus, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { EmergencyConfirmModal } from "@/components/EmergencyConfirmModal";
+import { EMERGENCY_PHONE, EMERGENCY_PHONE_DISPLAY, REGULAR_PHONE, WHATSAPP_PHONE } from "@/lib/constants";
 
 export function FloatingActionButton() {
   const [isOpen, setIsOpen] = useState(false);
   const [showEmergencyModal, setShowEmergencyModal] = useState(false);
-  const emergencyNumber = "+971523301356";
 
   const handleEmergencyCall = () => {
     setShowEmergencyModal(true);
@@ -15,14 +15,14 @@ export function FloatingActionButton() {
   const handleConfirmEmergency = () => {
     setShowEmergencyModal(false);
     setIsOpen(false);
-    window.location.href = `tel:${emergencyNumber}`;
+    window.location.href = `tel:${EMERGENCY_PHONE}`;
   };
 
   const actions = [
     {
       icon: <MessageCircle className="h-5 w-5" />,
       label: "Book Now",
-      href: "https://wa.me/971585828257",
+      href: `https://wa.me/${WHATSAPP_PHONE.replace('+', '')}`,
       bg: "bg-primary hover:bg-primary/90 text-white",
       textColor: "text-white",
       isEmergency: false,
@@ -30,7 +30,7 @@ export function FloatingActionButton() {
     {
       icon: <Phone className="h-5 w-5" />,
       label: "Call Now",
-      href: "tel:+971588282432",
+      href: `tel:${REGULAR_PHONE}`,
       bg: "bg-muted hover:bg-muted/80 border-2 border-secondary/30",
       textColor: "text-secondary",
       isEmergency: false,
@@ -38,7 +38,7 @@ export function FloatingActionButton() {
     {
       icon: <AlertCircle className="h-5 w-5" />,
       label: "Emergency",
-      href: "tel:+971523301356",
+      href: `tel:${EMERGENCY_PHONE}`,
       bg: "bg-red-600 hover:bg-red-700 text-white",
       textColor: "text-white",
       isEmergency: true,
@@ -105,7 +105,7 @@ export function FloatingActionButton() {
         isOpen={showEmergencyModal}
         onClose={() => setShowEmergencyModal(false)}
         onConfirm={handleConfirmEmergency}
-        phoneNumber={emergencyNumber}
+        phoneNumber={EMERGENCY_PHONE_DISPLAY}
       />
     </>
   );

@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { Grid2X2, FileText } from "lucide-react";
+import { WHATSAPP_PHONE } from "@/lib/constants";
 
 export default function Sitemap() {
   const sections = [
@@ -117,7 +118,7 @@ export default function Sitemap() {
                   <Link href="/contact">Contact Us</Link>
                 </Button>
                 <Button size="lg" variant="outline" className="rounded-full font-semibold" asChild>
-                  <a href="https://wa.me/971585828257" target="_blank" rel="noopener noreferrer">
+                  <a href={`https://wa.me/${WHATSAPP_PHONE.replace('+', '')}`} target="_blank" rel="noopener noreferrer">
                     Message on WhatsApp
                   </a>
                 </Button>

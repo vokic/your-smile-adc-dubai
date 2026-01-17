@@ -1,4 +1,5 @@
 import { CheckCircle2, X } from "lucide-react";
+import { WHATSAPP_PHONE } from "@/lib/constants";
 
 interface ComparisonRow {
   feature: string;
@@ -137,7 +138,7 @@ export function ServiceComparison({
             Not sure which treatment is right for you?
           </p>
           <a
-            href="https://wa.me/971585828257"
+            href={`https://wa.me/${WHATSAPP_PHONE.replace('+', '')}`}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block px-8 py-3 bg-primary text-primary-foreground font-bold rounded-full hover:bg-primary/90 transition-colors"

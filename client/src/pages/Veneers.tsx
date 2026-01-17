@@ -31,7 +31,9 @@ export default function Veneers() {
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="h-[350px] rounded-2xl overflow-hidden bg-muted border border-border flex items-center justify-center"><span className="text-xl font-bold text-muted-foreground">BEFORE & AFTER IMAGE</span></div>
+            <div className="h-[350px] rounded-2xl overflow-hidden bg-muted border border-border flex items-center justify-center" aria-label="Before and after veneer transformation">
+              <span className="text-xl font-bold text-muted-foreground" aria-hidden="true">BEFORE & AFTER IMAGE</span>
+            </div>
             <div className="space-y-6">
               <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary">Tired of hiding your smile?</h2>
               <p className="text-muted-foreground text-lg leading-relaxed">Stains, chips, or gaps can hold you back. With veneers, transform your smile and confidence in just a few visits.</p>

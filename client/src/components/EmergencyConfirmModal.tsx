@@ -1,5 +1,12 @@
-import { Phone, AlertTriangle, X } from "lucide-react";
+import { Phone, AlertTriangle } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 
 interface EmergencyConfirmModalProps {
   isOpen: boolean;
@@ -14,20 +21,18 @@ export function EmergencyConfirmModal({
   onConfirm,
   phoneNumber,
 }: EmergencyConfirmModalProps) {
-  if (!isOpen) return null;
-
   return (
-    <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4 animate-in fade-in">
-      <div className="bg-white rounded-[32px] p-8 max-w-md w-full shadow-2xl animate-in scale-95 duration-200">
-        <div className="flex items-center justify-between mb-4">
-          <div className="flex items-center gap-3">
-            <AlertTriangle className="h-6 w-6 text-red-500" />
-            <h3 className="text-2xl font-bold text-secondary">Emergency Contact</h3>
+    <Dialog open={isOpen} onOpenChange={onClose}>
+      <DialogContent className="max-w-md rounded-[32px] p-8" aria-describedby="emergency-description">
+        <DialogHeader>
+          <div className="flex items-center gap-3 mb-2">
+            <AlertTriangle className="h-6 w-6 text-red-500" aria-hidden="true" />
+            <DialogTitle id="emergency-title">Emergency Contact</DialogTitle>
           </div>
-          <button onClick={onClose} className="p-2 hover:bg-muted rounded-full">
-            <X className="h-5 w-5 text-muted-foreground" />
-          </button>
-        </div>
+          <DialogDescription id="emergency-description" className="sr-only">
+            Emergency dental contact information and guidelines
+          </DialogDescription>
+        </DialogHeader>
         
         <div className="space-y-4 mb-6">
           <p className="font-semibold text-foreground text-lg">
@@ -36,7 +41,7 @@ export function EmergencyConfirmModal({
           <p className="text-foreground">
             Please use this line only for urgent dental situations such as:
           </p>
-          <ul className="list-disc list-inside space-y-2 ml-2 text-foreground text-sm">
+          <ul className="list-disc list-inside space-y-2 ml-2 text-foreground text-sm" role="list">
             <li>Severe dental pain or toothache</li>
             <li>Broken or knocked-out teeth</li>
             <li>Oral injuries or significant bleeding</li>
@@ -47,20 +52,29 @@ export function EmergencyConfirmModal({
             For routine appointments, consultations, or non-emergency inquiries, please use the regular booking options available on our website.
           </p>
           <p className="pt-4 font-bold text-foreground text-lg">
-            Emergency Number: <span className="text-red-600 text-xl">{phoneNumber}</span>
+            Emergency Number: <span className="text-red-600 text-xl" aria-label={`Emergency phone number ${phoneNumber}`}>{phoneNumber}</span>
           </p>
         </div>
 
         <div className="flex gap-3">
-          <Button onClick={onConfirm} className="flex-1 bg-red-600 hover:bg-red-700 rounded-full gap-2">
-            <Phone className="h-4 w-4" />
+          <Button 
+            onClick={onConfirm} 
+            className="flex-1 bg-red-600 hover:bg-red-700 rounded-full gap-2"
+            aria-label={`Call emergency number ${phoneNumber}`}
+          >
+            <Phone className="h-4 w-4" aria-hidden="true" />
             Call Now
           </Button>
-          <Button variant="outline" className="flex-1 rounded-full" onClick={onClose}>
+          <Button 
+            variant="outline" 
+            className="flex-1 rounded-full" 
+            onClick={onClose}
+            aria-label="Close emergency contact dialog"
+          >
             Close
           </Button>
         </div>
-      </div>
-    </div>
+      </DialogContent>
+    </Dialog>
   );
 }

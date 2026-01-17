@@ -11,16 +11,17 @@ import {
 import { Menu, Phone, MessageCircle, ChevronDown } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { cn } from "@/lib/utils";
 import { useLanguage } from "@/hooks/useLanguage";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import logoImage from '@assets/logo_1764501679029.png';
+import { REGULAR_PHONE, WHATSAPP_PHONE } from "@/lib/constants";
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
+  const lastScrollYRef = useRef(0);
   const [servicesOpen, setServicesOpen] = useState(false);
   const { t } = useLanguage();
 
@@ -32,13 +33,13 @@ export function Header() {
         window.requestAnimationFrame(() => {
           const currentScrollY = window.scrollY;
           
-          if (currentScrollY > lastScrollY && currentScrollY > 80) {
+          if (currentScrollY > lastScrollYRef.current && currentScrollY > 80) {
             setIsVisible(false);
           } else {
             setIsVisible(true);
           }
           
-          setLastScrollY(currentScrollY);
+          lastScrollYRef.current = currentScrollY;
           ticking = false;
         });
         ticking = true;
@@ -47,7 +48,7 @@ export function Header() {
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [lastScrollY]);
+  }, []);
 
   const services = [
     { name: "Veneers", path: "/veneers" },
@@ -68,7 +69,13 @@ export function Header() {
       <div className="container mx-auto px-4 h-20 flex items-center justify-between">
         {/* 1. Logo */}
         <Link href="/" className="flex items-center gap-3 cursor-pointer group">
-          <img src={logoImage} alt="Your Smile Advanced Dental Center - Premium Dental Clinic in Dubai JLT" className="h-14 w-auto transition-opacity group-hover:opacity-80" />
+          <img 
+            src={logoImage} 
+            alt="Your Smile Advanced Dental Center - Premium Dental Clinic in Dubai JLT" 
+            className="h-14 w-auto transition-opacity group-hover:opacity-80"
+            width="auto"
+            height="56"
+          />
         </Link>
 
         {/* 2. Main Navigation (Desktop) */}
@@ -172,13 +179,13 @@ export function Header() {
         {/* 3. CTA Buttons */}
         <div className="hidden md:flex items-center gap-3">
           <Button variant="outline" asChild className="text-foreground hover:bg-accent hover:text-primary rounded-full">
-            <a href="tel:+971585828257">
+            <a href={`tel:${REGULAR_PHONE}`}>
               <Phone className="mr-2 h-4 w-4" />
               {t('nav.call')}
             </a>
           </Button>
           <Button asChild className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold shadow-lg shadow-primary/20 rounded-full">
-            <a href="https://wa.me/971585828257" target="_blank" rel="noopener noreferrer">
+            <a href={`https://wa.me/${WHATSAPP_PHONE.replace('+', '')}`} target="_blank" rel="noopener noreferrer">
               <MessageCircle className="mr-2 h-4 w-4" />
               {t('nav.book')}
             </a>
@@ -189,7 +196,7 @@ export function Header() {
         {/* Mobile CTA Button */}
         <div className="md:hidden">
           <Button asChild className="bg-primary text-primary-foreground hover:bg-primary/90 gap-2 rounded-full">
-            <a href="https://wa.me/971585828257" target="_blank" rel="noopener noreferrer">
+            <a href={`https://wa.me/${WHATSAPP_PHONE.replace('+', '')}`} target="_blank" rel="noopener noreferrer">
               <MessageCircle className="h-4 w-4" />
               Book
             </a>
@@ -246,10 +253,10 @@ export function Header() {
               
               <div className="border-t border-border px-6 py-4 flex flex-col gap-3">
                 <Button asChild className="w-full bg-primary text-primary-foreground rounded-full">
-                  <a href="https://wa.me/971585828257" onClick={() => setIsOpen(false)}>{t('nav.book')}</a>
+                  <a href={`https://wa.me/${WHATSAPP_PHONE.replace('+', '')}`} onClick={() => setIsOpen(false)} target="_blank" rel="noopener noreferrer">{t('nav.book')}</a>
                 </Button>
                 <Button variant="outline" asChild className="w-full rounded-full">
-                  <a href="tel:+971585828257" onClick={() => setIsOpen(false)}>{t('nav.call')}</a>
+                  <a href={`tel:${REGULAR_PHONE}`} onClick={() => setIsOpen(false)}>{t('nav.call')}</a>
                 </Button>
               </div>
             </SheetContent>
