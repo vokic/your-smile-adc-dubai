@@ -8,15 +8,15 @@ export const EMERGENCY_PHONE_DISPLAY = "+971 52 330 1356";
 export const REGULAR_PHONE_DISPLAY = "+971 58 828 2432";
 export const WHATSAPP_PHONE_DISPLAY = "+971 58 582 82 57";
 
-// Working Hours
+// Working Hours (per owner brief, May 2026)
 export const WORKING_HOURS = [
-  { day: "Monday", hours: "9 AM – 9 PM" },
-  { day: "Tuesday", hours: "9 AM – 9 PM" },
-  { day: "Wednesday", hours: "9 AM – 9 PM" },
-  { day: "Thursday", hours: "9 AM – 9 PM" },
-  { day: "Friday", hours: "9 AM – 9 PM" },
-  { day: "Saturday", hours: "9 AM – 6 PM" },
-  { day: "Sunday", hours: "Closed" },
+  { day: "Monday", hours: "12 PM – 9 PM" },
+  { day: "Tuesday", hours: "9 AM – 6 PM" },
+  { day: "Wednesday", hours: "12 PM – 9 PM" },
+  { day: "Thursday", hours: "9 AM – 6 PM" },
+  { day: "Friday", hours: "Closed" },
+  { day: "Saturday", hours: "12 PM – 9 PM" },
+  { day: "Sunday", hours: "9 AM – 6 PM" },
 ] as const;
 
 // Social Media Links
