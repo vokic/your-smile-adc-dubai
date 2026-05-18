@@ -11,7 +11,7 @@ export interface GoogleReview {
 }
 
 interface GoogleReviewsCarouselProps {
-  reviews?: GoogleReview[];
+  reviews?: readonly GoogleReview[];
   title?: string;
   subtitle?: string;
 }
