@@ -4,10 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
 
-    <!-- Fallback defaults. Per-page <SEO> component overrides these from React. -->
-    <title>Your Smile Advanced Dental Center - Best Dentist in Dubai</title>
-    <meta name="description" content="Your Smile Advanced Dental Center in Dubai JLT offers premium dental services: veneers, implants, Invisalign, teeth whitening, and emergency care." />
-    <meta name="keywords" content="dentist in Dubai, dental clinic Dubai, veneers Dubai, dental implants, Invisalign Dubai, teeth whitening, emergency dentist" />
+    <!--
+      Per-page <title>, <meta description>, canonical and JSON-LD come from
+      the <SEO> component in client/src/components/SEO.tsx and are baked into
+      each route's HTML by the post-build prerender step. The shell stays
+      intentionally bare so static fallback tags don't compete with the
+      React-rendered ones during the snapshot.
+    -->
     <meta name="author" content="Your Smile Advanced Dental Center" />
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
 
