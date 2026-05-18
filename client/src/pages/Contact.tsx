@@ -3,6 +3,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Phone, MessageCircle, MapPin, Mail } from "lucide-react";
 import { useState } from "react";
+import { useLocation } from "wouter";
 import { EmergencyConfirmModal } from "@/components/EmergencyConfirmModal";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -15,29 +16,80 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
 import { Spinner } from "@/components/ui/spinner";
-import { apiRequest } from "@/lib/queryClient";
-import { EMERGENCY_PHONE, EMERGENCY_PHONE_DISPLAY, REGULAR_PHONE_DISPLAY, CLINIC_EMAIL, CLINIC_ADDRESS, WORKING_HOURS } from "@/lib/constants";
+import {
+  EMERGENCY_PHONE,
+  EMERGENCY_PHONE_DISPLAY,
+  REGULAR_PHONE,
+  REGULAR_PHONE_DISPLAY,
+  WHATSAPP_PHONE,
+  CLINIC_EMAIL,
+  CLINIC_ADDRESS,
+  WORKING_HOURS,
+} from "@/lib/constants";
 import { usePageTitle } from "@/hooks/usePageTitle";
 
+const SERVICE_OPTIONS = [
+  "General inquiry",
+  "Veneers",
+  "Dental Implants",
+  "Orthodontics & Invisalign",
+  "Teeth Whitening",
+  "Crowns & Bridges",
+  "Cosmetic Dentistry",
+  "Emergency",
+  "Private At-Home Visit",
+  "Other",
+] as const;
+
 const contactFormSchema = z.object({
-  name: z.string().min(2, "Name must be at least 2 characters").max(100, "Name must be less than 100 characters"),
-  phone: z.string().regex(/^\+?[1-9]\d{1,14}$/, "Please enter a valid phone number"),
+  name: z
+    .string()
+    .min(2, "Name must be at least 2 characters")
+    .max(100, "Name must be less than 100 characters"),
+  phone: z
+    .string()
+    .regex(/^\+?[1-9]\d{1,14}$/, "Please enter a valid phone number"),
   email: z.string().email("Please enter a valid email address"),
-  message: z.string().min(10, "Message must be at least 10 characters").max(1000, "Message must be less than 1000 characters"),
+  service: z.string().min(1, "Please select a service"),
+  message: z
+    .string()
+    .min(10, "Message must be at least 10 characters")
+    .max(1000, "Message must be less than 1000 characters"),
 });
 
 type ContactFormValues = z.infer<typeof contactFormSchema>;
 
+const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_PHONE.replace(/\D/g, "")}?text=${encodeURIComponent(
+  "Hi, I'd like to book an appointment at Your Smile Advanced Dental Center."
+)}`;
+
+function encodeForm(data: Record<string, string>): string {
+  return Object.keys(data)
+    .map(
+      (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
+    )
+    .join("&");
+}
+
 export default function Contact() {
   const [showEmergencyModal, setShowEmergencyModal] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [, setLocation] = useLocation();
   const { toast } = useToast();
 
   usePageTitle({
     title: "Contact Us",
-    description: "Get in touch with Your Smile Advanced Dental Center in Dubai. Book an appointment, ask questions, or reach out for emergency dental care.",
+    description:
+      "Get in touch with Your Smile Advanced Dental Center in Dubai. Book an appointment, ask questions, or reach out for emergency dental care.",
   });
 
   const form = useForm<ContactFormValues>({
@@ -46,6 +98,7 @@ export default function Contact() {
       name: "",
       phone: "",
       email: "",
+      service: "",
       message: "",
     },
   });
@@ -57,21 +110,29 @@ export default function Contact() {
   const onSubmit = async (data: ContactFormValues) => {
     setIsSubmitting(true);
     try {
-      // TODO: Replace with actual API endpoint when available
-      // For now, simulate API call
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-      
-      // In production, use: await apiRequest("POST", "/api/contact", data);
-      
-      toast({
-        title: "Message sent successfully!",
-        description: "We'll get back to you within 24 hours.",
+      const response = await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encodeForm({
+          "form-name": "contact",
+          "bot-field": "",
+          ...data,
+        }),
       });
+
+      if (!response.ok) {
+        throw new Error(`Submission failed: ${response.status}`);
+      }
+
       form.reset();
+      setLocation("/thanks");
     } catch (error) {
       toast({
         title: "Error sending message",
-        description: "Please try again later or call us directly.",
+        description:
+          "Please try again later or call us directly at " +
+          REGULAR_PHONE_DISPLAY +
+          ".",
         variant: "destructive",
       });
     } finally {
@@ -95,7 +156,7 @@ export default function Contact() {
           <span className="text-4xl font-bold text-muted-foreground/20">CONTACT HERO IMAGE</span>
         </div>
         <div className="absolute inset-0 bg-gradient-to-r from-secondary via-secondary/90 to-transparent" />
-        
+
         <div className="container relative h-full mx-auto px-4 flex items-center py-12 md:py-0">
           <div className="max-w-3xl space-y-6 animate-in fade-in slide-in-from-left-10 duration-700">
             <h1 className="text-4xl md:text-6xl font-serif font-bold text-white leading-tight">
@@ -105,13 +166,17 @@ export default function Contact() {
               We're here for your dental needs - whether you're booking an appointment or need emergency care.
             </h2>
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 gap-2 rounded-full">
-                <MessageCircle className="h-5 w-5" />
-                Book on WhatsApp
+              <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 gap-2 rounded-full">
+                <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" aria-label="Book on WhatsApp">
+                  <MessageCircle className="h-5 w-5" />
+                  Book on WhatsApp
+                </a>
               </Button>
-              <Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-secondary gap-2 rounded-full">
-                <Phone className="h-5 w-5" />
-                Call Now
+              <Button asChild size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-secondary gap-2 rounded-full">
+                <a href={`tel:${REGULAR_PHONE}`} aria-label={`Call ${REGULAR_PHONE_DISPLAY}`}>
+                  <Phone className="h-5 w-5" />
+                  Call Now
+                </a>
               </Button>
             </div>
           </div>
@@ -122,7 +187,7 @@ export default function Contact() {
       <section className="py-24 bg-background">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-            
+
             {/* Left Column: Contact Details & Hours */}
             <div className="space-y-12">
               {/* Contact Information */}
@@ -133,10 +198,10 @@ export default function Contact() {
                     <Phone className="h-6 w-6 text-primary shrink-0 mt-1" />
                     <div>
                       <p className="font-bold text-secondary">Phone (Booking)</p>
-                      <a href={`tel:${REGULAR_PHONE_DISPLAY.replace(/\s/g, "")}`} className="text-muted-foreground hover:text-primary transition-colors font-medium">{REGULAR_PHONE_DISPLAY}</a>
+                      <a href={`tel:${REGULAR_PHONE}`} className="text-muted-foreground hover:text-primary transition-colors font-medium">{REGULAR_PHONE_DISPLAY}</a>
                     </div>
                   </div>
-                  <button 
+                  <button
                     onClick={() => setShowEmergencyModal(true)}
                     className="w-full flex items-start gap-4 p-5 bg-red-50 rounded-xl border-2 border-red-200 hover:shadow-md transition-all cursor-pointer group"
                   >
@@ -191,7 +256,22 @@ export default function Contact() {
                   <p className="text-muted-foreground">Questions or want to book? Fill out the form - we'll respond within 24 hours.</p>
                 </div>
                 <Form {...form}>
-                  <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
+                  <form
+                    onSubmit={form.handleSubmit(onSubmit)}
+                    className="space-y-5"
+                    name="contact"
+                    method="POST"
+                    data-netlify="true"
+                    netlify-honeypot="bot-field"
+                  >
+                    {/* Netlify Forms hidden fields */}
+                    <input type="hidden" name="form-name" value="contact" />
+                    <p hidden>
+                      <label>
+                        Don&apos;t fill this out: <input name="bot-field" />
+                      </label>
+                    </p>
+
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <FormField
                         control={form.control}
@@ -235,6 +315,30 @@ export default function Contact() {
                     />
                     <FormField
                       control={form.control}
+                      name="service"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>Service of interest *</FormLabel>
+                          <Select onValueChange={field.onChange} value={field.value}>
+                            <FormControl>
+                              <SelectTrigger className="h-10 rounded-full">
+                                <SelectValue placeholder="Select a service" />
+                              </SelectTrigger>
+                            </FormControl>
+                            <SelectContent>
+                              {SERVICE_OPTIONS.map((service) => (
+                                <SelectItem key={service} value={service}>
+                                  {service}
+                                </SelectItem>
+                              ))}
+                            </SelectContent>
+                          </Select>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                    <FormField
+                      control={form.control}
                       name="message"
                       render={({ field }) => (
                         <FormItem>
@@ -246,8 +350,8 @@ export default function Contact() {
                         </FormItem>
                       )}
                     />
-                    <Button 
-                      type="submit" 
+                    <Button
+                      type="submit"
                       className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-bold h-11 rounded-full"
                       disabled={isSubmitting}
                     >
@@ -270,13 +374,13 @@ export default function Contact() {
                   <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary mb-3">Find Us Easily</h2>
                   <p className="text-muted-foreground">Located at HDS Business Centre in JLT, easily accessible by car or public transport.</p>
                 </div>
-                <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3611.0524823!2d55.14507!3d25.08543!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f6c8f8f8f8f%3A0x12345678!2sHDS%20Business%20Centre%2C%20Jumeirah%20Lake%20Towers%2C%20Dubai!5e0!3m2!1sen!2sae!4v1700000000000" 
-                  width="100%" 
-                  height="350px" 
-                  style={{ border: 0 }} 
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3611.0524823!2d55.14507!3d25.08543!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f6c8f8f8f8f%3A0x12345678!2sHDS%20Business%20Centre%2C%20Jumeirah%20Lake%20Towers%2C%20Dubai!5e0!3m2!1sen!2sae!4v1700000000000"
+                  width="100%"
+                  height="350px"
+                  style={{ border: 0 }}
                   allowFullScreen
-                  loading="lazy" 
+                  loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                   className="rounded-2xl"
                   title="Your Smile Advanced Dental Center Location - HDS Business Centre, Jumeirah Lake Towers, Dubai"

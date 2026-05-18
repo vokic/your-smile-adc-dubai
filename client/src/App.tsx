@@ -33,6 +33,7 @@ import Gallery from "@/pages/Gallery";
 import Privacy from "@/pages/Privacy";
 import Terms from "@/pages/Terms";
 import Sitemap from "@/pages/Sitemap";
+import Thanks from "@/pages/Thanks";
 
 function Router() {
   const [location] = useLocation();
@@ -69,6 +70,7 @@ function Router() {
           <Route path="/privacy" component={Privacy}/>
           <Route path="/terms" component={Terms}/>
           <Route path="/sitemap" component={Sitemap}/>
+          <Route path="/thanks" component={Thanks}/>
           <Route component={NotFound} />
         </Switch>
       </main>
