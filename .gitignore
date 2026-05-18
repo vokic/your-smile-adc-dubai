@@ -4,3 +4,11 @@ dist
 server/public
 vite.config.ts.*
 *.tar.gz
+
+# Claude Code workspace (personal, gitignored)
+.claude/
+CLAUDE.md
+
+# Replit local artifacts (orphaned after migration)
+.config/
+.local/
