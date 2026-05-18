@@ -6,19 +6,19 @@ import {
   REGULAR_PHONE_DISPLAY,
   WHATSAPP_PHONE,
 } from "@/lib/constants";
-import { usePageTitle } from "@/hooks/usePageTitle";
+import { SEO } from "@/components/SEO";
 
 const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_PHONE.replace(/\D/g, "")}`;
 
 export default function Thanks() {
-  usePageTitle({
-    title: "Thank You",
-    description:
-      "Your message has been received. Our team will get back to you within 24 hours.",
-  });
-
   return (
     <section className="min-h-[70vh] flex items-center justify-center bg-background py-24">
+      <SEO
+        title="Thank You"
+        description="Your message has been received. Our team will get back to you within 24 hours."
+        path="/thanks"
+        noindex
+      />
       <div className="container mx-auto px-4 max-w-2xl text-center space-y-8">
         <div className="flex justify-center">
           <CheckCircle2 className="h-20 w-20 text-primary" strokeWidth={1.5} />

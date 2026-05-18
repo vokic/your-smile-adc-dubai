@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { MessageCircle, Phone, CheckCircle2 } from "lucide-react";
+import { SEO } from "@/components/SEO";
 import { ProcedureSteps } from "@/components/ProcedureSteps";
 import { TestimonialsGallery } from "@/components/TestimonialsGallery";
 import { ServiceHero } from "@/components/ServiceHero";
@@ -42,6 +43,11 @@ export default function Implants() {
 
   return (
     <div className="flex flex-col min-h-screen">
+      <SEO
+        title="Dental Implants in Dubai - Titanium & Ceramic, Life-Long Results"
+        description="Permanent dental implants in Dubai: titanium and ceramic options, All-on-4 and All-on-6, painless surgery, long-term life warranty."
+        path="/implants"
+      />
       <ServiceHero
         title="Dental Implants in Dubai"
         subtitle="Permanent, natural-looking tooth replacement solutions that restore your smile and confidence."

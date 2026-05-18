@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { MessageCircle, Phone, CheckCircle2, ChevronDown, Sparkles } from "lucide-react";
 import { useState } from "react";
+import { SEO } from "@/components/SEO";
 
 export default function Cosmetic() {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
@@ -46,6 +47,11 @@ export default function Cosmetic() {
 
   return (
     <div className="flex flex-col min-h-screen">
+      <SEO
+        title="Cosmetic Dentistry in Dubai - Smile Makeovers & Hollywood Smile"
+        description="Complete smile transformations in Dubai: veneers, whitening, cosmetic bonding, and Hollywood smile design at Your Smile ADC JLT."
+        path="/cosmetic"
+      />
       {/* 1. Hero Block */}
       <section className="relative min-h-[50vh] md:h-[60vh] w-full overflow-hidden bg-secondary pt-10 md:pt-0">
         <div className="absolute inset-0 opacity-40 flex items-center justify-center bg-muted">

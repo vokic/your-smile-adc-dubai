@@ -1,6 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Phone, MessageCircle, ChevronDown } from "lucide-react";
 import { useState } from "react";
+import { SEO } from "@/components/SEO";
+import { jsonLdFAQPage } from "@/lib/seo";
 
 export default function FAQ() {
   const faqs = [
@@ -58,6 +60,12 @@ export default function FAQ() {
 
   return (
     <div className="flex flex-col min-h-screen">
+      <SEO
+        title="Frequently Asked Questions - Dental Treatments in Dubai"
+        description="Common questions about veneers, implants, Invisalign, whitening, and emergency care at Your Smile Advanced Dental Center in Dubai."
+        path="/faq"
+        jsonLd={jsonLdFAQPage(faqs)}
+      />
       {/* Hero Section */}
       <section className="relative min-h-[50vh] md:h-[60vh] w-full overflow-hidden bg-secondary pt-10 md:pt-0">
         <div className="absolute inset-0 opacity-40 flex items-center justify-center bg-muted">

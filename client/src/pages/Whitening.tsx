@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { MessageCircle, Phone, CheckCircle2 } from "lucide-react";
+import { SEO } from "@/components/SEO";
 import { ServiceHero } from "@/components/ServiceHero";
 import { BenefitsSection } from "@/components/BenefitsSection";
 import { FAQSection } from "@/components/FAQSection";
@@ -29,6 +30,11 @@ export default function Whitening() {
 
   return (
     <div className="flex flex-col min-h-screen">
+      <SEO
+        title="Professional Teeth Whitening in Dubai - Laser & In-Office"
+        description="Safe, fast laser teeth whitening at Your Smile ADC Dubai. Visible results in one session, performed by ★5.0 rated dental professionals."
+        path="/whitening"
+      />
       <ServiceHero title="Teeth Whitening in Dubai" subtitle="Brighten your smile safely and effectively with professional whitening treatments." backgroundImage="PATIENT WITH BRIGHT SMILE" />
 
       <section className="py-20 bg-background">

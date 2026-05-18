@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { MessageCircle, Phone, CheckCircle2, ChevronDown, Smile } from "lucide-react";
 import { useState } from "react";
+import { SEO } from "@/components/SEO";
 import { ServiceComparison } from "@/components/ServiceComparison";
 import { ProcedureSteps } from "@/components/ProcedureSteps";
 import { TestimonialsGallery } from "@/components/TestimonialsGallery";
@@ -45,6 +46,11 @@ export default function Orthodontics() {
 
   return (
     <div className="flex flex-col min-h-screen">
+      <SEO
+        title="Invisalign & Braces in Dubai - Clear Aligners & Orthodontics"
+        description="Straighten your teeth in Dubai with Invisalign clear aligners, ceramic braces, and metal braces. Certified providers, digital scans, ★5.0 reviews."
+        path="/orthodontics"
+      />
       {/* Hero Section */}
       <section className="relative min-h-[50vh] md:h-[60vh] w-full overflow-hidden bg-secondary pt-10 md:pt-0">
         <div className="absolute inset-0 opacity-40 flex items-center justify-center bg-muted">

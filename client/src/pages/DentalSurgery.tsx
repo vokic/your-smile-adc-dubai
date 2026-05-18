@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { MessageCircle, Phone, CheckCircle2, ChevronDown, Smile, Settings, Activity, Scissors, Zap, Wand } from "lucide-react";
 import { useState } from "react";
+import { SEO } from "@/components/SEO";
 
 export default function DentalSurgery() {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
@@ -63,6 +64,11 @@ export default function DentalSurgery() {
 
   return (
     <div className="flex flex-col min-h-screen">
+      <SEO
+        title="Dental Surgery in Dubai - Oral & Maxillofacial Procedures"
+        description="Specialist oral and dental surgery in Dubai: extractions, wisdom teeth, bone grafts, sinus lifts. Experienced surgeons, gentle techniques."
+        path="/dental-surgery"
+      />
       {/* 1. Hero Block */}
       <section className="relative min-h-[50vh] md:h-[60vh] w-full overflow-hidden bg-secondary pt-10 md:pt-0">
         <div className="absolute inset-0 opacity-40 flex items-center justify-center bg-muted">

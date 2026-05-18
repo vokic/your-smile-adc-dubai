@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { Grid2X2, FileText } from "lucide-react";
 import { WHATSAPP_PHONE } from "@/lib/constants";
+import { SEO } from "@/components/SEO";
 
 export default function Sitemap() {
   const sections = [
@@ -60,6 +61,11 @@ export default function Sitemap() {
 
   return (
     <div className="flex flex-col min-h-screen">
+      <SEO
+        title="Sitemap"
+        description="Complete list of pages on the Your Smile Advanced Dental Center Dubai website."
+        path="/sitemap"
+      />
       {/* Header */}
       <section className="py-16 bg-gradient-to-b from-secondary/10 to-background">
         <div className="container mx-auto px-4">

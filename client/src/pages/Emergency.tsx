@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { MessageCircle, Phone, CheckCircle2, ChevronDown, AlertCircle } from "lucide-react";
 import { useState } from "react";
+import { SEO } from "@/components/SEO";
 
 export default function Emergency() {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
@@ -51,6 +52,11 @@ export default function Emergency() {
 
   return (
     <div className="flex flex-col min-h-screen">
+      <SEO
+        title="Emergency Dentist in Dubai - 24/7 Same-Day Care"
+        description="24/7 emergency dental care in Dubai JLT. Toothache, broken tooth, abscess, lost crown — call us anytime, including weekends and holidays."
+        path="/emergency"
+      />
       {/* 1. Hero Block */}
       <section className="relative min-h-[50vh] md:h-[60vh] w-full overflow-hidden bg-red-600 pt-10 md:pt-0">
         <div className="absolute inset-0 opacity-40 flex items-center justify-center bg-muted">

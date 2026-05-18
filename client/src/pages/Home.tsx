@@ -9,16 +9,12 @@ import { TrustBadges } from "@/components/TrustBadges";
 import { GoogleReviewsCarousel } from "@/components/GoogleReviewsCarousel";
 import { WHATSAPP_PHONE, REGULAR_PHONE, CLINIC_ADDRESS, CLINIC_EMAIL, WORKING_HOURS } from "@/lib/constants";
 import { TRANSFORMATIONS, SERVICES, DOCTORS, GOOGLE_REVIEWS, BLOG_POSTS } from "@/lib/content";
-import { usePageTitle } from "@/hooks/usePageTitle";
+import { SEO } from "@/components/SEO";
+import { jsonLdLocalBusiness, jsonLdOrganization } from "@/lib/seo";
 
 export default function Home() {
   const { t } = useLanguage();
   const [currentSlide, setCurrentSlide] = useState(0);
-
-  usePageTitle({
-    title: "Home",
-    description: "Your Smile Advanced Dental Center in Dubai JLT offers premium dental services: veneers, implants, Invisalign, teeth whitening, and emergency care. 5-star rated dentist clinic.",
-  });
 
   const handlePrev = () => {
     setCurrentSlide(prev => (prev > 0 ? prev - 1 : TRANSFORMATIONS.length - 1));
@@ -32,6 +28,12 @@ export default function Home() {
   
   return (
     <div className="flex flex-col min-h-screen">
+      <SEO
+        title="Best Dentist in Dubai - Veneers, Implants, Invisalign"
+        description="Your Smile Advanced Dental Center in Dubai JLT — specialists in complex cases: hollywood smile, full-mouth implants, veneers, Invisalign, and 24/7 emergency care."
+        path="/"
+        jsonLd={[jsonLdLocalBusiness(), jsonLdOrganization()]}
+      />
       {/* 1. Hero Section */}
       <section className="relative min-h-[75vh] md:h-[85vh] w-full overflow-hidden bg-muted pt-10 md:pt-0">
         <div className="absolute inset-0 flex items-center justify-center bg-muted text-muted-foreground/20 text-9xl font-bold select-none" aria-hidden="true">

@@ -1,9 +1,15 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
+import { SEO } from "@/components/SEO";
 
 export default function Terms() {
   return (
     <div className="flex flex-col min-h-screen">
+      <SEO
+        title="Terms & Conditions"
+        description="Terms and conditions for using the Your Smile Advanced Dental Center website and booking dental services in Dubai."
+        path="/terms"
+      />
       {/* Header */}
       <section className="py-16 bg-gradient-to-b from-secondary/10 to-background">
         <div className="container mx-auto px-4">

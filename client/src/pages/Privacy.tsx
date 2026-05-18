@@ -1,9 +1,15 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
+import { SEO } from "@/components/SEO";
 
 export default function Privacy() {
   return (
     <div className="flex flex-col min-h-screen">
+      <SEO
+        title="Privacy Policy"
+        description="How Your Smile Advanced Dental Center Dubai collects, uses, and protects your personal information."
+        path="/privacy"
+      />
       {/* Header */}
       <section className="py-16 bg-gradient-to-b from-secondary/10 to-background">
         <div className="container mx-auto px-4">

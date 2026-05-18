@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { MessageCircle, Phone, CheckCircle2 } from "lucide-react";
+import { SEO } from "@/components/SEO";
 
 export default function DentalXrayOPG() {
   const features = [
@@ -13,6 +14,11 @@ export default function DentalXrayOPG() {
 
   return (
     <div className="flex flex-col min-h-screen">
+      <SEO
+        title="Dental X-Ray & OPG Imaging in Dubai - Digital Diagnostics"
+        description="Digital dental X-rays, OPG panoramic imaging, CBCT and Cephalometric scans at Your Smile ADC Dubai. Precise diagnostics with low radiation."
+        path="/xray-opg"
+      />
       {/* Hero Section */}
       <section className="relative min-h-[50vh] md:h-[60vh] w-full overflow-hidden bg-secondary pt-10 md:pt-0">
         <div className="absolute inset-0 opacity-40 flex items-center justify-center bg-muted">

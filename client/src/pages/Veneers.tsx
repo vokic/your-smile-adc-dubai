@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { MessageCircle, Phone } from "lucide-react";
+import { SEO } from "@/components/SEO";
 import { ProcedureSteps } from "@/components/ProcedureSteps";
 import { TestimonialsGallery } from "@/components/TestimonialsGallery";
 import { ServiceHero } from "@/components/ServiceHero";
@@ -26,6 +27,11 @@ export default function Veneers() {
 
   return (
     <div className="flex flex-col min-h-screen">
+      <SEO
+        title="Porcelain Veneers in Dubai - No-Prep, Same-Day Smile Makeover"
+        description="Specialist no-prep porcelain veneers in Dubai JLT. Natural-looking, durable, ★5.0 rated. Smile transformation in as little as 3 days."
+        path="/veneers"
+      />
       <ServiceHero title="Veneers in Dubai - Your Dream Smile Starts Here" subtitle="Achieve a flawless, natural-looking smile with premium porcelain & composite veneers - tailored just for you." backgroundImage="PATIENT SMILE - LIFESTYLE" />
 
       <section className="py-20 bg-background">

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { MessageCircle, Phone, Calendar, Clock, Tag, ChevronLeft, ChevronRight, X } from "lucide-react";
 import { Link } from "wouter";
+import { SEO } from "@/components/SEO";
 
 export default function BlogPost() {
   const [expandedGallery, setExpandedGallery] = useState(false);
@@ -64,6 +65,12 @@ export default function BlogPost() {
 
   return (
     <div className="flex flex-col min-h-screen">
+      <SEO
+        title="Blog Article"
+        description="Read the latest dental tips and case studies from Your Smile Advanced Dental Center in Dubai."
+        path="/blog-post"
+        ogType="article"
+      />
       {/* Featured Image */}
       <section className="relative h-[50vh] w-full overflow-hidden bg-muted">
         <div className="absolute inset-0 flex items-center justify-center bg-muted text-muted-foreground/20 text-4xl font-bold select-none">

@@ -2,6 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { ArrowRight, Phone, MessageCircle, CheckCircle2, Star, ShieldCheck } from "lucide-react";
+import { SEO } from "@/components/SEO";
 
 export default function Doctors() {
   const doctors = [
@@ -34,6 +35,11 @@ export default function Doctors() {
 
   return (
     <div className="flex flex-col min-h-screen">
+      <SEO
+        title="Meet Our Dentists in Dubai - Experienced International Team"
+        description="Meet the team of internationally trained dentists at Your Smile Advanced Dental Center Dubai — specialists in implants, cosmetics, and orthodontics."
+        path="/doctors"
+      />
       {/* 1. Hero Block */}
       <section className="relative min-h-[50vh] md:h-[60vh] w-full overflow-hidden bg-secondary pt-10 md:pt-0">
         <div className="absolute inset-0 opacity-40 flex items-center justify-center bg-muted">

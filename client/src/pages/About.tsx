@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { MessageCircle, Phone, CheckCircle2, Star, Lightbulb, Heart, Trophy } from "lucide-react";
 import { Link } from "wouter";
+import { SEO } from "@/components/SEO";
 
 export default function About() {
   const values = [
@@ -69,6 +70,11 @@ export default function About() {
 
   return (
     <div className="flex flex-col min-h-screen">
+      <SEO
+        title="About Your Smile Advanced Dental Center - Dental Clinic in Dubai JLT"
+        description="Learn about Your Smile Advanced Dental Center in Jumeirah Lake Towers — an experienced team specializing in complex cases, Hollywood smiles, and patient-centered care."
+        path="/about"
+      />
       {/* Hero Section */}
       <section className="relative min-h-[50vh] md:h-[60vh] w-full overflow-hidden bg-secondary pt-10 md:pt-0">
         <div className="absolute inset-0 opacity-40 flex items-center justify-center bg-muted">

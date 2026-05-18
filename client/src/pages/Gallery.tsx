@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { MessageCircle, Phone, ChevronLeft, ChevronRight } from "lucide-react";
 import { useState } from "react";
+import { SEO } from "@/components/SEO";
 
 export default function Gallery() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -77,6 +78,11 @@ export default function Gallery() {
 
   return (
     <div className="flex flex-col min-h-screen">
+      <SEO
+        title="Smile Transformation Gallery - Before & After in Dubai"
+        description="Real before-and-after smile transformations at Your Smile ADC Dubai: veneers, implants, Invisalign, whitening, and complete smile makeovers."
+        path="/gallery"
+      />
       {/* Header */}
       <section className="py-16 bg-gradient-to-b from-secondary/10 to-background">
         <div className="container mx-auto px-4">

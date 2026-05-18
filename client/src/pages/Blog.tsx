@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { MessageCircle, Phone, Calendar, Clock, Tag, ChevronLeft, ChevronRight, Search } from "lucide-react";
 import { Link } from "wouter";
+import { SEO } from "@/components/SEO";
 
 export default function Blog() {
   const [currentPage, setCurrentPage] = useState(1);
@@ -126,6 +127,11 @@ export default function Blog() {
 
   return (
     <div className="flex flex-col min-h-screen">
+      <SEO
+        title="Dental Health Blog - Your Smile ADC Dubai"
+        description="Tips and articles on veneers, implants, Invisalign, and everyday dental health from Your Smile Advanced Dental Center in Dubai JLT."
+        path="/blog"
+      />
       {/* Header Section */}
       <section className="py-16 bg-gradient-to-b from-secondary/10 to-background">
         <div className="container mx-auto px-4">

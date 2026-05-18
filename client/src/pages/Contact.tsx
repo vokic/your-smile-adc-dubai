@@ -35,7 +35,7 @@ import {
   CLINIC_ADDRESS,
   WORKING_HOURS,
 } from "@/lib/constants";
-import { usePageTitle } from "@/hooks/usePageTitle";
+import { SEO } from "@/components/SEO";
 
 const SERVICE_OPTIONS = [
   "General inquiry",
@@ -85,12 +85,6 @@ export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [, setLocation] = useLocation();
   const { toast } = useToast();
-
-  usePageTitle({
-    title: "Contact Us",
-    description:
-      "Get in touch with Your Smile Advanced Dental Center in Dubai. Book an appointment, ask questions, or reach out for emergency dental care.",
-  });
 
   const form = useForm<ContactFormValues>({
     resolver: zodResolver(contactFormSchema),
@@ -142,6 +136,11 @@ export default function Contact() {
 
   return (
     <div className="flex flex-col min-h-screen">
+      <SEO
+        title="Contact Us"
+        description="Get in touch with Your Smile Advanced Dental Center in Dubai JLT. Book an appointment, ask about services, or reach our 24/7 emergency line."
+        path="/contact"
+      />
       {/* Emergency Modal */}
       <EmergencyConfirmModal
         isOpen={showEmergencyModal}

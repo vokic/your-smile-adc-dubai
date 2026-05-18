@@ -7,6 +7,7 @@ import { FAQSection } from "@/components/FAQSection";
 import { ServiceGrid } from "@/components/ServiceGrid";
 import { PricingTables } from "@/components/PricingTables";
 import { TrustBadges } from "@/components/TrustBadges";
+import { SEO } from "@/components/SEO";
 
 export default function CrownsAndBridges() {
   const services = [
@@ -35,6 +36,11 @@ export default function CrownsAndBridges() {
 
   return (
     <div className="flex flex-col min-h-screen">
+      <SEO
+        title="Crowns & Bridges in Dubai - Natural-Looking Restorations"
+        description="Custom ceramic and zirconia crowns and bridges in Dubai JLT. Same-day CAD/CAM crowns and implant-supported bridges with long-lasting results."
+        path="/crowns-bridges"
+      />
       <ServiceHero
         title="Dental Crowns & Bridges in Dubai"
         subtitle="Restore strength, function, and aesthetics with custom crowns and bridges tailored to your smile."

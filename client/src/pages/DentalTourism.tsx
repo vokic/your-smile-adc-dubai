@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { MessageCircle, Phone, MapPin, Plane, Users, Clock, CheckCircle2, Star } from "lucide-react";
 import { Link } from "wouter";
+import { SEO } from "@/components/SEO";
 
 export default function DentalTourism() {
   const tourismPackages = [
@@ -39,6 +40,11 @@ export default function DentalTourism() {
 
   return (
     <div className="flex flex-col min-h-screen">
+      <SEO
+        title="Dental Tourism in Dubai - All-Inclusive Treatment Packages"
+        description="Combine premium dental treatment with a Dubai stay. All-inclusive packages for veneers, implants, and full-mouth rehab — book a consultation."
+        path="/dental-tourism"
+      />
       {/* Hero Section */}
       <section className="relative min-h-[50vh] md:h-[60vh] w-full overflow-hidden bg-secondary pt-10 md:pt-0">
         <div className="absolute inset-0 opacity-40 flex items-center justify-center bg-muted">
