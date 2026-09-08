@@ -4,6 +4,7 @@ import { Link } from "wouter";
 import { ChevronRight } from "lucide-react";
 import { REGULAR_PHONE, whatsappLink } from "@/lib/constants";
 import { track } from "@/lib/analytics";
+import type { WebImage } from "@/lib/images";
 
 export interface Crumb {
   name: string;
@@ -17,7 +18,7 @@ interface ServiceHeroProps {
    * Real image URL (imported asset or /public path). When omitted the hero
    * renders a branded gradient backdrop — no placeholder text ever ships.
    */
-  backgroundImage?: string;
+  backgroundImage?: string | WebImage;
   imageAlt?: string;
   breadcrumbs?: Crumb[];
   primaryButtonText?: string;
@@ -51,8 +52,10 @@ export function ServiceHero({
     >
       {backgroundImage ? (
         <img
-          src={backgroundImage}
-          alt={imageAlt}
+          src={typeof backgroundImage === "string" ? backgroundImage : backgroundImage.src}
+          srcSet={typeof backgroundImage === "string" ? undefined : backgroundImage.srcSet}
+          sizes="100vw"
+          alt={typeof backgroundImage === "string" ? imageAlt : backgroundImage.alt}
           className="absolute inset-0 h-full w-full object-cover"
           loading="eager"
           fetchPriority="high"
@@ -64,7 +67,9 @@ export function ServiceHero({
         className={`absolute inset-0 ${
           isEmergency
             ? "bg-gradient-to-r from-red-700 via-red-700/90 to-red-700/40"
-            : "bg-gradient-to-r from-secondary via-secondary/90 to-secondary/30"
+            : backgroundImage
+              ? "bg-gradient-to-r from-secondary via-secondary/85 to-secondary/20"
+              : "bg-gradient-to-r from-secondary via-secondary/90 to-secondary/30"
         }`}
       />
 

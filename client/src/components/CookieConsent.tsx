@@ -52,10 +52,10 @@ export function CookieConsent() {
       role="dialog"
       aria-live="polite"
       aria-label="Cookie preferences"
-      className="fixed left-3 right-3 sm:left-auto sm:right-6 bottom-24 sm:bottom-28 z-50 max-w-md rounded-2xl border border-border bg-card p-5 shadow-2xl animate-in fade-in slide-in-from-bottom-4"
+      className="fixed left-3 right-3 sm:left-auto sm:right-6 bottom-[5.5rem] sm:bottom-28 z-50 sm:max-w-md rounded-2xl border border-border bg-card/95 backdrop-blur p-3 sm:p-5 shadow-2xl animate-in fade-in slide-in-from-bottom-4"
       data-testid="cookie-consent"
     >
-      <p className="text-sm text-secondary leading-relaxed">
+      <p className="text-xs sm:text-sm text-secondary leading-relaxed">
         We use cookies to measure how the website is used and to improve our services. Analytics and marketing
         cookies are only set with your consent. See our{" "}
         <Link href="/privacy" className="text-primary underline underline-offset-2">
@@ -63,7 +63,7 @@ export function CookieConsent() {
         </Link>
         .
       </p>
-      <div className="mt-4 flex gap-3">
+      <div className="mt-3 sm:mt-4 flex gap-2 sm:gap-3">
         <Button
           size="sm"
           className="flex-1 rounded-full bg-primary text-primary-foreground hover:bg-primary/90"

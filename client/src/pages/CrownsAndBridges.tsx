@@ -1,6 +1,7 @@
 import { Link } from "wouter";
 import { ArrowRight, CheckCircle2, Crown } from "lucide-react";
 import { SEO } from "@/components/SEO";
+import { IMG } from "@/lib/images";
 import { ServiceHero } from "@/components/ServiceHero";
 import { BenefitsSection } from "@/components/BenefitsSection";
 import { FAQSection } from "@/components/FAQSection";
@@ -44,12 +45,13 @@ export default function CrownsAndBridges() {
         subtitle="Restore strength, function and aesthetics with custom crowns and bridges — from a single tooth to a complete smile transformation."
         breadcrumbs={crumbs}
         treatment="crowns and bridges"
+        backgroundImage={IMG.crowns}
       />
 
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <Visual icon={Crown} className="h-[350px]" />
+            <Visual src={IMG.crowns} icon={Crown} className="h-[350px]" />
             <div className="space-y-6">
               <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary">Crowns & Bridges Explained</h2>
               <p className="text-muted-foreground text-lg leading-relaxed">

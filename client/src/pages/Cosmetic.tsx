@@ -2,6 +2,7 @@ import { Link } from "wouter";
 import { ArrowRight, CheckCircle2, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SEO } from "@/components/SEO";
+import { IMG } from "@/lib/images";
 import { ServiceHero } from "@/components/ServiceHero";
 import { BenefitsSection } from "@/components/BenefitsSection";
 import { FAQSection } from "@/components/FAQSection";
@@ -53,12 +54,13 @@ export default function Cosmetic() {
         subtitle="Transform your smile with ceramic veneers, whitening, orthodontics, implants and complete Hollywood smile makeovers."
         breadcrumbs={crumbs}
         treatment="a smile makeover"
+        backgroundImage={IMG.clinicSmile}
       />
 
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <Visual icon={Sparkles} className="h-[350px]" />
+            <Visual src={IMG.treatmentPlan} icon={Sparkles} className="h-[350px]" />
             <div className="space-y-6">
               <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary">Enhancing Smiles, Boosting Confidence</h2>
               <p className="text-muted-foreground text-lg leading-relaxed">
@@ -122,7 +124,7 @@ export default function Cosmetic() {
                 </a>
               </Button>
             </div>
-            <Visual icon={Sparkles} className="h-[400px]" />
+            <Visual src={IMG.clinicSmile} icon={Sparkles} className="h-[400px]" />
           </div>
         </div>
       </section>

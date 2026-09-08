@@ -1,9 +1,10 @@
 import type { LucideIcon } from "lucide-react";
 import { Sparkles } from "lucide-react";
+import type { WebImage } from "@/lib/images";
 
 interface VisualProps {
-  /** Real image when available. */
-  src?: string;
+  /** Real image when available (path or WebImage with srcset). */
+  src?: string | WebImage;
   alt?: string;
   /** Decorative icon shown on the branded panel when there's no image. */
   icon?: LucideIcon;
@@ -18,9 +19,17 @@ interface VisualProps {
  */
 export function Visual({ src, alt = "", icon: Icon = Sparkles, className = "", tone = "light" }: VisualProps) {
   if (src) {
+    const img = typeof src === "string" ? { src, srcSet: undefined, alt } : src;
     return (
-      <div className={`overflow-hidden rounded-2xl border border-border ${className}`}>
-        <img src={src} alt={alt} className="h-full w-full object-cover" loading="lazy" />
+      <div className={`overflow-hidden rounded-2xl border border-border shadow-sm ${className}`}>
+        <img
+          src={img.src}
+          srcSet={img.srcSet}
+          sizes="(min-width: 1024px) 50vw, 100vw"
+          alt={img.alt}
+          className="h-full w-full object-cover"
+          loading="lazy"
+        />
       </div>
     );
   }

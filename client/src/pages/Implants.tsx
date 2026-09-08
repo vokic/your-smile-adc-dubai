@@ -1,6 +1,7 @@
 import { Link } from "wouter";
 import { CheckCircle2, ShieldCheck, Anchor } from "lucide-react";
 import { SEO } from "@/components/SEO";
+import { IMG } from "@/lib/images";
 import { ProcedureSteps } from "@/components/ProcedureSteps";
 import { ServiceHero } from "@/components/ServiceHero";
 import { BenefitsSection } from "@/components/BenefitsSection";
@@ -58,12 +59,13 @@ export default function Implants() {
         subtitle="Permanent, natural-looking tooth replacement — from a single tooth to full-mouth All-on-4 and All-on-6 rehabilitation."
         breadcrumbs={crumbs}
         treatment="dental implants"
+        backgroundImage={IMG.implants}
       />
 
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <Visual icon={Anchor} className="h-[350px]" />
+            <Visual src={IMG.implants} icon={Anchor} className="h-[350px]" />
             <div className="space-y-6">
               <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary">A Permanent Solution for Missing Teeth</h2>
               <p className="text-muted-foreground text-lg leading-relaxed">

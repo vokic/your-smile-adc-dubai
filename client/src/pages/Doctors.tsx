@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { MessageCircle, CheckCircle2, ShieldCheck } from "lucide-react";
 import { SEO } from "@/components/SEO";
+import { IMG } from "@/lib/images";
 import { ServiceHero } from "@/components/ServiceHero";
 import { CTASection } from "@/components/CTASection";
 import { jsonLdBreadcrumb } from "@/lib/seo";
@@ -55,6 +56,7 @@ export default function Doctors() {
         subtitle="Experienced, caring and internationally trained dental specialists for your smile."
         breadcrumbs={crumbs}
         primaryButtonText="Book Consultation on WhatsApp"
+        backgroundImage={IMG.team}
       />
 
       {/* Intro */}

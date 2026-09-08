@@ -1,5 +1,6 @@
 import { CheckCircle2, Scan } from "lucide-react";
 import { SEO } from "@/components/SEO";
+import { IMG } from "@/lib/images";
 import { ServiceHero } from "@/components/ServiceHero";
 import { CTASection } from "@/components/CTASection";
 import { Visual } from "@/components/Visual";
@@ -34,12 +35,13 @@ export default function DentalXrayOPG() {
         breadcrumbs={crumbs}
         treatment="dental imaging"
         primaryButtonText="Book Imaging"
+        backgroundImage={IMG.treatmentPlan}
       />
 
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <Visual icon={Scan} className="h-[350px]" />
+            <Visual src={IMG.treatmentPlan} icon={Scan} className="h-[350px]" />
             <div className="space-y-6">
               <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary">Advanced Imaging Technology</h2>
               <p className="text-muted-foreground text-lg leading-relaxed">

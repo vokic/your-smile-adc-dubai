@@ -1,6 +1,7 @@
 import { CheckCircle2, XCircle, Plane, Users, Clock, ShieldCheck, Hotel, Stethoscope } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SEO } from "@/components/SEO";
+import { IMG } from "@/lib/images";
 import { ServiceHero } from "@/components/ServiceHero";
 import { CTASection } from "@/components/CTASection";
 import { FAQSection } from "@/components/FAQSection";
@@ -51,6 +52,7 @@ export default function DentalTourism() {
         breadcrumbs={crumbs}
         treatment="dental tourism"
         primaryButtonText="Get Your Travel Package"
+        backgroundImage={IMG.handshake}
       />
 
       {/* Why */}
@@ -173,7 +175,7 @@ export default function DentalTourism() {
       <section className="py-24 bg-primary/5">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center gap-12 bg-white rounded-3xl p-8 md:p-16 shadow-xl border border-primary/10">
-            <Visual icon={Plane} className="w-full md:w-1/2 h-[320px]" />
+            <Visual src={IMG.handshake} icon={Plane} className="w-full md:w-1/2 h-[320px]" />
             <div className="w-full md:w-1/2 space-y-6">
               <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary">Ready to Transform Your Smile in Dubai?</h2>
               <p className="text-lg text-muted-foreground leading-relaxed">Tell us where you're travelling from and what you'd like to change about your smile. We'll reply with a plan and a package, not a sales pitch.</p>

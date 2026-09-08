@@ -2,6 +2,7 @@ import { Link } from "wouter";
 import { CheckCircle2, Lightbulb, Heart, Trophy, ArrowRight, Home as HomeIcon, Building2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SEO } from "@/components/SEO";
+import { IMG } from "@/lib/images";
 import { ServiceHero } from "@/components/ServiceHero";
 import { CTASection } from "@/components/CTASection";
 import { TestimonialCarousel } from "@/components/TestimonialCarousel";
@@ -44,13 +45,14 @@ export default function About() {
         subtitle="Experienced, internationally trained dental professionals in Jumeirah Lake Towers, dedicated to your confidence and care."
         breadcrumbs={crumbs}
         primaryButtonText="Book Your Visit"
+        backgroundImage={IMG.team}
       />
 
       {/* Introduction (owner's paste-ready copy) */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <Visual icon={Building2} className="h-[350px]" />
+            <Visual src={IMG.reception} icon={Building2} className="h-[350px]" />
             <div className="space-y-5">
               <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary">A Trusted Dental Clinic in Jumeirah Lakes Towers</h2>
               <p className="text-muted-foreground text-lg leading-relaxed">

@@ -5,7 +5,6 @@ import { useLanguage } from "@/hooks/useLanguage";
 import { TestimonialCarousel } from "@/components/TestimonialCarousel";
 import { GoogleRatingBanner } from "@/components/GoogleRatingBanner";
 import { SmileTransformations } from "@/components/SmileTransformations";
-import { HeroBackdrop } from "@/components/ServiceHero";
 import {
   REGULAR_PHONE,
   REGULAR_PHONE_DISPLAY,
@@ -20,6 +19,7 @@ import { SERVICES, DOCTORS, BLOG_POSTS } from "@/lib/content";
 import { SEO } from "@/components/SEO";
 import { jsonLdLocalBusiness, jsonLdOrganization } from "@/lib/seo";
 import { track } from "@/lib/analytics";
+import { IMG } from "@/lib/images";
 
 const SERVICE_ICONS = [Sparkles, Stethoscope, ShieldCheck, Sparkles, Sparkles, HomeIcon];
 
@@ -37,8 +37,16 @@ export default function Home() {
 
       {/* 1. Hero */}
       <section className="relative min-h-[80vh] w-full overflow-hidden bg-secondary pt-10 md:pt-0">
-        <HeroBackdrop />
-        <div className="absolute inset-0 bg-gradient-to-r from-secondary via-secondary/85 to-secondary/40" />
+        <img
+          src={IMG.clinicSmile.src}
+          srcSet={IMG.clinicSmile.srcSet}
+          sizes="100vw"
+          alt={IMG.clinicSmile.alt}
+          className="absolute inset-0 h-full w-full object-cover object-right"
+          loading="eager"
+          fetchPriority="high"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-secondary via-secondary/85 to-secondary/25" />
 
         <div className="container relative mx-auto px-4 flex items-center min-h-[80vh] py-16">
           <div className="max-w-3xl space-y-8 animate-in fade-in slide-in-from-left-10 duration-700">

@@ -2,6 +2,7 @@ import { Link } from "wouter";
 import { CheckCircle2, Sparkles, Ban, Syringe, Clock, Smile } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SEO } from "@/components/SEO";
+import { IMG } from "@/lib/images";
 import { ProcedureSteps } from "@/components/ProcedureSteps";
 import { ServiceHero } from "@/components/ServiceHero";
 import { BenefitsSection } from "@/components/BenefitsSection";
@@ -47,12 +48,13 @@ export default function Veneers() {
         subtitle="Achieve a flawless, natural-looking smile with premium ceramic veneers, tailored just for you. No prep, no shaving, no pain."
         breadcrumbs={crumbs}
         treatment="ceramic veneers"
+        backgroundImage={IMG.clinicSmile}
       />
 
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <Visual icon={Smile} className="h-[350px]" />
+            <Visual src={IMG.treatmentPlan} icon={Smile} className="h-[350px]" />
             <div className="space-y-6">
               <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary">Tired of hiding your smile?</h2>
               <p className="text-muted-foreground text-lg leading-relaxed">

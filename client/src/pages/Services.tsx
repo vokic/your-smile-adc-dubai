@@ -2,6 +2,7 @@ import { Link } from "wouter";
 import { ArrowRight, ShieldCheck, Sparkles, Stethoscope, Home as HomeIcon, Plane, Scan, HeartPulse, Layers, Crown, Smile, Sun, Scissors, AlertCircle, Anchor } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { SEO } from "@/components/SEO";
+import { IMG } from "@/lib/images";
 import { ServiceHero } from "@/components/ServiceHero";
 import { CTASection } from "@/components/CTASection";
 import { GoogleRatingBanner } from "@/components/GoogleRatingBanner";
@@ -64,6 +65,7 @@ export default function Services() {
         title="Dental Services in Dubai"
         subtitle="Specialists in complex cases — and everything else your family needs, under one roof in Jumeirah Lake Towers."
         breadcrumbs={crumbs}
+        backgroundImage={IMG.clinicSmile}
       />
 
       {/* Featured / complex cases */}

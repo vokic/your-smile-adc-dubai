@@ -1,6 +1,7 @@
 import { Link } from "wouter";
 import { ArrowRight, CheckCircle2, Scissors } from "lucide-react";
 import { SEO } from "@/components/SEO";
+import { IMG } from "@/lib/images";
 import { ServiceHero } from "@/components/ServiceHero";
 import { BenefitsSection } from "@/components/BenefitsSection";
 import { FAQSection } from "@/components/FAQSection";
@@ -45,6 +46,7 @@ export default function DentalSurgery() {
         breadcrumbs={crumbs}
         treatment="oral surgery"
         primaryButtonText="Book Your Surgical Consultation"
+        backgroundImage={IMG.treatmentPlan}
       />
 
       <section className="py-20 bg-background">
@@ -64,7 +66,7 @@ export default function DentalSurgery() {
                 ))}
               </div>
             </div>
-            <Visual icon={Scissors} className="h-[350px]" />
+            <Visual src={IMG.implants} icon={Scissors} className="h-[350px]" />
           </div>
         </div>
       </section>

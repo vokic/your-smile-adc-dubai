@@ -1,6 +1,7 @@
 import { Link } from "wouter";
 import { ArrowRight, CheckCircle2, Smile } from "lucide-react";
 import { SEO } from "@/components/SEO";
+import { IMG } from "@/lib/images";
 import { ServiceHero } from "@/components/ServiceHero";
 import { ServiceComparison } from "@/components/ServiceComparison";
 import { ProcedureSteps } from "@/components/ProcedureSteps";
@@ -45,6 +46,7 @@ export default function Orthodontics() {
         breadcrumbs={crumbs}
         treatment="orthodontics"
         primaryButtonText="Book Consultation"
+        backgroundImage={IMG.treatmentPlan}
       />
 
       {/* Comparison (no price row, per owner) */}
@@ -111,7 +113,7 @@ export default function Orthodontics() {
                 Learn more about Invisalign <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
-            <Visual icon={Smile} className="h-[400px]" />
+            <Visual src={IMG.clinicSmile} icon={Smile} className="h-[400px]" />
           </div>
         </div>
       </section>

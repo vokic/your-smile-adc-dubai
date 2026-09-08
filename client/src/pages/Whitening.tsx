@@ -1,6 +1,7 @@
 import { Link } from "wouter";
 import { ArrowRight, CheckCircle2, Sun } from "lucide-react";
 import { SEO } from "@/components/SEO";
+import { IMG } from "@/lib/images";
 import { ServiceHero } from "@/components/ServiceHero";
 import { BenefitsSection } from "@/components/BenefitsSection";
 import { FAQSection } from "@/components/FAQSection";
@@ -39,12 +40,12 @@ export default function Whitening() {
           jsonLdBreadcrumb(crumbs),
         ]}
       />
-      <ServiceHero title="Teeth Whitening in Dubai" subtitle="Brighten your smile safely and effectively with professional whitening treatments." breadcrumbs={crumbs} treatment="teeth whitening" />
+      <ServiceHero title="Teeth Whitening in Dubai" subtitle="Brighten your smile safely and effectively with professional whitening treatments." breadcrumbs={crumbs} treatment="teeth whitening" backgroundImage={IMG.clinicSmile} />
 
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <Visual icon={Sun} className="h-[350px]" />
+            <Visual src={IMG.clinicSmile} icon={Sun} className="h-[350px]" />
             <div className="space-y-6">
               <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary">Safe, Fast & Professional Whitening</h2>
               <p className="text-muted-foreground text-lg leading-relaxed">

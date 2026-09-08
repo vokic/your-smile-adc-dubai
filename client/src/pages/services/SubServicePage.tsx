@@ -17,6 +17,7 @@ import {
   subServicesFor,
 } from "@/content/services";
 import NotFound from "@/pages/not-found";
+import { CATEGORY_HERO, CATEGORY_VISUAL } from "@/lib/images";
 
 /**
  * Renders any sub-service landing page from its data object. The route is
@@ -59,13 +60,14 @@ export default function SubServicePage() {
         subtitle={service.heroSubtitle}
         breadcrumbs={crumbs}
         treatment={service.name}
+        backgroundImage={CATEGORY_HERO[service.category]}
       />
 
       {/* Intro */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <Visual icon={Stethoscope} className="h-[320px] lg:h-[380px]" />
+            <Visual src={CATEGORY_VISUAL[service.category]} icon={Stethoscope} className="h-[320px] lg:h-[380px]" />
             <div className="space-y-6">
               <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary">{service.intro.heading}</h2>
               {service.intro.paragraphs.map((p, i) => (

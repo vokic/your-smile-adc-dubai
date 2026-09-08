@@ -1,6 +1,7 @@
 import { Link } from "wouter";
 import { ArrowRight, CheckCircle2, Layers } from "lucide-react";
 import { SEO } from "@/components/SEO";
+import { IMG } from "@/lib/images";
 import { ServiceHero } from "@/components/ServiceHero";
 import { BenefitsSection } from "@/components/BenefitsSection";
 import { FAQSection } from "@/components/FAQSection";
@@ -37,12 +38,13 @@ export default function Restorative() {
         subtitle="Rebuild damaged, decayed or worn teeth with precise ceramic inlays, onlays and overlays that keep as much of your natural tooth as possible."
         breadcrumbs={crumbs}
         treatment="restorative dentistry"
+        backgroundImage={IMG.crowns}
       />
 
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <Visual icon={Layers} className="h-[320px] lg:h-[380px]" />
+            <Visual src={IMG.crowns} icon={Layers} className="h-[320px] lg:h-[380px]" />
             <div className="space-y-6">
               <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary">Between a filling and a crown</h2>
               <p className="text-muted-foreground text-lg leading-relaxed">

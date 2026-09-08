@@ -2,6 +2,7 @@ import { Link } from "wouter";
 import { CheckCircle2, XCircle, Home as HomeIcon, ShieldCheck, Clock, Users, MessageCircle, Phone, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SEO } from "@/components/SEO";
+import { IMG } from "@/lib/images";
 import { ServiceHero } from "@/components/ServiceHero";
 import { ProcedureSteps } from "@/components/ProcedureSteps";
 import { FAQSection } from "@/components/FAQSection";
@@ -88,6 +89,7 @@ export default function AtHome() {
         breadcrumbs={crumbs}
         treatment="a private at-home dental visit"
         primaryButtonText="Book a Home Visit"
+        backgroundImage={IMG.handshake}
       />
 
       {/* Intro */}
@@ -114,7 +116,7 @@ export default function AtHome() {
                 ))}
               </div>
             </div>
-            <Visual icon={HomeIcon} className="h-[340px] lg:h-[420px]" />
+            <Visual src={IMG.reception} icon={HomeIcon} className="h-[340px] lg:h-[420px]" />
           </div>
         </div>
       </section>
