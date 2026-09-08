@@ -1,8 +1,10 @@
 import type { Plugin } from "vite";
+import routesJson from "./client/src/lib/routes.json";
 
 /**
- * Route registry for the static SPA. Keep in sync with the <Route>s in
- * client/src/App.tsx. When a new route ships, add an entry here.
+ * Emits sitemap.xml at build time from the shared route registry in
+ * client/src/lib/routes.json (also consumed by App.tsx and the prerender
+ * script). Add new routes there — never here.
  *
  * `changefreq` and `priority` are hints for crawlers, not commands.
  * `noindex: true` keeps the route out of the sitemap (e.g. /thanks).
@@ -14,32 +16,7 @@ interface RouteEntry {
   noindex?: boolean;
 }
 
-const ROUTES: RouteEntry[] = [
-  { path: "/", changefreq: "weekly", priority: 1.0 },
-  { path: "/services", changefreq: "monthly", priority: 0.9 },
-  { path: "/veneers", changefreq: "monthly", priority: 0.9 },
-  { path: "/implants", changefreq: "monthly", priority: 0.9 },
-  { path: "/orthodontics", changefreq: "monthly", priority: 0.9 },
-  { path: "/whitening", changefreq: "monthly", priority: 0.8 },
-  { path: "/crowns-bridges", changefreq: "monthly", priority: 0.8 },
-  { path: "/cosmetic", changefreq: "monthly", priority: 0.8 },
-  { path: "/emergency", changefreq: "monthly", priority: 0.9 },
-  { path: "/dental-surgery", changefreq: "monthly", priority: 0.8 },
-  { path: "/general-preventive", changefreq: "monthly", priority: 0.8 },
-  { path: "/xray-opg", changefreq: "monthly", priority: 0.7 },
-  { path: "/dental-tourism", changefreq: "monthly", priority: 0.8 },
-  { path: "/gallery", changefreq: "weekly", priority: 0.8 },
-  { path: "/doctors", changefreq: "monthly", priority: 0.7 },
-  { path: "/about", changefreq: "monthly", priority: 0.7 },
-  { path: "/faq", changefreq: "monthly", priority: 0.6 },
-  { path: "/blog", changefreq: "weekly", priority: 0.8 },
-  // /blog/:slug entries will be appended by the MDX blog workstream (B3).
-  { path: "/contact", changefreq: "monthly", priority: 0.7 },
-  { path: "/privacy", changefreq: "yearly", priority: 0.3 },
-  { path: "/terms", changefreq: "yearly", priority: 0.3 },
-  { path: "/sitemap", changefreq: "yearly", priority: 0.3 },
-  { path: "/thanks", noindex: true },
-];
+const ROUTES = routesJson.routes as RouteEntry[];
 
 function buildSitemap(siteUrl: string, lastmod: string): string {
   const entries = ROUTES.filter((r) => !r.noindex)

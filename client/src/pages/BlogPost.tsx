@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { MessageCircle, Phone, Calendar, Clock, Tag, ChevronLeft, ChevronRight, X } from "lucide-react";
 import { Link } from "wouter";
 import { SEO } from "@/components/SEO";
+import { HeroBackdrop } from "@/components/ServiceHero";
 
 export default function BlogPost() {
   const [expandedGallery, setExpandedGallery] = useState(false);
@@ -15,17 +16,16 @@ export default function BlogPost() {
     category: "Cosmetic Dentistry",
     date: "December 15, 2024",
     readTime: "5 min read",
-    image: "FEATURED BLOG IMAGE",
     content: `
       Veneers are one of the most popular cosmetic dental treatments available today. Whether you're looking to fix minor imperfections or completely transform your smile, porcelain veneers offer a versatile solution that combines aesthetics with durability.
 
       **What Are Dental Veneers?**
       
-      Dental veneers are thin, custom-made shells crafted from porcelain or composite materials that are bonded to the front surface of your teeth. They're designed to cover imperfections like stains, chips, gaps, or misalignment, creating a flawless smile in just 2-3 appointments.
+      Dental veneers are thin, custom-made ceramic shells bonded to the front surface of your teeth. They're designed to cover imperfections like stains, chips, gaps, or misalignment, creating a flawless smile in just two appointments.
 
       **Types of Veneers**
       
-      There are two main types: porcelain veneers and composite resin veneers. Porcelain veneers are more durable and stain-resistant, lasting 10-15 years or longer. Composite veneers are more affordable but require more maintenance and typically last 5-7 years.
+      We work exclusively with ceramic veneers, which are durable, stain-resistant and typically last 10-15 years or longer. With no-prep techniques there is no shaving of your natural teeth, no injections and no temporaries.
 
       **The Procedure**
       
@@ -72,11 +72,9 @@ export default function BlogPost() {
         ogType="article"
       />
       {/* Featured Image */}
-      <section className="relative h-[50vh] w-full overflow-hidden bg-muted">
-        <div className="absolute inset-0 flex items-center justify-center bg-muted text-muted-foreground/20 text-4xl font-bold select-none">
-          {post.image}
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-transparent" />
+      <section className="relative h-[40vh] w-full overflow-hidden bg-secondary">
+        <HeroBackdrop />
+        <div className="absolute inset-0 bg-gradient-to-b from-secondary/60 to-transparent" />
       </section>
 
       {/* Article Content */}

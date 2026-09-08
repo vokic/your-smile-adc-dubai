@@ -5,6 +5,7 @@ import { Phone, MessageCircle, MapPin, Mail } from "lucide-react";
 import { useState } from "react";
 import { useLocation } from "wouter";
 import { EmergencyConfirmModal } from "@/components/EmergencyConfirmModal";
+import { HeroBackdrop } from "@/components/ServiceHero";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
@@ -151,10 +152,8 @@ export default function Contact() {
 
       {/* 1. Hero Block */}
       <section className="relative min-h-[50vh] md:h-[60vh] w-full overflow-hidden bg-secondary pt-10 md:pt-0">
-        <div className="absolute inset-0 opacity-40 flex items-center justify-center bg-muted" aria-hidden="true">
-          <span className="text-4xl font-bold text-muted-foreground/20">CONTACT HERO IMAGE</span>
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-r from-secondary via-secondary/90 to-transparent" />
+        <HeroBackdrop />
+        <div className="absolute inset-0 bg-gradient-to-r from-secondary via-secondary/90 to-secondary/30" />
 
         <div className="container relative h-full mx-auto px-4 flex items-center py-12 md:py-0">
           <div className="max-w-3xl space-y-6 animate-in fade-in slide-in-from-left-10 duration-700">

@@ -1,63 +1,62 @@
-import { Button } from "@/components/ui/button";
-import { MessageCircle, Phone, CheckCircle2 } from "lucide-react";
-import { TestimonialsGallery } from "@/components/TestimonialsGallery";
+import { Link } from "wouter";
+import { ArrowRight, CheckCircle2, Crown } from "lucide-react";
+import { SEO } from "@/components/SEO";
 import { ServiceHero } from "@/components/ServiceHero";
 import { BenefitsSection } from "@/components/BenefitsSection";
 import { FAQSection } from "@/components/FAQSection";
-import { ServiceGrid } from "@/components/ServiceGrid";
-import { PricingTables } from "@/components/PricingTables";
-import { TrustBadges } from "@/components/TrustBadges";
-import { SEO } from "@/components/SEO";
+import { PackagesCallout } from "@/components/PackagesCallout";
+import { CTASection } from "@/components/CTASection";
+import { SmileTransformations } from "@/components/SmileTransformations";
+import { Visual } from "@/components/Visual";
+import { jsonLdBreadcrumb, jsonLdFAQPage, jsonLdService } from "@/lib/seo";
+import { subServicesFor, subServicePath } from "@/content/services";
+
+const FAQS = [
+  { question: "What is the difference between a crown and a bridge?", answer: "A crown covers and protects a single damaged tooth, while a bridge fills the gap of one or more missing teeth using neighbouring teeth or implants for support." },
+  { question: "Is the procedure painful?", answer: "No. Procedures are performed under local anaesthesia. Mild sensitivity after treatment is temporary and easily managed." },
+  { question: "What materials are used?", answer: "Zirconia, lithium-disilicate porcelain and, where indicated, porcelain-fused-to-metal. Zirconia and porcelain give the most natural aesthetics and durability." },
+  { question: "How long do crowns and bridges last?", answer: "With proper care, typically 10–15 years or longer. Good oral hygiene and regular check-ups extend their lifespan." },
+  { question: "Can I get a crown in one visit?", answer: "Often yes. Our same-day crowns are scanned, designed and milled in-clinic, so many patients leave with the final crown in a single appointment." },
+  { question: "Why choose an implant-supported bridge?", answer: "It replaces missing teeth without grinding down healthy neighbours, preserves the jawbone and feels more natural than a traditional bridge." },
+  { question: "Who is a good candidate?", answer: "Anyone with damaged, weakened or missing teeth and healthy gums. Implant-supported options also require adequate bone, which we assess with a 3D scan." },
+];
 
 export default function CrownsAndBridges() {
-  const services = [
-    { title: "Same-Day Crowns", desc: "CAD/CAM technology for crowns in a single visit" },
-    { title: "Porcelain & Zirconia Crowns", desc: "Strong, natural-looking, and stain resistant" },
-    { title: "Traditional Fixed Bridges", desc: "Replace missing teeth using adjacent crowns as anchors" },
-    { title: "Implant-Supported Bridges", desc: "Stable, long-lasting bridges that do not require grinding down neighboring teeth" }
+  const subs = subServicesFor("crowns-bridges");
+  const crumbs = [
+    { name: "Home", path: "/" },
+    { name: "Crowns & Bridges", path: "/crowns-bridges" },
   ];
-
-  const benefits = [
-    "CAD/CAM precision for perfect fit",
-    "High-quality biocompatible materials",
-    "Gentle, pain-free procedures",
-    "★5.0 rated dental clinic in Dubai"
-  ];
-
-  const faqs = [
-    { question: "What is the difference between a crown and a bridge?", answer: "A crown covers and protects a single damaged tooth, while a bridge fills the gap of one or more missing teeth using neighboring teeth or implants for support." },
-    { question: "Is the procedure painful?", answer: "No. Procedures are performed under local anesthesia. Patients may feel mild sensitivity after treatment, but this is temporary and easily managed." },
-    { question: "What materials are used?", answer: "We use porcelain, zirconia, and porcelain-fused-to-metal. Porcelain and zirconia provide the most natural aesthetics and durability." },
-    { question: "How long do crowns and bridges last?", answer: "With proper care, crowns and bridges typically last 10–15 years or longer. Good oral hygiene and regular dental check-ups extend their lifespan." },
-    { question: "Can crowns or bridges be repaired?", answer: "Minor issues can sometimes be fixed, but in many cases replacement is recommended for long-term success." },
-    { question: "Why choose implant-supported bridges?", answer: "They provide stability without affecting adjacent teeth, preserve jawbone health, and feel more natural compared to traditional bridges." },
-    { question: "Who is a good candidate?", answer: "Ideal candidates are those with damaged, weakened, or missing teeth who have healthy gums and good oral hygiene. Implant-supported solutions may also require adequate bone density." }
-  ];
-
   return (
     <div className="flex flex-col min-h-screen">
       <SEO
-        title="Crowns & Bridges in Dubai - Natural-Looking Restorations"
-        description="Custom ceramic and zirconia crowns and bridges in Dubai JLT. Same-day CAD/CAM crowns and implant-supported bridges with long-lasting results."
+        title="Crowns & Bridges in Dubai - Zirconia, Porcelain, Same-Day"
+        description="Custom zirconia and porcelain crowns, same-day CAD/CAM crowns and implant-supported bridges in Dubai JLT. Complete smile transformations with crowns and bridges."
         path="/crowns-bridges"
+        jsonLd={[
+          jsonLdService({ name: "Dental Crowns & Bridges in Dubai", description: "Zirconia, porcelain, same-day crowns and implant-supported bridges.", path: "/crowns-bridges" }),
+          jsonLdFAQPage(FAQS),
+          jsonLdBreadcrumb(crumbs),
+        ]}
       />
       <ServiceHero
         title="Dental Crowns & Bridges in Dubai"
-        subtitle="Restore strength, function, and aesthetics with custom crowns and bridges tailored to your smile."
-        backgroundImage="SMILING PATIENT AFTER TREATMENT"
+        subtitle="Restore strength, function and aesthetics with custom crowns and bridges — from a single tooth to a complete smile transformation."
+        breadcrumbs={crumbs}
+        treatment="crowns and bridges"
       />
 
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="h-[350px] rounded-2xl overflow-hidden bg-muted border border-border flex items-center justify-center">
-              <span className="text-xl font-bold text-muted-foreground">CROWN & BRIDGE ILLUSTRATION</span>
-            </div>
+            <Visual icon={Crown} className="h-[350px]" />
             <div className="space-y-6">
               <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary">Crowns & Bridges Explained</h2>
-              <p className="text-muted-foreground text-lg leading-relaxed">Dental crowns act as protective caps that cover and strengthen damaged teeth, while dental bridges replace one or more missing teeth by anchoring to surrounding teeth or implants.</p>
+              <p className="text-muted-foreground text-lg leading-relaxed">
+                Dental crowns are protective caps that cover and strengthen damaged teeth, while bridges replace one or more missing teeth by anchoring to neighbouring teeth or implants. Designed digitally from a scan and milled from ceramic, they blend in with your natural smile.
+              </p>
               <div className="space-y-3">
-                {["Protect damaged teeth", "Replace missing teeth", "Restore function", "Natural aesthetics", "Long-lasting solutions"].map((item) => (
+                {["Protect damaged or root-treated teeth", "Replace missing teeth", "Restore chewing function", "Natural aesthetics, matched to your shade", "Same-day options for many cases"].map((item) => (
                   <div key={item} className="flex items-center gap-3">
                     <CheckCircle2 className="h-5 w-5 text-primary" />
                     <span className="font-medium text-secondary">{item}</span>
@@ -69,78 +68,44 @@ export default function CrownsAndBridges() {
         </div>
       </section>
 
-      <ServiceGrid title="Types of Crowns & Bridges We Offer in Dubai" services={services} columns="2" bgColor="bg-muted/30" />
-
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center lg:order-reverse">
-            <div className="h-[350px] rounded-2xl overflow-hidden bg-muted border border-border flex items-center justify-center">
-              <span className="text-xl font-bold text-muted-foreground">DENTIST WITH PATIENT & LAB TECHNOLOGY</span>
-            </div>
-            <div className="space-y-6">
-              <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary">Dubai's Trusted Restorative Specialists</h2>
-              <div className="space-y-4">
-                {benefits.map((benefit, index) => (
-                  <div key={index} className="flex items-start gap-4 p-4 bg-muted/30 rounded-lg">
-                    <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-1" />
-                    <p className="text-secondary font-medium">{benefit}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary mb-12 text-center">Real Transformations, Real Smiles</h2>
-          <div className="text-center mb-12 max-w-3xl mx-auto">
-            <p className="text-muted-foreground text-lg leading-relaxed">
-              See how our custom crowns and bridges restore strength, function, and beauty to damaged or missing teeth. Each transformation represents a patient's renewed confidence.
-            </p>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary">Types of Crowns & Bridges We Offer in Dubai</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {subs.map((s) => (
+              <Link key={s.slug} href={subServicePath(s)} className="group p-6 bg-card rounded-xl border border-border hover:border-primary/50 hover:shadow-md transition-all space-y-3">
+                <div className="flex items-center justify-between gap-3">
+                  <h3 className="text-lg font-bold text-secondary group-hover:text-primary transition-colors">{s.name}</h3>
+                  <ArrowRight className="h-5 w-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all shrink-0" />
+                </div>
+                <p className="text-muted-foreground text-sm">{s.heroSubtitle}</p>
+              </Link>
+            ))}
+            <Link href="/restorative" className="group p-6 bg-primary/5 rounded-xl border border-primary/20 hover:border-primary/50 hover:shadow-md transition-all space-y-3">
+              <div className="flex items-center justify-between gap-3">
+                <h3 className="text-lg font-bold text-secondary group-hover:text-primary transition-colors">Inlays, Onlays & Overlays</h3>
+                <ArrowRight className="h-5 w-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all shrink-0" />
+              </div>
+              <p className="text-muted-foreground text-sm">Too big for a filling, too healthy for a crown? See our restorative dentistry options.</p>
+            </Link>
           </div>
         </div>
       </section>
 
-      <TestimonialsGallery
-        beforeAfterItems={[
-          { id: "crown-1", title: "Damaged Tooth Restoration", category: "Single Crown" },
-          { id: "crown-2", title: "Multiple Teeth Bridge", category: "Dental Bridge" },
-          { id: "crown-3", title: "Full Smile Restoration", category: "Multiple Crowns" },
-        ]}
-        videoTestimonials={[
-          { id: "vid-1", title: "Back to Smiling Confidently", patientName: "Hassan M." },
-          { id: "vid-2", title: "Stronger & More Beautiful", patientName: "Amira S." },
-        ]}
+      <BenefitsSection
+        title="Dubai's Trusted Restorative Specialists"
+        benefits={["CAD/CAM precision for a perfect fit", "High-quality biocompatible ceramics", "Gentle procedures under local anaesthesia", "Experienced in complete smile transformations with crowns and bridges", "Digital scan — no messy impressions"]}
+        bgColor="bg-background"
       />
 
-      <PricingTables title="Crowns & Bridges Pricing in Dubai" subtitle="Affordable restorative solutions" tiers={[
-        { name: "Single Crown", price: "AED 1,800", description: "Porcelain or zirconia crown", features: ["Natural aesthetics", "Custom color matching", "Durable material", "2-year warranty"] },
-        { name: "Dental Bridge", price: "AED 4,500", description: "Replace 1-3 missing teeth", features: ["Tooth-colored restoration", "Precision fit", "Natural appearance", "3-year warranty"], highlighted: true },
-        { name: "Implant Bridge", price: "AED 8,000", description: "Premium implant-supported solution", features: ["No tooth grinding", "Bone preservation", "Most durable option", "Lifetime support"] }
-      ]} />
+      <PackagesCallout treatment="crowns and bridges" />
 
-      <TrustBadges title="Why Choose Our Crowns & Bridges" bgColor="bg-background" />
+      <SmileTransformations category="Smile Makeover" title="Smile Transformations with Crowns" subtitle="Real cases from our JLT clinic. Individual results vary." bgColor="bg-background" showViewAll />
 
-      <FAQSection title="Frequently Asked Questions" faqs={faqs} />
-
-      <section className="py-20 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center space-y-6 p-10 md:p-16 bg-card rounded-2xl border border-border">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary">Restore Your Smile Today</h2>
-            <p className="text-muted-foreground text-lg">Don't let damaged or missing teeth hold you back. Book your consultation now.</p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-              <Button className="bg-primary text-primary-foreground hover:bg-primary/90 gap-2 rounded-full">
-                <MessageCircle className="h-4 w-4" /> Book Consultation
-              </Button>
-              <Button variant="outline" className="gap-2 rounded-full">
-                <Phone className="h-4 w-4" /> Call Now
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
+      <FAQSection title="Frequently Asked Questions" faqs={FAQS} />
+      <CTASection title="Restore Your Smile Today" text="Don't let damaged or missing teeth hold you back. Book your consultation in JLT." treatment="crowns and bridges" />
     </div>
   );
 }

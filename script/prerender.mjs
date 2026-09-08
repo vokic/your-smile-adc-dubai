@@ -14,35 +14,15 @@ import puppeteer from "puppeteer";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DIST_DIR = path.resolve(__dirname, "..", "dist", "public");
 
-// Keep in sync with vite-plugin-sitemap.ts ROUTES and the Wouter routes
-// in client/src/App.tsx. /thanks is excluded from search indexing but
-// still prerendered so post-submit lands on a real HTML page.
-const ROUTES = [
-  "/",
-  "/services",
-  "/veneers",
-  "/implants",
-  "/orthodontics",
-  "/whitening",
-  "/crowns-bridges",
-  "/cosmetic",
-  "/emergency",
-  "/dental-surgery",
-  "/general-preventive",
-  "/xray-opg",
-  "/dental-tourism",
-  "/gallery",
-  "/doctors",
-  "/about",
-  "/faq",
-  "/blog",
-  "/blog-post",
-  "/contact",
-  "/privacy",
-  "/terms",
-  "/sitemap",
-  "/thanks",
-];
+// Routes come from the shared registry client/src/lib/routes.json (also
+// consumed by App.tsx and vite-plugin-sitemap.ts). /thanks is excluded from
+// search indexing but still prerendered so post-submit lands on real HTML.
+const ROUTES = JSON.parse(
+  fs.readFileSync(
+    path.resolve(__dirname, "..", "client", "src", "lib", "routes.json"),
+    "utf-8"
+  )
+).routes.map((r) => r.path);
 
 const MIME = {
   ".html": "text/html; charset=utf-8",

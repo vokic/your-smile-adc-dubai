@@ -4,6 +4,7 @@ import tailwindcss from "@tailwindcss/vite";
 import path from "path";
 import { metaImagesPlugin } from "./vite-plugin-meta-images";
 import { sitemapPlugin } from "./vite-plugin-sitemap";
+import { trackingPlugin } from "./vite-plugin-tracking";
 
 export default defineConfig({
   plugins: [
@@ -11,6 +12,7 @@ export default defineConfig({
     tailwindcss(),
     metaImagesPlugin(),
     sitemapPlugin(),
+    trackingPlugin(),
   ],
   resolve: {
     alias: {

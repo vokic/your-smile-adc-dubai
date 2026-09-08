@@ -168,3 +168,15 @@
     @apply bg-gradient-to-b from-secondary to-secondary/90;
   }
 }
+/* Floating contact bar: a gentle nudge for the first few seconds after load,
+   then still. Disabled entirely under prefers-reduced-motion via the
+   motion-safe: variant on the element. */
+@keyframes fab-nudge {
+  0%, 70%, 100% { transform: translateY(0); }
+  76% { transform: translateY(-6px); }
+  82% { transform: translateY(0); }
+  88% { transform: translateY(-3px); }
+}
+.animate-fab-nudge {
+  animation: fab-nudge 4s ease-in-out 2;
+}

@@ -1,25 +1,24 @@
 import {
-  CLINIC_ADDRESS,
+  CLINIC_AREA,
+  CLINIC_CITY,
   CLINIC_EMAIL,
+  CLINIC_FOUNDED_YEAR,
+  CLINIC_MAPS_URL,
+  CLINIC_NAME,
+  CLINIC_STREET,
+  FOUNDER,
+  GOOGLE_REVIEW_COUNT,
+  GOOGLE_REVIEW_RATING,
   REGULAR_PHONE,
   SOCIAL_LINKS,
   WORKING_HOURS,
 } from "./constants";
 
 export const SITE_URL = "https://yoursmileadvanceddental.ae";
-export const SITE_NAME = "Your Smile Advanced Dental Center";
+export const SITE_NAME = CLINIC_NAME;
 export const DEFAULT_OG_IMAGE = "/og-image.jpg";
-export const TWITTER_HANDLE = ""; // TODO(placeholder): real clinic Twitter handle
-
-const dayMap: Record<string, string> = {
-  Monday: "Monday",
-  Tuesday: "Tuesday",
-  Wednesday: "Wednesday",
-  Thursday: "Thursday",
-  Friday: "Friday",
-  Saturday: "Saturday",
-  Sunday: "Sunday",
-};
+// The clinic has no X/Twitter account. Leave empty until it does.
+export const TWITTER_HANDLE = "";
 
 function parseHours(hours: string): { opens: string; closes: string } | null {
   // Hours like "9 AM – 9 PM" or "Closed"
@@ -47,7 +46,7 @@ function openingHoursSpecification() {
       if (!parsed) return null;
       return {
         "@type": "OpeningHoursSpecification",
-        dayOfWeek: dayMap[wh.day] ?? wh.day,
+        dayOfWeek: wh.day,
         opens: parsed.opens,
         closes: parsed.closes,
       };
@@ -55,39 +54,52 @@ function openingHoursSpecification() {
     .filter(Boolean);
 }
 
-// TODO(placeholder): real founding date, founder name, review count/rating.
-// See PLACEHOLDERS.md for the full pre-go-live verification list.
-const PLACEHOLDER_FOUNDING_DATE = "2024";
-const PLACEHOLDER_FOUNDER_NAME = "Dr. Nemanja Vokic";
-const PLACEHOLDER_REVIEW_COUNT = "250";
-const PLACEHOLDER_REVIEW_RATING = "5";
+// UAE addresses have no Western postal code — the field is intentionally
+// omitted rather than shipped with a bogus value.
+function postalAddress() {
+  return {
+    "@type": "PostalAddress",
+    streetAddress: CLINIC_STREET,
+    addressLocality: CLINIC_AREA,
+    addressRegion: CLINIC_CITY,
+    addressCountry: "AE",
+  };
+}
+
+function founderPerson() {
+  return {
+    "@type": "Person",
+    name: FOUNDER.name,
+    honorificSuffix: FOUNDER.credentials,
+    jobTitle: FOUNDER.title,
+    worksFor: { "@type": "Dentist", name: SITE_NAME },
+  };
+}
 
 export function jsonLdLocalBusiness() {
   return {
     "@context": "https://schema.org",
     "@type": "Dentist",
+    "@id": `${SITE_URL}/#clinic`,
     name: SITE_NAME,
     image: `${SITE_URL}/logo.jpg`,
     description:
-      "Luxury dental center in Dubai JLT offering veneers, implants, Invisalign, teeth whitening, and emergency care.",
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "HDS Business Centre, Jumeirah Lake Towers",
-      addressLocality: "Dubai",
-      addressRegion: "Dubai",
-      addressCountry: "AE",
-    },
+      "Dental center in Dubai JLT specializing in complex cases: emergency care, Hollywood smiles, full-mouth implant rehabilitation, no-prep ceramic veneers, crowns, orthodontics and private at-home dental visits.",
+    address: postalAddress(),
+    hasMap: CLINIC_MAPS_URL,
     telephone: REGULAR_PHONE,
     email: CLINIC_EMAIL,
     url: SITE_URL,
     priceRange: "AED",
     areaServed: "Dubai, UAE",
+    founder: founderPerson(),
+    foundingDate: CLINIC_FOUNDED_YEAR,
     sameAs: Object.values(SOCIAL_LINKS),
     openingHoursSpecification: openingHoursSpecification(),
     aggregateRating: {
       "@type": "AggregateRating",
-      ratingValue: PLACEHOLDER_REVIEW_RATING,
-      reviewCount: PLACEHOLDER_REVIEW_COUNT,
+      ratingValue: GOOGLE_REVIEW_RATING.toFixed(1),
+      reviewCount: String(GOOGLE_REVIEW_COUNT),
       bestRating: "5",
       worstRating: "1",
     },
@@ -98,24 +110,38 @@ export function jsonLdOrganization() {
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
+    "@id": `${SITE_URL}/#organization`,
     name: SITE_NAME,
     url: SITE_URL,
     logo: `${SITE_URL}/logo.jpg`,
     sameAs: Object.values(SOCIAL_LINKS),
-    foundingDate: PLACEHOLDER_FOUNDING_DATE,
-    founders: [{ "@type": "Person", name: PLACEHOLDER_FOUNDER_NAME }],
+    foundingDate: CLINIC_FOUNDED_YEAR,
+    founders: [founderPerson()],
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "Customer Service",
       telephone: REGULAR_PHONE,
       email: CLINIC_EMAIL,
     },
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "HDS Business Centre, Jumeirah Lake Towers",
-      addressLocality: "Dubai",
-      addressCountry: "AE",
-    },
+    address: postalAddress(),
+  };
+}
+
+/** Schema for a single treatment page (service landing). */
+export function jsonLdService(opts: {
+  name: string;
+  description: string;
+  path: string;
+  serviceType?: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "MedicalProcedure",
+    name: opts.name,
+    description: opts.description,
+    url: `${SITE_URL}${opts.path}`,
+    procedureType: opts.serviceType ?? "Dental procedure",
+    provider: { "@id": `${SITE_URL}/#clinic` },
   };
 }
 

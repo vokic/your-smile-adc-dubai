@@ -174,8 +174,8 @@ export default function Blog() {
                   <article className="bg-card rounded-xl border border-border overflow-hidden hover:shadow-lg transition-all hover:-translate-y-1 group cursor-pointer">
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-0">
                     {/* Image */}
-                    <div className="sm:col-span-1 h-48 sm:h-auto rounded-t-xl sm:rounded-none sm:rounded-l-xl bg-muted border-b sm:border-b-0 sm:border-r border-border flex items-center justify-center overflow-hidden group-hover:bg-primary/5 transition-colors">
-                      <span className="text-sm font-bold text-muted-foreground text-center px-4">{article.image}</span>
+                    <div className="sm:col-span-1 h-48 sm:h-auto rounded-t-xl sm:rounded-none sm:rounded-l-xl bg-gradient-to-br from-primary/15 via-muted to-secondary/10 border-b sm:border-b-0 sm:border-r border-border flex items-center justify-center overflow-hidden group-hover:from-primary/25 transition-colors" aria-hidden="true">
+                      <Tag className="h-10 w-10 text-primary/60" />
                     </div>
 
                     {/* Content */}

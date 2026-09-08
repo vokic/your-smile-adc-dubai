@@ -3,6 +3,8 @@ import { Phone, MessageCircle, ChevronDown } from "lucide-react";
 import { useState } from "react";
 import { SEO } from "@/components/SEO";
 import { jsonLdFAQPage } from "@/lib/seo";
+import { HeroBackdrop } from "@/components/ServiceHero";
+import { REGULAR_PHONE, whatsappLink } from "@/lib/constants";
 
 export default function FAQ() {
   const faqs = [
@@ -68,10 +70,8 @@ export default function FAQ() {
       />
       {/* Hero Section */}
       <section className="relative min-h-[50vh] md:h-[60vh] w-full overflow-hidden bg-secondary pt-10 md:pt-0">
-        <div className="absolute inset-0 opacity-40 flex items-center justify-center bg-muted">
-          <span className="text-4xl font-bold text-muted-foreground/20">FAQ HERO IMAGE</span>
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-r from-secondary via-secondary/90 to-transparent" />
+        <HeroBackdrop />
+        <div className="absolute inset-0 bg-gradient-to-r from-secondary via-secondary/90 to-secondary/30" />
         
         <div className="container relative h-full mx-auto px-4 flex items-center py-12 md:py-0">
           <div className="max-w-3xl space-y-6 animate-in fade-in slide-in-from-left-10 duration-700">
@@ -82,13 +82,17 @@ export default function FAQ() {
               Find answers to common questions about our services, procedures, and how we can help your dental health.
             </h2>
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 gap-2 rounded-full rounded-full">
-                <MessageCircle className="h-5 w-5" />
-                Ask a Question
+              <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 gap-2 rounded-full">
+                <a href={whatsappLink("Hello, I have a question about your dental treatments.")} target="_blank" rel="noopener noreferrer">
+                  <MessageCircle className="h-5 w-5" />
+                  Ask a Question
+                </a>
               </Button>
-              <Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-secondary gap-2 rounded-full rounded-full">
-                <Phone className="h-5 w-5" />
-                Call Us
+              <Button asChild size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-secondary gap-2 rounded-full">
+                <a href={`tel:${REGULAR_PHONE}`}>
+                  <Phone className="h-5 w-5" />
+                  Call Us
+                </a>
               </Button>
             </div>
           </div>

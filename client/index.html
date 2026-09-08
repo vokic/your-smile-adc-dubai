@@ -13,6 +13,34 @@
     -->
     <meta name="author" content="Your Smile Advanced Dental Center" />
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <!-- Google Search Console: set VITE_GSC_VERIFICATION in Netlify env to the
+         token from the "HTML tag" verification method. Empty = tag omitted. -->
+    <meta name="google-site-verification" content="%VITE_GSC_VERIFICATION%" />
+
+    <!-- Consent Mode v2 defaults (denied until the visitor accepts in the
+         CookieConsent banner). Must run BEFORE the GTM snippet. -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){ dataLayer.push(arguments); }
+      gtag('consent', 'default', {
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        analytics_storage: 'denied',
+        wait_for_update: 500
+      });
+    </script>
+    <!-- Google Tag Manager. Container ID comes from VITE_GTM_ID (Netlify env).
+         GA4 and Meta Pixel are configured inside GTM, not in app code. When
+         the env var is empty the snippet is stripped at build time by
+         vite-plugin-meta-images.ts (see stripEmptyTracking). -->
+    <script data-gtm>
+      (function(w,d,s,l,i){if(!i||i.indexOf('%')===0){return;}w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','%VITE_GTM_ID%');
+    </script>
 
     <!-- Fonts & Icons -->
     <link rel="icon" type="image/png" href="/favicon.png" />
@@ -21,24 +49,28 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
 
-    <!-- Preload Critical Resources -->
-    <link rel="preload" as="image" href="/hero-image.jpg" />
-
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="theme-color" content="#ffffff" />
     <meta name="msapplication-TileColor" content="#ffffff" />
   </head>
   <body>
+    <noscript data-gtm><iframe src="https://www.googletagmanager.com/ns.html?id=%VITE_GTM_ID%"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
     <div id="root"></div>
 
-    <!-- Netlify Forms: static form so the build-time bot detects it.
-         The real React form posts to "/" with form-name=contact. -->
+    <!-- Netlify Forms: static forms so the build-time bot detects them.
+         The real React forms post to "/" with the matching form-name. -->
     <form name="contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
       <input type="text" name="name" />
       <input type="tel" name="phone" />
       <input type="email" name="email" />
       <input type="text" name="service" />
       <textarea name="message"></textarea>
+      <input name="bot-field" />
+    </form>
+    <form name="newsletter" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="email" name="email" />
       <input name="bot-field" />
     </form>
 

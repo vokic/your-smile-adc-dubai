@@ -1,249 +1,165 @@
-
-import { Button } from "@/components/ui/button";
-import { ArrowRight, CheckCircle2, ShieldCheck, Phone, MessageCircle, Star } from "lucide-react";
 import { Link } from "wouter";
+import { ArrowRight, ShieldCheck, Sparkles, Stethoscope, Home as HomeIcon, Plane, Scan, HeartPulse, Layers, Crown, Smile, Sun, Scissors, AlertCircle, Anchor } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 import { SEO } from "@/components/SEO";
+import { ServiceHero } from "@/components/ServiceHero";
+import { CTASection } from "@/components/CTASection";
+import { GoogleRatingBanner } from "@/components/GoogleRatingBanner";
+import { jsonLdBreadcrumb } from "@/lib/seo";
+import { subServicesFor, subServicePath, CATEGORIES } from "@/content/services";
+import type { CategorySlug } from "@/content/services";
+
+interface Card {
+  name: string;
+  desc: string;
+  href: string;
+  icon: LucideIcon;
+}
+
+/**
+ * Simple, obvious structure per the owner: "people here don't think — it
+ * has to be simple and obvious". Complex-case treatments first, then the
+ * rest, each category showing its sub-pages as plain links.
+ */
+const FEATURED: Card[] = [
+  { name: "Emergency Dentist", desc: "Same-day relief for toothache, broken teeth, swelling and trauma.", href: "/emergency", icon: AlertCircle },
+  { name: "Hollywood Smile & Veneers", desc: "No-prep ceramic veneers and complete smile makeovers.", href: "/veneers", icon: Sparkles },
+  { name: "Dental Implants", desc: "Single teeth to full-mouth All-on-4 / All-on-6 with lifetime implant warranty.", href: "/implants", icon: Anchor },
+  { name: "Crowns & Bridges", desc: "Zirconia, porcelain and same-day crowns; implant-supported bridges.", href: "/crowns-bridges", icon: Crown },
+  { name: "Cosmetic Dentistry", desc: "Complete smile transformations combining several treatments.", href: "/cosmetic", icon: Smile },
+  { name: "Private At-Home Visit", desc: "Check-ups, cleanings, fillings and urgent care at your home.", href: "/at-home", icon: HomeIcon },
+];
+
+const CATEGORY_ICONS: Record<CategorySlug, LucideIcon> = {
+  "dental-surgery": Scissors,
+  "crowns-bridges": Crown,
+  restorative: Layers,
+  orthodontics: Smile,
+  whitening: Sun,
+  "general-preventive": HeartPulse,
+};
+
+const CATEGORY_ORDER: CategorySlug[] = ["dental-surgery", "orthodontics", "whitening", "crowns-bridges", "restorative", "general-preventive"];
+
+const OTHER: Card[] = [
+  { name: "Digital X-Ray, OPG & CBCT", desc: "Low-radiation 2D and 3D imaging in-clinic.", href: "/xray-opg", icon: Scan },
+  { name: "Dental Tourism", desc: "Treatment-only or all-inclusive packages for international patients.", href: "/dental-tourism", icon: Plane },
+  { name: "Smile Gallery", desc: "Before and after results.", href: "/gallery", icon: Stethoscope },
+];
 
 export default function Services() {
-  const serviceCategories = [
-    {
-      title: "Cosmetic Dentistry",
-      items: [
-        { name: "Veneers", desc: "Achieve a flawless smile with porcelain or composite veneers.", href: "/veneers" },
-        { name: "Teeth Whitening", desc: "Brighten your smile safely and effectively.", href: "/whitening" },
-        { name: "Smile Makeover", desc: "Transform your entire smile with customized treatments.", href: "/cosmetic" }
-      ]
-    },
-    {
-      title: "Restorative Dentistry",
-      items: [
-        { name: "Dental Implants", desc: "Permanent replacements for missing teeth.", href: "/implants" },
-        { name: "Crowns & Bridges", desc: "Strengthen damaged teeth and replace missing ones.", href: "/crowns-bridges" },
-        { name: "Expert Dental Surgery", desc: "Wisdom tooth extraction, gum surgery, bone grafting.", href: "/dental-surgery" }
-      ]
-    },
-    {
-      title: "Orthodontics",
-      items: [
-        { name: "Braces & Clear Aligners", desc: "Metal, ceramic, and Invisalign options for all ages.", href: "/orthodontics" },
-        { name: "Bite Correction", desc: "Treat overbites, underbites, and crossbites.", href: "/orthodontics" }
-      ]
-    },
-    {
-      title: "Preventive Dentistry",
-      items: [
-        { name: "Routine Check-Ups", desc: "Regular exams to maintain oral health.", href: "/general-preventive" },
-        { name: "Professional Cleanings", desc: "Scaling & polishing for healthy gums and fresh breath.", href: "/general-preventive" },
-        { name: "Gum Disease Treatment", desc: "Early detection and therapy for healthy gums.", href: "/general-preventive" }
-      ]
-    },
-    {
-      title: "Specialized Diagnostics",
-      items: [
-        { name: "Digital X-Ray & OPG", desc: "Low-radiation imaging for accurate treatment planning.", href: "/xray-opg" }
-      ]
-    },
-    {
-      title: "Dental Tourism",
-      items: [
-        { name: "All-Inclusive Smile Packages", desc: "Complete treatment plans with accommodation and travel assistance for international patients.", href: "/dental-tourism" },
-        { name: "VIP Patient Experience", desc: "Personalized care, flexible scheduling, and professional translation services.", href: "/dental-tourism" },
-        { name: "Medical Tourism Coordination", desc: "Seamless coordination with hotels, transportation, and post-treatment support.", href: "/dental-tourism" }
-      ]
-    },
-    {
-      title: "Emergency Dentistry",
-      items: [
-        { name: "24/7 Emergency Care", desc: "Immediate relief for toothaches, injuries, and trauma.", href: "/emergency" }
-      ]
-    }
+  const crumbs = [
+    { name: "Home", path: "/" },
+    { name: "Services", path: "/services" },
   ];
-
   return (
     <div className="flex flex-col min-h-screen">
       <SEO
-        title="Our Dental Services in Dubai - Veneers, Implants, Cosmetic & More"
-        description="Full-service dental clinic in Dubai JLT: cosmetic dentistry, implants, orthodontics, emergency care, dental tourism, and private at-home visits."
+        title="Dental Services in Dubai - Implants, Veneers, Emergency & More"
+        description="All treatments at Your Smile Advanced Dental Center Dubai JLT: emergency care, implants, veneers, crowns, orthodontics, whitening, oral surgery, restorative, preventive and at-home visits."
         path="/services"
+        jsonLd={[jsonLdBreadcrumb(crumbs)]}
       />
-      {/* 1. Hero Block */}
-      <section className="relative min-h-[50vh] md:h-[60vh] w-full overflow-hidden bg-secondary pt-10 md:pt-0">
-        <div className="absolute inset-0 opacity-40 flex items-center justify-center bg-muted">
-          <span className="text-4xl font-bold text-muted-foreground/20">SERVICES HERO</span>
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-r from-secondary via-secondary/90 to-transparent" />
-        
-        <div className="container relative h-full mx-auto px-4 flex items-center py-12 md:py-0">
-          <div className="max-w-3xl space-y-6 animate-in fade-in slide-in-from-left-10 duration-700">
-            <h1 className="text-4xl md:text-6xl font-serif font-bold text-white leading-tight">
-              Comprehensive Dental Services <span className="text-primary">in Dubai</span>
-            </h1>
-            <h2 className="text-xl text-gray-200 font-light max-w-2xl">
-              From preventive care to advanced cosmetic treatments, we provide complete dental solutions for a healthy, confident smile.
-            </h2>
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 gap-2 rounded-full rounded-full">
-                <MessageCircle className="h-5 w-5" />
-                Book Your Consultation on WhatsApp
-              </Button>
-              <Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-secondary gap-2 rounded-full rounded-full">
-                <Phone className="h-5 w-5" />
-                Call Now
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ServiceHero
+        title="Dental Services in Dubai"
+        subtitle="Specialists in complex cases — and everything else your family needs, under one roof in Jumeirah Lake Towers."
+        breadcrumbs={crumbs}
+      />
 
-      {/* 2. Why Choose Our Services */}
-      <section className="py-24 bg-background">
+      {/* Featured / complex cases */}
+      <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl bg-muted flex items-center justify-center">
-              <span className="text-2xl font-bold text-muted-foreground">WHY CHOOSE US IMAGE</span>
-            </div>
-            <div className="space-y-6">
-              <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary">Your Trusted Dental Clinic in Dubai</h2>
-              <p className="text-muted-foreground text-lg leading-relaxed">
-                With 15+ years of experience, internationally trained dentists, and ★5.0 patient ratings, we provide a full range of dental services under one roof. Whether you need a simple check-up or a full smile makeover, our team ensures safe, comfortable, and long-lasting results.
-              </p>
-              <div className="grid grid-cols-2 gap-4 pt-4">
-                <div className="flex items-center gap-3">
-                  <CheckCircle2 className="h-6 w-6 text-primary" />
-                  <span className="font-medium">15+ Years Experience</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <CheckCircle2 className="h-6 w-6 text-primary" />
-                  <span className="font-medium">Internationally Trained</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <CheckCircle2 className="h-6 w-6 text-primary" />
-                  <span className="font-medium">Latest Technology</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <CheckCircle2 className="h-6 w-6 text-primary" />
-                  <span className="font-medium">5.0★ Patient Rating</span>
-                </div>
-              </div>
-            </div>
+          <div className="text-center mb-12 space-y-3">
+            <h2 className="text-3xl md:text-5xl font-serif font-bold text-secondary">What We Do Best</h2>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">The cases other clinics turn away are where we start.</p>
           </div>
-        </div>
-      </section>
-
-      {/* 3. Our Services Overview */}
-      <section className="py-32 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-20 space-y-6">
-            <h2 className="text-3xl md:text-5xl font-serif font-bold text-secondary">Explore Our Dental Treatments in Dubai</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">From cosmetic enhancements to restorative procedures and specialized dental tourism packages, we offer comprehensive solutions for every smile.</p>
-            <div className="h-1 w-24 bg-primary mx-auto rounded-full" />
-          </div>
-
-          <div className="space-y-12">
-            {serviceCategories.map((category, i) => (
-              <div key={i}>
-                <h3 className="text-2xl font-bold text-primary border-b-2 border-primary/30 pb-4 mb-8">{category.title}</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {category.items.map((item, j) => (
-                    <Link key={j} href={item.href} className="group rounded-xl overflow-hidden border border-border hover:border-primary/50 transition-all bg-card hover:bg-card/80 flex flex-col md:flex-row h-full">
-                      {/* Image - 1/3 on left (or full width on mobile) */}
-                      <div className="w-full md:w-1/3 h-48 md:h-auto bg-muted/50 flex items-center justify-center border-b md:border-b-0 md:border-r border-border shrink-0">
-                        <span className="text-muted-foreground text-sm font-medium text-center px-4">{item.name.toUpperCase()}</span>
-                      </div>
-                      
-                      {/* Content - 2/3 on right */}
-                      <div className="w-full md:w-2/3 p-6 md:p-8 flex flex-col justify-between">
-                        <div className="flex justify-between items-start gap-4 mb-3">
-                          <h4 className="text-lg font-bold text-secondary group-hover:text-primary transition-colors flex-1">{item.name}</h4>
-                          <ArrowRight className="h-5 w-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all shrink-0 mt-1" />
-                        </div>
-                        <p className="text-muted-foreground leading-relaxed">{item.desc}</p>
-                      </div>
-                    </Link>
-                  ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {FEATURED.map(({ name, desc, href, icon: Icon }) => (
+              <Link key={href} href={href} className="group p-7 bg-card rounded-2xl border border-border hover:border-primary/50 hover:shadow-lg transition-all flex flex-col gap-4">
+                <div className="flex items-start justify-between">
+                  <span className="rounded-full bg-primary/10 p-3 text-primary"><Icon className="h-6 w-6" /></span>
+                  <ArrowRight className="h-5 w-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" />
                 </div>
-              </div>
+                <h3 className="text-xl font-bold text-secondary group-hover:text-primary transition-colors">{name}</h3>
+                <p className="text-muted-foreground">{desc}</p>
+              </Link>
             ))}
           </div>
         </div>
       </section>
 
-      {/* 4. Benefits of Choosing Us */}
-      <section className="py-24 bg-secondary text-white">
+      {/* Categories with sub-pages */}
+      <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-center mb-12">Why Patients Trust Our Services</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {[
-                "15+ years of dental expertise",
-                "State-of-the-art technology (CAD/CAM, 3D implant planning)",
-                "Gentle, pain-free procedures",
-                "Multilingual, family-friendly team",
-                "★5.0 Google Rated Dental Clinic in Dubai",
-                "Comprehensive care under one roof"
-              ].map((benefit, i) => (
-                <div key={i} className="flex items-start gap-4 p-6 bg-white/5 rounded-xl border border-white/10 hover:bg-white/10 transition-colors">
-                  <ShieldCheck className="h-8 w-8 text-primary shrink-0" />
-                  <h3 className="font-medium leading-snug">{benefit}</h3>
+          <div className="text-center mb-12 space-y-3">
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary">All Treatments</h2>
+            <p className="text-muted-foreground text-lg">Every treatment has its own page with what to expect, step by step.</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {CATEGORY_ORDER.map((slug) => {
+              const cat = CATEGORIES[slug];
+              const Icon = CATEGORY_ICONS[slug];
+              const subs = subServicesFor(slug);
+              return (
+                <div key={slug} className="bg-card rounded-2xl border border-border p-7 flex flex-col">
+                  <Link href={cat.path} className="group flex items-center gap-3 mb-4">
+                    <span className="rounded-full bg-primary/10 p-2.5 text-primary"><Icon className="h-5 w-5" /></span>
+                    <h3 className="text-lg font-bold text-secondary group-hover:text-primary transition-colors flex-1">{cat.name}</h3>
+                    <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-primary" />
+                  </Link>
+                  <ul className="space-y-1.5 flex-1">
+                    {subs.map((s) => (
+                      <li key={s.slug}>
+                        <Link href={subServicePath(s)} className="text-sm text-muted-foreground hover:text-primary transition-colors flex items-center gap-2">
+                          <span className="text-primary">›</span> {s.name}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-              ))}
-            </div>
+              );
+            })}
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+            {OTHER.map(({ name, desc, href, icon: Icon }) => (
+              <Link key={href} href={href} className="group p-6 bg-card rounded-2xl border border-border hover:border-primary/50 hover:shadow-md transition-all flex items-start gap-4">
+                <span className="rounded-full bg-primary/10 p-2.5 text-primary shrink-0"><Icon className="h-5 w-5" /></span>
+                <div>
+                  <h3 className="font-bold text-secondary group-hover:text-primary transition-colors">{name}</h3>
+                  <p className="text-sm text-muted-foreground">{desc}</p>
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* 5. Patient Testimonials Preview */}
-      <section className="py-24 bg-background">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary mb-6">What Our Patients Say</h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto mb-12">
-            Thousands of happy patients in Dubai have trusted us with their smiles.
-          </p>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {/* Why us */}
+      <section className="py-20 bg-secondary text-white">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <h2 className="text-3xl md:text-4xl font-serif font-bold text-center mb-12">Why Patients Trust Us</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { text: "Absolutely the best clinic in Dubai. The veneers changed my life!", author: "Sarah M." },
-              { text: "Professional, clean, and very friendly staff. Highly recommended.", author: "James D." },
-              { text: "I was afraid of dentists, but Dr. Ahmed made me feel so comfortable.", author: "Layla K." }
-            ].map((review, i) => (
-              <div key={i} className="p-8 bg-card rounded-xl shadow-sm border border-border relative">
-                <div className="flex justify-center gap-1 mb-4">
-                  {[1,2,3,4,5].map(star => <Star key={star} className="h-4 w-4 text-yellow-400 fill-current" />)}
-                </div>
-                <p className="italic text-secondary mb-4">"{review.text}"</p>
-                <p className="font-bold text-primary text-sm">- {review.author}</p>
+              "Specialists in complex and full-mouth cases",
+              "Digital planning: intraoral scans, CAD/CAM, 3D implant planning",
+              "Gentle, pain-free procedures with sedation options",
+              "Multilingual, family-friendly international team",
+              "Lifetime warranty on JD Evolution Plus implants",
+              "Comprehensive care under one roof in JLT",
+            ].map((b) => (
+              <div key={b} className="flex items-start gap-4 p-6 bg-white/5 rounded-xl border border-white/10">
+                <ShieldCheck className="h-7 w-7 text-primary shrink-0" />
+                <p className="font-medium leading-snug">{b}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* 6. Final CTA */}
-      <section className="py-24 bg-primary/5">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row items-center gap-12 bg-white rounded-3xl p-8 md:p-12 shadow-xl border border-primary/10">
-            <div className="w-full md:w-1/2 h-[400px] rounded-2xl overflow-hidden bg-muted flex items-center justify-center">
-              <span className="text-2xl font-bold text-muted-foreground">CTA IMAGE</span>
-            </div>
-            <div className="w-full md:w-1/2 space-y-8">
-              <h2 className="text-3xl md:text-5xl font-serif font-bold text-secondary">Book Your Dental Appointment in Dubai Today</h2>
-              <p className="text-muted-foreground text-lg">
-                From preventive check-ups to advanced smile makeovers, our team is ready to provide the dental care you deserve. Schedule your consultation now.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 gap-2 w-full sm:w-auto rounded-full">
-                  <MessageCircle className="h-5 w-5" />
-                  Book on WhatsApp
-                </Button>
-                <Button size="lg" variant="outline" className="gap-2 w-full sm:w-auto rounded-full">
-                  <Phone className="h-5 w-5" />
-                  Call Now
-                </Button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <GoogleRatingBanner />
+
+      <CTASection title="Book Your Dental Appointment in Dubai" text="From a check-up to a full smile makeover, tell us what you need and we'll guide you to the right treatment." bgColor="bg-primary/5" />
     </div>
   );
 }
