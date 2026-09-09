@@ -1,0 +1,965 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Your Smile ADC — Home Redesign Preview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600&family=Figtree:wght@300;400;500;600&family=Sora:wght@300;400;500;600&family=Poppins:wght@300;400;500;600&family=DM+Sans:opsz,wght@9..40,400;9..40,500&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════════════════════════
+   DESIGN SYSTEM — reference template layout + palette.
+   CONTENT — 1:1 with client/src/pages/Home.tsx (9 sections),
+   plus the real Header / Footer components.
+   ═══════════════════════════════════════════════════════════════ */
+:root{
+  /* ---- colour — every blue below is derived from --teal by the
+       preview control panel, so one hex drives the whole palette ---- */
+  --ink:#14161C;          /* near-black headings + text        */
+  --ink-2:#3A4150;
+  --teal:#1F22B0;         /* BRAND: buttons, footer            */
+  --teal-hover:#1A1D94;
+  --sky:#1F22B0;          /* BRAND panels: hero, rating band   */
+  --sky-2:#EDEDF9;        /* brand mixed 92% white             */
+  --sky-3:#CECEEE;        /* brand mixed 78% white             */
+  --gray:#F5F6FA;
+  --muted:#7A8090;
+  --line:#E4E5EC;
+  --alert:#C4643A;
+
+  /* ---- type (switchable via the preview panel) ---- */
+  --font-d:"Plus Jakarta Sans",system-ui,sans-serif;
+  --font-b:"Plus Jakarta Sans",system-ui,sans-serif;
+
+  /* ---- spacing scale — 4px base, measured off the reference ---- */
+  --s-1:4px;  --s-2:8px;   --s-3:12px;  --s-4:16px;
+  --s-5:22px; --s-6:28px;  --s-7:34px;  --s-8:42px;
+  --s-9:52px; --s-10:64px; --s-11:80px; --s-12:112px;
+  --s-section:112px;
+
+  /* ---- radius ---- */
+  --r-xl:28px; --r-lg:24px; --r-md:18px; --r-sm:12px; --r-pill:999px;
+
+  /* ---- layout ---- */
+  --gutter:16px;
+  --maxw:1264px;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-b);font-size:15px;line-height:1.65;color:var(--ink);background:#fff;
+  -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+img{display:block;max-width:100%}
+a{text-decoration:none;color:inherit}
+button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--gutter)}
+
+/* ── typography ─────────────────────────────────────────────── */
+h1,h2,h3,h4,h5{font-family:var(--font-d);color:var(--ink);letter-spacing:-0.022em;font-weight:500;line-height:1.12}
+.h1{font-size:clamp(2.3rem,3.95vw,3.45rem);line-height:1.1}
+.h2{font-size:clamp(1.95rem,3.2vw,2.8rem)}
+.p{font-size:15px;color:var(--muted);line-height:1.75}
+.p-sm{font-size:13.5px;color:var(--muted);line-height:1.7}
+.eyebrow{font-size:13px;color:var(--muted)}
+
+/* ── buttons ────────────────────────────────────────────────── */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:16px 30px;
+  border-radius:var(--r-pill);font-family:var(--font-b);font-size:13.5px;font-weight:500;
+  letter-spacing:-0.005em;transition:all .35s cubic-bezier(.16,1,.3,1)}
+.btn svg{width:16px;height:16px;flex:none}
+.btn-primary{background:var(--teal);color:#fff}
+.btn-primary:hover{background:var(--teal-hover);transform:translateY(-2px)}
+.btn-ghost{background:#fff;color:var(--ink);border:1px solid var(--line)}
+.btn-ghost:hover{border-color:var(--ink);transform:translateY(-2px)}
+.btn-outline-light{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.45)}
+.btn-outline-light:hover{background:#fff;color:var(--teal);transform:translateY(-2px)}
+.btn-ink{background:var(--ink);color:#fff}
+.btn-ink:hover{background:#000000;transform:translateY(-2px)}
+.btn-sm{padding:11px 20px;font-size:12.5px}
+.btn:focus-visible{outline:2px solid var(--teal);outline-offset:3px}
+
+.arrow-btn{width:40px;height:40px;border-radius:var(--r-pill);display:grid;place-items:center;flex:none;
+  background:#fff;color:var(--ink);border:1px solid rgba(26,29,33,.11);
+  transition:all .35s cubic-bezier(.16,1,.3,1)}
+.arrow-btn svg{width:14px;height:14px}
+.arrow-btn:hover{background:var(--teal);color:#fff;border-color:var(--teal)}
+.arrow-btn.solid{background:var(--teal);color:#fff;border-color:var(--teal)}
+.arrow-btn.solid:hover{background:var(--teal-hover)}
+
+/* ── nav (mirrors components/layout/Header.tsx) ─────────────── */
+.nav{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.92);
+  backdrop-filter:blur(18px) saturate(160%);-webkit-backdrop-filter:blur(18px) saturate(160%);
+  border-bottom:1px solid rgba(227,228,230,.8)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:78px;gap:var(--s-5)}
+.logo{display:flex;align-items:center;gap:9px;font-family:var(--font-d);font-size:19px;font-weight:600;
+  letter-spacing:-0.03em;color:var(--ink)}
+.logo svg{width:21px;height:21px;flex:none;color:var(--teal)}
+.nav-links{display:flex;align-items:center;gap:var(--s-6)}
+.nav-links a{font-size:13.5px;color:var(--muted);transition:color .2s}
+.nav-links a:hover{color:var(--ink)}
+.nav-links a.active{color:var(--ink);font-weight:500;display:inline-flex;align-items:center;gap:7px}
+.nav-links a.active::before{content:"";width:5px;height:5px;border-radius:var(--r-pill);background:var(--teal)}
+.nav-links .has-menu{display:inline-flex;align-items:center;gap:5px}
+.nav-links .has-menu svg{width:11px;height:11px}
+.nav-right{display:flex;align-items:center;gap:10px}
+.icon-circle{width:40px;height:40px;border-radius:var(--r-pill);background:var(--gray);display:grid;
+  place-items:center;color:var(--ink);transition:background .25s}
+.icon-circle:hover{background:var(--sky-3)}
+.icon-circle svg{width:16px;height:16px}
+.lang{display:inline-flex;align-items:center;gap:5px;font-size:12.5px;color:var(--muted);
+  border:1px solid var(--line);border-radius:var(--r-pill);padding:9px 14px}
+.lang svg{width:11px;height:11px}
+.burger{display:none;width:42px;height:42px;border-radius:var(--r-pill);background:var(--gray);place-items:center}
+.burger svg{width:17px;height:17px}
+
+/* ── 1. hero ────────────────────────────────────────────────── */
+.hero{display:grid;grid-template-columns:.93fr 1fr;gap:var(--s-4);padding-top:var(--s-4)}
+.hero-left{background:var(--sky);border-radius:var(--r-lg);padding:var(--s-9);display:flex;flex-direction:column}
+.hero-badge{align-self:flex-start;display:inline-flex;align-items:center;gap:9px;background:rgba(255,255,255,.16);
+  border:1px solid rgba(255,255,255,.32);border-radius:var(--r-pill);padding:10px 18px;font-size:12.5px;
+  color:#fff;font-weight:500}
+.hero-badge svg{width:14px;height:14px;flex:none}
+.hero-left .h1{margin-top:var(--s-7);color:#fff;max-width:14ch}
+.hero-left .h1 em{font-style:italic;color:var(--sky-2)}
+.hero-left .lead{margin-top:var(--s-5);max-width:46ch;font-size:15px;line-height:1.75;color:rgba(255,255,255,.88)}
+.spec-list{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:9px var(--s-6);margin-top:var(--s-7)}
+.spec-list li{display:flex;align-items:center;gap:9px;font-size:13px;color:rgba(255,255,255,.94)}
+.spec-list li::before{content:"";width:6px;height:6px;border-radius:var(--r-pill);background:#fff;flex:none}
+.hero-cta{display:flex;gap:var(--s-3);margin-top:var(--s-8);flex-wrap:wrap}
+
+.hero-right{position:relative;border-radius:var(--r-lg);overflow:hidden;min-height:560px}
+.hero-right>img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+.stats{position:absolute;left:var(--s-4);right:var(--s-4);bottom:var(--s-4);display:grid;
+  grid-template-columns:repeat(3,1fr);gap:var(--s-3)}
+.stat{background:#fff;border-radius:16px;padding:18px 16px;text-align:center}
+.stat b{display:block;font-family:var(--font-d);font-size:24px;font-weight:600;color:var(--ink);
+  line-height:1.2;letter-spacing:-0.03em}
+.stat span{font-size:11.5px;color:var(--muted)}
+
+/* ── section head helper ────────────────────────────────────── */
+.sec{padding-top:var(--s-section)}
+.sec-center{text-align:center}
+.sec-center .h2{max-width:22ch;margin:0 auto}
+.sec-center .p{margin:var(--s-5) auto 0;max-width:62ch}
+.sec-split{display:flex;align-items:flex-end;justify-content:space-between;gap:var(--s-8);flex-wrap:wrap}
+.sec-split .h2{max-width:16ch}
+.sec-split .p{margin-top:14px;max-width:52ch}
+
+/* ── 2. smile transformations (coming soon) ─────────────────── */
+.soon{margin-top:var(--s-9);background:var(--gray);border:1px dashed rgba(26,29,33,.18);border-radius:20px;
+  padding:var(--s-10);max-width:820px;margin-left:auto;margin-right:auto}
+.soon p{font-size:15px;color:var(--ink);line-height:1.75}
+.soon p+p{margin-top:14px;font-size:13.5px;color:var(--muted)}
+.soon .btn{margin-top:var(--s-7)}
+
+/* ── 3. services ────────────────────────────────────────────── */
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s-5);margin-top:var(--s-10)}
+.svc{background:#fff;border:1px solid var(--line);border-radius:20px;padding:var(--s-6);display:flex;
+  flex-direction:column;transition:all .35s cubic-bezier(.16,1,.3,1)}
+.svc:hover{box-shadow:0 14px 40px rgba(26,29,33,.07);transform:translateY(-3px);border-color:var(--sky-3)}
+.svc-top{display:flex;align-items:flex-start;justify-content:space-between;gap:var(--s-4)}
+.svc-ic{width:46px;height:46px;border-radius:var(--r-pill);background:var(--sky-2);display:grid;
+  place-items:center;color:var(--teal);flex:none}
+.svc-ic svg{width:20px;height:20px}
+.svc-top .go{color:var(--muted);transition:all .35s cubic-bezier(.16,1,.3,1)}
+.svc-top .go svg{width:17px;height:17px}
+.svc:hover .go{color:var(--teal);transform:translateX(3px)}
+.svc h3{font-family:var(--font-d);font-size:17px;font-weight:600;letter-spacing:-0.02em;margin-top:var(--s-6)}
+.svc p{margin-top:10px;font-size:13.5px;color:var(--muted);line-height:1.7}
+
+/* ── 4. doctors ─────────────────────────────────────────────── */
+.doctors{margin-top:var(--s-section);background:linear-gradient(180deg,var(--sky-3) 0%,var(--sky-2) 100%);
+  padding:var(--s-11) 0;text-align:center}
+.doctors .p{margin:var(--s-5) auto 0;max-width:64ch}
+.doc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--s-4);margin-top:var(--s-9)}
+.doc{background:var(--sky-3);border-radius:22px;padding:14px;position:relative;min-height:352px;
+  display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden}
+.doc>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center}
+.doc-bio{position:absolute;inset:0;z-index:3;border-radius:22px;padding:22px;color:#fff;font-size:12px;
+  line-height:1.62;display:flex;flex-direction:column;justify-content:flex-end;text-align:left;opacity:0;
+  background:linear-gradient(180deg,rgba(26,29,33,.1) 0%,rgba(26,29,33,.94) 62%);
+  transition:opacity .4s cubic-bezier(.16,1,.3,1)}
+.doc:hover .doc-bio,.doc:focus-within .doc-bio{opacity:1}
+.doc-bio b{display:block;font-family:var(--font-d);font-size:12.5px;font-weight:600;margin-bottom:9px;color:#fff}
+.doc-chip{position:relative;z-index:2;background:#fff;border-radius:15px;padding:14px 15px;text-align:left}
+.doc-chip b{display:block;font-family:var(--font-d);font-size:13.5px;font-weight:600;color:var(--ink);
+  letter-spacing:-0.015em}
+.doc-chip span{font-size:10px;color:var(--teal);line-height:1.4;display:block;margin-top:3px;
+  text-transform:uppercase;letter-spacing:.06em;font-weight:600}
+.doc-cta{margin-top:var(--s-9)}
+
+/* ── 5. testimonials ────────────────────────────────────────── */
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s-5);margin-top:var(--s-10)}
+.quote{background:#fff;border:1px solid var(--line);border-radius:20px;padding:var(--s-7);
+  display:flex;flex-direction:column}
+.stars{display:flex;gap:3px;color:var(--teal)}
+.stars svg{width:16px;height:16px}
+.quote p{margin-top:var(--s-5);font-size:14px;color:var(--ink);line-height:1.78;font-style:italic;flex:1}
+.quote footer{margin-top:var(--s-7);padding-top:var(--s-5);border-top:1px solid var(--line)}
+.quote footer b{display:block;font-family:var(--font-d);font-size:14px;font-weight:600;letter-spacing:-0.01em}
+.quote footer span{font-size:11.5px;color:var(--muted)}
+.testi-nav{display:flex;justify-content:center;gap:10px;margin-top:var(--s-9)}
+
+/* ── 6. google rating band ──────────────────────────────────── */
+.rating-band{margin-top:var(--s-section);background:var(--sky);border-radius:var(--r-xl);
+  padding:var(--s-11) var(--s-8);text-align:center;position:relative;overflow:hidden}
+.rating-band svg.tooth-bg{position:absolute;opacity:.24;color:#fff;pointer-events:none}
+.rating-band svg.tooth-bg.l{left:-46px;top:8px;width:320px;height:320px}
+.rating-band svg.tooth-bg.r{right:-56px;bottom:-26px;width:340px;height:340px}
+.rating-band>*{position:relative;z-index:2}
+.big-stars{display:flex;justify-content:center;gap:7px;color:#FFD16A}
+.big-stars svg{width:30px;height:30px}
+.rating-band .h2{color:#fff;margin-top:var(--s-6)}
+.rating-band .lead{margin:var(--s-5) auto 0;max-width:62ch;font-size:15px;line-height:1.75;
+  color:rgba(255,255,255,.9)}
+.rating-band .btn{margin-top:var(--s-7)}
+
+/* ── 7. insurance ───────────────────────────────────────────── */
+.insurance{padding-top:var(--s-section);text-align:center}
+.insurance .p{margin:var(--s-5) auto 0;max-width:62ch}
+.ins-pills{display:flex;flex-wrap:wrap;gap:var(--s-3);justify-content:center;margin-top:var(--s-7)}
+.ins-pills span{display:inline-flex;align-items:center;gap:9px;border:1px solid var(--line);
+  border-radius:var(--r-pill);padding:13px 24px;font-size:13.5px;font-weight:500;color:var(--ink)}
+.ins-pills svg{width:17px;height:17px;color:var(--teal)}
+
+/* ── 8. blog ────────────────────────────────────────────────── */
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s-5);margin-top:var(--s-10)}
+.post{background:#fff;border:1px solid var(--line);border-radius:20px;padding:16px;
+  transition:all .35s cubic-bezier(.16,1,.3,1)}
+.post:hover{box-shadow:0 14px 40px rgba(26,29,33,.07);transform:translateY(-3px);border-color:var(--sky-3)}
+.post-media{border-radius:15px;overflow:hidden;aspect-ratio:16/9.6}
+.post-media img{width:100%;height:100%;object-fit:cover}
+.post-meta{display:flex;align-items:center;gap:10px;margin-top:var(--s-5);padding:0 6px}
+.post-meta i{font-style:normal;background:var(--sky-3);border-radius:var(--r-pill);padding:6px 13px;
+  font-size:11px;font-weight:600;color:var(--teal)}
+.post-meta time{font-size:11.5px;color:var(--muted)}
+.post h3{font-family:var(--font-d);font-size:16.5px;font-weight:600;letter-spacing:-0.02em;line-height:1.35;
+  margin-top:12px;padding:0 6px 8px}
+
+/* ── 9. location & contact ──────────────────────────────────── */
+.loc{margin-top:var(--s-section);display:grid;grid-template-columns:1fr 1fr;gap:0;
+  border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;background:#fff}
+.loc-body{padding:var(--s-10)}
+.loc-body .p{margin-top:var(--s-5);max-width:46ch}
+.loc-list{margin-top:var(--s-8);display:flex;flex-direction:column;gap:var(--s-6)}
+.loc-row{display:flex;gap:var(--s-4)}
+.loc-row .ic{width:44px;height:44px;border-radius:var(--r-pill);background:var(--sky-2);display:grid;
+  place-items:center;flex:none;color:var(--teal)}
+.loc-row .ic svg{width:18px;height:18px}
+.loc-row h4{font-family:var(--font-d);font-size:14.5px;font-weight:600;letter-spacing:-0.01em}
+.loc-row p,.loc-row li{font-size:13.5px;color:var(--muted);line-height:1.7}
+.loc-row ul{list-style:none;margin-top:2px}
+.loc-row li b{color:var(--ink);font-weight:600}
+.loc-row a.link{font-size:12.5px;font-weight:600;color:var(--teal)}
+.loc-row a.link:hover{text-decoration:underline}
+.loc-body .btn{margin-top:var(--s-8)}
+.loc-map{min-height:520px;background:var(--gray)}
+.loc-map iframe{width:100%;height:100%;border:0;display:block}
+
+/* ── footer (mirrors components/layout/Footer.tsx) ──────────── */
+.footer{margin-top:var(--s-11);background:var(--teal);border-radius:28px 28px 0 0;color:#fff;
+  padding:var(--s-11) 0 var(--s-6);overflow:hidden}
+.footer-grid{display:grid;grid-template-columns:1.35fr .8fr .8fr 1fr;gap:var(--s-8)}
+.footer h3{font-family:var(--font-d);font-size:18px;font-weight:600;color:#fff;letter-spacing:-0.02em;
+  margin-bottom:var(--s-5);max-width:16ch}
+.footer h4{font-family:var(--font-d);font-size:14px;font-weight:600;color:#fff;margin-bottom:var(--s-5)}
+.frow{display:flex;gap:12px;font-size:13px;color:rgba(255,255,255,.8);line-height:1.65;margin-bottom:var(--s-4)}
+.frow svg{width:17px;height:17px;flex:none;margin-top:2px;color:rgba(255,255,255,.65)}
+.frow a:hover{color:#fff}
+.flink{display:block;font-size:12px;font-weight:600;color:#fff;opacity:.75;margin-top:3px}
+.flink:hover{opacity:1;text-decoration:underline}
+.femerg{display:block;font-size:12px;font-weight:600;color:#FFC9B4;margin-top:5px;text-decoration:underline}
+.fhours{list-style:none}
+.fhours li{display:flex;justify-content:space-between;gap:14px;font-size:13px;color:rgba(255,255,255,.8);
+  padding:9px 0;border-bottom:1px solid rgba(255,255,255,.12)}
+.fhours li:last-of-type{border-bottom:none}
+.fhours li.closed b{color:#FFC9B4}
+.fhours li b{font-weight:600;color:#fff}
+.fnote{font-size:11.5px;color:rgba(255,255,255,.5);margin-top:12px}
+.fcol a.q{display:block;font-size:13px;color:rgba(255,255,255,.72);margin-bottom:11px;transition:color .2s}
+.fcol a.q:hover{color:#fff}
+.socials{display:flex;gap:10px;margin-bottom:var(--s-6)}
+.socials a{width:38px;height:38px;border-radius:var(--r-pill);background:rgba(255,255,255,.12);
+  display:grid;place-items:center;color:#fff;transition:all .3s cubic-bezier(.16,1,.3,1)}
+.socials a svg{width:15px;height:15px}
+.socials a:hover{background:#fff;color:var(--teal)}
+.rating-card{display:block;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);
+  border-radius:14px;padding:16px;margin-bottom:var(--s-6);transition:background .3s}
+.rating-card:hover{background:rgba(255,255,255,.14)}
+.rating-card .stars{color:#FFD16A;margin-bottom:8px}
+.rating-card .stars svg{width:15px;height:15px}
+.rating-card span{font-size:12px;color:rgba(255,255,255,.82)}
+.subscribe{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);
+  border:1px solid rgba(255,255,255,.2);border-radius:var(--r-pill);padding:6px 7px 6px 18px;margin-top:10px}
+.subscribe input{flex:1;background:none;border:none;color:#fff;font-family:var(--font-b);font-size:12.5px;
+  outline:none;min-width:0}
+.subscribe input::placeholder{color:rgba(255,255,255,.55)}
+.subscribe button{background:#fff;color:var(--teal);border-radius:var(--r-pill);padding:10px 18px;
+  font-size:12px;font-weight:600;transition:background .3s}
+.subscribe button:hover{background:var(--sky-2)}
+.footer-bottom{display:flex;align-items:flex-end;justify-content:space-between;gap:var(--s-6);
+  margin-top:var(--s-10);flex-wrap:wrap}
+.wordmark{font-family:var(--font-d);font-size:clamp(3rem,8.4vw,6.8rem);font-weight:600;line-height:.85;
+  color:rgba(255,255,255,.10);letter-spacing:-0.04em;white-space:nowrap}
+.legal{display:flex;gap:var(--s-6);font-size:12px;color:rgba(255,255,255,.62);padding-bottom:8px}
+.legal a:hover{color:#fff}
+
+/* ── motion ─────────────────────────────────────────────────── */
+@keyframes enter{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+.rise{animation:enter .8s cubic-bezier(.16,1,.3,1) both}
+.rise:nth-child(2){animation-delay:.1s}
+
+/* ── preview-only control panel (delete before dev) ─────────── */
+#pvbar{position:fixed;right:16px;bottom:16px;z-index:999;background:#fff;border:1px solid var(--line);
+  border-radius:16px;padding:14px 16px;box-shadow:0 12px 46px rgba(20,22,28,.18);font-family:system-ui;
+  font-size:11px;color:var(--muted);width:262px}
+#pvbar h6{font-family:system-ui;font-size:9.5px;font-weight:700;color:var(--ink);letter-spacing:.1em;
+  text-transform:uppercase;margin-bottom:9px}
+#pvbar .grp+.grp{margin-top:16px;padding-top:14px;border-top:1px solid var(--line)}
+#pvbar .row{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+#pvbar .sw{width:30px;height:30px;border-radius:9px;border:2px solid transparent;
+  box-shadow:0 0 0 1px rgba(20,22,28,.14) inset;cursor:pointer;transition:transform .2s}
+#pvbar .sw:hover{transform:scale(1.08)}
+#pvbar .sw[aria-pressed="true"]{border-color:var(--ink)}
+#pvbar .pick{display:flex;align-items:center;gap:8px;margin-top:10px}
+#pvbar input[type="color"]{width:34px;height:30px;border:1px solid var(--line);border-radius:8px;
+  background:#fff;padding:2px;cursor:pointer}
+#pvbar .hex{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;color:var(--ink);
+  border:1px solid var(--line);border-radius:8px;padding:7px 9px;width:88px;text-transform:uppercase}
+#pvbar .fbtn{border:1px solid var(--line);border-radius:999px;padding:5px 11px;font-size:11px;
+  color:var(--ink);background:#fff;transition:all .2s}
+#pvbar .fbtn:hover{border-color:var(--ink)}
+#pvbar .fbtn[aria-pressed="true"]{background:var(--teal);color:#fff;border-color:var(--teal)}
+#pvbar em{display:block;margin-top:12px;font-style:normal;font-size:10px;line-height:1.5;opacity:.7}
+#pvtoggle{position:fixed;right:16px;bottom:16px;z-index:1000;width:44px;height:44px;border-radius:999px;
+  background:var(--ink);color:#fff;display:none;place-items:center;box-shadow:0 8px 26px rgba(20,22,28,.3)}
+#pvtoggle svg{width:18px;height:18px}
+
+/* ── responsive ─────────────────────────────────────────────── */
+/* -- light brand colours: flip panel type to ink ------------- */
+html[data-brand="light"] .hero-left .h1,
+html[data-brand="light"] .rating-band .h2{color:var(--ink-2)}
+html[data-brand="light"] .hero-left .h1 em{color:var(--ink)}
+html[data-brand="light"] .hero-left .lead,
+html[data-brand="light"] .rating-band .lead{color:var(--ink-2)}
+html[data-brand="light"] .spec-list li{color:var(--ink)}
+html[data-brand="light"] .spec-list li::before{background:var(--teal)}
+html[data-brand="light"] .hero-badge{background:rgba(255,255,255,.66);border-color:rgba(20,22,28,.12);
+  color:var(--ink)}
+html[data-brand="light"] .btn-outline-light{color:var(--ink);border-color:rgba(20,22,28,.28)}
+html[data-brand="light"] .btn-outline-light:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+html[data-brand="light"] .rating-band svg.tooth-bg{opacity:.4}
+
+/* -- primary button inverts on brand-coloured panels -------- */
+.hero-left .btn-primary,.rating-band .btn-primary{background:#fff;color:var(--teal)}
+.hero-left .btn-primary:hover,.rating-band .btn-primary:hover{background:var(--sky-2);color:var(--teal)}
+
+@media (max-width:1080px){
+  :root{--s-section:80px}
+  .hero,.loc{grid-template-columns:1fr}
+  .svc-grid,.testi-grid,.blog-grid{grid-template-columns:1fr}
+  .doc-grid{grid-template-columns:1fr 1fr}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .nav-links{display:none}
+  .burger{display:grid}
+  .hero-left,.loc-body{padding:var(--s-7)}
+  .hero-right{min-height:400px}
+  .loc-map{min-height:340px}
+}
+@media (max-width:600px){
+  .stats,.spec-list,.footer-grid{grid-template-columns:1fr}
+  .stats{position:static;margin-top:12px}
+  .hero-right{min-height:300px}
+  .doc-grid{grid-template-columns:1fr}
+  .nav-right .icon-circle,.nav-right .lang{display:none}
+  #pvbar,#pvtoggle{display:none}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<!-- ══════════ HEADER — components/layout/Header.tsx ══════════ -->
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="logo" href="#">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5.5c-1.6-1.4-4-2-5.6-1C4.5 5.7 4 8 4.6 10.6c.5 2.2.7 3.4.9 5 .2 1.5.6 2.9 1.6 2.9 1.2 0 1.4-1.7 1.7-3.3.3-1.5.7-2.6 2.2-2.6h.1c1.5 0 1.9 1.1 2.2 2.6.3 1.6.5 3.3 1.7 3.3 1 0 1.4-1.4 1.6-2.9.2-1.6.4-2.8.9-5C20.1 8 19.6 5.7 17.7 4.5c-1.7-1-4.1-.4-5.7 1Z"/></svg>
+      Your Smile
+    </a>
+    <nav class="nav-links">
+      <a class="active" href="#">Home</a>
+      <a class="has-menu" href="#services">Services
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></a>
+      <a href="#">About Us</a>
+      <a href="#doctors">Our Doctors</a>
+      <a href="#">FAQ</a>
+      <a href="#blog">Blog / News</a>
+      <a href="#contact">Contact Us</a>
+    </nav>
+    <div class="nav-right">
+      <span class="icon-circle" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2"/></svg>
+      </span>
+      <span class="lang">EN
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+      </span>
+      <a class="btn btn-ghost btn-sm" href="tel:+971588282432">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h3l2 5-2.5 1.5a12 12 0 0 0 6 6L16 13l5 2v3a2 2 0 0 1-2.2 2A17 17 0 0 1 4 5.2 2 2 0 0 1 6 3Z"/></svg>
+        Call</a>
+      <a class="btn btn-primary btn-sm" href="https://wa.me/971585828257">Book Now</a>
+      <button class="burger" aria-label="Menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- ══════════ 1. HERO ══════════ -->
+<section class="wrap hero">
+  <div class="hero-left rise">
+    <span class="hero-badge">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 5 3.4 8.4 8 9 4.6-.6 8-4 8-9V6l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg>
+      Specialists in complex cases · Jumeirah Lake Towers, Dubai
+    </span>
+    <h1 class="h1">We solve the cases <em>other clinics can't</em></h1>
+    <p class="lead">Emergency dentistry, Hollywood smiles and complete smile transformations with implants, veneers, crowns and bridges — planned digitally, delivered by an international team.</p>
+    <ul class="spec-list">
+      <li>Emergency dental care</li>
+      <li>Hollywood smile</li>
+      <li>Complete smile transformations</li>
+      <li>Smile transformation with implants</li>
+      <li>Smile transformation with veneers</li>
+      <li>Smile transformation with crowns &amp; bridges</li>
+    </ul>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="https://wa.me/971585828257">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4L3 21l1.1-3.4A8.4 8.4 0 1 1 21 11.5Z"/></svg>
+        Book Your Appointment
+      </a>
+      <a class="btn btn-outline-light" href="#">Dental emergency? Start here</a>
+    </div>
+  </div>
+
+  <div class="hero-right rise">
+    <img src="client/public/images/hero/hero-clinic-smile-1280.webp" alt="Dentist treating a patient at Your Smile Advanced Dental Center in Dubai JLT">
+    <div class="stats">
+      <div class="stat"><b>7</b><span>Specialist Doctors</span></div>
+      <div class="stat"><b>107</b><span>Google Reviews</span></div>
+      <div class="stat"><b>5.0</b><span>Average Rating</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 2. SMILE TRANSFORMATIONS ══════════ -->
+<section class="wrap sec sec-center" id="transformations">
+  <h2 class="h2">Smile Transformations</h2>
+  <p class="p">Real results from real patients treated at our JLT clinic. Individual results vary.</p>
+  <div class="soon">
+    <p>We are preparing our before &amp; after gallery with patients who have kindly agreed to share their results.</p>
+    <p>In the meantime, follow us on Instagram for the latest veneers, implants, orthodontics and smile makeover cases from the clinic.</p>
+    <a class="btn btn-ghost" href="https://www.instagram.com/yoursmile.adc.dubai/">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg>
+      See our latest cases on Instagram
+    </a>
+  </div>
+</section>
+
+<!-- ══════════ 3. SERVICES ══════════ -->
+<section class="wrap sec" id="services">
+  <div class="sec-split">
+    <div>
+      <h2 class="h2">What We Do Best</h2>
+      <p class="p">Complex cases first. Everything else, under the same roof in JLT.</p>
+    </div>
+    <a class="btn btn-ghost" href="#">Explore All Services</a>
+  </div>
+
+  <div class="svc-grid">
+    <a class="svc" href="#">
+      <div class="svc-top">
+        <span class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 1.9 4.6L18.5 9.5l-4.6 1.9L12 16l-1.9-4.6L5.5 9.5l4.6-1.9L12 3Z"/><path d="M18 16.5 19 19l2.5 1L19 21l-1 2.5L17 21l-2.5-1 2.5-1 1-2.5Z"/></svg></span>
+        <span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </div>
+      <h3>Veneers in Dubai</h3>
+      <p>No-prep ceramic veneers: a natural, flawless smile without shaving your teeth.</p>
+    </a>
+
+    <a class="svc" href="#">
+      <div class="svc-top">
+        <span class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4.8 2.3 9 4.2M6 6.5 9.5 8"/><path d="M9 12a5 5 0 0 0 10 0V6.5A4.5 4.5 0 0 0 14.5 2 5.5 5.5 0 0 0 9 7.5Z"/><path d="M14 17v5"/></svg></span>
+        <span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </div>
+      <h3>Dental Implants in Dubai</h3>
+      <p>Single implants to full-arch All-on-4 / All-on-6 rehabilitation with lifetime implant warranty.</p>
+    </a>
+
+    <a class="svc" href="#">
+      <div class="svc-top">
+        <span class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 5 3.4 8.4 8 9 4.6-.6 8-4 8-9V6l-8-3Z"/><path d="M12 8v5M12 16h.01"/></svg></span>
+        <span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </div>
+      <h3>Emergency Dentist</h3>
+      <p>Same-day relief for toothache, broken teeth, swelling and dental trauma.</p>
+    </a>
+
+    <a class="svc" href="#">
+      <div class="svc-top">
+        <span class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 1.9 4.6L18.5 9.5l-4.6 1.9L12 16l-1.9-4.6L5.5 9.5l4.6-1.9L12 3Z"/><path d="M18 16.5 19 19l2.5 1L19 21l-1 2.5L17 21l-2.5-1 2.5-1 1-2.5Z"/></svg></span>
+        <span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </div>
+      <h3>Crowns &amp; Bridges</h3>
+      <p>Zirconia and porcelain crowns, same-day CAD/CAM crowns and implant-supported bridges.</p>
+    </a>
+
+    <a class="svc" href="#">
+      <div class="svc-top">
+        <span class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 1.9 4.6L18.5 9.5l-4.6 1.9L12 16l-1.9-4.6L5.5 9.5l4.6-1.9L12 3Z"/><path d="M18 16.5 19 19l2.5 1L19 21l-1 2.5L17 21l-2.5-1 2.5-1 1-2.5Z"/></svg></span>
+        <span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </div>
+      <h3>Orthodontics &amp; Invisalign</h3>
+      <p>Clear aligners, ceramic and metal braces for teens and adults.</p>
+    </a>
+
+    <a class="svc" href="#">
+      <div class="svc-top">
+        <span class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m3 10 9-7 9 7v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/><path d="M9 21v-7h6v7"/></svg></span>
+        <span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </div>
+      <h3>Private At-Home Dental Visit</h3>
+      <p>Check-ups, cleanings, fillings and urgent care at your home or office in Dubai.</p>
+    </a>
+  </div>
+</section>
+
+<!-- ══════════ 4. DOCTORS ══════════ -->
+<section class="doctors" id="doctors">
+  <div class="wrap">
+    <h2 class="h2">Meet Our Dentists in Dubai</h2>
+    <p class="p">An international team with extensive experience in implantology, oral surgery, orthodontics, cosmetic and restorative dentistry.</p>
+    <div class="doc-grid">
+
+      <article class="doc">
+        <img src="client/public/images/doctors/nemanja-kukoljac-800.webp" alt="Dr. Nemanja Kukoljac">
+        <div class="doc-bio"><b>Specialist Dentist | Implantologist | Oral Surgery &amp; Cosmetic Dentistry</b>
+          Founder of Your Smile Advanced Dental Center. Dr. Kukoljac specializes in implantology, oral surgery and cosmetic dentistry, with a particular focus on complex full-mouth rehabilitation, Hollywood smile design and no-prep ceramic veneers.</div>
+        <div class="doc-chip"><b>Dr. Nemanja Kukoljac</b><span>Founder · Implantologist &amp; Oral Surgeon</span></div>
+      </article>
+
+      <article class="doc">
+        <img src="client/public/images/doctors/upasana-khemka-800.webp" alt="Dr. Upasana Khemka">
+        <div class="doc-bio"><b>Specialist Dentist | Oral &amp; Maxillofacial Surgeon | Cosmetic &amp; Restorative Dentistry</b>
+          Dr. Khemka excels in complex oral surgical procedures, full-mouth rehabilitations and smile makeovers, delivering both function and beauty with precision and care.</div>
+        <div class="doc-chip"><b>Dr. Upasana Khemka</b><span>Oral &amp; Maxillofacial Surgeon</span></div>
+      </article>
+
+      <article class="doc">
+        <img src="client/public/images/doctors/amelio-tommaso-800.webp" alt="Dr. Amelio Tommaso">
+        <div class="doc-bio"><b>General Dentist | Oral Implantologist | Dental Prosthetics &amp; Aesthetic Dentistry</b>
+          A dentist with a technical background, Dr. Tommaso specializes in aesthetic restorations, implantology and prosthetics. His dual skill set ensures that each treatment is both functional and beautifully designed.</div>
+        <div class="doc-chip"><b>Dr. Amelio Tommaso</b><span>Implantologist &amp; Prosthodontics</span></div>
+      </article>
+
+      <article class="doc">
+        <img src="client/public/images/doctors/mileva-karabasil-jovanovic-800.webp" alt="Dr. Mileva Karabasil Jovanovic">
+        <div class="doc-bio"><b>General Dentist | BDS, MDS (Orthodontics), PhD</b>
+          With international experience across Serbia, Japan and the UAE, Dr. Mileva combines orthodontic expertise with scientific rigor. She provides compassionate, personalized care and excels in restorative and cosmetic dentistry.</div>
+        <div class="doc-chip"><b>Dr. Mileva Karabasil Jovanovic</b><span>Orthodontics</span></div>
+      </article>
+
+    </div>
+    <div class="doc-cta"><a class="btn btn-ghost" href="#">Meet the whole team (7 dentists)</a></div>
+  </div>
+</section>
+
+<!-- ══════════ 5. TESTIMONIALS ══════════ -->
+<section class="wrap sec sec-center" id="testimonials">
+  <h2 class="h2">What Our Patients Say</h2>
+  <p class="p">Real words from patients treated at our JLT clinic</p>
+  <div class="testi-grid">
+    <blockquote class="quote">
+      <span class="stars">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2Z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2Z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2Z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2Z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2Z"/></svg>
+      </span>
+      <p>"I recently visited Your Smile ADC and was highly impressed by the exceptional care and service. The warm and friendly staff, along with Dr. Nemanja's professionalism, made my visit outstanding. The state-of-the-art facilities, meticulous hygiene, and personalized care put me at ease."</p>
+      <footer><b>Julie R.</b><span>Google review</span></footer>
+    </blockquote>
+
+    <blockquote class="quote">
+      <span class="stars">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2Z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2Z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2Z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2Z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2Z"/></svg>
+      </span>
+      <p>"The professionalism and friendliness of the entire staff made my dental experience stress-free. The results are amazing, and I appreciate the high standard of care they provide. I will definitely return for future treatments."</p>
+      <footer><b>Miloš</b><span>Patient from Serbia</span></footer>
+    </blockquote>
+
+    <blockquote class="quote">
+      <span class="stars">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2Z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2Z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2Z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2Z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2Z"/></svg>
+      </span>
+      <p>"I was impressed by the level of expertise and attention to detail at this clinic. The team took the time to explain everything, and the treatment was painless and precise. My smile has never looked better!"</p>
+      <footer><b>Marco</b><span>Patient from Italy</span></footer>
+    </blockquote>
+  </div>
+  <div class="testi-nav">
+    <button class="arrow-btn" aria-label="Previous testimonials"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 6-6 6 6 6"/></svg></button>
+    <button class="arrow-btn solid" aria-label="Next testimonials"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg></button>
+  </div>
+</section>
+
+<!-- ══════════ 6. GOOGLE RATING ══════════ -->
+<section class="wrap">
+  <div class="rating-band">
+    <svg class="tooth-bg l" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width=".35" stroke-linecap="round"><path d="M12 5.5c-1.6-1.4-4-2-5.6-1C4.5 5.7 4 8 4.6 10.6c.5 2.2.7 3.4.9 5 .2 1.5.6 2.9 1.6 2.9 1.2 0 1.4-1.7 1.7-3.3.3-1.5.7-2.6 2.2-2.6h.1c1.5 0 1.9 1.1 2.2 2.6.3 1.6.5 3.3 1.7 3.3 1 0 1.4-1.4 1.6-2.9.2-1.6.4-2.8.9-5C20.1 8 19.6 5.7 17.7 4.5c-1.7-1-4.1-.4-5.7 1Z"/></svg>
+    <svg class="tooth-bg r" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width=".35" stroke-linecap="round"><path d="M12 5.5c-1.6-1.4-4-2-5.6-1C4.5 5.7 4 8 4.6 10.6c.5 2.2.7 3.4.9 5 .2 1.5.6 2.9 1.6 2.9 1.2 0 1.4-1.7 1.7-3.3.3-1.5.7-2.6 2.2-2.6h.1c1.5 0 1.9 1.1 2.2 2.6.3 1.6.5 3.3 1.7 3.3 1 0 1.4-1.4 1.6-2.9.2-1.6.4-2.8.9-5C20.1 8 19.6 5.7 17.7 4.5c-1.7-1-4.1-.4-5.7 1Z"/></svg>
+    <span class="big-stars">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2Z"/></svg>
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2Z"/></svg>
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2Z"/></svg>
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2Z"/></svg>
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2Z"/></svg>
+    </span>
+    <h2 class="h2">Rated 5.0 on Google</h2>
+    <p class="lead">107 verified patient reviews, every one of them real. Read what our patients in Dubai say about their implants, veneers, emergency visits and family care.</p>
+    <a class="btn btn-outline-light" href="https://maps.app.goo.gl/KrBurSoUigfgZ1df7">
+      Read all 107 reviews on Google
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M21 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- ══════════ 7. INSURANCE & PAYMENT ══════════ -->
+<section class="wrap insurance">
+  <h2 class="h2">Insurance &amp; Flexible Payment</h2>
+  <p class="p">We work with major UAE dental insurance providers and offer flexible payment plans for larger treatments. Tell us your insurer when you book and we will confirm your coverage before your visit.</p>
+  <div class="ins-pills">
+    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 5 3.4 8.4 8 9 4.6-.6 8-4 8-9V6l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg> Insurance accepted</span>
+    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg> Instalment plans</span>
+  </div>
+</section>
+
+<!-- ══════════ 8. BLOG ══════════ -->
+<section class="wrap sec" id="blog">
+  <div class="sec-split">
+    <div>
+      <h2 class="h2">Dental Health Insights &amp; Tips</h2>
+      <p class="p">Read our latest articles about dental care, smile transformations, and oral health.</p>
+    </div>
+    <a class="btn btn-primary" href="#">View All Articles</a>
+  </div>
+  <div class="blog-grid">
+    <a class="post" href="#">
+      <div class="post-media"><img src="client/public/images/hero/hero-crowns-1280.webp" alt=""></div>
+      <div class="post-meta"><i>Cosmetic Care</i><time datetime="2024-11-28">Nov 28, 2024</time></div>
+      <h3>5 Tips for Maintaining Your Veneers</h3>
+    </a>
+    <a class="post" href="#">
+      <div class="post-media"><img src="client/public/images/hero/hero-implants-1280.webp" alt=""></div>
+      <div class="post-meta"><i>Implants</i><time datetime="2024-11-25">Nov 25, 2024</time></div>
+      <h3>Dental Implants: A Lifetime Investment</h3>
+    </a>
+    <a class="post" href="#">
+      <div class="post-media"><img src="client/public/images/hero/hero-team-1280.webp" alt=""></div>
+      <div class="post-meta"><i>Orthodontics</i><time datetime="2024-11-22">Nov 22, 2024</time></div>
+      <h3>Invisalign vs Traditional Braces</h3>
+    </a>
+  </div>
+</section>
+
+<!-- ══════════ 9. LOCATION & CONTACT ══════════ -->
+<section class="wrap" id="contact">
+  <div class="loc">
+    <div class="loc-body">
+      <h2 class="h2">Find Our Dental Clinic in JLT</h2>
+      <p class="p">HDS Business Centre, Cluster M, Jumeirah Lake Towers — a short walk from DMCC Metro Station.</p>
+      <div class="loc-list">
+        <div class="loc-row">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span>
+          <div>
+            <h4>Address</h4>
+            <p>HDS Business Centre, Office 1604, Cluster M, Jumeirah Lake Towers, Dubai, UAE</p>
+            <a class="link" href="https://maps.app.goo.gl/KrBurSoUigfgZ1df7">Open in Google Maps</a>
+          </div>
+        </div>
+        <div class="loc-row">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5l3 2"/></svg></span>
+          <div>
+            <h4>Working Hours</h4>
+            <ul>
+              <li><b>Mon, Wed, Sat:</b> 12 PM – 9 PM</li>
+              <li><b>Tue, Thu, Sun:</b> 9 AM – 6 PM</li>
+              <li><b>Friday:</b> Closed</li>
+            </ul>
+          </div>
+        </div>
+        <div class="loc-row">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h3l2 5-2.5 1.5a12 12 0 0 0 6 6L16 13l5 2v3a2 2 0 0 1-2.2 2A17 17 0 0 1 4 5.2 2 2 0 0 1 6 3Z"/></svg></span>
+          <div>
+            <h4>Contact</h4>
+            <p><a href="tel:+971588282432">+971 58 828 2432</a></p>
+            <p><a href="mailto:info@yoursmileadcdubai.com">info@yoursmileadcdubai.com</a></p>
+          </div>
+        </div>
+      </div>
+      <a class="btn btn-primary" href="#">Send us a Message</a>
+    </div>
+    <div class="loc-map">
+      <iframe
+        src="https://www.google.com/maps?q=HDS+Business+Centre,+Cluster+M,+Jumeirah+Lake+Towers,+Dubai&output=embed"
+        loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen
+        title="Your Smile Advanced Dental Center location - HDS Business Centre, Cluster M, Jumeirah Lake Towers, Dubai"></iframe>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ══════════ FOOTER — components/layout/Footer.tsx ══════════ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+
+      <div>
+        <h3>Your Smile Advanced Dental Center</h3>
+        <div class="frow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          <div>HDS Business Centre, Office 1604, Cluster M, Jumeirah Lake Towers, Dubai, UAE
+            <a class="flink" href="https://maps.app.goo.gl/KrBurSoUigfgZ1df7">Google Maps</a></div>
+        </div>
+        <div class="frow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h3l2 5-2.5 1.5a12 12 0 0 0 6 6L16 13l5 2v3a2 2 0 0 1-2.2 2A17 17 0 0 1 4 5.2 2 2 0 0 1 6 3Z"/></svg>
+          <div><a href="tel:+971588282432">+971 58 828 2432</a>
+            <a class="femerg" href="tel:+971523301356">Emergency: +971 52 330 1356</a></div>
+        </div>
+        <div class="frow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+          <div><a href="mailto:info@yoursmileadcdubai.com">info@yoursmileadcdubai.com</a></div>
+        </div>
+      </div>
+
+      <div>
+        <h4>Opening Hours</h4>
+        <ul class="fhours">
+          <li><span>Mon, Wed, Sat</span><b>12 PM – 9 PM</b></li>
+          <li><span>Tue, Thu, Sun</span><b>9 AM – 6 PM</b></li>
+          <li class="closed"><span>Friday</span><b>Closed</b></li>
+        </ul>
+        <p class="fnote">Emergency line available outside these hours.</p>
+      </div>
+
+      <div class="fcol">
+        <h4>Quick Links</h4>
+        <a class="q" href="#">About Us</a>
+        <a class="q" href="#services">All Services</a>
+        <a class="q" href="#doctors">Our Doctors</a>
+        <a class="q" href="#">Emergency Dentist</a>
+        <a class="q" href="#">At-Home Visits</a>
+        <a class="q" href="#">Dental Tourism</a>
+        <a class="q" href="#blog">Blog</a>
+        <a class="q" href="#">FAQ</a>
+        <a class="q" href="#contact">Contact Us</a>
+      </div>
+
+      <div>
+        <h4>Stay Connected</h4>
+        <div class="socials">
+          <a href="https://www.instagram.com/yoursmile.adc.dubai/" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="https://www.facebook.com/people/Your-Smile-Advanced-Dental-Center-Dubai/61570641483846/" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H8v3h2v7h3v-7h3l1-3h-4v-2c0-.6.4-1 1-1Z"/></svg></a>
+        </div>
+        <a class="rating-card" href="https://maps.app.goo.gl/KrBurSoUigfgZ1df7">
+          <span class="stars">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2Z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2Z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2Z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2Z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2Z"/></svg>
+          </span>
+          <span>5.0 rating · 107 Google reviews ↗</span>
+        </a>
+        <h4 style="margin-bottom:0">Dental tips &amp; clinic news</h4>
+        <form class="subscribe" onsubmit="return false">
+          <input type="email" placeholder="Email address" aria-label="Email address">
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+
+    </div>
+    <div class="footer-bottom">
+      <div class="wordmark">Your Smile</div>
+      <div class="legal">
+        <a href="#">Privacy Policy</a><a href="#">Terms &amp; Conditions</a><a href="#">Sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ══════════ PREVIEW-ONLY CONTROLS — delete before dev ══════════ -->
+<aside id="pvbar">
+  <div class="grp">
+    <h6>Brand colour</h6>
+    <div class="row" id="swrow"></div>
+    <div class="pick">
+      <input type="color" id="pvcolor" value="#1F22B0" aria-label="Pick any brand colour">
+      <input type="text" class="hex" id="pvhex" value="#1F22B0" aria-label="Hex value" spellcheck="false">
+    </div>
+  </div>
+  <div class="grp">
+    <h6>Font</h6>
+    <div class="row" id="fontrow"></div>
+  </div>
+  <em>Cela paleta se izvodi iz jedne boje. Panel se briše pre implementacije.</em>
+</aside>
+<button id="pvtoggle" aria-label="Preview controls">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 0 0 18 4.5 4.5 0 0 0 0-9 4.5 4.5 0 0 1 0-9Z"/></svg>
+</button>
+
+<script>
+(function () {
+  /* ---------- brand colour: every token derived from one hex ---------- */
+  var PRESETS = [
+    { name: "Royal Blue",     hex: "#1F22B0" },
+    { name: "Your Smile RS",  hex: "#37A8E3" },
+    { name: "Dusty Blue",     hex: "#6C8CB5" },
+    { name: "RS Navy accent", hex: "#394C6F" },
+    { name: "Ocean Teal",     hex: "#0E4B55" },
+    { name: "Graphite",       hex: "#272C36" },
+    { name: "Deep Green",     hex: "#175C46" },
+    { name: "Burgundy",       hex: "#7A2739" }
+  ];
+
+  var root = document.documentElement;
+  var swrow = document.getElementById("swrow");
+  var picker = document.getElementById("pvcolor");
+  var hexbox = document.getElementById("pvhex");
+
+  function toRgb(hex) {
+    var h = hex.replace("#", "");
+    if (h.length === 3) h = h[0] + h[0] + h[1] + h[1] + h[2] + h[2];
+    return [parseInt(h.slice(0, 2), 16), parseInt(h.slice(2, 4), 16), parseInt(h.slice(4, 6), 16)];
+  }
+  function toHex(rgb) {
+    return "#" + rgb.map(function (c) {
+      return Math.max(0, Math.min(255, Math.round(c))).toString(16).padStart(2, "0");
+    }).join("").toUpperCase();
+  }
+  function mixWhite(rgb, p) { return rgb.map(function (c) { return c + (255 - c) * p; }); }
+  function darken(rgb, p)   { return rgb.map(function (c) { return c * (1 - p); }); }
+
+  /* WCAG relative luminance -> contrast of white text on this colour */
+  function lum(rgb) {
+    var a = rgb.map(function (c) {
+      c = c / 255;
+      return c <= 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);
+    });
+    return 0.2126 * a[0] + 0.7152 * a[1] + 0.0722 * a[2];
+  }
+  function whiteContrast(rgb) { return 1.05 / (lum(rgb) + 0.05); }
+
+  /* darken until white text on it clears WCAG AA (4.5:1) */
+  function deepen(rgb) {
+    var c = rgb.slice(), guard = 0;
+    while (whiteContrast(c) < 4.5 && guard++ < 40) c = darken(c, 0.06);
+    return c;
+  }
+
+  function applyColour(hex, quiet) {
+    if (!/^#[0-9a-fA-F]{6}$/.test(hex)) return;
+    var rgb = toRgb(hex);
+    var deep = deepen(rgb);
+
+    /* panels keep the true brand colour; buttons + footer use a shade
+       dark enough for white text, whatever the boss picks */
+    root.style.setProperty("--sky", hex);
+    root.style.setProperty("--sky-2", toHex(mixWhite(rgb, 0.92)));
+    root.style.setProperty("--sky-3", toHex(mixWhite(rgb, 0.78)));
+    root.style.setProperty("--teal", toHex(deep));
+    root.style.setProperty("--teal-hover", toHex(darken(deep, 0.16)));
+
+    /* if white type would be unreadable on the panels, flip them to ink */
+    root.setAttribute("data-brand", whiteContrast(rgb) < 2.2 ? "light" : "dark");
+
+    if (!quiet) {
+      picker.value = hex;
+      hexbox.value = hex.toUpperCase();
+    }
+    [].forEach.call(swrow.children, function (b) {
+      b.setAttribute("aria-pressed", String(b.dataset.hex.toUpperCase() === hex.toUpperCase()));
+    });
+    try { localStorage.setItem("ysd-colour", hex); } catch (e) {}
+  }
+
+  PRESETS.forEach(function (p) {
+    var b = document.createElement("button");
+    b.type = "button";
+    b.className = "sw";
+    b.dataset.hex = p.hex;
+    b.title = p.name + " " + p.hex;
+    b.setAttribute("aria-label", p.name);
+    b.setAttribute("aria-pressed", "false");
+    b.style.background = p.hex;
+    b.addEventListener("click", function () { applyColour(p.hex); });
+    swrow.appendChild(b);
+  });
+
+  picker.addEventListener("input", function () { applyColour(picker.value); });
+  hexbox.addEventListener("change", function () {
+    var v = hexbox.value.trim();
+    if (v[0] !== "#") v = "#" + v;
+    if (/^#[0-9a-fA-F]{6}$/.test(v)) applyColour(v); else hexbox.value = picker.value.toUpperCase();
+  });
+
+  /* ---------- font ---------- */
+  var FONTS = ["Plus Jakarta Sans", "Outfit", "Figtree", "Sora", "Poppins", "Manrope", "DM Sans"];
+  var frow = document.getElementById("fontrow");
+  function applyFont(name) {
+    var stack = '"' + name + '",system-ui,sans-serif';
+    root.style.setProperty("--font-d", stack);
+    root.style.setProperty("--font-b", stack);
+    [].forEach.call(frow.children, function (x) {
+      x.setAttribute("aria-pressed", String(x.textContent === name));
+    });
+    try { localStorage.setItem("ysd-font", name); } catch (e) {}
+  }
+  FONTS.forEach(function (name) {
+    var x = document.createElement("button");
+    x.type = "button";
+    x.className = "fbtn";
+    x.textContent = name;
+    x.setAttribute("aria-pressed", "false");
+    x.addEventListener("click", function () { applyFont(name); });
+    frow.appendChild(x);
+  });
+
+  /* ---------- collapse on small screens ---------- */
+  var bar = document.getElementById("pvbar");
+  var tog = document.getElementById("pvtoggle");
+  tog.addEventListener("click", function () { bar.hidden = !bar.hidden; });
+  function fit() {
+    var small = window.innerWidth < 900;
+    tog.style.display = small ? "grid" : "none";
+    bar.hidden = small;
+  }
+  window.addEventListener("resize", fit);
+  fit();
+
+  /* ---------- restore ---------- */
+  var savedC = null, savedF = null;
+  try { savedC = localStorage.getItem("ysd-colour"); savedF = localStorage.getItem("ysd-font"); } catch (e) {}
+  applyColour(savedC && /^#[0-9a-fA-F]{6}$/.test(savedC) ? savedC : PRESETS[0].hex);
+  applyFont(FONTS.indexOf(savedF) > -1 ? savedF : FONTS[0]);
+})();
+</script>
+
+</body>
+</html>
