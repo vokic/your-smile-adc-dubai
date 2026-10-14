@@ -64,7 +64,8 @@ export function LegalDocument({ namespace, path, vars }: LegalDocumentProps) {
       <section className="py-16 md:py-24 bg-gradient-to-b from-secondary/10 to-background">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
-            <h1 className="text-4xl md:text-5xl font-serif font-bold text-secondary mb-4">
+            {/* "конфиденциальности" alone is wider than a 375px screen at text-4xl: hyphenate (lang-aware), else break. */}
+            <h1 className="text-4xl md:text-5xl font-serif font-bold text-secondary mb-4 break-words hyphens-auto">
               {t(`${namespace}.title`)}
             </h1>
             <p className="text-muted-foreground text-lg">{t(`${namespace}.subtitle`)}</p>

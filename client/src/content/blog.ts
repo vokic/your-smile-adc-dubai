@@ -4,7 +4,8 @@
 // here; ru/de override title/excerpt/category/body through the locale files
 // (`blogArticles.<slug>.*`), the same overlay pattern as content/services.
 // Facts must match the owner-confirmed copy: no prices, no invented
-// statistics, ceramic veneers only. Medical review by the owner is pending.
+// statistics, ceramic veneers only. Approved by the owner (Oct 2026); do not
+// add a "medically reviewed by" line or reviewedBy schema (owner's decision).
 
 import type { Overlay } from "./services/localize";
 

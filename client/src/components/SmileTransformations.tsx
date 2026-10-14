@@ -110,7 +110,8 @@ function ComingSoon() {
       <p className="text-muted-foreground">
         {t("transformations.comingSoonBody", { categories })}
       </p>
-      <Button asChild variant="outline" className="rounded-full gap-2">
+      {/* h-auto + whitespace-normal: the DE label is wider than the card on a 375px screen. */}
+      <Button asChild variant="outline" className="h-auto min-h-10 whitespace-normal rounded-full gap-2">
         <a href={SOCIAL_LINKS.instagram} target="_blank" rel="noopener noreferrer">
           <Instagram className="h-4 w-4" /> {t("transformations.instagramCta")}
         </a>

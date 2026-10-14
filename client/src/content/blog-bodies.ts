@@ -1,8 +1,8 @@
 // Article texts for /blog/<slug>, split out of blog.ts so they load only
 // with the Blog and BlogPost pages (both lazy chunks) instead of in the main
-// bundle that Home needs. DRAFT copy written by us: medical review by the
-// owner is still pending. Same rules as blog.ts: no prices, no invented
-// statistics, ceramic veneers only.
+// bundle that Home needs. Content approved by the owner (Oct 2026). Same
+// rules as blog.ts: no prices, no invented statistics, ceramic veneers only,
+// and no "medically reviewed by" line or reviewedBy schema (owner's decision).
 //
 // Blocks in order. "## Heading" → <h2>; a block whose every line starts with
 // "- " → bullet list; anything else → paragraph. Inline: **bold** and
@@ -56,7 +56,7 @@ const BLOG_BODIES: Record<string, readonly string[]> = {
   "teeth-whitening-myths": [
     "Teeth whitening is one of the simplest ways to refresh a smile, but it is surrounded by half-truths, from fears about enamel damage to promises that a kit from the shop will do the same job. Here are the myths we hear most often from patients in Dubai, and what actually happens when whitening is done professionally.",
     "## Myth: whitening damages your enamel",
-    "**Reality:** professional whitening gels work by breaking down the stain molecules inside the enamel. They do not remove or thin the enamel itself. The most common side effect is temporary sensitivity, which usually settles within a day or two. A dentist chooses the gel strength for your teeth, can apply a desensitising gel and protects your gums throughout, which is exactly what is missing when whitening is done without supervision.",
+    "**Reality:** professional whitening gels work by breaking down the stain molecules inside the enamel. They do not remove or thin the enamel itself. The most common side effect is temporary sensitivity, which usually settles within a few days. A dentist chooses the gel strength for your teeth, can apply a desensitising gel and protects your gums throughout, which is exactly what is missing when whitening is done without supervision.",
     "## Myth: shop-bought strips work just as well",
     "**Reality:** over-the-counter products use weaker gels and one-size trays or strips that do not fit every tooth, so results are often patchy and the gel can irritate the gums. More importantly, nobody checks your mouth first, and whitening over an undiagnosed cavity or inflamed gums can be painful. With professional whitening we examine your teeth, clean away surface deposits and only then start. Our [take-home whitening kits](/whitening/take-home-kits) use trays made from a digital scan of your teeth, so the gel stays on the enamel and away from the gums.",
     "## Myth: whitening works on crowns, veneers and fillings",
@@ -115,8 +115,8 @@ const BLOG_BODIES: Record<string, readonly string[]> = {
     "**Go straight to a hospital emergency department** if facial swelling is spreading towards your eye or neck, if you have difficulty swallowing or breathing, or if the dental injury is part of a wider head injury. These situations need hospital care first.",
     "## What to do if a tooth is knocked out",
     "A knocked-out adult tooth can sometimes be saved if you act quickly:",
-    "- Pick the tooth up by the crown, the white part, and never by the root.\n- If it is dirty, rinse it briefly in milk. Do not scrub it or wrap it in tissue.\n- If you can, gently push it back into the socket and bite on a clean cloth to hold it.\n- If that is not possible, keep the tooth in milk or saliva and come to a dentist immediately.",
-    "Time matters: the best chance of saving the tooth is within 30 to 60 minutes. Do not try to put a baby tooth back in, as this can damage the adult tooth developing underneath; bring your child in to be checked instead.",
+    "- Pick the tooth up by the crown, the white part, and never by the root.\n- If it is dirty, rinse it briefly, for no more than 10 seconds, in milk or under cold running water. Do not scrub it, wrap it in tissue or let it dry out.\n- If you can, gently push it back into the socket and bite on a clean cloth to hold it.\n- If that is not possible, put the tooth in a small container of milk, or of saliva spat into a cup, and come to a dentist immediately. Do not keep it in water, and never ask a child to hold the tooth in their mouth, as it could be swallowed.",
+    "Time matters: the tooth has the best chance if it is back in its socket within minutes. If that is not possible, keep it moist and get to a dentist as quickly as you can, ideally within 30 to 60 minutes. Do not try to put a baby tooth back in, as this can damage the adult tooth developing underneath; bring your child in to be checked instead.",
     "## What to do for a toothache or swelling",
     "Rinse your mouth with warm salt water and gently floss around the painful tooth in case trapped food is the cause. A standard over-the-counter painkiller, taken as directed on the pack, can help until you are seen. For swelling, hold a cold compress against the outside of your cheek. Never place aspirin directly on the gum, as it can burn the tissue, and avoid putting heat on a swollen face. Swelling with fever needs prompt attention, because infection can spread.",
     "## Broken tooth, lost crown or loose filling",

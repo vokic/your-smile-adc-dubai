@@ -110,7 +110,8 @@ export default function Cosmetic() {
             <div className="space-y-6">
               <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary">{t("cosmetic.hollywoodTitle")}</h2>
               <p className="text-muted-foreground text-lg leading-relaxed">{t("cosmetic.hollywoodBody")}</p>
-              <Button asChild className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full">
+              {/* h-auto + whitespace-normal: the RU label is wider than a 375px screen. */}
+              <Button asChild className="h-auto min-h-10 whitespace-normal text-center bg-primary text-primary-foreground hover:bg-primary/90 rounded-full">
                 <a
                   href={whatsappLink(t("cosmetic.hollywoodWhatsapp"))}
                   target="_blank"
