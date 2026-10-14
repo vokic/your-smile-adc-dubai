@@ -35,11 +35,13 @@ interface NavService {
   key: string;
   path: string;
   icon: DentalIcon;
+  /** Red icon instead of blue, so the emergency entry stands out. */
+  urgent?: boolean;
 }
 
 // Order = owner's positioning: complex cases first, then the rest.
 const SERVICES: NavService[] = [
-  { key: "emergency", path: "/emergency", icon: ToothChipped },
+  { key: "emergency", path: "/emergency", icon: ToothChipped, urgent: true },
   { key: "implants", path: "/implants", icon: ToothImplant },
   { key: "veneers", path: "/veneers", icon: ToothVeneer },
   { key: "crownsBridges", path: "/crowns-bridges", icon: ToothCrown },
@@ -114,6 +116,9 @@ export function Header() {
   // inline-flex to match the Services trigger (a button); plain inline <a>s sit on
   // the <li> text baseline and end up ~2px lower than it.
   const navLink = "inline-flex items-center whitespace-nowrap text-[13px] xl:text-sm font-medium text-foreground hover:text-primary transition-colors cursor-pointer px-1.5 xl:px-2 py-1";
+  // Services popover tiles (the 14 services and the closing "all services" tile).
+  const menuItem = "group flex h-full items-start gap-3 rounded-xl p-3 outline-none transition-colors focus-visible:ring-2 focus-visible:ring-ring";
+  const menuIcon = "flex h-10 w-10 shrink-0 items-center justify-center rounded-xl transition-colors";
 
   return (
     <header
@@ -140,7 +145,12 @@ export function Header() {
 
         {/* Desktop nav */}
         <div className="hidden lg:flex items-center justify-center shrink-0">
-          <NavigationMenu value={navValue} onValueChange={setNavValue}>
+          {/* `static` hands positioning to the sticky <header>, so the popover centres
+              on the page; centred on the nav (which sits left of centre) it ran
+              off-screen at 1024px. 3.375rem = bottom of the Services trigger in the
+              h-20 header: Radix closes 150ms after the pointer leaves the trigger, so
+              the popover must start right under it, not below the header. */}
+          <NavigationMenu value={navValue} onValueChange={setNavValue} className="static" viewportClassName="top-[3.375rem]">
             <NavigationMenuList className="space-x-0 xl:space-x-1">
               <NavigationMenuItem>
                 <Link href="/" className={navLink}>{t("nav.home")}</Link>
@@ -149,29 +159,26 @@ export function Header() {
                 <NavigationMenuTrigger className="h-auto whitespace-nowrap text-[13px] xl:text-sm font-medium text-foreground hover:text-primary data-[state=open]:text-primary !bg-transparent hover:!bg-transparent focus:!bg-transparent data-[state=open]:!bg-transparent transition-colors px-1.5 xl:px-2 py-1">
                   {t("nav.services")}
                 </NavigationMenuTrigger>
-                <NavigationMenuContent className="p-3 md:w-[min(760px,calc(100vw_-_2rem))]">
-                  <div className="mb-3 px-1 pb-3 border-b border-border flex items-center justify-between gap-4">
-                    <NavigationMenuLink asChild>
-                      <Link href="/services" className="group inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition-colors font-semibold text-sm">
-                        {t("nav.viewAllServices")}
-                        <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-                      </Link>
-                    </NavigationMenuLink>
-                    <span className="text-xs text-muted-foreground">{t("nav.complexCases")}</span>
-                  </div>
+                <NavigationMenuContent className="p-2 md:w-[min(900px,calc(100vw_-_2rem))]">
                   <ul className="grid grid-cols-3 gap-1">
-                    {SERVICES.map(({ key, path, icon: Icon }) => (
+                    {SERVICES.map(({ key, path, icon: Icon, urgent }) => (
                       <li key={path}>
                         <NavigationMenuLink asChild active={location === path}>
                           <Link
                             href={path}
-                            className="group flex items-start gap-3 rounded-xl p-2.5 outline-none transition-colors hover:bg-muted focus-visible:bg-muted focus-visible:ring-2 focus-visible:ring-ring data-[active]:bg-muted"
+                            className={`${menuItem} hover:bg-muted focus-visible:bg-muted data-[active]:bg-muted`}
                           >
-                            <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg transition-colors bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground">
-                              <Icon className="h-4 w-4" />
+                            <span
+                              className={`${menuIcon} ${
+                                urgent
+                                  ? "bg-destructive/10 text-destructive group-hover:bg-destructive group-hover:text-destructive-foreground group-data-[active]:bg-destructive group-data-[active]:text-destructive-foreground"
+                                  : "bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground group-data-[active]:bg-primary group-data-[active]:text-primary-foreground"
+                              }`}
+                            >
+                              <Icon className="h-5 w-5" />
                             </span>
                             <span className="min-w-0">
-                              <span className="block text-sm font-semibold leading-snug text-foreground group-hover:text-primary">
+                              <span className="block text-sm font-semibold leading-snug text-foreground group-hover:text-primary group-data-[active]:text-primary">
                                 {t(`navServices.${key}.name`)}
                               </span>
                               <span className="mt-0.5 block text-xs leading-snug text-muted-foreground">{t(`navServices.${key}.desc`)}</span>
@@ -180,6 +187,20 @@ export function Header() {
                         </NavigationMenuLink>
                       </li>
                     ))}
+                    {/* Closes the grid: 14 services leave the last row one tile short. */}
+                    <li>
+                      <NavigationMenuLink asChild>
+                        <Link href="/services" className={`${menuItem} bg-primary/5 hover:bg-primary/10 focus-visible:bg-primary/10`}>
+                          <span className={`${menuIcon} bg-primary text-primary-foreground`}>
+                            <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-0.5" />
+                          </span>
+                          <span className="min-w-0">
+                            <span className="block text-sm font-semibold leading-snug text-primary">{t("nav.viewAllServices")}</span>
+                            <span className="mt-0.5 block text-xs leading-snug text-muted-foreground">{t("nav.complexCases")}</span>
+                          </span>
+                        </Link>
+                      </NavigationMenuLink>
+                    </li>
                   </ul>
                 </NavigationMenuContent>
               </NavigationMenuItem>
@@ -245,7 +266,7 @@ export function Header() {
                         {t("nav.allServices")}
                         <ArrowRight className="h-4 w-4" />
                       </Link>
-                      {SERVICES.map(({ key, path, icon: Icon }) => (
+                      {SERVICES.map(({ key, path, icon: Icon, urgent }) => (
                         <Link
                           key={path}
                           href={path}
@@ -254,7 +275,7 @@ export function Header() {
                           }`}
                           onClick={() => { setIsOpen(false); setServicesOpen(false); }}
                         >
-                          <Icon className="h-4 w-4 shrink-0 text-primary" />
+                          <Icon className={`h-4 w-4 shrink-0 ${urgent ? "text-destructive" : "text-primary"}`} />
                           <span className="flex-1">{t(`navServices.${key}.name`)}</span>
                           <ChevronRight className="h-4 w-4 shrink-0 text-muted-foreground/50" />
                         </Link>
