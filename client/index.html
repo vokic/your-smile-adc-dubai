@@ -17,23 +17,30 @@
          token from the "HTML tag" verification method. Empty = tag omitted. -->
     <meta name="google-site-verification" content="%VITE_GSC_VERIFICATION%" />
 
-    <!-- Consent Mode v2 defaults (denied until the visitor accepts in the
-         CookieConsent banner). Must run BEFORE the GTM snippet. -->
+    <!-- Consent Mode v2 defaults. Must run BEFORE the GTM snippet. A returning
+         visitor's choice (saved by CookieConsent under "ysadc-consent") is
+         applied here, synchronously, so the first page view already carries
+         it; everyone else starts denied until they answer the banner. -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){ dataLayer.push(arguments); }
-      gtag('consent', 'default', {
-        ad_storage: 'denied',
-        ad_user_data: 'denied',
-        ad_personalization: 'denied',
-        analytics_storage: 'denied',
-        wait_for_update: 500
-      });
+      (function(){
+        var choice = null;
+        try { choice = localStorage.getItem('ysadc-consent'); } catch (e) {}
+        var state = choice === 'granted' ? 'granted' : 'denied';
+        gtag('consent', 'default', {
+          ad_storage: state,
+          ad_user_data: state,
+          ad_personalization: state,
+          analytics_storage: state,
+          wait_for_update: choice ? 0 : 500
+        });
+      })();
     </script>
     <!-- Google Tag Manager. Container ID comes from VITE_GTM_ID (Netlify env).
          GA4 and Meta Pixel are configured inside GTM, not in app code. When
          the env var is empty the snippet is stripped at build time by
-         vite-plugin-meta-images.ts (see stripEmptyTracking). -->
+         vite-plugin-tracking.ts. -->
     <script data-gtm>
       (function(w,d,s,l,i){if(!i||i.indexOf('%')===0){return;}w[l]=w[l]||[];w[l].push({'gtm.start':
       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -42,12 +49,9 @@
       })(window,document,'script','dataLayer','%VITE_GTM_ID%');
     </script>
 
-    <!-- Fonts & Icons -->
+    <!-- Icons. Fonts are self-hosted via @fontsource (imported in main.tsx). -->
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="theme-color" content="#ffffff" />
@@ -59,18 +63,14 @@
 
     <div id="root"></div>
 
-    <!-- Netlify Forms: static forms so the build-time bot detects them.
-         The real React forms post to "/" with the matching form-name. -->
+    <!-- Netlify Forms: static form so the build-time bot detects it.
+         The real React form posts to "/" with the matching form-name. -->
     <form name="contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
       <input type="text" name="name" />
       <input type="tel" name="phone" />
       <input type="email" name="email" />
       <input type="text" name="service" />
       <textarea name="message"></textarea>
-      <input name="bot-field" />
-    </form>
-    <form name="newsletter" data-netlify="true" netlify-honeypot="bot-field" hidden>
-      <input type="email" name="email" />
       <input name="bot-field" />
     </form>
 

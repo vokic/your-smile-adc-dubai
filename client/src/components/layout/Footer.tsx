@@ -1,8 +1,6 @@
 import { useState } from "react";
 import { Facebook, Instagram, MapPin, Phone, Mail, Star, ExternalLink } from "lucide-react";
 import { Link } from "wouter";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { EmergencyConfirmModal } from "@/components/EmergencyConfirmModal";
 import {
   EMERGENCY_PHONE,
@@ -13,26 +11,20 @@ import {
   CLINIC_ADDRESS,
   CLINIC_MAPS_URL,
   WORKING_HOURS_SUMMARY,
+  formatHours,
   SOCIAL_LINKS,
   GOOGLE_REVIEW_COUNT,
   GOOGLE_REVIEW_RATING,
   GOOGLE_REVIEWS_URL,
   CLINIC_NAME,
 } from "@/lib/constants";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import * as z from "zod";
-import { Form, FormControl, FormField, FormItem, FormMessage } from "@/components/ui/form";
-import { useToast } from "@/hooks/use-toast";
-import { Spinner } from "@/components/ui/spinner";
 import { track } from "@/lib/analytics";
 import { useLanguage } from "@/hooks/useLanguage";
 
-// Built per render so the validation message follows the active language.
-const makeNewsletterSchema = (invalidEmail: string) =>
-  z.object({ email: z.string().email(invalidEmail) });
-
-type NewsletterFormValues = { email: string };
+// No newsletter for now (owner decision, Oct 2026). The signup form that
+// stood in the fourth column is in git history if it ever comes back; it
+// also needs the "newsletter" Netlify form in index.html and a privacy-
+// notice section again.
 
 const QUICK_LINKS = [
   { key: "about", path: "/about" },
@@ -47,48 +39,13 @@ const QUICK_LINKS = [
 ];
 
 export function Footer() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [showEmergencyModal, setShowEmergencyModal] = useState(false);
-  const [isSubmittingNewsletter, setIsSubmittingNewsletter] = useState(false);
-  const { toast } = useToast();
-
-  const newsletterForm = useForm<NewsletterFormValues>({
-    resolver: zodResolver(makeNewsletterSchema(t("footer.invalidEmail"))),
-    defaultValues: { email: "" },
-  });
 
   const handleConfirmEmergency = () => {
     setShowEmergencyModal(false);
     track("emergency_confirm", { source: "footer" });
     window.location.href = `tel:${EMERGENCY_PHONE}`;
-  };
-
-  // Posts to Netlify Forms (static form "newsletter" declared in index.html).
-  const onNewsletterSubmit = async (data: NewsletterFormValues) => {
-    setIsSubmittingNewsletter(true);
-    try {
-      const body = new URLSearchParams({ "form-name": "newsletter", email: data.email });
-      const res = await fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: body.toString(),
-      });
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      track("form_submit", { form: "newsletter" });
-      toast({
-        title: t("footer.subscribedTitle"),
-        description: t("footer.subscribedBody"),
-      });
-      newsletterForm.reset();
-    } catch {
-      toast({
-        title: t("footer.subscribeFailedTitle"),
-        description: t("footer.subscribeFailedBody"),
-        variant: "destructive",
-      });
-    } finally {
-      setIsSubmittingNewsletter(false);
-    }
   };
 
   return (
@@ -142,7 +99,7 @@ export function Footer() {
                   }`}
                 >
                   <span>{t(`hours.summary.${h.key}`)}</span>
-                  <span>{"closed" in h ? t("hours.closed") : h.hours}</span>
+                  <span>{"closed" in h ? t("hours.closed") : formatHours(h.hours, language)}</span>
                 </div>
               ))}
               <p className="text-xs opacity-70 pt-2">{t("footer.emergencyOutsideHours")}</p>
@@ -163,7 +120,7 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* 4. Social, rating, newsletter */}
+          {/* 4. Social and rating */}
           <div className="space-y-6">
             <div className="space-y-4">
               <h4 className="text-lg font-bold">{t("footer.stayConnected")}</h4>
@@ -186,36 +143,6 @@ export function Footer() {
                 {t("footer.ratingLine", { rating: GOOGLE_REVIEW_RATING.toFixed(1), count: GOOGLE_REVIEW_COUNT })} <ExternalLink className="h-3 w-3" />
               </p>
             </a>
-
-            <div className="space-y-2">
-              <h5 className="text-sm font-medium">{t("footer.newsletterTitle")}</h5>
-              <Form {...newsletterForm}>
-                <form onSubmit={newsletterForm.handleSubmit(onNewsletterSubmit)} className="flex gap-2" name="newsletter" data-netlify="true">
-                  <input type="hidden" name="form-name" value="newsletter" />
-                  <FormField
-                    control={newsletterForm.control}
-                    name="email"
-                    render={({ field }) => (
-                      <FormItem className="flex-1">
-                        <FormControl>
-                          <Input
-                            type="email"
-                            placeholder={t("footer.emailPlaceholder")}
-                            autoComplete="email"
-                            className="bg-white/10 border-white/20 text-white placeholder:text-white/50 rounded-full"
-                            {...field}
-                          />
-                        </FormControl>
-                        <FormMessage className="text-xs" />
-                      </FormItem>
-                    )}
-                  />
-                  <Button type="submit" size="icon" className="bg-primary hover:bg-primary/90 rounded-full" disabled={isSubmittingNewsletter} aria-label={t("footer.subscribeAria")}>
-                    {isSubmittingNewsletter ? <Spinner className="h-4 w-4" /> : <Mail className="h-4 w-4" />}
-                  </Button>
-                </form>
-              </Form>
-            </div>
           </div>
         </div>
 

@@ -1,5 +1,5 @@
 import { ChevronDown } from "lucide-react";
-import { useState } from "react";
+import { useId, useState } from "react";
 import { useLanguage } from "@/hooks/useLanguage";
 
 interface FAQ {
@@ -19,6 +19,7 @@ export function FAQSection({
 }: FAQSectionProps) {
   const { t } = useLanguage();
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
+  const idPrefix = useId();
 
   return (
     <section className="py-16 md:py-24 bg-background">
@@ -40,6 +41,8 @@ export function FAQSection({
                     setOpenFaqIndex(openFaqIndex === index ? null : index)
                   }
                   className="w-full px-5 py-4 md:px-6 md:py-5 flex items-center justify-between gap-4 bg-card hover:bg-card/80 transition-colors text-left"
+                  aria-expanded={openFaqIndex === index}
+                  aria-controls={`${idPrefix}-${index}`}
                   data-testid={`button-faq-toggle-${index}`}
                 >
                   <span className="font-bold text-secondary">{faq.question}</span>
@@ -49,13 +52,17 @@ export function FAQSection({
                     }`}
                   />
                 </button>
-                {openFaqIndex === index && (
-                  <div className="px-5 md:px-6 py-4 bg-background border-t border-border animate-in fade-in">
-                    <p className="text-muted-foreground leading-relaxed">
-                      {faq.answer}
-                    </p>
-                  </div>
-                )}
+                {/* Always in the DOM (hidden when collapsed) so the answers are
+                    in the prerendered HTML and match the FAQPage JSON-LD. */}
+                <div
+                  id={`${idPrefix}-${index}`}
+                  hidden={openFaqIndex !== index}
+                  className="px-5 md:px-6 py-4 bg-background border-t border-border animate-in fade-in"
+                >
+                  <p className="text-muted-foreground leading-relaxed">
+                    {faq.answer}
+                  </p>
+                </div>
               </div>
             ))}
           </div>

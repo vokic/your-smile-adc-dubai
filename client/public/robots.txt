@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Post-submit confirmation page (also marked noindex).
+Disallow: /thanks
+
+Sitemap: https://yoursmileadvanceddental.ae/sitemap.xml

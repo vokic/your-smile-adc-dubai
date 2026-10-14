@@ -119,7 +119,7 @@
     "meetDoctors": "Lernen Sie unsere erfahrenen Zahnärzte in Dubai kennen",
     "ratedClinic": "★5.0 Beste Zahnklinik in Dubai",
     "verifiedReview": "Verifizierte Bewertung",
-    "heroBadge": "Spezialisten für komplexe Fälle · Jumeirah Lake Towers, Dubai",
+    "heroBadge": "Zahnklinik in JLT, Dubai · Spezialisten für komplexe Fälle",
     "emergencyCta": "Zahnnotfall? Hier starten",
     "seoTitle": "Zahnarzt in Dubai JLT für komplexe Fälle – Implantate, Veneers, Notfall",
     "seoDescription": "Your Smile Advanced Dental Center in Dubai JLT ist auf komplexe Fälle spezialisiert: Notfallbehandlung, Hollywood-Lächeln, Implantate für den ganzen Kiefer, Keramikveneers ohne Beschleifen und Kronen. Bewertung 5,0 auf Google.",
@@ -1259,6 +1259,7 @@
     "subtitle": "Bleiben Sie informiert: aktuelle Hinweise zu ästhetischer Zahnmedizin, Implantaten, Kieferorthopädie und Prophylaxe.",
     "searchPlaceholder": "Artikel nach Titel, Thema oder Kategorie suchen...",
     "readMore": "Weiterlesen →",
+    "minRead": "{minutes} Min. Lesezeit",
     "noResults": "Keine Artikel zu Ihrer Suche gefunden.",
     "clearSearch": "Suche zurücksetzen",
     "prevPage": "Zurück",
@@ -1268,86 +1269,8 @@
     "pageOf": "Seite",
     "pageOfSeparator": "von",
     "showingRange": " • Angezeigt {from}–{to} von {total} Artikeln",
-    "newsletterTitle": "Newsletter abonnieren",
-    "newsletterBody": "Erhalten Sie aktuelle Zahntipps, Neuigkeiten zu Behandlungen und Sonderangebote per E-Mail.",
-    "newsletterPlaceholder": "E-Mail-Adresse eingeben",
-    "subscribe": "Abonnieren",
     "ctaTitle": "Bereit für Ihre Lächeln-Transformation?",
-    "ctaBody": "Vereinbaren Sie eine Beratung mit unseren Spezialisten und finden Sie den passenden Behandlungsplan.",
-    "articles": [
-      {
-        "title": "Der komplette Leitfaden zu Veneers: Verwandeln Sie Ihr Lächeln",
-        "excerpt": "Erfahren Sie, wie Keramikveneers Ihnen ein Hollywood-Lächeln geben. Ablauf, Kosten und was Sie erwartet.",
-        "category": "Ästhetische Zahnmedizin",
-        "date": "15. Dezember 2024",
-        "readTime": "5 Min. Lesezeit",
-        "content": "Veneers gehören zu den beliebtesten ästhetischen Behandlungen. In diesem ausführlichen Leitfaden geht es um alles – von der Beratung bis zur Nachsorge..."
-      },
-      {
-        "title": "Invisalign oder feste Zahnspange: Was passt zu Ihnen?",
-        "excerpt": "Vergleichen Sie Vor- und Nachteile von transparenten Alignern und Metallbrackets, um die beste Wahl zu treffen.",
-        "category": "Kieferorthopädie",
-        "date": "12. Dezember 2024",
-        "readTime": "7 Min. Lesezeit",
-        "content": "Sowohl Invisalign als auch klassische Zahnspangen begradigen Zähne wirksam. Das sollten Sie über beide Optionen wissen..."
-      },
-      {
-        "title": "Professionelles Bleaching: Mythen und Fakten",
-        "excerpt": "Die Fakten zu professionellem Bleaching – und warum es besser ist als Produkte aus der Drogerie.",
-        "category": "Zahnaufhellung",
-        "date": "10. Dezember 2024",
-        "readTime": "4 Min. Lesezeit",
-        "content": "Rund um das Bleaching halten sich viele Irrtümer. Wir trennen Fakten von Fiktion und zeigen, was professionelle Behandlungen leisten..."
-      },
-      {
-        "title": "5 Anzeichen, dass Sie eine Krone oder Brücke brauchen",
-        "excerpt": "So erkennen Sie, ob Ihre Zähne eine restaurative Behandlung mit Kronen oder Brücken benötigen.",
-        "category": "Restaurative Zahnmedizin",
-        "date": "8. Dezember 2024",
-        "readTime": "6 Min. Lesezeit",
-        "content": "Kronen und Brücken sind zentrale restaurative Behandlungen. Erkennen Sie diese Warnsignale..."
-      },
-      {
-        "title": "Zahnimplantate: die beste Lösung bei fehlenden Zähnen",
-        "excerpt": "Alles Wichtige zu Zahnimplantaten – vom Eingriff über die Heilung bis zu den langfristigen Vorteilen.",
-        "category": "Implantate",
-        "date": "5. Dezember 2024",
-        "readTime": "8 Min. Lesezeit",
-        "content": "Zahnimplantate sind eine wegweisende Lösung bei fehlenden Zähnen. Erfahren Sie mehr über Technik und Methoden, die wir einsetzen..."
-      },
-      {
-        "title": "Notfallzahnmedizin: Wann anrufen und was tun",
-        "excerpt": "Kurzer Leitfaden: zahnmedizinische Notfälle erkennen und richtig handeln, bevor Sie die Klinik erreichen.",
-        "category": "Notfallversorgung",
-        "date": "1. Dezember 2024",
-        "readTime": "5 Min. Lesezeit",
-        "content": "Zahnmedizinische Notfälle kommen unerwartet. Das sollten Sie über Symptome, Erste Hilfe und den richtigen Zeitpunkt für dringende Hilfe wissen..."
-      },
-      {
-        "title": "Prophylaxe: Kosten sparen, indem man Probleme verhindert",
-        "excerpt": "Warum Vorsorge die beste Investition in Ihre Mundgesundheit und langfristige Ersparnis ist.",
-        "category": "Allgemein & Prophylaxe",
-        "date": "28. November 2024",
-        "readTime": "6 Min. Lesezeit",
-        "content": "Vorbeugen ist immer besser als behandeln. Entdecken Sie die umfassenden Prophylaxe-Strategien, die wir empfehlen..."
-      },
-      {
-        "title": "Wie digitales Röntgen die Diagnostik verändert",
-        "excerpt": "Die Technik hinter modernem digitalem Röntgen und wie sie Behandlungsplanung und Patientensicherheit verbessert.",
-        "category": "Technologie",
-        "date": "25. November 2024",
-        "readTime": "5 Min. Lesezeit",
-        "content": "Digitales Röntgen liefert hervorragende Bildqualität bei minimaler Strahlenbelastung. Erfahren Sie mehr über die Vorteile..."
-      },
-      {
-        "title": "Die Wahrheit über Zahnfleischerkrankungen: Symptome, Behandlung, Vorbeugung",
-        "excerpt": "Umfassender Überblick über die Stadien von Zahnfleischerkrankungen, Warnsignale und wirksame Behandlungen.",
-        "category": "Mundgesundheit",
-        "date": "22. November 2024",
-        "readTime": "7 Min. Lesezeit",
-        "content": "Zahnfleischerkrankungen betreffen Millionen Menschen. Ursachen und Symptome zu verstehen, ist entscheidend für frühes Eingreifen..."
-      }
-    ]
+    "ctaBody": "Vereinbaren Sie eine Beratung mit unseren Spezialisten und finden Sie den passenden Behandlungsplan."
   },
   "contact": {
     "heroTitle": "Kontakt zum Your Smile",
@@ -1492,14 +1415,6 @@
     "emergencyLabel": "Notfall: {phone}",
     "googleMaps": "Google Maps",
     "ratingLine": "Bewertung {rating} · {count} Google-Bewertungen",
-    "newsletterTitle": "Zahntipps & Klinik-News",
-    "emailPlaceholder": "E-Mail-Adresse",
-    "subscribeAria": "Abonnieren",
-    "invalidEmail": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
-    "subscribedTitle": "Abonniert",
-    "subscribedBody": "Danke – Sie erhalten von uns Zahntipps und Neuigkeiten aus der Klinik.",
-    "subscribeFailedTitle": "Anmeldung fehlgeschlagen",
-    "subscribeFailedBody": "Bitte versuchen Sie es später erneut oder schreiben Sie uns auf WhatsApp.",
     "disclaimer": "Die Informationen auf dieser Website dienen der allgemeinen Aufklärung und ersetzen keine klinische Untersuchung. Behandlungsergebnisse sind von Patient zu Patient verschieden. Die Vorher-Nachher-Fotos zeigen echte Patienten der Klinik, die der Veröffentlichung zugestimmt haben.",
     "copyright": "© {year} {clinic}. Alle Rechte vorbehalten.",
     "privacyPolicy": "Datenschutzerklärung",
@@ -1781,23 +1696,6 @@
       "meta": "Patient aus Italien"
     }
   },
-  "blogPosts": {
-    "veneerTips": {
-      "title": "5 Tipps zur Pflege Ihrer Veneers",
-      "date": "28. November 2024",
-      "category": "Ästhetische Pflege"
-    },
-    "implantsInvestment": {
-      "title": "Zahnimplantate: eine Investition fürs Leben",
-      "date": "25. November 2024",
-      "category": "Implantate"
-    },
-    "invisalignVsBraces": {
-      "title": "Invisalign im Vergleich zur festen Zahnspange",
-      "date": "22. November 2024",
-      "category": "Kieferorthopädie"
-    }
-  },
   "comparison": {
     "defaultTitle": "So finden Sie die richtige Behandlung",
     "defaultSubtitle": "Vergleichen Sie beliebte Behandlungen und finden Sie die passende",
@@ -1978,6 +1876,7 @@
     "title": "Sitemap",
     "subtitle": "Übersicht über alle Seiten und Leistungen unserer Website.",
     "mainPages": "Hauptseiten",
+    "blogArticles": "Blogartikel",
     "treatments": "Behandlungen",
     "legal": "Rechtliches",
     "categoryOverview": "{category} – Übersicht",
@@ -2278,32 +2177,12 @@
     "ctaText": "Ihre Sicherheit und Ihr Wohlbefinden stehen immer an erster Stelle. Schreiben Sie uns Ihren Standort, und wir vereinbaren einen Termin, der Ihnen passt."
   },
   "blogPost": {
-    "seoTitle": "Blogartikel",
-    "seoDescription": "Lesen Sie aktuelle Zahntipps und Fallbeispiele vom Your Smile Advanced Dental Center in Dubai.",
-    "bookConsultation": "Beratung über WhatsApp buchen",
-    "galleryTitle": "Galerie",
-    "gallerySubtitle": "Klicken Sie auf die Bilder für Details",
-    "expand": "Vergrößern",
-    "closeGallery": "Galerie schließen",
-    "prevImage": "Vorheriges Bild",
-    "nextImage": "Nächstes Bild",
-    "post": {
-      "title": "Der komplette Leitfaden zu Veneers: Verwandeln Sie Ihr Lächeln",
-      "category": "Ästhetische Zahnmedizin",
-      "date": "15. Dezember 2024",
-      "readTime": "5 Min. Lesezeit",
-      "content": "Veneers gehören heute zu den beliebtesten ästhetischen Zahnbehandlungen. Ob Sie kleine Makel korrigieren oder Ihr Lächeln komplett verwandeln möchten – Keramikveneers bieten eine vielseitige Lösung, die Ästhetik und Haltbarkeit verbindet.\n\n**Was sind Veneers?**\n\nVeneers sind dünne, individuell gefertigte Keramikschalen, die auf die Vorderseite Ihrer Zähne geklebt werden. Sie überdecken Makel wie Verfärbungen, abgebrochene Ecken, Lücken oder leichte Fehlstellungen und schaffen in nur zwei Terminen ein makelloses Lächeln.\n\n**Arten von Veneers**\n\nWir arbeiten ausschließlich mit Keramikveneers: Sie sind haltbar, verfärbungsresistent und halten in der Regel 10–15 Jahre oder länger. Bei Techniken ohne Beschleifen gibt es kein Abtragen Ihrer eigenen Zähne, keine Spritzen und keine Provisorien.\n\n**Der Ablauf**\n\nAlles beginnt mit einer Beratung, in der wir Ihre Ziele besprechen und Ihr ideales Lächeln gestalten. Anschließend bereiten wir die Zähne vor, nehmen einen digitalen Scan und fertigen Ihre individuellen Veneers. Sobald sie fertig sind, werden sie mit einem speziellen Kleber und Lichthärtung befestigt.\n\n**Vorteile von Veneers**\n\nÜber die offensichtliche ästhetische Verbesserung hinaus stärken Veneers Ihr Selbstvertrauen, verbessern die Bissfunktion und schützen beschädigte Zahnoberflächen. Zudem sind sie im Vergleich zu anderen ästhetischen Behandlungen relativ schnell eingesetzt.\n\n**Tipps zur Pflege**\n\nUm Ihre Veneers zu erhalten, beißen Sie nicht auf harte Gegenstände, achten Sie auf gute Mundhygiene und kommen Sie regelmäßig zur Kontrolle. Bei guter Pflege behalten Ihre Veneers über viele Jahre ihr schönes Aussehen.\n\nOb Sie zum ersten Mal über Veneers nachdenken oder Fragen zum Ablauf haben – unser Team hilft Ihnen zu dem Lächeln, das Sie sich immer gewünscht haben."
-    },
-    "galleryLabels": [
-      "VOR VENEERS 1",
-      "NACH VENEERS 1",
-      "VOR VENEERS 2",
-      "NACH VENEERS 2",
-      "VOR VENEERS 3",
-      "NACH VENEERS 3",
-      "LÄCHELN-TRANSFORMATION 1",
-      "LÄCHELN-TRANSFORMATION 2"
-    ]
+    "backToBlog": "Alle Artikel",
+    "relatedTitle": "Passende Behandlungen",
+    "moreArticles": "Weitere Artikel",
+    "ctaTitle": "Haben Sie eine Frage zu Ihren Zähnen?",
+    "ctaText": "Vereinbaren Sie eine Beratung in unserer Klinik in Jumeirah Lake Towers. Wir untersuchen Ihre Zähne, erklären Ihre Möglichkeiten und geben Ihnen einen schriftlichen Behandlungsplan.",
+    "disclaimer": "Dieser Artikel dient der allgemeinen Information und ersetzt keine Untersuchung durch einen Zahnarzt."
   },
   "privacy": {
     "seoTitle": "Datenschutzerklärung",
@@ -2329,7 +2208,6 @@
             "type": "ul",
             "items": [
               "**Kontakt- und Anfragedaten** – Name, Telefonnummer, E-Mail-Adresse, die Sie interessierende Behandlung und die Nachricht, die Sie uns über das Kontaktformular, WhatsApp, telefonisch oder per E-Mail senden.",
-              "**Newsletter-Daten** – Ihre E-Mail-Adresse, wenn Sie den Newsletter abonnieren.",
               "**Gesundheitsdaten** – Angaben zu Ihrer zahnmedizinischen und allgemeinen Krankengeschichte, Röntgenbilder und klinische Fotos; sie werden nur erhoben, wenn Sie Patient werden, und unter ärztlicher Schweigepflicht verarbeitet. Die Website selbst fragt keine Gesundheitsdaten ab, abgesehen von dem, was Sie freiwillig in eine Nachricht schreiben.",
               "**Technische und Nutzungsdaten** – IP-Adresse, Geräte- und Browsertyp, besuchte Seiten und Interaktionen wie Klicks auf „Anrufen“ oder „WhatsApp“; erhoben über Cookies und ähnliche Technologien, nur mit Ihrer Einwilligung (siehe Abschnitt 6)."
             ]
@@ -2361,7 +2239,7 @@
           {
             "type": "ul",
             "items": [
-              "Dienstleister, die diese Website hosten und Formularübermittlungen in unserem Auftrag verarbeiten (unser Hosting-Anbieter Netlify erhält Kontaktformular- und Newsletter-Übermittlungen).",
+              "Dienstleister, die diese Website hosten und Formularübermittlungen in unserem Auftrag verarbeiten (unser Hosting-Anbieter Netlify erhält Kontaktformular-Übermittlungen).",
               "Analyse- und Werbedienstleister (Google Analytics / Google Tag Manager und Meta) – nur wenn Sie Analyse- und Marketing-Cookies akzeptieren.",
               "Dentallabore, Röntgenzentren und an Ihrer Behandlung beteiligte Spezialisten, jeweils unter Verschwiegenheitspflichten.",
               "Versicherungen, wenn Sie uns bitten, mit Ihrem Versicherer abzurechnen.",
@@ -2379,7 +2257,7 @@
         "blocks": [
           {
             "type": "p",
-            "text": "Anfragedaten bewahren wir so lange auf, wie es zur Bearbeitung Ihres Anliegens nötig ist, und bis zu 24 Monate danach, sofern Sie nicht Patient werden. Patientenakten werden für die nach dem Gesundheitsrecht der VAE vorgeschriebenen Zeiträume aufbewahrt. Newsletter-Daten speichern wir bis zu Ihrer Abmeldung. Analysedaten werden entsprechend den Einstellungen des Anbieters aufbewahrt (Google Analytics: bis zu 14 Monate)."
+            "text": "Anfragedaten bewahren wir so lange auf, wie es zur Bearbeitung Ihres Anliegens nötig ist, und bis zu 24 Monate danach, sofern Sie nicht Patient werden. Patientenakten werden für die nach dem Gesundheitsrecht der VAE vorgeschriebenen Zeiträume aufbewahrt. Analysedaten werden entsprechend den Einstellungen des Anbieters aufbewahrt (Google Analytics: bis zu 14 Monate)."
           }
         ]
       },
@@ -2389,6 +2267,10 @@
           {
             "type": "p",
             "text": "Notwendige Cookies halten die Website funktionsfähig (zum Beispiel merken sie Ihre Cookie-Auswahl und Ihre Sprache). Analyse- und Marketing-Cookies (Google Analytics 4 über Google Tag Manager, Meta Pixel) werden **erst gesetzt, nachdem Sie im Cookie-Banner auf „Akzeptieren“ geklickt haben**. Sie helfen uns zu sehen, welche Seiten nützlich sind, und unsere Werbung zu messen. Sie können Ihre Auswahl jederzeit ändern, indem Sie die Websitedaten in Ihrem Browser löschen – danach erscheint das Banner erneut."
+          },
+          {
+            "type": "p",
+            "text": "Die Karte auf der Startseite und der Kontaktseite stammt von Google Maps. Sie wird erst geladen, nachdem Sie Cookies akzeptiert oder auf „Karte anzeigen“ geklickt haben; Google kann dann eigene Cookies setzen."
           }
         ]
       },
@@ -2577,5 +2459,57 @@
         ]
       }
     ]
+  },
+  "blogArticles": {
+    "dental-veneers-guide": {
+      "title": "Der komplette Leitfaden zu Veneers: Verwandeln Sie Ihr Lächeln",
+      "excerpt": "Erfahren Sie, wie Keramikveneers Ihnen ein natürliches Hollywood-Lächeln geben: wie Non-Prep-Veneers funktionieren, wie lange sie halten und was Sie bei jedem Termin erwartet.",
+      "category": "Ästhetische Zahnmedizin"
+    },
+    "invisalign-vs-braces": {
+      "title": "Invisalign oder feste Zahnspange: Was passt zu Ihnen?",
+      "excerpt": "Vergleichen Sie Vor- und Nachteile von transparenten Alignern und Metallbrackets, um die beste Wahl zu treffen.",
+      "category": "Kieferorthopädie"
+    },
+    "teeth-whitening-myths": {
+      "title": "Professionelles Bleaching: Mythen und Fakten",
+      "excerpt": "Die Fakten zu professionellem Bleaching – und warum es besser ist als Produkte aus der Drogerie.",
+      "category": "Zahnaufhellung"
+    },
+    "signs-you-need-crown-or-bridge": {
+      "title": "5 Anzeichen, dass Sie eine Krone oder Brücke brauchen",
+      "excerpt": "So erkennen Sie, ob Ihre Zähne eine restaurative Behandlung mit Kronen oder Brücken benötigen.",
+      "category": "Restaurative Zahnmedizin"
+    },
+    "dental-implants-missing-teeth": {
+      "title": "Zahnimplantate: die beste Lösung bei fehlenden Zähnen",
+      "excerpt": "Alles Wichtige zu Zahnimplantaten – vom Eingriff über die Heilung bis zu den langfristigen Vorteilen.",
+      "category": "Implantate"
+    },
+    "dental-emergency-what-to-do": {
+      "title": "Notfallzahnmedizin: Wann anrufen und was tun",
+      "excerpt": "Kurzer Leitfaden: zahnmedizinische Notfälle erkennen und richtig handeln, bevor Sie die Klinik erreichen.",
+      "category": "Notfallversorgung"
+    },
+    "preventive-dentistry": {
+      "title": "Prophylaxe: Kosten sparen, indem man Probleme verhindert",
+      "excerpt": "Warum Vorsorge die beste Investition in Ihre Mundgesundheit und langfristige Ersparnis ist.",
+      "category": "Allgemein & Prophylaxe"
+    },
+    "digital-dental-xrays": {
+      "title": "Wie digitales Röntgen die Diagnostik verändert",
+      "excerpt": "Die Technik hinter modernem digitalem Röntgen und wie sie Behandlungsplanung und Patientensicherheit verbessert.",
+      "category": "Technologie"
+    },
+    "gum-disease-guide": {
+      "title": "Die Wahrheit über Zahnfleischerkrankungen: Symptome, Behandlung, Vorbeugung",
+      "excerpt": "Umfassender Überblick über die Stadien von Zahnfleischerkrankungen, Warnsignale und wirksame Behandlungen.",
+      "category": "Mundgesundheit"
+    }
+  },
+  "map": {
+    "show": "Karte anzeigen",
+    "openInGoogle": "In Google Maps öffnen",
+    "notice": "Die Karte wird von Google geladen, das dabei Cookies setzen kann."
   }
 }

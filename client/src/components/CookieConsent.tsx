@@ -1,45 +1,35 @@
 import { useEffect, useState } from "react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import { updateConsent } from "@/lib/analytics";
+import {
+  CONSENT_STORAGE_KEY,
+  readConsent,
+  updateConsent,
+  type ConsentChoice,
+} from "@/lib/analytics";
 import { useLanguage } from "@/hooks/useLanguage";
-
-const STORAGE_KEY = "ysadc-consent";
-
-type Choice = "granted" | "denied";
-
-function readChoice(): Choice | null {
-  try {
-    const v = localStorage.getItem(STORAGE_KEY);
-    return v === "granted" || v === "denied" ? v : null;
-  } catch {
-    return null;
-  }
-}
 
 /**
  * Minimal consent banner (UAE PDPL + Google/Meta consent mode). Analytics
  * and ad tags stay in "denied" mode until the visitor accepts. The choice is
- * remembered per browser; re-applied on every load so GTM sees it.
+ * remembered per browser; the inline script in index.html applies it as the
+ * Consent Mode default on every load, before GTM starts.
  */
 export function CookieConsent() {
   const { t } = useLanguage();
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const stored = readChoice();
-    if (stored) {
-      updateConsent(stored === "granted");
-    } else {
-      // Delay so the banner doesn't compete with first paint / prerender.
-      const t = setTimeout(() => setVisible(true), 1200);
-      return () => clearTimeout(t);
-    }
+    if (readConsent()) return;
+    // Delay so the banner doesn't compete with first paint. (The prerender
+    // step strips it from the HTML snapshots.)
+    const t = setTimeout(() => setVisible(true), 1200);
+    return () => clearTimeout(t);
   }, []);
 
-  const choose = (choice: Choice) => {
+  const choose = (choice: ConsentChoice) => {
     try {
-      localStorage.setItem(STORAGE_KEY, choice);
+      localStorage.setItem(CONSENT_STORAGE_KEY, choice);
     } catch {
       /* private mode — fine, banner will show again next visit */
     }

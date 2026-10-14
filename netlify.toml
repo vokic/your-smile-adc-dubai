@@ -2,10 +2,48 @@
   command = "npm run build"
   publish = "dist/public"
 
-# Prerender produces a real HTML file per route under dist/public, so Netlify
-# serves those directly with pretty URLs (e.g. /veneers → /veneers/index.html).
-# Only paths that match no static file fall through to the 404 page.
+# Prerender writes one flat HTML file per route (/veneers → veneers.html,
+# /orthodontics/invisalign → orthodontics/invisalign.html). With Netlify's
+# default Pretty URLs that file is served at the slash-less URL, which is
+# exactly what canonical tags, sitemap.xml and internal links use, while
+# /veneers/ and /veneers.html 301 to it. A route written as
+# <route>/index.html would instead 301 /veneers → /veneers/ and every
+# canonical would point at a redirect.
+
+# The single blog post used to live at /blog-post.
+[[redirects]]
+  from = "/blog-post"
+  to = "/blog/dental-veneers-guide"
+  status = 301
+
+# Only paths that match no static file fall through to the 404 page. There is
+# deliberately no SPA catch-all (/* → /index.html 200): it would answer every
+# unknown URL with the home page and a 200, i.e. soft 404s.
 [[redirects]]
   from = "/*"
   to = "/404.html"
   status = 404
+
+# Vite fingerprints everything under /assets, so it can be cached forever.
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Images keep stable names when replaced, so cache them for a month only.
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000"
+
+# Security headers for every response. (The old public/.htaccess carried
+# these, but Netlify never reads .htaccess.) No includeSubDomains on HSTS:
+# other subdomains of the clinic's domain are outside this site's control.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Strict-Transport-Security = "max-age=31536000"
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=()"

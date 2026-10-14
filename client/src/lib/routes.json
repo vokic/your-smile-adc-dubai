@@ -1,5 +1,5 @@
 {
-  "_comment": "Single route registry. Consumed by client/src/App.tsx (route → component map), vite-plugin-sitemap.ts (sitemap.xml) and script/prerender.mjs (static HTML per route). Add a route here FIRST, then map it to a component in App.tsx. Sub-service pages (path with two segments under a treatment category) are rendered by pages/services/SubServicePage.tsx from client/src/content/services/*.ts.",
+  "_comment": "Single route registry. Consumed by client/src/App.tsx (route → component map), vite-plugin-sitemap.ts (sitemap.xml) and script/prerender.mjs (static HTML per route). Add a route here FIRST, then map it to a component in App.tsx. Sub-service pages (path with two segments under a treatment category) are rendered by pages/services/SubServicePage.tsx from client/src/content/services/*.ts; /blog/<slug> pages by pages/BlogPost.tsx from client/src/content/blog.ts.",
   "routes": [
     { "path": "/", "changefreq": "weekly", "priority": 1.0 },
     { "path": "/services", "changefreq": "monthly", "priority": 0.9 },
@@ -49,7 +49,15 @@
     { "path": "/about", "changefreq": "monthly", "priority": 0.7 },
     { "path": "/faq", "changefreq": "monthly", "priority": 0.6 },
     { "path": "/blog", "changefreq": "weekly", "priority": 0.8 },
-    { "path": "/blog-post", "changefreq": "monthly", "priority": 0.5 },
+    { "path": "/blog/dental-veneers-guide", "changefreq": "monthly", "priority": 0.6 },
+    { "path": "/blog/invisalign-vs-braces", "changefreq": "monthly", "priority": 0.6 },
+    { "path": "/blog/teeth-whitening-myths", "changefreq": "monthly", "priority": 0.6 },
+    { "path": "/blog/signs-you-need-crown-or-bridge", "changefreq": "monthly", "priority": 0.6 },
+    { "path": "/blog/dental-implants-missing-teeth", "changefreq": "monthly", "priority": 0.6 },
+    { "path": "/blog/dental-emergency-what-to-do", "changefreq": "monthly", "priority": 0.6 },
+    { "path": "/blog/preventive-dentistry", "changefreq": "monthly", "priority": 0.6 },
+    { "path": "/blog/digital-dental-xrays", "changefreq": "monthly", "priority": 0.6 },
+    { "path": "/blog/gum-disease-guide", "changefreq": "monthly", "priority": 0.6 },
     { "path": "/contact", "changefreq": "monthly", "priority": 0.7 },
     { "path": "/privacy", "changefreq": "yearly", "priority": 0.3 },
     { "path": "/terms", "changefreq": "yearly", "priority": 0.3 },

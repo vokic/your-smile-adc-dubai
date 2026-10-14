@@ -4,7 +4,7 @@ import { SEO } from "@/components/SEO";
 import { IMG } from "@/lib/images";
 import { ServiceHero } from "@/components/ServiceHero";
 import { CTASection } from "@/components/CTASection";
-import { jsonLdBreadcrumb } from "@/lib/seo";
+import { clinicRef, jsonLdBreadcrumb } from "@/lib/seo";
 import { DOCTORS } from "@/lib/content";
 import { whatsappLink } from "@/lib/constants";
 import { SITE_URL } from "@/lib/seo";
@@ -37,7 +37,7 @@ function jsonLdDoctors(t: Translate) {
         jobTitle: t(`doctors.profiles.${d.slug}.title`),
         honorificSuffix: d.credentials,
         image: `${SITE_URL}${d.photo}`,
-        worksFor: { "@id": `${SITE_URL}/#clinic` },
+        worksFor: clinicRef(),
       },
     })),
   };

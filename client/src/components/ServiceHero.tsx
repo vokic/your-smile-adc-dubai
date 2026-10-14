@@ -77,7 +77,7 @@ export function ServiceHero({
       />
 
       <div className="container relative h-full mx-auto px-4 flex items-center py-12 md:py-0">
-        <div className="max-w-3xl space-y-6 animate-in fade-in slide-in-from-left-10 duration-700">
+        <div className="max-w-3xl space-y-6">
           {breadcrumbs && breadcrumbs.length > 0 && (
             <nav aria-label={t("common.breadcrumbAria")} className="text-sm text-white/70">
               <ol className="flex flex-wrap items-center gap-1">

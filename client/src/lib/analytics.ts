@@ -2,9 +2,14 @@
 // VITE_GTM_ID is set at build time) owns GA4 / Meta Pixel configuration —
 // nothing vendor-specific lives in app code. Every CTA funnels through
 // track() so marketing can wire conversions in GTM without a deploy.
+//
+// Page views are deliberately NOT pushed from here. GA4 (enhanced
+// measurement: "page changes based on browser history events", on by
+// default) and the Meta Pixel both record SPA navigations by themselves, so
+// a plain Google tag + Pixel in GTM counts every page exactly once. An extra
+// app-sent page_view could only ever double-count.
 
 type EventName =
-  | "page_view"
   | "whatsapp_click"
   | "call_click"
   | "emergency_confirm"
@@ -28,44 +33,40 @@ export function track(event: EventName, params: Params = {}): void {
   window.dataLayer.push({ event, ...params });
 }
 
-/** Fire an SPA page_view — Wouter navigations don't reload the document. */
-export function trackPageView(path: string): void {
-  track("page_view", {
-    page_path: path,
-    page_title: typeof document !== "undefined" ? document.title : undefined,
-    page_location:
-      typeof window !== "undefined" ? window.location.href : undefined,
-  });
+export type ConsentChoice = "granted" | "denied";
+
+/** localStorage key for the visitor's choice. index.html reads it too. */
+export const CONSENT_STORAGE_KEY = "ysadc-consent";
+
+/** Fired on window when the visitor answers the banner (detail: choice). */
+export const CONSENT_EVENT = "ysadc-consent-change";
+
+/** The stored choice, or null if the visitor hasn't answered (or storage is blocked). */
+export function readConsent(): ConsentChoice | null {
+  try {
+    const v = localStorage.getItem(CONSENT_STORAGE_KEY);
+    return v === "granted" || v === "denied" ? v : null;
+  } catch {
+    return null;
+  }
 }
 
 /**
- * GTM Consent Mode v2. Defaults are denied (set inline in index.html before
- * GTM loads); this updates them once the visitor chooses. GTM tags for GA4
- * and Meta Pixel should be configured to respect these consent signals.
+ * GTM Consent Mode v2. The default (denied, or the stored choice of a
+ * returning visitor) is set inline in index.html before GTM loads; this
+ * updates it when the visitor answers the banner. GTM tags for GA4 and Meta
+ * Pixel should be configured to respect these consent signals.
  */
 export function updateConsent(granted: boolean): void {
   if (typeof window === "undefined") return;
-  const state = granted ? "granted" : "denied";
-  window.dataLayer = window.dataLayer ?? [];
-  // gtag('consent', 'update', {...}) shape, pushed via the dataLayer so it
-  // works whether or not gtag() itself is defined yet.
-  window.dataLayer.push([
-    "consent",
-    "update",
-    {
-      ad_storage: state,
-      ad_user_data: state,
-      ad_personalization: state,
-      analytics_storage: state,
-    },
-  ]);
-  if (typeof window.gtag === "function") {
-    window.gtag("consent", "update", {
-      ad_storage: state,
-      ad_user_data: state,
-      ad_personalization: state,
-      analytics_storage: state,
-    });
-  }
+  const state: ConsentChoice = granted ? "granted" : "denied";
+  // gtag() is defined by the inline consent script in index.html.
+  window.gtag?.("consent", "update", {
+    ad_storage: state,
+    ad_user_data: state,
+    ad_personalization: state,
+    analytics_storage: state,
+  });
   track("consent_update", { consent: state });
+  window.dispatchEvent(new CustomEvent(CONSENT_EVENT, { detail: state }));
 }

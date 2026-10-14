@@ -2,6 +2,7 @@ import { useLanguage } from '@/hooks/useLanguage';
 import { Button } from '@/components/ui/button';
 import { ChevronDown } from 'lucide-react';
 import { useState, useRef, useEffect, useId } from 'react';
+import { track } from '@/lib/analytics';
 
 interface LanguageSwitcherProps {
   isDark?: boolean;
@@ -53,6 +54,8 @@ export function LanguageSwitcher({ isDark = false }: LanguageSwitcherProps) {
   const { language, setLanguage, t } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
+  const buttonRef = useRef<HTMLButtonElement>(null);
+  const listId = `lang-list-${useId().replace(/[^a-zA-Z0-9_-]/g, '')}`;
 
   const languages: { code: LangCode; label: string; fullName: string }[] = [
     { code: 'en', label: 'EN', fullName: 'English' },
@@ -67,18 +70,40 @@ export function LanguageSwitcher({ isDark = false }: LanguageSwitcherProps) {
       }
     }
 
+    // Escape closes the list and hands focus back to the toggle.
+    function handleKeyDown(event: KeyboardEvent) {
+      if (event.key === 'Escape') {
+        setIsOpen(false);
+        buttonRef.current?.focus();
+      }
+    }
+
     if (isOpen) {
       document.addEventListener('mousedown', handleClickOutside);
-      return () => document.removeEventListener('mousedown', handleClickOutside);
+      document.addEventListener('keydown', handleKeyDown);
+      return () => {
+        document.removeEventListener('mousedown', handleClickOutside);
+        document.removeEventListener('keydown', handleKeyDown);
+      };
     }
   }, [isOpen]);
 
   const currentLang = languages.find(l => l.code === language);
 
   return (
-    <div className="relative" ref={ref}>
+    <div
+      className="relative"
+      ref={ref}
+      // Tabbing out of the open list closes it (disclosure pattern).
+      onBlur={(e) => {
+        if (isOpen && !ref.current?.contains(e.relatedTarget as Node | null)) setIsOpen(false);
+      }}
+    >
       <Button
+        ref={buttonRef}
         onClick={() => setIsOpen(!isOpen)}
+        aria-expanded={isOpen}
+        aria-controls={isOpen ? listId : undefined}
         className={`gap-2 rounded-full px-4 py-1.5 h-9 font-semibold text-sm ${
           isDark 
             ? 'bg-white/25 text-white hover:bg-white/40 border-2 border-white/40 backdrop-blur-sm' 
@@ -93,7 +118,7 @@ export function LanguageSwitcher({ isDark = false }: LanguageSwitcherProps) {
       </Button>
 
       {isOpen && (
-        <div className={`absolute top-full right-0 mt-2 rounded-lg shadow-lg z-50 min-w-[140px] ${
+        <div id={listId} className={`absolute top-full right-0 mt-2 rounded-lg shadow-lg z-50 min-w-[140px] ${
           isDark
             ? 'bg-white/95 border border-white/20'
             : 'bg-background border border-border'
@@ -101,9 +126,15 @@ export function LanguageSwitcher({ isDark = false }: LanguageSwitcherProps) {
           {languages.map(lang => (
             <button
               key={lang.code}
+              lang={lang.code}
+              aria-current={language === lang.code ? 'true' : undefined}
               onClick={() => {
+                if (lang.code !== language) {
+                  track('language_switch', { from: language, to: lang.code });
+                }
                 setLanguage(lang.code);
                 setIsOpen(false);
+                buttonRef.current?.focus();
               }}
               className={`w-full flex items-center gap-2.5 text-left px-4 py-2 text-sm transition-colors ${
                 language === lang.code

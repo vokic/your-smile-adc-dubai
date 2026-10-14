@@ -19,7 +19,7 @@ export interface WebImage {
 function hero(name: string, alt: string): WebImage {
   return {
     src: `/images/hero/${name}-1920.webp`,
-    srcSet: `/images/hero/${name}-1280.webp 1280w, /images/hero/${name}-1920.webp 1920w`,
+    srcSet: `/images/hero/${name}-828.webp 828w, /images/hero/${name}-1280.webp 1280w, /images/hero/${name}-1920.webp 1920w`,
     alt,
   };
 }

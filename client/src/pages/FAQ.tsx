@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Phone, MessageCircle, ChevronDown } from "lucide-react";
 import { useState } from "react";
 import { SEO } from "@/components/SEO";
+import { track } from "@/lib/analytics";
 import { jsonLdFAQPage } from "@/lib/seo";
 import { HeroBackdrop } from "@/components/ServiceHero";
 import { REGULAR_PHONE, REGULAR_PHONE_DISPLAY, whatsappLink } from "@/lib/constants";
@@ -29,20 +30,20 @@ export default function FAQ() {
         <div className="absolute inset-0 bg-gradient-to-r from-secondary via-secondary/90 to-secondary/30" />
         
         <div className="container relative h-full mx-auto px-4 flex items-center py-12 md:py-0">
-          <div className="max-w-3xl space-y-6 animate-in fade-in slide-in-from-left-10 duration-700">
+          <div className="max-w-3xl space-y-6">
             <h1 className="text-4xl md:text-6xl font-serif font-bold text-white leading-tight">
               {t("faq.heroTitle")} <span className="text-primary">{t("faq.heroTitleAccent")}</span>
             </h1>
-            <h2 className="text-xl text-gray-200 font-light max-w-2xl">{t("faq.heroSubtitle")}</h2>
+            <p className="text-xl text-gray-200 font-light max-w-2xl">{t("faq.heroSubtitle")}</p>
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 gap-2 rounded-full">
-                <a href={whatsappLink(t("faq.askWhatsapp"))} target="_blank" rel="noopener noreferrer">
+                <a href={whatsappLink(t("faq.askWhatsapp"))} target="_blank" rel="noopener noreferrer" onClick={() => track("whatsapp_click", { source: "faq-hero" })}>
                   <MessageCircle className="h-5 w-5" />
                   {t("faq.askQuestion")}
                 </a>
               </Button>
               <Button asChild size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-secondary gap-2 rounded-full">
-                <a href={`tel:${REGULAR_PHONE}`}>
+                <a href={`tel:${REGULAR_PHONE}`} onClick={() => track("call_click", { source: "faq-hero", line: "regular" })}>
                   <Phone className="h-5 w-5" />
                   {t("faq.callUs")}
                 </a>
@@ -68,6 +69,8 @@ export default function FAQ() {
                   <button
                     onClick={() => setOpenIndex(openIndex === index ? null : index)}
                     className="w-full px-6 py-5 flex items-center justify-between bg-card hover:bg-card/80 transition-colors text-left"
+                    aria-expanded={openIndex === index}
+                    aria-controls={`faq-answer-${index}`}
                   >
                     <span className="font-medium text-secondary text-lg pr-4">{faq.question}</span>
                     <ChevronDown
@@ -76,11 +79,15 @@ export default function FAQ() {
                       }`}
                     />
                   </button>
-                  {openIndex === index && (
-                    <div className="px-6 py-5 bg-muted/30 border-t border-border animate-in fade-in slide-in-from-top-2 duration-300">
-                      <p className="text-muted-foreground leading-relaxed">{faq.answer}</p>
-                    </div>
-                  )}
+                  {/* Always in the DOM (hidden when collapsed) so the answers are
+                      in the prerendered HTML and match the FAQPage JSON-LD. */}
+                  <div
+                    id={`faq-answer-${index}`}
+                    hidden={openIndex !== index}
+                    className="px-6 py-5 bg-muted/30 border-t border-border animate-in fade-in slide-in-from-top-2 duration-300"
+                  >
+                    <p className="text-muted-foreground leading-relaxed">{faq.answer}</p>
+                  </div>
                 </div>
               ))}
             </div>
@@ -90,13 +97,17 @@ export default function FAQ() {
               <h3 className="text-2xl font-serif font-bold text-secondary mb-3">{t("faq.stillQuestions")}</h3>
               <p className="text-muted-foreground mb-6 max-w-xl mx-auto">{t("faq.stillQuestionsBody")}</p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                <Button className="bg-primary text-primary-foreground hover:bg-primary/90 gap-2 rounded-full">
-                  <MessageCircle className="h-4 w-4" />
-                  {t("faq.messageWhatsapp")}
+                <Button asChild className="bg-primary text-primary-foreground hover:bg-primary/90 gap-2 rounded-full">
+                  <a href={whatsappLink(t("faq.askWhatsapp"))} target="_blank" rel="noopener noreferrer" onClick={() => track("whatsapp_click", { source: "faq-bottom" })}>
+                    <MessageCircle className="h-4 w-4" />
+                    {t("faq.messageWhatsapp")}
+                  </a>
                 </Button>
-                <Button variant="outline" className="gap-2 rounded-full">
-                  <Phone className="h-4 w-4" />
-                  {t("faq.callPhone", { phone: REGULAR_PHONE_DISPLAY })}
+                <Button asChild variant="outline" className="gap-2 rounded-full">
+                  <a href={`tel:${REGULAR_PHONE}`} onClick={() => track("call_click", { source: "faq-bottom", line: "regular" })}>
+                    <Phone className="h-4 w-4" />
+                    {t("faq.callPhone", { phone: REGULAR_PHONE_DISPLAY })}
+                  </a>
                 </Button>
               </div>
             </div>

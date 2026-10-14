@@ -1,8 +1,5 @@
 import { Switch, Route, useLocation } from "wouter";
-import { queryClient } from "./lib/queryClient";
-import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
-import { TooltipProvider } from "@/components/ui/tooltip";
 import { LanguageProvider } from "@/hooks/useLanguage";
 import { useEffect, lazy, Suspense, type ComponentType } from "react";
 import { Header } from "@/components/layout/Header";
@@ -10,60 +7,95 @@ import { Footer } from "@/components/layout/Footer";
 import { FloatingActionButton } from "@/components/FloatingActionButton";
 import { CookieConsent } from "@/components/CookieConsent";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
-import { trackPageView } from "@/lib/analytics";
 import routesJson from "@/lib/routes.json";
 import Home from "@/pages/Home";
 import NotFound from "@/pages/not-found";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any -- Wouter passes route params; pages ignore them.
 type PageComponent = ComponentType<any>;
+type LazyPage = PageComponent & { preload: () => Promise<void> };
 
-const SubServicePage = lazy(() => import("@/pages/services/SubServicePage"));
+/**
+ * React.lazy plus a `preload()` that resolves the chunk ahead of rendering.
+ * Once loaded, the page renders synchronously instead of suspending — which
+ * is what keeps the prerendered HTML on screen during the first client
+ * render (see main.tsx) rather than swapping it for the Suspense spinner.
+ */
+function lazyPage(load: () => Promise<{ default: PageComponent }>): LazyPage {
+  let Loaded: PageComponent | null = null;
+  const remember = (mod: { default: PageComponent }) => {
+    Loaded = mod.default;
+    return mod;
+  };
+  const Lazy = lazy(() => load().then(remember));
+  const Page = ((props: object) => (Loaded ? <Loaded {...props} /> : <Lazy {...props} />)) as LazyPage;
+  Page.preload = () => load().then(remember).then(() => undefined);
+  return Page;
+}
+
+const SubServicePage = lazyPage(() => import("@/pages/services/SubServicePage"));
+const BlogPost = lazyPage(() => import("@/pages/BlogPost"));
 
 /**
  * Route → component map. The list of paths lives in lib/routes.json (shared
  * with the sitemap plugin and the prerender script). Any registered path that
  * has two segments under a treatment category is a data-driven sub-service
- * page; everything else needs an explicit entry here.
+ * page, and /blog/<slug> is an article from content/blog.ts; everything else
+ * needs an explicit entry here.
  */
 const PAGES: Record<string, PageComponent> = {
   "/": Home,
-  "/services": lazy(() => import("@/pages/Services")),
-  "/doctors": lazy(() => import("@/pages/Doctors")),
-  "/contact": lazy(() => import("@/pages/Contact")),
-  "/faq": lazy(() => import("@/pages/FAQ")),
-  "/about": lazy(() => import("@/pages/About")),
-  "/veneers": lazy(() => import("@/pages/Veneers")),
-  "/dental-surgery": lazy(() => import("@/pages/DentalSurgery")),
-  "/orthodontics": lazy(() => import("@/pages/Orthodontics")),
-  "/implants": lazy(() => import("@/pages/Implants")),
-  "/general-preventive": lazy(() => import("@/pages/GeneralAndPreventive")),
-  "/restorative": lazy(() => import("@/pages/Restorative")),
-  "/xray-opg": lazy(() => import("@/pages/DentalXrayOPG")),
-  "/crowns-bridges": lazy(() => import("@/pages/CrownsAndBridges")),
-  "/cosmetic": lazy(() => import("@/pages/Cosmetic")),
-  "/whitening": lazy(() => import("@/pages/Whitening")),
-  "/emergency": lazy(() => import("@/pages/Emergency")),
-  "/at-home": lazy(() => import("@/pages/AtHome")),
-  "/blog": lazy(() => import("@/pages/Blog")),
-  "/blog-post": lazy(() => import("@/pages/BlogPost")),
-  "/dental-tourism": lazy(() => import("@/pages/DentalTourism")),
-  "/gallery": lazy(() => import("@/pages/Gallery")),
-  "/privacy": lazy(() => import("@/pages/Privacy")),
-  "/terms": lazy(() => import("@/pages/Terms")),
-  "/sitemap": lazy(() => import("@/pages/Sitemap")),
-  "/thanks": lazy(() => import("@/pages/Thanks")),
+  "/services": lazyPage(() => import("@/pages/Services")),
+  "/doctors": lazyPage(() => import("@/pages/Doctors")),
+  "/contact": lazyPage(() => import("@/pages/Contact")),
+  "/faq": lazyPage(() => import("@/pages/FAQ")),
+  "/about": lazyPage(() => import("@/pages/About")),
+  "/veneers": lazyPage(() => import("@/pages/Veneers")),
+  "/dental-surgery": lazyPage(() => import("@/pages/DentalSurgery")),
+  "/orthodontics": lazyPage(() => import("@/pages/Orthodontics")),
+  "/implants": lazyPage(() => import("@/pages/Implants")),
+  "/general-preventive": lazyPage(() => import("@/pages/GeneralAndPreventive")),
+  "/restorative": lazyPage(() => import("@/pages/Restorative")),
+  "/xray-opg": lazyPage(() => import("@/pages/DentalXrayOPG")),
+  "/crowns-bridges": lazyPage(() => import("@/pages/CrownsAndBridges")),
+  "/cosmetic": lazyPage(() => import("@/pages/Cosmetic")),
+  "/whitening": lazyPage(() => import("@/pages/Whitening")),
+  "/emergency": lazyPage(() => import("@/pages/Emergency")),
+  "/at-home": lazyPage(() => import("@/pages/AtHome")),
+  "/blog": lazyPage(() => import("@/pages/Blog")),
+  "/dental-tourism": lazyPage(() => import("@/pages/DentalTourism")),
+  "/gallery": lazyPage(() => import("@/pages/Gallery")),
+  "/privacy": lazyPage(() => import("@/pages/Privacy")),
+  "/terms": lazyPage(() => import("@/pages/Terms")),
+  "/sitemap": lazyPage(() => import("@/pages/Sitemap")),
+  "/thanks": lazyPage(() => import("@/pages/Thanks")),
 };
 
 const SUB_SERVICE_PATTERN =
   /^\/(dental-surgery|general-preventive|crowns-bridges|whitening|orthodontics|restorative)\/[a-z0-9-]+$/;
+const BLOG_POST_PATTERN = /^\/blog\/[a-z0-9-]+$/;
 
 const ROUTES = routesJson.routes.map((r) => r.path);
+
+// Pagefind indexes only <main data-pagefind-body>, so 404 and noindex pages
+// (and the header/footer/cookie banner around <main>) stay out of search.
+const INDEXABLE = new Set(
+  routesJson.routes.filter((r) => !("noindex" in r && r.noindex)).map((r) => r.path),
+);
 
 function componentFor(path: string): PageComponent | null {
   if (PAGES[path]) return PAGES[path];
   if (SUB_SERVICE_PATTERN.test(path)) return SubServicePage;
+  if (BLOG_POST_PATTERN.test(path)) return BlogPost;
   return null;
+}
+
+/** Load the chunk for `path` (if it is a lazy page) before the first render. */
+export function preloadRoute(path: string): Promise<void> {
+  const Component = componentFor(path);
+  return Component && "preload" in Component
+    ? (Component as LazyPage).preload()
+    : Promise.resolve();
 }
 
 if (import.meta.env.DEV) {
@@ -90,16 +122,14 @@ function Router() {
   const [location] = useLocation();
 
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-    // Defer so the new page's <title> has been hoisted before we read it.
-    const t = setTimeout(() => trackPageView(location), 50);
-    return () => clearTimeout(t);
+    // Instant: a smooth scroll from the footer visibly drags the new page up.
+    window.scrollTo({ top: 0, behavior: "instant" });
   }, [location]);
 
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      <main className="flex-grow">
+      <main className="flex-grow" data-pagefind-body={INDEXABLE.has(location) ? "" : undefined}>
         <Suspense fallback={<RouteFallback />}>
           <Switch>
             {ROUTES.map((path) => {
@@ -120,14 +150,10 @@ function Router() {
 function App() {
   return (
     <ErrorBoundary>
-      <QueryClientProvider client={queryClient}>
-        <TooltipProvider>
-          <LanguageProvider>
-            <Toaster />
-            <Router />
-          </LanguageProvider>
-        </TooltipProvider>
-      </QueryClientProvider>
+      <LanguageProvider>
+        <Toaster />
+        <Router />
+      </LanguageProvider>
     </ErrorBoundary>
   );
 }

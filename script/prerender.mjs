@@ -87,10 +87,13 @@ function startServer(shellHtml) {
   });
 }
 
+// Flat files (/veneers → veneers.html), not /veneers/index.html: Netlify's
+// Pretty URLs serves veneers.html at /veneers, matching the slash-less
+// canonical URLs. A directory index would 301 /veneers → /veneers/.
 function outputPathForRoute(route) {
   if (route === "/") return path.join(DIST_DIR, "index.html");
   if (route === "__404__") return path.join(DIST_DIR, "404.html");
-  return path.join(DIST_DIR, route.replace(/^\//, ""), "index.html");
+  return path.join(DIST_DIR, `${route.replace(/^\//, "")}.html`);
 }
 
 // URL used when prerendering the 404 page. Any path that no Wouter route
@@ -139,12 +142,34 @@ function dedupeHeadInBrowser() {
   });
 }
 
+/**
+ * Per-visitor UI that must not be baked into static HTML. The cookie banner
+ * appears on a timer and can land in the snapshot on slow routes; shipped
+ * statically it would show to visitors who already answered it (until JS
+ * replaces the page) and Pagefind would index its text.
+ */
+function stripClientOnlyUiInBrowser() {
+  document.querySelector('[data-testid="cookie-consent"]')?.remove();
+}
+
+/** What every snapshot must contain; a miss means the route rendered broken. */
+function checkSnapshotInBrowser() {
+  const missing = [];
+  if (!document.title) missing.push("<title>");
+  if (!document.querySelector("main h1")) missing.push("<h1>");
+  if (!document.querySelector('link[rel="canonical"]') && !document.querySelector('meta[name="robots"][content*="noindex"]')) {
+    missing.push('<link rel="canonical">');
+  }
+  return missing;
+}
+
 async function prerenderRoute(browser, baseUrl, route, outputs) {
   const page = await browser.newPage();
   page.setDefaultNavigationTimeout(60_000);
-  page.on("pageerror", (err) => {
-    console.warn(`[prerender] ${route} page error: ${err.message}`);
-  });
+  // A runtime error means the snapshot may be half-rendered; fail the build
+  // instead of shipping it.
+  const errors = [];
+  page.on("pageerror", (err) => errors.push(err.message));
 
   try {
     const urlPath = route === "__404__" ? NOT_FOUND_URL : route;
@@ -153,6 +178,14 @@ async function prerenderRoute(browser, baseUrl, route, outputs) {
     await page.evaluate(
       () => new Promise((r) => requestAnimationFrame(() => r()))
     );
+    if (errors.length) {
+      throw new Error(`${route} threw while rendering: ${errors.join(" | ")}`);
+    }
+    const missing = await page.evaluate(checkSnapshotInBrowser);
+    if (missing.length) {
+      throw new Error(`${route} rendered without ${missing.join(", ")}`);
+    }
+    await page.evaluate(stripClientOnlyUiInBrowser);
     await page.evaluate(dedupeHeadInBrowser);
     const html = await page.content();
     outputs.push({ route, html });

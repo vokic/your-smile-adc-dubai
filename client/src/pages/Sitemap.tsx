@@ -3,9 +3,11 @@ import { Link } from "wouter";
 import { FileText } from "lucide-react";
 import { whatsappLink } from "@/lib/constants";
 import { SEO } from "@/components/SEO";
+import { track } from "@/lib/analytics";
 import { ALL_SUB_SERVICES, CATEGORIES, subServicePath } from "@/content/services";
 import type { CategorySlug } from "@/content/services";
 import { localizeCategory, localizeSubService } from "@/content/services";
+import { BLOG_ARTICLES, blogPath, localizeArticle } from "@/content/blog";
 import { useLanguage } from "@/hooks/useLanguage";
 
 // Link labels live in the locale lists (sitemap.main / .treatmentLinks /
@@ -49,6 +51,10 @@ export default function Sitemap() {
     { title: t("sitemap.mainPages"), links: zip(tList("sitemap.main"), MAIN_PATHS) },
     { title: t("sitemap.treatments"), links: zip(tList("sitemap.treatmentLinks"), TREATMENT_PATHS) },
     ...categorySections,
+    {
+      title: t("sitemap.blogArticles"),
+      links: BLOG_ARTICLES.map((a) => ({ name: localizeArticle(a, overlay).title, path: blogPath(a) })),
+    },
     { title: t("sitemap.legal"), links: zip(tList("sitemap.legalLinks"), LEGAL_PATHS) },
   ];
 
@@ -98,7 +104,7 @@ export default function Sitemap() {
                   <Link href="/contact">{t("sitemap.contactUs")}</Link>
                 </Button>
                 <Button size="lg" variant="outline" className="rounded-full font-semibold" asChild>
-                  <a href={whatsappLink()} target="_blank" rel="noopener noreferrer">{t("sitemap.messageWhatsapp")}</a>
+                  <a href={whatsappLink()} target="_blank" rel="noopener noreferrer" onClick={() => track("whatsapp_click", { source: "sitemap" })}>{t("sitemap.messageWhatsapp")}</a>
                 </Button>
               </div>
             </div>

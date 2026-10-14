@@ -4,23 +4,33 @@ import { MessageCircle, Phone, Calendar, Clock, Tag, ChevronLeft, ChevronRight, 
 import { Link } from "wouter";
 import { SEO } from "@/components/SEO";
 import { useLanguage } from "@/hooks/useLanguage";
-
-interface Article {
-  title: string;
-  excerpt: string;
-  category: string;
-  date: string;
-  readTime: string;
-  content: string;
-}
+import { REGULAR_PHONE, whatsappLink } from "@/lib/constants";
+import { jsonLdBreadcrumb } from "@/lib/seo";
+import {
+  BLOG_ARTICLES,
+  blogPath,
+  formatArticleDate,
+  localizeArticle,
+} from "@/content/blog";
+import { readingMinutes } from "@/content/blog-bodies";
 
 export default function Blog() {
-  const { t, tItems } = useLanguage();
+  const { t, tOr, tListOr, language } = useLanguage();
   const [currentPage, setCurrentPage] = useState(1);
   const [searchTerm, setSearchTerm] = useState("");
-  const articlesPerPage = 3;
+  // Large enough that every article is linked from the prerendered page;
+  // pagination only kicks in once the blog outgrows it.
+  const articlesPerPage = 12;
 
-  const articles = tItems<Article>("blog.articles");
+  const articles = BLOG_ARTICLES.map((source) => {
+    const a = localizeArticle(source, { tOr, tListOr });
+    return {
+      ...a,
+      path: blogPath(source),
+      date: formatArticleDate(source.datePublished, language),
+      readTime: t("blog.minRead", { minutes: readingMinutes(source.slug) }),
+    };
+  });
 
   const filteredArticles = articles.filter(article =>
     article.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -51,6 +61,10 @@ export default function Blog() {
         title={t("blog.seoTitle")}
         description={t("blog.seoDescription")}
         path="/blog"
+        jsonLd={jsonLdBreadcrumb([
+          { name: t("nav.home"), path: "/" },
+          { name: t("footer.links.blog"), path: "/blog" },
+        ])}
       />
       {/* Header Section */}
       <section className="py-16 md:py-24 bg-gradient-to-b from-secondary/10 to-background">
@@ -88,7 +102,7 @@ export default function Blog() {
           {paginatedArticles.length > 0 ? (
             <div className="flex flex-col gap-8 max-w-4xl mx-auto">
               {paginatedArticles.map((article) => (
-                <Link key={article.title} href="/blog-post">
+                <Link key={article.slug} href={article.path}>
                   <article className="bg-card rounded-xl border border-border overflow-hidden hover:shadow-lg transition-all hover:-translate-y-1 group cursor-pointer">
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-0">
                     {/* Image */}
@@ -215,28 +229,6 @@ export default function Blog() {
         </section>
       )}
 
-      {/* Newsletter CTA */}
-      <section className="py-16 md:py-24 bg-secondary text-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-2xl mx-auto text-center space-y-6">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold">
-              {t("blog.newsletterTitle")}
-            </h2>
-            <p className="text-lg text-gray-200">{t("blog.newsletterBody")}</p>
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <input
-                type="email"
-                placeholder={t("blog.newsletterPlaceholder")}
-                className="px-4 py-3 rounded-full bg-white text-secondary placeholder:text-muted-foreground focus:outline-none flex-grow"
-              />
-              <Button className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold rounded-full">
-                {t("blog.subscribe")}
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Final CTA */}
       <section className="py-16 md:py-24 bg-background">
         <div className="container mx-auto px-4">
@@ -246,13 +238,17 @@ export default function Blog() {
             </h2>
             <p className="text-muted-foreground text-lg">{t("blog.ctaBody")}</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-              <Button className="bg-primary text-primary-foreground hover:bg-primary/90 gap-2 rounded-full">
-                <MessageCircle className="h-4 w-4" />
-                {t("common.bookOnWhatsapp")}
+              <Button asChild className="bg-primary text-primary-foreground hover:bg-primary/90 gap-2 rounded-full">
+                <a href={whatsappLink(t("common.whatsappBookMessageGeneric"))} target="_blank" rel="noopener noreferrer">
+                  <MessageCircle className="h-4 w-4" />
+                  {t("common.bookOnWhatsapp")}
+                </a>
               </Button>
-              <Button variant="outline" className="gap-2 rounded-full">
-                <Phone className="h-4 w-4" />
-                {t("common.callNow")}
+              <Button asChild variant="outline" className="gap-2 rounded-full">
+                <a href={`tel:${REGULAR_PHONE}`}>
+                  <Phone className="h-4 w-4" />
+                  {t("common.callNow")}
+                </a>
               </Button>
             </div>
           </div>

@@ -9,7 +9,7 @@ export const WHITENING: SubService[] = [
     category: "whitening",
     name: "Laser Teeth Whitening",
     h1: "Laser Teeth Whitening in Dubai",
-    seoTitle: "Laser Teeth Whitening in Dubai - Results in One Visit",
+    seoTitle: "Laser Teeth Whitening in Dubai",
     seoDescription:
       "Professional laser teeth whitening in Dubai JLT. Visibly brighter teeth in a single 45–60 minute session, enamel-safe and performed by our dentists.",
     heroSubtitle:
@@ -59,7 +59,7 @@ export const WHITENING: SubService[] = [
     category: "whitening",
     name: "In-Office Whitening",
     h1: "In-Office Teeth Whitening in Dubai",
-    seoTitle: "In-Office Teeth Whitening in Dubai - Dentist Supervised",
+    seoTitle: "In-Office Teeth Whitening in Dubai",
     seoDescription:
       "Chairside professional teeth whitening in Dubai JLT. Dentist-supervised gel treatment with gum protection for a safe, predictable, brighter result.",
     heroSubtitle:
@@ -108,7 +108,7 @@ export const WHITENING: SubService[] = [
     category: "whitening",
     name: "Take-Home Whitening Kits",
     h1: "Take-Home Teeth Whitening Kits in Dubai",
-    seoTitle: "Take-Home Teeth Whitening Kits in Dubai - Custom Trays",
+    seoTitle: "Take-Home Whitening Kits in Dubai",
     seoDescription:
       "Custom-fitted take-home whitening trays with professional gel from our Dubai JLT dentists. Gradual, controlled whitening in 1–2 weeks at your own pace.",
     heroSubtitle:

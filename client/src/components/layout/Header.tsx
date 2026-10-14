@@ -18,13 +18,17 @@ import {
 import type { DentalIcon } from "@/components/DentalIcons";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, lazy, Suspense } from "react";
 import { useLanguage } from "@/hooks/useLanguage";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
-import { SearchDialog } from "@/components/SearchDialog";
-import logoImage from "@assets/logo_1764501679029.png";
 import { REGULAR_PHONE, whatsappLink } from "@/lib/constants";
 import { track } from "@/lib/analytics";
+
+// The search dialog pulls in every sub-service's content for its offline
+// index, so it loads as its own chunk the first time someone opens search.
+const SearchDialog = lazy(() =>
+  import("@/components/SearchDialog").then((m) => ({ default: m.SearchDialog })),
+);
 
 interface NavService {
   /** Locale key under `navServices.*`; the label and blurb come from there. */
@@ -55,6 +59,8 @@ export function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [searchOpen, setSearchOpen] = useState(false);
+  // Mount the (lazy) dialog on first use, then keep it for its close animation.
+  const [searchUsed, setSearchUsed] = useState(false);
   const lastScrollYRef = useRef(0);
   const [servicesOpen, setServicesOpen] = useState(false);
   // Controlled so the Services popover closes after navigation; uncontrolled
@@ -90,6 +96,7 @@ export function Header() {
     const onKey = (e: KeyboardEvent) => {
       if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") {
         e.preventDefault();
+        setSearchUsed(true);
         setSearchOpen(true);
         track("search_open", { source: "shortcut" });
       }
@@ -99,6 +106,7 @@ export function Header() {
   }, []);
 
   const openSearch = () => {
+    setSearchUsed(true);
     setSearchOpen(true);
     track("search_open", { source: "header" });
   };
@@ -118,12 +126,14 @@ export function Header() {
             the nav: justify-between cannot, because logo and CTA widths differ. */}
         <div className="flex items-center shrink-0 lg:flex-1 lg:basis-0">
           <Link href="/" className="flex items-center gap-3 cursor-pointer group">
+            {/* 3x WebP of attached_assets/logo_*.png (script/optimize-images.mjs);
+                the 2480px original was shipped for a 56px-tall slot. */}
             <img
-              src={logoImage}
+              src="/images/logo-header.webp"
               alt={t("nav.logoAlt")}
               className="h-14 lg:h-11 xl:h-14 w-auto transition-opacity group-hover:opacity-80"
-              width="auto"
-              height="56"
+              width={133}
+              height={56}
             />
           </Link>
         </div>
@@ -273,7 +283,11 @@ export function Header() {
         </div>
       </div>
 
-      <SearchDialog open={searchOpen} onOpenChange={setSearchOpen} />
+      {searchUsed && (
+        <Suspense fallback={null}>
+          <SearchDialog open={searchOpen} onOpenChange={setSearchOpen} />
+        </Suspense>
+      )}
     </header>
   );
 }

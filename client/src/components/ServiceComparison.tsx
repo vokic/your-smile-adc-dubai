@@ -1,5 +1,6 @@
 import { CheckCircle2, X } from "lucide-react";
-import { WHATSAPP_PHONE } from "@/lib/constants";
+import { whatsappLink } from "@/lib/constants";
+import { track } from "@/lib/analytics";
 import { useLanguage } from "@/hooks/useLanguage";
 
 interface ComparisonRow {
@@ -106,11 +107,12 @@ export function ServiceComparison({
             {t("comparison.ctaLead")}
           </p>
           <a
-            href={`https://wa.me/${WHATSAPP_PHONE.replace('+', '')}`}
+            href={whatsappLink()}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block px-8 py-3 bg-primary text-primary-foreground font-bold rounded-full hover:bg-primary/90 transition-colors"
             data-testid="link-consultation-comparison"
+            onClick={() => track("whatsapp_click", { source: "comparison" })}
           >
             {t("comparison.cta")}
           </a>

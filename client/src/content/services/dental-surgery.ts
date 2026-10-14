@@ -9,7 +9,7 @@ export const DENTAL_SURGERY: SubService[] = [
     category: "dental-surgery",
     name: "Wisdom Tooth Extraction",
     h1: "Wisdom Tooth Extraction in Dubai",
-    seoTitle: "Wisdom Tooth Extraction in Dubai - Gentle Oral Surgery",
+    seoTitle: "Wisdom Tooth Extraction in Dubai JLT",
     seoDescription:
       "Wisdom tooth removal in Dubai JLT by an oral surgeon. 3D CBCT planning, local anaesthesia or sedation, and clear aftercare for a smooth 3–7 day recovery.",
     heroSubtitle:
@@ -59,7 +59,7 @@ export const DENTAL_SURGERY: SubService[] = [
     category: "dental-surgery",
     name: "Tooth Extractions",
     h1: "Tooth Extractions in Dubai",
-    seoTitle: "Tooth Extraction in Dubai - Simple & Surgical Removal",
+    seoTitle: "Tooth Extraction in Dubai - Simple & Surgical",
     seoDescription:
       "Gentle tooth extractions in Dubai JLT. Simple and surgical removal under local anaesthesia, socket preservation to protect the bone, and home visits available.",
     heroSubtitle:
@@ -110,7 +110,7 @@ export const DENTAL_SURGERY: SubService[] = [
     category: "dental-surgery",
     name: "Bone Grafting",
     h1: "Bone Grafting in Dubai",
-    seoTitle: "Dental Bone Grafting in Dubai - Rebuild Bone for Implants",
+    seoTitle: "Bone Grafting for Implants in Dubai",
     seoDescription:
       "Dental bone grafting in Dubai JLT to rebuild lost jawbone before implants. Ridge preservation and augmentation planned on 3D CBCT by our surgical team.",
     heroSubtitle:
@@ -160,7 +160,7 @@ export const DENTAL_SURGERY: SubService[] = [
     category: "dental-surgery",
     name: "Sinus Lift",
     h1: "Sinus Lift Surgery in Dubai",
-    seoTitle: "Sinus Lift in Dubai - Bone for Upper Jaw Implants",
+    seoTitle: "Sinus Lift Surgery for Implants in Dubai",
     seoDescription:
       "Sinus lift surgery in Dubai JLT to create bone for implants in the upper back jaw. Lateral window or crestal approach, planned on 3D CBCT by our oral surgeon.",
     heroSubtitle:
@@ -209,7 +209,7 @@ export const DENTAL_SURGERY: SubService[] = [
     category: "dental-surgery",
     name: "Apicoectomy",
     h1: "Apicoectomy in Dubai",
-    seoTitle: "Apicoectomy in Dubai - Root-End Surgery to Save a Tooth",
+    seoTitle: "Apicoectomy in Dubai - Save the Tooth",
     seoDescription:
       "Apicoectomy (root-end surgery) in Dubai JLT to save a tooth when root canal retreatment is not possible. Done under local anaesthesia by our oral surgeon.",
     heroSubtitle:

@@ -129,7 +129,7 @@ export function SearchDialog({ open, onOpenChange }: SearchDialogProps) {
           const res = await pf.search(query);
           const top = await Promise.all(res.results.slice(0, 8).map((r) => r.data()));
           out = top.map((d) => ({
-            url: d.url.replace(/\/index\.html$/, "/").replace(/\/$/, "") || "/",
+            url: d.url.replace(/(\/index)?\.html$/, "").replace(/\/$/, "") || "/",
             title: d.meta.title?.replace(/\s*\|\s*Your Smile.*$/, "") ?? d.url,
             excerpt: d.excerpt.replace(/<[^>]+>/g, ""),
           }));

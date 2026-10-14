@@ -1,7 +1,5 @@
 import React, { createContext, useContext, useEffect, useState, ReactNode } from 'react';
 import enJson from '../locales/en.json';
-import ruJson from '../locales/ru.json';
-import deJson from '../locales/de.json';
 
 type Language = 'en' | 'ru' | 'de';
 
@@ -43,10 +41,15 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 // The JSON files are structurally richer than the recursive alias TS infers
 // for them (nested block lists in the legal documents), so they go through
 // `unknown` rather than being asserted directly.
-const translations: Record<Language, TranslationTree> = {
-  en: enJson as unknown as TranslationTree,
-  ru: ruJson as unknown as TranslationTree,
-  de: deJson as unknown as TranslationTree,
+const EN = enJson as unknown as TranslationTree;
+
+// English ships in the main bundle (it is the prerendered, indexed language
+// and every other locale's fallback). Russian and German are ~350 KB of JSON
+// together, so they load as separate chunks only when a visitor picks them;
+// until the chunk arrives `t()` falls back to English.
+const LOADERS: Record<Exclude<Language, 'en'>, () => Promise<{ default: unknown }>> = {
+  ru: () => import('../locales/ru.json'),
+  de: () => import('../locales/de.json'),
 };
 
 function isLanguage(value: unknown): value is Language {
@@ -54,7 +57,7 @@ function isLanguage(value: unknown): value is Language {
 }
 
 /** Walk a dotted path through one locale tree. Returns undefined if absent. */
-function lookup(tree: TranslationTree, key: string): TranslationValue | undefined {
+function lookup(tree: TranslationTree | undefined, key: string): TranslationValue | undefined {
   let value: TranslationValue | undefined = tree;
   for (const part of key.split('.')) {
     if (value && typeof value === 'object' && !Array.isArray(value) && part in value) {
@@ -77,13 +80,38 @@ function interpolate(text: string, vars?: TranslationVars): string {
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [language, setLanguage] = useState<Language>(() => {
     if (typeof window === 'undefined') return 'en';
-    const stored = localStorage.getItem('language');
+    let stored: string | null = null;
+    try {
+      stored = localStorage.getItem('language');
+    } catch {
+      /* storage blocked (cookies disabled) — reading it throws SecurityError */
+    }
     if (isLanguage(stored)) return stored;
     // Honour the browser's preference on a first visit, but only for the
     // languages we actually ship.
     const browser = navigator.language?.slice(0, 2).toLowerCase();
     return isLanguage(browser) ? browser : 'en';
   });
+
+  const [loaded, setLoaded] = useState<Partial<Record<Language, TranslationTree>>>({ en: EN });
+  const tree = loaded[language];
+
+  useEffect(() => {
+    if (language === 'en' || loaded[language]) return;
+    let cancelled = false;
+    LOADERS[language]()
+      .then((mod) => {
+        if (!cancelled) {
+          setLoaded((prev) => ({ ...prev, [language]: mod.default as TranslationTree }));
+        }
+      })
+      .catch(() => {
+        /* offline / chunk error — the page simply stays in English */
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [language, loaded]);
 
   // Keep <html lang> in sync so screen readers and Google see the right language.
   useEffect(() => {
@@ -109,10 +137,10 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
    * is only partly translated without blanking the page.
    */
   const resolve = (key: string): TranslationValue | undefined => {
-    const hit = lookup(translations[language], key);
+    const hit = lookup(tree, key);
     if (hit !== undefined && hit !== '') return hit;
     if (language !== 'en') {
-      const fallback = lookup(translations.en, key);
+      const fallback = lookup(EN, key);
       if (fallback !== undefined && fallback !== '') return fallback;
     }
     return undefined;
@@ -164,7 +192,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 
   const tOr = (key: string, fallback: string, vars?: TranslationVars): string => {
     if (language === 'en') return interpolate(fallback, vars);
-    const value = lookup(translations[language], key);
+    const value = lookup(tree, key);
     return typeof value === 'string' && value !== ''
       ? interpolate(value, vars)
       : interpolate(fallback, vars);
@@ -172,7 +200,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 
   const tListOr = (key: string, fallback: string[], vars?: TranslationVars): string[] => {
     if (language === 'en') return fallback.map((item) => interpolate(item, vars));
-    const value = lookup(translations[language], key);
+    const value = lookup(tree, key);
     return Array.isArray(value) && value.length > 0 && value.every((item) => typeof item === 'string')
       ? (value as string[]).map((item) => interpolate(item, vars))
       : fallback.map((item) => interpolate(item, vars));

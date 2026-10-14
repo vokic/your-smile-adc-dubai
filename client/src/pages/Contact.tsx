@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Phone, MessageCircle, MapPin, Mail } from "lucide-react";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useLocation } from "wouter";
 import { EmergencyConfirmModal } from "@/components/EmergencyConfirmModal";
 import { IMG } from "@/lib/images";
@@ -34,10 +34,13 @@ import {
   whatsappLink,
   CLINIC_EMAIL,
   CLINIC_ADDRESS,
-  CLINIC_MAPS_EMBED_URL,
   WORKING_HOURS,
+  formatHours,
 } from "@/lib/constants";
 import { SEO } from "@/components/SEO";
+import { MapEmbed } from "@/components/MapEmbed";
+import { track } from "@/lib/analytics";
+import { jsonLdBreadcrumb, jsonLdLocalBusiness } from "@/lib/seo";
 import { useLanguage } from "@/hooks/useLanguage";
 
 // The value posted to Netlify stays English so submissions stay comparable
@@ -64,7 +67,13 @@ const makeContactFormSchema = (t: Translate) =>
       .string()
       .min(2, t("contact.validation.nameMin"))
       .max(100, t("contact.validation.nameMax")),
-    phone: z.string().regex(/^\+?[1-9]\d{1,14}$/, t("contact.validation.phone")),
+    // People type "+971 50 123 4567", "050-123-4567" or "(04) 123 4567":
+    // strip the separators, then accept a local (leading 0) or international
+    // number of 7–15 digits. The normalised value is what gets submitted.
+    phone: z
+      .string()
+      .transform((v) => v.replace(/[\s().-]/g, ""))
+      .pipe(z.string().regex(/^\+?\d{7,15}$/, t("contact.validation.phone"))),
     email: z.string().email(t("contact.validation.email")),
     service: z.string().min(1, t("contact.validation.service")),
     message: z
@@ -90,9 +99,10 @@ function encodeForm(data: Record<string, string>): string {
 }
 
 export default function Contact() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [showEmergencyModal, setShowEmergencyModal] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const honeypotRef = useRef<HTMLInputElement>(null);
   const [, setLocation] = useLocation();
   const { toast } = useToast();
 
@@ -108,6 +118,7 @@ export default function Contact() {
   });
 
   const handleEmergencyConfirm = () => {
+    track("emergency_confirm", { source: "contact" });
     window.location.href = `tel:${EMERGENCY_PHONE}`;
   };
 
@@ -119,7 +130,8 @@ export default function Contact() {
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: encodeForm({
           "form-name": "contact",
-          "bot-field": "",
+          // Real bots fill the hidden field; Netlify drops those submissions.
+          "bot-field": honeypotRef.current?.value ?? "",
           ...data,
         }),
       });
@@ -128,6 +140,7 @@ export default function Contact() {
         throw new Error(`Submission failed: ${response.status}`);
       }
 
+      track("form_submit", { form: "contact", service: data.service });
       form.reset();
       setLocation("/thanks");
     } catch (error) {
@@ -147,6 +160,13 @@ export default function Contact() {
         title={t("contact.seoTitle")}
         description={t("contact.seoDescription")}
         path="/contact"
+        jsonLd={[
+          jsonLdLocalBusiness(),
+          jsonLdBreadcrumb([
+            { name: t("nav.home"), path: "/" },
+            { name: t("nav.contactUs"), path: "/contact" },
+          ]),
+        ]}
       />
       {/* Emergency Modal */}
       <EmergencyConfirmModal
@@ -162,7 +182,7 @@ export default function Contact() {
         <div className="absolute inset-0 bg-gradient-to-r from-secondary via-secondary/85 to-secondary/20" />
 
         <div className="container relative h-full mx-auto px-4 flex items-center py-12 md:py-0">
-          <div className="max-w-3xl space-y-6 animate-in fade-in slide-in-from-left-10 duration-700">
+          <div className="max-w-3xl space-y-6">
             <h1 className="text-4xl md:text-6xl font-serif font-bold text-white leading-tight">
               {t("contact.heroTitle")} <span className="text-primary">{t("contact.heroTitleAccent")}</span>
             </h1>
@@ -171,13 +191,13 @@ export default function Contact() {
             <p className="text-xl text-gray-200 font-light max-w-2xl">{t("contact.heroSubtitle")}</p>
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 gap-2 rounded-full">
-                <a href={whatsappLink(t("contact.bookWhatsappMessage"))} target="_blank" rel="noopener noreferrer" aria-label={t("contact.bookWhatsapp")}>
+                <a href={whatsappLink(t("contact.bookWhatsappMessage"))} target="_blank" rel="noopener noreferrer" aria-label={t("contact.bookWhatsapp")} onClick={() => track("whatsapp_click", { source: "contact-hero" })}>
                   <MessageCircle className="h-5 w-5" />
                   {t("contact.bookWhatsapp")}
                 </a>
               </Button>
               <Button asChild size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-secondary gap-2 rounded-full">
-                <a href={`tel:${REGULAR_PHONE}`} aria-label={t("contact.callAria", { phone: REGULAR_PHONE_DISPLAY })}>
+                <a href={`tel:${REGULAR_PHONE}`} aria-label={t("contact.callAria", { phone: REGULAR_PHONE_DISPLAY })} onClick={() => track("call_click", { source: "contact-hero", line: "regular" })}>
                   <Phone className="h-5 w-5" />
                   {t("common.callNow")}
                 </a>
@@ -202,7 +222,7 @@ export default function Contact() {
                     <Phone className="h-6 w-6 text-primary shrink-0 mt-1" />
                     <div>
                       <p className="font-bold text-secondary">{t("contact.phoneBooking")}</p>
-                      <a href={`tel:${REGULAR_PHONE}`} className="text-muted-foreground hover:text-primary transition-colors font-medium">{REGULAR_PHONE_DISPLAY}</a>
+                      <a href={`tel:${REGULAR_PHONE}`} className="text-muted-foreground hover:text-primary transition-colors font-medium" onClick={() => track("call_click", { source: "contact-details", line: "regular" })}>{REGULAR_PHONE_DISPLAY}</a>
                     </div>
                   </div>
                   <button
@@ -242,7 +262,7 @@ export default function Contact() {
                       <div key={item.key} className="flex justify-between items-center border-b border-border/50 last:border-0 pb-3 last:pb-0">
                         <span className="font-medium text-secondary">{t(`hours.days.${item.key}`)}</span>
                         <span className={`text-sm font-medium ${"closed" in item ? "text-red-500" : "text-muted-foreground"}`}>
-                          {"closed" in item ? t("hours.closed") : item.hours}
+                          {"closed" in item ? t("hours.closed") : formatHours(item.hours, language)}
                         </span>
                       </div>
                     ))}
@@ -272,7 +292,7 @@ export default function Contact() {
                     <input type="hidden" name="form-name" value="contact" />
                     <p hidden>
                       <label>
-                        {t("contact.honeypot")} <input name="bot-field" />
+                        {t("contact.honeypot")} <input name="bot-field" ref={honeypotRef} tabIndex={-1} autoComplete="off" />
                       </label>
                     </p>
 
@@ -284,7 +304,7 @@ export default function Contact() {
                           <FormItem>
                             <FormLabel>{t("contact.labelName")}</FormLabel>
                             <FormControl>
-                              <Input placeholder={t("contact.placeholderName")} className="h-10 rounded-full" {...field} />
+                              <Input autoComplete="name" placeholder={t("contact.placeholderName")} className="h-10 rounded-full" {...field} />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -297,7 +317,7 @@ export default function Contact() {
                           <FormItem>
                             <FormLabel>{t("contact.labelPhone")}</FormLabel>
                             <FormControl>
-                              <Input placeholder={t("contact.placeholderPhone")} className="h-10 rounded-full" {...field} />
+                              <Input type="tel" inputMode="tel" autoComplete="tel" placeholder={t("contact.placeholderPhone")} className="h-10 rounded-full" {...field} />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -311,7 +331,7 @@ export default function Contact() {
                         <FormItem>
                           <FormLabel>{t("contact.labelEmail")}</FormLabel>
                           <FormControl>
-                            <Input type="email" placeholder={t("contact.placeholderEmail")} className="h-10 rounded-full" {...field} />
+                            <Input type="email" autoComplete="email" placeholder={t("contact.placeholderEmail")} className="h-10 rounded-full" {...field} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -378,18 +398,7 @@ export default function Contact() {
                   <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary mb-3">{t("contact.findUsTitle")}</h2>
                   <p className="text-muted-foreground">{t("contact.findUsBody")}</p>
                 </div>
-                <iframe
-                  src={CLINIC_MAPS_EMBED_URL}
-                  width="100%"
-                  height="350px"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  className="rounded-2xl"
-                  title={t("contact.mapTitle")}
-                  aria-label={t("contact.mapAria")}
-                />
+                <MapEmbed title={t("contact.mapTitle")} className="h-[350px] w-full rounded-2xl" />
               </div>
             </div>
 

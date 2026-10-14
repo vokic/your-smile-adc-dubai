@@ -9,7 +9,7 @@ export const GENERAL_PREVENTIVE: SubService[] = [
     category: "general-preventive",
     name: "Dental Check-Ups",
     h1: "Dental Check-Ups in Dubai",
-    seoTitle: "Dental Check-Up in Dubai - Exam, X-Rays & Advice",
+    seoTitle: "Dental Check-Up in Dubai - Exam & X-Rays",
     seoDescription:
       "Routine dental check-ups in Dubai JLT. A thorough examination, digital low-radiation X-rays when needed and clear advice on keeping your teeth healthy.",
     heroSubtitle:
@@ -59,7 +59,7 @@ export const GENERAL_PREVENTIVE: SubService[] = [
     category: "general-preventive",
     name: "Professional Teeth Cleaning",
     h1: "Professional Teeth Cleaning in Dubai",
-    seoTitle: "Professional Teeth Cleaning in Dubai - Scale & Polish",
+    seoTitle: "Teeth Cleaning in Dubai - Scale & Polish",
     seoDescription:
       "Professional teeth cleaning in Dubai JLT. Gentle removal of plaque, tartar and surface stains with ultrasonic scaling and polishing to keep gums healthy.",
     heroSubtitle:
@@ -109,7 +109,7 @@ export const GENERAL_PREVENTIVE: SubService[] = [
     category: "general-preventive",
     name: "Tooth-Coloured Fillings",
     h1: "Tooth-Coloured Fillings in Dubai",
-    seoTitle: "Tooth-Coloured Fillings in Dubai - Composite Resin",
+    seoTitle: "Tooth-Coloured Fillings in Dubai",
     seoDescription:
       "Tooth-coloured composite fillings in Dubai JLT. Cavities and chips repaired in one visit with resin matched to your tooth, usually under local anaesthetic.",
     heroSubtitle:
@@ -159,7 +159,7 @@ export const GENERAL_PREVENTIVE: SubService[] = [
     category: "general-preventive",
     name: "Gum Disease Treatment",
     h1: "Gum Disease Treatment in Dubai",
-    seoTitle: "Gum Disease Treatment in Dubai - Scaling & Root Planing",
+    seoTitle: "Gum Disease Treatment in Dubai JLT",
     seoDescription:
       "Gum disease treatment in Dubai JLT. Deep cleaning (scaling and root planing) and periodontal maintenance to stop bleeding gums and protect your teeth.",
     heroSubtitle:
@@ -209,7 +209,7 @@ export const GENERAL_PREVENTIVE: SubService[] = [
     category: "general-preventive",
     name: "Children's Dentistry",
     h1: "Children's Dentistry in Dubai",
-    seoTitle: "Children's Dentist in Dubai - Gentle Kids Dentistry in JLT",
+    seoTitle: "Children's Dentist in Dubai JLT",
     seoDescription:
       "Children's dentistry in Dubai JLT. Gentle first visits, check-ups, fluoride varnish, fissure sealants and fillings for kids, with a patient multilingual team.",
     heroSubtitle:
@@ -259,7 +259,7 @@ export const GENERAL_PREVENTIVE: SubService[] = [
     category: "general-preventive",
     name: "Fluoride & Sealants",
     h1: "Fluoride Treatment & Fissure Sealants in Dubai",
-    seoTitle: "Fluoride & Fissure Sealants in Dubai - Cavity Prevention",
+    seoTitle: "Fissure Sealants & Fluoride in Dubai",
     seoDescription:
       "Fluoride varnish and fissure sealants in Dubai JLT. Quick, painless protection against cavities for children's molars and adults prone to decay, in one visit.",
     heroSubtitle:

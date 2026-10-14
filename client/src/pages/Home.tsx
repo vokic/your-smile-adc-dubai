@@ -11,20 +11,22 @@ import {
   CLINIC_ADDRESS,
   CLINIC_EMAIL,
   CLINIC_MAPS_URL,
-  CLINIC_MAPS_EMBED_URL,
   WORKING_HOURS_SUMMARY,
+  formatHours,
   whatsappLink,
 } from "@/lib/constants";
-import { SERVICES, DOCTORS, BLOG_POSTS } from "@/lib/content";
+import { SERVICES, DOCTORS } from "@/lib/content";
+import { BLOG_ARTICLES, blogPath, localizeArticle } from "@/content/blog";
 import { SEO } from "@/components/SEO";
-import { jsonLdLocalBusiness, jsonLdOrganization } from "@/lib/seo";
+import { MapEmbed } from "@/components/MapEmbed";
+import { jsonLdLocalBusiness, jsonLdWebSite } from "@/lib/seo";
 import { track } from "@/lib/analytics";
 import { IMG } from "@/lib/images";
 
 const SERVICE_ICONS = [Sparkles, Stethoscope, ShieldCheck, Sparkles, Sparkles, HomeIcon];
 
 export default function Home() {
-  const { t, tList } = useLanguage();
+  const { t, tList, tOr, tListOr, language } = useLanguage();
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -32,7 +34,7 @@ export default function Home() {
         title={t("home.seoTitle")}
         description={t("home.seoDescription")}
         path="/"
-        jsonLd={[jsonLdLocalBusiness(), jsonLdOrganization()]}
+        jsonLd={[jsonLdLocalBusiness(), jsonLdWebSite()]}
       />
 
       {/* 1. Hero */}
@@ -49,13 +51,15 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-r from-secondary via-secondary/85 to-secondary/25" />
 
         <div className="container relative mx-auto px-4 flex items-center min-h-[80vh] py-10 md:py-16">
-          <div className="max-w-3xl flex flex-col gap-6 md:gap-8 animate-in fade-in slide-in-from-left-10 duration-700">
-            <p className="self-start inline-flex items-center gap-2 rounded-full bg-white/10 border border-white/20 px-4 py-1.5 text-sm font-medium text-white">
+          <div className="max-w-3xl flex flex-col gap-6 md:gap-8">
+            {/* The H1 carries the search intent ("dental clinic in JLT,
+                Dubai"); the large positioning line below is display copy. */}
+            <h1 className="self-start inline-flex items-center gap-2 rounded-full bg-white/10 border border-white/20 px-4 py-1.5 text-sm font-sans font-medium tracking-normal text-white">
               <ShieldCheck className="h-4 w-4 text-primary" /> {t("home.heroBadge")}
-            </p>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-white leading-tight">
-              {t("home.heroTitle")} <span className="text-primary italic">{t("home.heroTitleAccent")}</span>
             </h1>
+            <p className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold tracking-tight text-white leading-tight">
+              {t("home.heroTitle")} <span className="text-primary italic">{t("home.heroTitleAccent")}</span>
+            </p>
             <p className="text-lg md:text-2xl text-gray-200 font-light max-w-2xl leading-relaxed">
               {t("home.heroSubtitle")}
             </p>
@@ -187,13 +191,16 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
-            {BLOG_POSTS.map((article) => (
-              <Link key={article.key} href="/blog" className="bg-white/5 border border-white/10 hover:bg-white/10 hover:border-primary/50 rounded-xl p-6 transition-all group cursor-pointer block">
-                <span className="inline-block text-xs font-bold text-primary bg-primary/20 px-3 py-1 rounded-full mb-4">{t(`blogPosts.${article.key}.category`)}</span>
-                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-primary transition-colors">{t(`blogPosts.${article.key}.title`)}</h3>
-                <p className="text-xs text-white/60">{t(`blogPosts.${article.key}.date`)}</p>
-              </Link>
-            ))}
+            {BLOG_ARTICLES.slice(0, 3).map((source) => {
+              const article = localizeArticle(source, { tOr, tListOr });
+              return (
+                <Link key={source.slug} href={blogPath(source)} className="bg-white/5 border border-white/10 hover:bg-white/10 hover:border-primary/50 rounded-xl p-6 transition-all group cursor-pointer block">
+                  <span className="inline-block text-xs font-bold text-primary bg-primary/20 px-3 py-1 rounded-full mb-4">{article.category}</span>
+                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-primary transition-colors">{article.title}</h3>
+                  <p className="text-sm text-white/60 line-clamp-2">{article.excerpt}</p>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -223,7 +230,7 @@ export default function Home() {
                       {WORKING_HOURS_SUMMARY.map((h) => (
                         <li key={h.key}>
                           <span className="font-medium text-secondary">{t(`hours.summary.${h.key}`)}:</span>{" "}
-                          {"closed" in h ? t("hours.closed") : h.hours}
+                          {"closed" in h ? t("hours.closed") : formatHours(h.hours, language)}
                         </li>
                       ))}
                     </ul>
@@ -233,7 +240,7 @@ export default function Home() {
                   <Phone className="h-6 w-6 text-primary shrink-0 mt-1" />
                   <div>
                     <h3 className="font-bold text-secondary">{t("home.contact")}</h3>
-                    <p className="text-muted-foreground"><a href={`tel:${REGULAR_PHONE}`} className="hover:text-primary">{REGULAR_PHONE_DISPLAY}</a></p>
+                    <p className="text-muted-foreground"><a href={`tel:${REGULAR_PHONE}`} className="hover:text-primary" onClick={() => track("call_click", { source: "home-location", line: "regular" })}>{REGULAR_PHONE_DISPLAY}</a></p>
                     <p className="text-muted-foreground"><a href={`mailto:${CLINIC_EMAIL}`} className="hover:text-primary">{CLINIC_EMAIL}</a></p>
                   </div>
                 </div>
@@ -245,16 +252,7 @@ export default function Home() {
             </div>
 
             <div className="h-[300px] md:h-[400px] lg:h-auto lg:min-h-[400px]">
-              <iframe
-                src={CLINIC_MAPS_EMBED_URL}
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title={t("home.mapTitle")}
-              />
+              <MapEmbed title={t("home.mapTitle")} className="h-full w-full" />
             </div>
           </div>
         </div>

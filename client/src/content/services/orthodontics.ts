@@ -10,7 +10,7 @@ export const ORTHODONTICS: SubService[] = [
     category: "orthodontics",
     name: "Invisalign",
     h1: "Invisalign in Dubai",
-    seoTitle: "Invisalign in Dubai - Clear Aligner Treatment in JLT",
+    seoTitle: "Invisalign in Dubai - Clear Aligners in JLT",
     seoDescription:
       "Invisalign clear aligners in Dubai JLT. Digital scan, 3D treatment preview and orthodontist-led care to straighten your teeth discreetly in 6–18 months.",
     heroSubtitle:
@@ -61,7 +61,7 @@ export const ORTHODONTICS: SubService[] = [
     category: "orthodontics",
     name: "Clear Aligners",
     h1: "Clear Aligners in Dubai",
-    seoTitle: "Clear Aligners in Dubai - Are They Right for You?",
+    seoTitle: "Clear Aligners in Dubai - Are They for You?",
     seoDescription:
       "Clear aligner treatment in Dubai JLT explained: how aligners move teeth, who they suit, and how they compare with braces. Orthodontist-led planning and care.",
     heroSubtitle:
@@ -112,7 +112,7 @@ export const ORTHODONTICS: SubService[] = [
     category: "orthodontics",
     name: "Metal Braces",
     h1: "Metal Braces in Dubai",
-    seoTitle: "Metal Braces in Dubai - Reliable Fixed Orthodontics",
+    seoTitle: "Metal Braces in Dubai - Fixed Orthodontics",
     seoDescription:
       "Traditional metal braces in Dubai JLT for children, teens and adults. Suitable for all cases including severe crowding, with orthodontist-led adjustments.",
     heroSubtitle:
@@ -163,7 +163,7 @@ export const ORTHODONTICS: SubService[] = [
     category: "orthodontics",
     name: "Ceramic Braces",
     h1: "Ceramic Braces in Dubai",
-    seoTitle: "Ceramic Braces in Dubai - Discreet Tooth-Coloured Braces",
+    seoTitle: "Ceramic Braces in Dubai - Discreet & Clear",
     seoDescription:
       "Ceramic braces in Dubai JLT: tooth-coloured brackets that blend with your smile while giving the control of fixed braces. Planned by our orthodontist.",
     heroSubtitle:
@@ -214,7 +214,7 @@ export const ORTHODONTICS: SubService[] = [
     category: "orthodontics",
     name: "Retainers",
     h1: "Orthodontic Retainers in Dubai",
-    seoTitle: "Orthodontic Retainers in Dubai - Keep Teeth Straight",
+    seoTitle: "Orthodontic Retainers in Dubai",
     seoDescription:
       "Fixed and removable retainers in Dubai JLT to keep teeth straight after braces or aligners. Replacement retainers, repairs and advice from our orthodontist.",
     heroSubtitle:
@@ -264,7 +264,7 @@ export const ORTHODONTICS: SubService[] = [
     category: "orthodontics",
     name: "Space Maintainers",
     h1: "Space Maintainers for Children in Dubai",
-    seoTitle: "Space Maintainers for Children in Dubai - Kids Orthodontics",
+    seoTitle: "Space Maintainers for Children in Dubai",
     seoDescription:
       "Space maintainers for children in Dubai JLT. A small appliance that holds space after a baby tooth is lost early so the adult tooth can come through straight.",
     heroSubtitle:
@@ -315,7 +315,7 @@ export const ORTHODONTICS: SubService[] = [
     category: "orthodontics",
     name: "Bite Correction",
     h1: "Bite Correction in Dubai",
-    seoTitle: "Bite Correction in Dubai - Overbite, Underbite & Crossbite",
+    seoTitle: "Overbite & Underbite Correction in Dubai",
     seoDescription:
       "Bite correction in Dubai JLT for overbite, underbite, crossbite and open bite. Orthodontist-led diagnosis with in-clinic X-rays and CBCT for kids and adults.",
     heroSubtitle:

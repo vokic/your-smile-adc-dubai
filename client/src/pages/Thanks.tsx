@@ -7,6 +7,7 @@ import {
   WHATSAPP_PHONE,
 } from "@/lib/constants";
 import { SEO } from "@/components/SEO";
+import { track } from "@/lib/analytics";
 import { useLanguage } from "@/hooks/useLanguage";
 
 const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_PHONE.replace(/\D/g, "")}`;
@@ -44,6 +45,7 @@ export default function Thanks() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={t("thanks.whatsappAria")}
+              onClick={() => track("whatsapp_click", { source: "thanks" })}
             >
               <MessageCircle className="h-5 w-5" />
               {t("thanks.whatsappCta")}
@@ -55,7 +57,7 @@ export default function Thanks() {
             variant="outline"
             className="gap-2 rounded-full"
           >
-            <a href={`tel:${REGULAR_PHONE}`} aria-label={t("thanks.callAria", { phone: REGULAR_PHONE_DISPLAY })}>
+            <a href={`tel:${REGULAR_PHONE}`} aria-label={t("thanks.callAria", { phone: REGULAR_PHONE_DISPLAY })} onClick={() => track("call_click", { source: "thanks", line: "regular" })}>
               <Phone className="h-5 w-5" />
               {t("thanks.callCta", { phone: REGULAR_PHONE_DISPLAY })}
             </a>

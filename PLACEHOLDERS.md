@@ -12,7 +12,7 @@ page renders an honest fallback instead of placeholder art or made-up data.
 | Founding year | 2025 | `constants.ts` → JSON-LD |
 | Founder | Dr. Nemanja Kukoljac, DMD, DDS | `constants.ts` FOUNDER → About, Cosmetic, Veneers, JSON-LD |
 | Cosmetic experience | 18 years (Dr. Kukoljac personally, not the clinic) | `FOUNDER.cosmeticExperienceYears` |
-| Google rating | 5.0 · 107 reviews | `constants.ts` → JSON-LD, Footer, GoogleRatingBanner |
+| Google rating | 5.0 · 107 reviews | `constants.ts` → Footer, GoogleRatingBanner (not JSON-LD: Google forbids marking up ratings collected elsewhere) |
 | Address | HDS Business Centre, Office 1604, Cluster M, JLT (no postal code) | `constants.ts`, JSON-LD `hasMap` |
 | Hours | Mon/Wed/Sat 12–21, Tue/Thu/Sun 9–18, Fri closed | `WORKING_HOURS`, `WORKING_HOURS_SUMMARY` |
 | Doctors | 7 from the previous site, no years-of-experience figures, photos downloaded | `content.ts` DOCTORS, `attached_assets/doctors/` |
@@ -34,12 +34,15 @@ Search the repo for these markers to find the exact spot:
 2. **Clinic interior photos** → pass as `backgroundImage` to `<ServiceHero>` on About/Contact/At-Home and as `src` on `<Visual>` blocks. Until then a branded gradient renders.
 3. **Patient video testimonials** → YouTube IDs into `VIDEO_TESTIMONIALS` in `client/src/components/VideoTestimonials.tsx`.
 4. **Google review texts** (8 best, with reviewer first name + initial) → `TESTIMONIALS` in `content.ts`. Currently the three testimonials carried over from the old site.
-5. **English logo** → replace `attached_assets/logo_1764501679029.png` (import in `Header.tsx`).
+5. **English logo** → replace `attached_assets/logo_1764501679029.png` and run `node script/optimize-images.mjs`; it regenerates the header logo, `logo.png` (JSON-LD), favicon, apple-touch-icon and `og-image.jpg`. Adjust `LOGO_WORDMARK_BOTTOM` / `TOOTH_BOX` in the script to the new file.
 6. **Dr. Youssef Saweres** — listed on our old draft but not on the previous website; removed until the owner confirms.
 7. **Ceramic implant brand** — owner still checking; copy says "metal-free ceramic implants available for selected cases" with no brand.
-8. **Analytics IDs** → Netlify env vars `VITE_GTM_ID` (GTM container) and `VITE_GSC_VERIFICATION` (Search Console HTML-tag token). GA4 + Meta Pixel are configured inside GTM, not in code. With the vars unset the snippets are stripped at build time.
+8. **Analytics IDs** → Netlify env vars `VITE_GTM_ID` (GTM container) and `VITE_GSC_VERIFICATION` (Search Console HTML-tag token). GA4 + Meta Pixel are configured inside GTM, not in code. With the vars unset the snippets are stripped at build time. In GTM a plain Google tag (GA4 ID) and the Meta Pixel are enough for page views: both pick up SPA navigations themselves and the app sends no page_view of its own. Mark `whatsapp_click`, `call_click` and `form_submit` (dataLayer events) as GA4 key events.
 9. **Twitter/X** — none; `TWITTER_HANDLE` stays empty.
 10. **Languages** — owner wants RU + AR (+ IT instead of DE, undecided). URL-prefixed i18n is the next phase; DE switcher entry stays until decided.
+11. **Medical review of the 9 blog articles** (texts in `client/src/content/blog-bodies.ts`, titles/excerpts in `blog.ts`; written Oct 2026 from the existing site copy). Points to check: veneer lifespan, knocked-out-tooth first aid, emergency-line hours, ceramic implants "for selected cases", treatment durations. Once reviewed, a "Medically reviewed by Dr. Nemanja Kukoljac" line + `reviewedBy` in the BlogPosting schema would strengthen them for Google (health content).
+12. **Newsletter** — none for now (owner, Oct 2026). Signup form removed from Footer and Blog, the Netlify form from `index.html` and the newsletter lines from the privacy notice. To bring it back, restore all four from git history.
+13. **Real clinic photo** for the `image` field of the Dentist JSON-LD (`seo.ts`), which uses the logo until interior photos arrive.
 
 ## Pre-launch checklist
 
@@ -54,4 +57,5 @@ Search the repo for these markers to find the exact spot:
 - [ ] Real before/after + interior photos in place
 - [ ] `VITE_GTM_ID` / `VITE_GSC_VERIFICATION` set in Netlify
 - [ ] Submit `sitemap.xml` to Google Search Console after first deploy
+- [ ] After deploy: `curl -I https://yoursmileadvanceddental.ae/veneers` → 200 (no 301 to `/veneers/`), `/blog-post` → 301, `/nonsense` → 404
 - [ ] Google Rich Results Test on `/`, `/faq`, one sub-service page

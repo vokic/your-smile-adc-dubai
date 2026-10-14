@@ -8,18 +8,18 @@ import { FAQSection } from "@/components/FAQSection";
 import { EmergencyConfirmModal } from "@/components/EmergencyConfirmModal";
 import { Visual } from "@/components/Visual";
 import { jsonLdBreadcrumb, jsonLdFAQPage, jsonLdService } from "@/lib/seo";
-import { EMERGENCY_PHONE, EMERGENCY_PHONE_DISPLAY, WORKING_HOURS_SUMMARY, whatsappLink } from "@/lib/constants";
+import { EMERGENCY_PHONE, EMERGENCY_PHONE_DISPLAY, WORKING_HOURS_SUMMARY, formatHours, whatsappLink } from "@/lib/constants";
 import { track } from "@/lib/analytics";
 import { useLanguage } from "@/hooks/useLanguage";
 import type { FAQ } from "@/content/services";
 
 export default function Emergency() {
-  const { t, tList, tItems } = useLanguage();
+  const { t, tList, tItems, language } = useLanguage();
   const [showModal, setShowModal] = useState(false);
   const faqs = tItems<FAQ>("emergency.faqs");
   const cases = tItems<{ title: string; desc: string }>("emergency.cases");
   const hours = WORKING_HOURS_SUMMARY.map(
-    (h) => `${t(`hours.summary.${h.key}`)} ${"closed" in h ? t("hours.closed") : h.hours}`,
+    (h) => `${t(`hours.summary.${h.key}`)} ${"closed" in h ? t("hours.closed") : formatHours(h.hours, language)}`,
   ).join(" \u00b7 ");
   const crumbs = [
     { name: t("common.home"), path: "/" },

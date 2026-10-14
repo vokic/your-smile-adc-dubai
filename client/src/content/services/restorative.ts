@@ -10,7 +10,7 @@ export const RESTORATIVE: SubService[] = [
     category: "restorative",
     name: "Inlays & Onlays",
     h1: "Dental Inlays & Onlays in Dubai",
-    seoTitle: "Inlays & Onlays in Dubai - Ceramic Partial Crowns",
+    seoTitle: "Ceramic Inlays & Onlays in Dubai",
     seoDescription:
       "Ceramic inlays and onlays in Dubai JLT. A conservative alternative to crowns for damaged back teeth, digitally designed and bonded in two visits or same day.",
     heroSubtitle:
@@ -60,7 +60,7 @@ export const RESTORATIVE: SubService[] = [
     category: "restorative",
     name: "Overlays (Table Tops)",
     h1: "Overlays (Table Tops) in Dubai",
-    seoTitle: "Overlays & Table Tops in Dubai - Rebuild Worn Teeth",
+    seoTitle: "Dental Overlays & Table Tops in Dubai",
     seoDescription:
       "Ceramic overlays (table tops) in Dubai JLT to rebuild worn back teeth, restore bite height and protect remaining enamel, with minimal or no drilling.",
     heroSubtitle:

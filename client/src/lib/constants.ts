@@ -41,6 +41,29 @@ export const WORKING_HOURS_SUMMARY = [
   { key: "friday", label: "Friday", hours: "Closed", closed: true },
 ] as const;
 
+/** "12 PM – 9 PM" → { opens: "12:00", closes: "21:00" }; null for "Closed". */
+export function parseHours(hours: string): { opens: string; closes: string } | null {
+  const match = hours.match(/(\d{1,2})\s*(AM|PM)\s*[–-]\s*(\d{1,2})\s*(AM|PM)/i);
+  if (!match) return null;
+  const to24h = (h: string, ampm: string) => {
+    let n = parseInt(h, 10);
+    if (ampm.toUpperCase() === "PM" && n !== 12) n += 12;
+    if (ampm.toUpperCase() === "AM" && n === 12) n = 0;
+    return String(n).padStart(2, "0") + ":00";
+  };
+  return { opens: to24h(match[1], match[2]), closes: to24h(match[3], match[4]) };
+}
+
+/**
+ * A clock range as the visitor's language writes it: English keeps
+ * "12 PM – 9 PM", Russian and German read "12:00–21:00".
+ */
+export function formatHours(hours: string, language: string): string {
+  if (language === "en") return hours;
+  const parsed = parseHours(hours);
+  return parsed ? `${parsed.opens}–${parsed.closes}` : hours;
+}
+
 // Social Media Links (taken from the previous clinic website)
 export const SOCIAL_LINKS = {
   instagram: "https://www.instagram.com/yoursmile.adc.dubai/",
@@ -73,7 +96,8 @@ export const CLINIC_EMAIL = "info@yoursmileadcdubai.com";
 export const CLINIC_FOUNDED_YEAR = "2025";
 
 // Google Business Profile (owner-confirmed, Sept 2026). Update both values
-// together when the count changes meaningfully — they feed JSON-LD.
+// together when the count changes meaningfully — they are shown in the
+// Footer and GoogleRatingBanner.
 export const GOOGLE_REVIEW_COUNT = 107;
 export const GOOGLE_REVIEW_RATING = 5.0;
 export const GOOGLE_REVIEWS_URL = CLINIC_MAPS_URL;
@@ -105,4 +129,4 @@ export const CLINIC_SPECIALTIES = [
 ] as const;
 
 // Legal
-export const LEGAL_LAST_UPDATED = "8 September 2026";
+export const LEGAL_LAST_UPDATED = "14 October 2026";

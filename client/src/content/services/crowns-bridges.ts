@@ -10,7 +10,7 @@ export const CROWNS_BRIDGES: SubService[] = [
     category: "crowns-bridges",
     name: "Zirconia Crowns",
     h1: "Zirconia Crowns in Dubai",
-    seoTitle: "Zirconia Crowns in Dubai - Strong, Natural-Looking",
+    seoTitle: "Zirconia Crowns in Dubai - Strong & Natural",
     seoDescription:
       "Zirconia crowns in Dubai JLT: digitally scanned, CAD/CAM designed and built to last on back teeth and front teeth alike. Also used in full-mouth rehabilitation.",
     heroSubtitle:
@@ -60,7 +60,7 @@ export const CROWNS_BRIDGES: SubService[] = [
     category: "crowns-bridges",
     name: "Porcelain Crowns",
     h1: "Porcelain Crowns in Dubai",
-    seoTitle: "Porcelain Crowns in Dubai - Natural Front-Tooth Aesthetics",
+    seoTitle: "Porcelain Crowns in Dubai for Front Teeth",
     seoDescription:
       "Porcelain and lithium disilicate crowns in Dubai JLT for front teeth that need to look completely natural. Digitally scanned, shade matched and bonded in place.",
     heroSubtitle:
@@ -109,7 +109,7 @@ export const CROWNS_BRIDGES: SubService[] = [
     category: "crowns-bridges",
     name: "Same-Day Crowns",
     h1: "Same-Day Crowns in Dubai",
-    seoTitle: "Same-Day Crowns in Dubai - Fitted in One Visit",
+    seoTitle: "Same-Day Crowns in Dubai - One Visit",
     seoDescription:
       "Same-day crowns in Dubai JLT: your tooth is scanned, the crown designed and milled in our clinic, and fitted in about 2–3 hours. No temporary, no second visit.",
     heroSubtitle:
@@ -159,7 +159,7 @@ export const CROWNS_BRIDGES: SubService[] = [
     category: "crowns-bridges",
     name: "Dental Bridges",
     h1: "Dental Bridges in Dubai",
-    seoTitle: "Dental Bridges in Dubai - Fixed Tooth Replacement",
+    seoTitle: "Dental Bridges in Dubai - Fixed Replacement",
     seoDescription:
       "Fixed dental bridges in Dubai JLT to replace one or more missing teeth without surgery. Zirconia and porcelain bridges designed digitally for a natural fit.",
     heroSubtitle:
@@ -208,7 +208,7 @@ export const CROWNS_BRIDGES: SubService[] = [
     category: "crowns-bridges",
     name: "Implant-Supported Bridges",
     h1: "Implant-Supported Bridges in Dubai",
-    seoTitle: "Implant-Supported Bridges in Dubai - Fixed on Implants",
+    seoTitle: "Implant-Supported Bridges in Dubai",
     seoDescription:
       "Implant-supported bridges in Dubai JLT: several missing teeth replaced on two or more implants, without cutting down healthy teeth. Full-arch options available.",
     heroSubtitle:
