@@ -1,5 +1,6 @@
 import { CheckCircle2, X } from "lucide-react";
 import { WHATSAPP_PHONE } from "@/lib/constants";
+import { useLanguage } from "@/hooks/useLanguage";
 
 interface ComparisonRow {
   feature: string;
@@ -9,6 +10,7 @@ interface ComparisonRow {
 }
 
 interface ServiceComparisonProps {
+  /** Both default to the translated comparison heading / subheading. */
   title?: string;
   subtitle?: string;
   rows?: ComparisonRow[];
@@ -16,54 +18,20 @@ interface ServiceComparisonProps {
 }
 
 export function ServiceComparison({
-  title = "How to Choose Your Treatment",
-  subtitle = "Compare popular treatments to find what's right for you",
+  title,
+  subtitle,
   showThirdColumn = false,
   rows,
 }: ServiceComparisonProps) {
+  const { t } = useLanguage();
   const defaultRows: ComparisonRow[] = [
-    {
-      feature: "Duration of treatment",
-      invisalign: "6-12 months",
-      braces: "18-24 months",
-      veneers: "2-3 weeks",
-    },
-    {
-      feature: "Visibility",
-      invisalign: "Virtually invisible",
-      braces: "Visible",
-      veneers: "Natural-looking",
-    },
-    {
-      feature: "Removable",
-      invisalign: true,
-      braces: false,
-      veneers: false,
-    },
-    {
-      feature: "Cost",
-      invisalign: "Moderate",
-      braces: "Budget-friendly",
-      veneers: "Premium",
-    },
-    {
-      feature: "Maintenance",
-      invisalign: "Remove daily",
-      braces: "Extra brushing needed",
-      veneers: "Regular brushing",
-    },
-    {
-      feature: "Dietary restrictions",
-      invisalign: "None",
-      braces: "Yes",
-      veneers: "None",
-    },
-    {
-      feature: "For all ages",
-      invisalign: "13+",
-      braces: "Any age",
-      veneers: "18+",
-    },
+    { feature: t("comparison.rows.duration.feature"), invisalign: t("comparison.rows.duration.aligners"), braces: t("comparison.rows.duration.braces"), veneers: t("comparison.rows.duration.veneers") },
+    { feature: t("comparison.rows.visibility.feature"), invisalign: t("comparison.rows.visibility.aligners"), braces: t("comparison.rows.visibility.braces"), veneers: t("comparison.rows.visibility.veneers") },
+    { feature: t("comparison.rows.removable.feature"), invisalign: true, braces: false, veneers: false },
+    { feature: t("comparison.rows.cost.feature"), invisalign: t("comparison.rows.cost.aligners"), braces: t("comparison.rows.cost.braces"), veneers: t("comparison.rows.cost.veneers") },
+    { feature: t("comparison.rows.maintenance.feature"), invisalign: t("comparison.rows.maintenance.aligners"), braces: t("comparison.rows.maintenance.braces"), veneers: t("comparison.rows.maintenance.veneers") },
+    { feature: t("comparison.rows.diet.feature"), invisalign: t("comparison.rows.diet.aligners"), braces: t("comparison.rows.diet.braces"), veneers: t("comparison.rows.diet.veneers") },
+    { feature: t("comparison.rows.ages.feature"), invisalign: t("comparison.rows.ages.aligners"), braces: t("comparison.rows.ages.braces"), veneers: t("comparison.rows.ages.veneers") },
   ];
 
   const data = rows || defaultRows;
@@ -80,27 +48,27 @@ export function ServiceComparison({
   };
 
   return (
-    <section className="py-24 bg-background">
+    <section className="py-16 md:py-24 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
           <h2 className="text-3xl md:text-5xl font-serif font-bold text-secondary">
-            {title}
+            {title ?? t("comparison.defaultTitle")}
           </h2>
-          <p className="text-muted-foreground text-lg">{subtitle}</p>
+          <p className="text-muted-foreground text-lg">{subtitle ?? t("comparison.defaultSubtitle")}</p>
         </div>
 
         {/* Comparison Table */}
         <div className="overflow-x-auto rounded-lg border border-border shadow-lg">
-          <table className="w-full">
+          <table className="w-full text-sm md:text-base">
             <thead>
               <tr className="bg-secondary text-secondary-foreground">
-                <th className="px-6 py-4 text-left font-bold">Feature</th>
-                <th className="px-6 py-4 text-center font-bold">
-                  Clear Aligners
+                <th className="px-3 py-3 md:px-6 md:py-4 text-left font-bold">{t("comparison.colFeature")}</th>
+                <th className="px-3 py-3 md:px-6 md:py-4 text-center font-bold">
+                  {t("comparison.colAligners")}
                 </th>
-                <th className="px-6 py-4 text-center font-bold">Braces</th>
+                <th className="px-3 py-3 md:px-6 md:py-4 text-center font-bold">{t("comparison.colBraces")}</th>
                 {showThirdColumn && (
-                  <th className="px-6 py-4 text-center font-bold">Veneers</th>
+                  <th className="px-3 py-3 md:px-6 md:py-4 text-center font-bold">{t("comparison.colVeneers")}</th>
                 )}
               </tr>
             </thead>
@@ -112,17 +80,17 @@ export function ServiceComparison({
                     idx % 2 === 0 ? "bg-white" : "bg-muted/20"
                   }`}
                 >
-                  <td className="px-6 py-4 font-medium text-foreground">
+                  <td className="px-3 py-3 md:px-6 md:py-4 font-medium text-foreground">
                     {row.feature}
                   </td>
-                  <td className="px-6 py-4 text-center text-foreground">
+                  <td className="px-3 py-3 md:px-6 md:py-4 text-center text-foreground">
                     {renderCell(row.invisalign)}
                   </td>
-                  <td className="px-6 py-4 text-center text-foreground">
+                  <td className="px-3 py-3 md:px-6 md:py-4 text-center text-foreground">
                     {renderCell(row.braces)}
                   </td>
                   {showThirdColumn && row.veneers !== undefined && (
-                    <td className="px-6 py-4 text-center text-foreground">
+                    <td className="px-3 py-3 md:px-6 md:py-4 text-center text-foreground">
                       {renderCell(row.veneers)}
                     </td>
                   )}
@@ -135,7 +103,7 @@ export function ServiceComparison({
         {/* CTA */}
         <div className="mt-12 text-center">
           <p className="text-lg text-muted-foreground mb-6">
-            Not sure which treatment is right for you?
+            {t("comparison.ctaLead")}
           </p>
           <a
             href={`https://wa.me/${WHATSAPP_PHONE.replace('+', '')}`}
@@ -144,7 +112,7 @@ export function ServiceComparison({
             className="inline-block px-8 py-3 bg-primary text-primary-foreground font-bold rounded-full hover:bg-primary/90 transition-colors"
             data-testid="link-consultation-comparison"
           >
-            Book a Free Consultation
+            {t("comparison.cta")}
           </a>
         </div>
       </div>

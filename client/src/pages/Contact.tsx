@@ -31,47 +31,55 @@ import {
   EMERGENCY_PHONE_DISPLAY,
   REGULAR_PHONE,
   REGULAR_PHONE_DISPLAY,
-  WHATSAPP_PHONE,
+  whatsappLink,
   CLINIC_EMAIL,
   CLINIC_ADDRESS,
+  CLINIC_MAPS_EMBED_URL,
   WORKING_HOURS,
 } from "@/lib/constants";
 import { SEO } from "@/components/SEO";
+import { useLanguage } from "@/hooks/useLanguage";
 
+// The value posted to Netlify stays English so submissions stay comparable
+// across languages; only the visible label is translated.
 const SERVICE_OPTIONS = [
-  "General inquiry",
-  "Veneers",
-  "Dental Implants",
-  "Orthodontics & Invisalign",
-  "Teeth Whitening",
-  "Crowns & Bridges",
-  "Cosmetic Dentistry",
-  "Emergency",
-  "Private At-Home Visit",
-  "Other",
+  { value: "General inquiry", key: "general" },
+  { value: "Veneers", key: "veneers" },
+  { value: "Dental Implants", key: "implants" },
+  { value: "Orthodontics & Invisalign", key: "orthodontics" },
+  { value: "Teeth Whitening", key: "whitening" },
+  { value: "Crowns & Bridges", key: "crownsBridges" },
+  { value: "Cosmetic Dentistry", key: "cosmetic" },
+  { value: "Emergency", key: "emergency" },
+  { value: "Private At-Home Visit", key: "atHome" },
+  { value: "Other", key: "other" },
 ] as const;
 
-const contactFormSchema = z.object({
-  name: z
-    .string()
-    .min(2, "Name must be at least 2 characters")
-    .max(100, "Name must be less than 100 characters"),
-  phone: z
-    .string()
-    .regex(/^\+?[1-9]\d{1,14}$/, "Please enter a valid phone number"),
-  email: z.string().email("Please enter a valid email address"),
-  service: z.string().min(1, "Please select a service"),
-  message: z
-    .string()
-    .min(10, "Message must be at least 10 characters")
-    .max(1000, "Message must be less than 1000 characters"),
-});
+type Translate = (key: string, vars?: Record<string, string | number>) => string;
 
-type ContactFormValues = z.infer<typeof contactFormSchema>;
+// Rebuilt per render so validation messages follow the active language.
+const makeContactFormSchema = (t: Translate) =>
+  z.object({
+    name: z
+      .string()
+      .min(2, t("contact.validation.nameMin"))
+      .max(100, t("contact.validation.nameMax")),
+    phone: z.string().regex(/^\+?[1-9]\d{1,14}$/, t("contact.validation.phone")),
+    email: z.string().email(t("contact.validation.email")),
+    service: z.string().min(1, t("contact.validation.service")),
+    message: z
+      .string()
+      .min(10, t("contact.validation.messageMin"))
+      .max(1000, t("contact.validation.messageMax")),
+  });
 
-const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_PHONE.replace(/\D/g, "")}?text=${encodeURIComponent(
-  "Hi, I'd like to book an appointment at Your Smile Advanced Dental Center."
-)}`;
+interface ContactFormValues {
+  name: string;
+  phone: string;
+  email: string;
+  service: string;
+  message: string;
+}
 
 function encodeForm(data: Record<string, string>): string {
   return Object.keys(data)
@@ -82,13 +90,14 @@ function encodeForm(data: Record<string, string>): string {
 }
 
 export default function Contact() {
+  const { t } = useLanguage();
   const [showEmergencyModal, setShowEmergencyModal] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [, setLocation] = useLocation();
   const { toast } = useToast();
 
   const form = useForm<ContactFormValues>({
-    resolver: zodResolver(contactFormSchema),
+    resolver: zodResolver(makeContactFormSchema(t)),
     defaultValues: {
       name: "",
       phone: "",
@@ -123,11 +132,8 @@ export default function Contact() {
       setLocation("/thanks");
     } catch (error) {
       toast({
-        title: "Error sending message",
-        description:
-          "Please try again later or call us directly at " +
-          REGULAR_PHONE_DISPLAY +
-          ".",
+        title: t("contact.errorTitle"),
+        description: t("contact.errorBody", { phone: REGULAR_PHONE_DISPLAY }),
         variant: "destructive",
       });
     } finally {
@@ -138,8 +144,8 @@ export default function Contact() {
   return (
     <div className="flex flex-col min-h-screen">
       <SEO
-        title="Contact Us"
-        description="Get in touch with Your Smile Advanced Dental Center in Dubai JLT. Book an appointment, ask about services, or reach our 24/7 emergency line."
+        title={t("contact.seoTitle")}
+        description={t("contact.seoDescription")}
         path="/contact"
       />
       {/* Emergency Modal */}
@@ -158,22 +164,22 @@ export default function Contact() {
         <div className="container relative h-full mx-auto px-4 flex items-center py-12 md:py-0">
           <div className="max-w-3xl space-y-6 animate-in fade-in slide-in-from-left-10 duration-700">
             <h1 className="text-4xl md:text-6xl font-serif font-bold text-white leading-tight">
-              Contact Your Smile <span className="text-primary">Advanced Dental Center</span>
+              {t("contact.heroTitle")} <span className="text-primary">{t("contact.heroTitleAccent")}</span>
             </h1>
-            <h2 className="text-xl text-gray-200 font-light max-w-2xl">
-              We're here for your dental needs - whether you're booking an appointment or need emergency care.
-            </h2>
+            {/* A paragraph, not an h2: every other hero subtitle is Lato light,
+                and h2 now carries the display serif. */}
+            <p className="text-xl text-gray-200 font-light max-w-2xl">{t("contact.heroSubtitle")}</p>
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 gap-2 rounded-full">
-                <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" aria-label="Book on WhatsApp">
+                <a href={whatsappLink(t("contact.bookWhatsappMessage"))} target="_blank" rel="noopener noreferrer" aria-label={t("contact.bookWhatsapp")}>
                   <MessageCircle className="h-5 w-5" />
-                  Book on WhatsApp
+                  {t("contact.bookWhatsapp")}
                 </a>
               </Button>
               <Button asChild size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-secondary gap-2 rounded-full">
-                <a href={`tel:${REGULAR_PHONE}`} aria-label={`Call ${REGULAR_PHONE_DISPLAY}`}>
+                <a href={`tel:${REGULAR_PHONE}`} aria-label={t("contact.callAria", { phone: REGULAR_PHONE_DISPLAY })}>
                   <Phone className="h-5 w-5" />
-                  Call Now
+                  {t("common.callNow")}
                 </a>
               </Button>
             </div>
@@ -182,7 +188,7 @@ export default function Contact() {
       </section>
 
       {/* 2. Contact Details & Form Section */}
-      <section className="py-24 bg-background">
+      <section className="py-16 md:py-24 bg-background">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
 
@@ -190,37 +196,37 @@ export default function Contact() {
             <div className="space-y-12">
               {/* Contact Information */}
               <div className="space-y-6">
-                <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary">Get in Touch</h2>
+                <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary">{t("contact.getInTouch")}</h2>
                 <div className="space-y-4">
-                  <div className="flex items-start gap-4 p-5 bg-card rounded-xl border border-border hover:shadow-md transition-all">
+                  <div className="flex items-start gap-4 p-5 bg-card rounded-xl border border-border hover:shadow-sm transition-all">
                     <Phone className="h-6 w-6 text-primary shrink-0 mt-1" />
                     <div>
-                      <p className="font-bold text-secondary">Phone (Booking)</p>
+                      <p className="font-bold text-secondary">{t("contact.phoneBooking")}</p>
                       <a href={`tel:${REGULAR_PHONE}`} className="text-muted-foreground hover:text-primary transition-colors font-medium">{REGULAR_PHONE_DISPLAY}</a>
                     </div>
                   </div>
                   <button
                     onClick={() => setShowEmergencyModal(true)}
-                    className="w-full flex items-start gap-4 p-5 bg-red-50 rounded-xl border-2 border-red-200 hover:shadow-md transition-all cursor-pointer group"
+                    className="w-full flex items-start gap-4 p-5 bg-red-50 rounded-xl border-2 border-red-200 hover:shadow-sm transition-all cursor-pointer group"
                   >
                     <Phone className="h-6 w-6 text-red-600 shrink-0 mt-1 group-hover:scale-110 transition-transform" />
                     <div className="text-left">
-                      <p className="font-bold text-red-700">Emergency Phone (24/7)</p>
+                      <p className="font-bold text-red-700">{t("contact.emergencyPhone")}</p>
                       <p className="text-red-600 hover:text-red-700 transition-colors font-medium">{EMERGENCY_PHONE_DISPLAY}</p>
-                      <p className="text-xs text-red-500 mt-1">Click for emergency details</p>
+                      <p className="text-xs text-red-500 mt-1">{t("contact.emergencyHint")}</p>
                     </div>
                   </button>
-                  <div className="flex items-start gap-4 p-5 bg-card rounded-xl border border-border hover:shadow-md transition-all">
+                  <div className="flex items-start gap-4 p-5 bg-card rounded-xl border border-border hover:shadow-sm transition-all">
                     <Mail className="h-6 w-6 text-primary shrink-0 mt-1" />
                     <div>
-                      <p className="font-bold text-secondary">Email</p>
+                      <p className="font-bold text-secondary">{t("contact.email")}</p>
                       <a href={`mailto:${CLINIC_EMAIL}`} className="text-muted-foreground hover:text-primary transition-colors font-medium">{CLINIC_EMAIL}</a>
                     </div>
                   </div>
-                  <div className="flex items-start gap-4 p-5 bg-card rounded-xl border border-border hover:shadow-md transition-all">
+                  <div className="flex items-start gap-4 p-5 bg-card rounded-xl border border-border hover:shadow-sm transition-all">
                     <MapPin className="h-6 w-6 text-primary shrink-0 mt-1" />
                     <div>
-                      <p className="font-bold text-secondary">Address</p>
+                      <p className="font-bold text-secondary">{t("contact.address")}</p>
                       <p className="text-muted-foreground">{CLINIC_ADDRESS}</p>
                     </div>
                   </div>
@@ -229,14 +235,14 @@ export default function Contact() {
 
               {/* Working Hours */}
               <div className="space-y-6">
-                <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary">Clinic Hours</h2>
+                <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary">{t("contact.clinicHours")}</h2>
                 <div className="bg-muted/30 rounded-xl p-8 border border-border">
                   <div className="space-y-4">
-                    {WORKING_HOURS.map((item, i) => (
-                      <div key={i} className="flex justify-between items-center border-b border-border/50 last:border-0 pb-3 last:pb-0">
-                        <span className="font-medium text-secondary">{item.day}</span>
-                        <span className={`text-sm font-medium ${item.hours === "Closed" ? "text-red-500" : "text-muted-foreground"}`}>
-                          {item.hours}
+                    {WORKING_HOURS.map((item) => (
+                      <div key={item.key} className="flex justify-between items-center border-b border-border/50 last:border-0 pb-3 last:pb-0">
+                        <span className="font-medium text-secondary">{t(`hours.days.${item.key}`)}</span>
+                        <span className={`text-sm font-medium ${"closed" in item ? "text-red-500" : "text-muted-foreground"}`}>
+                          {"closed" in item ? t("hours.closed") : item.hours}
                         </span>
                       </div>
                     ))}
@@ -250,8 +256,8 @@ export default function Contact() {
               {/* Contact Form */}
               <div className="space-y-6 bg-card p-8 md:p-10 rounded-2xl shadow-sm border border-border">
                 <div>
-                  <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary mb-3">Send Us a Message</h2>
-                  <p className="text-muted-foreground">Questions or want to book? Fill out the form - we'll respond within 24 hours.</p>
+                  <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary mb-3">{t("contact.formTitle")}</h2>
+                  <p className="text-muted-foreground">{t("contact.formSubtitle")}</p>
                 </div>
                 <Form {...form}>
                   <form
@@ -266,7 +272,7 @@ export default function Contact() {
                     <input type="hidden" name="form-name" value="contact" />
                     <p hidden>
                       <label>
-                        Don&apos;t fill this out: <input name="bot-field" />
+                        {t("contact.honeypot")} <input name="bot-field" />
                       </label>
                     </p>
 
@@ -276,9 +282,9 @@ export default function Contact() {
                         name="name"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel>Name *</FormLabel>
+                            <FormLabel>{t("contact.labelName")}</FormLabel>
                             <FormControl>
-                              <Input placeholder="Your full name" className="h-10 rounded-full" {...field} />
+                              <Input placeholder={t("contact.placeholderName")} className="h-10 rounded-full" {...field} />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -289,9 +295,9 @@ export default function Contact() {
                         name="phone"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel>Phone *</FormLabel>
+                            <FormLabel>{t("contact.labelPhone")}</FormLabel>
                             <FormControl>
-                              <Input placeholder="+971..." className="h-10 rounded-full" {...field} />
+                              <Input placeholder={t("contact.placeholderPhone")} className="h-10 rounded-full" {...field} />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -303,9 +309,9 @@ export default function Contact() {
                       name="email"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Email *</FormLabel>
+                          <FormLabel>{t("contact.labelEmail")}</FormLabel>
                           <FormControl>
-                            <Input type="email" placeholder="your@email.com" className="h-10 rounded-full" {...field} />
+                            <Input type="email" placeholder={t("contact.placeholderEmail")} className="h-10 rounded-full" {...field} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -316,17 +322,17 @@ export default function Contact() {
                       name="service"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Service of interest *</FormLabel>
+                          <FormLabel>{t("contact.labelService")}</FormLabel>
                           <Select onValueChange={field.onChange} value={field.value}>
                             <FormControl>
                               <SelectTrigger className="h-10 rounded-full">
-                                <SelectValue placeholder="Select a service" />
+                                <SelectValue placeholder={t("contact.placeholderService")} />
                               </SelectTrigger>
                             </FormControl>
                             <SelectContent>
                               {SERVICE_OPTIONS.map((service) => (
-                                <SelectItem key={service} value={service}>
-                                  {service}
+                                <SelectItem key={service.key} value={service.value}>
+                                  {t(`contact.services.${service.key}`)}
                                 </SelectItem>
                               ))}
                             </SelectContent>
@@ -340,9 +346,9 @@ export default function Contact() {
                       name="message"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Message *</FormLabel>
+                          <FormLabel>{t("contact.labelMessage")}</FormLabel>
                           <FormControl>
-                            <Textarea placeholder="How can we help you?" className="min-h-[120px] resize-none rounded-2xl" {...field} />
+                            <Textarea placeholder={t("contact.placeholderMessage")} className="min-h-[120px] resize-none rounded-2xl" {...field} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -356,10 +362,10 @@ export default function Contact() {
                       {isSubmitting ? (
                         <>
                           <Spinner className="mr-2 h-4 w-4" />
-                          Sending...
+                          {t("contact.sending")}
                         </>
                       ) : (
-                        "Submit Message"
+                        t("contact.submit")
                       )}
                     </Button>
                   </form>
@@ -369,11 +375,11 @@ export default function Contact() {
               {/* Map Section */}
               <div className="space-y-6">
                 <div>
-                  <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary mb-3">Find Us Easily</h2>
-                  <p className="text-muted-foreground">Located at HDS Business Centre in JLT, easily accessible by car or public transport.</p>
+                  <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary mb-3">{t("contact.findUsTitle")}</h2>
+                  <p className="text-muted-foreground">{t("contact.findUsBody")}</p>
                 </div>
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3611.0524823!2d55.14507!3d25.08543!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f6c8f8f8f8f%3A0x12345678!2sHDS%20Business%20Centre%2C%20Jumeirah%20Lake%20Towers%2C%20Dubai!5e0!3m2!1sen!2sae!4v1700000000000"
+                  src={CLINIC_MAPS_EMBED_URL}
                   width="100%"
                   height="350px"
                   style={{ border: 0 }}
@@ -381,8 +387,8 @@ export default function Contact() {
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                   className="rounded-2xl"
-                  title="Your Smile Advanced Dental Center Location - HDS Business Centre, Jumeirah Lake Towers, Dubai"
-                  aria-label="Interactive map showing the location of Your Smile Advanced Dental Center at HDS Business Centre, Jumeirah Lake Towers, Dubai"
+                  title={t("contact.mapTitle")}
+                  aria-label={t("contact.mapAria")}
                 />
               </div>
             </div>

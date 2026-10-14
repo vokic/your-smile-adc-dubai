@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { updateConsent } from "@/lib/analytics";
+import { useLanguage } from "@/hooks/useLanguage";
 
 const STORAGE_KEY = "ysadc-consent";
 
@@ -22,6 +23,7 @@ function readChoice(): Choice | null {
  * remembered per browser; re-applied on every load so GTM sees it.
  */
 export function CookieConsent() {
+  const { t } = useLanguage();
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -51,15 +53,14 @@ export function CookieConsent() {
     <div
       role="dialog"
       aria-live="polite"
-      aria-label="Cookie preferences"
-      className="fixed left-3 right-3 sm:left-auto sm:right-6 bottom-[5.5rem] sm:bottom-28 z-50 sm:max-w-md rounded-2xl border border-border bg-card/95 backdrop-blur p-3 sm:p-5 shadow-2xl animate-in fade-in slide-in-from-bottom-4"
+      aria-label={t("cookies.aria")}
+      className="fixed left-3 right-3 sm:left-auto sm:right-6 bottom-[5.5rem] sm:bottom-28 z-50 sm:max-w-md rounded-2xl border border-border bg-card/95 backdrop-blur p-3 sm:p-5 shadow-lg animate-in fade-in slide-in-from-bottom-4"
       data-testid="cookie-consent"
     >
       <p className="text-xs sm:text-sm text-secondary leading-relaxed">
-        We use cookies to measure how the website is used and to improve our services. Analytics and marketing
-        cookies are only set with your consent. See our{" "}
+        {t("cookies.body")}{" "}
         <Link href="/privacy" className="text-primary underline underline-offset-2">
-          Privacy Policy
+          {t("cookies.privacyLink")}
         </Link>
         .
       </p>
@@ -70,7 +71,7 @@ export function CookieConsent() {
           onClick={() => choose("granted")}
           data-testid="button-consent-accept"
         >
-          Accept
+          {t("cookies.accept")}
         </Button>
         <Button
           size="sm"
@@ -79,7 +80,7 @@ export function CookieConsent() {
           onClick={() => choose("denied")}
           data-testid="button-consent-decline"
         >
-          Essential only
+          {t("cookies.essentialOnly")}
         </Button>
       </div>
     </div>

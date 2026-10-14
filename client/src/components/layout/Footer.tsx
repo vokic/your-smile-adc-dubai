@@ -26,32 +26,34 @@ import { Form, FormControl, FormField, FormItem, FormMessage } from "@/component
 import { useToast } from "@/hooks/use-toast";
 import { Spinner } from "@/components/ui/spinner";
 import { track } from "@/lib/analytics";
+import { useLanguage } from "@/hooks/useLanguage";
 
-const newsletterSchema = z.object({
-  email: z.string().email("Please enter a valid email address"),
-});
+// Built per render so the validation message follows the active language.
+const makeNewsletterSchema = (invalidEmail: string) =>
+  z.object({ email: z.string().email(invalidEmail) });
 
-type NewsletterFormValues = z.infer<typeof newsletterSchema>;
+type NewsletterFormValues = { email: string };
 
 const QUICK_LINKS = [
-  { name: "About Us", path: "/about" },
-  { name: "All Services", path: "/services" },
-  { name: "Our Doctors", path: "/doctors" },
-  { name: "Emergency Dentist", path: "/emergency" },
-  { name: "At-Home Visits", path: "/at-home" },
-  { name: "Dental Tourism", path: "/dental-tourism" },
-  { name: "Blog", path: "/blog" },
-  { name: "FAQ", path: "/faq" },
-  { name: "Contact Us", path: "/contact" },
+  { key: "about", path: "/about" },
+  { key: "services", path: "/services" },
+  { key: "doctors", path: "/doctors" },
+  { key: "emergency", path: "/emergency" },
+  { key: "atHome", path: "/at-home" },
+  { key: "dentalTourism", path: "/dental-tourism" },
+  { key: "blog", path: "/blog" },
+  { key: "faq", path: "/faq" },
+  { key: "contact", path: "/contact" },
 ];
 
 export function Footer() {
+  const { t } = useLanguage();
   const [showEmergencyModal, setShowEmergencyModal] = useState(false);
   const [isSubmittingNewsletter, setIsSubmittingNewsletter] = useState(false);
   const { toast } = useToast();
 
   const newsletterForm = useForm<NewsletterFormValues>({
-    resolver: zodResolver(newsletterSchema),
+    resolver: zodResolver(makeNewsletterSchema(t("footer.invalidEmail"))),
     defaultValues: { email: "" },
   });
 
@@ -74,14 +76,14 @@ export function Footer() {
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       track("form_submit", { form: "newsletter" });
       toast({
-        title: "Subscribed",
-        description: "Thanks — you'll hear from us with dental tips and clinic news.",
+        title: t("footer.subscribedTitle"),
+        description: t("footer.subscribedBody"),
       });
       newsletterForm.reset();
     } catch {
       toast({
-        title: "Subscription failed",
-        description: "Please try again later or message us on WhatsApp.",
+        title: t("footer.subscribeFailedTitle"),
+        description: t("footer.subscribeFailedBody"),
         variant: "destructive",
       });
     } finally {
@@ -90,8 +92,9 @@ export function Footer() {
   };
 
   return (
-    // Bottom padding leaves room for the fixed contact bar on small screens.
-    <footer className="bg-secondary text-secondary-foreground pt-16 pb-28 sm:pb-8">
+    // Bottom padding leaves room for the fixed contact bar, which is shown on
+    // every screen size (h-14 + pb-3 on mobile, h-16 + pb-5 from sm up).
+    <footer className="bg-secondary text-secondary-foreground pt-16 pb-28 sm:pb-32">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {/* 1. Contact */}
@@ -101,10 +104,10 @@ export function Footer() {
               <MapPin className="h-5 w-5 shrink-0 text-primary" />
               <div>
                 <p>{CLINIC_ADDRESS}</p>
-                <a href={CLINIC_MAPS_URL} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline text-xs font-semibold">Google Maps</a>
+                <a href={CLINIC_MAPS_URL} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline text-xs font-semibold">{t("footer.googleMaps")}</a>
               </div>
             </div>
-            <div className="flex items-center gap-3 text-sm opacity-90">
+            <div className="flex items-start gap-3 text-sm opacity-90">
               <Phone className="h-5 w-5 shrink-0 text-primary" />
               <div>
                 <p>
@@ -117,7 +120,7 @@ export function Footer() {
                   className="text-xs text-red-400 mt-1 hover:text-red-300 transition-colors font-semibold underline cursor-pointer"
                   data-testid="button-footer-emergency"
                 >
-                  Emergency: {EMERGENCY_PHONE_DISPLAY}
+                  {t("footer.emergencyLabel", { phone: EMERGENCY_PHONE_DISPLAY })}
                 </button>
               </div>
             </div>
@@ -129,7 +132,7 @@ export function Footer() {
 
           {/* 2. Hours */}
           <div className="space-y-4">
-            <h4 className="text-lg font-bold mb-4">Opening Hours</h4>
+            <h4 className="text-lg font-bold mb-4">{t("footer.openingHours")}</h4>
             <div className="space-y-2 text-sm opacity-90">
               {WORKING_HOURS_SUMMARY.map((h, i) => (
                 <div
@@ -138,21 +141,23 @@ export function Footer() {
                     h.hours === "Closed" ? "text-primary font-medium" : ""
                   }`}
                 >
-                  <span>{h.label}</span>
-                  <span>{h.hours}</span>
+                  <span>{t(`hours.summary.${h.key}`)}</span>
+                  <span>{"closed" in h ? t("hours.closed") : h.hours}</span>
                 </div>
               ))}
-              <p className="text-xs opacity-70 pt-2">Emergency line available outside these hours.</p>
+              <p className="text-xs opacity-70 pt-2">{t("footer.emergencyOutsideHours")}</p>
             </div>
           </div>
 
           {/* 3. Quick links */}
           <div className="space-y-4">
-            <h4 className="text-lg font-bold mb-4">Quick Links</h4>
-            <ul className="space-y-2 text-sm opacity-90">
+            <h4 className="text-lg font-bold mb-4">{t("footer.quickLinks")}</h4>
+            {/* Two columns on phones halves the list height; py-1.5 gives each
+                link a ~32px tap target instead of the bare 17px text line. */}
+            <ul className="grid grid-cols-2 gap-x-4 md:grid-cols-1 md:gap-y-2 text-sm opacity-90">
               {QUICK_LINKS.map((l) => (
                 <li key={l.path}>
-                  <Link href={l.path} className="hover:text-primary transition-colors cursor-pointer">{l.name}</Link>
+                  <Link href={l.path} className="block py-1.5 md:py-0 hover:text-primary transition-colors cursor-pointer">{t(`footer.links.${l.key}`)}</Link>
                 </li>
               ))}
             </ul>
@@ -161,7 +166,7 @@ export function Footer() {
           {/* 4. Social, rating, newsletter */}
           <div className="space-y-6">
             <div className="space-y-4">
-              <h4 className="text-lg font-bold">Stay Connected</h4>
+              <h4 className="text-lg font-bold">{t("footer.stayConnected")}</h4>
               <div className="flex gap-4">
                 <a href={SOCIAL_LINKS.instagram} target="_blank" rel="noopener noreferrer" className="bg-white/10 p-2 rounded-full hover:bg-primary hover:text-white transition-colors" aria-label="Instagram"><Instagram className="h-5 w-5" /></a>
                 <a href={SOCIAL_LINKS.facebook} target="_blank" rel="noopener noreferrer" className="bg-white/10 p-2 rounded-full hover:bg-primary hover:text-white transition-colors" aria-label="Facebook"><Facebook className="h-5 w-5" /></a>
@@ -178,12 +183,12 @@ export function Footer() {
                 {[1, 2, 3, 4, 5].map((i) => <Star key={i} className="fill-current h-4 w-4" />)}
               </div>
               <p className="text-xs opacity-80 inline-flex items-center gap-1">
-                {GOOGLE_REVIEW_RATING.toFixed(1)} rating · {GOOGLE_REVIEW_COUNT} Google reviews <ExternalLink className="h-3 w-3" />
+                {t("footer.ratingLine", { rating: GOOGLE_REVIEW_RATING.toFixed(1), count: GOOGLE_REVIEW_COUNT })} <ExternalLink className="h-3 w-3" />
               </p>
             </a>
 
             <div className="space-y-2">
-              <h5 className="text-sm font-medium">Dental tips & clinic news</h5>
+              <h5 className="text-sm font-medium">{t("footer.newsletterTitle")}</h5>
               <Form {...newsletterForm}>
                 <form onSubmit={newsletterForm.handleSubmit(onNewsletterSubmit)} className="flex gap-2" name="newsletter" data-netlify="true">
                   <input type="hidden" name="form-name" value="newsletter" />
@@ -195,7 +200,7 @@ export function Footer() {
                         <FormControl>
                           <Input
                             type="email"
-                            placeholder="Email address"
+                            placeholder={t("footer.emailPlaceholder")}
                             autoComplete="email"
                             className="bg-white/10 border-white/20 text-white placeholder:text-white/50 rounded-full"
                             {...field}
@@ -205,7 +210,7 @@ export function Footer() {
                       </FormItem>
                     )}
                   />
-                  <Button type="submit" size="icon" className="bg-primary hover:bg-primary/90 rounded-full" disabled={isSubmittingNewsletter} aria-label="Subscribe">
+                  <Button type="submit" size="icon" className="bg-primary hover:bg-primary/90 rounded-full" disabled={isSubmittingNewsletter} aria-label={t("footer.subscribeAria")}>
                     {isSubmittingNewsletter ? <Spinner className="h-4 w-4" /> : <Mail className="h-4 w-4" />}
                   </Button>
                 </form>
@@ -217,14 +222,14 @@ export function Footer() {
         {/* Legal */}
         <div className="border-t border-white/10 pt-8 space-y-4 text-xs opacity-60">
           <p className="max-w-4xl">
-            The information on this website is for general educational purposes and does not replace a clinical examination. Treatment results vary from patient to patient. Before-and-after photographs show real patients of the clinic who consented to publication.
+            {t("footer.disclaimer")}
           </p>
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p>&copy; {new Date().getFullYear()} {CLINIC_NAME}. All rights reserved.</p>
-            <div className="flex gap-6">
-              <Link href="/privacy" className="hover:text-white transition-colors cursor-pointer">Privacy Policy</Link>
-              <Link href="/terms" className="hover:text-white transition-colors cursor-pointer">Terms & Conditions</Link>
-              <Link href="/sitemap" className="hover:text-white transition-colors cursor-pointer">Sitemap</Link>
+            <p>{t("footer.copyright", { year: new Date().getFullYear(), clinic: CLINIC_NAME })}</p>
+            <div className="flex flex-wrap justify-center gap-x-6">
+              <Link href="/privacy" className="py-2 hover:text-white transition-colors cursor-pointer">{t("footer.privacyPolicy")}</Link>
+              <Link href="/terms" className="py-2 hover:text-white transition-colors cursor-pointer">{t("footer.terms")}</Link>
+              <Link href="/sitemap" className="py-2 hover:text-white transition-colors cursor-pointer">{t("footer.sitemap")}</Link>
             </div>
           </div>
         </div>

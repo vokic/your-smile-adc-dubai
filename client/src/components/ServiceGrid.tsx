@@ -23,7 +23,7 @@ export function ServiceGrid({
   };
 
   return (
-    <section className={`py-20 ${bgColor}`}>
+    <section className={`py-16 md:py-24 ${bgColor}`}>
       <div className="container mx-auto px-4">
         {title && (
           <div className="text-center mb-12">
@@ -37,7 +37,7 @@ export function ServiceGrid({
           {services.map((service, index) => (
             <div
               key={index}
-              className="p-6 bg-card rounded-xl border border-border hover:shadow-md transition-all space-y-3"
+              className="p-6 bg-card rounded-xl border border-border hover:shadow-sm transition-all space-y-3"
               data-testid={`card-service-${index}`}
             >
               <h3 className="text-lg font-bold text-secondary">

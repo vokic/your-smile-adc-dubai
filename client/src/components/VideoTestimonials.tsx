@@ -1,5 +1,6 @@
 import { Youtube } from "lucide-react";
 import { SOCIAL_LINKS } from "@/lib/constants";
+import { useLanguage } from "@/hooks/useLanguage";
 
 export interface VideoTestimonial {
   /** YouTube video ID (the part after v=). */
@@ -13,23 +14,25 @@ export interface VideoTestimonial {
 // IDs here. While empty, the section renders a short honest note.
 export const VIDEO_TESTIMONIALS: readonly VideoTestimonial[] = [];
 
-export function VideoTestimonials({ title = "Patient Stories" }: { title?: string }) {
+/** `title` defaults to the translated "Patient Stories". */
+export function VideoTestimonials({ title }: { title?: string }) {
+  const { t } = useLanguage();
   return (
-    <section className="py-24 bg-muted/30">
+    <section className="py-16 md:py-24 bg-muted/30">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-12 space-y-4">
-          <h2 className="text-3xl md:text-5xl font-serif font-bold text-secondary">{title}</h2>
-          <p className="text-muted-foreground text-lg">International patients on their treatment and their time in Dubai.</p>
+          <h2 className="text-3xl md:text-5xl font-serif font-bold text-secondary">{title ?? t("videoTestimonials.defaultTitle")}</h2>
+          <p className="text-muted-foreground text-lg">{t("videoTestimonials.subtitle")}</p>
         </div>
 
         {VIDEO_TESTIMONIALS.length === 0 ? (
           <div className="max-w-2xl mx-auto rounded-2xl border border-border bg-card p-10 text-center space-y-4">
             <Youtube className="h-10 w-10 text-primary mx-auto" />
-            <p className="text-secondary font-medium">Video stories from our international patients are on the way.</p>
+            <p className="text-secondary font-medium">{t("videoTestimonials.comingSoon")}</p>
             <p className="text-muted-foreground text-sm">
-              Until then, you can see recent cases and patient moments on our{" "}
+              {t("videoTestimonials.untilThen")}{" "}
               <a href={SOCIAL_LINKS.instagram} target="_blank" rel="noopener noreferrer" className="text-primary underline">
-                Instagram
+                {t("videoTestimonials.instagram")}
               </a>
               .
             </p>

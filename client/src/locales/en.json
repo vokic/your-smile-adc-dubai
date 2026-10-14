@@ -8,17 +8,81 @@
     "blogNews": "Blog / News",
     "contactUs": "Contact Us",
     "book": "Book Now",
-    "call": "Call"
+    "call": "Call",
+    "viewAllServices": "View All Services",
+    "searchAria": "Search the site (Ctrl+K)",
+    "searchShort": "Search",
+    "openMenu": "Open menu",
+    "logoAlt": "Your Smile Advanced Dental Center - Dental Clinic in Dubai JLT",
+    "complexCases": "Specialists in complex cases",
+    "allServices": "All services"
   },
   "services": {
-    "heroTitle": "",
-    "heroSubtitle": "",
-    "heroImageAlt": "Dental services at Your Smile clinic"
+    "heroTitle": "Dental Services in Dubai",
+    "heroSubtitle": "Specialists in complex cases — and everything else your family needs, under one roof in Jumeirah Lake Towers.",
+    "seoTitle": "Dental Services in Dubai - Implants, Veneers, Emergency & More",
+    "seoDescription": "All treatments at Your Smile Advanced Dental Center Dubai JLT: emergency care, implants, veneers, crowns, orthodontics, whitening, oral surgery, restorative, preventive and at-home visits.",
+    "crumb": "Services",
+    "featuredTitle": "What We Do Best",
+    "featuredSubtitle": "The cases other clinics turn away are where we start.",
+    "featured": [
+      {
+        "name": "Emergency Dentist",
+        "desc": "Same-day relief for toothache, broken teeth, swelling and trauma."
+      },
+      {
+        "name": "Hollywood Smile & Veneers",
+        "desc": "No-prep ceramic veneers and complete smile makeovers."
+      },
+      {
+        "name": "Dental Implants",
+        "desc": "Single teeth to full-mouth All-on-4 / All-on-6 with lifetime implant warranty."
+      },
+      {
+        "name": "Crowns & Bridges",
+        "desc": "Zirconia, porcelain and same-day crowns; implant-supported bridges."
+      },
+      {
+        "name": "Cosmetic Dentistry",
+        "desc": "Complete smile transformations combining several treatments."
+      },
+      {
+        "name": "Private At-Home Visit",
+        "desc": "Check-ups, cleanings, fillings and urgent care at your home."
+      }
+    ],
+    "allTitle": "All Treatments",
+    "allSubtitle": "Every treatment has its own page with what to expect, step by step.",
+    "other": [
+      {
+        "name": "Digital X-Ray, OPG & CBCT",
+        "desc": "Low-radiation 2D and 3D imaging in-clinic."
+      },
+      {
+        "name": "Dental Tourism",
+        "desc": "Treatment-only or all-inclusive packages for international patients."
+      },
+      {
+        "name": "Smile Gallery",
+        "desc": "Before and after results."
+      }
+    ],
+    "whyTitle": "Why Patients Trust Us",
+    "why": [
+      "Specialists in complex and full-mouth cases",
+      "Digital planning: intraoral scans, CAD/CAM, 3D implant planning",
+      "Gentle, pain-free procedures with sedation options",
+      "Multilingual, family-friendly international team",
+      "Lifetime warranty on {brand} implants",
+      "Comprehensive care under one roof in JLT"
+    ],
+    "ctaTitle": "Book Your Dental Appointment in Dubai",
+    "ctaText": "From a check-up to a full smile makeover, tell us what you need and we'll guide you to the right treatment."
   },
   "home": {
-    "heroTitle": "Trusted Dental Clinic in Dubai for Advanced & Cosmetic Dentistry",
-    "heroTitleAccent": "Advanced & Cosmetic Dentistry",
-    "heroSubtitle": "From veneers and implants to Invisalign and whitening – expert care tailored to your smile.",
+    "heroTitle": "We solve the cases",
+    "heroTitleAccent": "other clinics can't",
+    "heroSubtitle": "Emergency dentistry, Hollywood smiles and complete smile transformations with implants, veneers, crowns and bridges — planned digitally, delivered by an international team.",
     "bookAppointment": "Book Your Appointment",
     "internationallyTrained": "Internationally Trained",
     "trainedDesc": "Team of expert certified dentists",
@@ -54,92 +118,1363 @@
     "next": "Next",
     "meetDoctors": "Meet Our Expert Dentists in Dubai",
     "ratedClinic": "5.0 ★ Rated Dental Clinic in Dubai",
-    "verifiedReview": "Verified Review"
+    "verifiedReview": "Verified Review",
+    "seoTitle": "Dentist in Dubai JLT for Complex Cases - Implants, Veneers, Emergency",
+    "seoDescription": "Your Smile Advanced Dental Center in Dubai JLT specialises in complex cases: emergency care, Hollywood smile, full-mouth implants, no-prep ceramic veneers and crowns. Rated 5.0 on Google.",
+    "heroBadge": "Specialists in complex cases · Jumeirah Lake Towers, Dubai",
+    "emergencyCta": "Dental emergency? Start here",
+    "servicesTitle": "What We Do Best",
+    "servicesSubtitle": "Complex cases first. Everything else, under the same roof in JLT.",
+    "exploreAllServices": "Explore All Services",
+    "doctorsTitle": "Meet Our Dentists in Dubai",
+    "doctorsSubtitle": "An international team with extensive experience in implantology, oral surgery, orthodontics, cosmetic and restorative dentistry.",
+    "meetWholeTeam": "Meet the whole team ({count} dentists)",
+    "insuranceTitle": "Insurance & Flexible Payment",
+    "insuranceBody": "We work with major UAE dental insurance providers and offer flexible payment plans for larger treatments. Tell us your insurer when you book and we will confirm your coverage before your visit.",
+    "insuranceAccepted": "Insurance accepted",
+    "instalmentPlans": "Instalment plans",
+    "blogTitle": "Dental Health Insights & Tips",
+    "blogSubtitle": "Read our latest articles about dental care, smile transformations, and oral health.",
+    "viewAllArticles": "View All Articles",
+    "locationTitle": "Find Our Dental Clinic in JLT",
+    "locationSubtitle": "HDS Business Centre, Cluster M, Jumeirah Lake Towers — a short walk from DMCC Metro Station.",
+    "address": "Address",
+    "openInMaps": "Open in Google Maps",
+    "workingHours": "Working Hours",
+    "contact": "Contact",
+    "sendMessage": "Send us a Message",
+    "mapTitle": "Your Smile Advanced Dental Center location - HDS Business Centre, Cluster M, Jumeirah Lake Towers, Dubai"
   },
   "veneers": {
-    "heroTitle": "",
-    "heroSubtitle": "",
-    "heroImageAlt": "Veneer smile transformation"
+    "heroTitle": "Veneers in Dubai - Your Dream Smile Starts Here",
+    "heroSubtitle": "Achieve a flawless, natural-looking smile with premium ceramic veneers, tailored just for you. No prep, no shaving, no pain.",
+    "heroImageAlt": "Veneer smile transformation",
+    "seoTitle": "No-Prep Ceramic Veneers in Dubai - Hollywood Smile in 2 Visits",
+    "seoDescription": "Specialist no-prep ceramic veneers in Dubai JLT: no shaving, no injections, no temporaries. Hollywood smile in two visits, 3–10 days. Rated 5.0 on Google.",
+    "crumb": "Veneers",
+    "jsonLdName": "Ceramic Veneers in Dubai",
+    "jsonLdDescription": "No-prep ceramic veneers and Hollywood smile design.",
+    "treatment": "ceramic veneers",
+    "introTitle": "Tired of hiding your smile?",
+    "introBody": "Stains, chips or gaps can hold you back. With ceramic veneers we transform your smile and your confidence in just two visits, and because we work exclusively with no-prep techniques, your natural teeth stay untouched underneath.",
+    "introFounder": "Veneers are led by our founder {name}, who brings {years} years of cosmetic dentistry experience to every Hollywood smile we design.",
+    "seeTransformations": "See smile transformations",
+    "noPrepTitle": "We Specialise in No-Prep Veneers",
+    "noPrepBody": "Traditional veneers require grinding down healthy enamel. We don't. A 15–20 minute digital scan is all it takes to design your new smile, and your own teeth remain intact.",
+    "noPrepLabels": [
+      "No prep",
+      "No shaving",
+      "No pain",
+      "No injection",
+      "No temporaries"
+    ],
+    "journeyTitle": "Your Veneers Journey",
+    "journeySubtitle": "Two visits. 3–10 days in total, depending on urgency.",
+    "steps": [
+      {
+        "title": "Consultation, Smile Design & Digital Scan",
+        "description": "We analyse your smile, agree on shape and shade, and take a 15–20 minute digital scan — no impressions, no drilling. You see a preview of your new smile before anything is made.",
+        "duration": "45–60 min"
+      },
+      {
+        "title": "Placement",
+        "description": "Your custom ceramic veneers are bonded to your untouched teeth, polished and checked for bite and comfort. You walk out with your new smile.",
+        "duration": "90–120 min"
+      }
+    ],
+    "benefitsTitle": "Why Choose Veneers in Dubai With Us?",
+    "benefits": [
+      "Two visits, 3–10 days: smile makeover without weeks of temporaries",
+      "Natural & durable: ceramic veneers last 10–15 years with good care",
+      "Digital Smile Design: preview your result before treatment starts",
+      "Trusted expertise: {years} years of cosmetic dentistry experience ({name})",
+      "Top-rated clinic: {rating} Google rating from Dubai patients"
+    ],
+    "transformationsTitle": "Veneer Transformations",
+    "transformationsSubtitle": "Real ceramic veneer cases from our JLT clinic. Individual results vary.",
+    "faqsTitle": "Frequently Asked Questions About Veneers",
+    "faqs": [
+      {
+        "question": "How long do ceramic veneers last?",
+        "answer": "Ceramic veneers typically last 10–15 years and often longer. Their longevity depends on daily care, regular dental check-ups, and avoiding habits like teeth grinding or biting hard objects."
+      },
+      {
+        "question": "Do veneers look natural?",
+        "answer": "Yes. Each veneer is custom-made to match the colour, shape and size of your teeth. Ceramic mimics the translucency of natural enamel, making the veneers indistinguishable from real teeth."
+      },
+      {
+        "question": "Are veneers painful?",
+        "answer": "The procedure is virtually pain-free."
+      },
+      {
+        "question": "Do veneers damage natural teeth?",
+        "answer": "Not with our approach. We specialise in no-prep veneers: no shaving of enamel, no injections and no temporaries. Your natural teeth stay intact underneath the ceramic."
+      },
+      {
+        "question": "Can veneers chip or stain?",
+        "answer": "Ceramic veneers are stain-resistant and rarely chip when properly cared for. Avoid using your teeth as tools and wear a night guard if you grind."
+      },
+      {
+        "question": "Who is a good candidate for veneers?",
+        "answer": "Veneers suit patients with discoloured, chipped, slightly misaligned or gapped teeth. Severe decay or gum disease must be treated first; we will tell you honestly at the consultation."
+      },
+      {
+        "question": "How many veneers do I need?",
+        "answer": "It depends on your smile line. Some patients need only 2–4 veneers to cover imperfections, while a full Hollywood smile usually involves 8–10 per arch."
+      },
+      {
+        "question": "How long does the whole process take?",
+        "answer": "Two visits, 3–10 days apart depending on urgency. Visit one is 45–60 minutes (consultation, design and digital scan); visit two is 90–120 minutes for placement."
+      },
+      {
+        "question": "How do I take care of my veneers?",
+        "answer": "Exactly like natural teeth: brush twice daily, floss and keep up regular check-ups. Limit strongly staining foods and drinks to keep the surrounding teeth matching."
+      }
+    ],
+    "relatedLinks": [
+      {
+        "name": "Cosmetic Dentistry & Hollywood Smile"
+      },
+      {
+        "name": "Teeth Whitening"
+      },
+      {
+        "name": "Crowns & Bridges"
+      },
+      {
+        "name": "Dental Implants"
+      }
+    ],
+    "ctaTitle": "Your Perfect Smile Is Two Visits Away",
+    "ctaText": "Book a consultation and see your new smile designed digitally before we make a single veneer."
   },
   "implants": {
-    "heroTitle": "",
-    "heroSubtitle": "",
-    "heroImageAlt": "Dental implant procedure"
+    "heroTitle": "Dental Implants in Dubai",
+    "heroSubtitle": "Permanent, natural-looking tooth replacement — from a single tooth to full-mouth All-on-4 and All-on-6 rehabilitation.",
+    "heroImageAlt": "Dental implant procedure",
+    "seoTitle": "Dental Implants in Dubai - All-on-4, All-on-6, Lifetime Warranty",
+    "seoDescription": "Dental implants in Dubai JLT: single teeth to full-mouth All-on-4 and All-on-6, titanium or ceramic, 3D-planned surgery and a lifetime warranty on {brand} implants.",
+    "crumb": "Dental Implants",
+    "jsonLdName": "Dental Implants in Dubai",
+    "jsonLdDescription": "Single, multiple and full-arch dental implants with 3D planning.",
+    "treatment": "dental implants",
+    "packagesTreatment": "dental implant",
+    "introTitle": "A Permanent Solution for Missing Teeth",
+    "introBody": "Dental implants replace missing teeth with artificial roots made from biocompatible titanium or ceramic. They look, feel and function just like natural teeth, and they protect your jawbone from shrinking.",
+    "introPoints": [
+      "Biocompatible titanium or metal-free ceramic",
+      "Permanent integration with your bone",
+      "Natural appearance and full chewing function",
+      "Planned in 3D before surgery",
+      "Lifetime warranty on the implant"
+    ],
+    "solutionsTitle": "Our Implant Solutions in Dubai",
+    "solutions": [
+      {
+        "title": "Single-Tooth Implants",
+        "desc": "Replace one missing tooth with an implant and a natural-looking crown."
+      },
+      {
+        "title": "All-on-4",
+        "desc": "A full arch of fixed teeth supported by four strategically placed implants — often without bone grafting."
+      },
+      {
+        "title": "All-on-6",
+        "desc": "Six implants per arch for maximum stability and load distribution in full-mouth rehabilitation."
+      },
+      {
+        "title": "Implant-Supported Bridges",
+        "desc": "Replace several neighbouring teeth on two or more implants without touching healthy teeth."
+      },
+      {
+        "title": "Implant-Supported Dentures",
+        "desc": "Secure, comfortable dentures anchored by implants — no slipping, no adhesive."
+      },
+      {
+        "title": "Bone Grafting & Sinus Lift",
+        "desc": "Rebuild lost bone so implants can be placed safely and last."
+      },
+      {
+        "title": "3D Implant Planning",
+        "desc": "CBCT imaging maps the exact structure and dimensions of your bone before surgery."
+      },
+      {
+        "title": "Titanium or Ceramic",
+        "desc": "Biocompatible titanium as standard; metal-free ceramic implants available for selected cases on request."
+      }
+    ],
+    "journeyTitle": "Your Dental Implant Journey",
+    "journeySubtitle": "From consultation to your new smile — typically 3–6 months",
+    "steps": [
+      {
+        "title": "3D Consultation & Planning",
+        "description": "A CBCT scan shows the exact structure and dimensions of your bone so we can plan the implant position precisely. You see a digital preview of your final result.",
+        "duration": "45 min"
+      },
+      {
+        "title": "Implant Surgery",
+        "description": "Under local anaesthesia, we place the titanium or ceramic implant into your jawbone. The procedure is painless, and most patients return to normal activities within days.",
+        "duration": "30–60 min"
+      },
+      {
+        "title": "Osseointegration (Healing)",
+        "description": "Your implant bonds with the bone over 2–6 months. Temporary crowns or dentures are worn during this period to maintain function and aesthetics.",
+        "duration": "2–6 months"
+      },
+      {
+        "title": "Permanent Crown Placement",
+        "description": "Once integration is complete, we fit your custom-made crown or bridge. Your new teeth are fully functional and look completely natural.",
+        "duration": "45–60 min"
+      }
+    ],
+    "benefitsTitle": "Why Choose Dental Implants With Us?",
+    "benefits": [
+      "{warranty}",
+      "Permanent, stable and durable — no slipping, no adhesive",
+      "Natural look and feel; prevents bone loss",
+      "Full-mouth All-on-4 / All-on-6 rehabilitation is our speciality",
+      "3D-planned surgery by an experienced implantology and oral surgery team"
+    ],
+    "warrantyTitle": "Lifetime Implant Warranty",
+    "warrantyBody": "{warranty} You receive the warranty terms in writing with your treatment plan.",
+    "transformationsTitle": "Implant Transformations",
+    "transformationsSubtitle": "Real implant cases from our JLT clinic. Individual results vary.",
+    "faqsTitle": "Frequently Asked Questions About Dental Implants",
+    "faqs": [
+      {
+        "question": "How long do dental implants last?",
+        "answer": "With proper care, dental implants can last a lifetime. The implant post integrates permanently with your jawbone. The crown may need replacement after 10–15 years, but the implant foundation lasts for decades — and our {brand} implants come with a lifetime warranty."
+      },
+      {
+        "question": "Are dental implants painful?",
+        "answer": "The procedure is performed under local anaesthesia, so you feel no pain during surgery. Mild discomfort or swelling can occur afterwards but usually settles within a few days."
+      },
+      {
+        "question": "What is the recovery time for dental implants?",
+        "answer": "Initial healing usually takes 1–2 weeks. Full integration (osseointegration) can take 2–6 months. During this period, temporary crowns or dentures may be used."
+      },
+      {
+        "question": "Do I need bone grafting before getting implants?",
+        "answer": "If your jawbone has thinned after tooth loss, bone grafting may be required. A 3D CBCT scan tells us the exact structure and dimensions of your bone, so you know before we start."
+      },
+      {
+        "question": "What does the lifetime warranty cover?",
+        "answer": "{warranty} Ask us for the written warranty terms at your consultation."
+      },
+      {
+        "question": "Are dental implants better than dentures or bridges?",
+        "answer": "Implants are permanent, stable and preserve bone health. Unlike dentures they don't slip, and unlike traditional bridges they don't require grinding down healthy neighbouring teeth."
+      },
+      {
+        "question": "Am I a good candidate for dental implants?",
+        "answer": "Most adults with missing teeth are. Ideal candidates have healthy gums and enough bone; where bone is lacking, grafting or All-on-4 techniques usually make implants possible anyway."
+      },
+      {
+        "question": "Do you offer ceramic (metal-free) implants?",
+        "answer": "Yes, ceramic implants are available for selected cases, for example patients with metal sensitivities or very thin gums in the smile zone. Titanium remains the standard for most patients. We will recommend the right option after your scan."
+      },
+      {
+        "question": "How do I take care of dental implants?",
+        "answer": "Like natural teeth: brush twice daily, floss or use interdental brushes, and keep regular check-ups. Avoid smoking, which slows healing."
+      },
+      {
+        "question": "Can implants replace all my teeth?",
+        "answer": "Yes. All-on-4 or All-on-6 restores an entire arch on just four or six implants, giving you fixed teeth that look and function naturally."
+      }
+    ],
+    "ctaTitle": "Get Your Teeth Back for Good",
+    "ctaText": "Book a 3D implant consultation in JLT and receive a clear plan, timeline and package — no pressure, just honest recommendations."
   },
   "orthodontics": {
-    "heroTitle": "",
-    "heroSubtitle": "",
-    "heroImageAlt": "Orthodontics and Invisalign treatment"
+    "heroTitle": "Orthodontics & Clear Aligners in Dubai",
+    "heroSubtitle": "Braces and Invisalign treatments for straighter teeth and a healthier bite — for teens and adults.",
+    "heroImageAlt": "Orthodontics and Invisalign treatment",
+    "seoTitle": "Invisalign & Braces in Dubai - Clear Aligners & Orthodontics",
+    "seoDescription": "Straighten your teeth in Dubai JLT with Invisalign clear aligners, ceramic braces and metal braces. Digital scans, orthodontist-led treatment for teens and adults.",
+    "crumb": "Orthodontics",
+    "jsonLdName": "Orthodontics & Clear Aligners in Dubai",
+    "jsonLdDescription": "Invisalign, clear aligners, ceramic and metal braces, retainers.",
+    "treatment": "orthodontics",
+    "packagesTreatment": "orthodontic",
+    "heroCta": "Book Consultation",
+    "comparisonTitle": "Invisalign vs Braces",
+    "comparisonSubtitle": "Compare the most popular teeth-straightening options",
+    "comparisonRows": [
+      {
+        "feature": "Typical duration",
+        "aligners": "6–12 months",
+        "braces": "18–24 months"
+      },
+      {
+        "feature": "Visibility",
+        "aligners": "Virtually invisible",
+        "braces": "Visible brackets & wires"
+      },
+      {
+        "feature": "Maintenance",
+        "aligners": "Remove to eat, clean trays daily",
+        "braces": "Extra brushing around brackets"
+      },
+      {
+        "feature": "Dietary restrictions",
+        "aligners": "None",
+        "braces": "Avoid hard, sticky foods"
+      },
+      {
+        "feature": "Effective for",
+        "aligners": "Mild to moderate cases",
+        "braces": "All severity levels"
+      }
+    ],
+    "removableFeature": "Removable",
+    "treatmentsTitle": "Orthodontic Treatments in Dubai",
+    "journeyTitle": "Your Teeth Straightening Journey",
+    "journeySubtitle": "From consultation to your perfect smile",
+    "steps": [
+      {
+        "title": "Comprehensive Consultation",
+        "description": "Digital scan, photos and X-rays; we discuss your concerns and present options including braces and Invisalign. Your treatment plan is designed at this visit.",
+        "duration": "1 hour"
+      },
+      {
+        "title": "Treatment Begins",
+        "description": "For braces: brackets and wires are placed. For Invisalign: you receive your first aligners and attachments. Both are comfortable to adapt to.",
+        "duration": "30 min – 2 hours"
+      },
+      {
+        "title": "Regular Check-ups",
+        "description": "Adjustments or new aligner sets every 4–8 weeks. We track progress against your digital plan.",
+        "duration": "30 min per visit"
+      },
+      {
+        "title": "Braces Off / Retainer Phase",
+        "description": "Appliances come off and custom retainers are fitted so your new smile lasts.",
+        "duration": "1 hour"
+      }
+    ],
+    "invisalignTitle": "Invisalign in Dubai",
+    "invisalignBody": "Nearly invisible, removable aligners designed for modern lifestyles. Eat, brush and live normally while your teeth gradually move into place.",
+    "invisalignPoints": [
+      "No visible brackets or wires",
+      "Remove for eating and drinking",
+      "Easy oral hygiene",
+      "Comfortable and effective",
+      "Digital preview of your result"
+    ],
+    "invisalignLink": "Learn more about Invisalign",
+    "benefitsTitle": "Dubai's Orthodontic Experts",
+    "benefits": [
+      "Orthodontist-led treatment (MDS Orthodontics, PhD)",
+      "Digital scans instead of messy impressions",
+      "Aligners, ceramic and metal braces under one roof",
+      "Whitening and veneers available after alignment for a full smile transformation"
+    ],
+    "transformationsTitle": "Orthodontic Transformations",
+    "transformationsSubtitle": "Real aligner and braces cases from our JLT clinic. Individual results vary.",
+    "faqs": [
+      {
+        "question": "How long will treatment take?",
+        "answer": "6–12 months for mild cases with aligners; 18–24 months for more complex cases with braces. Your orthodontist gives you a personal estimate after the scan."
+      },
+      {
+        "question": "Are braces painful?",
+        "answer": "You may feel pressure for a few days after adjustments, but it is temporary and most patients adapt quickly."
+      },
+      {
+        "question": "Can children have orthodontic treatment?",
+        "answer": "Yes. An early evaluation around age 7 helps prevent more serious issues later, and early intervention often gives better outcomes."
+      },
+      {
+        "question": "Do results last forever?",
+        "answer": "With proper retainer wear, orthodontic results can last a lifetime. We provide clear guidance on retainers after treatment."
+      },
+      {
+        "question": "Do you do digital scans instead of impressions?",
+        "answer": "Yes. A digital intraoral scan replaces messy putty impressions and lets you preview your projected result before you start."
+      }
+    ],
+    "ctaTitle": "Book Your Orthodontic Consultation",
+    "ctaText": "Discover the best option for your smile — braces or Invisalign — with a digital scan and preview at our JLT clinic."
   },
   "whitening": {
-    "heroTitle": "",
-    "heroSubtitle": "",
-    "heroImageAlt": "Professional teeth whitening"
+    "heroTitle": "Teeth Whitening in Dubai",
+    "heroSubtitle": "Brighten your smile safely and effectively with professional whitening treatments.",
+    "heroImageAlt": "Professional teeth whitening",
+    "seoTitle": "Professional Teeth Whitening in Dubai - Laser & In-Office",
+    "seoDescription": "Safe, dentist-supervised teeth whitening in Dubai JLT: laser whitening, in-office treatment and custom take-home kits. Visible results in one session.",
+    "crumb": "Teeth Whitening",
+    "treatment": "teeth whitening",
+    "jsonLdName": "Teeth Whitening in Dubai",
+    "jsonLdDescription": "Laser, in-office and take-home professional whitening.",
+    "introTitle": "Safe, Fast & Professional Whitening",
+    "introBody": "Professional teeth whitening delivers a visible change in a single visit. Our treatments remove deep stains without damaging enamel, with your gums fully protected, in about 45–60 minutes.",
+    "introPoints": [
+      "Fast results (45–60 min)",
+      "Dentist-controlled gel strength",
+      "Enamel safe",
+      "Gum protection throughout",
+      "Take-home trays for maintenance"
+    ],
+    "optionsTitle": "Our Teeth Whitening Options",
+    "benefitsTitle": "Why Professional Teeth Whitening?",
+    "benefits": [
+      "Safe for enamel and gums",
+      "Noticeable results after one session",
+      "Treatment strength tailored to your teeth",
+      "Performed by our dentists, not a salon",
+      "Honest advice if veneers would suit your stains better"
+    ],
+    "faqsTitle": "Whitening FAQs",
+    "faqs": [
+      {
+        "question": "Is teeth whitening safe?",
+        "answer": "Yes. Professional whitening by a dentist is safe and does not damage enamel or gums. Unlike over-the-counter kits, clinical treatments use controlled concentrations and full gum protection."
+      },
+      {
+        "question": "How long do whitening results last?",
+        "answer": "Results typically last 6–12 months depending on lifestyle and oral care. Patients who limit coffee, tea, red wine and smoking enjoy brighter smiles for longer."
+      },
+      {
+        "question": "Does whitening damage enamel?",
+        "answer": "No. Professional systems lift stains without harming enamel. Some temporary sensitivity can occur, but it usually resolves within a day or two."
+      },
+      {
+        "question": "How white can my teeth get?",
+        "answer": "It varies from person to person. Most patients see a clearly noticeable change after one session. We compare your shade before and after rather than promising a fixed number."
+      },
+      {
+        "question": "Laser, in-office or take-home — which should I choose?",
+        "answer": "Laser gives the fastest result in one visit; in-office without light is gentler for sensitive teeth; take-home trays whiten gradually and are ideal for maintenance. Many patients combine a clinic session with a home kit."
+      },
+      {
+        "question": "Can whitening remove all stains?",
+        "answer": "Whitening works best on stains from food, drink and ageing. Discolouration inside the tooth from medication or enamel defects responds less; ceramic veneers may be recommended instead."
+      },
+      {
+        "question": "Who is a good candidate?",
+        "answer": "Most adults with healthy teeth and gums. Whitening is not recommended for children, during pregnancy, or with untreated cavities or gum disease."
+      },
+      {
+        "question": "Will whitening make my teeth sensitive?",
+        "answer": "Some patients experience temporary sensitivity that fades within 24–48 hours. We use protective gels and adjust the protocol for sensitive patients."
+      }
+    ],
+    "ctaTitle": "Ready for a Brighter Smile?",
+    "ctaText": "Book your professional whitening session in JLT and see the difference in about an hour."
   },
   "crownsAndBridges": {
-    "heroTitle": "",
-    "heroSubtitle": "",
-    "heroImageAlt": "Dental crowns and bridges restoration"
-  },
-  "cosmeticDentistry": {
-    "heroTitle": "",
-    "heroSubtitle": "",
-    "heroImageAlt": "Cosmetic dentistry smile design"
+    "heroTitle": "Dental Crowns & Bridges in Dubai",
+    "heroSubtitle": "Restore strength, function and aesthetics with custom crowns and bridges — from a single tooth to a complete smile transformation.",
+    "heroImageAlt": "Dental crowns and bridges restoration",
+    "seoTitle": "Crowns & Bridges in Dubai - Zirconia, Porcelain, Same-Day",
+    "seoDescription": "Custom zirconia and porcelain crowns, same-day CAD/CAM crowns and implant-supported bridges in Dubai JLT. Complete smile transformations with crowns and bridges.",
+    "crumb": "Crowns & Bridges",
+    "jsonLdName": "Dental Crowns & Bridges in Dubai",
+    "jsonLdDescription": "Zirconia, porcelain, same-day crowns and implant-supported bridges.",
+    "treatment": "crowns and bridges",
+    "introTitle": "Crowns & Bridges Explained",
+    "introBody": "Dental crowns are protective caps that cover and strengthen damaged teeth, while bridges replace one or more missing teeth by anchoring to neighbouring teeth or implants. Designed digitally from a scan and milled from ceramic, they blend in with your natural smile.",
+    "introPoints": [
+      "Protect damaged or root-treated teeth",
+      "Replace missing teeth",
+      "Restore chewing function",
+      "Natural aesthetics, matched to your shade",
+      "Same-day options for many cases"
+    ],
+    "typesTitle": "Types of Crowns & Bridges We Offer in Dubai",
+    "restorativeCardTitle": "Inlays, Onlays & Overlays",
+    "restorativeCardDesc": "Too big for a filling, too healthy for a crown? See our restorative dentistry options.",
+    "benefitsTitle": "Dubai's Trusted Restorative Specialists",
+    "benefits": [
+      "CAD/CAM precision for a perfect fit",
+      "High-quality biocompatible ceramics",
+      "Gentle procedures under local anaesthesia",
+      "Experienced in complete smile transformations with crowns and bridges",
+      "Digital scan — no messy impressions"
+    ],
+    "transformationsTitle": "Smile Transformations with Crowns",
+    "transformationsSubtitle": "Real cases from our JLT clinic. Individual results vary.",
+    "faqs": [
+      {
+        "question": "What is the difference between a crown and a bridge?",
+        "answer": "A crown covers and protects a single damaged tooth, while a bridge fills the gap of one or more missing teeth using neighbouring teeth or implants for support."
+      },
+      {
+        "question": "Is the procedure painful?",
+        "answer": "No. Procedures are performed under local anaesthesia. Mild sensitivity after treatment is temporary and easily managed."
+      },
+      {
+        "question": "What materials are used?",
+        "answer": "Zirconia, lithium-disilicate porcelain and, where indicated, porcelain-fused-to-metal. Zirconia and porcelain give the most natural aesthetics and durability."
+      },
+      {
+        "question": "How long do crowns and bridges last?",
+        "answer": "With proper care, typically 10–15 years or longer. Good oral hygiene and regular check-ups extend their lifespan."
+      },
+      {
+        "question": "Can I get a crown in one visit?",
+        "answer": "Often yes. Our same-day crowns are scanned, designed and milled in-clinic, so many patients leave with the final crown in a single appointment."
+      },
+      {
+        "question": "Why choose an implant-supported bridge?",
+        "answer": "It replaces missing teeth without grinding down healthy neighbours, preserves the jawbone and feels more natural than a traditional bridge."
+      },
+      {
+        "question": "Who is a good candidate?",
+        "answer": "Anyone with damaged, weakened or missing teeth and healthy gums. Implant-supported options also require adequate bone, which we assess with a 3D scan."
+      }
+    ],
+    "ctaTitle": "Restore Your Smile Today",
+    "ctaText": "Don't let damaged or missing teeth hold you back. Book your consultation in JLT."
   },
   "generalPreventive": {
-    "heroTitle": "",
-    "heroSubtitle": "",
-    "heroImageAlt": "General and preventive dental care"
+    "heroTitle": "General & Preventive Dentistry in Dubai",
+    "heroSubtitle": "Protect your smile with routine check-ups, cleanings and preventive care for the whole family.",
+    "heroImageAlt": "General and preventive dental care",
+    "seoTitle": "General & Preventive Dentistry in Dubai - Family Dental Care",
+    "seoDescription": "Family dental care in Dubai JLT: check-ups, professional cleanings, fillings, gum disease treatment, children's dentistry and sealants. Also available as at-home visits.",
+    "crumb": "General & Preventive",
+    "jsonLdName": "General & Preventive Dentistry in Dubai",
+    "jsonLdDescription": "Check-ups, cleanings, fillings, gum care, kids dentistry, sealants.",
+    "treatment": "a dental check-up",
+    "heroCta": "Book Appointment",
+    "introTitle": "Prevent Problems Before They Start",
+    "introBody": "Preventive dentistry keeps your mouth healthy and avoids bigger treatments later. With regular visits we detect problems early, saving you time, discomfort and cost.",
+    "introPoints": [
+      "Catch problems early",
+      "Healthier gums, fresher breath",
+      "Fewer major treatments over a lifetime",
+      "Gentle care for children and anxious adults",
+      "Multilingual team"
+    ],
+    "servicesTitle": "General & Preventive Dental Services in Dubai",
+    "also": [
+      {
+        "name": "Root Canal Treatment",
+        "desc": "Save infected teeth with painless endodontic care."
+      },
+      {
+        "name": "Digital X-Ray, OPG & CBCT",
+        "desc": "Low-radiation imaging for precise diagnosis."
+      },
+      {
+        "name": "Private At-Home Visit",
+        "desc": "Check-ups, cleanings and fillings at your home."
+      }
+    ],
+    "benefitsTitle": "Benefits of Preventive Dental Care",
+    "benefits": [
+      "Early detection of problems",
+      "Save money with fewer major treatments",
+      "Fresher breath and healthier gums",
+      "Maintain a confident smile for life"
+    ],
+    "faqsTitle": "Frequently Asked Questions About Preventive Dentistry",
+    "faqs": [
+      {
+        "question": "How often should I visit the dentist for a check-up?",
+        "answer": "Every six months for a routine exam and cleaning. Regular visits catch cavities and gum disease early. Patients with gum problems may need more frequent visits."
+      },
+      {
+        "question": "Are professional cleanings painful?",
+        "answer": "No. You may feel mild sensitivity if your gums are inflamed, but gentle techniques and modern ultrasonic tools keep you comfortable."
+      },
+      {
+        "question": "What are the signs of gum disease?",
+        "answer": "Bleeding gums, persistent bad breath, swollen or tender gums and receding gum lines. Untreated, it can lead to tooth loss, so early treatment matters."
+      },
+      {
+        "question": "Do root canals hurt?",
+        "answer": "With modern anaesthesia and technique, a root canal feels much like a filling — and it relieves the pain caused by the infection."
+      },
+      {
+        "question": "Can children benefit from sealants?",
+        "answer": "Yes. Sealants are thin protective coatings on the chewing surfaces of children's molars that block bacteria from settling in deep grooves. Quick, painless and protective for years."
+      },
+      {
+        "question": "Can you come to my home for a check-up?",
+        "answer": "Yes. Check-ups, cleanings and fillings are available as private at-home visits across Dubai."
+      }
+    ],
+    "ctaTitle": "Book Your Preventive Check-Up Today",
+    "ctaText": "Regular check-ups and cleanings are the key to a healthy smile. Book in JLT or ask about a home visit."
   },
   "dentalSurgery": {
-    "heroTitle": "",
-    "heroSubtitle": "",
-    "heroImageAlt": "Dental surgery procedure"
+    "heroTitle": "Expert Dental Surgery in Dubai - Safe, Advanced & Trusted Care",
+    "heroSubtitle": "From wisdom tooth removal to bone grafting and sinus lifts, our oral surgeons deliver precise results with comfort and care.",
+    "heroImageAlt": "Dental surgery procedure",
+    "seoTitle": "Oral & Dental Surgery in Dubai - Wisdom Teeth, Grafting",
+    "seoDescription": "Specialist oral surgery in Dubai JLT: wisdom tooth removal, extractions, bone grafting, sinus lift and apicoectomy by an oral & maxillofacial surgery team.",
+    "crumb": "Dental Surgery",
+    "jsonLdName": "Oral & Dental Surgery in Dubai",
+    "jsonLdDescription": "Wisdom teeth, extractions, bone grafting, sinus lift, apicoectomy.",
+    "treatment": "oral surgery",
+    "heroCta": "Book Your Surgical Consultation",
+    "introTitle": "What Is Dental Surgery?",
+    "introBody": "Dental surgery covers specialised procedures that address complex oral conditions: impacted teeth, infections that root canal treatment cannot fix, and missing bone that stands between you and implants. Our goal is to restore function, relieve pain and prepare your mouth for lasting results.",
+    "introPoints": [
+      "Oral & maxillofacial surgery expertise",
+      "3D CBCT imaging in-clinic",
+      "Local anaesthesia and sedation options",
+      "Strict sterilisation protocols",
+      "Emergency line for after-care questions"
+    ],
+    "servicesTitle": "Our Dental Surgery Services in Dubai",
+    "implantsCardTitle": "Dental Implants",
+    "implantsCardDesc": "Single tooth to full-arch All-on-4 / All-on-6 with lifetime implant warranty.",
+    "benefitsTitle": "Trusted Oral Surgeons in Dubai",
+    "benefits": [
+      "Oral & maxillofacial surgeon and implantologists on the team",
+      "Pain-free treatment with advanced anaesthesia options",
+      "3D planning for predictable, safe procedures",
+      "Modern surgical facilities in JLT",
+      "Detailed aftercare and follow-up support"
+    ],
+    "faqsTitle": "Frequently Asked Questions About Dental Surgery",
+    "faqs": [
+      {
+        "question": "Is wisdom tooth extraction painful?",
+        "answer": "No. Wisdom tooth extractions are done under local anaesthesia, so you won't feel pain during the procedure. Mild swelling or discomfort afterwards usually subsides within a few days with pain relief and a soft diet."
+      },
+      {
+        "question": "How long does recovery take after oral surgery?",
+        "answer": "Simple extractions heal within 2–3 days, wisdom tooth extractions may need up to a week, and bone grafting or sinus lifts take a few weeks for soft-tissue healing. You receive personalised aftercare instructions."
+      },
+      {
+        "question": "Do I need bone grafting before dental implants?",
+        "answer": "If bone was lost after missing teeth, gum disease or trauma, grafting may be needed to support implants. A 3D CBCT scan tells us before we start. Not every patient needs it."
+      },
+      {
+        "question": "What is gum surgery and when is it needed?",
+        "answer": "Gum surgery treats advanced periodontal disease, reshapes gum tissue and restores oral health when gums recede, become infected or cause loose teeth."
+      },
+      {
+        "question": "Is oral surgery safe?",
+        "answer": "Yes. Performed by qualified oral surgeons in a sterile, modern clinic with digital imaging and strict sterilisation protocols, oral surgery is safe and predictable."
+      },
+      {
+        "question": "How do I prepare for dental surgery?",
+        "answer": "We review your medical history and advise on medications, fasting if sedation is used, and oral hygiene. Most patients return to normal activities within a few days."
+      },
+      {
+        "question": "Do you offer sedation for anxious patients?",
+        "answer": "Yes. Sedation options are available for patients who feel anxious, in addition to local anaesthesia."
+      },
+      {
+        "question": "What aftercare is required?",
+        "answer": "Rest, soft foods, gentle hygiene, prescribed medication and cold compresses for swelling. Follow-up visits check healing, and our emergency line is available if anything worries you."
+      }
+    ],
+    "ctaTitle": "Book Your Dental Surgery Consultation in Dubai",
+    "ctaText": "Don't wait for pain to get worse. Schedule a consultation with our oral surgeons in JLT."
   },
   "xrayOpg": {
-    "heroTitle": "",
-    "heroSubtitle": "",
-    "heroImageAlt": "Digital X-ray and OPG imaging"
+    "heroTitle": "Digital X-Ray, OPG & CBCT Imaging in Dubai",
+    "heroSubtitle": "Precise, low-radiation imaging — IOPA, OPG, CBCT and cephalometric — for accurate diagnosis and treatment planning, all in-clinic.",
+    "heroImageAlt": "Digital X-ray and OPG imaging",
+    "seoTitle": "Dental X-Ray, OPG, CBCT & Cephalometric Imaging in Dubai",
+    "seoDescription": "In-clinic digital dental imaging in Dubai JLT: IOPA, OPG panoramic, CBCT 3D and cephalometric X-rays with low radiation for precise diagnosis and treatment planning.",
+    "crumb": "Digital X-Ray, OPG & CBCT",
+    "jsonLdName": "Digital Dental Imaging in Dubai",
+    "jsonLdDescription": "IOPA, OPG, CBCT and cephalometric X-rays.",
+    "jsonLdServiceType": "Diagnostic imaging",
+    "treatment": "dental imaging",
+    "bookImaging": "Book Imaging",
+    "introTitle": "Advanced Imaging Technology",
+    "introBody": "Our digital X-ray, OPG and CBCT systems produce crystal-clear images with minimal radiation. Having all four types of imaging in-clinic means diagnosis and planning happen in one visit — no referrals to an outside imaging centre.",
+    "introPoints": [
+      "Low radiation exposure",
+      "Instant digital results",
+      "High-resolution 2D and 3D images",
+      "Comfortable for patients",
+      "Precise planning for implants, surgery and orthodontics"
+    ],
+    "servicesTitle": "Our Imaging Services",
+    "imaging": [
+      {
+        "title": "IOPA (Intraoral X-Ray)",
+        "desc": "Detailed image of one or two teeth and the surrounding bone."
+      },
+      {
+        "title": "OPG (Panoramic X-Ray)",
+        "desc": "One image of all teeth, both jaws and the sinuses."
+      },
+      {
+        "title": "CBCT (3D Cone Beam)",
+        "desc": "Three-dimensional scan showing the exact structure and dimensions of bone."
+      },
+      {
+        "title": "Cephalometric X-Ray",
+        "desc": "Side-view image of the skull and jaws used in orthodontics."
+      }
+    ],
+    "imagingUses": {
+      "0": [
+        "Cavities between teeth",
+        "Root canal assessment",
+        "Bone level around a tooth"
+      ],
+      "1": [
+        "Wisdom tooth position",
+        "Overall treatment planning",
+        "Bone evaluation"
+      ],
+      "2": [
+        "Implant planning",
+        "Sinus lift and bone grafting",
+        "Complex root anatomy"
+      ],
+      "3": [
+        "Braces and aligner planning",
+        "Bite and jaw relationship",
+        "Growth assessment in children"
+      ]
+    },
+    "whyTitle": "Why Advanced Imaging Matters",
+    "why": [
+      {
+        "title": "Early Detection",
+        "desc": "Identify cavities, infections and bone loss before they become serious"
+      },
+      {
+        "title": "Accurate Diagnosis",
+        "desc": "High-quality images and expert analysis"
+      },
+      {
+        "title": "Treatment Planning",
+        "desc": "Plan implants, surgery and orthodontics with confidence"
+      },
+      {
+        "title": "Patient Safety",
+        "desc": "Low-radiation technology protects your health"
+      },
+      {
+        "title": "Faster Results",
+        "desc": "Digital imaging provides instant results"
+      },
+      {
+        "title": "Better Outcomes",
+        "desc": "Accurate imaging means fewer surprises and complications"
+      }
+    ],
+    "ctaTitle": "Get Precise Imaging Today",
+    "ctaText": "IOPA, OPG, CBCT or cephalometric — schedule your imaging and get an accurate diagnosis in one visit."
   },
   "emergency": {
-    "heroTitle": "",
-    "heroSubtitle": "",
-    "heroImageAlt": "Emergency dental care"
+    "heroTitle": "Emergency Dentist in Dubai",
+    "heroSubtitle": "Urgent dental care for toothaches, injuries and infections. Call our emergency line and we'll tell you exactly what to do next.",
+    "heroImageAlt": "Emergency dental care",
+    "seoTitle": "Emergency Dentist in Dubai - Same-Day Pain Relief",
+    "seoDescription": "Emergency dental care in Dubai JLT for toothache, broken teeth, abscess, lost crowns and trauma. Dedicated emergency line, same-day treatment, at-home visits available.",
+    "crumb": "Emergency Dentist",
+    "jsonLdName": "Emergency Dentistry in Dubai",
+    "jsonLdDescription": "Same-day emergency dental care in Dubai JLT.",
+    "jsonLdServiceType": "Emergency dental care",
+    "treatment": "a dental emergency",
+    "heroPrimary": "Message Us Now",
+    "heroSecondary": "Call the Clinic",
+    "lineTitle": "Dedicated emergency line",
+    "lineBody": "For severe pain, trauma, swelling or bleeding. Available outside regular hours.",
+    "clinicHours": "Clinic hours: {hours}",
+    "introTitle": "Immediate Relief When You Need It Most",
+    "introBody": "Emergency dentistry provides fast treatment for urgent problems such as severe tooth pain, broken teeth or accidents. Our emergency dentists in Dubai use digital imaging to diagnose quickly, relieve pain and protect your oral health.",
+    "introPoints": [
+      "Fast response",
+      "Pain relief first",
+      "Digital diagnostics on site",
+      "Oral surgery expertise for trauma",
+      "Peace of mind"
+    ],
+    "whenTitle": "When to Call an Emergency Dentist in Dubai",
+    "cases": [
+      {
+        "title": "Severe Toothache",
+        "desc": "Immediate pain relief and treatment of the cause"
+      },
+      {
+        "title": "Broken or Chipped Tooth",
+        "desc": "Restore function and appearance quickly"
+      },
+      {
+        "title": "Knocked-Out Tooth",
+        "desc": "Fast re-implantation may save your tooth"
+      },
+      {
+        "title": "Lost Crown or Filling",
+        "desc": "Prevent further damage with urgent replacement"
+      },
+      {
+        "title": "Abscess or Swelling",
+        "desc": "Treat infection before it spreads"
+      },
+      {
+        "title": "Bleeding Gums or Trauma",
+        "desc": "Emergency care after accidents or injury"
+      }
+    ],
+    "atHomeEyebrow": "Can't come to us?",
+    "atHomeTitle": "We Come to You",
+    "atHomeBody": "For patients who cannot travel — after an accident, with limited mobility, or with a child in pain at home — our private at-home service brings emergency pain relief, temporary repairs, re-cementing of crowns and simple extractions to your door anywhere in Dubai.",
+    "atHomeLink": "About at-home visits",
+    "atHomePoints": [
+      "Emergency pain relief and medication",
+      "Temporary fillings and crown re-cementing",
+      "Simple extractions",
+      "Assessment and priority clinic booking if surgery is needed"
+    ],
+    "gentleTitle": "Fast, Gentle & Painless Treatment",
+    "gentleBody": "Emergencies are stressful. Our dentists prioritise your comfort with effective anaesthesia, quick relief and a calm, supportive environment.",
+    "faqs": [
+      {
+        "question": "What should I do if I knock out a tooth?",
+        "answer": "Rinse the tooth gently, avoid touching the root, and place it in milk or saliva. Bring it to the clinic immediately — quick action within 30–60 minutes can save your tooth."
+      },
+      {
+        "question": "Can I go to the emergency room for dental pain?",
+        "answer": "Hospitals can provide pain relief, but only a dentist can perform the necessary treatment. It's best to contact an emergency dentist directly."
+      },
+      {
+        "question": "How do I know if my dental problem is an emergency?",
+        "answer": "Severe pain, swelling, bleeding, broken or knocked-out teeth, or infection with fever are all emergencies that need immediate care."
+      },
+      {
+        "question": "Are emergency dental treatments painful?",
+        "answer": "No. Treatments are done under local anaesthesia, with sedation if needed. Our priority is to relieve pain quickly."
+      },
+      {
+        "question": "Can you come to me?",
+        "answer": "Yes. For patients who cannot travel, our private at-home service covers pain relief, temporary repairs, re-cementing crowns and simple extractions. Surgical cases are treated in the clinic."
+      },
+      {
+        "question": "Can children receive emergency dental care?",
+        "answer": "Yes. We treat dental emergencies for children, including broken teeth, knocked-out teeth and toothaches."
+      }
+    ],
+    "ctaTitle": "Call Our Emergency Dentists in Dubai Now",
+    "ctaBody": "Don't wait in pain. Our team is ready to provide immediate care and relief.",
+    "callLine": "Call Emergency Line",
+    "messageWhatsapp": "Message on WhatsApp"
   },
   "dentalTourism": {
-    "heroTitle": "",
-    "heroSubtitle": "",
-    "heroImageAlt": "Dental tourism packages"
+    "heroTitle": "Dental Tourism in Dubai — World-Class Care + Premium Experience",
+    "heroSubtitle": "Combine your smile transformation with a stay in Dubai. Choose treatment-only or let us organise everything.",
+    "heroImageAlt": "Dental tourism packages",
+    "seoTitle": "Dental Tourism in Dubai - Treatment-Only & All-Inclusive Packages",
+    "seoDescription": "Combine premium dental treatment with a Dubai stay. Two clear packages: treatment-only or all-inclusive with hotel, transfers and sightseeing. Veneers, implants, full-mouth rehab.",
+    "crumb": "Dental Tourism",
+    "treatment": "dental tourism",
+    "heroCta": "Get Your Travel Package",
+    "whyTitle": "Why International Patients Choose Us",
+    "whySubtitle": "Complex cases are our speciality — and we plan them so you spend as little time in the chair, and as much time enjoying Dubai, as possible.",
+    "why": [
+      {
+        "title": "Plan Before You Fly",
+        "desc": "Remote consultation and a written plan so there are no surprises on arrival."
+      },
+      {
+        "title": "Multilingual Team",
+        "desc": "English, Arabic, Russian, Serbian and Italian spoken in the clinic."
+      },
+      {
+        "title": "Condensed Schedules",
+        "desc": "Visits grouped so your treatment fits your trip."
+      },
+      {
+        "title": "Same Standards",
+        "desc": "The same doctors, materials and warranties as our Dubai patients."
+      }
+    ],
+    "packagesTitle": "Two Packages, Clearly Explained",
+    "packagesSubtitle": "Pick the level of support you want. Both are quoted individually after your remote consultation.",
+    "treatmentOnlyTitle": "Treatment-Only Package",
+    "treatmentOnlyBody": "You arrange your own flights and hotel; we take care of everything dental — planning, treatment, materials, interpreter and aftercare — scheduled around your trip.",
+    "mostConvenient": "Most convenient",
+    "allInclusiveTitle": "All-Inclusive Dubai Smile Package",
+    "allInclusiveBody": "Everything in Treatment-Only plus your hotel, airport and clinic transfers, and an organised Dubai programme between appointments — one contact for the whole stay.",
+    "colIncluded": "What's included",
+    "colTreatmentOnly": "Treatment-Only",
+    "colAllInclusive": "All-Inclusive",
+    "includedRows": [
+      "Remote consultation & digital treatment plan before you fly",
+      "Appointments condensed into the fewest possible visits",
+      "All dental treatment, materials and lab work",
+      "Interpreter / multilingual coordinator",
+      "Aftercare plan and remote follow-up calls",
+      "Hotel accommodation booked and coordinated",
+      "Airport transfers and clinic transport",
+      "Organised Dubai sightseeing between appointments",
+      "Dedicated concierge during your stay"
+    ],
+    "requestPackage": "Request Your Personalised Package",
+    "packageWhatsapp": "Hello, I'm an international patient interested in a dental tourism package. I'm travelling from: ",
+    "journeyTitle": "Your Dental Tourism Journey",
+    "journeySubtitle": "From the first message to the follow-up call after you're home.",
+    "journey": [
+      {
+        "title": "Remote Consultation",
+        "desc": "Send photos and X-rays; our doctors review them and hold a video call if needed."
+      },
+      {
+        "title": "Plan & Package",
+        "desc": "You receive a written treatment plan, timeline, number of visits and your chosen package."
+      },
+      {
+        "title": "Arrival",
+        "desc": "All-Inclusive: we meet you at the airport and check you into your hotel. Treatment-Only: we confirm your first appointment."
+      },
+      {
+        "title": "Treatment",
+        "desc": "Condensed appointments with the same doctors from start to finish."
+      },
+      {
+        "title": "Enjoy Dubai",
+        "desc": "Between visits, recover and explore — organised for you on the All-Inclusive package."
+      },
+      {
+        "title": "Follow-Up",
+        "desc": "Aftercare plan, remote check-ins and coordination with your local dentist if needed."
+      }
+    ],
+    "faqsTitle": "Dental Tourism FAQs",
+    "faqs": [
+      {
+        "question": "How do I get a treatment plan before travelling?",
+        "answer": "Send us recent photos and any X-rays or a panoramic scan on WhatsApp. Our doctors review them, hold a video consultation if needed, and send you a written plan with the number of visits, timeline and package."
+      },
+      {
+        "question": "How long do I need to stay in Dubai?",
+        "answer": "It depends on the treatment. Veneers usually need two visits 3–10 days apart. Implants need two trips several months apart, or one longer stay for All-on-4 with a temporary bridge. We tell you exactly before you book flights."
+      },
+      {
+        "question": "What is the difference between the two packages?",
+        "answer": "The Treatment-Only package covers everything dental: planning, treatment, materials and follow-up. The All-Inclusive package adds your hotel, airport and clinic transfers, and an organised Dubai programme between appointments."
+      },
+      {
+        "question": "Which languages does the team speak?",
+        "answer": "English, Arabic, Russian, Serbian and Italian are spoken in the clinic, and we arrange interpreters for other languages."
+      },
+      {
+        "question": "What happens if I need follow-up after I go home?",
+        "answer": "You receive a detailed aftercare plan and we schedule remote check-ins by video call. Our doctors remain available for questions, and we coordinate with your local dentist if anything needs attention."
+      }
+    ],
+    "readyTitle": "Ready to Transform Your Smile in Dubai?",
+    "readyBody": "Tell us where you're travelling from and what you'd like to change about your smile. We'll reply with a plan and a package, not a sales pitch.",
+    "startJourney": "Start Your Journey",
+    "startWhatsapp": "Hello, I'd like to start planning dental treatment in Dubai.",
+    "ctaTitle": "Questions Before You Book?",
+    "ctaText": "Message us on WhatsApp — a coordinator who speaks your language will answer."
   },
   "gallery": {
-    "heroTitle": "",
-    "heroSubtitle": "",
-    "heroImageAlt": "Smile transformation gallery"
+    "heroImageAlt": "Smile transformation gallery",
+    "seoTitle": "Smile Transformation Gallery - Before & After in Dubai",
+    "seoDescription": "Before-and-after smile transformations from Your Smile Advanced Dental Center Dubai JLT: veneers, implants, orthodontics, whitening and complete smile makeovers.",
+    "crumb": "Smile Gallery",
+    "title": "Smile Transformation Gallery",
+    "subtitle": "Real results from real patients of our Dubai clinic, shared with their consent. Individual results vary.",
+    "emptyTitle": "Before & After",
+    "emptySubtitle": "Our gallery is being prepared.",
+    "ctaTitle": "Ready for Your Smile Transformation?",
+    "ctaText": "Book a consultation and see your own before-and-after designed digitally first."
   },
   "about": {
-    "heroTitle": "",
-    "heroSubtitle": "",
-    "heroImageAlt": "About Your Smile Advanced Dental Center"
+    "heroTitle": "About Your Smile Advanced Dental Center",
+    "heroSubtitle": "Experienced, internationally trained dental professionals in Jumeirah Lake Towers, dedicated to your confidence and care.",
+    "heroImageAlt": "About Your Smile Advanced Dental Center",
+    "seoTitle": "About Your Smile Advanced Dental Center - Dental Clinic in Dubai JLT",
+    "seoDescription": "Your Smile Advanced Dental Center in Jumeirah Lake Towers, founded by Dr. Nemanja Kukoljac: an international team specialising in complex full-mouth rehabilitation, implants, veneers and patient-centred care.",
+    "crumb": "About",
+    "heroCta": "Book Your Visit",
+    "introTitle": "A Trusted Dental Clinic in Jumeirah Lakes Towers",
+    "introParagraphs": [
+      "{clinic} is a trusted dental clinic in Jumeirah Lakes Towers, specialising in complex full-mouth rehabilitation, dental implants, crowns, veneers, clear aligners, braces and comprehensive dentistry.",
+      "We provide patient-centred care in a welcoming environment, focusing on long-term oral health and natural-looking results. Using advanced technology and gentle techniques, we clearly explain every step with no pressure and just honest recommendations.",
+      "Our goal is to help you feel safe, informed and confident while achieving a healthy, natural smile."
+    ],
+    "founderLabel": "Founder",
+    "founderPhotoAlt": "{name}, founder of {clinic}",
+    "founderParagraphs": [
+      "{clinic} was established by {name} in Dubai in {year}. Through dedication and excellence, the clinic has become recognised as a destination for aesthetic dentistry (Hollywood smile and complete smile restorations), dental implants and oral surgery.",
+      "Dr. Kukoljac brings {years} years of cosmetic dentistry experience and leads a team of doctors with extensive international experience, so every case, however complex, is planned and delivered under one roof."
+    ],
+    "meetTeam": "Meet the whole team",
+    "visionMissionTitle": "Our Vision & Mission",
+    "pillars": [
+      {
+        "title": "Our Vision",
+        "text": "To become a superior and trusted dental provider for all levels of society, raising the quality of dental care in Dubai."
+      },
+      {
+        "title": "Our Mission",
+        "text": "Promoting a culture of learning, innovation and continuous improvement, and building a centre of excellence with international-standard care."
+      },
+      {
+        "title": "Core Values",
+        "text": "Excellence in every treatment. Integrity and transparency. Patient comfort and safety."
+      }
+    ],
+    "uniqueTitle": "What Makes Us Unique",
+    "values": [
+      {
+        "title": "Complex Cases Welcome",
+        "description": "Full-mouth rehabilitation, Hollywood smiles and cases other clinics turn away."
+      },
+      {
+        "title": "Emergency Coverage",
+        "description": "A dedicated emergency line for severe pain, trauma and infections."
+      },
+      {
+        "title": "Digital & Safe Diagnostics",
+        "description": "Low-radiation X-ray, OPG and 3D CBCT imaging for precise, comfortable planning."
+      },
+      {
+        "title": "International Expertise",
+        "description": "A team with extensive international experience across surgery, orthodontics and aesthetics."
+      },
+      {
+        "title": "Private At-Home Visits",
+        "description": "Among the first clinics in Dubai to bring check-ups, cleanings and urgent care to your home."
+      },
+      {
+        "title": "Patient-Centred Approach",
+        "description": "Clear explanations, no pressure, honest recommendations."
+      }
+    ],
+    "teamTitle": "Your Smile Expert Team",
+    "teamSubtitle": "Dentists, hygienists and support staff working together so you get the best care at the most convenient time for you.",
+    "journeyTitle": "Your Smile Journey",
+    "steps": [
+      {
+        "title": "Book Your Visit",
+        "description": "WhatsApp, phone or the contact form. Have your insurance details ready if you have them."
+      },
+      {
+        "title": "Visit & Consult",
+        "description": "A thorough examination and digital imaging in a calm, comfortable environment."
+      },
+      {
+        "title": "Receive Your Smile Plan",
+        "description": "A clear, personalised proposal with a transparent package. No hidden costs."
+      },
+      {
+        "title": "Enjoy Your New Smile",
+        "description": "Treatment, aftercare and follow-up from the same team."
+      }
+    ],
+    "ctaTitle": "Book Your Consultation Today",
+    "ctaText": "Achieve a healthy, confident smile with a team that takes the time to explain every step."
   },
   "doctors": {
-    "heroTitle": "",
-    "heroSubtitle": "",
-    "heroImageAlt": "Our experienced dental team"
+    "heroTitle": "Meet Our Dentists in Dubai",
+    "heroSubtitle": "Experienced, caring and internationally trained dental specialists for your smile.",
+    "heroImageAlt": "Our experienced dental team",
+    "profiles": {
+      "nemanja-kukoljac": {
+        "role": "Founder · Implantologist & Oral Surgeon",
+        "title": "Specialist Dentist | Implantologist | Oral Surgery & Cosmetic Dentistry",
+        "bio": "Founder of Your Smile Advanced Dental Center. Dr. Kukoljac specializes in implantology, oral surgery and cosmetic dentistry, with a particular focus on complex full-mouth rehabilitation, Hollywood smile design and no-prep ceramic veneers. He continually refines his skills through advanced training in modern surgical and digital techniques."
+      },
+      "upasana-khemka": {
+        "role": "Oral & Maxillofacial Surgeon",
+        "title": "Specialist Dentist | Oral & Maxillofacial Surgeon | Cosmetic & Restorative Dentistry",
+        "bio": "Dr. Khemka excels in complex oral surgical procedures, full-mouth rehabilitations and smile makeovers, delivering both function and beauty with precision and care."
+      },
+      "amelio-tommaso": {
+        "role": "Implantologist & Prosthodontics",
+        "title": "General Dentist | Oral Implantologist | Dental Prosthetics & Aesthetic Dentistry",
+        "bio": "A dentist with a technical background, Dr. Tommaso specializes in aesthetic restorations, implantology and prosthetics. His dual skill set ensures that each treatment is both functional and beautifully designed."
+      },
+      "mileva-karabasil-jovanovic": {
+        "role": "Orthodontics",
+        "title": "General Dentist | BDS, MDS (Orthodontics), PhD",
+        "bio": "With international experience across Serbia, Japan and the UAE, Dr. Mileva combines orthodontic expertise with scientific rigor. She provides compassionate, personalized care and excels in restorative and cosmetic dentistry."
+      },
+      "mai-ahmed": {
+        "role": "General & Cosmetic Dentist",
+        "title": "General and Cosmetic Dentist (BDS)",
+        "bio": "Dr. Ahmed provides general and cosmetic dentistry, from preventive care and fillings to whitening and smile enhancements, with a gentle, patient-first approach."
+      },
+      "ayya-abu-shamleh": {
+        "role": "Aesthetic & Restorative Dentist",
+        "title": "General Dentist | Aesthetic & Restorative Dentistry",
+        "bio": "Dr. Abu Shamleh focuses on aesthetic and restorative dentistry, restoring damaged teeth with natural-looking results and a careful, detail-oriented approach."
+      },
+      "mariam-hares": {
+        "role": "Aesthetic & Restorative Dentist",
+        "title": "General Dentist | Aesthetic & Restorative Dentistry",
+        "bio": "Dr. Hares provides aesthetic and restorative treatments, combining modern materials with a caring chairside manner to keep every visit comfortable."
+      }
+    },
+    "seoTitle": "Meet Our Dentists in Dubai - International Specialist Team",
+    "seoDescription": "Meet the dentists of Your Smile Advanced Dental Center Dubai JLT: implantologists, an oral & maxillofacial surgeon, an orthodontist and cosmetic dentists with extensive international experience.",
+    "heroCta": "Book Consultation on WhatsApp",
+    "introTitle": "Your Smile Team — Expertise You Can Trust",
+    "introBody": "Our team comprises highly qualified dental specialists with extensive international experience, dedicated to personalised, gentle and advanced care in a comfortable environment.",
+    "introChips": [
+      "International experts",
+      "Gentle care",
+      "Digital dentistry",
+      "Multilingual team"
+    ],
+    "listTitle": "Our Dental Experts in Dubai",
+    "founderLabel": "Founder",
+    "bookWith": "Book with {name}",
+    "bookWhatsappMessage": "Hello, I'd like to book an appointment with {name}.",
+    "photoAlt": "{name} — {role}",
+    "credentialsTitle": "Why Patients Choose Our Dentists",
+    "credentials": {
+      "specialist": {
+        "title": "Specialist Training",
+        "desc": "Specialist dentists in implantology, oral & maxillofacial surgery and orthodontics (MDS, PhD)."
+      },
+      "international": {
+        "title": "International Experience",
+        "desc": "Doctors who have practised across Europe, Asia and the Middle East."
+      },
+      "education": {
+        "title": "Continuous Education",
+        "desc": "Ongoing training in digital dentistry, implant systems and aesthetic techniques."
+      },
+      "digital": {
+        "title": "Digital Dentistry",
+        "desc": "Intraoral scanning, CAD/CAM design and 3D implant planning as daily practice."
+      },
+      "multilingual": {
+        "title": "Multilingual Care",
+        "desc": "English, Arabic, Russian, Serbian and Italian spoken in the clinic."
+      },
+      "complex": {
+        "title": "Complex Cases",
+        "desc": "Full-mouth rehabilitation and emergency care are where the team does its best work."
+      }
+    },
+    "ctaTitle": "Book a Consultation with Our Expert Dentists",
+    "ctaText": "Choose the right specialist for your smile goals — cosmetic, restorative, surgical or orthodontic."
   },
   "blog": {
-    "heroTitle": "",
-    "heroSubtitle": "",
-    "heroImageAlt": "Dental blog and news"
+    "heroImageAlt": "Dental blog and news",
+    "seoTitle": "Dental Health Blog - Your Smile ADC Dubai",
+    "seoDescription": "Tips and articles on veneers, implants, Invisalign, and everyday dental health from Your Smile Advanced Dental Center in Dubai JLT.",
+    "title": "Dental Blog & Expert Tips",
+    "subtitle": "Stay informed with the latest advice on cosmetic dentistry, implants, orthodontics, and preventive care.",
+    "searchPlaceholder": "Search articles by title, topic, or category...",
+    "readMore": "Read More →",
+    "noResults": "No articles found matching your search.",
+    "clearSearch": "Clear Search",
+    "prevPage": "Previous",
+    "prevPageAria": "Previous page",
+    "nextPage": "Next",
+    "nextPageAria": "Next page",
+    "pageOf": "Page",
+    "pageOfSeparator": "of",
+    "showingRange": " • Showing {from}-{to} of {total} articles",
+    "newsletterTitle": "Subscribe to Our Newsletter",
+    "newsletterBody": "Get the latest dental tips, treatment updates, and special offers delivered to your inbox.",
+    "newsletterPlaceholder": "Enter your email address",
+    "subscribe": "Subscribe",
+    "ctaTitle": "Ready to Transform Your Smile?",
+    "ctaBody": "Schedule a consultation with our expert dentists and discover the perfect treatment plan for you.",
+    "articles": [
+      {
+        "title": "The Complete Guide to Dental Veneers: Transform Your Smile",
+        "excerpt": "Discover how porcelain veneers can give you a Hollywood smile. Learn about the process, costs, and what to expect.",
+        "category": "Cosmetic Dentistry",
+        "date": "December 15, 2024",
+        "readTime": "5 min read",
+        "content": "Veneers are one of the most popular cosmetic dental treatments. In this comprehensive guide, we cover everything from the consultation process to aftercare..."
+      },
+      {
+        "title": "Invisalign vs Traditional Braces: Which Is Right for You?",
+        "excerpt": "Compare the pros and cons of clear aligners versus metal braces to make the best choice for your orthodontic journey.",
+        "category": "Orthodontics",
+        "date": "December 12, 2024",
+        "readTime": "7 min read",
+        "content": "Both Invisalign and traditional braces can straighten your teeth effectively. Here's what you need to know about each option..."
+      },
+      {
+        "title": "Professional Teeth Whitening: Myths vs Reality",
+        "excerpt": "Understand the facts about professional whitening treatments and why they're superior to store-bought options.",
+        "category": "Teeth Whitening",
+        "date": "December 10, 2024",
+        "readTime": "4 min read",
+        "content": "There are many misconceptions about teeth whitening. Let's separate fact from fiction and explore what professional treatments can achieve..."
+      },
+      {
+        "title": "5 Signs You Need a Dental Crown or Bridge",
+        "excerpt": "Learn how to identify if your teeth require restorative treatment with crowns or bridges to restore function and aesthetics.",
+        "category": "Restorative Dentistry",
+        "date": "December 8, 2024",
+        "readTime": "6 min read",
+        "content": "Crowns and bridges are essential restorative treatments. Recognize these warning signs that you might need one..."
+      },
+      {
+        "title": "Dental Implants: The Ultimate Solution for Missing Teeth",
+        "excerpt": "Everything you need to know about dental implants, from the procedure to recovery and long-term benefits.",
+        "category": "Dental Implants",
+        "date": "December 5, 2024",
+        "readTime": "8 min read",
+        "content": "Dental implants are a revolutionary solution for missing teeth. Learn about the advanced technology and techniques we use..."
+      },
+      {
+        "title": "Emergency Dentistry: When to Call and What to Do",
+        "excerpt": "Quick guide on recognizing dental emergencies and the steps to take before reaching our clinic.",
+        "category": "Emergency Care",
+        "date": "December 1, 2024",
+        "readTime": "5 min read",
+        "content": "Dental emergencies can happen unexpectedly. Here's what you should know about symptoms, first aid, and when to seek urgent care..."
+      },
+      {
+        "title": "Preventive Dentistry: Save Money by Preventing Problems",
+        "excerpt": "Understand why preventive care is the best investment for your oral health and long-term savings.",
+        "category": "General & Preventive",
+        "date": "November 28, 2024",
+        "readTime": "6 min read",
+        "content": "Prevention is always better than treatment. Discover the comprehensive preventive care strategies we recommend..."
+      },
+      {
+        "title": "How Digital X-Rays Are Revolutionizing Dental Diagnostics",
+        "excerpt": "Explore the technology behind modern digital X-rays and how they improve treatment planning and patient safety.",
+        "category": "Technology",
+        "date": "November 25, 2024",
+        "readTime": "5 min read",
+        "content": "Digital X-ray technology offers superior image quality with minimal radiation exposure. Learn about the advantages..."
+      },
+      {
+        "title": "The Truth About Gum Disease: Symptoms, Treatment, and Prevention",
+        "excerpt": "Comprehensive overview of gum disease stages, warning signs, and effective treatment options available.",
+        "category": "Oral Health",
+        "date": "November 22, 2024",
+        "readTime": "7 min read",
+        "content": "Gum disease affects millions worldwide. Understanding the causes and symptoms is crucial for early intervention..."
+      }
+    ]
   },
   "contact": {
-    "heroTitle": "",
-    "heroSubtitle": "",
-    "heroImageAlt": "Contact us at Your Smile clinic"
+    "heroTitle": "Contact Your Smile",
+    "heroSubtitle": "We're here for your dental needs - whether you're booking an appointment or need emergency care.",
+    "heroImageAlt": "Contact us at Your Smile clinic",
+    "seoTitle": "Contact Us",
+    "seoDescription": "Get in touch with Your Smile Advanced Dental Center in Dubai JLT. Book an appointment, ask about services, or reach our 24/7 emergency line.",
+    "heroTitleAccent": "Advanced Dental Center",
+    "bookWhatsapp": "Book on WhatsApp",
+    "bookWhatsappMessage": "Hi, I'd like to book an appointment at Your Smile Advanced Dental Center.",
+    "callAria": "Call {phone}",
+    "getInTouch": "Get in Touch",
+    "phoneBooking": "Phone (Booking)",
+    "emergencyPhone": "Emergency Phone (24/7)",
+    "emergencyHint": "Click for emergency details",
+    "email": "Email",
+    "address": "Address",
+    "clinicHours": "Clinic Hours",
+    "formTitle": "Send Us a Message",
+    "formSubtitle": "Questions or want to book? Fill out the form - we'll respond within 24 hours.",
+    "honeypot": "Don't fill this out:",
+    "labelName": "Name *",
+    "placeholderName": "Your full name",
+    "labelPhone": "Phone *",
+    "placeholderPhone": "+971...",
+    "labelEmail": "Email *",
+    "placeholderEmail": "your@email.com",
+    "labelService": "Service of interest *",
+    "placeholderService": "Select a service",
+    "labelMessage": "Message *",
+    "placeholderMessage": "How can we help you?",
+    "sending": "Sending...",
+    "submit": "Submit Message",
+    "errorTitle": "Error sending message",
+    "errorBody": "Please try again later or call us directly at {phone}.",
+    "findUsTitle": "Find Us Easily",
+    "findUsBody": "Located at HDS Business Centre in JLT, easily accessible by car or public transport.",
+    "mapTitle": "Your Smile Advanced Dental Center Location - HDS Business Centre, Jumeirah Lake Towers, Dubai",
+    "mapAria": "Interactive map showing the location of Your Smile Advanced Dental Center at HDS Business Centre, Jumeirah Lake Towers, Dubai",
+    "validation": {
+      "nameMin": "Name must be at least 2 characters",
+      "nameMax": "Name must be less than 100 characters",
+      "phone": "Please enter a valid phone number",
+      "email": "Please enter a valid email address",
+      "service": "Please select a service",
+      "messageMin": "Message must be at least 10 characters",
+      "messageMax": "Message must be less than 1000 characters"
+    },
+    "services": {
+      "general": "General inquiry",
+      "veneers": "Veneers",
+      "implants": "Dental Implants",
+      "orthodontics": "Orthodontics & Invisalign",
+      "whitening": "Teeth Whitening",
+      "crownsBridges": "Crowns & Bridges",
+      "cosmetic": "Cosmetic Dentistry",
+      "emergency": "Emergency",
+      "atHome": "Private At-Home Visit",
+      "other": "Other"
+    }
   },
   "faq": {
-    "heroTitle": "",
-    "heroSubtitle": "",
-    "heroImageAlt": "Frequently asked questions"
+    "heroTitle": "Frequently Asked",
+    "heroSubtitle": "Find answers to common questions about our services, procedures, and how we can help your dental health.",
+    "heroImageAlt": "Frequently asked questions",
+    "seoTitle": "Frequently Asked Questions - Dental Treatments in Dubai",
+    "seoDescription": "Common questions about veneers, implants, Invisalign, whitening, and emergency care at Your Smile Advanced Dental Center in Dubai.",
+    "heroTitleAccent": "Questions",
+    "askQuestion": "Ask a Question",
+    "askWhatsapp": "Hello, I have a question about your dental treatments.",
+    "callUs": "Call Us",
+    "hereToHelp": "We're Here to Help",
+    "hereToHelpBody": "Can't find the answer you're looking for? Contact our team directly.",
+    "stillQuestions": "Still Have Questions?",
+    "stillQuestionsBody": "Our dental team is ready to answer any additional questions. Reach out to us via phone, WhatsApp, or email.",
+    "messageWhatsapp": "Message on WhatsApp",
+    "callPhone": "Call {phone}",
+    "items": [
+      {
+        "question": "What dental services does your clinic offer?",
+        "answer": "Your Smile ADC Dubai offers a full spectrum of dental services - from dental surgery, implants, and orthodontics, to cosmetic treatments, general dentistry, and emergency care. We combine advanced technology with personalized treatment plans to build healthy, confident smiles."
+      },
+      {
+        "question": "How often should I visit the dentist?",
+        "answer": "We recommend visiting every 6 months for routine check-ups and cleanings. Regular visits help us catch small issues early before they become more serious."
+      },
+      {
+        "question": "Do you accept dental insurance?",
+        "answer": "We accept various dental insurance plans. During your appointment, our team will help you understand your coverage and any out-of-pocket costs."
+      },
+      {
+        "question": "Are dental procedures painful?",
+        "answer": "Most treatments are performed with local anesthesia to ensure comfort. Our team prioritizes gentle care and uses modern techniques to minimize discomfort."
+      },
+      {
+        "question": "How can I schedule an appointment?",
+        "answer": "You can easily book an appointment by calling {phone} or by sending us a message on WhatsApp. We aim to respond quickly to schedule you at your convenience."
+      },
+      {
+        "question": "Do you offer teeth cleaning and preventive care services?",
+        "answer": "Yes. We provide professional cleanings, fluoride applications, sealants, and preventive exams to help maintain your oral health and prevent future issues."
+      },
+      {
+        "question": "Do you provide emergency dental services?",
+        "answer": "Absolutely. Our clinic offers prompt emergency care, whether you're dealing with severe pain, a broken tooth, or injury, our emergency team is ready to help."
+      },
+      {
+        "question": "Do you offer teeth whitening treatments?",
+        "answer": "Yes. We provide professional teeth whitening services that offer safe and effective results, perfect for both quick smile refreshes and comprehensive cosmetic enhancements."
+      },
+      {
+        "question": "Do you offer dental implants?",
+        "answer": "Yes. We specialize in dental implant treatments, using advanced 3D planning for precise placement and restoring both aesthetics and function."
+      },
+      {
+        "question": "Do you offer clear aligner treatments like Invisalign?",
+        "answer": "Yes. We provide Invisalign and other gentle aligner treatments, ideal for discreetly straightening teeth and correcting bite issues."
+      },
+      {
+        "question": "Do you use digital X-rays for diagnostics?",
+        "answer": "Yes. Our clinic uses low-radiation digital X-rays and full-mouth OPG scans for accurate, efficient diagnostics and treatment planning."
+      },
+      {
+        "question": "Do you offer sedation options for anxious patients?",
+        "answer": "Yes. We understand dental anxiety and offer sedation options to ensure a calm and comfortable treatment experience."
+      }
+    ]
   },
   "footer": {
     "address": "HDS Business Centre, Jumeirah Lake Towers, Dubai, UAE",
@@ -152,6 +1487,1095 @@
     "stayConnected": "Stay Connected",
     "about": "About Us",
     "blog": "Blog",
-    "contact": "Contact Us"
+    "contact": "Contact Us",
+    "emergencyOutsideHours": "Emergency line available outside these hours.",
+    "emergencyLabel": "Emergency: {phone}",
+    "googleMaps": "Google Maps",
+    "ratingLine": "{rating} rating · {count} Google reviews",
+    "newsletterTitle": "Dental tips & clinic news",
+    "emailPlaceholder": "Email address",
+    "subscribeAria": "Subscribe",
+    "invalidEmail": "Please enter a valid email address",
+    "subscribedTitle": "Subscribed",
+    "subscribedBody": "Thanks — you'll hear from us with dental tips and clinic news.",
+    "subscribeFailedTitle": "Subscription failed",
+    "subscribeFailedBody": "Please try again later or message us on WhatsApp.",
+    "disclaimer": "The information on this website is for general educational purposes and does not replace a clinical examination. Treatment results vary from patient to patient. Before-and-after photographs show real patients of the clinic who consented to publication.",
+    "copyright": "© {year} {clinic}. All rights reserved.",
+    "privacyPolicy": "Privacy Policy",
+    "terms": "Terms & Conditions",
+    "sitemap": "Sitemap",
+    "links": {
+      "about": "About Us",
+      "services": "All Services",
+      "doctors": "Our Doctors",
+      "emergency": "Emergency Dentist",
+      "atHome": "At-Home Visits",
+      "dentalTourism": "Dental Tourism",
+      "blog": "Blog",
+      "faq": "FAQ",
+      "contact": "Contact Us"
+    }
+  },
+  "common": {
+    "callNow": "Call Now",
+    "bookOnWhatsapp": "Book on WhatsApp",
+    "whatsappBookMessage": "Hello, I'd like to book a consultation for {treatment}.",
+    "whatsappBookMessageGeneric": "Hello, I'd like to book a consultation at Your Smile Advanced Dental Center.",
+    "before": "BEFORE",
+    "after": "AFTER",
+    "breadcrumbAria": "Breadcrumb",
+    "home": "Home",
+    "learnMore": "Learn more",
+    "related": "Related:"
+  },
+  "packages": {
+    "defaultTitle": "Flexible Treatment Packages",
+    "body": "Every smile is different, so we don't publish one-size-fits-all prices. After your consultation you receive a personalised {treatment} plan with a clear, all-inclusive package and no hidden costs. Ask us about flexible payment options.",
+    "cta": "Ask About Packages",
+    "whatsappMessage": "Hello, I'd like to know more about your {treatment} packages."
+  },
+  "googleRating": {
+    "starsAria": "{rating} out of 5 stars",
+    "title": "Rated {rating} on Google",
+    "body": "{count} verified patient reviews, every one of them real. Read what our patients in Dubai say about their implants, veneers, emergency visits and family care.",
+    "readAll": "Read all {count} reviews on Google"
+  },
+  "cookies": {
+    "aria": "Cookie preferences",
+    "body": "We use cookies to measure how the website is used and to improve our services. Analytics and marketing cookies are only set with your consent. See our",
+    "privacyLink": "Privacy Policy",
+    "accept": "Accept",
+    "essentialOnly": "Essential only"
+  },
+  "fab": {
+    "whatsappAria": "Chat with us on WhatsApp",
+    "bookNow": "Book now",
+    "whatsapp": "WhatsApp",
+    "callAriaEmergency": "Call our emergency line now",
+    "callAria": "Call the clinic now",
+    "emergencyLine": "Emergency line",
+    "talkToUs": "Talk to us",
+    "callNow": "Call now",
+    "waMessageEmergency": "Hello, I have a dental emergency and need help as soon as possible.",
+    "waMessage": "Hello, I'd like to book an appointment at Your Smile Advanced Dental Center."
+  },
+  "emergencyModal": {
+    "title": "Emergency Contact",
+    "srDescription": "Emergency dental contact information and guidelines",
+    "lead": "This service is for genuine dental emergencies only.",
+    "useFor": "Please use this line only for urgent dental situations such as:",
+    "cases": [
+      "Severe dental pain or toothache",
+      "Broken or knocked-out teeth",
+      "Oral injuries or significant bleeding",
+      "Swelling, infection, or fever symptoms",
+      "Trauma to mouth or jaw"
+    ],
+    "routineNote": "For routine appointments, consultations, or non-emergency inquiries, please use the regular booking options available on our website.",
+    "numberLabel": "Emergency Number:",
+    "numberAria": "Emergency phone number {phone}",
+    "callAria": "Call emergency number {phone}",
+    "close": "Close",
+    "closeAria": "Close emergency contact dialog"
+  },
+  "errorBoundary": {
+    "title": "Something went wrong",
+    "description": "We're sorry, but something unexpected happened. Please try refreshing the page or return to the homepage.",
+    "stackTrace": "Stack trace",
+    "tryAgain": "Try Again",
+    "goHome": "Go Home"
+  },
+  "notFound": {
+    "seoTitle": "Page Not Found",
+    "seoDescription": "Sorry, the page you're looking for doesn't exist. Find your way back to our dental services in Dubai.",
+    "title": "404 Page Not Found",
+    "body": "The page you're looking for doesn't exist or has moved.",
+    "backHome": "Back to home"
+  },
+  "benefits": {
+    "defaultTitle": "Why Choose Us?"
+  },
+  "faqSection": {
+    "defaultTitle": "Frequently Asked Questions"
+  },
+  "videoTestimonials": {
+    "defaultTitle": "Patient Stories",
+    "subtitle": "International patients on their treatment and their time in Dubai.",
+    "comingSoon": "Video stories from our international patients are on the way.",
+    "untilThen": "Until then, you can see recent cases and patient moments on our",
+    "instagram": "Instagram"
+  },
+  "procedure": {
+    "defaultTitle": "Your Treatment Journey",
+    "defaultSubtitle": "Step-by-step guide to your perfect smile",
+    "completeTitle": "Treatment Complete!",
+    "completeBody": "Enjoy your new smile with our comprehensive aftercare guidance and follow-up support."
+  },
+  "transformations": {
+    "defaultTitle": "Smile Transformations",
+    "defaultSubtitle": "Real results from real patients treated at our JLT clinic. Individual results vary.",
+    "viewFullGallery": "View Full Gallery",
+    "beforeAlt": "Before {category} treatment",
+    "afterAlt": "After {category} treatment",
+    "comingSoonLead": "We are preparing our before & after gallery with patients who have kindly agreed to share their results.",
+    "comingSoonBody": "In the meantime, follow us on Instagram for the latest {categories} and smile makeover cases from the clinic.",
+    "instagramCta": "See our latest cases on Instagram"
+  },
+  "testimonials": {
+    "title": "What Our Patients Say",
+    "subtitle": "Real words from patients treated at our JLT clinic",
+    "prevAria": "Previous testimonials",
+    "nextAria": "Next testimonials",
+    "goToPageAria": "Go to testimonials page {page}"
+  },
+  "serviceHero": {
+    "bookConsultation": "Book Your Consultation"
+  },
+  "languageSwitcher": {
+    "aria": "Change language"
+  },
+  "comparison": {
+    "defaultTitle": "How to Choose Your Treatment",
+    "defaultSubtitle": "Compare popular treatments to find what's right for you",
+    "colFeature": "Feature",
+    "colAligners": "Clear Aligners",
+    "colBraces": "Braces",
+    "colVeneers": "Veneers",
+    "ctaLead": "Not sure which treatment is right for you?",
+    "cta": "Book a Free Consultation",
+    "rows": {
+      "duration": {
+        "feature": "Duration of treatment",
+        "aligners": "6-12 months",
+        "braces": "18-24 months",
+        "veneers": "2-3 weeks"
+      },
+      "visibility": {
+        "feature": "Visibility",
+        "aligners": "Virtually invisible",
+        "braces": "Visible",
+        "veneers": "Natural-looking"
+      },
+      "removable": {
+        "feature": "Removable"
+      },
+      "cost": {
+        "feature": "Cost",
+        "aligners": "Moderate",
+        "braces": "Budget-friendly",
+        "veneers": "Premium"
+      },
+      "maintenance": {
+        "feature": "Maintenance",
+        "aligners": "Remove daily",
+        "braces": "Extra brushing needed",
+        "veneers": "Regular brushing"
+      },
+      "diet": {
+        "feature": "Dietary restrictions",
+        "aligners": "None",
+        "braces": "Yes",
+        "veneers": "None"
+      },
+      "ages": {
+        "feature": "For all ages",
+        "aligners": "13+",
+        "braces": "Any age",
+        "veneers": "18+"
+      }
+    }
+  },
+  "search": {
+    "dialogTitle": "Search the website",
+    "dialogDescription": "Type to search treatments, pages and articles.",
+    "placeholder": "Search treatments, e.g. wisdom tooth, Invisalign, veneers…",
+    "popular": "Popular",
+    "noResults": "No results for \"{query}\". Try a treatment name, or",
+    "askUs": "ask us directly",
+    "pages": {
+      "emergency": {
+        "title": "Emergency Dentist in Dubai",
+        "excerpt": "Same-day relief for toothache, broken teeth, swelling and dental trauma."
+      },
+      "implants": {
+        "title": "Dental Implants in Dubai",
+        "excerpt": "Single implants to All-on-4 / All-on-6 with lifetime implant warranty."
+      },
+      "veneers": {
+        "title": "Veneers in Dubai",
+        "excerpt": "No-prep ceramic veneers and Hollywood smile design."
+      },
+      "crownsBridges": {
+        "title": "Crowns & Bridges in Dubai",
+        "excerpt": "Zirconia, porcelain and same-day crowns; implant-supported bridges."
+      },
+      "cosmetic": {
+        "title": "Cosmetic Dentistry in Dubai",
+        "excerpt": "Complete smile transformations and Hollywood smile makeovers."
+      },
+      "orthodontics": {
+        "title": "Orthodontics & Invisalign in Dubai",
+        "excerpt": "Clear aligners, ceramic and metal braces."
+      },
+      "whitening": {
+        "title": "Teeth Whitening in Dubai",
+        "excerpt": "Laser, in-office and take-home whitening."
+      },
+      "dentalSurgery": {
+        "title": "Oral & Dental Surgery in Dubai",
+        "excerpt": "Wisdom teeth, extractions, bone grafting, sinus lift."
+      },
+      "restorative": {
+        "title": "Restorative Dentistry in Dubai",
+        "excerpt": "Inlays, onlays and overlays."
+      },
+      "generalPreventive": {
+        "title": "General & Preventive Dentistry",
+        "excerpt": "Check-ups, cleanings, fillings, gum care, kids."
+      },
+      "xrayOpg": {
+        "title": "Digital X-Ray, OPG & CBCT",
+        "excerpt": "In-clinic 2D and 3D dental imaging."
+      },
+      "atHome": {
+        "title": "Private At-Home Dental Visit",
+        "excerpt": "Dental care at your home or office in Dubai."
+      },
+      "dentalTourism": {
+        "title": "Dental Tourism in Dubai",
+        "excerpt": "Treatment-only and all-inclusive packages for international patients."
+      },
+      "gallery": {
+        "title": "Smile Transformation Gallery",
+        "excerpt": "Before and after results."
+      },
+      "doctors": {
+        "title": "Our Dentists",
+        "excerpt": "Meet the team."
+      },
+      "about": {
+        "title": "About the Clinic",
+        "excerpt": "Your Smile Advanced Dental Center, JLT Dubai."
+      },
+      "contact": {
+        "title": "Contact & Opening Hours",
+        "excerpt": "Address, phone, WhatsApp and working hours."
+      },
+      "faq": {
+        "title": "Frequently Asked Questions",
+        "excerpt": "Common questions about treatments and visits."
+      },
+      "blog": {
+        "title": "Blog & News",
+        "excerpt": "Dental health articles."
+      }
+    }
+  },
+  "hours": {
+    "closed": "Closed",
+    "days": {
+      "monday": "Monday",
+      "tuesday": "Tuesday",
+      "wednesday": "Wednesday",
+      "thursday": "Thursday",
+      "friday": "Friday",
+      "saturday": "Saturday",
+      "sunday": "Sunday"
+    },
+    "summary": {
+      "midWeek": "Mon, Wed, Sat",
+      "altDays": "Tue, Thu, Sun",
+      "friday": "Friday"
+    }
+  },
+  "navServices": {
+    "emergency": {
+      "name": "Emergency Dentist",
+      "desc": "Same-day pain relief & trauma care"
+    },
+    "implants": {
+      "name": "Dental Implants",
+      "desc": "Single tooth to All-on-4 / All-on-6"
+    },
+    "veneers": {
+      "name": "Veneers (Hollywood Smile)",
+      "desc": "No-prep ceramic veneers"
+    },
+    "crownsBridges": {
+      "name": "Crowns & Bridges",
+      "desc": "Zirconia, porcelain, same-day"
+    },
+    "cosmetic": {
+      "name": "Cosmetic Dentistry",
+      "desc": "Complete smile transformations"
+    },
+    "orthodontics": {
+      "name": "Orthodontics & Invisalign",
+      "desc": "Aligners, ceramic & metal braces"
+    },
+    "whitening": {
+      "name": "Teeth Whitening",
+      "desc": "Laser, in-office, take-home"
+    },
+    "dentalSurgery": {
+      "name": "Oral & Dental Surgery",
+      "desc": "Wisdom teeth, grafting, sinus lift"
+    },
+    "restorative": {
+      "name": "Restorative Dentistry",
+      "desc": "Inlays, onlays & overlays"
+    },
+    "generalPreventive": {
+      "name": "General & Preventive",
+      "desc": "Check-ups, cleanings, kids"
+    },
+    "xrayOpg": {
+      "name": "Digital X-Ray, OPG & CBCT",
+      "desc": "In-clinic 2D & 3D imaging"
+    },
+    "atHome": {
+      "name": "Private At-Home Visit",
+      "desc": "Dental care at your home or office"
+    },
+    "dentalTourism": {
+      "name": "Dental Tourism",
+      "desc": "Treatment-only or all-inclusive packages"
+    },
+    "gallery": {
+      "name": "Smile Gallery",
+      "desc": "Before & after results"
+    }
+  },
+  "homeServices": {
+    "veneers": {
+      "title": "Veneers in Dubai",
+      "desc": "No-prep ceramic veneers: a natural, flawless smile without shaving your teeth."
+    },
+    "implants": {
+      "title": "Dental Implants in Dubai",
+      "desc": "Single implants to full-arch All-on-4 / All-on-6 rehabilitation with lifetime implant warranty."
+    },
+    "emergency": {
+      "title": "Emergency Dentist",
+      "desc": "Same-day relief for toothache, broken teeth, swelling and dental trauma."
+    },
+    "crownsBridges": {
+      "title": "Crowns & Bridges",
+      "desc": "Zirconia and porcelain crowns, same-day CAD/CAM crowns and implant-supported bridges."
+    },
+    "orthodontics": {
+      "title": "Orthodontics & Invisalign",
+      "desc": "Clear aligners, ceramic and metal braces for teens and adults."
+    },
+    "atHome": {
+      "title": "Private At-Home Dental Visit",
+      "desc": "Check-ups, cleanings, fillings and urgent care at your home or office in Dubai."
+    }
+  },
+  "patientQuotes": {
+    "julie": {
+      "text": "I recently visited Your Smile ADC and was highly impressed by the exceptional care and service. The warm and friendly staff, along with Dr. Nemanja's professionalism, made my visit outstanding. The state-of-the-art facilities, meticulous hygiene, and personalized care put me at ease.",
+      "meta": "Google review"
+    },
+    "milos": {
+      "text": "The professionalism and friendliness of the entire staff made my dental experience stress-free. The results are amazing, and I appreciate the high standard of care they provide. I will definitely return for future treatments.",
+      "meta": "Patient from Serbia"
+    },
+    "marco": {
+      "text": "I was impressed by the level of expertise and attention to detail at this clinic. The team took the time to explain everything, and the treatment was painless and precise. My smile has never looked better!",
+      "meta": "Patient from Italy"
+    }
+  },
+  "blogPosts": {
+    "veneerTips": {
+      "title": "5 Tips for Maintaining Your Veneers",
+      "date": "Nov 28, 2024",
+      "category": "Cosmetic Care"
+    },
+    "implantsInvestment": {
+      "title": "Dental Implants: A Lifetime Investment",
+      "date": "Nov 25, 2024",
+      "category": "Implants"
+    },
+    "invisalignVsBraces": {
+      "title": "Invisalign vs Traditional Braces",
+      "date": "Nov 22, 2024",
+      "category": "Orthodontics"
+    }
+  },
+  "transformationCategories": {
+    "Veneers": "Veneers",
+    "Implants": "Implants",
+    "Orthodontics": "Orthodontics",
+    "Smile Makeover": "Smile Makeover",
+    "Whitening": "Whitening"
+  },
+  "clinic": {
+    "specialties": [
+      "Emergency dental care",
+      "Hollywood smile",
+      "Complete smile transformations",
+      "Smile transformation with implants",
+      "Smile transformation with veneers",
+      "Smile transformation with crowns & bridges"
+    ],
+    "implantWarranty": "Lifetime warranty on {brand} implants, backed by our supplier agreement in Dubai.",
+    "tagline": "Specialists in complex cases: emergency care, Hollywood smiles and complete smile transformations."
+  },
+  "subService": {
+    "whatItTreats": "{name}: What It Treats",
+    "journeyTitle": "Your {name} Journey",
+    "journeySubtitle": "What to expect, step by step",
+    "whyChooseUs": "Why Choose Us for {name} in Dubai",
+    "faqsTitle": "{name} FAQs",
+    "moreTreatments": "More {category} Treatments",
+    "allInCategory": "All {category}"
+  },
+  "thanks": {
+    "seoTitle": "Thank You",
+    "seoDescription": "Your message has been received. Our team will get back to you within 24 hours.",
+    "title": "Thank you for reaching out",
+    "body": "We've received your message and our team will get back to you within 24 hours. For urgent dental needs, please call or message us directly using the buttons below.",
+    "whatsappAria": "Message us on WhatsApp",
+    "whatsappCta": "WhatsApp Us",
+    "callAria": "Call {phone}",
+    "callCta": "Call {phone}",
+    "backHome": "← Back to home"
+  },
+  "restorative": {
+    "seoTitle": "Restorative Dentistry in Dubai - Inlays, Onlays & Overlays",
+    "seoDescription": "Conservative restorative dentistry in Dubai JLT: ceramic inlays, onlays and overlays (table tops) that rebuild damaged or worn teeth while preserving healthy enamel.",
+    "crumb": "Restorative Dentistry",
+    "heroTitle": "Restorative Dentistry in Dubai",
+    "heroSubtitle": "Rebuild damaged, decayed or worn teeth with precise ceramic inlays, onlays and overlays that keep as much of your natural tooth as possible.",
+    "treatment": "restorative dentistry",
+    "introTitle": "Between a filling and a crown",
+    "introParagraphs": [
+      "When a cavity or fracture is too large for a simple filling but the tooth is too healthy to justify a full crown, an inlay, onlay or overlay restores it precisely. Each piece is designed digitally from a scan of your tooth and bonded in place, so the result is strong, tight-fitting and virtually invisible.",
+      "Because we specialise in complex full-mouth rehabilitation, these conservative restorations are also how we rebuild worn-down bites and protect remaining enamel for patients who grind their teeth."
+    ],
+    "introPoints": [
+      "Preserves healthy tooth structure",
+      "Digital scan — no messy impressions",
+      "Ceramic that matches your natural shade",
+      "Same-day milling available for many cases"
+    ],
+    "treatmentsTitle": "Our Restorative Treatments in Dubai",
+    "benefitsTitle": "Why Choose Us for Restorative Dentistry",
+    "benefits": [
+      "Conservative approach: we keep as much natural tooth as possible",
+      "Digital design and in-clinic milling for a precise fit",
+      "Restorations planned as part of your whole bite, not tooth by tooth",
+      "Experienced in complex full-mouth rehabilitation",
+      "Clear, honest recommendation on filling vs inlay vs crown"
+    ],
+    "faqsTitle": "Restorative Dentistry FAQs",
+    "faqs": [
+      {
+        "question": "What is the difference between a filling, an inlay, an onlay and a crown?",
+        "answer": "A filling is placed directly into a small cavity in one visit. An inlay is a lab-made piece that fits inside the tooth between the cusps; an onlay also covers one or more cusps. Both preserve far more natural tooth than a crown, which covers the entire tooth. We recommend the least invasive option that will last."
+      },
+      {
+        "question": "What are overlays or table tops?",
+        "answer": "Thin ceramic caps that cover the whole chewing surface of a worn back tooth with minimal or no drilling. They rebuild lost height and protect the remaining enamel, and are often part of a full-mouth rehabilitation for patients with worn or ground-down teeth."
+      },
+      {
+        "question": "Which materials do you use?",
+        "answer": "Mostly lithium-disilicate ceramic or zirconia designed with CAD/CAM from a digital scan, and composite where indicated. Your dentist will explain which suits your tooth and bite."
+      },
+      {
+        "question": "How many visits are needed?",
+        "answer": "Usually two: preparation and scan, then bonding once the restoration is made. Some cases can be milled and fitted the same day."
+      },
+      {
+        "question": "Are restorative treatments covered by insurance?",
+        "answer": "Many UAE dental plans cover part of restorative work. Tell us your insurer when you book and we will confirm coverage before treatment."
+      }
+    ],
+    "ctaTitle": "Restore Your Tooth, Keep Your Smile",
+    "ctaText": "Book a consultation in JLT and find out which restoration is right for your tooth."
+  },
+  "cosmetic": {
+    "seoTitle": "Cosmetic Dentistry in Dubai - Hollywood Smile Makeovers",
+    "seoDescription": "Complete smile transformations in Dubai JLT: no-prep ceramic veneers, whitening, implants, crowns and Hollywood smile design, led by a dentist with 18 years of cosmetic experience.",
+    "crumb": "Cosmetic Dentistry",
+    "jsonLdName": "Cosmetic Dentistry in Dubai",
+    "jsonLdDescription": "Hollywood smile makeovers combining veneers, whitening, implants and crowns.",
+    "heroTitle": "Cosmetic Dentistry in Dubai",
+    "heroSubtitle": "Transform your smile with ceramic veneers, whitening, orthodontics, implants and complete Hollywood smile makeovers.",
+    "treatment": "a smile makeover",
+    "packagesTreatment": "smile makeover",
+    "introTitle": "Enhancing Smiles, Boosting Confidence",
+    "introBody": "Cosmetic dentistry improves the appearance of your teeth and smile. From correcting single imperfections to designing a full Hollywood smile, we combine digital planning and artistry for natural, long-lasting results.",
+    "introPoints": [
+      "Digital Smile Design preview",
+      "Minimally invasive, no-prep techniques",
+      "Natural results matched to your face",
+      "One team for every treatment",
+      "Complex cases welcome"
+    ],
+    "treatmentsTitle": "Cosmetic Dental Treatments in Dubai",
+    "services": [
+      {
+        "title": "Veneers in Dubai",
+        "desc": "No-prep ceramic veneers for a flawless, natural smile"
+      },
+      {
+        "title": "Teeth Whitening in Dubai",
+        "desc": "Brighten your teeth safely in one visit"
+      },
+      {
+        "title": "Orthodontics & Clear Aligners",
+        "desc": "Straighten discreetly with Invisalign or braces"
+      },
+      {
+        "title": "Dental Implants in Dubai",
+        "desc": "Replace missing teeth with permanent, natural-looking implants"
+      },
+      {
+        "title": "Crowns & Bridges",
+        "desc": "Zirconia and porcelain restorations that transform worn or damaged teeth"
+      },
+      {
+        "title": "Hollywood Smile Makeover",
+        "desc": "Combine treatments for a complete smile transformation"
+      }
+    ],
+    "benefitsTitle": "Benefits of Cosmetic Dentistry",
+    "benefits": [
+      "Correct stained, chipped or misaligned teeth",
+      "Restore function along with aesthetics",
+      "Boost confidence and self-esteem",
+      "Custom treatments tailored to your needs",
+      "Long-lasting, natural-looking results"
+    ],
+    "hollywoodTitle": "Hollywood Smile Makeover in Dubai",
+    "hollywoodBody": "Our signature Hollywood smile makeovers combine no-prep ceramic veneers, whitening, orthodontics and implants into one plan. With digital smile design you preview your new smile before treatment begins.",
+    "hollywoodCta": "Book Your Smile Makeover Consultation",
+    "hollywoodWhatsapp": "Hello, I'd like to book a Hollywood smile makeover consultation.",
+    "whyTitle": "Dubai's Trusted Cosmetic Dentists",
+    "whyBody": "Cosmetic treatment is led by our founder {name}, with {years} years of cosmetic dentistry experience, supported by an international team and digital technology. Our {rating} Google rating reflects our commitment to patient satisfaction.",
+    "whyChips": [
+      "{years} years of cosmetic dentistry ({name})",
+      "Internationally trained specialists",
+      "Digital smile design",
+      "{rating} Google rating",
+      "Patient-focused care"
+    ],
+    "transformationsTitle": "Smile Makeover Transformations",
+    "transformationsSubtitle": "Real complete smile makeovers from our JLT clinic. Individual results vary.",
+    "faqs": [
+      {
+        "question": "What's the difference between cosmetic and general dentistry?",
+        "answer": "General dentistry focuses on health and function; cosmetic dentistry enhances appearance while usually improving function too."
+      },
+      {
+        "question": "How long do cosmetic dental treatments last?",
+        "answer": "With proper care, ceramic veneers and crowns last 10–15 years or more, implants can last a lifetime, and whitening lasts 6–12 months with touch-ups."
+      },
+      {
+        "question": "Is cosmetic dentistry safe?",
+        "answer": "Yes. All treatments use biocompatible materials and minimally invasive techniques — our veneers, for example, require no shaving of your natural teeth."
+      },
+      {
+        "question": "Who is a good candidate for cosmetic dentistry?",
+        "answer": "Anyone unhappy with stains, chips, gaps, misalignment or missing teeth. A consultation with a digital smile design shows what is possible for you."
+      },
+      {
+        "question": "Can I combine treatments for better results?",
+        "answer": "Yes. Most Hollywood smile makeovers combine several treatments, such as whitening then veneers, or implants with crowns, planned together for a harmonious result."
+      }
+    ],
+    "ctaTitle": "Book Your Cosmetic Dentistry Consultation in Dubai",
+    "ctaText": "Ready for your dream smile? Schedule a consultation and see your new smile designed digitally."
+  },
+  "serviceCategories": {
+    "dental-surgery": {
+      "name": "Oral & Dental Surgery",
+      "shortName": "Dental Surgery"
+    },
+    "general-preventive": {
+      "name": "General & Preventive Dentistry",
+      "shortName": "General & Preventive"
+    },
+    "crowns-bridges": {
+      "name": "Crowns & Bridges",
+      "shortName": "Crowns & Bridges"
+    },
+    "whitening": {
+      "name": "Teeth Whitening",
+      "shortName": "Whitening"
+    },
+    "orthodontics": {
+      "name": "Orthodontics & Clear Aligners",
+      "shortName": "Orthodontics"
+    },
+    "restorative": {
+      "name": "Restorative Dentistry",
+      "shortName": "Restorative"
+    }
+  },
+  "sitemap": {
+    "seoTitle": "Sitemap",
+    "seoDescription": "Complete list of pages on the Your Smile Advanced Dental Center Dubai website.",
+    "title": "Sitemap",
+    "subtitle": "Browse all pages and services available on our website.",
+    "mainPages": "Main Pages",
+    "treatments": "Treatments",
+    "legal": "Legal",
+    "categoryOverview": "{category} overview",
+    "lookingTitle": "Looking for something specific?",
+    "lookingBody": "If you can't find what you're looking for, please reach out to our team. We're here to help!",
+    "contactUs": "Contact Us",
+    "messageWhatsapp": "Message on WhatsApp",
+    "main": [
+      "Home",
+      "About Us",
+      "Our Doctors",
+      "Smile Transformation Gallery",
+      "Blog & News",
+      "FAQ",
+      "Contact Us"
+    ],
+    "treatmentLinks": [
+      "All Services",
+      "Emergency Dentist",
+      "Dental Implants",
+      "Veneers",
+      "Cosmetic Dentistry",
+      "Digital X-Ray, OPG & CBCT",
+      "Private At-Home Visit",
+      "Dental Tourism"
+    ],
+    "legalLinks": [
+      "Privacy Policy",
+      "Terms & Conditions"
+    ]
+  },
+  "legal": {
+    "lastUpdated": "Last updated: {date}"
+  },
+  "privacy": {
+    "seoTitle": "Privacy Policy",
+    "seoDescription": "How {clinic} in Dubai collects, uses and protects your personal data, in line with the UAE Personal Data Protection Law.",
+    "title": "Privacy Policy",
+    "subtitle": "How we collect, use and protect your personal information.",
+    "ctaLead": "Questions about our privacy practices?",
+    "ctaButton": "Get in Touch",
+    "sections": [
+      {
+        "title": "1. Who we are",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "{clinic} (\"we\", \"us\", \"the Clinic\") operates this website and the dental clinic at {address}. We are the data controller for personal data collected through this website and in the course of providing dental care. Contact: {email}, {phone}."
+          }
+        ]
+      },
+      {
+        "title": "2. What personal data we collect",
+        "blocks": [
+          {
+            "type": "ul",
+            "items": [
+              "**Contact and enquiry data** — name, phone number, email address, the treatment you are interested in and the message you send us via the contact form, WhatsApp, phone or email.",
+              "**Newsletter data** — your email address if you subscribe.",
+              "**Health data** — information about your dental and medical history, X-rays and clinical photographs, collected only when you become a patient and processed under patient-confidentiality rules. This website itself does not ask for health data beyond what you choose to write in a message.",
+              "**Technical and usage data** — IP address, device and browser type, pages visited and interactions such as clicking \"Call\" or \"WhatsApp\", collected through cookies and similar technologies only with your consent (see section 6)."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "3. Why we process your data and on what basis",
+        "blocks": [
+          {
+            "type": "ul",
+            "items": [
+              "To respond to your enquiry and schedule appointments — performance of a contract or steps at your request.",
+              "To provide dental treatment and keep clinical records — provision of healthcare and our legal obligations under UAE health regulations.",
+              "To send you appointment reminders and, with your consent, dental tips and clinic news — consent, which you can withdraw at any time.",
+              "To understand how the website is used and to measure advertising — consent given via the cookie banner.",
+              "To comply with legal obligations and protect our rights — legal obligation and legitimate interest."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "4. Who we share data with",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "We do not sell personal data. We share it only with:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Service providers who host this website and process form submissions on our behalf (our hosting provider, Netlify, receives contact-form and newsletter submissions).",
+              "Analytics and advertising providers (Google Analytics / Google Tag Manager and Meta) — only if you accept analytics and marketing cookies.",
+              "Dental laboratories, imaging centres and specialists involved in your treatment, under confidentiality obligations.",
+              "Insurance providers, where you ask us to bill your insurer.",
+              "Authorities where required by UAE law."
+            ]
+          },
+          {
+            "type": "p",
+            "text": "Some providers process data outside the UAE. Where that happens we rely on the safeguards permitted by the UAE Personal Data Protection Law."
+          }
+        ]
+      },
+      {
+        "title": "5. How long we keep data",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Enquiry data is kept for as long as needed to handle your request and for up to 24 months afterwards unless you become a patient. Clinical records are retained for the periods required by UAE health regulations. Newsletter data is kept until you unsubscribe. Analytics data is retained according to the provider's settings (Google Analytics: up to 14 months)."
+          }
+        ]
+      },
+      {
+        "title": "6. Cookies and tracking",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Essential cookies keep the website working (for example, remembering your cookie choice and language). Analytics and marketing cookies (Google Analytics 4 via Google Tag Manager, Meta Pixel) are set **only after you click \"Accept\"** in the cookie banner. They help us see which pages are useful and measure our advertising. You can change your choice at any time by clearing your browser's site data, after which the banner appears again."
+          }
+        ]
+      },
+      {
+        "title": "7. Your rights",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Under the UAE Personal Data Protection Law you may ask us to:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "access the personal data we hold about you and receive a copy;",
+              "correct inaccurate or incomplete data;",
+              "delete your data, where we have no legal duty to retain it (clinical records are subject to statutory retention);",
+              "restrict or object to processing, including direct marketing;",
+              "withdraw consent at any time, without affecting processing already carried out."
+            ]
+          },
+          {
+            "type": "p",
+            "text": "To exercise any right, email {email}. We respond within the period required by law. You may also lodge a complaint with the UAE Data Office."
+          }
+        ]
+      },
+      {
+        "title": "8. Security",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "We use appropriate technical and organisational measures — encrypted connections (HTTPS), access controls and staff confidentiality obligations — to protect your data. No transmission over the internet is completely secure; please do not send detailed medical information through the contact form."
+          }
+        ]
+      },
+      {
+        "title": "9. Children",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "We treat children as patients with the consent of a parent or guardian. This website is not directed at children and we do not knowingly collect their data online."
+          }
+        ]
+      },
+      {
+        "title": "10. Changes to this notice",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "We may update this notice from time to time. The date below shows when it was last revised. Material changes will be highlighted on this page."
+          }
+        ]
+      },
+      {
+        "title": "11. Contact",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "**Email:** {email}"
+          },
+          {
+            "type": "p",
+            "text": "**Phone:** {phone}"
+          },
+          {
+            "type": "p",
+            "text": "**Address:** {address}"
+          }
+        ]
+      }
+    ]
+  },
+  "terms": {
+    "seoTitle": "Terms & Conditions",
+    "seoDescription": "Terms of use for the {clinic} website: information, appointments, packages and governing law (UAE).",
+    "title": "Terms & Conditions",
+    "subtitle": "Please read these terms before using our website.",
+    "ctaLead": "Need to speak with us?",
+    "ctaButton": "Contact Us",
+    "sections": [
+      {
+        "title": "1. About these terms",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "These terms govern your use of the website of {clinic} (\"the Clinic\", \"we\"). By using the website you accept them. Dental treatment itself is governed by the consent forms and treatment plan you sign at the clinic, not by these website terms."
+          }
+        ]
+      },
+      {
+        "title": "2. Information is not medical advice",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "The content of this website is for general information only. It does not replace a clinical examination and is not a diagnosis or a treatment recommendation for your individual case. Always consult a dentist. If you have a dental emergency, call our emergency line or go to the nearest emergency facility."
+          }
+        ]
+      },
+      {
+        "title": "3. Treatment results",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Results described or shown on this website, including before-and-after photographs, are those of actual patients who consented to publication and are illustrative only. Individual results vary depending on your oral health, anatomy and aftercare. Durations and healing times are typical ranges, not guarantees."
+          }
+        ]
+      },
+      {
+        "title": "4. Enquiries and appointments",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Sending a message, WhatsApp or form submission is a request for contact, not a confirmed appointment. An appointment is confirmed only when our team confirms the date and time with you. Please give at least 24 hours' notice to cancel or reschedule so that the slot can be offered to another patient."
+          }
+        ]
+      },
+      {
+        "title": "5. Packages and fees",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "We do not publish prices on this website. Fees and treatment packages are quoted individually in writing after a clinical examination and form part of your treatment plan. Any warranty (for example on dental implants) is described in the written warranty terms you receive with your treatment plan and is subject to the conditions stated there, including attending recommended check-ups."
+          }
+        ]
+      },
+      {
+        "title": "6. Intellectual property",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "All text, images, logos and design on this website belong to the Clinic or its licensors. You may view and print pages for personal, non-commercial use. Any other reproduction requires our written permission."
+          }
+        ]
+      },
+      {
+        "title": "7. Links to other websites",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Links to third-party websites (for example Google Maps, Instagram or Facebook) are provided for convenience. We are not responsible for their content or privacy practices."
+          }
+        ]
+      },
+      {
+        "title": "8. Availability and accuracy",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "We aim to keep the website accurate and available but do not guarantee it will be error-free or uninterrupted. We may change content, services or these terms at any time; the date below shows the latest revision."
+          }
+        ]
+      },
+      {
+        "title": "9. Limitation of liability",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "To the extent permitted by UAE law, the Clinic is not liable for loss arising from reliance on website content or from inability to access the website. Nothing in these terms limits liability that cannot be limited under applicable law, including for clinical negligence."
+          }
+        ]
+      },
+      {
+        "title": "10. Governing law",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "These terms are governed by the laws of the United Arab Emirates as applied in the Emirate of Dubai, and the courts of Dubai have jurisdiction over any dispute relating to them."
+          }
+        ]
+      },
+      {
+        "title": "11. Contact",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "**Email:** {email}"
+          },
+          {
+            "type": "p",
+            "text": "**Phone:** {phone}"
+          },
+          {
+            "type": "p",
+            "text": "**Address:** {address}"
+          }
+        ]
+      }
+    ]
+  },
+  "atHome": {
+    "seoTitle": "Private At-Home Dentist in Dubai - Home Dental Visits",
+    "seoDescription": "Private at-home dental treatment across Dubai: check-ups, cleanings, fillings, simple extractions, emergency pain relief and denture care at your home, office or hotel.",
+    "crumb": "Private At-Home Dental Visit",
+    "jsonLdName": "Private At-Home Dental Treatment in Dubai",
+    "jsonLdDescription": "Mobile dental care delivered at the patient's home, office or hotel in Dubai.",
+    "jsonLdServiceType": "Home dental visit",
+    "heroTitle": "Private At-Home Dental Treatment in Dubai",
+    "heroSubtitle": "Professional dental care in the comfort and privacy of your home, office or hotel. Among the first clinics in Dubai to offer it.",
+    "treatment": "a private at-home dental visit",
+    "bookVisit": "Book a Home Visit",
+    "introTitle": "The clinic comes to you",
+    "introParagraphs": [
+      "Experience professional dental care in the comfort of your home. Our mobile service brings portable equipment, sterilised instruments and the same doctors you would see in our JLT clinic to your door. Every visit starts with a proper examination and a personalised treatment plan.",
+      "Perfect for patients seeking privacy, convenience or special-care support: elderly relatives, people with limited mobility, families with young children, busy professionals and visitors staying in Dubai hotels."
+    ],
+    "introBadges": [
+      "Clinic-grade sterilisation",
+      "Flexible appointment times",
+      "Same doctors as in clinic"
+    ],
+    "canDoTitle": "What We Can Do at Your Home",
+    "canDoSubtitle": "Most everyday dentistry travels well. These are the treatments we routinely provide on a home visit.",
+    "canDo": [
+      {
+        "title": "Check-ups & consultations",
+        "desc": "Full examination, treatment planning and second opinions."
+      },
+      {
+        "title": "Professional cleaning",
+        "desc": "Scaling and polishing with portable ultrasonic equipment."
+      },
+      {
+        "title": "Fillings",
+        "desc": "Tooth-coloured composite fillings for cavities and chipped teeth."
+      },
+      {
+        "title": "Simple extractions",
+        "desc": "Removal of loose, decayed or broken teeth that do not require surgery."
+      },
+      {
+        "title": "Emergency pain relief",
+        "desc": "Toothache, swelling, lost fillings and re-cementing crowns."
+      },
+      {
+        "title": "Denture care",
+        "desc": "Adjustments, relines and repairs for comfortable dentures."
+      },
+      {
+        "title": "Teeth whitening",
+        "desc": "Professional whitening in the comfort of your home."
+      },
+      {
+        "title": "Follow-up visits",
+        "desc": "Post-operative checks and suture removal after clinic treatment."
+      }
+    ],
+    "clinicOnlyTitle": "What Needs the Clinic",
+    "clinicOnlyBody": "Some treatments need our surgical set-up, 3D imaging or in-house lab. For these we welcome you at our clinic in Jumeirah Lake Towers, where your care continues with the same team.",
+    "clinicAddressLink": "Clinic address & hours",
+    "cannotDo": [
+      "Surgical procedures such as impacted wisdom teeth, bone grafting or sinus lifts",
+      "Dental implant placement",
+      "Orthodontics (braces and aligner fittings)",
+      "Full-arch (circular) bridges",
+      "Full-jaw veneer preparation"
+    ],
+    "journeyTitle": "How a Home Visit Works",
+    "journeySubtitle": "From your first message to the follow-up call",
+    "steps": [
+      {
+        "title": "Message or call us",
+        "description": "Tell us where you are in Dubai, what is bothering you and when suits you. We confirm whether it can be treated at home and quote the visit fee.",
+        "duration": "5 min"
+      },
+      {
+        "title": "We arrive prepared",
+        "description": "Your dentist arrives with sterilised instrument kits, portable equipment and everything needed for the agreed treatment.",
+        "duration": "At the agreed time"
+      },
+      {
+        "title": "Examination & treatment",
+        "description": "A full check of your teeth and gums, then treatment on the spot wherever possible. You receive clear aftercare instructions.",
+        "duration": "45–90 min"
+      },
+      {
+        "title": "Follow-up",
+        "description": "We check in after your visit and, if anything needs the clinic, arrange a priority appointment in JLT.",
+        "duration": "1–3 days later"
+      }
+    ],
+    "feesTitle": "Fees Quoted on Request",
+    "feesBody": "The home-visit fee depends on your location and the treatment you need. Message us with your address and we reply with a clear quote before booking. No surprises.",
+    "getQuote": "Get a Quote on WhatsApp",
+    "quoteWhatsapp": "Hello, I'd like to book a private at-home dental visit. My location is: ",
+    "faqsTitle": "At-Home Dental Visit FAQs",
+    "faqs": [
+      {
+        "question": "Who is the at-home service for?",
+        "answer": "Anyone who prefers privacy or convenience, patients with limited mobility, elderly family members, busy executives, new parents, and people who feel anxious in a clinical setting. We also visit hotels and offices across Dubai."
+      },
+      {
+        "question": "Is it as safe and hygienic as the clinic?",
+        "answer": "Yes. We bring sealed, sterilised instrument kits, single-use consumables and portable equipment, and follow the same infection-control protocols we use in the clinic. Anything that requires the clinic's surgical set-up or 3D imaging is scheduled at our JLT centre instead."
+      },
+      {
+        "question": "How much does a home visit cost?",
+        "answer": "The fee depends on your location in Dubai and the treatment needed, so we quote it on request when you book. There are no hidden costs: you will know the price before we arrive."
+      },
+      {
+        "question": "Which areas of Dubai do you cover?",
+        "answer": "We cover Dubai and can often arrange visits to neighbouring emirates by prior agreement. Tell us your location when you message us and we will confirm availability and timing."
+      },
+      {
+        "question": "What if I need treatment that cannot be done at home?",
+        "answer": "We will tell you straight away and book you into our clinic in Jumeirah Lake Towers, where the same doctors continue your care with full surgical and imaging facilities."
+      }
+    ],
+    "ctaTitle": "Book Your Private Home Visit",
+    "ctaText": "Your safety and comfort are always our priority. Message us with your location and we'll arrange a visit at a time that suits you."
+  },
+  "blogPost": {
+    "seoTitle": "Blog Article",
+    "seoDescription": "Read the latest dental tips and case studies from Your Smile Advanced Dental Center in Dubai.",
+    "bookConsultation": "Book Consultation on WhatsApp",
+    "galleryTitle": "Gallery",
+    "gallerySubtitle": "Click on images to view details",
+    "expand": "Expand",
+    "closeGallery": "Close gallery",
+    "prevImage": "Previous image",
+    "nextImage": "Next image",
+    "post": {
+      "title": "The Complete Guide to Dental Veneers: Transform Your Smile",
+      "category": "Cosmetic Dentistry",
+      "date": "December 15, 2024",
+      "readTime": "5 min read",
+      "content": "Veneers are one of the most popular cosmetic dental treatments available today. Whether you're looking to fix minor imperfections or completely transform your smile, porcelain veneers offer a versatile solution that combines aesthetics with durability.\n\n**What Are Dental Veneers?**\n\nDental veneers are thin, custom-made ceramic shells bonded to the front surface of your teeth. They're designed to cover imperfections like stains, chips, gaps, or misalignment, creating a flawless smile in just two appointments.\n\n**Types of Veneers**\n\nWe work exclusively with ceramic veneers, which are durable, stain-resistant and typically last 10-15 years or longer. With no-prep techniques there is no shaving of your natural teeth, no injections and no temporaries.\n\n**The Procedure**\n\nThe process begins with a consultation where we discuss your goals and design your ideal smile. We then prepare your teeth by removing a thin layer of enamel, take impressions, and create custom veneers in our lab. Once ready, the veneers are bonded to your teeth using special adhesive and light curing.\n\n**Benefits of Veneers**\n\nBeyond the obvious aesthetic improvements, veneers can boost your confidence, improve bite function, and protect damaged tooth surfaces. They're also relatively quick to place compared to other cosmetic procedures.\n\n**Aftercare Tips**\n\nTo maintain your veneers, avoid chewing on hard objects, practice good oral hygiene, and schedule regular check-ups. With proper care, your veneers will maintain their beautiful appearance for many years.\n\nWhether you're considering veneers for the first time or have questions about the process, our team is here to help you achieve the smile you've always wanted."
+    },
+    "galleryLabels": [
+      "BEFORE VENEERS 1",
+      "AFTER VENEERS 1",
+      "BEFORE VENEERS 2",
+      "AFTER VENEERS 2",
+      "BEFORE VENEERS 3",
+      "AFTER VENEERS 3",
+      "SMILE TRANSFORMATION 1",
+      "SMILE TRANSFORMATION 2"
+    ]
   }
 }

@@ -1,6 +1,10 @@
 import { Link } from "wouter";
-import { ArrowRight, ShieldCheck, Sparkles, Stethoscope, Home as HomeIcon, Plane, Scan, HeartPulse, Layers, Crown, Smile, Sun, Scissors, AlertCircle, Anchor } from "lucide-react";
-import type { LucideIcon } from "lucide-react";
+import { ArrowRight, ShieldCheck } from "lucide-react";
+import {
+  ToothChipped, ToothVeneer, ToothImplant, ToothCrown, FaceSmile, Home as HomeIcon, ToothExtraction, ToothFilling,
+  ToothBraces, ToothClean, ToothProtection, ToothXray, Airplane, Gallery,
+} from "@/components/DentalIcons";
+import type { DentalIcon } from "@/components/DentalIcons";
 import { SEO } from "@/components/SEO";
 import { IMG } from "@/lib/images";
 import { ServiceHero } from "@/components/ServiceHero";
@@ -9,12 +13,13 @@ import { GoogleRatingBanner } from "@/components/GoogleRatingBanner";
 import { jsonLdBreadcrumb } from "@/lib/seo";
 import { subServicesFor, subServicePath, CATEGORIES } from "@/content/services";
 import type { CategorySlug } from "@/content/services";
+import { localizeCategory, localizeSubService } from "@/content/services";
+import { useLanguage } from "@/hooks/useLanguage";
+import { IMPLANT_BRAND } from "@/lib/constants";
 
 interface Card {
   name: string;
   desc: string;
-  href: string;
-  icon: LucideIcon;
 }
 
 /**
@@ -22,61 +27,69 @@ interface Card {
  * has to be simple and obvious". Complex-case treatments first, then the
  * rest, each category showing its sub-pages as plain links.
  */
-const FEATURED: Card[] = [
-  { name: "Emergency Dentist", desc: "Same-day relief for toothache, broken teeth, swelling and trauma.", href: "/emergency", icon: AlertCircle },
-  { name: "Hollywood Smile & Veneers", desc: "No-prep ceramic veneers and complete smile makeovers.", href: "/veneers", icon: Sparkles },
-  { name: "Dental Implants", desc: "Single teeth to full-mouth All-on-4 / All-on-6 with lifetime implant warranty.", href: "/implants", icon: Anchor },
-  { name: "Crowns & Bridges", desc: "Zirconia, porcelain and same-day crowns; implant-supported bridges.", href: "/crowns-bridges", icon: Crown },
-  { name: "Cosmetic Dentistry", desc: "Complete smile transformations combining several treatments.", href: "/cosmetic", icon: Smile },
-  { name: "Private At-Home Visit", desc: "Check-ups, cleanings, fillings and urgent care at your home.", href: "/at-home", icon: HomeIcon },
-];
-
-const CATEGORY_ICONS: Record<CategorySlug, LucideIcon> = {
-  "dental-surgery": Scissors,
-  "crowns-bridges": Crown,
-  restorative: Layers,
-  orthodontics: Smile,
-  whitening: Sun,
-  "general-preventive": HeartPulse,
+const CATEGORY_ICONS: Record<CategorySlug, DentalIcon> = {
+  "dental-surgery": ToothExtraction,
+  "crowns-bridges": ToothCrown,
+  restorative: ToothFilling,
+  orthodontics: ToothBraces,
+  whitening: ToothClean,
+  "general-preventive": ToothProtection,
 };
 
 const CATEGORY_ORDER: CategorySlug[] = ["dental-surgery", "orthodontics", "whitening", "crowns-bridges", "restorative", "general-preventive"];
 
-const OTHER: Card[] = [
-  { name: "Digital X-Ray, OPG & CBCT", desc: "Low-radiation 2D and 3D imaging in-clinic.", href: "/xray-opg", icon: Scan },
-  { name: "Dental Tourism", desc: "Treatment-only or all-inclusive packages for international patients.", href: "/dental-tourism", icon: Plane },
-  { name: "Smile Gallery", desc: "Before and after results.", href: "/gallery", icon: Stethoscope },
+// Icons and routes stay in code; names and blurbs come from the locale
+// lists `services.featured` / `services.other`, in these orders.
+const FEATURED_META: { href: string; icon: DentalIcon }[] = [
+  { href: "/emergency", icon: ToothChipped },
+  { href: "/veneers", icon: ToothVeneer },
+  { href: "/implants", icon: ToothImplant },
+  { href: "/crowns-bridges", icon: ToothCrown },
+  { href: "/cosmetic", icon: FaceSmile },
+  { href: "/at-home", icon: HomeIcon },
+];
+
+const OTHER_META: { href: string; icon: DentalIcon }[] = [
+  { href: "/xray-opg", icon: ToothXray },
+  { href: "/dental-tourism", icon: Airplane },
+  { href: "/gallery", icon: Gallery },
 ];
 
 export default function Services() {
+  const { t, tList, tItems, tOr, tListOr } = useLanguage();
+  const overlay = { tOr, tListOr };
+  const featured = tItems<Card>("services.featured");
+  const other = tItems<Card>("services.other");
   const crumbs = [
-    { name: "Home", path: "/" },
-    { name: "Services", path: "/services" },
+    { name: t("common.home"), path: "/" },
+    { name: t("services.crumb"), path: "/services" },
   ];
   return (
     <div className="flex flex-col min-h-screen">
       <SEO
-        title="Dental Services in Dubai - Implants, Veneers, Emergency & More"
-        description="All treatments at Your Smile Advanced Dental Center Dubai JLT: emergency care, implants, veneers, crowns, orthodontics, whitening, oral surgery, restorative, preventive and at-home visits."
+        title={t("services.seoTitle")}
+        description={t("services.seoDescription")}
         path="/services"
         jsonLd={[jsonLdBreadcrumb(crumbs)]}
       />
       <ServiceHero
-        title="Dental Services in Dubai"
-        subtitle="Specialists in complex cases — and everything else your family needs, under one roof in Jumeirah Lake Towers."
+        title={t("services.heroTitle")}
+        subtitle={t("services.heroSubtitle")}
         breadcrumbs={crumbs}
         backgroundImage={IMG.clinicSmile}
       />
 
       {/* Featured / complex cases */}
-      <section className="py-20 bg-background">
+      <section className="py-16 md:py-24 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12 space-y-3">
-            <h2 className="text-3xl md:text-5xl font-serif font-bold text-secondary">What We Do Best</h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">The cases other clinics turn away are where we start.</p>
+            <h2 className="text-3xl md:text-5xl font-serif font-bold text-secondary">{t("services.featuredTitle")}</h2>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">{t("services.featuredSubtitle")}</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {FEATURED.map(({ name, desc, href, icon: Icon }) => (
+            {featured.map(({ name, desc }, idx) => {
+              const { href, icon: Icon } = FEATURED_META[idx];
+              return (
               <Link key={href} href={href} className="group p-7 bg-card rounded-2xl border border-border hover:border-primary/50 hover:shadow-lg transition-all flex flex-col gap-4">
                 <div className="flex items-start justify-between">
                   <span className="rounded-full bg-primary/10 p-3 text-primary"><Icon className="h-6 w-6" /></span>
@@ -85,23 +98,24 @@ export default function Services() {
                 <h3 className="text-xl font-bold text-secondary group-hover:text-primary transition-colors">{name}</h3>
                 <p className="text-muted-foreground">{desc}</p>
               </Link>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
 
       {/* Categories with sub-pages */}
-      <section className="py-20 bg-muted/30">
+      <section className="py-16 md:py-24 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12 space-y-3">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary">All Treatments</h2>
-            <p className="text-muted-foreground text-lg">Every treatment has its own page with what to expect, step by step.</p>
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary">{t("services.allTitle")}</h2>
+            <p className="text-muted-foreground text-lg">{t("services.allSubtitle")}</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {CATEGORY_ORDER.map((slug) => {
-              const cat = CATEGORIES[slug];
+              const cat = localizeCategory(CATEGORIES[slug], overlay);
               const Icon = CATEGORY_ICONS[slug];
-              const subs = subServicesFor(slug);
+              const subs = subServicesFor(slug).map((s) => localizeSubService(s, overlay));
               return (
                 <div key={slug} className="bg-card rounded-2xl border border-border p-7 flex flex-col">
                   <Link href={cat.path} className="group flex items-center gap-3 mb-4">
@@ -124,32 +138,28 @@ export default function Services() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
-            {OTHER.map(({ name, desc, href, icon: Icon }) => (
-              <Link key={href} href={href} className="group p-6 bg-card rounded-2xl border border-border hover:border-primary/50 hover:shadow-md transition-all flex items-start gap-4">
+            {other.map(({ name, desc }, idx) => {
+              const { href, icon: Icon } = OTHER_META[idx];
+              return (
+              <Link key={href} href={href} className="group p-6 bg-card rounded-2xl border border-border hover:border-primary/50 hover:shadow-sm transition-all flex items-start gap-4">
                 <span className="rounded-full bg-primary/10 p-2.5 text-primary shrink-0"><Icon className="h-5 w-5" /></span>
                 <div>
                   <h3 className="font-bold text-secondary group-hover:text-primary transition-colors">{name}</h3>
                   <p className="text-sm text-muted-foreground">{desc}</p>
                 </div>
               </Link>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
 
       {/* Why us */}
-      <section className="py-20 bg-secondary text-white">
+      <section className="py-16 md:py-24 bg-secondary text-white">
         <div className="container mx-auto px-4 max-w-5xl">
-          <h2 className="text-3xl md:text-4xl font-serif font-bold text-center mb-12">Why Patients Trust Us</h2>
+          <h2 className="text-3xl md:text-4xl font-serif font-bold text-center mb-12">{t("services.whyTitle")}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              "Specialists in complex and full-mouth cases",
-              "Digital planning: intraoral scans, CAD/CAM, 3D implant planning",
-              "Gentle, pain-free procedures with sedation options",
-              "Multilingual, family-friendly international team",
-              "Lifetime warranty on JD Evolution Plus implants",
-              "Comprehensive care under one roof in JLT",
-            ].map((b) => (
+            {tList("services.why", { brand: IMPLANT_BRAND }).map((b) => (
               <div key={b} className="flex items-start gap-4 p-6 bg-white/5 rounded-xl border border-white/10">
                 <ShieldCheck className="h-7 w-7 text-primary shrink-0" />
                 <p className="font-medium leading-snug">{b}</p>
@@ -161,7 +171,7 @@ export default function Services() {
 
       <GoogleRatingBanner />
 
-      <CTASection title="Book Your Dental Appointment in Dubai" text="From a check-up to a full smile makeover, tell us what you need and we'll guide you to the right treatment." bgColor="bg-primary/5" />
+      <CTASection title={t("services.ctaTitle")} text={t("services.ctaText")} bgColor="bg-primary/5" />
     </div>
   );
 }

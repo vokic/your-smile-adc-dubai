@@ -9,50 +9,48 @@ import { PackagesCallout } from "@/components/PackagesCallout";
 import { CTASection } from "@/components/CTASection";
 import { Visual } from "@/components/Visual";
 import { jsonLdBreadcrumb, jsonLdFAQPage, jsonLdService } from "@/lib/seo";
-import { subServicesFor, subServicePath } from "@/content/services";
-
-const FAQS = [
-  { question: "Is teeth whitening safe?", answer: "Yes. Professional whitening by a dentist is safe and does not damage enamel or gums. Unlike over-the-counter kits, clinical treatments use controlled concentrations and full gum protection." },
-  { question: "How long do whitening results last?", answer: "Results typically last 6–12 months depending on lifestyle and oral care. Patients who limit coffee, tea, red wine and smoking enjoy brighter smiles for longer." },
-  { question: "Does whitening damage enamel?", answer: "No. Professional systems lift stains without harming enamel. Some temporary sensitivity can occur, but it usually resolves within a day or two." },
-  { question: "How white can my teeth get?", answer: "It varies from person to person. Most patients see a clearly noticeable change after one session. We compare your shade before and after rather than promising a fixed number." },
-  { question: "Laser, in-office or take-home — which should I choose?", answer: "Laser gives the fastest result in one visit; in-office without light is gentler for sensitive teeth; take-home trays whiten gradually and are ideal for maintenance. Many patients combine a clinic session with a home kit." },
-  { question: "Can whitening remove all stains?", answer: "Whitening works best on stains from food, drink and ageing. Discolouration inside the tooth from medication or enamel defects responds less; ceramic veneers may be recommended instead." },
-  { question: "Who is a good candidate?", answer: "Most adults with healthy teeth and gums. Whitening is not recommended for children, during pregnancy, or with untreated cavities or gum disease." },
-  { question: "Will whitening make my teeth sensitive?", answer: "Some patients experience temporary sensitivity that fades within 24–48 hours. We use protective gels and adjust the protocol for sensitive patients." },
-];
+import { subServicesFor, subServicePath, localizeSubService } from "@/content/services";
+import { useLanguage } from "@/hooks/useLanguage";
+import type { FAQ } from "@/content/services";
 
 export default function Whitening() {
-  const subs = subServicesFor("whitening");
+  const { t, tList, tItems, tOr, tListOr } = useLanguage();
+  const subs = subServicesFor("whitening").map((s) => localizeSubService(s, { tOr, tListOr }));
+  const faqs = tItems<FAQ>("whitening.faqs");
+  const treatment = t("whitening.treatment");
   const crumbs = [
-    { name: "Home", path: "/" },
-    { name: "Teeth Whitening", path: "/whitening" },
+    { name: t("common.home"), path: "/" },
+    { name: t("whitening.crumb"), path: "/whitening" },
   ];
   return (
     <div className="flex flex-col min-h-screen">
       <SEO
-        title="Professional Teeth Whitening in Dubai - Laser & In-Office"
-        description="Safe, dentist-supervised teeth whitening in Dubai JLT: laser whitening, in-office treatment and custom take-home kits. Visible results in one session."
+        title={t("whitening.seoTitle")}
+        description={t("whitening.seoDescription")}
         path="/whitening"
         jsonLd={[
-          jsonLdService({ name: "Teeth Whitening in Dubai", description: "Laser, in-office and take-home professional whitening.", path: "/whitening" }),
-          jsonLdFAQPage(FAQS),
+          jsonLdService({ name: t("whitening.jsonLdName"), description: t("whitening.jsonLdDescription"), path: "/whitening" }),
+          jsonLdFAQPage(faqs),
           jsonLdBreadcrumb(crumbs),
         ]}
       />
-      <ServiceHero title="Teeth Whitening in Dubai" subtitle="Brighten your smile safely and effectively with professional whitening treatments." breadcrumbs={crumbs} treatment="teeth whitening" backgroundImage={IMG.clinicSmile} />
+      <ServiceHero
+        title={t("whitening.heroTitle")}
+        subtitle={t("whitening.heroSubtitle")}
+        breadcrumbs={crumbs}
+        treatment={treatment}
+        backgroundImage={IMG.clinicSmile}
+      />
 
-      <section className="py-20 bg-background">
+      <section className="py-16 md:py-24 bg-background">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <Visual src={IMG.clinicSmile} icon={Sun} className="h-[350px]" />
             <div className="space-y-6">
-              <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary">Safe, Fast & Professional Whitening</h2>
-              <p className="text-muted-foreground text-lg leading-relaxed">
-                Professional teeth whitening delivers a visible change in a single visit. Our treatments remove deep stains without damaging enamel, with your gums fully protected, in about 45–60 minutes.
-              </p>
+              <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary">{t("whitening.introTitle")}</h2>
+              <p className="text-muted-foreground text-lg leading-relaxed">{t("whitening.introBody")}</p>
               <div className="space-y-3">
-                {["Fast results (45–60 min)", "Dentist-controlled gel strength", "Enamel safe", "Gum protection throughout", "Take-home trays for maintenance"].map((item) => (
+                {tList("whitening.introPoints").map((item) => (
                   <div key={item} className="flex items-center gap-3">
                     <CheckCircle2 className="h-5 w-5 text-primary" />
                     <span className="font-medium text-secondary">{item}</span>
@@ -65,20 +63,20 @@ export default function Whitening() {
       </section>
 
       {/* Options → sub-pages */}
-      <section className="py-20 bg-muted/30">
+      <section className="py-16 md:py-24 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary">Our Teeth Whitening Options</h2>
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary">{t("whitening.optionsTitle")}</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {subs.map((s) => (
-              <Link key={s.slug} href={subServicePath(s)} className="group p-8 bg-card rounded-xl border border-border hover:border-primary/50 hover:shadow-md transition-all space-y-3 flex flex-col">
+              <Link key={s.slug} href={subServicePath(s)} className="group p-8 bg-card rounded-xl border border-border hover:border-primary/50 hover:shadow-sm transition-all space-y-3 flex flex-col">
                 <div className="flex items-center justify-between gap-3">
                   <h3 className="text-xl font-bold text-secondary group-hover:text-primary transition-colors">{s.name}</h3>
                   <ArrowRight className="h-5 w-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all shrink-0" />
                 </div>
                 <p className="text-muted-foreground flex-1">{s.heroSubtitle}</p>
-                <span className="text-primary text-sm font-semibold">Learn more</span>
+                <span className="text-primary text-sm font-semibold">{t("common.learnMore")}</span>
               </Link>
             ))}
           </div>
@@ -86,14 +84,19 @@ export default function Whitening() {
       </section>
 
       <BenefitsSection
-        title="Why Professional Teeth Whitening?"
-        benefits={["Safe for enamel and gums", "Noticeable results after one session", "Treatment strength tailored to your teeth", "Performed by our dentists, not a salon", "Honest advice if veneers would suit your stains better"]}
+        title={t("whitening.benefitsTitle")}
+        benefits={tList("whitening.benefits")}
         bgColor="bg-background"
       />
 
-      <PackagesCallout treatment="teeth whitening" />
-      <FAQSection title="Whitening FAQs" faqs={FAQS} />
-      <CTASection title="Ready for a Brighter Smile?" text="Book your professional whitening session in JLT and see the difference in about an hour." treatment="teeth whitening" bgColor="bg-background" />
+      <PackagesCallout treatment={treatment} />
+      <FAQSection title={t("whitening.faqsTitle")} faqs={faqs} />
+      <CTASection
+        title={t("whitening.ctaTitle")}
+        text={t("whitening.ctaText")}
+        treatment={treatment}
+        bgColor="bg-background"
+      />
     </div>
   );
 }

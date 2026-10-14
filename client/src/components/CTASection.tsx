@@ -2,11 +2,13 @@ import { MessageCircle, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { REGULAR_PHONE, whatsappLink } from "@/lib/constants";
 import { track } from "@/lib/analytics";
+import { useLanguage } from "@/hooks/useLanguage";
 
 interface CTASectionProps {
   title: string;
   text: string;
   treatment?: string;
+  /** Defaults to the translated "Book on WhatsApp". */
   primaryLabel?: string;
   bgColor?: "bg-background" | "bg-muted/30" | "bg-primary/5";
 }
@@ -16,14 +18,15 @@ export function CTASection({
   title,
   text,
   treatment,
-  primaryLabel = "Book on WhatsApp",
+  primaryLabel,
   bgColor = "bg-muted/30",
 }: CTASectionProps) {
+  const { t } = useLanguage();
   const message = treatment
-    ? `Hello, I'd like to book a consultation for ${treatment}.`
-    : "Hello, I'd like to book a consultation at Your Smile Advanced Dental Center.";
+    ? t("common.whatsappBookMessage", { treatment })
+    : t("common.whatsappBookMessageGeneric");
   return (
-    <section className={`py-20 ${bgColor}`}>
+    <section className={`py-16 md:py-24 ${bgColor}`}>
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center space-y-6 p-10 md:p-16 bg-card rounded-2xl border border-border">
           <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary">{title}</h2>
@@ -36,12 +39,12 @@ export function CTASection({
                 rel="noopener noreferrer"
                 onClick={() => track("whatsapp_click", { source: "cta", treatment })}
               >
-                <MessageCircle className="h-4 w-4" /> {primaryLabel}
+                <MessageCircle className="h-4 w-4" /> {primaryLabel ?? t("common.bookOnWhatsapp")}
               </a>
             </Button>
             <Button asChild variant="outline" className="gap-2 rounded-full">
               <a href={`tel:${REGULAR_PHONE}`} onClick={() => track("call_click", { source: "cta", treatment, line: "regular" })}>
-                <Phone className="h-4 w-4" /> Call Now
+                <Phone className="h-4 w-4" /> {t("common.callNow")}
               </a>
             </Button>
           </div>

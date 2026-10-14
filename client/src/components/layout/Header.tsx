@@ -1,13 +1,21 @@
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import {
   NavigationMenu,
   NavigationMenuContent,
   NavigationMenuItem,
+  NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
-import { Menu, Phone, MessageCircle, ChevronDown, Search } from "lucide-react";
+import {
+  Menu, Phone, MessageCircle, ChevronDown, ChevronRight, Search, ArrowRight,
+} from "lucide-react";
+import {
+  ToothChipped, ToothImplant, ToothVeneer, ToothCrown, FaceSmile, ToothBraces, ToothClean, ToothExtraction,
+  ToothFilling, ToothProtection, ToothXray, Home as HomeIcon, Airplane, Gallery,
+} from "@/components/DentalIcons";
+import type { DentalIcon } from "@/components/DentalIcons";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { useState, useEffect, useRef } from "react";
@@ -19,28 +27,28 @@ import { REGULAR_PHONE, whatsappLink } from "@/lib/constants";
 import { track } from "@/lib/analytics";
 
 interface NavService {
-  name: string;
+  /** Locale key under `navServices.*`; the label and blurb come from there. */
+  key: string;
   path: string;
-  desc: string;
-  featured?: boolean;
+  icon: DentalIcon;
 }
 
 // Order = owner's positioning: complex cases first, then the rest.
 const SERVICES: NavService[] = [
-  { name: "Emergency Dentist", path: "/emergency", desc: "Same-day pain relief & trauma care", featured: true },
-  { name: "Dental Implants", path: "/implants", desc: "Single tooth to All-on-4 / All-on-6" },
-  { name: "Veneers (Hollywood Smile)", path: "/veneers", desc: "No-prep ceramic veneers" },
-  { name: "Crowns & Bridges", path: "/crowns-bridges", desc: "Zirconia, porcelain, same-day" },
-  { name: "Cosmetic Dentistry", path: "/cosmetic", desc: "Complete smile transformations" },
-  { name: "Orthodontics & Invisalign", path: "/orthodontics", desc: "Aligners, ceramic & metal braces" },
-  { name: "Teeth Whitening", path: "/whitening", desc: "Laser, in-office, take-home" },
-  { name: "Oral & Dental Surgery", path: "/dental-surgery", desc: "Wisdom teeth, grafting, sinus lift" },
-  { name: "Restorative Dentistry", path: "/restorative", desc: "Inlays, onlays & overlays" },
-  { name: "General & Preventive", path: "/general-preventive", desc: "Check-ups, cleanings, kids" },
-  { name: "Digital X-Ray, OPG & CBCT", path: "/xray-opg", desc: "In-clinic 2D & 3D imaging" },
-  { name: "Private At-Home Visit", path: "/at-home", desc: "Dental care at your home or office", featured: true },
-  { name: "Dental Tourism", path: "/dental-tourism", desc: "Treatment-only or all-inclusive packages" },
-  { name: "Smile Gallery", path: "/gallery", desc: "Before & after results" },
+  { key: "emergency", path: "/emergency", icon: ToothChipped },
+  { key: "implants", path: "/implants", icon: ToothImplant },
+  { key: "veneers", path: "/veneers", icon: ToothVeneer },
+  { key: "crownsBridges", path: "/crowns-bridges", icon: ToothCrown },
+  { key: "cosmetic", path: "/cosmetic", icon: FaceSmile },
+  { key: "orthodontics", path: "/orthodontics", icon: ToothBraces },
+  { key: "whitening", path: "/whitening", icon: ToothClean },
+  { key: "dentalSurgery", path: "/dental-surgery", icon: ToothExtraction },
+  { key: "restorative", path: "/restorative", icon: ToothFilling },
+  { key: "generalPreventive", path: "/general-preventive", icon: ToothProtection },
+  { key: "xrayOpg", path: "/xray-opg", icon: ToothXray },
+  { key: "atHome", path: "/at-home", icon: HomeIcon },
+  { key: "dentalTourism", path: "/dental-tourism", icon: Airplane },
+  { key: "gallery", path: "/gallery", icon: Gallery },
 ];
 
 export function Header() {
@@ -49,7 +57,17 @@ export function Header() {
   const [searchOpen, setSearchOpen] = useState(false);
   const lastScrollYRef = useRef(0);
   const [servicesOpen, setServicesOpen] = useState(false);
+  // Controlled so the Services popover closes after navigation; uncontrolled
+  // Radix keeps it open under the cursor once the SPA route changes.
+  const [navValue, setNavValue] = useState("");
+  const [location] = useLocation();
   const { t } = useLanguage();
+
+  useEffect(() => {
+    setNavValue("");
+    setIsOpen(false);
+    setServicesOpen(false);
+  }, [location]);
 
   useEffect(() => {
     let ticking = false;
@@ -85,7 +103,9 @@ export function Header() {
     track("search_open", { source: "header" });
   };
 
-  const navLink = "text-sm font-medium text-foreground hover:text-primary transition-colors cursor-pointer px-2 py-1";
+  // inline-flex to match the Services trigger (a button); plain inline <a>s sit on
+  // the <li> text baseline and end up ~2px lower than it.
+  const navLink = "inline-flex items-center whitespace-nowrap text-[13px] xl:text-sm font-medium text-foreground hover:text-primary transition-colors cursor-pointer px-1.5 xl:px-2 py-1";
 
   return (
     <header
@@ -94,49 +114,63 @@ export function Header() {
       }`}
     >
       <div className="container mx-auto px-4 h-20 flex items-center justify-between gap-4">
-        {/* Logo */}
-        <Link href="/" className="flex items-center gap-3 cursor-pointer group shrink-0">
-          <img
-            src={logoImage}
-            alt="Your Smile Advanced Dental Center - Dental Clinic in Dubai JLT"
-            className="h-14 w-auto transition-opacity group-hover:opacity-80"
-            width="auto"
-            height="56"
-          />
-        </Link>
+        {/* Logo. Equal flex basis on the two side groups is what actually centres
+            the nav: justify-between cannot, because logo and CTA widths differ. */}
+        <div className="flex items-center shrink-0 lg:flex-1 lg:basis-0">
+          <Link href="/" className="flex items-center gap-3 cursor-pointer group">
+            <img
+              src={logoImage}
+              alt={t("nav.logoAlt")}
+              className="h-14 lg:h-11 xl:h-14 w-auto transition-opacity group-hover:opacity-80"
+              width="auto"
+              height="56"
+            />
+          </Link>
+        </div>
 
         {/* Desktop nav */}
-        <div className="hidden lg:flex items-center gap-6">
-          <NavigationMenu>
-            <NavigationMenuList>
+        <div className="hidden lg:flex items-center justify-center shrink-0">
+          <NavigationMenu value={navValue} onValueChange={setNavValue}>
+            <NavigationMenuList className="space-x-0 xl:space-x-1">
               <NavigationMenuItem>
                 <Link href="/" className={navLink}>{t("nav.home")}</Link>
               </NavigationMenuItem>
-              <NavigationMenuItem>
-                <NavigationMenuTrigger className="text-sm font-medium text-foreground hover:text-primary !bg-transparent !hover:bg-transparent data-[state=open]:!bg-transparent transition-colors px-2 py-1">
+              <NavigationMenuItem value="services">
+                <NavigationMenuTrigger className="h-auto whitespace-nowrap text-[13px] xl:text-sm font-medium text-foreground hover:text-primary data-[state=open]:text-primary !bg-transparent hover:!bg-transparent focus:!bg-transparent data-[state=open]:!bg-transparent transition-colors px-1.5 xl:px-2 py-1">
                   {t("nav.services")}
                 </NavigationMenuTrigger>
-                <NavigationMenuContent className="left-0 top-0 w-[400px] p-4 md:w-[760px] bg-white/95 backdrop-blur">
-                  <div className="mb-4 pb-4 border-b border-border flex items-center justify-between">
-                    <Link href="/services" className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-primary/10 hover:bg-primary/20 transition-colors text-primary font-semibold text-sm">
-                      View All Services →
-                    </Link>
-                    <span className="text-xs text-muted-foreground">Specialists in complex cases</span>
-                  </div>
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
-                    {SERVICES.map((s) => (
-                      <Link
-                        key={s.path}
-                        href={s.path}
-                        className={`group block select-none space-y-1 rounded-xl p-3 leading-none no-underline outline-none transition-colors hover:bg-muted cursor-pointer ${
-                          s.featured ? "text-primary" : "text-foreground hover:text-primary"
-                        }`}
-                      >
-                        <div className="text-sm font-medium">{s.name}</div>
-                        <p className="text-xs text-muted-foreground">{s.desc}</p>
+                <NavigationMenuContent className="p-3 md:w-[min(760px,calc(100vw_-_2rem))]">
+                  <div className="mb-3 px-1 pb-3 border-b border-border flex items-center justify-between gap-4">
+                    <NavigationMenuLink asChild>
+                      <Link href="/services" className="group inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition-colors font-semibold text-sm">
+                        {t("nav.viewAllServices")}
+                        <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
                       </Link>
-                    ))}
+                    </NavigationMenuLink>
+                    <span className="text-xs text-muted-foreground">{t("nav.complexCases")}</span>
                   </div>
+                  <ul className="grid grid-cols-3 gap-1">
+                    {SERVICES.map(({ key, path, icon: Icon }) => (
+                      <li key={path}>
+                        <NavigationMenuLink asChild active={location === path}>
+                          <Link
+                            href={path}
+                            className="group flex items-start gap-3 rounded-xl p-2.5 outline-none transition-colors hover:bg-muted focus-visible:bg-muted focus-visible:ring-2 focus-visible:ring-ring data-[active]:bg-muted"
+                          >
+                            <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg transition-colors bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground">
+                              <Icon className="h-4 w-4" />
+                            </span>
+                            <span className="min-w-0">
+                              <span className="block text-sm font-semibold leading-snug text-foreground group-hover:text-primary">
+                                {t(`navServices.${key}.name`)}
+                              </span>
+                              <span className="mt-0.5 block text-xs leading-snug text-muted-foreground">{t(`navServices.${key}.desc`)}</span>
+                            </span>
+                          </Link>
+                        </NavigationMenuLink>
+                      </li>
+                    ))}
+                  </ul>
                 </NavigationMenuContent>
               </NavigationMenuItem>
               <NavigationMenuItem><Link href="/about" className={navLink}>{t("nav.aboutUs")}</Link></NavigationMenuItem>
@@ -149,17 +183,17 @@ export function Header() {
         </div>
 
         {/* Desktop CTAs */}
-        <div className="hidden md:flex items-center gap-2">
-          <Button variant="ghost" size="icon" className="rounded-full" onClick={openSearch} aria-label="Search the site (Ctrl+K)" data-testid="button-search-open">
+        <div className="hidden md:flex items-center gap-2 lg:gap-1.5 xl:gap-2 shrink-0 lg:flex-1 lg:basis-0 lg:justify-end">
+          <Button variant="ghost" size="icon" className="rounded-full" onClick={openSearch} aria-label={t("nav.searchAria")} data-testid="button-search-open">
             <Search className="h-5 w-5" />
           </Button>
-          <Button variant="outline" asChild className="text-foreground hover:bg-accent hover:text-primary rounded-full">
-            <a href={`tel:${REGULAR_PHONE}`} onClick={() => track("call_click", { source: "header", line: "regular" })}>
-              <Phone className="mr-2 h-4 w-4" />
-              {t("nav.call")}
+          <Button variant="outline" asChild className="text-foreground hover:bg-accent hover:text-primary rounded-full lg:px-3 xl:px-4">
+            <a href={`tel:${REGULAR_PHONE}`} aria-label={t("nav.call")} onClick={() => track("call_click", { source: "header", line: "regular" })}>
+              <Phone className="mr-2 lg:mr-0 xl:mr-2 h-4 w-4" />
+              <span className="lg:hidden xl:inline">{t("nav.call")}</span>
             </a>
           </Button>
-          <Button asChild className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold shadow-lg shadow-primary/20 rounded-full">
+          <Button asChild className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold shadow-lg shadow-primary/20 rounded-full whitespace-nowrap">
             <a href={whatsappLink()} target="_blank" rel="noopener noreferrer" onClick={() => track("whatsapp_click", { source: "header" })}>
               <MessageCircle className="mr-2 h-4 w-4" />
               {t("nav.book")}
@@ -170,12 +204,12 @@ export function Header() {
 
         {/* Mobile: search + menu */}
         <div className="flex items-center gap-1 lg:hidden">
-          <Button variant="ghost" size="icon" className="rounded-full md:hidden" onClick={openSearch} aria-label="Search">
+          <Button variant="ghost" size="icon" className="rounded-full md:hidden" onClick={openSearch} aria-label={t("nav.searchShort")}>
             <Search className="h-5 w-5" />
           </Button>
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" aria-label="Open menu">
+              <Button variant="ghost" size="icon" aria-label={t("nav.openMenu")}>
                 <Menu className="h-6 w-6" />
               </Button>
             </SheetTrigger>
@@ -192,18 +226,27 @@ export function Header() {
                       <span>{t("nav.services")}</span>
                       <ChevronDown className={`h-5 w-5 transition-transform ${servicesOpen ? "rotate-180" : ""}`} />
                     </CollapsibleTrigger>
-                    <CollapsibleContent className="flex flex-col gap-1 pl-4 pt-1">
-                      <Link href="/services" className="text-sm py-2 font-semibold text-primary" onClick={() => { setIsOpen(false); setServicesOpen(false); }}>
-                        All services →
+                    <CollapsibleContent className="flex flex-col gap-0.5 pb-2">
+                      <Link
+                        href="/services"
+                        className="mb-1 flex min-h-11 items-center justify-between rounded-xl bg-primary/10 px-3 text-sm font-semibold text-primary"
+                        onClick={() => { setIsOpen(false); setServicesOpen(false); }}
+                      >
+                        {t("nav.allServices")}
+                        <ArrowRight className="h-4 w-4" />
                       </Link>
-                      {SERVICES.map((s) => (
+                      {SERVICES.map(({ key, path, icon: Icon }) => (
                         <Link
-                          key={s.path}
-                          href={s.path}
-                          className={`text-sm py-2 hover:text-primary transition-colors cursor-pointer ${s.featured ? "text-primary font-medium" : ""}`}
+                          key={path}
+                          href={path}
+                          className={`flex min-h-11 items-center gap-3 rounded-xl px-3 text-sm transition-colors hover:bg-muted hover:text-primary cursor-pointer ${
+                            location === path ? "bg-muted" : ""
+                          }`}
                           onClick={() => { setIsOpen(false); setServicesOpen(false); }}
                         >
-                          {s.name}
+                          <Icon className="h-4 w-4 shrink-0 text-primary" />
+                          <span className="flex-1">{t(`navServices.${key}.name`)}</span>
+                          <ChevronRight className="h-4 w-4 shrink-0 text-muted-foreground/50" />
                         </Link>
                       ))}
                     </CollapsibleContent>

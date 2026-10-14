@@ -1,30 +1,33 @@
 import { CheckCircle2 } from "lucide-react";
+import { useLanguage } from "@/hooks/useLanguage";
 
 interface BenefitsSectionProps {
+  /** Defaults to the translated "Why Choose Us?". */
   title?: string;
   benefits: string[];
   bgColor?: "bg-background" | "bg-muted/30" | "bg-secondary text-white";
 }
 
 export function BenefitsSection({
-  title = "Why Choose Us?",
+  title,
   benefits,
   bgColor = "bg-muted/30",
 }: BenefitsSectionProps) {
+  const { t } = useLanguage();
   return (
-    <section className={`py-20 ${bgColor}`}>
+    <section className={`py-16 md:py-24 ${bgColor}`}>
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary">
-              {title}
+              {title ?? t("benefits.defaultTitle")}
             </h2>
           </div>
           <div className="space-y-4">
             {benefits.map((benefit, index) => (
               <div
                 key={index}
-                className="flex items-start gap-4 p-5 bg-card rounded-xl border border-border hover:shadow-md transition-all"
+                className="flex items-start gap-4 p-5 bg-card rounded-xl border border-border hover:shadow-sm transition-all"
                 data-testid={`item-benefit-${index}`}
               >
                 <CheckCircle2 className="h-6 w-6 text-primary shrink-0 mt-0.5" />

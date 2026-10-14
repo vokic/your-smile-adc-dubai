@@ -4,56 +4,22 @@ import { MessageCircle, Phone, Calendar, Clock, Tag, ChevronLeft, ChevronRight, 
 import { Link } from "wouter";
 import { SEO } from "@/components/SEO";
 import { HeroBackdrop } from "@/components/ServiceHero";
+import { useLanguage } from "@/hooks/useLanguage";
 
 export default function BlogPost() {
+  const { t, tList } = useLanguage();
   const [expandedGallery, setExpandedGallery] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  // Dummy blog post data
   const post = {
-    id: 1,
-    title: "The Complete Guide to Dental Veneers: Transform Your Smile",
-    category: "Cosmetic Dentistry",
-    date: "December 15, 2024",
-    readTime: "5 min read",
-    content: `
-      Veneers are one of the most popular cosmetic dental treatments available today. Whether you're looking to fix minor imperfections or completely transform your smile, porcelain veneers offer a versatile solution that combines aesthetics with durability.
-
-      **What Are Dental Veneers?**
-      
-      Dental veneers are thin, custom-made ceramic shells bonded to the front surface of your teeth. They're designed to cover imperfections like stains, chips, gaps, or misalignment, creating a flawless smile in just two appointments.
-
-      **Types of Veneers**
-      
-      We work exclusively with ceramic veneers, which are durable, stain-resistant and typically last 10-15 years or longer. With no-prep techniques there is no shaving of your natural teeth, no injections and no temporaries.
-
-      **The Procedure**
-      
-      The process begins with a consultation where we discuss your goals and design your ideal smile. We then prepare your teeth by removing a thin layer of enamel, take impressions, and create custom veneers in our lab. Once ready, the veneers are bonded to your teeth using special adhesive and light curing.
-
-      **Benefits of Veneers**
-      
-      Beyond the obvious aesthetic improvements, veneers can boost your confidence, improve bite function, and protect damaged tooth surfaces. They're also relatively quick to place compared to other cosmetic procedures.
-
-      **Aftercare Tips**
-      
-      To maintain your veneers, avoid chewing on hard objects, practice good oral hygiene, and schedule regular check-ups. With proper care, your veneers will maintain their beautiful appearance for many years.
-
-      Whether you're considering veneers for the first time or have questions about the process, our team is here to help you achieve the smile you've always wanted.
-    `
+    title: t("blogPost.post.title"),
+    category: t("blogPost.post.category"),
+    date: t("blogPost.post.date"),
+    readTime: t("blogPost.post.readTime"),
+    content: t("blogPost.post.content"),
   };
 
-  // Dummy gallery images
-  const galleryImages = [
-    "BEFORE VENEERS 1",
-    "AFTER VENEERS 1",
-    "BEFORE VENEERS 2",
-    "AFTER VENEERS 2",
-    "BEFORE VENEERS 3",
-    "AFTER VENEERS 3",
-    "SMILE TRANSFORMATION 1",
-    "SMILE TRANSFORMATION 2"
-  ];
+  const galleryImages = tList("blogPost.galleryLabels");
 
   const handlePrevImage = () => {
     setCurrentImageIndex(prev => (prev > 0 ? prev - 1 : galleryImages.length - 1));
@@ -66,8 +32,8 @@ export default function BlogPost() {
   return (
     <div className="flex flex-col min-h-screen">
       <SEO
-        title="Blog Article"
-        description="Read the latest dental tips and case studies from Your Smile Advanced Dental Center in Dubai."
+        title={t("blogPost.seoTitle")}
+        description={t("blogPost.seoDescription")}
         path="/blog-post"
         ogType="article"
       />
@@ -78,7 +44,7 @@ export default function BlogPost() {
       </section>
 
       {/* Article Content */}
-      <section className="py-16 bg-background">
+      <section className="py-16 md:py-24 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto space-y-6">
             {/* Meta Info */}
@@ -106,7 +72,7 @@ export default function BlogPost() {
 
             {/* Article Body */}
             <div className="prose prose-lg max-w-none space-y-6 text-muted-foreground leading-relaxed">
-              {post.content.split('\n\n').map((paragraph, idx) => {
+              {post.content.split("\n\n").map((paragraph, idx) => {
                 if (paragraph.trim().startsWith('**')) {
                   return (
                     <h2 key={idx} className="text-2xl font-serif font-bold text-secondary mt-8 mb-4">
@@ -122,11 +88,11 @@ export default function BlogPost() {
             <div className="flex flex-col sm:flex-row gap-4 pt-8">
               <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 gap-2 rounded-full">
                 <MessageCircle className="h-5 w-5" />
-                Book Consultation on WhatsApp
+                {t("blogPost.bookConsultation")}
               </Button>
               <Button size="lg" variant="outline" className="rounded-full gap-2">
                 <Phone className="h-5 w-5" />
-                Call Now
+                {t("common.callNow")}
               </Button>
             </div>
           </div>
@@ -134,12 +100,12 @@ export default function BlogPost() {
       </section>
 
       {/* Gallery Section */}
-      <section className="py-16 bg-muted/30">
+      <section className="py-16 md:py-24 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto space-y-8">
             <div className="text-center space-y-2">
-              <h2 className="text-3xl font-serif font-bold text-secondary">Gallery</h2>
-              <p className="text-muted-foreground">Click on images to view details</p>
+              <h2 className="text-3xl font-serif font-bold text-secondary">{t("blogPost.galleryTitle")}</h2>
+              <p className="text-muted-foreground">{t("blogPost.gallerySubtitle")}</p>
             </div>
 
             {/* Desktop: Single Image Carousel */}
@@ -178,7 +144,7 @@ export default function BlogPost() {
                   className="absolute top-4 right-4 bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-full font-medium transition-colors"
                   data-testid="button-expand-gallery"
                 >
-                  Expand
+                  {t("blogPost.expand")}
                 </button>
               </div>
 
@@ -209,7 +175,7 @@ export default function BlogPost() {
                 <button
                   key={idx}
                   onClick={() => setExpandedGallery(true)}
-                  className="aspect-square rounded-lg border border-border bg-card hover:border-primary hover:shadow-md transition-all flex items-center justify-center overflow-hidden"
+                  className="aspect-square rounded-lg border border-border bg-card hover:border-primary hover:shadow-sm transition-all flex items-center justify-center overflow-hidden"
                   data-testid={`mobile-thumbnail-${idx}`}
                 >
                   <div className="text-xs font-bold text-center px-1 text-muted-foreground">
@@ -229,6 +195,7 @@ export default function BlogPost() {
           <button
             onClick={() => setExpandedGallery(false)}
             className="absolute top-4 right-4 bg-white/10 hover:bg-white/20 text-white p-2 rounded-full transition-colors z-10"
+            aria-label={t("blogPost.closeGallery")}
             data-testid="button-close-gallery"
           >
             <X className="h-6 w-6" />
@@ -246,6 +213,7 @@ export default function BlogPost() {
             <button
               onClick={handlePrevImage}
               className="bg-white/10 hover:bg-white/20 text-white p-3 rounded-full transition-colors"
+              aria-label={t("blogPost.prevImage")}
               data-testid="button-expand-prev"
             >
               <ChevronLeft className="h-8 w-8" />
@@ -256,6 +224,7 @@ export default function BlogPost() {
             <button
               onClick={handleNextImage}
               className="bg-white/10 hover:bg-white/20 text-white p-3 rounded-full transition-colors"
+              aria-label={t("blogPost.nextImage")}
               data-testid="button-expand-next"
             >
               <ChevronRight className="h-8 w-8" />

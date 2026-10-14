@@ -21,21 +21,24 @@ export function whatsappLink(message?: string): string {
 
 // Working Hours (confirmed by owner, Sept 2026 — same schedule year-round,
 // no holiday/Ramadan variation)
+// `day` / `label` stay in English because schema.org JSON-LD consumes them.
+// `key` is what the UI translates (hours.days.* / hours.summary.*); `closed`
+// marks the rows whose time cell is a word rather than a clock range.
 export const WORKING_HOURS = [
-  { day: "Monday", hours: "12 PM – 9 PM" },
-  { day: "Tuesday", hours: "9 AM – 6 PM" },
-  { day: "Wednesday", hours: "12 PM – 9 PM" },
-  { day: "Thursday", hours: "9 AM – 6 PM" },
-  { day: "Friday", hours: "Closed" },
-  { day: "Saturday", hours: "12 PM – 9 PM" },
-  { day: "Sunday", hours: "9 AM – 6 PM" },
+  { key: "monday", day: "Monday", hours: "12 PM – 9 PM" },
+  { key: "tuesday", day: "Tuesday", hours: "9 AM – 6 PM" },
+  { key: "wednesday", day: "Wednesday", hours: "12 PM – 9 PM" },
+  { key: "thursday", day: "Thursday", hours: "9 AM – 6 PM" },
+  { key: "friday", day: "Friday", hours: "Closed", closed: true },
+  { key: "saturday", day: "Saturday", hours: "12 PM – 9 PM" },
+  { key: "sunday", day: "Sunday", hours: "9 AM – 6 PM" },
 ] as const;
 
 /** Compact hours summary for footers / cards. */
 export const WORKING_HOURS_SUMMARY = [
-  { label: "Mon, Wed, Sat", hours: "12 PM – 9 PM" },
-  { label: "Tue, Thu, Sun", hours: "9 AM – 6 PM" },
-  { label: "Friday", hours: "Closed" },
+  { key: "midWeek", label: "Mon, Wed, Sat", hours: "12 PM – 9 PM" },
+  { key: "altDays", label: "Tue, Thu, Sun", hours: "9 AM – 6 PM" },
+  { key: "friday", label: "Friday", hours: "Closed", closed: true },
 ] as const;
 
 // Social Media Links (taken from the previous clinic website)
@@ -48,11 +51,24 @@ export const SOCIAL_LINKS = {
 // Clinic Information
 export const CLINIC_NAME = "Your Smile Advanced Dental Center";
 export const CLINIC_SHORT_NAME = "Your Smile ADC";
-export const CLINIC_STREET = "HDS Business Centre, Office 1604, Cluster M";
+export const CLINIC_BUILDING = "HDS Business Centre";
+export const CLINIC_CLUSTER = "Cluster M";
+export const CLINIC_STREET = `${CLINIC_BUILDING}, Office 1604, ${CLINIC_CLUSTER}`;
 export const CLINIC_AREA = "Jumeirah Lake Towers";
 export const CLINIC_CITY = "Dubai";
 export const CLINIC_ADDRESS = `${CLINIC_STREET}, ${CLINIC_AREA}, ${CLINIC_CITY}, UAE`;
 export const CLINIC_MAPS_URL = "https://maps.app.goo.gl/KrBurSoUigfgZ1df7";
+
+/**
+ * Source for the map iframes. Google geocodes the `q` parameter on its side,
+ * so this stays correct as long as the address does. The alternative
+ * `/maps/embed?pb=...` form hard-codes a place id and viewport and only
+ * works when copied verbatim out of Google Maps — a hand-written one points
+ * nowhere. The office number is left out because it confuses the geocoder.
+ */
+export const CLINIC_MAPS_EMBED_URL = `https://www.google.com/maps?q=${encodeURIComponent(
+  `${CLINIC_BUILDING}, ${CLINIC_CLUSTER}, ${CLINIC_AREA}, ${CLINIC_CITY}`,
+)}&output=embed`;
 export const CLINIC_EMAIL = "info@yoursmileadcdubai.com";
 export const CLINIC_FOUNDED_YEAR = "2025";
 

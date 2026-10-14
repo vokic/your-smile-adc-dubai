@@ -8,6 +8,8 @@ import { ORTHODONTICS } from "./orthodontics";
 import { RESTORATIVE } from "./restorative";
 
 export { CATEGORIES } from "./categories";
+export { localizeSubService, localizeCategory } from "./localize";
+export type { Overlay } from "./localize";
 export type { SubService, ServiceCategory, CategorySlug, FAQ, Step, Highlight } from "./types";
 
 export const ALL_SUB_SERVICES: readonly SubService[] = [

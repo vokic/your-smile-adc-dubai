@@ -12,65 +12,75 @@ import { CTASection } from "@/components/CTASection";
 import { SmileTransformations } from "@/components/SmileTransformations";
 import { Visual } from "@/components/Visual";
 import { jsonLdBreadcrumb, jsonLdFAQPage, jsonLdService } from "@/lib/seo";
-import { subServicesFor, subServicePath } from "@/content/services";
+import { subServicesFor, subServicePath, localizeSubService } from "@/content/services";
+import type { FAQ, Step } from "@/content/services";
+import { useLanguage } from "@/hooks/useLanguage";
 
-const FAQS = [
-  { question: "How long will treatment take?", answer: "6–12 months for mild cases with aligners; 18–24 months for more complex cases with braces. Your orthodontist gives you a personal estimate after the scan." },
-  { question: "Are braces painful?", answer: "You may feel pressure for a few days after adjustments, but it is temporary and most patients adapt quickly." },
-  { question: "Can children have orthodontic treatment?", answer: "Yes. An early evaluation around age 7 helps prevent more serious issues later, and early intervention often gives better outcomes." },
-  { question: "Do results last forever?", answer: "With proper retainer wear, orthodontic results can last a lifetime. We provide clear guidance on retainers after treatment." },
-  { question: "Do you do digital scans instead of impressions?", answer: "Yes. A digital intraoral scan replaces messy putty impressions and lets you preview your projected result before you start." },
-];
+interface ComparisonRowCopy {
+  feature: string;
+  aligners: string;
+  braces: string;
+}
 
 export default function Orthodontics() {
-  const subs = subServicesFor("orthodontics");
+  const { t, tList, tItems, tOr, tListOr } = useLanguage();
+  const subs = subServicesFor("orthodontics").map((s) => localizeSubService(s, { tOr, tListOr }));
+  const faqs = tItems<FAQ>("orthodontics.faqs");
+  const steps = tItems<Omit<Step, "number">>("orthodontics.steps");
+  const comparisonCopy = tItems<ComparisonRowCopy>("orthodontics.comparisonRows");
+  const treatment = t("orthodontics.treatment");
   const crumbs = [
-    { name: "Home", path: "/" },
-    { name: "Orthodontics", path: "/orthodontics" },
+    { name: t("common.home"), path: "/" },
+    { name: t("orthodontics.crumb"), path: "/orthodontics" },
+  ];
+
+  // "Removable" is a yes/no row, so it is spliced in after the first two
+  // text rows rather than coming from the translated copy list.
+  const comparisonRows = [
+    ...comparisonCopy.slice(0, 2).map((r) => ({ feature: r.feature, invisalign: r.aligners, braces: r.braces })),
+    { feature: t("orthodontics.removableFeature"), invisalign: true, braces: false },
+    ...comparisonCopy.slice(2).map((r) => ({ feature: r.feature, invisalign: r.aligners, braces: r.braces })),
   ];
   return (
     <div className="flex flex-col min-h-screen">
       <SEO
-        title="Invisalign & Braces in Dubai - Clear Aligners & Orthodontics"
-        description="Straighten your teeth in Dubai JLT with Invisalign clear aligners, ceramic braces and metal braces. Digital scans, orthodontist-led treatment for teens and adults."
+        title={t("orthodontics.seoTitle")}
+        description={t("orthodontics.seoDescription")}
         path="/orthodontics"
         jsonLd={[
-          jsonLdService({ name: "Orthodontics & Clear Aligners in Dubai", description: "Invisalign, clear aligners, ceramic and metal braces, retainers.", path: "/orthodontics" }),
-          jsonLdFAQPage(FAQS),
+          jsonLdService({
+            name: t("orthodontics.jsonLdName"),
+            description: t("orthodontics.jsonLdDescription"),
+            path: "/orthodontics",
+          }),
+          jsonLdFAQPage(faqs),
           jsonLdBreadcrumb(crumbs),
         ]}
       />
       <ServiceHero
-        title="Orthodontics & Clear Aligners in Dubai"
-        subtitle="Braces and Invisalign treatments for straighter teeth and a healthier bite — for teens and adults."
+        title={t("orthodontics.heroTitle")}
+        subtitle={t("orthodontics.heroSubtitle")}
         breadcrumbs={crumbs}
-        treatment="orthodontics"
-        primaryButtonText="Book Consultation"
+        treatment={treatment}
+        primaryButtonText={t("orthodontics.heroCta")}
         backgroundImage={IMG.treatmentPlan}
       />
 
       {/* Comparison (no price row, per owner) */}
       <ServiceComparison
-        title="Invisalign vs Braces"
-        subtitle="Compare the most popular teeth-straightening options"
+        title={t("orthodontics.comparisonTitle")}
+        subtitle={t("orthodontics.comparisonSubtitle")}
         showThirdColumn={false}
-        rows={[
-          { feature: "Typical duration", invisalign: "6–12 months", braces: "18–24 months" },
-          { feature: "Visibility", invisalign: "Virtually invisible", braces: "Visible brackets & wires" },
-          { feature: "Removable", invisalign: true, braces: false },
-          { feature: "Maintenance", invisalign: "Remove to eat, clean trays daily", braces: "Extra brushing around brackets" },
-          { feature: "Dietary restrictions", invisalign: "None", braces: "Avoid hard, sticky foods" },
-          { feature: "Effective for", invisalign: "Mild to moderate cases", braces: "All severity levels" },
-        ]}
+        rows={comparisonRows}
       />
 
       {/* Treatments FIRST, journey after (owner: swap order) */}
-      <section className="py-20 bg-muted/30">
+      <section className="py-16 md:py-24 bg-muted/30">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary mb-12 text-center">Orthodontic Treatments in Dubai</h2>
+          <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary mb-12 text-center">{t("orthodontics.treatmentsTitle")}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {subs.map((s) => (
-              <Link key={s.slug} href={subServicePath(s)} className="group p-8 bg-card rounded-xl border border-border hover:border-primary/50 hover:shadow-md transition-all space-y-3">
+              <Link key={s.slug} href={subServicePath(s)} className="group p-8 bg-card rounded-xl border border-border hover:border-primary/50 hover:shadow-sm transition-all space-y-3">
                 <div className="flex items-center justify-between gap-3">
                   <h3 className="text-lg font-bold text-secondary group-hover:text-primary transition-colors">{s.name}</h3>
                   <ArrowRight className="h-5 w-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all shrink-0" />
@@ -83,26 +93,19 @@ export default function Orthodontics() {
       </section>
 
       <ProcedureSteps
-        title="Your Teeth Straightening Journey"
-        subtitle="From consultation to your perfect smile"
-        steps={[
-          { number: 1, title: "Comprehensive Consultation", description: "Digital scan, photos and X-rays; we discuss your concerns and present options including braces and Invisalign. Your treatment plan is designed at this visit.", duration: "1 hour" },
-          { number: 2, title: "Treatment Begins", description: "For braces: brackets and wires are placed. For Invisalign: you receive your first aligners and attachments. Both are comfortable to adapt to.", duration: "30 min – 2 hours" },
-          { number: 3, title: "Regular Check-ups", description: "Adjustments or new aligner sets every 4–8 weeks. We track progress against your digital plan.", duration: "30 min per visit" },
-          { number: 4, title: "Braces Off / Retainer Phase", description: "Appliances come off and custom retainers are fitted so your new smile lasts.", duration: "1 hour" },
-        ]}
+        title={t("orthodontics.journeyTitle")}
+        subtitle={t("orthodontics.journeySubtitle")}
+        steps={steps.map((s, i) => ({ number: i + 1, ...s }))}
       />
 
-      <section className="py-20 bg-background">
+      <section className="py-16 md:py-24 bg-background">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-              <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary">Invisalign in Dubai</h2>
-              <p className="text-muted-foreground text-lg leading-relaxed">
-                Nearly invisible, removable aligners designed for modern lifestyles. Eat, brush and live normally while your teeth gradually move into place.
-              </p>
+              <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary">{t("orthodontics.invisalignTitle")}</h2>
+              <p className="text-muted-foreground text-lg leading-relaxed">{t("orthodontics.invisalignBody")}</p>
               <div className="space-y-3">
-                {["No visible brackets or wires", "Remove for eating and drinking", "Easy oral hygiene", "Comfortable and effective", "Digital preview of your result"].map((item) => (
+                {tList("orthodontics.invisalignPoints").map((item) => (
                   <div key={item} className="flex items-center gap-3">
                     <Smile className="h-5 w-5 text-primary" />
                     <span className="font-medium text-secondary">{item}</span>
@@ -110,7 +113,7 @@ export default function Orthodontics() {
                 ))}
               </div>
               <Link href="/orthodontics/invisalign" className="inline-flex items-center gap-2 text-primary font-semibold hover:underline">
-                Learn more about Invisalign <ArrowRight className="h-4 w-4" />
+                {t("orthodontics.invisalignLink")} <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
             <Visual src={IMG.clinicSmile} icon={Smile} className="h-[400px]" />
@@ -119,18 +122,23 @@ export default function Orthodontics() {
       </section>
 
       <BenefitsSection
-        title="Dubai's Orthodontic Experts"
-        benefits={["Orthodontist-led treatment (MDS Orthodontics, PhD)", "Digital scans instead of messy impressions", "Aligners, ceramic and metal braces under one roof", "Whitening and veneers available after alignment for a full smile transformation"]}
+        title={t("orthodontics.benefitsTitle")}
+        benefits={tList("orthodontics.benefits")}
         bgColor="bg-muted/30"
       />
 
-      <PackagesCallout treatment="orthodontic" bgColor="bg-background" />
+      <PackagesCallout treatment={t("orthodontics.packagesTreatment")} bgColor="bg-background" />
 
-      <SmileTransformations category="Orthodontics" title="Orthodontic Transformations" subtitle="Real aligner and braces cases from our JLT clinic. Individual results vary." bgColor="bg-muted/30" />
+      <SmileTransformations
+        category="Orthodontics"
+        title={t("orthodontics.transformationsTitle")}
+        subtitle={t("orthodontics.transformationsSubtitle")}
+        bgColor="bg-muted/30"
+      />
 
-      <FAQSection faqs={FAQS} />
+      <FAQSection faqs={faqs} />
 
-      <CTASection title="Book Your Orthodontic Consultation" text="Discover the best option for your smile — braces or Invisalign — with a digital scan and preview at our JLT clinic." treatment="orthodontics" />
+      <CTASection title={t("orthodontics.ctaTitle")} text={t("orthodontics.ctaText")} treatment={treatment} />
     </div>
   );
 }

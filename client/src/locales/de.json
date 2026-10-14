@@ -8,17 +8,81 @@
     "blogNews": "Blog / Nachrichten",
     "contactUs": "Kontaktieren Sie Uns",
     "book": "Jetzt Buchen",
-    "call": "Anrufen"
+    "call": "Anrufen",
+    "viewAllServices": "Alle Leistungen ansehen",
+    "searchAria": "Website durchsuchen (Strg+K)",
+    "searchShort": "Suche",
+    "openMenu": "Menü öffnen",
+    "logoAlt": "Your Smile Advanced Dental Center – Zahnklinik in Dubai JLT",
+    "complexCases": "Spezialisten für komplexe Fälle",
+    "allServices": "Alle Leistungen"
   },
   "services": {
-    "heroTitle": "",
-    "heroSubtitle": "",
-    "heroImageAlt": "Zahnklinik-Dienstleistungen bei Your Smile"
+    "heroTitle": "Zahnmedizinische Leistungen in Dubai",
+    "heroSubtitle": "Spezialisten für komplexe Fälle – und alles andere, was Ihre Familie braucht, unter einem Dach in Jumeirah Lake Towers.",
+    "seoTitle": "Zahnmedizinische Leistungen in Dubai – Implantate, Veneers, Notfall & mehr",
+    "seoDescription": "Alle Behandlungen im Your Smile Advanced Dental Center Dubai JLT: Notfallversorgung, Implantate, Veneers, Kronen, Kieferorthopädie, Bleaching, Oralchirurgie, restaurative und präventive Zahnmedizin sowie Hausbesuche.",
+    "crumb": "Leistungen",
+    "featuredTitle": "Worin wir am besten sind",
+    "featuredSubtitle": "Die Fälle, die andere Kliniken ablehnen, sind unser Ausgangspunkt.",
+    "featured": [
+      {
+        "name": "Notfall-Zahnarzt",
+        "desc": "Hilfe am selben Tag bei Zahnschmerzen, abgebrochenen Zähnen, Schwellungen und Verletzungen."
+      },
+      {
+        "name": "Hollywood-Lächeln & Veneers",
+        "desc": "Keramikveneers ohne Beschleifen und komplette Smile-Makeovers."
+      },
+      {
+        "name": "Zahnimplantate",
+        "desc": "Vom Einzelzahn bis zum ganzen Kiefer mit All-on-4 / All-on-6 und lebenslanger Implantatgarantie."
+      },
+      {
+        "name": "Kronen & Brücken",
+        "desc": "Zirkon, Keramik und Kronen am selben Tag; implantatgetragene Brücken."
+      },
+      {
+        "name": "Ästhetische Zahnmedizin",
+        "desc": "Komplette Lächeln-Transformationen aus mehreren kombinierten Behandlungen."
+      },
+      {
+        "name": "Privater Hausbesuch",
+        "desc": "Kontrollen, Reinigungen, Füllungen und Akutbehandlung bei Ihnen zu Hause."
+      }
+    ],
+    "allTitle": "Alle Behandlungen",
+    "allSubtitle": "Jede Behandlung hat eine eigene Seite, die Schritt für Schritt erklärt, was Sie erwartet.",
+    "other": [
+      {
+        "name": "Digitales Röntgen, OPG & DVT",
+        "desc": "Strahlungsarme 2D- und 3D-Bildgebung in der Klinik."
+      },
+      {
+        "name": "Dentaltourismus",
+        "desc": "Nur-Behandlung oder All-inclusive-Pakete für internationale Patienten."
+      },
+      {
+        "name": "Lächeln-Galerie",
+        "desc": "Vorher-Nachher-Ergebnisse."
+      }
+    ],
+    "whyTitle": "Warum Patienten uns vertrauen",
+    "why": [
+      "Spezialisten für komplexe Fälle und Gesamtrehabilitationen",
+      "Digitale Planung: Intraoralscan, CAD/CAM, 3D-Implantatplanung",
+      "Sanfte, schmerzfreie Eingriffe mit Sedierungsoptionen",
+      "Mehrsprachiges, familienfreundliches internationales Team",
+      "Lebenslange Garantie auf {brand}-Implantate",
+      "Umfassende Versorgung unter einem Dach in JLT"
+    ],
+    "ctaTitle": "Buchen Sie Ihren Zahnarzttermin in Dubai",
+    "ctaText": "Von der Kontrolle bis zum kompletten Smile-Makeover: Sagen Sie uns, was Sie brauchen – wir führen Sie zur passenden Behandlung."
   },
   "home": {
-    "heroTitle": "Vertrauenswürdige Zahnklinik in Dubai für fortgeschrittene und kosmetische Zahnheilkunde",
-    "heroTitleAccent": "fortgeschrittene und kosmetische Zahnheilkunde",
-    "heroSubtitle": "Von Veneers und Implantaten bis zu Invisalign und Bleaching – fachkundige Betreuung zugeschnitten auf Ihr Lächeln.",
+    "heroTitle": "Wir lösen Fälle,",
+    "heroTitleAccent": "an denen andere scheitern",
+    "heroSubtitle": "Zahnnotfälle, Hollywood-Lächeln und komplette Smile-Makeovers mit Implantaten, Veneers, Kronen und Brücken – digital geplant, umgesetzt von einem internationalen Team.",
     "bookAppointment": "Termin buchen",
     "internationallyTrained": "International Ausgebildet",
     "trainedDesc": "Team von erfahrenen zertifizierten Zahnärzten",
@@ -54,92 +118,1363 @@
     "next": "Weiter",
     "meetDoctors": "Lernen Sie unsere erfahrenen Zahnärzte in Dubai kennen",
     "ratedClinic": "★5.0 Beste Zahnklinik in Dubai",
-    "verifiedReview": "Verifizierte Bewertung"
+    "verifiedReview": "Verifizierte Bewertung",
+    "heroBadge": "Spezialisten für komplexe Fälle · Jumeirah Lake Towers, Dubai",
+    "emergencyCta": "Zahnnotfall? Hier starten",
+    "seoTitle": "Zahnarzt in Dubai JLT für komplexe Fälle – Implantate, Veneers, Notfall",
+    "seoDescription": "Your Smile Advanced Dental Center in Dubai JLT ist auf komplexe Fälle spezialisiert: Notfallbehandlung, Hollywood-Lächeln, Implantate für den ganzen Kiefer, Keramikveneers ohne Beschleifen und Kronen. Bewertung 5,0 auf Google.",
+    "servicesTitle": "Worin wir am besten sind",
+    "servicesSubtitle": "Komplexe Fälle zuerst. Alles andere unter demselben Dach in JLT.",
+    "exploreAllServices": "Alle Leistungen entdecken",
+    "doctorsTitle": "Unsere Zahnärzte in Dubai",
+    "doctorsSubtitle": "Ein internationales Team mit umfassender Erfahrung in Implantologie, Oralchirurgie, Kieferorthopädie sowie ästhetischer und restaurativer Zahnmedizin.",
+    "meetWholeTeam": "Das ganze Team ({count} Zahnärzte)",
+    "insuranceTitle": "Versicherung & flexible Zahlung",
+    "insuranceBody": "Wir arbeiten mit den großen Zahnversicherern der VAE zusammen und bieten flexible Zahlungspläne für umfangreichere Behandlungen. Nennen Sie uns bei der Buchung Ihre Versicherung – wir klären die Kostenübernahme vor Ihrem Termin.",
+    "insuranceAccepted": "Versicherung akzeptiert",
+    "instalmentPlans": "Ratenzahlung",
+    "blogTitle": "Wissenswertes zur Zahngesundheit",
+    "blogSubtitle": "Lesen Sie unsere Artikel über Zahnpflege, Lächeln-Transformationen und Mundgesundheit.",
+    "viewAllArticles": "Alle Artikel ansehen",
+    "locationTitle": "Unsere Zahnklinik in JLT",
+    "locationSubtitle": "HDS Business Centre, Cluster M, Jumeirah Lake Towers – nur wenige Gehminuten von der Metrostation DMCC.",
+    "address": "Adresse",
+    "openInMaps": "In Google Maps öffnen",
+    "workingHours": "Öffnungszeiten",
+    "contact": "Kontakt",
+    "sendMessage": "Schreiben Sie uns",
+    "mapTitle": "Standort des Your Smile Advanced Dental Center – HDS Business Centre, Cluster M, Jumeirah Lake Towers, Dubai"
   },
   "veneers": {
-    "heroTitle": "",
-    "heroSubtitle": "",
-    "heroImageAlt": "Lächel-Transformation mit Veneers"
+    "heroTitle": "Veneers in Dubai – Ihr Traumlächeln beginnt hier",
+    "heroSubtitle": "Ein makelloses, natürlich wirkendes Lächeln mit hochwertigen Keramikveneers, individuell für Sie gefertigt. Ohne Beschleifen, ohne Abtragen, ohne Schmerzen.",
+    "heroImageAlt": "Lächel-Transformation mit Veneers",
+    "seoTitle": "Keramikveneers ohne Beschleifen in Dubai – Hollywood-Lächeln in 2 Terminen",
+    "seoDescription": "Keramikveneers ohne Beschleifen in Dubai JLT: kein Abtragen, keine Spritzen, keine Provisorien. Hollywood-Lächeln in zwei Terminen, 3–10 Tage. Bewertung 5,0 auf Google.",
+    "crumb": "Veneers",
+    "jsonLdName": "Keramikveneers in Dubai",
+    "jsonLdDescription": "Keramikveneers ohne Beschleifen und Hollywood-Smile-Design.",
+    "treatment": "Keramikveneers",
+    "introTitle": "Müde, Ihr Lächeln zu verstecken?",
+    "introBody": "Verfärbungen, abgebrochene Ecken oder Lücken können hemmen. Mit Keramikveneers verwandeln wir Ihr Lächeln und Ihr Selbstvertrauen in nur zwei Terminen – und weil wir ausschließlich ohne Beschleifen arbeiten, bleiben Ihre eigenen Zähne darunter unberührt.",
+    "introFounder": "Die Veneer-Behandlungen leitet unser Gründer {name}, der {years} Jahre Erfahrung in ästhetischer Zahnmedizin in jedes Hollywood-Lächeln einbringt.",
+    "seeTransformations": "Lächeln-Transformationen ansehen",
+    "noPrepTitle": "Wir sind auf Veneers ohne Beschleifen spezialisiert",
+    "noPrepBody": "Klassische Veneers erfordern das Abschleifen gesunden Zahnschmelzes. Wir machen das nicht. Ein digitaler Scan von 15–20 Minuten genügt, um Ihr neues Lächeln zu gestalten – Ihre Zähne bleiben intakt.",
+    "noPrepLabels": [
+      "Ohne Präparation",
+      "Ohne Abschleifen",
+      "Ohne Schmerzen",
+      "Ohne Spritze",
+      "Ohne Provisorien"
+    ],
+    "journeyTitle": "Ihr Weg zu Veneers",
+    "journeySubtitle": "Zwei Termine. Insgesamt 3–10 Tage, je nach Dringlichkeit.",
+    "steps": [
+      {
+        "title": "Beratung, Smile-Design & digitaler Scan",
+        "description": "Wir analysieren Ihr Lächeln, stimmen Form und Farbe ab und erstellen einen digitalen Scan in 15–20 Minuten – ohne Abdruck, ohne Bohren. Sie sehen eine Vorschau Ihres neuen Lächelns, bevor etwas gefertigt wird.",
+        "duration": "45–60 Min."
+      },
+      {
+        "title": "Eingliederung",
+        "description": "Ihre individuellen Keramikveneers werden auf die unberührten Zähne geklebt, poliert und auf Biss und Komfort geprüft. Sie gehen mit Ihrem neuen Lächeln nach Hause.",
+        "duration": "90–120 Min."
+      }
+    ],
+    "benefitsTitle": "Warum Veneers in Dubai bei uns?",
+    "benefits": [
+      "Zwei Termine, 3–10 Tage: Smile-Makeover ohne wochenlange Provisorien",
+      "Natürlich & langlebig: Keramikveneers halten bei guter Pflege 10–15 Jahre",
+      "Digital Smile Design: Vorschau Ihres Ergebnisses vor Behandlungsbeginn",
+      "Bewährte Expertise: {years} Jahre Erfahrung in ästhetischer Zahnmedizin ({name})",
+      "Top bewertete Klinik: {rating} Google-Bewertung von Patienten in Dubai"
+    ],
+    "transformationsTitle": "Veneer-Transformationen",
+    "transformationsSubtitle": "Echte Keramikveneer-Fälle aus unserer Klinik in JLT. Die Ergebnisse sind individuell.",
+    "faqsTitle": "Häufige Fragen zu Veneers",
+    "faqs": [
+      {
+        "question": "Wie lange halten Keramikveneers?",
+        "answer": "Keramikveneers halten in der Regel 10–15 Jahre, oft länger. Die Haltbarkeit hängt von der täglichen Pflege, regelmäßigen Kontrollen und dem Verzicht auf Gewohnheiten wie Zähneknirschen oder das Aufbeißen harter Gegenstände ab."
+      },
+      {
+        "question": "Sehen Veneers natürlich aus?",
+        "answer": "Ja. Jedes Veneer wird passend zu Farbe, Form und Größe Ihrer Zähne gefertigt. Keramik ahmt die Transluzenz des natürlichen Schmelzes nach, sodass die Veneers von echten Zähnen nicht zu unterscheiden sind."
+      },
+      {
+        "question": "Sind Veneers schmerzhaft?",
+        "answer": "Die Behandlung ist praktisch schmerzfrei."
+      },
+      {
+        "question": "Schädigen Veneers die eigenen Zähne?",
+        "answer": "Bei unserem Vorgehen nicht. Wir sind auf Veneers ohne Beschleifen spezialisiert: kein Abtragen von Schmelz, keine Spritzen, keine Provisorien. Ihre eigenen Zähne bleiben unter der Keramik intakt."
+      },
+      {
+        "question": "Können Veneers absplittern oder sich verfärben?",
+        "answer": "Keramikveneers sind verfärbungsresistent und splittern bei guter Pflege selten ab. Benutzen Sie Ihre Zähne nicht als Werkzeug und tragen Sie eine Knirscherschiene, falls Sie knirschen."
+      },
+      {
+        "question": "Für wen eignen sich Veneers?",
+        "answer": "Veneers eignen sich bei verfärbten, abgebrochenen, leicht schiefen Zähnen oder Lücken. Ausgeprägte Karies oder Zahnfleischerkrankungen müssen zuerst behandelt werden – das sagen wir Ihnen bei der Beratung offen."
+      },
+      {
+        "question": "Wie viele Veneers brauche ich?",
+        "answer": "Das hängt von Ihrer Lachlinie ab. Manche Patienten brauchen nur 2–4 Veneers, ein komplettes Hollywood-Lächeln umfasst meist 8–10 pro Kiefer."
+      },
+      {
+        "question": "Wie lange dauert der gesamte Ablauf?",
+        "answer": "Zwei Termine im Abstand von 3–10 Tagen, je nach Dringlichkeit. Termin eins dauert 45–60 Minuten (Beratung, Design und digitaler Scan), Termin zwei 90–120 Minuten für die Eingliederung."
+      },
+      {
+        "question": "Wie pflege ich meine Veneers?",
+        "answer": "Genau wie natürliche Zähne: zweimal täglich putzen, Zahnseide benutzen und regelmäßig zur Kontrolle kommen. Stark färbende Speisen und Getränke einschränken, damit die Nachbarzähne farblich passen."
+      }
+    ],
+    "relatedLinks": [
+      {
+        "name": "Ästhetische Zahnmedizin & Hollywood-Lächeln"
+      },
+      {
+        "name": "Zahnaufhellung"
+      },
+      {
+        "name": "Kronen & Brücken"
+      },
+      {
+        "name": "Zahnimplantate"
+      }
+    ],
+    "ctaTitle": "Ihr perfektes Lächeln ist zwei Termine entfernt",
+    "ctaText": "Buchen Sie eine Beratung und sehen Sie Ihr neues Lächeln digital gestaltet, bevor wir ein einziges Veneer fertigen."
   },
   "implants": {
-    "heroTitle": "",
-    "heroSubtitle": "",
-    "heroImageAlt": "Zahnimplantat-Verfahren"
+    "heroTitle": "Zahnimplantate in Dubai",
+    "heroSubtitle": "Dauerhafter, natürlich wirkender Zahnersatz – vom Einzelzahn bis zur Gesamtrehabilitation mit All-on-4 und All-on-6.",
+    "heroImageAlt": "Zahnimplantat-Verfahren",
+    "seoTitle": "Zahnimplantate in Dubai – All-on-4, All-on-6, lebenslange Garantie",
+    "seoDescription": "Zahnimplantate in Dubai JLT: vom Einzelzahn bis zum ganzen Kiefer mit All-on-4 und All-on-6, Titan oder Keramik, 3D-geplante Chirurgie und lebenslange Garantie auf {brand}-Implantate.",
+    "crumb": "Zahnimplantate",
+    "jsonLdName": "Zahnimplantate in Dubai",
+    "jsonLdDescription": "Einzel-, Mehrfach- und Ganzkiefer-Implantate mit 3D-Planung.",
+    "treatment": "Zahnimplantate",
+    "packagesTreatment": "Zahnimplantat",
+    "introTitle": "Eine dauerhafte Lösung bei fehlenden Zähnen",
+    "introBody": "Zahnimplantate ersetzen fehlende Zähne durch künstliche Wurzeln aus biokompatiblem Titan oder Keramik. Sie sehen aus, fühlen sich an und funktionieren wie natürliche Zähne – und schützen Ihren Kieferknochen vor Abbau.",
+    "introPoints": [
+      "Biokompatibles Titan oder metallfreie Keramik",
+      "Dauerhafte Verbindung mit Ihrem Knochen",
+      "Natürliches Aussehen und volle Kaufunktion",
+      "3D-Planung vor dem Eingriff",
+      "Lebenslange Garantie auf das Implantat"
+    ],
+    "solutionsTitle": "Unsere Implantatlösungen in Dubai",
+    "solutions": [
+      {
+        "title": "Einzelzahnimplantate",
+        "desc": "Ersatz eines fehlenden Zahns durch ein Implantat mit natürlich wirkender Krone."
+      },
+      {
+        "title": "All-on-4",
+        "desc": "Ein ganzer Kiefer fester Zähne auf vier strategisch gesetzten Implantaten – oft ohne Knochenaufbau."
+      },
+      {
+        "title": "All-on-6",
+        "desc": "Sechs Implantate pro Kiefer für maximale Stabilität und Lastverteilung bei der Gesamtrehabilitation."
+      },
+      {
+        "title": "Implantatgetragene Brücken",
+        "desc": "Mehrere benachbarte Zähne auf zwei oder mehr Implantaten ersetzen, ohne gesunde Zähne zu beschleifen."
+      },
+      {
+        "title": "Implantatgetragene Prothesen",
+        "desc": "Sicherer, angenehmer Zahnersatz auf Implantaten – kein Verrutschen, kein Haftmittel."
+      },
+      {
+        "title": "Knochenaufbau & Sinuslift",
+        "desc": "Verlorenen Knochen wieder aufbauen, damit Implantate sicher gesetzt werden und lange halten."
+      },
+      {
+        "title": "3D-Implantatplanung",
+        "desc": "Die DVT-Aufnahme zeigt vor dem Eingriff die genaue Struktur und Größe Ihres Knochens."
+      },
+      {
+        "title": "Titan oder Keramik",
+        "desc": "Biokompatibles Titan als Standard; metallfreie Keramikimplantate auf Wunsch für ausgewählte Fälle."
+      }
+    ],
+    "journeyTitle": "Ihr Weg zum Implantat",
+    "journeySubtitle": "Von der Beratung bis zum neuen Lächeln – in der Regel 3–6 Monate",
+    "steps": [
+      {
+        "title": "3D-Beratung & Planung",
+        "description": "Eine DVT-Aufnahme zeigt die genaue Struktur und Größe Ihres Knochens, sodass wir die Implantatposition präzise planen können. Sie sehen eine digitale Vorschau Ihres Endergebnisses.",
+        "duration": "45 Min."
+      },
+      {
+        "title": "Implantation",
+        "description": "Unter örtlicher Betäubung setzen wir das Titan- oder Keramikimplantat in Ihren Kieferknochen. Der Eingriff ist schmerzfrei, und die meisten Patienten sind nach wenigen Tagen wieder im Alltag.",
+        "duration": "30–60 Min."
+      },
+      {
+        "title": "Osseointegration (Einheilung)",
+        "description": "Das Implantat verbindet sich über 2–6 Monate mit dem Knochen. In dieser Zeit werden provisorische Kronen oder Prothesen getragen, um Funktion und Ästhetik zu erhalten.",
+        "duration": "2–6 Monate"
+      },
+      {
+        "title": "Eingliederung der endgültigen Krone",
+        "description": "Nach der Einheilung setzen wir Ihre individuell gefertigte Krone oder Brücke ein. Ihre neuen Zähne sind voll funktionsfähig und wirken völlig natürlich.",
+        "duration": "45–60 Min."
+      }
+    ],
+    "benefitsTitle": "Warum Zahnimplantate bei uns?",
+    "benefits": [
+      "{warranty}",
+      "Dauerhaft, stabil und langlebig – kein Verrutschen, kein Haftmittel",
+      "Natürliches Aussehen und Gefühl; verhindert Knochenabbau",
+      "Gesamtrehabilitation mit All-on-4 / All-on-6 ist unsere Spezialität",
+      "3D-geplante Chirurgie durch ein erfahrenes Implantologie- und Oralchirurgie-Team"
+    ],
+    "warrantyTitle": "Lebenslange Implantatgarantie",
+    "warrantyBody": "{warranty} Die Garantiebedingungen erhalten Sie schriftlich mit Ihrem Behandlungsplan.",
+    "transformationsTitle": "Implantat-Transformationen",
+    "transformationsSubtitle": "Echte Implantatfälle aus unserer Klinik in JLT. Die Ergebnisse sind individuell.",
+    "faqsTitle": "Häufige Fragen zu Zahnimplantaten",
+    "faqs": [
+      {
+        "question": "Wie lange halten Zahnimplantate?",
+        "answer": "Bei guter Pflege können Zahnimplantate ein Leben lang halten. Der Implantatkörper verwächst dauerhaft mit dem Kieferknochen. Die Krone muss eventuell nach 10–15 Jahren erneuert werden, das Implantat selbst hält Jahrzehnte – und auf unsere {brand}-Implantate gibt es eine lebenslange Garantie."
+      },
+      {
+        "question": "Sind Zahnimplantate schmerzhaft?",
+        "answer": "Der Eingriff erfolgt unter örtlicher Betäubung, Sie spüren während der Operation keinen Schmerz. Leichte Beschwerden oder Schwellungen danach klingen meist innerhalb weniger Tage ab."
+      },
+      {
+        "question": "Wie lange dauert die Heilung?",
+        "answer": "Die erste Heilung dauert meist 1–2 Wochen. Die vollständige Einheilung (Osseointegration) kann 2–6 Monate dauern. In dieser Zeit können provisorische Kronen oder Prothesen getragen werden."
+      },
+      {
+        "question": "Brauche ich vor dem Implantat einen Knochenaufbau?",
+        "answer": "Wenn der Kieferknochen nach dem Zahnverlust dünner geworden ist, kann ein Knochenaufbau nötig sein. Eine 3D-DVT-Aufnahme zeigt die genaue Struktur und Größe Ihres Knochens – Sie wissen es also vorher."
+      },
+      {
+        "question": "Was deckt die lebenslange Garantie ab?",
+        "answer": "{warranty} Fragen Sie uns bei der Beratung nach den schriftlichen Garantiebedingungen."
+      },
+      {
+        "question": "Sind Implantate besser als Prothesen oder Brücken?",
+        "answer": "Implantate sind dauerhaft, stabil und erhalten die Knochengesundheit. Anders als Prothesen verrutschen sie nicht, und anders als klassische Brücken erfordern sie kein Beschleifen gesunder Nachbarzähne."
+      },
+      {
+        "question": "Bin ich für Implantate geeignet?",
+        "answer": "Die meisten Erwachsenen mit fehlenden Zähnen sind es. Ideal sind gesundes Zahnfleisch und ausreichend Knochen; fehlt Knochen, machen Knochenaufbau oder All-on-4-Techniken Implantate in der Regel dennoch möglich."
+      },
+      {
+        "question": "Bieten Sie Keramikimplantate (metallfrei) an?",
+        "answer": "Ja, Keramikimplantate sind für ausgewählte Fälle möglich, etwa bei Metallempfindlichkeit oder sehr dünnem Zahnfleisch im sichtbaren Bereich. Für die meisten Patienten bleibt Titan der Standard. Nach Ihrer Aufnahme empfehlen wir die passende Option."
+      },
+      {
+        "question": "Wie pflege ich Zahnimplantate?",
+        "answer": "Wie natürliche Zähne: zweimal täglich putzen, Zahnseide oder Interdentalbürsten verwenden und regelmäßig zur Kontrolle kommen. Verzichten Sie auf Rauchen – es verzögert die Heilung."
+      },
+      {
+        "question": "Können Implantate alle Zähne ersetzen?",
+        "answer": "Ja. All-on-4 oder All-on-6 stellt einen ganzen Kiefer auf nur vier oder sechs Implantaten wieder her – mit festen Zähnen, die natürlich aussehen und funktionieren."
+      }
+    ],
+    "ctaTitle": "Holen Sie sich Ihre Zähne dauerhaft zurück",
+    "ctaText": "Buchen Sie eine 3D-Implantatberatung in JLT und erhalten Sie einen klaren Plan, Zeitrahmen und ein Paket – ohne Druck, mit ehrlichen Empfehlungen."
   },
   "orthodontics": {
-    "heroTitle": "",
-    "heroSubtitle": "",
-    "heroImageAlt": "Kieferorthopädische Behandlung und Invisalign"
+    "heroTitle": "Kieferorthopädie & transparente Aligner in Dubai",
+    "heroSubtitle": "Zahnspangen und Invisalign für gerade Zähne und einen gesünderen Biss – für Jugendliche und Erwachsene.",
+    "heroImageAlt": "Kieferorthopädische Behandlung und Invisalign",
+    "seoTitle": "Invisalign & Zahnspangen in Dubai – Aligner & Kieferorthopädie",
+    "seoDescription": "Begradigen Sie Ihre Zähne in Dubai JLT mit transparenten Invisalign-Alignern, Keramik- und Metallbrackets. Digitale Scans, kieferorthopädisch geleitete Behandlung für Jugendliche und Erwachsene.",
+    "crumb": "Kieferorthopädie",
+    "jsonLdName": "Kieferorthopädie & transparente Aligner in Dubai",
+    "jsonLdDescription": "Invisalign, transparente Aligner, Keramik- und Metallbrackets, Retainer.",
+    "treatment": "Kieferorthopädie",
+    "packagesTreatment": "kieferorthopädische Behandlung",
+    "heroCta": "Beratung buchen",
+    "comparisonTitle": "Invisalign oder Zahnspange",
+    "comparisonSubtitle": "Vergleichen Sie die beliebtesten Methoden zur Zahnbegradigung",
+    "comparisonRows": [
+      {
+        "feature": "Typische Dauer",
+        "aligners": "6–12 Monate",
+        "braces": "18–24 Monate"
+      },
+      {
+        "feature": "Sichtbarkeit",
+        "aligners": "Praktisch unsichtbar",
+        "braces": "Sichtbare Brackets & Drähte"
+      },
+      {
+        "feature": "Pflege",
+        "aligners": "Zum Essen herausnehmen, Schienen täglich reinigen",
+        "braces": "Zusätzliches Putzen rund um die Brackets"
+      },
+      {
+        "feature": "Einschränkungen beim Essen",
+        "aligners": "Keine",
+        "braces": "Harte, klebrige Speisen meiden"
+      },
+      {
+        "feature": "Geeignet für",
+        "aligners": "Leichte bis mittlere Fälle",
+        "braces": "Alle Schweregrade"
+      }
+    ],
+    "removableFeature": "Herausnehmbar",
+    "treatmentsTitle": "Kieferorthopädische Behandlungen in Dubai",
+    "journeyTitle": "Ihr Weg zu geraden Zähnen",
+    "journeySubtitle": "Von der Beratung bis zu Ihrem perfekten Lächeln",
+    "steps": [
+      {
+        "title": "Ausführliche Beratung",
+        "description": "Digitaler Scan, Fotos und Röntgenbilder; wir besprechen Ihre Anliegen und zeigen Optionen wie Zahnspange und Invisalign. Ihr Behandlungsplan entsteht bereits bei diesem Termin.",
+        "duration": "1 Stunde"
+      },
+      {
+        "title": "Behandlungsbeginn",
+        "description": "Bei der Zahnspange werden Brackets und Drähte gesetzt. Bei Invisalign erhalten Sie Ihre ersten Aligner und Attachments. An beides gewöhnt man sich schnell.",
+        "duration": "30 Min. – 2 Stunden"
+      },
+      {
+        "title": "Regelmäßige Kontrollen",
+        "description": "Anpassungen oder neue Aligner-Sets alle 4–8 Wochen. Wir gleichen den Fortschritt mit Ihrem digitalen Plan ab.",
+        "duration": "30 Min. pro Termin"
+      },
+      {
+        "title": "Abnahme / Retentionsphase",
+        "description": "Die Apparaturen werden entfernt und individuelle Retainer eingesetzt, damit Ihr neues Lächeln bleibt.",
+        "duration": "1 Stunde"
+      }
+    ],
+    "invisalignTitle": "Invisalign in Dubai",
+    "invisalignBody": "Nahezu unsichtbare, herausnehmbare Aligner für den modernen Alltag. Essen, putzen und leben Sie wie gewohnt, während sich Ihre Zähne schrittweise in Position bewegen.",
+    "invisalignPoints": [
+      "Keine sichtbaren Brackets oder Drähte",
+      "Zum Essen und Trinken herausnehmbar",
+      "Einfache Mundhygiene",
+      "Angenehm und wirksam",
+      "Digitale Vorschau Ihres Ergebnisses"
+    ],
+    "invisalignLink": "Mehr über Invisalign erfahren",
+    "benefitsTitle": "Dubais Experten für Kieferorthopädie",
+    "benefits": [
+      "Behandlung durch eine Kieferorthopädin (MDS Kieferorthopädie, PhD)",
+      "Digitale Scans statt unangenehmer Abdrücke",
+      "Aligner, Keramik- und Metallbrackets unter einem Dach",
+      "Nach der Begradigung sind Bleaching und Veneers für eine komplette Transformation möglich"
+    ],
+    "transformationsTitle": "Kieferorthopädische Transformationen",
+    "transformationsSubtitle": "Echte Aligner- und Zahnspangenfälle aus unserer Klinik in JLT. Die Ergebnisse sind individuell.",
+    "faqs": [
+      {
+        "question": "Wie lange dauert die Behandlung?",
+        "answer": "6–12 Monate bei leichten Fällen mit Alignern; 18–24 Monate bei komplexeren Fällen mit Zahnspange. Nach dem Scan erhalten Sie eine persönliche Einschätzung."
+      },
+      {
+        "question": "Ist eine Zahnspange schmerzhaft?",
+        "answer": "Nach Anpassungen kann für einige Tage ein Druckgefühl auftreten, das ist aber vorübergehend und die meisten gewöhnen sich schnell daran."
+      },
+      {
+        "question": "Können Kinder kieferorthopädisch behandelt werden?",
+        "answer": "Ja. Eine frühe Untersuchung mit etwa 7 Jahren hilft, spätere größere Probleme zu vermeiden, und frühes Eingreifen führt oft zu besseren Ergebnissen."
+      },
+      {
+        "question": "Hält das Ergebnis dauerhaft?",
+        "answer": "Bei korrektem Tragen der Retainer kann das Ergebnis ein Leben lang halten. Nach der Behandlung erhalten Sie klare Hinweise zu den Retainern."
+      },
+      {
+        "question": "Machen Sie digitale Scans statt Abdrücke?",
+        "answer": "Ja. Ein digitaler Intraoralscan ersetzt unangenehme Abformmassen und zeigt Ihnen schon vor dem Start Ihr voraussichtliches Ergebnis."
+      }
+    ],
+    "ctaTitle": "Buchen Sie Ihre kieferorthopädische Beratung",
+    "ctaText": "Finden Sie heraus, was für Ihr Lächeln am besten passt – Zahnspange oder Invisalign – mit digitalem Scan und Vorschau in unserer Klinik in JLT."
   },
   "whitening": {
-    "heroTitle": "",
-    "heroSubtitle": "",
-    "heroImageAlt": "Professionelle Zahnaufhellung"
+    "heroTitle": "Zahnaufhellung in Dubai",
+    "heroSubtitle": "Hellen Sie Ihr Lächeln sicher und wirksam mit professionellem Bleaching auf.",
+    "heroImageAlt": "Professionelle Zahnaufhellung",
+    "seoTitle": "Professionelle Zahnaufhellung in Dubai – Laser & in der Praxis",
+    "seoDescription": "Sichere, zahnärztlich überwachte Zahnaufhellung in Dubai JLT: Laserbleaching, Behandlung in der Praxis und individuelle Sets für zu Hause. Sichtbares Ergebnis in einer Sitzung.",
+    "crumb": "Zahnaufhellung",
+    "treatment": "Zahnaufhellung",
+    "jsonLdName": "Zahnaufhellung in Dubai",
+    "jsonLdDescription": "Laser-, Praxis- und Heimbleaching durch Fachpersonal.",
+    "introTitle": "Sicher, schnell und professionell",
+    "introBody": "Professionelles Bleaching bringt schon in einem Termin eine sichtbare Veränderung. Unsere Behandlungen entfernen tiefe Verfärbungen, ohne den Schmelz zu schädigen, mit vollständigem Zahnfleischschutz – in etwa 45–60 Minuten.",
+    "introPoints": [
+      "Schnelles Ergebnis (45–60 Min.)",
+      "Gelstärke vom Zahnarzt bestimmt",
+      "Schonend für den Zahnschmelz",
+      "Durchgehender Zahnfleischschutz",
+      "Schienen für zu Hause zur Auffrischung"
+    ],
+    "optionsTitle": "Unsere Bleaching-Optionen",
+    "benefitsTitle": "Warum professionelle Zahnaufhellung?",
+    "benefits": [
+      "Schonend für Schmelz und Zahnfleisch",
+      "Sichtbares Ergebnis nach einer Sitzung",
+      "Intensität individuell auf Ihre Zähne abgestimmt",
+      "Durchgeführt von unseren Zahnärzten, nicht in einem Studio",
+      "Ehrliche Beratung, falls Veneers bei Ihren Verfärbungen besser passen"
+    ],
+    "faqsTitle": "Häufige Fragen zum Bleaching",
+    "faqs": [
+      {
+        "question": "Ist Zahnaufhellung sicher?",
+        "answer": "Ja. Professionelles Bleaching beim Zahnarzt ist sicher und schädigt weder Schmelz noch Zahnfleisch. Anders als bei frei verkäuflichen Sets werden kontrollierte Konzentrationen und vollständiger Zahnfleischschutz verwendet."
+      },
+      {
+        "question": "Wie lange hält das Ergebnis?",
+        "answer": "In der Regel 6–12 Monate, je nach Lebensstil und Mundhygiene. Wer Kaffee, Tee, Rotwein und Rauchen einschränkt, behält das hellere Lächeln länger."
+      },
+      {
+        "question": "Schädigt Bleaching den Zahnschmelz?",
+        "answer": "Nein. Professionelle Systeme lösen Verfärbungen, ohne den Schmelz anzugreifen. Eine vorübergehende Empfindlichkeit ist möglich, klingt aber meist innerhalb von ein bis zwei Tagen ab."
+      },
+      {
+        "question": "Wie weiß werden meine Zähne?",
+        "answer": "Das ist individuell. Die meisten Patienten sehen nach einer Sitzung eine deutliche Veränderung. Wir vergleichen Ihren Farbton vorher und nachher, statt eine feste Anzahl Stufen zu versprechen."
+      },
+      {
+        "question": "Laser, Praxis oder zu Hause – was soll ich wählen?",
+        "answer": "Laser liefert das schnellste Ergebnis in einem Termin; die Praxisbehandlung ohne Licht ist schonender für empfindliche Zähne; Schienen für zu Hause hellen schrittweise auf und eignen sich zur Auffrischung. Viele kombinieren eine Sitzung in der Praxis mit einem Heimset."
+      },
+      {
+        "question": "Entfernt Bleaching alle Verfärbungen?",
+        "answer": "Am besten wirkt es bei Verfärbungen durch Essen, Getränke und Alterung. Verfärbungen im Zahninneren durch Medikamente oder Schmelzdefekte sprechen weniger an; dann empfehlen wir eventuell Keramikveneers."
+      },
+      {
+        "question": "Für wen ist Bleaching geeignet?",
+        "answer": "Für die meisten Erwachsenen mit gesunden Zähnen und gesundem Zahnfleisch. Nicht empfohlen ist es für Kinder, in der Schwangerschaft sowie bei unbehandelter Karies oder Zahnfleischerkrankungen."
+      },
+      {
+        "question": "Werden meine Zähne empfindlich?",
+        "answer": "Manche Patienten spüren eine vorübergehende Empfindlichkeit, die innerhalb von 24–48 Stunden abklingt. Wir verwenden Schutzgele und passen das Vorgehen bei empfindlichen Zähnen an."
+      }
+    ],
+    "ctaTitle": "Bereit für ein helleres Lächeln?",
+    "ctaText": "Buchen Sie Ihre professionelle Bleaching-Sitzung in JLT und sehen Sie den Unterschied in etwa einer Stunde."
   },
   "crownsAndBridges": {
-    "heroTitle": "",
-    "heroSubtitle": "",
-    "heroImageAlt": "Restauration von Zahnkronen und Brücken"
-  },
-  "cosmeticDentistry": {
-    "heroTitle": "",
-    "heroSubtitle": "",
-    "heroImageAlt": "Lächeln-Design in der kosmetischen Zahnheilkunde"
+    "heroTitle": "Zahnkronen & Brücken in Dubai",
+    "heroSubtitle": "Stellen Sie Stabilität, Funktion und Ästhetik mit individuellen Kronen und Brücken wieder her – vom Einzelzahn bis zur kompletten Lächeln-Transformation.",
+    "heroImageAlt": "Restauration von Zahnkronen und Brücken",
+    "seoTitle": "Kronen & Brücken in Dubai – Zirkon, Keramik, am selben Tag",
+    "seoDescription": "Individuelle Zirkon- und Keramikkronen, CAD/CAM-Kronen am selben Tag und implantatgetragene Brücken in Dubai JLT. Komplette Lächeln-Transformationen mit Kronen und Brücken.",
+    "crumb": "Kronen & Brücken",
+    "jsonLdName": "Zahnkronen & Brücken in Dubai",
+    "jsonLdDescription": "Zirkon, Keramik, Kronen am selben Tag und implantatgetragene Brücken.",
+    "treatment": "Kronen und Brücken",
+    "introTitle": "Kronen & Brücken erklärt",
+    "introBody": "Kronen sind schützende Kappen, die beschädigte Zähne überdecken und stabilisieren; Brücken ersetzen einen oder mehrere fehlende Zähne und stützen sich dabei auf Nachbarzähne oder Implantate. Sie werden digital nach einem Scan gestaltet und aus Keramik gefräst, sodass sie sich in Ihr natürliches Lächeln einfügen.",
+    "introPoints": [
+      "Schutz beschädigter oder wurzelbehandelter Zähne",
+      "Ersatz fehlender Zähne",
+      "Wiederherstellung der Kaufunktion",
+      "Natürliche Ästhetik, auf Ihren Farbton abgestimmt",
+      "In vielen Fällen am selben Tag möglich"
+    ],
+    "typesTitle": "Arten von Kronen & Brücken in unserer Klinik in Dubai",
+    "restorativeCardTitle": "Inlays, Onlays & Overlays",
+    "restorativeCardDesc": "Zu groß für eine Füllung, zu gesund für eine Krone? Sehen Sie unsere Optionen der restaurativen Zahnmedizin.",
+    "benefitsTitle": "Dubais vertrauenswürdige Spezialisten für Restaurationen",
+    "benefits": [
+      "CAD/CAM-Präzision für eine perfekte Passung",
+      "Hochwertige, biokompatible Keramik",
+      "Sanfte Eingriffe unter örtlicher Betäubung",
+      "Erfahrung in kompletten Lächeln-Transformationen mit Kronen und Brücken",
+      "Digitaler Scan – ohne unangenehme Abdrücke"
+    ],
+    "transformationsTitle": "Lächeln-Transformationen mit Kronen",
+    "transformationsSubtitle": "Echte Fälle aus unserer Klinik in JLT. Die Ergebnisse sind individuell.",
+    "faqs": [
+      {
+        "question": "Was ist der Unterschied zwischen Krone und Brücke?",
+        "answer": "Eine Krone überdeckt und schützt einen einzelnen beschädigten Zahn, während eine Brücke die Lücke von einem oder mehreren fehlenden Zähnen schließt und sich dabei auf Nachbarzähne oder Implantate stützt."
+      },
+      {
+        "question": "Ist die Behandlung schmerzhaft?",
+        "answer": "Nein. Die Eingriffe erfolgen unter örtlicher Betäubung. Eine leichte Empfindlichkeit danach ist vorübergehend und gut beherrschbar."
+      },
+      {
+        "question": "Welche Materialien werden verwendet?",
+        "answer": "Zirkon, Lithiumdisilikat-Keramik und bei Bedarf Metallkeramik. Zirkon und Keramik bieten die natürlichste Ästhetik und hohe Haltbarkeit."
+      },
+      {
+        "question": "Wie lange halten Kronen und Brücken?",
+        "answer": "Bei guter Pflege in der Regel 10–15 Jahre oder länger. Gute Mundhygiene und regelmäßige Kontrollen verlängern die Lebensdauer."
+      },
+      {
+        "question": "Bekomme ich eine Krone in einem Termin?",
+        "answer": "Oft ja. Unsere Kronen am selben Tag werden in der Klinik gescannt, gestaltet und gefräst, sodass viele Patienten mit der endgültigen Krone nach Hause gehen."
+      },
+      {
+        "question": "Warum eine implantatgetragene Brücke?",
+        "answer": "Sie ersetzt fehlende Zähne, ohne gesunde Nachbarzähne zu beschleifen, erhält den Kieferknochen und fühlt sich natürlicher an als eine klassische Brücke."
+      },
+      {
+        "question": "Für wen ist das geeignet?",
+        "answer": "Für alle mit beschädigten, geschwächten oder fehlenden Zähnen und gesundem Zahnfleisch. Implantatgetragene Varianten benötigen zusätzlich ausreichend Knochen, was wir mit einem 3D-Scan prüfen."
+      }
+    ],
+    "ctaTitle": "Stellen Sie Ihr Lächeln wieder her",
+    "ctaText": "Lassen Sie sich von beschädigten oder fehlenden Zähnen nicht bremsen. Buchen Sie Ihre Beratung in JLT."
   },
   "generalPreventive": {
-    "heroTitle": "",
-    "heroSubtitle": "",
-    "heroImageAlt": "Allgemeine und präventive Zahnmedizin"
+    "heroTitle": "Allgemeine & präventive Zahnmedizin in Dubai",
+    "heroSubtitle": "Schützen Sie Ihr Lächeln mit regelmäßigen Kontrollen, Reinigungen und Prophylaxe für die ganze Familie.",
+    "heroImageAlt": "Allgemeine und präventive Zahnmedizin",
+    "seoTitle": "Allgemeine & präventive Zahnmedizin in Dubai – Familienzahnheilkunde",
+    "seoDescription": "Familienzahnheilkunde in Dubai JLT: Kontrollen, professionelle Zahnreinigung, Füllungen, Behandlung von Zahnfleischerkrankungen, Kinderzahnheilkunde und Versiegelungen. Auch als Hausbesuch verfügbar.",
+    "crumb": "Allgemein & Prophylaxe",
+    "jsonLdName": "Allgemeine & präventive Zahnmedizin in Dubai",
+    "jsonLdDescription": "Kontrollen, Reinigungen, Füllungen, Zahnfleischbehandlung, Kinderzahnheilkunde, Versiegelungen.",
+    "treatment": "eine zahnärztliche Kontrolle",
+    "heroCta": "Termin buchen",
+    "introTitle": "Probleme verhindern, bevor sie entstehen",
+    "introBody": "Prophylaxe hält Ihren Mund gesund und erspart Ihnen später größere Behandlungen. Mit regelmäßigen Terminen erkennen wir Probleme früh – das spart Zeit, Beschwerden und Kosten.",
+    "introPoints": [
+      "Probleme früh erkennen",
+      "Gesünderes Zahnfleisch, frischerer Atem",
+      "Weniger große Behandlungen im Lauf des Lebens",
+      "Sanfte Betreuung für Kinder und ängstliche Erwachsene",
+      "Mehrsprachiges Team"
+    ],
+    "servicesTitle": "Allgemeine & präventive Leistungen in Dubai",
+    "also": [
+      {
+        "name": "Wurzelkanalbehandlung",
+        "desc": "Infizierte Zähne mit schmerzfreier Endodontie erhalten."
+      },
+      {
+        "name": "Digitales Röntgen, OPG & DVT",
+        "desc": "Strahlungsarme Bildgebung für eine präzise Diagnose."
+      },
+      {
+        "name": "Privater Hausbesuch",
+        "desc": "Kontrollen, Reinigungen und Füllungen bei Ihnen zu Hause."
+      }
+    ],
+    "benefitsTitle": "Vorteile der Prophylaxe",
+    "benefits": [
+      "Frühe Erkennung von Problemen",
+      "Kosten sparen durch weniger große Behandlungen",
+      "Frischerer Atem und gesünderes Zahnfleisch",
+      "Ein selbstbewusstes Lächeln ein Leben lang"
+    ],
+    "faqsTitle": "Häufige Fragen zur Prophylaxe",
+    "faqs": [
+      {
+        "question": "Wie oft sollte ich zur Kontrolle gehen?",
+        "answer": "Alle sechs Monate zur Routineuntersuchung und Reinigung. Regelmäßige Termine erkennen Karies und Zahnfleischerkrankungen früh. Patienten mit Zahnfleischproblemen brauchen eventuell kürzere Abstände."
+      },
+      {
+        "question": "Ist die professionelle Reinigung schmerzhaft?",
+        "answer": "Nein. Bei entzündetem Zahnfleisch kann es leicht empfindlich sein, aber sanfte Techniken und moderne Ultraschallgeräte sorgen für Komfort."
+      },
+      {
+        "question": "Woran erkenne ich eine Zahnfleischerkrankung?",
+        "answer": "Zahnfleischbluten, anhaltender Mundgeruch, geschwollenes oder empfindliches Zahnfleisch und zurückgehende Zahnfleischränder. Unbehandelt kann es zu Zahnverlust führen – frühe Behandlung ist wichtig."
+      },
+      {
+        "question": "Tut eine Wurzelbehandlung weh?",
+        "answer": "Mit moderner Betäubung und Technik fühlt sich eine Wurzelbehandlung ähnlich an wie eine Füllung – und sie nimmt den Schmerz, den die Infektion verursacht hat."
+      },
+      {
+        "question": "Sind Versiegelungen für Kinder sinnvoll?",
+        "answer": "Ja. Versiegelungen sind dünne Schutzschichten auf den Kauflächen der Backenzähne von Kindern, die verhindern, dass sich Bakterien in tiefen Furchen festsetzen. Schnell, schmerzfrei und jahrelang wirksam."
+      },
+      {
+        "question": "Kommen Sie für eine Kontrolle zu mir nach Hause?",
+        "answer": "Ja. Kontrollen, Reinigungen und Füllungen sind als private Hausbesuche in ganz Dubai möglich."
+      }
+    ],
+    "ctaTitle": "Buchen Sie heute Ihre Vorsorgeuntersuchung",
+    "ctaText": "Regelmäßige Kontrollen und Reinigungen sind der Schlüssel zu einem gesunden Lächeln. Buchen Sie in JLT oder fragen Sie nach einem Hausbesuch."
   },
   "dentalSurgery": {
-    "heroTitle": "",
-    "heroSubtitle": "",
-    "heroImageAlt": "Zahnchirurgisches Verfahren"
+    "heroTitle": "Zahnchirurgie in Dubai – sicher, modern und vertrauenswürdig",
+    "heroSubtitle": "Von der Weisheitszahnentfernung bis zu Knochenaufbau und Sinuslift: Unsere Oralchirurgen arbeiten präzise, behutsam und aufmerksam.",
+    "heroImageAlt": "Zahnchirurgisches Verfahren",
+    "seoTitle": "Oral- & Zahnchirurgie in Dubai – Weisheitszähne, Knochenaufbau",
+    "seoDescription": "Oralchirurgie in Dubai JLT: Weisheitszahnentfernung, Extraktionen, Knochenaufbau, Sinuslift und Wurzelspitzenresektion durch ein Team für Mund-, Kiefer- und Gesichtschirurgie.",
+    "crumb": "Zahnchirurgie",
+    "jsonLdName": "Oral- & Zahnchirurgie in Dubai",
+    "jsonLdDescription": "Weisheitszähne, Extraktionen, Knochenaufbau, Sinuslift, Wurzelspitzenresektion.",
+    "treatment": "Oralchirurgie",
+    "heroCta": "Chirurgische Beratung buchen",
+    "introTitle": "Was ist Zahnchirurgie?",
+    "introBody": "Die Zahnchirurgie umfasst spezialisierte Eingriffe bei komplexen Befunden im Mund: verlagerte Zähne, Infektionen, die eine Wurzelbehandlung nicht beheben kann, und fehlender Knochen, der Implantaten im Weg steht. Unser Ziel ist, Funktion wiederherzustellen, Schmerzen zu nehmen und Ihren Mund auf dauerhafte Ergebnisse vorzubereiten.",
+    "introPoints": [
+      "Expertise in Mund-, Kiefer- und Gesichtschirurgie",
+      "3D-DVT-Bildgebung in der Klinik",
+      "Örtliche Betäubung und Sedierungsoptionen",
+      "Strenge Sterilisationsprotokolle",
+      "Notfallnummer für Fragen zur Nachsorge"
+    ],
+    "servicesTitle": "Unsere chirurgischen Leistungen in Dubai",
+    "implantsCardTitle": "Zahnimplantate",
+    "implantsCardDesc": "Vom Einzelzahn bis zum ganzen Kiefer mit All-on-4 / All-on-6 und lebenslanger Implantatgarantie.",
+    "benefitsTitle": "Vertrauenswürdige Oralchirurgen in Dubai",
+    "benefits": [
+      "Mund-, Kiefer- und Gesichtschirurgin sowie Implantologen im Team",
+      "Schmerzfreie Behandlung mit modernen Anästhesieoptionen",
+      "3D-Planung für vorhersehbare, sichere Eingriffe",
+      "Moderne chirurgische Ausstattung in JLT",
+      "Ausführliche Nachsorge und Betreuung"
+    ],
+    "faqsTitle": "Häufige Fragen zur Zahnchirurgie",
+    "faqs": [
+      {
+        "question": "Ist die Weisheitszahnentfernung schmerzhaft?",
+        "answer": "Nein. Weisheitszähne werden unter örtlicher Betäubung entfernt, Sie spüren während des Eingriffs keinen Schmerz. Leichte Schwellung oder Beschwerden danach klingen meist innerhalb weniger Tage ab – mit Schmerzmitteln und weicher Kost."
+      },
+      {
+        "question": "Wie lange dauert die Heilung nach einem Eingriff?",
+        "answer": "Einfache Extraktionen heilen in 2–3 Tagen, die Weisheitszahnentfernung kann bis zu einer Woche brauchen, Knochenaufbau oder Sinuslift einige Wochen für die Weichgewebsheilung. Sie erhalten persönliche Nachsorgehinweise."
+      },
+      {
+        "question": "Brauche ich vor Implantaten einen Knochenaufbau?",
+        "answer": "Wenn durch fehlende Zähne, Parodontitis oder eine Verletzung Knochen verloren ging, kann ein Aufbau nötig sein, um Implantate zu tragen. Eine 3D-DVT-Aufnahme zeigt das vorher. Nicht jeder Patient braucht ihn."
+      },
+      {
+        "question": "Was ist Zahnfleischchirurgie und wann ist sie nötig?",
+        "answer": "Zahnfleischchirurgie behandelt fortgeschrittene Parodontitis, formt das Zahnfleisch und stellt die Mundgesundheit wieder her, wenn das Zahnfleisch zurückgeht, sich entzündet oder Zähne locker werden."
+      },
+      {
+        "question": "Ist Oralchirurgie sicher?",
+        "answer": "Ja. Durchgeführt von qualifizierten Oralchirurgen in einer sterilen, modernen Klinik mit digitaler Bildgebung und strengen Sterilisationsprotokollen ist Oralchirurgie sicher und planbar."
+      },
+      {
+        "question": "Wie bereite ich mich auf den Eingriff vor?",
+        "answer": "Wir prüfen Ihre Krankengeschichte und beraten zu Medikamenten, Nüchternheit bei Sedierung und Mundhygiene. Die meisten Patienten sind nach wenigen Tagen wieder im Alltag."
+      },
+      {
+        "question": "Bieten Sie Sedierung für ängstliche Patienten?",
+        "answer": "Ja. Zusätzlich zur örtlichen Betäubung stehen Sedierungsoptionen für ängstliche Patienten zur Verfügung."
+      },
+      {
+        "question": "Welche Nachsorge ist nötig?",
+        "answer": "Ruhe, weiche Kost, sanfte Mundhygiene, verordnete Medikamente und kühlende Umschläge bei Schwellung. Kontrolltermine prüfen die Heilung, und unsere Notfallnummer ist erreichbar, falls Sie etwas beunruhigt."
+      }
+    ],
+    "ctaTitle": "Buchen Sie Ihre chirurgische Beratung in Dubai",
+    "ctaText": "Warten Sie nicht, bis die Schmerzen schlimmer werden. Vereinbaren Sie eine Beratung mit unseren Oralchirurgen in JLT."
   },
   "xrayOpg": {
-    "heroTitle": "",
-    "heroSubtitle": "",
-    "heroImageAlt": "Digitales Röntgen- und OPG-Scannen"
+    "heroTitle": "Digitales Röntgen, OPG & DVT in Dubai",
+    "heroSubtitle": "Präzise, strahlungsarme Bildgebung – Einzelzahnaufnahme, OPG, DVT und Fernröntgen – für sichere Diagnosen und Planung, alles in der Klinik.",
+    "heroImageAlt": "Digitales Röntgen- und OPG-Scannen",
+    "seoTitle": "Zahnröntgen, OPG, DVT & Fernröntgen in Dubai",
+    "seoDescription": "Digitale zahnmedizinische Bildgebung in der Klinik in Dubai JLT: Einzelzahnaufnahmen, Panorama-OPG, 3D-DVT und Fernröntgenaufnahmen mit geringer Strahlung für präzise Diagnose und Behandlungsplanung.",
+    "crumb": "Digitales Röntgen, OPG & DVT",
+    "jsonLdName": "Digitale zahnmedizinische Bildgebung in Dubai",
+    "jsonLdDescription": "Einzelzahnaufnahmen, OPG, DVT und Fernröntgenaufnahmen.",
+    "jsonLdServiceType": "Diagnostische Bildgebung",
+    "treatment": "zahnmedizinische Bildgebung",
+    "bookImaging": "Aufnahme buchen",
+    "introTitle": "Moderne Bildgebungstechnologie",
+    "introBody": "Unsere Systeme für digitales Röntgen, OPG und DVT liefern gestochen scharfe Bilder bei minimaler Strahlung. Weil alle vier Verfahren in der Klinik verfügbar sind, erfolgen Diagnose und Planung in einem Termin – ohne Überweisung an ein externes Röntgenzentrum.",
+    "introPoints": [
+      "Geringe Strahlenbelastung",
+      "Sofortiges digitales Ergebnis",
+      "Hochauflösende 2D- und 3D-Bilder",
+      "Angenehm für Patienten",
+      "Präzise Planung für Implantate, Chirurgie und Kieferorthopädie"
+    ],
+    "servicesTitle": "Unsere Bildgebungsverfahren",
+    "imaging": [
+      {
+        "title": "Einzelzahnaufnahme (IOPA)",
+        "desc": "Detailbild von ein bis zwei Zähnen und dem umliegenden Knochen."
+      },
+      {
+        "title": "OPG (Panoramaaufnahme)",
+        "desc": "Ein Bild aller Zähne, beider Kiefer und der Nasennebenhöhlen."
+      },
+      {
+        "title": "DVT (3D-Volumentomografie)",
+        "desc": "Dreidimensionale Aufnahme, die Struktur und Maße des Knochens genau zeigt."
+      },
+      {
+        "title": "Fernröntgenaufnahme",
+        "desc": "Seitliche Aufnahme von Schädel und Kiefer, in der Kieferorthopädie eingesetzt."
+      }
+    ],
+    "imagingUses": {
+      "0": [
+        "Karies zwischen den Zähnen",
+        "Beurteilung der Wurzelkanäle",
+        "Knochenniveau rund um einen Zahn"
+      ],
+      "1": [
+        "Lage der Weisheitszähne",
+        "Gesamte Behandlungsplanung",
+        "Beurteilung des Knochens"
+      ],
+      "2": [
+        "Implantatplanung",
+        "Sinuslift und Knochenaufbau",
+        "Komplexe Wurzelanatomie"
+      ],
+      "3": [
+        "Planung von Zahnspange und Alignern",
+        "Biss- und Kieferverhältnisse",
+        "Wachstumsbeurteilung bei Kindern"
+      ]
+    },
+    "whyTitle": "Warum moderne Bildgebung wichtig ist",
+    "why": [
+      {
+        "title": "Frühe Erkennung",
+        "desc": "Karies, Infektionen und Knochenabbau erkennen, bevor sie ernst werden"
+      },
+      {
+        "title": "Sichere Diagnose",
+        "desc": "Hochwertige Bilder und fachkundige Auswertung"
+      },
+      {
+        "title": "Behandlungsplanung",
+        "desc": "Implantate, Chirurgie und Kieferorthopädie sicher planen"
+      },
+      {
+        "title": "Patientensicherheit",
+        "desc": "Strahlungsarme Technik schützt Ihre Gesundheit"
+      },
+      {
+        "title": "Schnelleres Ergebnis",
+        "desc": "Digitale Bildgebung liefert sofortige Ergebnisse"
+      },
+      {
+        "title": "Bessere Resultate",
+        "desc": "Präzise Bilder bedeuten weniger Überraschungen und Komplikationen"
+      }
+    ],
+    "ctaTitle": "Holen Sie sich heute präzise Aufnahmen",
+    "ctaText": "Einzelzahnaufnahme, OPG, DVT oder Fernröntgen – vereinbaren Sie Ihren Termin und erhalten Sie eine sichere Diagnose in einem Besuch."
   },
   "emergency": {
-    "heroTitle": "",
-    "heroSubtitle": "",
-    "heroImageAlt": "Zahnnotfall-Versorgung"
+    "heroTitle": "Notfall-Zahnarzt in Dubai",
+    "heroSubtitle": "Dringende Hilfe bei Zahnschmerzen, Verletzungen und Infektionen. Rufen Sie unsere Notfallnummer an – wir sagen Ihnen genau, was als Nächstes zu tun ist.",
+    "heroImageAlt": "Zahnnotfall-Versorgung",
+    "seoTitle": "Notfall-Zahnarzt in Dubai – Schmerzlinderung am selben Tag",
+    "seoDescription": "Zahnmedizinische Notfallversorgung in Dubai JLT bei Zahnschmerzen, abgebrochenen Zähnen, Abszess, verlorenen Kronen und Verletzungen. Eigene Notfallnummer, Behandlung am selben Tag, Hausbesuche möglich.",
+    "crumb": "Notfall-Zahnarzt",
+    "jsonLdName": "Notfallzahnmedizin in Dubai",
+    "jsonLdDescription": "Zahnmedizinische Notfallversorgung am selben Tag in Dubai JLT.",
+    "jsonLdServiceType": "Zahnmedizinische Notfallversorgung",
+    "treatment": "ein zahnmedizinischer Notfall",
+    "heroPrimary": "Jetzt schreiben",
+    "heroSecondary": "Klinik anrufen",
+    "lineTitle": "Eigene Notfallnummer",
+    "lineBody": "Bei starken Schmerzen, Verletzungen, Schwellung oder Blutung. Auch außerhalb der regulären Zeiten erreichbar.",
+    "clinicHours": "Öffnungszeiten: {hours}",
+    "introTitle": "Sofortige Hilfe, wenn Sie sie am dringendsten brauchen",
+    "introBody": "Notfallzahnmedizin bedeutet schnelle Behandlung dringender Probleme wie starker Zahnschmerzen, abgebrochener Zähne oder Unfälle. Unsere Notfallzahnärzte in Dubai nutzen digitale Bildgebung, um rasch zu diagnostizieren, Schmerzen zu nehmen und Ihre Mundgesundheit zu schützen.",
+    "introPoints": [
+      "Schnelle Reaktion",
+      "Zuerst Schmerzlinderung",
+      "Digitale Diagnostik vor Ort",
+      "Chirurgische Expertise bei Verletzungen",
+      "Beruhigende Gewissheit"
+    ],
+    "whenTitle": "Wann Sie einen Notfall-Zahnarzt in Dubai rufen sollten",
+    "cases": [
+      {
+        "title": "Starke Zahnschmerzen",
+        "desc": "Sofortige Schmerzlinderung und Behandlung der Ursache"
+      },
+      {
+        "title": "Abgebrochener oder gesplitterter Zahn",
+        "desc": "Funktion und Aussehen schnell wiederherstellen"
+      },
+      {
+        "title": "Ausgeschlagener Zahn",
+        "desc": "Schnelles Wiedereinsetzen kann den Zahn retten"
+      },
+      {
+        "title": "Verlorene Krone oder Füllung",
+        "desc": "Dringender Ersatz verhindert weitere Schäden"
+      },
+      {
+        "title": "Abszess oder Schwellung",
+        "desc": "Infektion behandeln, bevor sie sich ausbreitet"
+      },
+      {
+        "title": "Zahnfleischbluten oder Verletzung",
+        "desc": "Notfallversorgung nach Unfällen oder Verletzungen"
+      }
+    ],
+    "atHomeEyebrow": "Sie können nicht zu uns kommen?",
+    "atHomeTitle": "Wir kommen zu Ihnen",
+    "atHomeBody": "Für Patienten, die nicht reisen können – nach einem Unfall, mit eingeschränkter Mobilität oder mit einem Kind, das zu Hause Schmerzen hat – bringt unser privater Hausbesuchsdienst Schmerzlinderung, provisorische Versorgung, das Wiederbefestigen von Kronen und einfache Extraktionen überall in Dubai zu Ihnen.",
+    "atHomeLink": "Über Hausbesuche",
+    "atHomePoints": [
+      "Notfall-Schmerzlinderung und Medikamente",
+      "Provisorische Füllungen und Wiederbefestigen von Kronen",
+      "Einfache Extraktionen",
+      "Beurteilung und bevorzugter Klinik-Termin, falls ein Eingriff nötig ist"
+    ],
+    "gentleTitle": "Schnell, sanft und schmerzfrei",
+    "gentleBody": "Notfälle sind belastend. Unsere Zahnärzte stellen Ihren Komfort an erste Stelle: wirksame Betäubung, schnelle Linderung und eine ruhige, unterstützende Atmosphäre.",
+    "faqs": [
+      {
+        "question": "Was tue ich, wenn ein Zahn ausgeschlagen wurde?",
+        "answer": "Spülen Sie den Zahn vorsichtig ab, berühren Sie die Wurzel nicht und legen Sie ihn in Milch oder Speichel. Bringen Sie ihn sofort in die Klinik – schnelles Handeln innerhalb von 30–60 Minuten kann den Zahn retten."
+      },
+      {
+        "question": "Kann ich bei Zahnschmerzen in die Notaufnahme?",
+        "answer": "Krankenhäuser können Schmerzen lindern, die eigentliche Behandlung kann aber nur ein Zahnarzt durchführen. Wenden Sie sich am besten direkt an einen Notfall-Zahnarzt."
+      },
+      {
+        "question": "Woran erkenne ich einen zahnmedizinischen Notfall?",
+        "answer": "Starke Schmerzen, Schwellung, Blutung, abgebrochene oder ausgeschlagene Zähne oder eine Infektion mit Fieber sind Notfälle, die sofortige Behandlung erfordern."
+      },
+      {
+        "question": "Ist eine Notfallbehandlung schmerzhaft?",
+        "answer": "Nein. Die Behandlung erfolgt unter örtlicher Betäubung, bei Bedarf mit Sedierung. Unsere Priorität ist, den Schmerz schnell zu nehmen."
+      },
+      {
+        "question": "Können Sie zu mir kommen?",
+        "answer": "Ja. Für Patienten, die nicht reisen können, bietet unser privater Hausbesuchsdienst Schmerzlinderung, provisorische Versorgung, das Wiederbefestigen von Kronen und einfache Extraktionen. Chirurgische Fälle werden in der Klinik behandelt."
+      },
+      {
+        "question": "Behandeln Sie auch Kinder im Notfall?",
+        "answer": "Ja. Wir versorgen zahnmedizinische Notfälle bei Kindern, einschließlich abgebrochener und ausgeschlagener Zähne sowie Zahnschmerzen."
+      }
+    ],
+    "ctaTitle": "Rufen Sie jetzt unsere Notfall-Zahnärzte in Dubai an",
+    "ctaBody": "Warten Sie nicht mit Schmerzen. Unser Team ist bereit, sofort zu helfen.",
+    "callLine": "Notfallnummer anrufen",
+    "messageWhatsapp": "Auf WhatsApp schreiben"
   },
   "dentalTourism": {
-    "heroTitle": "",
-    "heroSubtitle": "",
-    "heroImageAlt": "Zahntourismus-Pakete"
+    "heroTitle": "Dentaltourismus in Dubai – Versorgung auf Weltniveau + Premium-Erlebnis",
+    "heroSubtitle": "Verbinden Sie Ihre Lächeln-Transformation mit einem Aufenthalt in Dubai. Wählen Sie nur die Behandlung – oder lassen Sie uns alles organisieren.",
+    "heroImageAlt": "Zahntourismus-Pakete",
+    "seoTitle": "Dentaltourismus in Dubai – Nur-Behandlung & All-inclusive-Pakete",
+    "seoDescription": "Verbinden Sie hochwertige Zahnbehandlung mit einem Aufenthalt in Dubai. Zwei klare Pakete: nur Behandlung oder all-inclusive mit Hotel, Transfers und Sightseeing. Veneers, Implantate, Gesamtrehabilitation.",
+    "crumb": "Dentaltourismus",
+    "treatment": "Dentaltourismus",
+    "heroCta": "Ihr Reisepaket anfragen",
+    "whyTitle": "Warum internationale Patienten uns wählen",
+    "whySubtitle": "Komplexe Fälle sind unsere Spezialität – und wir planen sie so, dass Sie möglichst wenig Zeit im Behandlungsstuhl und möglichst viel Zeit in Dubai verbringen.",
+    "why": [
+      {
+        "title": "Planung vor dem Abflug",
+        "desc": "Fernberatung und schriftlicher Plan, damit es bei der Ankunft keine Überraschungen gibt."
+      },
+      {
+        "title": "Mehrsprachiges Team",
+        "desc": "In der Klinik wird Englisch, Arabisch, Russisch, Serbisch und Italienisch gesprochen."
+      },
+      {
+        "title": "Kompakte Terminplanung",
+        "desc": "Termine werden so gebündelt, dass die Behandlung in Ihre Reise passt."
+      },
+      {
+        "title": "Gleiche Standards",
+        "desc": "Dieselben Ärzte, Materialien und Garantien wie für unsere Patienten in Dubai."
+      }
+    ],
+    "packagesTitle": "Zwei Pakete, klar erklärt",
+    "packagesSubtitle": "Wählen Sie, wie viel Unterstützung Sie möchten. Beide werden nach Ihrer Fernberatung individuell kalkuliert.",
+    "treatmentOnlyTitle": "Paket „Nur Behandlung“",
+    "treatmentOnlyBody": "Flüge und Hotel organisieren Sie selbst; wir kümmern uns um alles Zahnmedizinische – Planung, Behandlung, Materialien, Dolmetscher und Nachsorge – abgestimmt auf Ihre Reise.",
+    "mostConvenient": "Am bequemsten",
+    "allInclusiveTitle": "All-inclusive-Paket „Dubai Smile“",
+    "allInclusiveBody": "Alles aus „Nur Behandlung“ plus Hotel, Flughafen- und Klinik-Transfers sowie ein organisiertes Dubai-Programm zwischen den Terminen – ein Ansprechpartner für den gesamten Aufenthalt.",
+    "colIncluded": "Was enthalten ist",
+    "colTreatmentOnly": "Nur Behandlung",
+    "colAllInclusive": "All-inclusive",
+    "includedRows": [
+      "Fernberatung & digitaler Behandlungsplan vor dem Abflug",
+      "Termine auf möglichst wenige Besuche gebündelt",
+      "Gesamte Behandlung, Materialien und Laborarbeit",
+      "Dolmetscher / mehrsprachiger Koordinator",
+      "Nachsorgeplan und Kontrollgespräche aus der Ferne",
+      "Hotelunterkunft gebucht und koordiniert",
+      "Flughafentransfers und Fahrten zur Klinik",
+      "Organisiertes Dubai-Sightseeing zwischen den Terminen",
+      "Persönlicher Concierge während Ihres Aufenthalts"
+    ],
+    "requestPackage": "Ihr persönliches Paket anfragen",
+    "packageWhatsapp": "Guten Tag, ich bin internationaler Patient und interessiere mich für ein Dentaltourismus-Paket. Ich reise an aus: ",
+    "journeyTitle": "Ihr Weg im Dentaltourismus",
+    "journeySubtitle": "Von der ersten Nachricht bis zum Nachsorgegespräch, wenn Sie wieder zu Hause sind.",
+    "journey": [
+      {
+        "title": "Fernberatung",
+        "desc": "Sie senden Fotos und Röntgenbilder; unsere Ärzte prüfen sie und führen bei Bedarf ein Videogespräch."
+      },
+      {
+        "title": "Plan & Paket",
+        "desc": "Sie erhalten einen schriftlichen Behandlungsplan, Zeitrahmen, Anzahl der Termine und Ihr gewähltes Paket."
+      },
+      {
+        "title": "Ankunft",
+        "desc": "All-inclusive: Wir holen Sie am Flughafen ab und checken Sie im Hotel ein. Nur Behandlung: Wir bestätigen Ihren ersten Termin."
+      },
+      {
+        "title": "Behandlung",
+        "desc": "Kompakte Termine mit denselben Ärzten von Anfang bis Ende."
+      },
+      {
+        "title": "Dubai genießen",
+        "desc": "Zwischen den Terminen erholen und die Stadt erleben – beim All-inclusive-Paket für Sie organisiert."
+      },
+      {
+        "title": "Nachsorge",
+        "desc": "Nachsorgeplan, Kontrollgespräche aus der Ferne und bei Bedarf Abstimmung mit Ihrem Zahnarzt vor Ort."
+      }
+    ],
+    "faqsTitle": "Häufige Fragen zum Dentaltourismus",
+    "faqs": [
+      {
+        "question": "Wie bekomme ich vor der Reise einen Behandlungsplan?",
+        "answer": "Senden Sie uns aktuelle Fotos und vorhandene Röntgen- oder Panoramaaufnahmen über WhatsApp. Unsere Ärzte prüfen sie, führen bei Bedarf eine Videoberatung durch und schicken Ihnen einen schriftlichen Plan mit Anzahl der Termine, Zeitrahmen und Paket."
+      },
+      {
+        "question": "Wie lange muss ich in Dubai bleiben?",
+        "answer": "Das hängt von der Behandlung ab. Veneers brauchen meist zwei Termine im Abstand von 3–10 Tagen. Implantate erfordern zwei Reisen mit mehreren Monaten Abstand oder einen längeren Aufenthalt bei All-on-4 mit provisorischer Brücke. Wir sagen es Ihnen genau, bevor Sie Flüge buchen."
+      },
+      {
+        "question": "Was unterscheidet die beiden Pakete?",
+        "answer": "Das Paket „Nur Behandlung“ umfasst alles Zahnmedizinische: Planung, Behandlung, Materialien und Nachsorge. Das All-inclusive-Paket ergänzt Hotel, Flughafen- und Klinik-Transfers sowie ein organisiertes Dubai-Programm zwischen den Terminen."
+      },
+      {
+        "question": "Welche Sprachen spricht das Team?",
+        "answer": "In der Klinik wird Englisch, Arabisch, Russisch, Serbisch und Italienisch gesprochen; für andere Sprachen organisieren wir Dolmetscher."
+      },
+      {
+        "question": "Was passiert, wenn ich nach der Rückkehr Nachsorge brauche?",
+        "answer": "Sie erhalten einen ausführlichen Nachsorgeplan, und wir vereinbaren Kontrolltermine per Videogespräch. Unsere Ärzte bleiben für Fragen erreichbar und stimmen sich bei Bedarf mit Ihrem Zahnarzt vor Ort ab."
+      }
+    ],
+    "readyTitle": "Bereit, Ihr Lächeln in Dubai zu verwandeln?",
+    "readyBody": "Sagen Sie uns, woher Sie anreisen und was Sie an Ihrem Lächeln ändern möchten. Sie erhalten von uns einen Plan und ein Paket – kein Verkaufsgespräch.",
+    "startJourney": "Jetzt starten",
+    "startWhatsapp": "Guten Tag, ich möchte eine Zahnbehandlung in Dubai planen.",
+    "ctaTitle": "Noch Fragen vor der Buchung?",
+    "ctaText": "Schreiben Sie uns auf WhatsApp – ein Koordinator, der Ihre Sprache spricht, antwortet Ihnen."
   },
   "gallery": {
-    "heroTitle": "",
-    "heroSubtitle": "",
-    "heroImageAlt": "Lächel-Transformations-Galerie"
+    "heroImageAlt": "Lächel-Transformations-Galerie",
+    "seoTitle": "Galerie der Lächeln-Transformationen – Vorher & Nachher in Dubai",
+    "seoDescription": "Vorher-Nachher-Transformationen aus dem Your Smile Advanced Dental Center Dubai JLT: Veneers, Implantate, Kieferorthopädie, Bleaching und komplette Smile-Makeovers.",
+    "crumb": "Lächeln-Galerie",
+    "title": "Galerie der Lächeln-Transformationen",
+    "subtitle": "Echte Ergebnisse echter Patienten unserer Klinik in Dubai, veröffentlicht mit ihrer Zustimmung. Die Ergebnisse sind individuell.",
+    "emptyTitle": "Vorher & Nachher",
+    "emptySubtitle": "Unsere Galerie wird gerade vorbereitet.",
+    "ctaTitle": "Bereit für Ihre Lächeln-Transformation?",
+    "ctaText": "Buchen Sie eine Beratung und sehen Sie Ihr eigenes Vorher-Nachher zuerst digital."
   },
   "about": {
-    "heroTitle": "",
-    "heroSubtitle": "",
-    "heroImageAlt": "Über Your Smile Advanced Dental Center"
+    "heroTitle": "Über das Your Smile Advanced Dental Center",
+    "heroSubtitle": "Erfahrene, international ausgebildete Zahnmediziner in Jumeirah Lake Towers – für Ihr Vertrauen und Ihr Wohlbefinden.",
+    "heroImageAlt": "Über Your Smile Advanced Dental Center",
+    "seoTitle": "Über das Your Smile Advanced Dental Center – Zahnklinik in Dubai JLT",
+    "seoDescription": "Das Your Smile Advanced Dental Center in Jumeirah Lake Towers, gegründet von Dr. Nemanja Kukoljac: ein internationales Team, spezialisiert auf komplexe Gesamtrehabilitationen, Implantate, Veneers und patientenorientierte Betreuung.",
+    "crumb": "Über uns",
+    "heroCta": "Termin buchen",
+    "introTitle": "Eine vertrauenswürdige Zahnklinik in Jumeirah Lakes Towers",
+    "introParagraphs": [
+      "{clinic} ist eine vertrauenswürdige Zahnklinik in Jumeirah Lakes Towers, spezialisiert auf komplexe Gesamtrehabilitationen, Zahnimplantate, Kronen, Veneers, transparente Aligner, Zahnspangen und umfassende Zahnmedizin.",
+      "Wir behandeln patientenorientiert in angenehmer Atmosphäre und legen Wert auf langfristige Mundgesundheit und natürlich wirkende Ergebnisse. Mit moderner Technik und sanften Methoden erklären wir jeden Schritt verständlich – ohne Druck, mit ehrlichen Empfehlungen.",
+      "Unser Ziel ist, dass Sie sich sicher, gut informiert und selbstbewusst fühlen, während Sie ein gesundes, natürliches Lächeln erhalten."
+    ],
+    "founderLabel": "Gründer",
+    "founderPhotoAlt": "{name}, Gründer von {clinic}",
+    "founderParagraphs": [
+      "{clinic} wurde {year} von {name} in Dubai gegründet. Durch Engagement und hohe Qualität hat sich die Klinik als Adresse für ästhetische Zahnmedizin (Hollywood-Lächeln und komplette Lächeln-Restaurationen), Zahnimplantate und Oralchirurgie etabliert.",
+      "Dr. Kukoljac bringt {years} Jahre Erfahrung in ästhetischer Zahnmedizin mit und leitet ein Team von Ärzten mit umfassender internationaler Erfahrung – so wird jeder Fall, auch der komplexeste, unter einem Dach geplant und umgesetzt."
+    ],
+    "meetTeam": "Das ganze Team kennenlernen",
+    "visionMissionTitle": "Unsere Vision & Mission",
+    "pillars": [
+      {
+        "title": "Unsere Vision",
+        "text": "Ein herausragender und vertrauenswürdiger Zahnversorger für alle Gesellschaftsschichten zu werden und die Qualität der Zahnmedizin in Dubai zu heben."
+      },
+      {
+        "title": "Unsere Mission",
+        "text": "Eine Kultur des Lernens, der Innovation und der stetigen Verbesserung fördern und ein Kompetenzzentrum mit Versorgung nach internationalem Standard aufbauen."
+      },
+      {
+        "title": "Unsere Werte",
+        "text": "Exzellenz in jeder Behandlung. Integrität und Transparenz. Komfort und Sicherheit der Patienten."
+      }
+    ],
+    "uniqueTitle": "Was uns auszeichnet",
+    "values": [
+      {
+        "title": "Komplexe Fälle willkommen",
+        "description": "Gesamtrehabilitationen, Hollywood-Lächeln und Fälle, die andere Kliniken ablehnen."
+      },
+      {
+        "title": "Notfallversorgung",
+        "description": "Eine eigene Notfallnummer bei starken Schmerzen, Verletzungen und Infektionen."
+      },
+      {
+        "title": "Digitale, sichere Diagnostik",
+        "description": "Strahlungsarmes Röntgen, OPG und 3D-DVT für präzise, angenehme Planung."
+      },
+      {
+        "title": "Internationale Expertise",
+        "description": "Ein Team mit umfassender internationaler Erfahrung in Chirurgie, Kieferorthopädie und Ästhetik."
+      },
+      {
+        "title": "Private Hausbesuche",
+        "description": "Eine der ersten Kliniken in Dubai, die Kontrollen, Reinigungen und Akutbehandlung zu Ihnen nach Hause bringt."
+      },
+      {
+        "title": "Patientenorientierter Ansatz",
+        "description": "Klare Erklärungen, kein Druck, ehrliche Empfehlungen."
+      }
+    ],
+    "teamTitle": "Das Expertenteam von Your Smile",
+    "teamSubtitle": "Zahnärzte, Prophylaxekräfte und Praxisteam arbeiten zusammen, damit Sie die beste Versorgung zur für Sie passenden Zeit erhalten.",
+    "journeyTitle": "Ihr Weg zum Lächeln",
+    "steps": [
+      {
+        "title": "Termin buchen",
+        "description": "Per WhatsApp, Telefon oder Kontaktformular. Halten Sie Ihre Versicherungsdaten bereit, falls vorhanden."
+      },
+      {
+        "title": "Besuch & Beratung",
+        "description": "Gründliche Untersuchung und digitale Bildgebung in ruhiger, angenehmer Umgebung."
+      },
+      {
+        "title": "Ihren Behandlungsplan erhalten",
+        "description": "Ein klarer, persönlicher Vorschlag mit transparentem Paket. Keine versteckten Kosten."
+      },
+      {
+        "title": "Ihr neues Lächeln genießen",
+        "description": "Behandlung, Nachsorge und Kontrolle – alles aus einer Hand."
+      }
+    ],
+    "ctaTitle": "Buchen Sie heute Ihre Beratung",
+    "ctaText": "Zu einem gesunden, selbstbewussten Lächeln – mit einem Team, das sich Zeit nimmt, jeden Schritt zu erklären."
   },
   "doctors": {
-    "heroTitle": "",
-    "heroSubtitle": "",
-    "heroImageAlt": "Unser erfahrenes Zahnarzt-Team"
+    "heroTitle": "Unsere Zahnärzte in Dubai",
+    "heroSubtitle": "Erfahrene, einfühlsame und international ausgebildete Spezialisten für Ihr Lächeln.",
+    "heroImageAlt": "Unser erfahrenes Zahnarzt-Team",
+    "profiles": {
+      "nemanja-kukoljac": {
+        "role": "Gründer · Implantologe & Oralchirurg",
+        "title": "Fachzahnarzt | Implantologe | Oralchirurgie & ästhetische Zahnmedizin",
+        "bio": "Gründer des Your Smile Advanced Dental Center. Dr. Kukoljac ist spezialisiert auf Implantologie, Oralchirurgie und ästhetische Zahnmedizin, mit besonderem Fokus auf komplexe Gesamtrehabilitationen, Hollywood-Smile-Design und Keramikveneers ohne Beschleifen. Durch fortlaufende Weiterbildung vertieft er moderne chirurgische und digitale Techniken."
+      },
+      "upasana-khemka": {
+        "role": "Mund-, Kiefer- und Gesichtschirurgin",
+        "title": "Fachzahnärztin | Mund-, Kiefer- und Gesichtschirurgie | Ästhetische & restaurative Zahnmedizin",
+        "bio": "Dr. Khemka ist herausragend in komplexen oralchirurgischen Eingriffen, Gesamtrehabilitationen und Smile-Makeovers – präzise und behutsam, für Funktion und Ästhetik gleichermaßen."
+      },
+      "amelio-tommaso": {
+        "role": "Implantologe & Prothetik",
+        "title": "Zahnarzt | Oralimplantologe | Zahnprothetik & ästhetische Zahnmedizin",
+        "bio": "Als Zahnarzt mit technischem Hintergrund ist Dr. Tommaso auf ästhetische Restaurationen, Implantologie und Prothetik spezialisiert. Diese doppelte Kompetenz sorgt dafür, dass jede Behandlung funktional und zugleich schön gestaltet ist."
+      },
+      "mileva-karabasil-jovanovic": {
+        "role": "Kieferorthopädie",
+        "title": "Zahnärztin | BDS, MDS (Kieferorthopädie), PhD",
+        "bio": "Mit internationaler Erfahrung in Serbien, Japan und den VAE verbindet Dr. Mileva kieferorthopädische Expertise mit wissenschaftlicher Sorgfalt. Sie behandelt einfühlsam und individuell und überzeugt auch in restaurativer und ästhetischer Zahnmedizin."
+      },
+      "mai-ahmed": {
+        "role": "Allgemeine & ästhetische Zahnmedizin",
+        "title": "Zahnärztin für allgemeine und ästhetische Zahnmedizin (BDS)",
+        "bio": "Dr. Ahmed bietet allgemeine und ästhetische Zahnmedizin – von Prophylaxe und Füllungen bis zu Bleaching und Lächeln-Optimierung – mit einem sanften, patientenorientierten Ansatz."
+      },
+      "ayya-abu-shamleh": {
+        "role": "Ästhetische & restaurative Zahnmedizin",
+        "title": "Zahnärztin | Ästhetische & restaurative Zahnmedizin",
+        "bio": "Dr. Abu Shamleh konzentriert sich auf ästhetische und restaurative Zahnmedizin und stellt beschädigte Zähne mit natürlich wirkenden Ergebnissen und viel Liebe zum Detail wieder her."
+      },
+      "mariam-hares": {
+        "role": "Ästhetische & restaurative Zahnmedizin",
+        "title": "Zahnärztin | Ästhetische & restaurative Zahnmedizin",
+        "bio": "Dr. Hares führt ästhetische und restaurative Behandlungen durch und verbindet moderne Materialien mit einer fürsorglichen Betreuung, damit jeder Termin angenehm bleibt."
+      }
+    },
+    "seoTitle": "Unsere Zahnärzte in Dubai – internationales Spezialistenteam",
+    "seoDescription": "Lernen Sie die Zahnärzte des Your Smile Advanced Dental Center in Dubai JLT kennen: Implantologen, eine Mund-, Kiefer- und Gesichtschirurgin, eine Kieferorthopädin und Spezialisten für ästhetische Zahnmedizin mit umfassender internationaler Erfahrung.",
+    "heroCta": "Beratung über WhatsApp buchen",
+    "introTitle": "Das Your-Smile-Team – Kompetenz, der Sie vertrauen können",
+    "introBody": "Unser Team besteht aus hoch qualifizierten Spezialisten mit umfassender internationaler Erfahrung, die eine persönliche, sanfte und moderne Behandlung in angenehmer Atmosphäre bieten.",
+    "introChips": [
+      "Internationale Experten",
+      "Sanfte Behandlung",
+      "Digitale Zahnmedizin",
+      "Mehrsprachiges Team"
+    ],
+    "listTitle": "Unsere Spezialisten in Dubai",
+    "founderLabel": "Gründer",
+    "bookWith": "Termin bei {name}",
+    "bookWhatsappMessage": "Guten Tag, ich möchte einen Termin bei {name} vereinbaren.",
+    "photoAlt": "{name} – {role}",
+    "credentialsTitle": "Warum Patienten unsere Zahnärzte wählen",
+    "credentials": {
+      "specialist": {
+        "title": "Fachärztliche Ausbildung",
+        "desc": "Fachzahnärzte für Implantologie, Mund-, Kiefer- und Gesichtschirurgie sowie Kieferorthopädie (MDS, PhD)."
+      },
+      "international": {
+        "title": "Internationale Erfahrung",
+        "desc": "Ärzte, die in Europa, Asien und im Nahen Osten praktiziert haben."
+      },
+      "education": {
+        "title": "Kontinuierliche Weiterbildung",
+        "desc": "Laufende Fortbildung in digitaler Zahnmedizin, Implantatsystemen und ästhetischen Techniken."
+      },
+      "digital": {
+        "title": "Digitale Zahnmedizin",
+        "desc": "Intraoralscan, CAD/CAM-Design und 3D-Implantatplanung gehören zu unserem Alltag."
+      },
+      "multilingual": {
+        "title": "Mehrsprachige Betreuung",
+        "desc": "In der Klinik wird Englisch, Arabisch, Russisch, Serbisch und Italienisch gesprochen."
+      },
+      "complex": {
+        "title": "Komplexe Fälle",
+        "desc": "Gesamtrehabilitation und Notfallbehandlung sind die Stärken unseres Teams."
+      }
+    },
+    "ctaTitle": "Beratungstermin bei unseren Spezialisten buchen",
+    "ctaText": "Wählen Sie den passenden Spezialisten für Ihr Ziel – ästhetisch, restaurativ, chirurgisch oder kieferorthopädisch."
   },
   "blog": {
-    "heroTitle": "",
-    "heroSubtitle": "",
-    "heroImageAlt": "Zahn-Blog und Nachrichten"
+    "heroImageAlt": "Zahn-Blog und Nachrichten",
+    "seoTitle": "Blog zur Zahngesundheit – Your Smile ADC Dubai",
+    "seoDescription": "Tipps und Artikel zu Veneers, Implantaten, Invisalign und täglicher Zahnpflege vom Your Smile Advanced Dental Center in Dubai JLT.",
+    "title": "Blog & Expertentipps",
+    "subtitle": "Bleiben Sie informiert: aktuelle Hinweise zu ästhetischer Zahnmedizin, Implantaten, Kieferorthopädie und Prophylaxe.",
+    "searchPlaceholder": "Artikel nach Titel, Thema oder Kategorie suchen...",
+    "readMore": "Weiterlesen →",
+    "noResults": "Keine Artikel zu Ihrer Suche gefunden.",
+    "clearSearch": "Suche zurücksetzen",
+    "prevPage": "Zurück",
+    "prevPageAria": "Vorherige Seite",
+    "nextPage": "Weiter",
+    "nextPageAria": "Nächste Seite",
+    "pageOf": "Seite",
+    "pageOfSeparator": "von",
+    "showingRange": " • Angezeigt {from}–{to} von {total} Artikeln",
+    "newsletterTitle": "Newsletter abonnieren",
+    "newsletterBody": "Erhalten Sie aktuelle Zahntipps, Neuigkeiten zu Behandlungen und Sonderangebote per E-Mail.",
+    "newsletterPlaceholder": "E-Mail-Adresse eingeben",
+    "subscribe": "Abonnieren",
+    "ctaTitle": "Bereit für Ihre Lächeln-Transformation?",
+    "ctaBody": "Vereinbaren Sie eine Beratung mit unseren Spezialisten und finden Sie den passenden Behandlungsplan.",
+    "articles": [
+      {
+        "title": "Der komplette Leitfaden zu Veneers: Verwandeln Sie Ihr Lächeln",
+        "excerpt": "Erfahren Sie, wie Keramikveneers Ihnen ein Hollywood-Lächeln geben. Ablauf, Kosten und was Sie erwartet.",
+        "category": "Ästhetische Zahnmedizin",
+        "date": "15. Dezember 2024",
+        "readTime": "5 Min. Lesezeit",
+        "content": "Veneers gehören zu den beliebtesten ästhetischen Behandlungen. In diesem ausführlichen Leitfaden geht es um alles – von der Beratung bis zur Nachsorge..."
+      },
+      {
+        "title": "Invisalign oder feste Zahnspange: Was passt zu Ihnen?",
+        "excerpt": "Vergleichen Sie Vor- und Nachteile von transparenten Alignern und Metallbrackets, um die beste Wahl zu treffen.",
+        "category": "Kieferorthopädie",
+        "date": "12. Dezember 2024",
+        "readTime": "7 Min. Lesezeit",
+        "content": "Sowohl Invisalign als auch klassische Zahnspangen begradigen Zähne wirksam. Das sollten Sie über beide Optionen wissen..."
+      },
+      {
+        "title": "Professionelles Bleaching: Mythen und Fakten",
+        "excerpt": "Die Fakten zu professionellem Bleaching – und warum es besser ist als Produkte aus der Drogerie.",
+        "category": "Zahnaufhellung",
+        "date": "10. Dezember 2024",
+        "readTime": "4 Min. Lesezeit",
+        "content": "Rund um das Bleaching halten sich viele Irrtümer. Wir trennen Fakten von Fiktion und zeigen, was professionelle Behandlungen leisten..."
+      },
+      {
+        "title": "5 Anzeichen, dass Sie eine Krone oder Brücke brauchen",
+        "excerpt": "So erkennen Sie, ob Ihre Zähne eine restaurative Behandlung mit Kronen oder Brücken benötigen.",
+        "category": "Restaurative Zahnmedizin",
+        "date": "8. Dezember 2024",
+        "readTime": "6 Min. Lesezeit",
+        "content": "Kronen und Brücken sind zentrale restaurative Behandlungen. Erkennen Sie diese Warnsignale..."
+      },
+      {
+        "title": "Zahnimplantate: die beste Lösung bei fehlenden Zähnen",
+        "excerpt": "Alles Wichtige zu Zahnimplantaten – vom Eingriff über die Heilung bis zu den langfristigen Vorteilen.",
+        "category": "Implantate",
+        "date": "5. Dezember 2024",
+        "readTime": "8 Min. Lesezeit",
+        "content": "Zahnimplantate sind eine wegweisende Lösung bei fehlenden Zähnen. Erfahren Sie mehr über Technik und Methoden, die wir einsetzen..."
+      },
+      {
+        "title": "Notfallzahnmedizin: Wann anrufen und was tun",
+        "excerpt": "Kurzer Leitfaden: zahnmedizinische Notfälle erkennen und richtig handeln, bevor Sie die Klinik erreichen.",
+        "category": "Notfallversorgung",
+        "date": "1. Dezember 2024",
+        "readTime": "5 Min. Lesezeit",
+        "content": "Zahnmedizinische Notfälle kommen unerwartet. Das sollten Sie über Symptome, Erste Hilfe und den richtigen Zeitpunkt für dringende Hilfe wissen..."
+      },
+      {
+        "title": "Prophylaxe: Kosten sparen, indem man Probleme verhindert",
+        "excerpt": "Warum Vorsorge die beste Investition in Ihre Mundgesundheit und langfristige Ersparnis ist.",
+        "category": "Allgemein & Prophylaxe",
+        "date": "28. November 2024",
+        "readTime": "6 Min. Lesezeit",
+        "content": "Vorbeugen ist immer besser als behandeln. Entdecken Sie die umfassenden Prophylaxe-Strategien, die wir empfehlen..."
+      },
+      {
+        "title": "Wie digitales Röntgen die Diagnostik verändert",
+        "excerpt": "Die Technik hinter modernem digitalem Röntgen und wie sie Behandlungsplanung und Patientensicherheit verbessert.",
+        "category": "Technologie",
+        "date": "25. November 2024",
+        "readTime": "5 Min. Lesezeit",
+        "content": "Digitales Röntgen liefert hervorragende Bildqualität bei minimaler Strahlenbelastung. Erfahren Sie mehr über die Vorteile..."
+      },
+      {
+        "title": "Die Wahrheit über Zahnfleischerkrankungen: Symptome, Behandlung, Vorbeugung",
+        "excerpt": "Umfassender Überblick über die Stadien von Zahnfleischerkrankungen, Warnsignale und wirksame Behandlungen.",
+        "category": "Mundgesundheit",
+        "date": "22. November 2024",
+        "readTime": "7 Min. Lesezeit",
+        "content": "Zahnfleischerkrankungen betreffen Millionen Menschen. Ursachen und Symptome zu verstehen, ist entscheidend für frühes Eingreifen..."
+      }
+    ]
   },
   "contact": {
-    "heroTitle": "",
-    "heroSubtitle": "",
-    "heroImageAlt": "Kontaktieren Sie die Your Smile-Klinik"
+    "heroTitle": "Kontakt zum Your Smile",
+    "heroSubtitle": "Wir sind für Sie da – ob Sie einen Termin buchen möchten oder zahnmedizinische Notfallhilfe brauchen.",
+    "heroImageAlt": "Kontaktieren Sie die Your Smile-Klinik",
+    "seoTitle": "Kontakt",
+    "seoDescription": "Nehmen Sie Kontakt mit dem Your Smile Advanced Dental Center in Dubai JLT auf. Termin buchen, Fragen zu Leistungen stellen oder unsere 24/7-Notfallnummer erreichen.",
+    "heroTitleAccent": "Advanced Dental Center",
+    "bookWhatsapp": "Über WhatsApp buchen",
+    "bookWhatsappMessage": "Guten Tag, ich möchte einen Termin im Your Smile Advanced Dental Center vereinbaren.",
+    "callAria": "{phone} anrufen",
+    "getInTouch": "So erreichen Sie uns",
+    "phoneBooking": "Telefon (Terminvereinbarung)",
+    "emergencyPhone": "Notfalltelefon (24/7)",
+    "emergencyHint": "Klicken für Notfall-Hinweise",
+    "email": "E-Mail",
+    "address": "Adresse",
+    "clinicHours": "Öffnungszeiten",
+    "formTitle": "Schreiben Sie uns",
+    "formSubtitle": "Fragen oder Terminwunsch? Füllen Sie das Formular aus – wir antworten innerhalb von 24 Stunden.",
+    "honeypot": "Bitte nicht ausfüllen:",
+    "labelName": "Name *",
+    "placeholderName": "Ihr vollständiger Name",
+    "labelPhone": "Telefon *",
+    "placeholderPhone": "+971...",
+    "labelEmail": "E-Mail *",
+    "placeholderEmail": "ihre@email.com",
+    "labelService": "Gewünschte Leistung *",
+    "placeholderService": "Leistung auswählen",
+    "labelMessage": "Nachricht *",
+    "placeholderMessage": "Wie können wir Ihnen helfen?",
+    "sending": "Wird gesendet...",
+    "submit": "Nachricht senden",
+    "errorTitle": "Nachricht konnte nicht gesendet werden",
+    "errorBody": "Bitte versuchen Sie es später erneut oder rufen Sie uns direkt an unter {phone}.",
+    "findUsTitle": "So finden Sie uns",
+    "findUsBody": "Wir befinden uns im HDS Business Centre in JLT – gut erreichbar mit dem Auto und mit öffentlichen Verkehrsmitteln.",
+    "mapTitle": "Standort des Your Smile Advanced Dental Center – HDS Business Centre, Jumeirah Lake Towers, Dubai",
+    "mapAria": "Interaktive Karte mit dem Standort des Your Smile Advanced Dental Center im HDS Business Centre, Jumeirah Lake Towers, Dubai",
+    "validation": {
+      "nameMin": "Der Name muss mindestens 2 Zeichen lang sein",
+      "nameMax": "Der Name darf höchstens 100 Zeichen lang sein",
+      "phone": "Bitte geben Sie eine gültige Telefonnummer ein",
+      "email": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
+      "service": "Bitte wählen Sie eine Leistung aus",
+      "messageMin": "Die Nachricht muss mindestens 10 Zeichen lang sein",
+      "messageMax": "Die Nachricht darf höchstens 1000 Zeichen lang sein"
+    },
+    "services": {
+      "general": "Allgemeine Anfrage",
+      "veneers": "Veneers",
+      "implants": "Zahnimplantate",
+      "orthodontics": "Kieferorthopädie & Invisalign",
+      "whitening": "Zahnaufhellung",
+      "crownsBridges": "Kronen & Brücken",
+      "cosmetic": "Ästhetische Zahnmedizin",
+      "emergency": "Notfall",
+      "atHome": "Privater Hausbesuch",
+      "other": "Sonstiges"
+    }
   },
   "faq": {
-    "heroTitle": "",
-    "heroSubtitle": "",
-    "heroImageAlt": "Häufig gestellte Fragen"
+    "heroTitle": "Häufig gestellte",
+    "heroSubtitle": "Antworten auf häufige Fragen zu unseren Leistungen, Behandlungen und dazu, wie wir Ihrer Zahngesundheit helfen können.",
+    "heroImageAlt": "Häufig gestellte Fragen",
+    "seoTitle": "Häufig gestellte Fragen – Zahnbehandlungen in Dubai",
+    "seoDescription": "Häufige Fragen zu Veneers, Implantaten, Invisalign, Bleaching und Notfallversorgung im Your Smile Advanced Dental Center in Dubai.",
+    "heroTitleAccent": "Fragen",
+    "askQuestion": "Frage stellen",
+    "askWhatsapp": "Guten Tag, ich habe eine Frage zu Ihren zahnmedizinischen Behandlungen.",
+    "callUs": "Rufen Sie uns an",
+    "hereToHelp": "Wir helfen Ihnen gern",
+    "hereToHelpBody": "Ihre Antwort ist nicht dabei? Wenden Sie sich direkt an unser Team.",
+    "stillQuestions": "Noch Fragen?",
+    "stillQuestionsBody": "Unser Team beantwortet gern alle weiteren Fragen. Erreichen Sie uns per Telefon, WhatsApp oder E-Mail.",
+    "messageWhatsapp": "Auf WhatsApp schreiben",
+    "callPhone": "{phone} anrufen",
+    "items": [
+      {
+        "question": "Welche Leistungen bietet Ihre Klinik an?",
+        "answer": "Your Smile ADC Dubai bietet das gesamte Spektrum der Zahnmedizin – von Zahnchirurgie, Implantaten und Kieferorthopädie bis zu ästhetischen Behandlungen, allgemeiner Zahnmedizin und Notfallversorgung. Wir verbinden moderne Technik mit individuellen Behandlungsplänen für gesunde, selbstbewusste Lächeln."
+      },
+      {
+        "question": "Wie oft sollte ich zum Zahnarzt gehen?",
+        "answer": "Wir empfehlen alle 6 Monate eine Routinekontrolle mit Reinigung. Regelmäßige Termine helfen, kleine Probleme zu erkennen, bevor sie größer werden."
+      },
+      {
+        "question": "Akzeptieren Sie Zahnversicherungen?",
+        "answer": "Wir akzeptieren verschiedene Zahnversicherungen. Bei Ihrem Termin hilft Ihnen unser Team, die Kostenübernahme und eventuelle Eigenanteile zu verstehen."
+      },
+      {
+        "question": "Sind zahnmedizinische Behandlungen schmerzhaft?",
+        "answer": "Die meisten Behandlungen erfolgen unter örtlicher Betäubung, damit Sie sich wohlfühlen. Unser Team arbeitet behutsam und nutzt moderne Techniken, um Beschwerden zu minimieren."
+      },
+      {
+        "question": "Wie vereinbare ich einen Termin?",
+        "answer": "Ganz einfach: Rufen Sie uns unter {phone} an oder schreiben Sie uns auf WhatsApp. Wir antworten schnell und finden einen Termin, der Ihnen passt."
+      },
+      {
+        "question": "Bieten Sie Zahnreinigung und Prophylaxe an?",
+        "answer": "Ja. Wir bieten professionelle Zahnreinigung, Fluoridierung, Versiegelungen und Vorsorgeuntersuchungen, um Ihre Mundgesundheit zu erhalten und Problemen vorzubeugen."
+      },
+      {
+        "question": "Bieten Sie zahnmedizinische Notfallversorgung an?",
+        "answer": "Auf jeden Fall. Unsere Klinik bietet schnelle Notfallhilfe – bei starken Schmerzen, einem abgebrochenen Zahn oder einer Verletzung ist unser Notfallteam für Sie da."
+      },
+      {
+        "question": "Bieten Sie Zahnaufhellung an?",
+        "answer": "Ja. Wir bieten professionelles Bleaching mit sicheren und wirksamen Ergebnissen – sowohl für eine schnelle Auffrischung als auch als Teil einer umfassenden ästhetischen Behandlung."
+      },
+      {
+        "question": "Bieten Sie Zahnimplantate an?",
+        "answer": "Ja. Wir sind auf Implantatbehandlungen spezialisiert und nutzen moderne 3D-Planung für die präzise Positionierung und die Wiederherstellung von Ästhetik und Funktion."
+      },
+      {
+        "question": "Bieten Sie Aligner wie Invisalign an?",
+        "answer": "Ja. Wir bieten Invisalign und andere sanfte Aligner-Behandlungen – ideal, um Zähne diskret zu begradigen und Bissprobleme zu korrigieren."
+      },
+      {
+        "question": "Nutzen Sie digitales Röntgen zur Diagnostik?",
+        "answer": "Ja. Unsere Klinik verwendet strahlungsarmes digitales Röntgen und OPG-Panoramaaufnahmen für genaue, effiziente Diagnostik und Behandlungsplanung."
+      },
+      {
+        "question": "Bieten Sie Sedierung für ängstliche Patienten an?",
+        "answer": "Ja. Wir kennen Zahnarztangst und bieten Sedierungsoptionen, damit die Behandlung ruhig und angenehm verläuft."
+      }
+    ]
   },
   "footer": {
     "address": "HDS Business Centre, Jumeirah Lake Towers, Dubai, VAE",
@@ -152,6 +1487,1095 @@
     "stayConnected": "Bleiben Sie verbunden",
     "about": "Über Uns",
     "blog": "Blog",
-    "contact": "Kontaktieren Sie Uns"
+    "contact": "Kontaktieren Sie Uns",
+    "emergencyOutsideHours": "Die Notfallnummer ist auch außerhalb dieser Zeiten erreichbar.",
+    "emergencyLabel": "Notfall: {phone}",
+    "googleMaps": "Google Maps",
+    "ratingLine": "Bewertung {rating} · {count} Google-Bewertungen",
+    "newsletterTitle": "Zahntipps & Klinik-News",
+    "emailPlaceholder": "E-Mail-Adresse",
+    "subscribeAria": "Abonnieren",
+    "invalidEmail": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
+    "subscribedTitle": "Abonniert",
+    "subscribedBody": "Danke – Sie erhalten von uns Zahntipps und Neuigkeiten aus der Klinik.",
+    "subscribeFailedTitle": "Anmeldung fehlgeschlagen",
+    "subscribeFailedBody": "Bitte versuchen Sie es später erneut oder schreiben Sie uns auf WhatsApp.",
+    "disclaimer": "Die Informationen auf dieser Website dienen der allgemeinen Aufklärung und ersetzen keine klinische Untersuchung. Behandlungsergebnisse sind von Patient zu Patient verschieden. Die Vorher-Nachher-Fotos zeigen echte Patienten der Klinik, die der Veröffentlichung zugestimmt haben.",
+    "copyright": "© {year} {clinic}. Alle Rechte vorbehalten.",
+    "privacyPolicy": "Datenschutzerklärung",
+    "terms": "AGB",
+    "sitemap": "Sitemap",
+    "links": {
+      "about": "Über uns",
+      "services": "Alle Leistungen",
+      "doctors": "Unsere Zahnärzte",
+      "emergency": "Notfall-Zahnarzt",
+      "atHome": "Hausbesuche",
+      "dentalTourism": "Dentaltourismus",
+      "blog": "Blog",
+      "faq": "FAQ",
+      "contact": "Kontakt"
+    }
+  },
+  "clinic": {
+    "specialties": [
+      "Zahnärztlicher Notdienst",
+      "Hollywood-Lächeln",
+      "Komplette Smile-Makeovers",
+      "Smile-Makeover mit Implantaten",
+      "Smile-Makeover mit Veneers",
+      "Smile-Makeover mit Kronen & Brücken"
+    ],
+    "implantWarranty": "Lebenslange Garantie auf {brand}-Implantate, abgesichert durch unsere Liefervereinbarung in Dubai.",
+    "tagline": "Spezialisten für komplexe Fälle: Notfallbehandlung, Hollywood-Lächeln und komplette Lächeln-Transformationen."
+  },
+  "common": {
+    "callNow": "Jetzt anrufen",
+    "bookOnWhatsapp": "Über WhatsApp buchen",
+    "whatsappBookMessage": "Guten Tag, ich möchte einen Beratungstermin vereinbaren: {treatment}.",
+    "whatsappBookMessageGeneric": "Guten Tag, ich möchte einen Beratungstermin im Your Smile Advanced Dental Center vereinbaren.",
+    "before": "VORHER",
+    "after": "NACHHER",
+    "breadcrumbAria": "Navigationspfad",
+    "home": "Startseite",
+    "learnMore": "Mehr erfahren",
+    "related": "Passend dazu:"
+  },
+  "packages": {
+    "defaultTitle": "Flexible Behandlungspakete",
+    "body": "Jedes Lächeln ist anders, deshalb veröffentlichen wir keine Pauschalpreise. Nach Ihrer Beratung erhalten Sie einen persönlichen Plan ({treatment}) mit einem klaren Komplettpaket und ohne versteckte Kosten. Fragen Sie uns nach flexiblen Zahlungsmöglichkeiten.",
+    "cta": "Pakete anfragen",
+    "whatsappMessage": "Guten Tag, ich möchte mehr über Ihre Pakete erfahren: {treatment}."
+  },
+  "googleRating": {
+    "starsAria": "{rating} von 5 Sternen",
+    "title": "Bewertung {rating} auf Google",
+    "body": "{count} geprüfte Patientenbewertungen – alle echt. Lesen Sie, was unsere Patienten in Dubai über Implantate, Veneers, Notfallbehandlungen und Familienzahnmedizin sagen.",
+    "readAll": "Alle {count} Bewertungen auf Google lesen"
+  },
+  "cookies": {
+    "aria": "Cookie-Einstellungen",
+    "body": "Wir verwenden Cookies, um die Nutzung der Website zu messen und unsere Leistungen zu verbessern. Analyse- und Marketing-Cookies werden nur mit Ihrer Einwilligung gesetzt. Siehe unsere",
+    "privacyLink": "Datenschutzerklärung",
+    "accept": "Akzeptieren",
+    "essentialOnly": "Nur notwendige"
+  },
+  "fab": {
+    "whatsappAria": "Schreiben Sie uns auf WhatsApp",
+    "bookNow": "Jetzt buchen",
+    "whatsapp": "WhatsApp",
+    "callAriaEmergency": "Jetzt unsere Notfallnummer anrufen",
+    "callAria": "Jetzt die Klinik anrufen",
+    "emergencyLine": "Notfallnummer",
+    "talkToUs": "Sprechen Sie uns an",
+    "callNow": "Anrufen",
+    "waMessageEmergency": "Guten Tag, ich habe einen zahnmedizinischen Notfall und brauche schnellstmöglich Hilfe.",
+    "waMessage": "Guten Tag, ich möchte einen Termin im Your Smile Advanced Dental Center vereinbaren."
+  },
+  "emergencyModal": {
+    "title": "Notfallkontakt",
+    "srDescription": "Kontaktdaten und Hinweise für zahnmedizinische Notfälle",
+    "lead": "Diese Leitung ist ausschließlich für echte zahnmedizinische Notfälle gedacht.",
+    "useFor": "Bitte nutzen Sie diese Nummer nur in dringenden Fällen wie:",
+    "cases": [
+      "Starke Zahnschmerzen",
+      "Abgebrochene oder ausgeschlagene Zähne",
+      "Verletzungen im Mund oder starke Blutungen",
+      "Schwellung, Infektion oder Fieber",
+      "Verletzungen von Mund oder Kiefer"
+    ],
+    "routineNote": "Für reguläre Termine, Beratungen oder nicht dringende Anfragen nutzen Sie bitte die normalen Buchungsmöglichkeiten auf unserer Website.",
+    "numberLabel": "Notfallnummer:",
+    "numberAria": "Notfall-Telefonnummer {phone}",
+    "callAria": "Notfallnummer {phone} anrufen",
+    "close": "Schließen",
+    "closeAria": "Dialog für Notfallkontakt schließen"
+  },
+  "errorBoundary": {
+    "title": "Etwas ist schiefgelaufen",
+    "description": "Es tut uns leid, es ist ein unerwarteter Fehler aufgetreten. Bitte laden Sie die Seite neu oder kehren Sie zur Startseite zurück.",
+    "stackTrace": "Stack-Trace",
+    "tryAgain": "Erneut versuchen",
+    "goHome": "Zur Startseite"
+  },
+  "notFound": {
+    "seoTitle": "Seite nicht gefunden",
+    "seoDescription": "Diese Seite existiert leider nicht. Finden Sie zurück zu unseren zahnmedizinischen Leistungen in Dubai.",
+    "title": "404 – Seite nicht gefunden",
+    "body": "Die gesuchte Seite existiert nicht oder wurde verschoben.",
+    "backHome": "Zurück zur Startseite"
+  },
+  "benefits": {
+    "defaultTitle": "Warum uns wählen?"
+  },
+  "faqSection": {
+    "defaultTitle": "Häufig gestellte Fragen"
+  },
+  "videoTestimonials": {
+    "defaultTitle": "Patientengeschichten",
+    "subtitle": "Internationale Patienten über ihre Behandlung und ihre Zeit in Dubai.",
+    "comingSoon": "Videoberichte unserer internationalen Patienten folgen in Kürze.",
+    "untilThen": "Bis dahin sehen Sie aktuelle Fälle und Einblicke aus der Klinik auf unserem",
+    "instagram": "Instagram"
+  },
+  "procedure": {
+    "defaultTitle": "Ihr Behandlungsweg",
+    "defaultSubtitle": "Schritt für Schritt zu Ihrem perfekten Lächeln",
+    "completeTitle": "Behandlung abgeschlossen!",
+    "completeBody": "Genießen Sie Ihr neues Lächeln – mit ausführlicher Nachsorgeberatung und weiterer Betreuung durch uns."
+  },
+  "transformations": {
+    "defaultTitle": "Lächeln-Transformationen",
+    "defaultSubtitle": "Echte Ergebnisse echter Patienten unserer Klinik in JLT. Die Ergebnisse sind individuell.",
+    "viewFullGallery": "Ganze Galerie ansehen",
+    "beforeAlt": "Vor der Behandlung: {category}",
+    "afterAlt": "Nach der Behandlung: {category}",
+    "comingSoonLead": "Wir bereiten unsere Vorher-Nachher-Galerie mit Patienten vor, die ihre Ergebnisse freundlicherweise teilen.",
+    "comingSoonBody": "Folgen Sie uns in der Zwischenzeit auf Instagram für aktuelle Fälle: {categories} und komplette Lächeln-Transformationen.",
+    "instagramCta": "Unsere aktuellen Fälle auf Instagram ansehen"
+  },
+  "testimonials": {
+    "title": "Was unsere Patienten sagen",
+    "subtitle": "Echte Stimmen von Patienten unserer Klinik in JLT",
+    "prevAria": "Vorherige Bewertungen",
+    "nextAria": "Nächste Bewertungen",
+    "goToPageAria": "Zu Bewertungsseite {page} springen"
+  },
+  "serviceHero": {
+    "bookConsultation": "Beratungstermin buchen"
+  },
+  "languageSwitcher": {
+    "aria": "Sprache wechseln"
+  },
+  "hours": {
+    "closed": "Geschlossen",
+    "days": {
+      "monday": "Montag",
+      "tuesday": "Dienstag",
+      "wednesday": "Mittwoch",
+      "thursday": "Donnerstag",
+      "friday": "Freitag",
+      "saturday": "Samstag",
+      "sunday": "Sonntag"
+    },
+    "summary": {
+      "midWeek": "Mo, Mi, Sa",
+      "altDays": "Di, Do, So",
+      "friday": "Freitag"
+    }
+  },
+  "transformationCategories": {
+    "Veneers": "Veneers",
+    "Implants": "Implantate",
+    "Orthodontics": "Kieferorthopädie",
+    "Smile Makeover": "Lächeln-Makeover",
+    "Whitening": "Bleaching"
+  },
+  "subService": {
+    "whatItTreats": "{name}: wobei es hilft",
+    "journeyTitle": "Ihr Weg: {name}",
+    "journeySubtitle": "Was Sie erwartet – Schritt für Schritt",
+    "whyChooseUs": "Warum uns wählen für {name} in Dubai",
+    "faqsTitle": "{name}: häufige Fragen",
+    "moreTreatments": "Weitere Behandlungen: {category}",
+    "allInCategory": "Alle: {category}"
+  },
+  "legal": {
+    "lastUpdated": "Zuletzt aktualisiert: {date}"
+  },
+  "navServices": {
+    "emergency": {
+      "name": "Notfall-Zahnarzt",
+      "desc": "Schmerzlinderung & Traumaversorgung am selben Tag"
+    },
+    "implants": {
+      "name": "Zahnimplantate",
+      "desc": "Vom Einzelzahn bis All-on-4 / All-on-6"
+    },
+    "veneers": {
+      "name": "Veneers (Hollywood-Lächeln)",
+      "desc": "Keramikveneers ohne Beschleifen"
+    },
+    "crownsBridges": {
+      "name": "Kronen & Brücken",
+      "desc": "Zirkon, Keramik, am selben Tag"
+    },
+    "cosmetic": {
+      "name": "Ästhetische Zahnmedizin",
+      "desc": "Komplette Lächeln-Transformationen"
+    },
+    "orthodontics": {
+      "name": "Kieferorthopädie & Invisalign",
+      "desc": "Aligner, Keramik- & Metallbrackets"
+    },
+    "whitening": {
+      "name": "Zahnaufhellung",
+      "desc": "Laser, in der Praxis, für zu Hause"
+    },
+    "dentalSurgery": {
+      "name": "Oral- & Zahnchirurgie",
+      "desc": "Weisheitszähne, Knochenaufbau, Sinuslift"
+    },
+    "restorative": {
+      "name": "Restaurative Zahnmedizin",
+      "desc": "Inlays, Onlays & Overlays"
+    },
+    "generalPreventive": {
+      "name": "Allgemein & Prophylaxe",
+      "desc": "Kontrollen, Reinigungen, Kinder"
+    },
+    "xrayOpg": {
+      "name": "Digitales Röntgen, OPG & DVT",
+      "desc": "2D- & 3D-Bildgebung in der Klinik"
+    },
+    "atHome": {
+      "name": "Privater Hausbesuch",
+      "desc": "Zahnbehandlung bei Ihnen zu Hause oder im Büro"
+    },
+    "dentalTourism": {
+      "name": "Dentaltourismus",
+      "desc": "Nur Behandlung oder All-inclusive-Paket"
+    },
+    "gallery": {
+      "name": "Lächeln-Galerie",
+      "desc": "Vorher-Nachher-Ergebnisse"
+    }
+  },
+  "homeServices": {
+    "veneers": {
+      "title": "Veneers in Dubai",
+      "desc": "Keramikveneers ohne Beschleifen: ein natürliches, makelloses Lächeln, ohne Ihre Zähne abzuschleifen."
+    },
+    "implants": {
+      "title": "Zahnimplantate in Dubai",
+      "desc": "Von Einzelimplantaten bis zur Gesamtrehabilitation mit All-on-4 / All-on-6 – mit lebenslanger Implantatgarantie."
+    },
+    "emergency": {
+      "title": "Notfall-Zahnarzt",
+      "desc": "Hilfe am selben Tag bei Zahnschmerzen, abgebrochenen Zähnen, Schwellungen und Verletzungen."
+    },
+    "crownsBridges": {
+      "title": "Kronen & Brücken",
+      "desc": "Zirkon- und Keramikkronen, CAD/CAM-Kronen am selben Tag und implantatgetragene Brücken."
+    },
+    "orthodontics": {
+      "title": "Kieferorthopädie & Invisalign",
+      "desc": "Transparente Aligner, Keramik- und Metallbrackets für Jugendliche und Erwachsene."
+    },
+    "atHome": {
+      "title": "Privater Zahnarztbesuch zu Hause",
+      "desc": "Kontrollen, Reinigungen, Füllungen und Akutbehandlung bei Ihnen zu Hause oder im Büro in Dubai."
+    }
+  },
+  "patientQuotes": {
+    "julie": {
+      "text": "Ich war kürzlich im Your Smile ADC und war von der außergewöhnlichen Betreuung und dem Service sehr beeindruckt. Das herzliche, freundliche Team und die Professionalität von Dr. Nemanja machten meinen Besuch hervorragend. Die moderne Ausstattung, die sorgfältige Hygiene und die persönliche Betreuung haben mir alle Anspannung genommen.",
+      "meta": "Google-Bewertung"
+    },
+    "milos": {
+      "text": "Die Professionalität und Freundlichkeit des gesamten Teams haben meine Behandlung völlig stressfrei gemacht. Das Ergebnis ist großartig und ich schätze den hohen Betreuungsstandard sehr. Für weitere Behandlungen komme ich auf jeden Fall wieder.",
+      "meta": "Patient aus Serbien"
+    },
+    "marco": {
+      "text": "Das Fachwissen und die Liebe zum Detail in dieser Klinik haben mich beeindruckt. Das Team hat sich Zeit genommen, alles zu erklären, und die Behandlung war schmerzfrei und präzise. Mein Lächeln war noch nie schöner!",
+      "meta": "Patient aus Italien"
+    }
+  },
+  "blogPosts": {
+    "veneerTips": {
+      "title": "5 Tipps zur Pflege Ihrer Veneers",
+      "date": "28. November 2024",
+      "category": "Ästhetische Pflege"
+    },
+    "implantsInvestment": {
+      "title": "Zahnimplantate: eine Investition fürs Leben",
+      "date": "25. November 2024",
+      "category": "Implantate"
+    },
+    "invisalignVsBraces": {
+      "title": "Invisalign im Vergleich zur festen Zahnspange",
+      "date": "22. November 2024",
+      "category": "Kieferorthopädie"
+    }
+  },
+  "comparison": {
+    "defaultTitle": "So finden Sie die richtige Behandlung",
+    "defaultSubtitle": "Vergleichen Sie beliebte Behandlungen und finden Sie die passende",
+    "colFeature": "Merkmal",
+    "colAligners": "Transparente Aligner",
+    "colBraces": "Zahnspange",
+    "colVeneers": "Veneers",
+    "ctaLead": "Nicht sicher, welche Behandlung zu Ihnen passt?",
+    "cta": "Kostenlose Beratung buchen",
+    "rows": {
+      "duration": {
+        "feature": "Behandlungsdauer",
+        "aligners": "6–12 Monate",
+        "braces": "18–24 Monate",
+        "veneers": "2–3 Wochen"
+      },
+      "visibility": {
+        "feature": "Sichtbarkeit",
+        "aligners": "Praktisch unsichtbar",
+        "braces": "Sichtbar",
+        "veneers": "Natürliches Aussehen"
+      },
+      "removable": {
+        "feature": "Herausnehmbar"
+      },
+      "cost": {
+        "feature": "Kosten",
+        "aligners": "Mittel",
+        "braces": "Günstig",
+        "veneers": "Premium"
+      },
+      "maintenance": {
+        "feature": "Pflege",
+        "aligners": "Täglich herausnehmen",
+        "braces": "Zusätzliches Putzen nötig",
+        "veneers": "Normales Putzen"
+      },
+      "diet": {
+        "feature": "Einschränkungen beim Essen",
+        "aligners": "Keine",
+        "braces": "Ja",
+        "veneers": "Keine"
+      },
+      "ages": {
+        "feature": "Für jedes Alter",
+        "aligners": "ab 13 Jahren",
+        "braces": "Jedes Alter",
+        "veneers": "ab 18 Jahren"
+      }
+    }
+  },
+  "search": {
+    "dialogTitle": "Website durchsuchen",
+    "dialogDescription": "Tippen Sie, um Behandlungen, Seiten und Artikel zu finden.",
+    "placeholder": "Behandlungen suchen, z. B. Weisheitszahn, Invisalign, Veneers…",
+    "popular": "Beliebt",
+    "noResults": "Keine Treffer für „{query}“. Versuchen Sie einen Behandlungsnamen, oder",
+    "askUs": "fragen Sie uns direkt",
+    "pages": {
+      "emergency": {
+        "title": "Notfall-Zahnarzt in Dubai",
+        "excerpt": "Hilfe am selben Tag bei Zahnschmerzen, abgebrochenen Zähnen, Schwellungen und Verletzungen."
+      },
+      "implants": {
+        "title": "Zahnimplantate in Dubai",
+        "excerpt": "Von Einzelimplantaten bis All-on-4 / All-on-6 mit lebenslanger Garantie."
+      },
+      "veneers": {
+        "title": "Veneers in Dubai",
+        "excerpt": "Keramikveneers ohne Beschleifen und Hollywood-Smile-Design."
+      },
+      "crownsBridges": {
+        "title": "Kronen & Brücken in Dubai",
+        "excerpt": "Zirkon, Keramik und Kronen am selben Tag; implantatgetragene Brücken."
+      },
+      "cosmetic": {
+        "title": "Ästhetische Zahnmedizin in Dubai",
+        "excerpt": "Komplette Lächeln-Transformationen und Hollywood-Smile-Makeovers."
+      },
+      "orthodontics": {
+        "title": "Kieferorthopädie & Invisalign in Dubai",
+        "excerpt": "Transparente Aligner, Keramik- und Metallbrackets."
+      },
+      "whitening": {
+        "title": "Zahnaufhellung in Dubai",
+        "excerpt": "Laser-, Praxis- und Heimbleaching."
+      },
+      "dentalSurgery": {
+        "title": "Oral- & Zahnchirurgie in Dubai",
+        "excerpt": "Weisheitszähne, Extraktionen, Knochenaufbau, Sinuslift."
+      },
+      "restorative": {
+        "title": "Restaurative Zahnmedizin in Dubai",
+        "excerpt": "Inlays, Onlays und Overlays."
+      },
+      "generalPreventive": {
+        "title": "Allgemeine & präventive Zahnmedizin",
+        "excerpt": "Kontrollen, Reinigungen, Füllungen, Zahnfleischbehandlung, Kinder."
+      },
+      "xrayOpg": {
+        "title": "Digitales Röntgen, OPG & DVT",
+        "excerpt": "2D- und 3D-Bildgebung in der Klinik."
+      },
+      "atHome": {
+        "title": "Privater Zahnarztbesuch zu Hause",
+        "excerpt": "Zahnbehandlung bei Ihnen zu Hause oder im Büro in Dubai."
+      },
+      "dentalTourism": {
+        "title": "Dentaltourismus in Dubai",
+        "excerpt": "Nur-Behandlung und All-inclusive-Pakete für internationale Patienten."
+      },
+      "gallery": {
+        "title": "Galerie der Lächeln-Transformationen",
+        "excerpt": "Vorher-Nachher-Ergebnisse."
+      },
+      "doctors": {
+        "title": "Unsere Zahnärzte",
+        "excerpt": "Lernen Sie das Team kennen."
+      },
+      "about": {
+        "title": "Über die Klinik",
+        "excerpt": "Your Smile Advanced Dental Center, JLT Dubai."
+      },
+      "contact": {
+        "title": "Kontakt & Öffnungszeiten",
+        "excerpt": "Adresse, Telefon, WhatsApp und Öffnungszeiten."
+      },
+      "faq": {
+        "title": "Häufig gestellte Fragen",
+        "excerpt": "Häufige Fragen zu Behandlungen und Terminen."
+      },
+      "blog": {
+        "title": "Blog & News",
+        "excerpt": "Artikel zur Zahngesundheit."
+      }
+    }
+  },
+  "thanks": {
+    "seoTitle": "Vielen Dank",
+    "seoDescription": "Ihre Nachricht ist bei uns eingegangen. Unser Team meldet sich innerhalb von 24 Stunden.",
+    "title": "Danke für Ihre Nachricht",
+    "body": "Wir haben Ihre Nachricht erhalten und melden uns innerhalb von 24 Stunden. Bei dringenden zahnmedizinischen Anliegen rufen Sie uns bitte an oder schreiben Sie uns direkt über die Schaltflächen unten.",
+    "whatsappAria": "Schreiben Sie uns auf WhatsApp",
+    "whatsappCta": "WhatsApp schreiben",
+    "callAria": "{phone} anrufen",
+    "callCta": "{phone} anrufen",
+    "backHome": "← Zurück zur Startseite"
+  },
+  "serviceCategories": {
+    "dental-surgery": {
+      "name": "Oral- & Zahnchirurgie",
+      "shortName": "Zahnchirurgie"
+    },
+    "general-preventive": {
+      "name": "Allgemeine & präventive Zahnmedizin",
+      "shortName": "Allgemein & Prophylaxe"
+    },
+    "crowns-bridges": {
+      "name": "Kronen & Brücken",
+      "shortName": "Kronen & Brücken"
+    },
+    "whitening": {
+      "name": "Zahnaufhellung",
+      "shortName": "Bleaching"
+    },
+    "orthodontics": {
+      "name": "Kieferorthopädie & transparente Aligner",
+      "shortName": "Kieferorthopädie"
+    },
+    "restorative": {
+      "name": "Restaurative Zahnmedizin",
+      "shortName": "Restaurativ"
+    }
+  },
+  "sitemap": {
+    "seoTitle": "Sitemap",
+    "seoDescription": "Vollständige Liste aller Seiten der Website des Your Smile Advanced Dental Center Dubai.",
+    "title": "Sitemap",
+    "subtitle": "Übersicht über alle Seiten und Leistungen unserer Website.",
+    "mainPages": "Hauptseiten",
+    "treatments": "Behandlungen",
+    "legal": "Rechtliches",
+    "categoryOverview": "{category} – Übersicht",
+    "lookingTitle": "Suchen Sie etwas Bestimmtes?",
+    "lookingBody": "Wenn Sie nicht finden, wonach Sie suchen, wenden Sie sich an unser Team. Wir helfen gern!",
+    "contactUs": "Kontakt",
+    "messageWhatsapp": "Auf WhatsApp schreiben",
+    "main": [
+      "Startseite",
+      "Über uns",
+      "Unsere Zahnärzte",
+      "Galerie der Lächeln-Transformationen",
+      "Blog & News",
+      "FAQ",
+      "Kontakt"
+    ],
+    "treatmentLinks": [
+      "Alle Leistungen",
+      "Notfall-Zahnarzt",
+      "Zahnimplantate",
+      "Veneers",
+      "Ästhetische Zahnmedizin",
+      "Digitales Röntgen, OPG & DVT",
+      "Privater Hausbesuch",
+      "Dentaltourismus"
+    ],
+    "legalLinks": [
+      "Datenschutzerklärung",
+      "AGB"
+    ]
+  },
+  "cosmetic": {
+    "seoTitle": "Ästhetische Zahnmedizin in Dubai – Hollywood-Smile-Makeovers",
+    "seoDescription": "Komplette Lächeln-Transformationen in Dubai JLT: Keramikveneers ohne Beschleifen, Bleaching, Implantate, Kronen und Hollywood-Smile-Design – geleitet von einem Zahnarzt mit 18 Jahren Erfahrung in der Ästhetik.",
+    "crumb": "Ästhetische Zahnmedizin",
+    "jsonLdName": "Ästhetische Zahnmedizin in Dubai",
+    "jsonLdDescription": "Hollywood-Smile-Makeovers mit Veneers, Bleaching, Implantaten und Kronen.",
+    "heroTitle": "Ästhetische Zahnmedizin in Dubai",
+    "heroSubtitle": "Verwandeln Sie Ihr Lächeln mit Keramikveneers, Bleaching, Kieferorthopädie, Implantaten und kompletten Hollywood-Smile-Makeovers.",
+    "treatment": "ein Smile-Makeover",
+    "packagesTreatment": "Smile-Makeover",
+    "introTitle": "Schöneres Lächeln, mehr Selbstvertrauen",
+    "introBody": "Ästhetische Zahnmedizin verbessert das Aussehen Ihrer Zähne und Ihres Lächelns. Von der Korrektur einzelner Makel bis zum kompletten Hollywood-Lächeln verbinden wir digitale Planung und handwerkliches Können für natürliche, langlebige Ergebnisse.",
+    "introPoints": [
+      "Vorschau per Digital Smile Design",
+      "Minimalinvasive Techniken ohne Beschleifen",
+      "Natürliche Ergebnisse, passend zu Ihrem Gesicht",
+      "Ein Team für jede Behandlung",
+      "Komplexe Fälle willkommen"
+    ],
+    "treatmentsTitle": "Ästhetische Behandlungen in Dubai",
+    "services": [
+      {
+        "title": "Veneers in Dubai",
+        "desc": "Keramikveneers ohne Beschleifen für ein makelloses, natürliches Lächeln"
+      },
+      {
+        "title": "Zahnaufhellung in Dubai",
+        "desc": "Sichere Aufhellung Ihrer Zähne in einem Termin"
+      },
+      {
+        "title": "Kieferorthopädie & transparente Aligner",
+        "desc": "Diskret begradigen mit Invisalign oder Zahnspange"
+      },
+      {
+        "title": "Zahnimplantate in Dubai",
+        "desc": "Fehlende Zähne dauerhaft und natürlich wirkend ersetzen"
+      },
+      {
+        "title": "Kronen & Brücken",
+        "desc": "Zirkon- und Keramikrestaurationen für abgenutzte oder beschädigte Zähne"
+      },
+      {
+        "title": "Hollywood-Smile-Makeover",
+        "desc": "Behandlungen kombinieren für eine komplette Lächeln-Transformation"
+      }
+    ],
+    "benefitsTitle": "Vorteile der ästhetischen Zahnmedizin",
+    "benefits": [
+      "Verfärbte, abgebrochene oder schiefe Zähne korrigieren",
+      "Funktion und Ästhetik zugleich wiederherstellen",
+      "Mehr Selbstvertrauen und Selbstwertgefühl",
+      "Individuelle Behandlungen für Ihre Bedürfnisse",
+      "Langlebige, natürlich wirkende Ergebnisse"
+    ],
+    "hollywoodTitle": "Hollywood-Smile-Makeover in Dubai",
+    "hollywoodBody": "Unser charakteristisches Hollywood-Smile-Makeover kombiniert Keramikveneers ohne Beschleifen, Bleaching, Kieferorthopädie und Implantate in einem Plan. Mit Digital Smile Design sehen Sie Ihr neues Lächeln, bevor die Behandlung beginnt.",
+    "hollywoodCta": "Beratung zum Smile-Makeover buchen",
+    "hollywoodWhatsapp": "Guten Tag, ich möchte eine Beratung zum Hollywood-Smile-Makeover vereinbaren.",
+    "whyTitle": "Dubais vertrauenswürdige Spezialisten für ästhetische Zahnmedizin",
+    "whyBody": "Die ästhetische Behandlung leitet unser Gründer {name} mit {years} Jahren Erfahrung in ästhetischer Zahnmedizin, unterstützt von einem internationalen Team und digitaler Technologie. Unsere Google-Bewertung von {rating} spiegelt unseren Anspruch an Patientenzufriedenheit wider.",
+    "whyChips": [
+      "{years} Jahre ästhetische Zahnmedizin ({name})",
+      "International ausgebildete Spezialisten",
+      "Digital Smile Design",
+      "Google-Bewertung {rating}",
+      "Patientenorientierte Betreuung"
+    ],
+    "transformationsTitle": "Smile-Makeover-Transformationen",
+    "transformationsSubtitle": "Echte komplette Smile-Makeovers aus unserer Klinik in JLT. Die Ergebnisse sind individuell.",
+    "faqs": [
+      {
+        "question": "Was unterscheidet ästhetische von allgemeiner Zahnmedizin?",
+        "answer": "Die allgemeine Zahnmedizin konzentriert sich auf Gesundheit und Funktion; die ästhetische Zahnmedizin verbessert das Aussehen und meist zugleich die Funktion."
+      },
+      {
+        "question": "Wie lange halten ästhetische Behandlungen?",
+        "answer": "Bei guter Pflege halten Keramikveneers und Kronen 10–15 Jahre oder länger, Implantate können ein Leben lang halten, und Bleaching hält mit Auffrischungen 6–12 Monate."
+      },
+      {
+        "question": "Ist ästhetische Zahnmedizin sicher?",
+        "answer": "Ja. Alle Behandlungen verwenden biokompatible Materialien und minimalinvasive Techniken – unsere Veneers erfordern zum Beispiel kein Beschleifen Ihrer eigenen Zähne."
+      },
+      {
+        "question": "Für wen eignet sich ästhetische Zahnmedizin?",
+        "answer": "Für alle, die mit Verfärbungen, abgebrochenen Ecken, Lücken, Fehlstellungen oder fehlenden Zähnen unzufrieden sind. Eine Beratung mit Digital Smile Design zeigt, was bei Ihnen möglich ist."
+      },
+      {
+        "question": "Kann ich Behandlungen kombinieren?",
+        "answer": "Ja. Die meisten Hollywood-Smile-Makeovers kombinieren mehrere Behandlungen, etwa Bleaching und anschließend Veneers oder Implantate mit Kronen – gemeinsam geplant für ein harmonisches Ergebnis."
+      }
+    ],
+    "ctaTitle": "Buchen Sie Ihre Beratung zur ästhetischen Zahnmedizin in Dubai",
+    "ctaText": "Bereit für Ihr Traumlächeln? Vereinbaren Sie eine Beratung und sehen Sie Ihr neues Lächeln digital gestaltet."
+  },
+  "restorative": {
+    "seoTitle": "Restaurative Zahnmedizin in Dubai – Inlays, Onlays & Overlays",
+    "seoDescription": "Zahnschonende restaurative Zahnmedizin in Dubai JLT: Keramikinlays, -onlays und -overlays (Table Tops), die beschädigte oder abgenutzte Zähne wiederherstellen und gesunden Schmelz erhalten.",
+    "crumb": "Restaurative Zahnmedizin",
+    "heroTitle": "Restaurative Zahnmedizin in Dubai",
+    "heroSubtitle": "Beschädigte, kariöse oder abgenutzte Zähne mit präzisen Keramikinlays, -onlays und -overlays wiederherstellen – und dabei so viel eigenen Zahn wie möglich erhalten.",
+    "treatment": "restaurative Zahnmedizin",
+    "introTitle": "Zwischen Füllung und Krone",
+    "introParagraphs": [
+      "Wenn eine Karies oder ein Bruch zu groß für eine einfache Füllung ist, der Zahn aber zu gesund für eine komplette Krone, stellt ein Inlay, Onlay oder Overlay ihn präzise wieder her. Jedes Teil wird digital nach einem Scan Ihres Zahns gestaltet und adhäsiv eingesetzt – das Ergebnis ist stabil, dicht und praktisch unsichtbar.",
+      "Da wir auf komplexe Gesamtrehabilitationen spezialisiert sind, bauen wir mit diesen zahnschonenden Restaurationen auch abgenutzte Bisse wieder auf und schützen den verbliebenen Schmelz bei Patienten, die mit den Zähnen knirschen."
+    ],
+    "introPoints": [
+      "Erhält gesunde Zahnsubstanz",
+      "Digitaler Scan – ohne unangenehme Abdrücke",
+      "Keramik passend zu Ihrem natürlichen Farbton",
+      "In vielen Fällen Fertigung am selben Tag"
+    ],
+    "treatmentsTitle": "Unsere restaurativen Behandlungen in Dubai",
+    "benefitsTitle": "Warum restaurative Zahnmedizin bei uns",
+    "benefits": [
+      "Zahnschonender Ansatz: Wir erhalten so viel eigenen Zahn wie möglich",
+      "Digitale Gestaltung und Fräsung in der Klinik für eine präzise Passung",
+      "Restaurationen werden im Kontext des gesamten Bisses geplant, nicht Zahn für Zahn",
+      "Erfahrung in komplexen Gesamtrehabilitationen",
+      "Klare, ehrliche Empfehlung: Füllung, Inlay oder Krone"
+    ],
+    "faqsTitle": "Häufige Fragen zur restaurativen Zahnmedizin",
+    "faqs": [
+      {
+        "question": "Was unterscheidet Füllung, Inlay, Onlay und Krone?",
+        "answer": "Eine Füllung wird in einem Termin direkt in eine kleine Kavität eingebracht. Ein Inlay ist ein im Labor gefertigtes Teil, das innerhalb des Zahns zwischen den Höckern sitzt; ein Onlay überdeckt zusätzlich einen oder mehrere Höcker. Beide erhalten deutlich mehr eigene Zahnsubstanz als eine Krone, die den ganzen Zahn umfasst. Wir empfehlen die am wenigsten invasive Variante, die dauerhaft hält."
+      },
+      {
+        "question": "Was sind Overlays oder Table Tops?",
+        "answer": "Dünne Keramikkappen, die die gesamte Kaufläche eines abgenutzten Backenzahns mit minimalem oder ganz ohne Bohren überdecken. Sie bauen verlorene Höhe wieder auf und schützen den verbliebenen Schmelz; häufig sind sie Teil einer Gesamtrehabilitation bei abgenutzten Zähnen."
+      },
+      {
+        "question": "Welche Materialien verwenden Sie?",
+        "answer": "Überwiegend Lithiumdisilikat-Keramik oder Zirkon, mit CAD/CAM nach einem digitalen Scan gestaltet, sowie Komposit, wo es angezeigt ist. Ihr Zahnarzt erklärt Ihnen, was zu Ihrem Zahn und Biss passt."
+      },
+      {
+        "question": "Wie viele Termine sind nötig?",
+        "answer": "Meist zwei: Vorbereitung und Scan, danach das Einsetzen der fertigen Restauration. Manche Fälle können am selben Tag gefräst und eingesetzt werden."
+      },
+      {
+        "question": "Übernimmt die Versicherung restaurative Behandlungen?",
+        "answer": "Viele Zahnversicherungen in den VAE übernehmen einen Teil restaurativer Arbeiten. Nennen Sie uns bei der Buchung Ihre Versicherung – wir klären die Kostenübernahme vor der Behandlung."
+      }
+    ],
+    "ctaTitle": "Zahn erhalten, Lächeln bewahren",
+    "ctaText": "Buchen Sie eine Beratung in JLT und erfahren Sie, welche Restauration zu Ihrem Zahn passt."
+  },
+  "atHome": {
+    "seoTitle": "Privater Zahnarzt für Hausbesuche in Dubai",
+    "seoDescription": "Private zahnärztliche Behandlung zu Hause in ganz Dubai: Kontrollen, Reinigungen, Füllungen, einfache Extraktionen, Notfall-Schmerzlinderung und Prothesenpflege bei Ihnen zu Hause, im Büro oder Hotel.",
+    "crumb": "Privater Zahnarztbesuch zu Hause",
+    "jsonLdName": "Private zahnärztliche Behandlung zu Hause in Dubai",
+    "jsonLdDescription": "Mobile Zahnbehandlung beim Patienten zu Hause, im Büro oder Hotel in Dubai.",
+    "jsonLdServiceType": "Zahnärztlicher Hausbesuch",
+    "heroTitle": "Private Zahnbehandlung zu Hause in Dubai",
+    "heroSubtitle": "Professionelle Zahnmedizin im Komfort und in der Privatsphäre Ihres Zuhauses, Büros oder Hotels. Eine der ersten Kliniken in Dubai, die das anbietet.",
+    "treatment": "ein privater Zahnarztbesuch zu Hause",
+    "bookVisit": "Hausbesuch buchen",
+    "introTitle": "Die Klinik kommt zu Ihnen",
+    "introParagraphs": [
+      "Professionelle Zahnmedizin im Komfort Ihres Zuhauses. Unser mobiler Dienst bringt tragbare Geräte, sterilisierte Instrumente und dieselben Ärzte, die Sie in unserer Klinik in JLT sehen würden, zu Ihnen. Jeder Besuch beginnt mit einer gründlichen Untersuchung und einem persönlichen Behandlungsplan.",
+      "Ideal für alle, die Privatsphäre, Bequemlichkeit oder besondere Betreuung schätzen: ältere Angehörige, Menschen mit eingeschränkter Mobilität, Familien mit kleinen Kindern, vielbeschäftigte Berufstätige und Gäste in Dubaier Hotels."
+    ],
+    "introBadges": [
+      "Sterilisation auf Klinikniveau",
+      "Flexible Terminzeiten",
+      "Dieselben Ärzte wie in der Klinik"
+    ],
+    "canDoTitle": "Was wir bei Ihnen zu Hause machen können",
+    "canDoSubtitle": "Die meisten alltäglichen Behandlungen lassen sich gut mitnehmen. Diese Leistungen bieten wir regelmäßig beim Hausbesuch an.",
+    "canDo": [
+      {
+        "title": "Kontrollen & Beratungen",
+        "desc": "Vollständige Untersuchung, Behandlungsplanung und Zweitmeinungen."
+      },
+      {
+        "title": "Professionelle Zahnreinigung",
+        "desc": "Zahnsteinentfernung und Politur mit tragbarem Ultraschallgerät."
+      },
+      {
+        "title": "Füllungen",
+        "desc": "Zahnfarbene Kompositfüllungen bei Karies und abgebrochenen Ecken."
+      },
+      {
+        "title": "Einfache Extraktionen",
+        "desc": "Entfernung lockerer, kariöser oder gebrochener Zähne ohne chirurgischen Eingriff."
+      },
+      {
+        "title": "Notfall-Schmerzlinderung",
+        "desc": "Zahnschmerzen, Schwellung, verlorene Füllungen und Wiederbefestigen von Kronen."
+      },
+      {
+        "title": "Prothesenpflege",
+        "desc": "Anpassungen, Unterfütterungen und Reparaturen für angenehmen Sitz."
+      },
+      {
+        "title": "Zahnaufhellung",
+        "desc": "Professionelles Bleaching im Komfort Ihres Zuhauses."
+      },
+      {
+        "title": "Nachkontrollen",
+        "desc": "Kontrollen nach Eingriffen und Nahtentfernung nach Behandlungen in der Klinik."
+      }
+    ],
+    "clinicOnlyTitle": "Was die Klinik erfordert",
+    "clinicOnlyBody": "Manche Behandlungen brauchen unsere chirurgische Ausstattung, 3D-Bildgebung oder das eigene Labor. Dafür empfangen wir Sie in unserer Klinik in Jumeirah Lake Towers, wo dasselbe Team Ihre Behandlung fortsetzt.",
+    "clinicAddressLink": "Adresse & Öffnungszeiten der Klinik",
+    "cannotDo": [
+      "Chirurgische Eingriffe wie verlagerte Weisheitszähne, Knochenaufbau oder Sinuslift",
+      "Setzen von Zahnimplantaten",
+      "Kieferorthopädie (Eingliederung von Zahnspangen und Alignern)",
+      "Rundumbrücken über den ganzen Kiefer",
+      "Veneer-Präparation für den gesamten Kiefer"
+    ],
+    "journeyTitle": "So läuft ein Hausbesuch ab",
+    "journeySubtitle": "Von Ihrer ersten Nachricht bis zum Nachsorgeanruf",
+    "steps": [
+      {
+        "title": "Schreiben oder anrufen",
+        "description": "Sagen Sie uns, wo Sie in Dubai sind, was Sie stört und wann es Ihnen passt. Wir bestätigen, ob es zu Hause behandelbar ist, und nennen die Besuchsgebühr.",
+        "duration": "5 Min."
+      },
+      {
+        "title": "Wir kommen vorbereitet",
+        "description": "Ihr Zahnarzt kommt mit sterilisierten Instrumentensets, tragbaren Geräten und allem, was für die vereinbarte Behandlung nötig ist.",
+        "duration": "Zur vereinbarten Zeit"
+      },
+      {
+        "title": "Untersuchung & Behandlung",
+        "description": "Vollständige Kontrolle von Zähnen und Zahnfleisch, dann Behandlung vor Ort, wo immer möglich. Sie erhalten klare Nachsorgehinweise.",
+        "duration": "45–90 Min."
+      },
+      {
+        "title": "Nachsorge",
+        "description": "Wir melden uns nach Ihrem Termin und vereinbaren, falls etwas die Klinik erfordert, einen bevorzugten Termin in JLT.",
+        "duration": "1–3 Tage später"
+      }
+    ],
+    "feesTitle": "Preise auf Anfrage",
+    "feesBody": "Die Gebühr für den Hausbesuch hängt von Ihrem Standort und der benötigten Behandlung ab. Schreiben Sie uns Ihre Adresse, und wir antworten mit einem klaren Preis vor der Buchung. Keine Überraschungen.",
+    "getQuote": "Preis über WhatsApp erfragen",
+    "quoteWhatsapp": "Guten Tag, ich möchte einen privaten Zahnarztbesuch zu Hause vereinbaren. Mein Standort ist: ",
+    "faqsTitle": "Häufige Fragen zum Hausbesuch",
+    "faqs": [
+      {
+        "question": "Für wen ist der Hausbesuchsdienst gedacht?",
+        "answer": "Für alle, die Privatsphäre oder Bequemlichkeit bevorzugen, für Patienten mit eingeschränkter Mobilität, ältere Angehörige, vielbeschäftigte Führungskräfte, frischgebackene Eltern und Menschen, die sich in einer Praxis unwohl fühlen. Wir besuchen auch Hotels und Büros in ganz Dubai."
+      },
+      {
+        "question": "Ist das so sicher und hygienisch wie in der Klinik?",
+        "answer": "Ja. Wir bringen versiegelte, sterilisierte Instrumentensets, Einwegmaterialien und tragbare Geräte mit und halten dieselben Hygieneprotokolle ein wie in der Klinik. Alles, was die chirurgische Ausstattung oder 3D-Bildgebung erfordert, planen wir stattdessen in unserem Zentrum in JLT."
+      },
+      {
+        "question": "Was kostet ein Hausbesuch?",
+        "answer": "Die Gebühr hängt von Ihrem Standort in Dubai und der benötigten Behandlung ab, deshalb nennen wir sie bei der Buchung auf Anfrage. Es gibt keine versteckten Kosten: Sie kennen den Preis, bevor wir kommen."
+      },
+      {
+        "question": "Welche Gebiete in Dubai decken Sie ab?",
+        "answer": "Wir decken Dubai ab und können Besuche in benachbarten Emiraten häufig nach Absprache organisieren. Nennen Sie uns Ihren Standort, und wir bestätigen Verfügbarkeit und Zeitpunkt."
+      },
+      {
+        "question": "Was, wenn ich eine Behandlung brauche, die zu Hause nicht möglich ist?",
+        "answer": "Wir sagen Ihnen das sofort und vereinbaren einen Termin in unserer Klinik in Jumeirah Lake Towers, wo dieselben Ärzte Ihre Behandlung mit voller chirurgischer und bildgebender Ausstattung fortsetzen."
+      }
+    ],
+    "ctaTitle": "Buchen Sie Ihren privaten Hausbesuch",
+    "ctaText": "Ihre Sicherheit und Ihr Wohlbefinden stehen immer an erster Stelle. Schreiben Sie uns Ihren Standort, und wir vereinbaren einen Termin, der Ihnen passt."
+  },
+  "blogPost": {
+    "seoTitle": "Blogartikel",
+    "seoDescription": "Lesen Sie aktuelle Zahntipps und Fallbeispiele vom Your Smile Advanced Dental Center in Dubai.",
+    "bookConsultation": "Beratung über WhatsApp buchen",
+    "galleryTitle": "Galerie",
+    "gallerySubtitle": "Klicken Sie auf die Bilder für Details",
+    "expand": "Vergrößern",
+    "closeGallery": "Galerie schließen",
+    "prevImage": "Vorheriges Bild",
+    "nextImage": "Nächstes Bild",
+    "post": {
+      "title": "Der komplette Leitfaden zu Veneers: Verwandeln Sie Ihr Lächeln",
+      "category": "Ästhetische Zahnmedizin",
+      "date": "15. Dezember 2024",
+      "readTime": "5 Min. Lesezeit",
+      "content": "Veneers gehören heute zu den beliebtesten ästhetischen Zahnbehandlungen. Ob Sie kleine Makel korrigieren oder Ihr Lächeln komplett verwandeln möchten – Keramikveneers bieten eine vielseitige Lösung, die Ästhetik und Haltbarkeit verbindet.\n\n**Was sind Veneers?**\n\nVeneers sind dünne, individuell gefertigte Keramikschalen, die auf die Vorderseite Ihrer Zähne geklebt werden. Sie überdecken Makel wie Verfärbungen, abgebrochene Ecken, Lücken oder leichte Fehlstellungen und schaffen in nur zwei Terminen ein makelloses Lächeln.\n\n**Arten von Veneers**\n\nWir arbeiten ausschließlich mit Keramikveneers: Sie sind haltbar, verfärbungsresistent und halten in der Regel 10–15 Jahre oder länger. Bei Techniken ohne Beschleifen gibt es kein Abtragen Ihrer eigenen Zähne, keine Spritzen und keine Provisorien.\n\n**Der Ablauf**\n\nAlles beginnt mit einer Beratung, in der wir Ihre Ziele besprechen und Ihr ideales Lächeln gestalten. Anschließend bereiten wir die Zähne vor, nehmen einen digitalen Scan und fertigen Ihre individuellen Veneers. Sobald sie fertig sind, werden sie mit einem speziellen Kleber und Lichthärtung befestigt.\n\n**Vorteile von Veneers**\n\nÜber die offensichtliche ästhetische Verbesserung hinaus stärken Veneers Ihr Selbstvertrauen, verbessern die Bissfunktion und schützen beschädigte Zahnoberflächen. Zudem sind sie im Vergleich zu anderen ästhetischen Behandlungen relativ schnell eingesetzt.\n\n**Tipps zur Pflege**\n\nUm Ihre Veneers zu erhalten, beißen Sie nicht auf harte Gegenstände, achten Sie auf gute Mundhygiene und kommen Sie regelmäßig zur Kontrolle. Bei guter Pflege behalten Ihre Veneers über viele Jahre ihr schönes Aussehen.\n\nOb Sie zum ersten Mal über Veneers nachdenken oder Fragen zum Ablauf haben – unser Team hilft Ihnen zu dem Lächeln, das Sie sich immer gewünscht haben."
+    },
+    "galleryLabels": [
+      "VOR VENEERS 1",
+      "NACH VENEERS 1",
+      "VOR VENEERS 2",
+      "NACH VENEERS 2",
+      "VOR VENEERS 3",
+      "NACH VENEERS 3",
+      "LÄCHELN-TRANSFORMATION 1",
+      "LÄCHELN-TRANSFORMATION 2"
+    ]
+  },
+  "privacy": {
+    "seoTitle": "Datenschutzerklärung",
+    "seoDescription": "Wie {clinic} in Dubai Ihre personenbezogenen Daten erhebt, verwendet und schützt – im Einklang mit dem Datenschutzgesetz der VAE.",
+    "title": "Datenschutzerklärung",
+    "subtitle": "Wie wir Ihre personenbezogenen Daten erheben, verwenden und schützen.",
+    "ctaLead": "Fragen zu unserem Umgang mit Daten?",
+    "ctaButton": "Kontakt aufnehmen",
+    "sections": [
+      {
+        "title": "1. Wer wir sind",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "{clinic} („wir“, „uns“, „die Klinik“) betreibt diese Website und die Zahnklinik unter {address}. Wir sind Verantwortliche für personenbezogene Daten, die über diese Website und im Rahmen der zahnärztlichen Versorgung erhoben werden. Kontakt: {email}, {phone}."
+          }
+        ]
+      },
+      {
+        "title": "2. Welche personenbezogenen Daten wir erheben",
+        "blocks": [
+          {
+            "type": "ul",
+            "items": [
+              "**Kontakt- und Anfragedaten** – Name, Telefonnummer, E-Mail-Adresse, die Sie interessierende Behandlung und die Nachricht, die Sie uns über das Kontaktformular, WhatsApp, telefonisch oder per E-Mail senden.",
+              "**Newsletter-Daten** – Ihre E-Mail-Adresse, wenn Sie den Newsletter abonnieren.",
+              "**Gesundheitsdaten** – Angaben zu Ihrer zahnmedizinischen und allgemeinen Krankengeschichte, Röntgenbilder und klinische Fotos; sie werden nur erhoben, wenn Sie Patient werden, und unter ärztlicher Schweigepflicht verarbeitet. Die Website selbst fragt keine Gesundheitsdaten ab, abgesehen von dem, was Sie freiwillig in eine Nachricht schreiben.",
+              "**Technische und Nutzungsdaten** – IP-Adresse, Geräte- und Browsertyp, besuchte Seiten und Interaktionen wie Klicks auf „Anrufen“ oder „WhatsApp“; erhoben über Cookies und ähnliche Technologien, nur mit Ihrer Einwilligung (siehe Abschnitt 6)."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "3. Warum wir Ihre Daten verarbeiten und auf welcher Grundlage",
+        "blocks": [
+          {
+            "type": "ul",
+            "items": [
+              "Um Ihre Anfrage zu beantworten und Termine zu vereinbaren – Vertragserfüllung oder Schritte auf Ihre Anfrage hin.",
+              "Um zahnmedizinische Behandlung zu leisten und Patientenakten zu führen – Gesundheitsversorgung und unsere gesetzlichen Pflichten nach dem Gesundheitsrecht der VAE.",
+              "Um Ihnen Terminerinnerungen und, mit Ihrer Einwilligung, Zahntipps und Klinik-News zu senden – Einwilligung, die Sie jederzeit widerrufen können.",
+              "Um zu verstehen, wie die Website genutzt wird, und Werbung zu messen – Einwilligung über das Cookie-Banner.",
+              "Um gesetzliche Pflichten zu erfüllen und unsere Rechte zu schützen – rechtliche Verpflichtung und berechtigtes Interesse."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "4. An wen wir Daten weitergeben",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Wir verkaufen keine personenbezogenen Daten. Wir geben sie nur weiter an:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Dienstleister, die diese Website hosten und Formularübermittlungen in unserem Auftrag verarbeiten (unser Hosting-Anbieter Netlify erhält Kontaktformular- und Newsletter-Übermittlungen).",
+              "Analyse- und Werbedienstleister (Google Analytics / Google Tag Manager und Meta) – nur wenn Sie Analyse- und Marketing-Cookies akzeptieren.",
+              "Dentallabore, Röntgenzentren und an Ihrer Behandlung beteiligte Spezialisten, jeweils unter Verschwiegenheitspflichten.",
+              "Versicherungen, wenn Sie uns bitten, mit Ihrem Versicherer abzurechnen.",
+              "Behörden, soweit dies nach dem Recht der VAE erforderlich ist."
+            ]
+          },
+          {
+            "type": "p",
+            "text": "Einige Dienstleister verarbeiten Daten außerhalb der VAE. In diesen Fällen stützen wir uns auf die nach dem Datenschutzgesetz der VAE zulässigen Schutzmaßnahmen."
+          }
+        ]
+      },
+      {
+        "title": "5. Wie lange wir Daten aufbewahren",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Anfragedaten bewahren wir so lange auf, wie es zur Bearbeitung Ihres Anliegens nötig ist, und bis zu 24 Monate danach, sofern Sie nicht Patient werden. Patientenakten werden für die nach dem Gesundheitsrecht der VAE vorgeschriebenen Zeiträume aufbewahrt. Newsletter-Daten speichern wir bis zu Ihrer Abmeldung. Analysedaten werden entsprechend den Einstellungen des Anbieters aufbewahrt (Google Analytics: bis zu 14 Monate)."
+          }
+        ]
+      },
+      {
+        "title": "6. Cookies und Tracking",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Notwendige Cookies halten die Website funktionsfähig (zum Beispiel merken sie Ihre Cookie-Auswahl und Ihre Sprache). Analyse- und Marketing-Cookies (Google Analytics 4 über Google Tag Manager, Meta Pixel) werden **erst gesetzt, nachdem Sie im Cookie-Banner auf „Akzeptieren“ geklickt haben**. Sie helfen uns zu sehen, welche Seiten nützlich sind, und unsere Werbung zu messen. Sie können Ihre Auswahl jederzeit ändern, indem Sie die Websitedaten in Ihrem Browser löschen – danach erscheint das Banner erneut."
+          }
+        ]
+      },
+      {
+        "title": "7. Ihre Rechte",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Nach dem Datenschutzgesetz der VAE können Sie von uns verlangen:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Auskunft über die zu Ihnen gespeicherten personenbezogenen Daten und eine Kopie davon;",
+              "Berichtigung unrichtiger oder unvollständiger Daten;",
+              "Löschung Ihrer Daten, soweit keine gesetzliche Aufbewahrungspflicht besteht (für Patientenakten gelten gesetzliche Aufbewahrungsfristen);",
+              "Einschränkung der Verarbeitung oder Widerspruch dagegen, einschließlich Direktwerbung;",
+              "Widerruf Ihrer Einwilligung jederzeit, ohne dass die bereits erfolgte Verarbeitung berührt wird."
+            ]
+          },
+          {
+            "type": "p",
+            "text": "Um ein Recht auszuüben, schreiben Sie an {email}. Wir antworten innerhalb der gesetzlich vorgesehenen Frist. Sie können sich außerdem bei der Datenschutzbehörde der VAE beschweren."
+          }
+        ]
+      },
+      {
+        "title": "8. Sicherheit",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Wir setzen angemessene technische und organisatorische Maßnahmen ein – verschlüsselte Verbindungen (HTTPS), Zugriffskontrollen und Verschwiegenheitspflichten der Mitarbeitenden –, um Ihre Daten zu schützen. Keine Übertragung über das Internet ist vollkommen sicher; bitte senden Sie keine detaillierten medizinischen Informationen über das Kontaktformular."
+          }
+        ]
+      },
+      {
+        "title": "9. Kinder",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Wir behandeln Kinder als Patienten mit Einwilligung eines Elternteils oder Erziehungsberechtigten. Diese Website richtet sich nicht an Kinder, und wir erheben online wissentlich keine Daten von Kindern."
+          }
+        ]
+      },
+      {
+        "title": "10. Änderungen dieser Erklärung",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Wir können diese Erklärung von Zeit zu Zeit aktualisieren. Das Datum unten zeigt die letzte Überarbeitung. Wesentliche Änderungen werden auf dieser Seite hervorgehoben."
+          }
+        ]
+      },
+      {
+        "title": "11. Kontakt",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "**E-Mail:** {email}"
+          },
+          {
+            "type": "p",
+            "text": "**Telefon:** {phone}"
+          },
+          {
+            "type": "p",
+            "text": "**Adresse:** {address}"
+          }
+        ]
+      }
+    ]
+  },
+  "terms": {
+    "seoTitle": "AGB",
+    "seoDescription": "Nutzungsbedingungen für die Website von {clinic}: Informationen, Termine, Pakete und anwendbares Recht (VAE).",
+    "title": "Allgemeine Geschäftsbedingungen",
+    "subtitle": "Bitte lesen Sie diese Bedingungen, bevor Sie unsere Website nutzen.",
+    "ctaLead": "Möchten Sie mit uns sprechen?",
+    "ctaButton": "Kontakt",
+    "sections": [
+      {
+        "title": "1. Über diese Bedingungen",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Diese Bedingungen regeln Ihre Nutzung der Website von {clinic} („die Klinik“, „wir“). Mit der Nutzung der Website akzeptieren Sie sie. Die zahnärztliche Behandlung selbst richtet sich nach den Einwilligungserklärungen und dem Behandlungsplan, die Sie in der Klinik unterzeichnen, nicht nach diesen Website-Bedingungen."
+          }
+        ]
+      },
+      {
+        "title": "2. Informationen ersetzen keine medizinische Beratung",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Die Inhalte dieser Website dienen ausschließlich der allgemeinen Information. Sie ersetzen keine klinische Untersuchung und stellen weder eine Diagnose noch eine Behandlungsempfehlung für Ihren individuellen Fall dar. Konsultieren Sie immer einen Zahnarzt. Bei einem zahnmedizinischen Notfall rufen Sie unsere Notfallnummer an oder suchen Sie die nächstgelegene Notfalleinrichtung auf."
+          }
+        ]
+      },
+      {
+        "title": "3. Behandlungsergebnisse",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Auf dieser Website beschriebene oder gezeigte Ergebnisse, einschließlich Vorher-Nachher-Fotos, stammen von echten Patienten, die der Veröffentlichung zugestimmt haben, und dienen nur der Veranschaulichung. Die Ergebnisse sind individuell und hängen von Ihrer Mundgesundheit, Ihrer Anatomie und der Nachsorge ab. Angegebene Dauern und Heilungszeiten sind typische Spannen, keine Zusicherungen."
+          }
+        ]
+      },
+      {
+        "title": "4. Anfragen und Termine",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Eine Nachricht, eine WhatsApp-Anfrage oder ein abgesendetes Formular ist eine Kontaktanfrage, kein bestätigter Termin. Ein Termin gilt erst als bestätigt, wenn unser Team Datum und Uhrzeit mit Ihnen abgestimmt hat. Bitte sagen Sie mindestens 24 Stunden vorher ab oder verschieben Sie, damit der Termin anderen Patienten angeboten werden kann."
+          }
+        ]
+      },
+      {
+        "title": "5. Pakete und Honorare",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Wir veröffentlichen auf dieser Website keine Preise. Honorare und Behandlungspakete werden nach einer klinischen Untersuchung individuell schriftlich angeboten und sind Teil Ihres Behandlungsplans. Eine etwaige Garantie (zum Beispiel auf Zahnimplantate) ist in den schriftlichen Garantiebedingungen beschrieben, die Sie mit Ihrem Behandlungsplan erhalten, und gilt unter den dort genannten Voraussetzungen, einschließlich der Wahrnehmung empfohlener Kontrolltermine."
+          }
+        ]
+      },
+      {
+        "title": "6. Geistiges Eigentum",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Alle Texte, Bilder, Logos und das Design dieser Website gehören der Klinik oder ihren Lizenzgebern. Sie dürfen Seiten für den persönlichen, nicht kommerziellen Gebrauch ansehen und ausdrucken. Jede andere Vervielfältigung bedarf unserer schriftlichen Zustimmung."
+          }
+        ]
+      },
+      {
+        "title": "7. Links zu anderen Websites",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Links zu Websites Dritter (zum Beispiel Google Maps, Instagram oder Facebook) dienen Ihrer Bequemlichkeit. Für deren Inhalte und Datenschutzpraktiken sind wir nicht verantwortlich."
+          }
+        ]
+      },
+      {
+        "title": "8. Verfügbarkeit und Richtigkeit",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Wir bemühen uns, die Website korrekt und verfügbar zu halten, garantieren jedoch nicht, dass sie fehlerfrei oder ununterbrochen erreichbar ist. Wir können Inhalte, Leistungen oder diese Bedingungen jederzeit ändern; das Datum unten zeigt die letzte Überarbeitung."
+          }
+        ]
+      },
+      {
+        "title": "9. Haftungsbeschränkung",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Soweit nach dem Recht der VAE zulässig, haftet die Klinik nicht für Schäden, die aus dem Vertrauen auf Website-Inhalte oder aus der Nichterreichbarkeit der Website entstehen. Nichts in diesen Bedingungen beschränkt eine Haftung, die nach anwendbarem Recht nicht beschränkt werden kann, einschließlich der Haftung für Behandlungsfehler."
+          }
+        ]
+      },
+      {
+        "title": "10. Anwendbares Recht",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Diese Bedingungen unterliegen dem Recht der Vereinigten Arabischen Emirate in seiner im Emirat Dubai geltenden Fassung; für Streitigkeiten daraus sind die Gerichte in Dubai zuständig."
+          }
+        ]
+      },
+      {
+        "title": "11. Kontakt",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "**E-Mail:** {email}"
+          },
+          {
+            "type": "p",
+            "text": "**Telefon:** {phone}"
+          },
+          {
+            "type": "p",
+            "text": "**Adresse:** {address}"
+          }
+        ]
+      }
+    ]
   }
 }

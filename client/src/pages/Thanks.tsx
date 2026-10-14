@@ -7,15 +7,17 @@ import {
   WHATSAPP_PHONE,
 } from "@/lib/constants";
 import { SEO } from "@/components/SEO";
+import { useLanguage } from "@/hooks/useLanguage";
 
 const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_PHONE.replace(/\D/g, "")}`;
 
 export default function Thanks() {
+  const { t } = useLanguage();
   return (
-    <section className="min-h-[70vh] flex items-center justify-center bg-background py-24">
+    <section className="min-h-[70vh] flex items-center justify-center bg-background py-16 md:py-24">
       <SEO
-        title="Thank You"
-        description="Your message has been received. Our team will get back to you within 24 hours."
+        title={t("thanks.seoTitle")}
+        description={t("thanks.seoDescription")}
         path="/thanks"
         noindex
       />
@@ -26,13 +28,9 @@ export default function Thanks() {
 
         <div className="space-y-4">
           <h1 className="text-4xl md:text-5xl font-serif font-bold text-secondary">
-            Thank you for reaching out
+            {t("thanks.title")}
           </h1>
-          <p className="text-lg text-muted-foreground max-w-xl mx-auto">
-            We&apos;ve received your message and our team will get back to you
-            within 24 hours. For urgent dental needs, please call or message us
-            directly using the buttons below.
-          </p>
+          <p className="text-lg text-muted-foreground max-w-xl mx-auto">{t("thanks.body")}</p>
         </div>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
@@ -45,10 +43,10 @@ export default function Thanks() {
               href={WHATSAPP_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Message us on WhatsApp"
+              aria-label={t("thanks.whatsappAria")}
             >
               <MessageCircle className="h-5 w-5" />
-              WhatsApp Us
+              {t("thanks.whatsappCta")}
             </a>
           </Button>
           <Button
@@ -57,9 +55,9 @@ export default function Thanks() {
             variant="outline"
             className="gap-2 rounded-full"
           >
-            <a href={`tel:${REGULAR_PHONE}`} aria-label={`Call ${REGULAR_PHONE_DISPLAY}`}>
+            <a href={`tel:${REGULAR_PHONE}`} aria-label={t("thanks.callAria", { phone: REGULAR_PHONE_DISPLAY })}>
               <Phone className="h-5 w-5" />
-              Call {REGULAR_PHONE_DISPLAY}
+              {t("thanks.callCta", { phone: REGULAR_PHONE_DISPLAY })}
             </a>
           </Button>
         </div>
@@ -69,7 +67,7 @@ export default function Thanks() {
             href="/"
             className="text-sm text-muted-foreground hover:text-primary underline-offset-4 hover:underline"
           >
-            ← Back to home
+            {t("thanks.backHome")}
           </Link>
         </div>
       </div>

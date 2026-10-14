@@ -5,6 +5,7 @@ import { ChevronRight } from "lucide-react";
 import { REGULAR_PHONE, whatsappLink } from "@/lib/constants";
 import { track } from "@/lib/analytics";
 import type { WebImage } from "@/lib/images";
+import { useLanguage } from "@/hooks/useLanguage";
 
 export interface Crumb {
   name: string;
@@ -21,6 +22,7 @@ interface ServiceHeroProps {
   backgroundImage?: string | WebImage;
   imageAlt?: string;
   breadcrumbs?: Crumb[];
+  /** Both default to the translated hero button labels. */
   primaryButtonText?: string;
   secondaryButtonText?: string;
   /** Treatment name for the pre-filled WhatsApp message. */
@@ -34,15 +36,16 @@ export function ServiceHero({
   backgroundImage,
   imageAlt = "",
   breadcrumbs,
-  primaryButtonText = "Book Your Consultation",
-  secondaryButtonText = "Call Now",
+  primaryButtonText,
+  secondaryButtonText,
   treatment,
   tone = "default",
 }: ServiceHeroProps) {
+  const { t } = useLanguage();
   const isEmergency = tone === "emergency";
   const message = treatment
-    ? `Hello, I'd like to book a consultation for ${treatment}.`
-    : "Hello, I'd like to book a consultation at Your Smile Advanced Dental Center.";
+    ? t("common.whatsappBookMessage", { treatment })
+    : t("common.whatsappBookMessageGeneric");
 
   return (
     <section
@@ -76,7 +79,7 @@ export function ServiceHero({
       <div className="container relative h-full mx-auto px-4 flex items-center py-12 md:py-0">
         <div className="max-w-3xl space-y-6 animate-in fade-in slide-in-from-left-10 duration-700">
           {breadcrumbs && breadcrumbs.length > 0 && (
-            <nav aria-label="Breadcrumb" className="text-sm text-white/70">
+            <nav aria-label={t("common.breadcrumbAria")} className="text-sm text-white/70">
               <ol className="flex flex-wrap items-center gap-1">
                 {breadcrumbs.map((c, i) => (
                   <li key={c.path} className="flex items-center gap-1">
@@ -120,7 +123,7 @@ export function ServiceHero({
                 onClick={() => track("whatsapp_click", { source: "hero", treatment })}
               >
                 <MessageCircle className="h-5 w-5" />
-                {primaryButtonText}
+                {primaryButtonText ?? t("serviceHero.bookConsultation")}
               </a>
             </Button>
             <Button
@@ -137,7 +140,7 @@ export function ServiceHero({
                 onClick={() => track("call_click", { source: "hero", treatment, line: "regular" })}
               >
                 <Phone className="h-5 w-5" />
-                {secondaryButtonText}
+                {secondaryButtonText ?? t("common.callNow")}
               </a>
             </Button>
           </div>

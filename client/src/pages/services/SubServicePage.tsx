@@ -13,9 +13,12 @@ import {
   ALL_SUB_SERVICES,
   CATEGORIES,
   findSubService,
+  localizeCategory,
+  localizeSubService,
   subServicePath,
   subServicesFor,
 } from "@/content/services";
+import { useLanguage } from "@/hooks/useLanguage";
 import NotFound from "@/pages/not-found";
 import { CATEGORY_HERO, CATEGORY_VISUAL } from "@/lib/images";
 
@@ -25,19 +28,25 @@ import { CATEGORY_HERO, CATEGORY_VISUAL } from "@/lib/images";
  */
 export default function SubServicePage() {
   const [location] = useLocation();
-  const service = findSubService(location);
-  if (!service) return <NotFound />;
+  const { t, tOr, tListOr } = useLanguage();
+  const source = findSubService(location);
+  if (!source) return <NotFound />;
 
-  const category = CATEGORIES[service.category];
-  const path = subServicePath(service);
-  const siblings = subServicesFor(service.category).filter((s) => s.slug !== service.slug);
-  const related = (service.related ?? [])
+  const overlay = { tOr, tListOr };
+  const service = localizeSubService(source, overlay);
+  const category = localizeCategory(CATEGORIES[source.category], overlay);
+  const path = subServicePath(source);
+  const siblings = subServicesFor(source.category)
+    .filter((s) => s.slug !== source.slug)
+    .map((s) => localizeSubService(s, overlay));
+  const related = (source.related ?? [])
     .map((p) => ALL_SUB_SERVICES.find((s) => subServicePath(s) === p))
-    .filter((s): s is NonNullable<typeof s> => Boolean(s));
+    .filter((s): s is NonNullable<typeof s> => Boolean(s))
+    .map((s) => localizeSubService(s, overlay));
   const moreLinks = (related.length ? related : siblings).slice(0, 4);
 
   const crumbs = [
-    { name: "Home", path: "/" },
+    { name: t("common.home"), path: "/" },
     { name: category.shortName, path: category.path },
     { name: service.name, path },
   ];
@@ -64,7 +73,7 @@ export default function SubServicePage() {
       />
 
       {/* Intro */}
-      <section className="py-20 bg-background">
+      <section className="py-16 md:py-24 bg-background">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <Visual src={CATEGORY_VISUAL[service.category]} icon={Stethoscope} className="h-[320px] lg:h-[380px]" />
@@ -81,16 +90,16 @@ export default function SubServicePage() {
       </section>
 
       {/* Highlights */}
-      <section className="py-20 bg-muted/30">
+      <section className="py-16 md:py-24 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary">
-              {service.name}: What It Treats
+              {t("subService.whatItTreats", { name: service.name })}
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {service.highlights.map((h) => (
-              <div key={h.title} className="p-6 bg-card rounded-xl border border-border hover:shadow-md transition-all space-y-3">
+              <div key={h.title} className="p-6 bg-card rounded-xl border border-border hover:shadow-sm transition-all space-y-3">
                 <div className="flex items-start gap-3">
                   <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-1" />
                   <h3 className="text-lg font-bold text-secondary">{h.title}</h3>
@@ -103,27 +112,31 @@ export default function SubServicePage() {
       </section>
 
       <ProcedureSteps
-        title={`Your ${service.name} Journey`}
-        subtitle="What to expect, step by step"
+        title={t("subService.journeyTitle", { name: service.name })}
+        subtitle={t("subService.journeySubtitle")}
         steps={service.steps.map((s, i) => ({ number: i + 1, ...s }))}
       />
 
-      <BenefitsSection title={`Why Choose Us for ${service.name} in Dubai`} benefits={service.benefits} bgColor="bg-muted/30" />
+      <BenefitsSection
+        title={t("subService.whyChooseUs", { name: service.name })}
+        benefits={service.benefits}
+        bgColor="bg-muted/30"
+      />
 
       <PackagesCallout treatment={service.name} bgColor="bg-background" />
 
-      <FAQSection title={`${service.name} FAQs`} faqs={service.faqs} />
+      <FAQSection title={t("subService.faqsTitle", { name: service.name })} faqs={service.faqs} />
 
       {/* Related */}
       {moreLinks.length > 0 && (
-        <section className="py-16 bg-muted/30">
+        <section className="py-16 md:py-24 bg-muted/30">
           <div className="container mx-auto px-4">
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
               <h2 className="text-2xl md:text-3xl font-serif font-bold text-secondary">
-                More {category.shortName} Treatments
+                {t("subService.moreTreatments", { category: category.shortName })}
               </h2>
               <Link href={category.path} className="text-primary font-semibold inline-flex items-center gap-1 hover:underline">
-                All {category.shortName} <ArrowRight className="h-4 w-4" />
+                {t("subService.allInCategory", { category: category.shortName })} <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -131,7 +144,7 @@ export default function SubServicePage() {
                 <Link
                   key={s.slug}
                   href={subServicePath(s)}
-                  className="group p-5 bg-card rounded-xl border border-border hover:border-primary/50 hover:shadow-md transition-all"
+                  className="group p-5 bg-card rounded-xl border border-border hover:border-primary/50 hover:shadow-sm transition-all"
                 >
                   <div className="flex items-center justify-between gap-2">
                     <h3 className="font-bold text-secondary group-hover:text-primary transition-colors">{s.name}</h3>

@@ -1,8 +1,10 @@
 import { useEffect, useRef, useState } from "react";
+import { useLanguage } from "@/hooks/useLanguage";
 
 interface BeforeAfterSliderProps {
   beforeImage: string;
   afterImage: string;
+  /** Both default to the translated BEFORE / AFTER labels. */
   beforeLabel?: string;
   afterLabel?: string;
 }
@@ -10,9 +12,12 @@ interface BeforeAfterSliderProps {
 export function BeforeAfterSlider({
   beforeImage,
   afterImage,
-  beforeLabel = "BEFORE",
-  afterLabel = "AFTER",
+  beforeLabel,
+  afterLabel,
 }: BeforeAfterSliderProps) {
+  const { t } = useLanguage();
+  const before = beforeLabel ?? t("common.before");
+  const after = afterLabel ?? t("common.after");
   const containerRef = useRef<HTMLDivElement>(null);
   const [sliderPos, setSliderPos] = useState(50);
 
@@ -47,11 +52,11 @@ export function BeforeAfterSlider({
       <div className="relative h-96 md:h-[500px] bg-muted">
         <img
           src={beforeImage}
-          alt={beforeLabel}
+          alt={before}
           className="w-full h-full object-cover"
         />
         <div className="absolute top-4 left-4 bg-black/50 text-white px-4 py-2 rounded-full text-sm font-bold">
-          {beforeLabel}
+          {before}
         </div>
       </div>
 
@@ -62,12 +67,12 @@ export function BeforeAfterSlider({
       >
         <img
           src={afterImage}
-          alt={afterLabel}
+          alt={after}
           className="w-screen h-full object-cover"
           style={{ width: `${(100 / sliderPos) * 100}%` }}
         />
         <div className="absolute top-4 right-4 bg-black/50 text-white px-4 py-2 rounded-full text-sm font-bold">
-          {afterLabel}
+          {after}
         </div>
       </div>
 
