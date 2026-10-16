@@ -21,7 +21,7 @@ const VALUE_AT_HOME_INDEX = 4;
 const PILLAR_STYLES = [
   { icon: Lightbulb, color: "text-primary", bg: "bg-primary/10" },
   { icon: Heart, color: "text-secondary", bg: "bg-secondary/10" },
-  { icon: Trophy, color: "text-yellow-600", bg: "bg-yellow-100/50" },
+  { icon: Trophy, color: "text-yellow-700", bg: "bg-yellow-100/50" },
 ];
 
 interface ValueCard {
@@ -144,7 +144,7 @@ export default function About() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {values.map((v, idx) => (
               <div key={v.title} className="p-6 bg-white/10 rounded-xl border border-white/20 hover:bg-white/15 transition-all space-y-3">
-                {idx === VALUE_AT_HOME_INDEX ? <HomeIcon className="h-6 w-6 text-primary" /> : <CheckCircle2 className="h-6 w-6 text-primary" />}
+                {idx === VALUE_AT_HOME_INDEX ? <HomeIcon className="h-6 w-6 text-primary-light" /> : <CheckCircle2 className="h-6 w-6 text-primary-light" />}
                 <h3 className="text-lg font-bold">{v.title}</h3>
                 <p className="text-gray-200 text-sm leading-relaxed">{v.description}</p>
               </div>

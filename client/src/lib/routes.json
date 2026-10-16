@@ -1,5 +1,6 @@
 {
-  "_comment": "Single route registry. Consumed by client/src/App.tsx (route → component map), vite-plugin-sitemap.ts (sitemap.xml) and script/prerender.mjs (static HTML per route). Add a route here FIRST, then map it to a component in App.tsx. Sub-service pages (path with two segments under a treatment category) are rendered by pages/services/SubServicePage.tsx from client/src/content/services/*.ts; /blog/<slug> pages by pages/BlogPost.tsx from client/src/content/blog.ts.",
+  "siteUrl": "https://yoursmileadvanceddental.ae",
+  "_comment": "Single route registry. siteUrl (no trailing slash) is the production origin used for canonicals, JSON-LD, sitemap.xml and robots.txt — change it here only. Consumed by client/src/App.tsx (route → component map), vite-plugin-sitemap.ts (sitemap.xml) and script/prerender.mjs (static HTML per route). Add a route here FIRST, then map it to a component in App.tsx. Sub-service pages (path with two segments under a treatment category) are rendered by pages/services/SubServicePage.tsx from client/src/content/services/*.ts; /blog/<slug> pages by pages/BlogPost.tsx from client/src/content/blog.ts.",
   "routes": [
     { "path": "/", "changefreq": "weekly", "priority": 1.0 },
     { "path": "/services", "changefreq": "monthly", "priority": 0.9 },

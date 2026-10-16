@@ -15,7 +15,8 @@
     "openMenu": "Open menu",
     "logoAlt": "Your Smile Advanced Dental Center - Dental Clinic in Dubai JLT",
     "complexCases": "Specialists in complex cases",
-    "allServices": "All services"
+    "allServices": "All services",
+    "menuTitle": "Menu"
   },
   "services": {
     "heroTitle": "Dental Services in Dubai",
@@ -24,7 +25,7 @@
     "seoDescription": "Every treatment at our JLT clinic: emergency care, implants, ceramic veneers, crowns, orthodontics, whitening, oral surgery and at-home dental visits.",
     "crumb": "Services",
     "featuredTitle": "What We Do Best",
-    "featuredSubtitle": "The cases other clinics turn away are where we start.",
+    "featuredSubtitle": "Complex, multi-step cases are where we start.",
     "featured": [
       {
         "name": "Emergency Dentist",
@@ -71,7 +72,7 @@
     "why": [
       "Specialists in complex and full-mouth cases",
       "Digital planning: intraoral scans, CAD/CAM, 3D implant planning",
-      "Gentle, pain-free procedures with sedation options",
+      "Gentle procedures under local anaesthesia, with sedation options",
       "Multilingual, family-friendly international team",
       "Lifetime warranty on {brand} implants",
       "Comprehensive care under one roof in JLT"
@@ -80,47 +81,12 @@
     "ctaText": "From a check-up to a full smile makeover, tell us what you need and we'll guide you to the right treatment."
   },
   "home": {
-    "heroTitle": "We solve the cases",
-    "heroTitleAccent": "other clinics can't",
+    "heroTitle": "Complex cases are",
+    "heroTitleAccent": "our speciality",
     "heroSubtitle": "Emergency dentistry, Hollywood smiles and complete smile transformations with implants, veneers, crowns and bridges — planned digitally, delivered by an international team.",
     "bookAppointment": "Book Your Appointment",
-    "internationallyTrained": "Internationally Trained",
-    "trainedDesc": "Team of expert certified dentists",
-    "latestTechnology": "Latest Technology",
-    "techDesc": "Pain-free & advanced treatments",
-    "comprehensiveServices": "Comprehensive Dental Services in Dubai",
-    "worldClass": "World-class treatments designed for your health and beauty.",
-    "veneersTitle": "Veneers in Dubai",
-    "implantsTitle": "Dental Implants in Dubai",
-    "implantsDesc": "Restore missing teeth permanently with advanced implant systems, ensuring strength and natural aesthetics.",
-    "orthoTitle": "Orthodontics & Invisalign",
-    "orthoDesc": "Straighten your teeth discreetly with clear aligners, the most popular orthodontic solution for adults and teens in Dubai.",
-    "whiteningTitle": "Teeth Whitening in Dubai",
-    "whiteningDesc": "Safe, fast, and effective whitening treatments for a brighter, more confident smile.",
-    "crownsTitle": "Crowns & Bridges",
-    "crownsDesc": "Restore damaged or missing teeth with custom-made restorations for strength and beauty.",
-    "cosmeticTitle": "Cosmetic Dentistry",
-    "cosmeticDesc": "Complete smile transformations combining multiple treatments for your dream smile.",
-    "preventiveTitle": "General & Preventive",
-    "preventiveDesc": "Check-ups, cleanings, and preventive care to keep your smile healthy for life.",
-    "surgeryTitle": "Dental Surgery",
-    "surgeryDesc": "Expert surgical treatments including wisdom teeth extraction and bone grafts.",
-    "xrayTitle": "Digital X-Ray & OPG",
-    "xrayDesc": "Advanced low-radiation imaging for precise diagnosis and treatment planning.",
-    "emergencyTitle": "Emergency Dentist Dubai",
-    "emergencyDesc": "24/7 emergency dental care for pain relief, broken teeth, and urgent treatments.",
-    "transformations": "Smile Transformations - Before & After Results in Dubai",
-    "transformationsDesc": "Discover real results from our patients who chose veneers, implants, and Invisalign in Dubai. Each smile tells a story of confidence and lasting change.",
-    "viewGallery": "View Transformation Gallery",
-    "before": "BEFORE",
-    "after": "AFTER",
-    "prev": "Prev",
-    "next": "Next",
-    "meetDoctors": "Meet Our Expert Dentists in Dubai",
-    "ratedClinic": "5.0 ★ Rated Dental Clinic in Dubai",
-    "verifiedReview": "Verified Review",
     "seoTitle": "Dental Clinic in Dubai JLT for Complex Cases",
-    "seoDescription": "Dental clinic in JLT, Dubai for complex cases: emergency care, Hollywood smiles, full-mouth implants and no-prep ceramic veneers. Rated 5.0 on Google.",
+    "seoDescription": "Dental clinic in JLT, Dubai for complex cases: emergency care, Hollywood smiles, full-mouth implants and no-prep ceramic veneers. Rated {rating} on Google.",
     "heroBadge": "Dental clinic in JLT, Dubai · Specialists in complex cases",
     "emergencyCta": "Dental emergency? Start here",
     "servicesTitle": "What We Do Best",
@@ -148,9 +114,8 @@
   "veneers": {
     "heroTitle": "Veneers in Dubai - Your Dream Smile Starts Here",
     "heroSubtitle": "Achieve a flawless, natural-looking smile with premium ceramic veneers, tailored just for you. No prep, no shaving, no pain.",
-    "heroImageAlt": "Veneer smile transformation",
     "seoTitle": "No-Prep Ceramic Veneers in Dubai in 2 Visits",
-    "seoDescription": "Specialist no-prep ceramic veneers in Dubai JLT: no shaving, no injections, no temporaries. Hollywood smile in two visits, 3–10 days. Rated 5.0 on Google.",
+    "seoDescription": "Specialist no-prep ceramic veneers in Dubai JLT: no shaving, no injections, no temporaries. Hollywood smile in two visits, 3–10 days. Rated {rating} on Google.",
     "crumb": "Veneers",
     "jsonLdName": "Ceramic Veneers in Dubai",
     "jsonLdDescription": "No-prep ceramic veneers and Hollywood smile design.",
@@ -188,7 +153,7 @@
       "Natural & durable: ceramic veneers last 10–15 years with good care",
       "Digital Smile Design: preview your result before treatment starts",
       "Trusted expertise: {years} years of cosmetic dentistry experience ({name})",
-      "Top-rated clinic: {rating} Google rating from Dubai patients"
+      "Rated {rating} on Google by patients in Dubai"
     ],
     "transformationsTitle": "Veneer Transformations",
     "transformationsSubtitle": "Real ceramic veneer cases from our JLT clinic. Individual results vary.",
@@ -251,7 +216,6 @@
   "implants": {
     "heroTitle": "Dental Implants in Dubai",
     "heroSubtitle": "Permanent, natural-looking tooth replacement — from a single tooth to full-mouth All-on-4 and All-on-6 rehabilitation.",
-    "heroImageAlt": "Dental implant procedure",
     "seoTitle": "Dental Implants in Dubai - Lifetime Warranty",
     "seoDescription": "Dental implants in Dubai JLT, from single teeth to All-on-4 and All-on-6. Titanium or ceramic, 3D-planned, lifetime warranty on {brand} implants.",
     "crumb": "Dental Implants",
@@ -313,7 +277,7 @@
       },
       {
         "title": "Implant Surgery",
-        "description": "Under local anaesthesia, we place the titanium or ceramic implant into your jawbone. The procedure is painless, and most patients return to normal activities within days.",
+        "description": "Under local anaesthesia, we place the titanium or ceramic implant into your jawbone. The area is fully numbed, so you feel pressure rather than pain, and most patients return to normal activities within days.",
         "duration": "30–60 min"
       },
       {
@@ -388,7 +352,6 @@
   "orthodontics": {
     "heroTitle": "Orthodontics & Clear Aligners in Dubai",
     "heroSubtitle": "Braces and Invisalign treatments for straighter teeth and a healthier bite — for teens and adults.",
-    "heroImageAlt": "Orthodontics and Invisalign treatment",
     "seoTitle": "Invisalign, Clear Aligners & Braces in Dubai",
     "seoDescription": "Straighten your teeth in Dubai JLT with Invisalign, clear aligners, ceramic or metal braces. Digital scans and orthodontist-led care for teens and adults.",
     "crumb": "Orthodontics",
@@ -499,7 +462,6 @@
   "whitening": {
     "heroTitle": "Teeth Whitening in Dubai",
     "heroSubtitle": "Brighten your smile safely and effectively with professional whitening treatments.",
-    "heroImageAlt": "Professional teeth whitening",
     "seoTitle": "Teeth Whitening in Dubai - Laser & In-Office",
     "seoDescription": "Safe, dentist-supervised teeth whitening in Dubai JLT: laser whitening, in-office treatment and custom take-home kits. Visible results in one session.",
     "crumb": "Teeth Whitening",
@@ -565,7 +527,6 @@
   "crownsAndBridges": {
     "heroTitle": "Dental Crowns & Bridges in Dubai",
     "heroSubtitle": "Restore strength, function and aesthetics with custom crowns and bridges — from a single tooth to a complete smile transformation.",
-    "heroImageAlt": "Dental crowns and bridges restoration",
     "seoTitle": "Dental Crowns & Bridges in Dubai JLT",
     "seoDescription": "Zirconia and porcelain crowns, same-day CAD/CAM crowns and implant-supported bridges in Dubai JLT, for one tooth or a complete smile transformation.",
     "crumb": "Crowns & Bridges",
@@ -630,7 +591,6 @@
   "generalPreventive": {
     "heroTitle": "General & Preventive Dentistry in Dubai",
     "heroSubtitle": "Protect your smile with routine check-ups, cleanings and preventive care for the whole family.",
-    "heroImageAlt": "General and preventive dental care",
     "seoTitle": "General & Family Dentistry in Dubai JLT",
     "seoDescription": "Family dental care in Dubai JLT: check-ups, cleanings, fillings, gum treatment, children's dentistry and sealants. Also available as at-home visits.",
     "crumb": "General & Preventive",
@@ -651,7 +611,7 @@
     "also": [
       {
         "name": "Root Canal Treatment",
-        "desc": "Save infected teeth with painless endodontic care."
+        "desc": "Save infected teeth with root canal treatment under local anaesthesia."
       },
       {
         "name": "Digital X-Ray, OPG & CBCT",
@@ -702,7 +662,6 @@
   "dentalSurgery": {
     "heroTitle": "Expert Dental Surgery in Dubai - Safe, Advanced & Trusted Care",
     "heroSubtitle": "From wisdom tooth removal to bone grafting and sinus lifts, our oral surgeons deliver precise results with comfort and care.",
-    "heroImageAlt": "Dental surgery procedure",
     "seoTitle": "Oral Surgery in Dubai - Wisdom Teeth & Grafts",
     "seoDescription": "Specialist oral surgery in Dubai JLT: wisdom tooth removal, extractions, bone grafting, sinus lift and apicoectomy by an oral & maxillofacial surgery team.",
     "crumb": "Dental Surgery",
@@ -725,7 +684,7 @@
     "benefitsTitle": "Trusted Oral Surgeons in Dubai",
     "benefits": [
       "Oral & maxillofacial surgeon and implantologists on the team",
-      "Pain-free treatment with advanced anaesthesia options",
+      "Comfortable treatment with modern anaesthesia options",
       "3D planning for predictable, safe procedures",
       "Modern surgical facilities in JLT",
       "Detailed aftercare and follow-up support"
@@ -771,7 +730,6 @@
   "xrayOpg": {
     "heroTitle": "Digital X-Ray, OPG & CBCT Imaging in Dubai",
     "heroSubtitle": "Precise, low-radiation imaging — IOPA, OPG, CBCT and cephalometric — for accurate diagnosis and treatment planning, all in-clinic.",
-    "heroImageAlt": "Digital X-ray and OPG imaging",
     "seoTitle": "Dental X-Ray, OPG & CBCT Scan in Dubai JLT",
     "seoDescription": "In-clinic digital dental imaging in Dubai JLT: IOPA, OPG panoramic, CBCT 3D and cephalometric X-rays for precise diagnosis and treatment planning.",
     "crumb": "Digital X-Ray, OPG & CBCT",
@@ -863,7 +821,6 @@
   "emergency": {
     "heroTitle": "Emergency Dentist in Dubai",
     "heroSubtitle": "Urgent dental care for toothaches, injuries and infections. Call our emergency line and we'll tell you exactly what to do next.",
-    "heroImageAlt": "Emergency dental care",
     "seoTitle": "Emergency Dentist in Dubai - Same-Day Care",
     "seoDescription": "Emergency dentist in Dubai JLT for toothache, broken teeth, abscesses, lost crowns and dental trauma. Dedicated emergency line and same-day treatment.",
     "crumb": "Emergency Dentist",
@@ -874,7 +831,7 @@
     "heroPrimary": "Message Us Now",
     "heroSecondary": "Call the Clinic",
     "lineTitle": "Dedicated emergency line",
-    "lineBody": "For severe pain, trauma, swelling or bleeding. Available outside regular hours.",
+    "lineBody": "For severe pain, trauma, swelling or bleeding. Available 24/7.",
     "clinicHours": "Clinic hours: {hours}",
     "introTitle": "Immediate Relief When You Need It Most",
     "introBody": "Emergency dentistry provides fast treatment for urgent problems such as severe tooth pain, broken teeth or accidents. Our emergency dentists in Dubai use digital imaging to diagnose quickly, relieve pain and protect your oral health.",
@@ -922,7 +879,7 @@
       "Simple extractions",
       "Assessment and priority clinic booking if surgery is needed"
     ],
-    "gentleTitle": "Fast, Gentle & Painless Treatment",
+    "gentleTitle": "Fast, Gentle Pain Relief",
     "gentleBody": "Emergencies are stressful. Our dentists prioritise your comfort with effective anaesthesia, quick relief and a calm, supportive environment.",
     "faqs": [
       {
@@ -956,9 +913,8 @@
     "messageWhatsapp": "Message on WhatsApp"
   },
   "dentalTourism": {
-    "heroTitle": "Dental Tourism in Dubai — World-Class Care + Premium Experience",
+    "heroTitle": "Dental Tourism in Dubai — Expert Care + Premium Experience",
     "heroSubtitle": "Combine your smile transformation with a stay in Dubai. Choose treatment-only or let us organise everything.",
-    "heroImageAlt": "Dental tourism packages",
     "seoTitle": "Dental Tourism in Dubai - Treatment Packages",
     "seoDescription": "Combine dental treatment with a stay in Dubai: a treatment-only package, or all-inclusive with hotel, transfers and sightseeing. Veneers, implants and more.",
     "crumb": "Dental Tourism",
@@ -1066,7 +1022,6 @@
     "ctaText": "Message us on WhatsApp — a coordinator who speaks your language will answer."
   },
   "gallery": {
-    "heroImageAlt": "Smile transformation gallery",
     "seoTitle": "Before & After Smile Gallery - Dubai JLT",
     "seoDescription": "Smile transformations from Your Smile Advanced Dental Center in Dubai JLT: veneers, implants, orthodontics, whitening and complete smile makeovers.",
     "crumb": "Smile Gallery",
@@ -1080,7 +1035,6 @@
   "about": {
     "heroTitle": "About Your Smile Advanced Dental Center",
     "heroSubtitle": "Experienced, internationally trained dental professionals in Jumeirah Lake Towers, dedicated to your confidence and care.",
-    "heroImageAlt": "About Your Smile Advanced Dental Center",
     "seoTitle": "About Our Dental Clinic in JLT, Dubai",
     "seoDescription": "Your Smile Advanced Dental Center in Jumeirah Lake Towers, founded by Dr. Nemanja Kukoljac: an international team for implants, veneers and complex cases.",
     "crumb": "About",
@@ -1102,7 +1056,7 @@
     "pillars": [
       {
         "title": "Our Vision",
-        "text": "To become a superior and trusted dental provider for all levels of society, raising the quality of dental care in Dubai."
+        "text": "To become a trusted dental provider for all levels of society, raising the quality of dental care in Dubai."
       },
       {
         "title": "Our Mission",
@@ -1117,7 +1071,7 @@
     "values": [
       {
         "title": "Complex Cases Welcome",
-        "description": "Full-mouth rehabilitation, Hollywood smiles and cases other clinics turn away."
+        "description": "Full-mouth rehabilitation, Hollywood smiles and complex, multi-step cases."
       },
       {
         "title": "Emergency Coverage",
@@ -1167,7 +1121,6 @@
   "doctors": {
     "heroTitle": "Meet Our Dentists in Dubai",
     "heroSubtitle": "Experienced, caring and internationally trained dental specialists for your smile.",
-    "heroImageAlt": "Our experienced dental team",
     "profiles": {
       "nemanja-kukoljac": {
         "role": "Founder · Implantologist & Oral Surgeon",
@@ -1252,7 +1205,6 @@
     "ctaText": "Choose the right specialist for your smile goals — cosmetic, restorative, surgical or orthodontic."
   },
   "blog": {
-    "heroImageAlt": "Dental blog and news",
     "seoTitle": "Dental Health Blog - Advice from Dubai JLT",
     "seoDescription": "Articles on veneers, implants, Invisalign, whitening, gum health and dental emergencies from Your Smile Advanced Dental Center in Dubai JLT.",
     "title": "Dental Blog & Expert Tips",
@@ -1275,7 +1227,6 @@
   "contact": {
     "heroTitle": "Contact Your Smile",
     "heroSubtitle": "We're here for your dental needs - whether you're booking an appointment or need emergency care.",
-    "heroImageAlt": "Contact us at Your Smile clinic",
     "seoTitle": "Contact Our Dental Clinic in JLT, Dubai",
     "seoDescription": "Get in touch with Your Smile Advanced Dental Center in Dubai JLT. Book an appointment, ask about services, or reach our 24/7 emergency line.",
     "heroTitleAccent": "Advanced Dental Center",
@@ -1309,7 +1260,6 @@
     "findUsTitle": "Find Us Easily",
     "findUsBody": "Located at HDS Business Centre in JLT, easily accessible by car or public transport.",
     "mapTitle": "Your Smile Advanced Dental Center Location - HDS Business Centre, Jumeirah Lake Towers, Dubai",
-    "mapAria": "Interactive map showing the location of Your Smile Advanced Dental Center at HDS Business Centre, Jumeirah Lake Towers, Dubai",
     "validation": {
       "nameMin": "Name must be at least 2 characters",
       "nameMax": "Name must be less than 100 characters",
@@ -1335,7 +1285,6 @@
   "faq": {
     "heroTitle": "Frequently Asked",
     "heroSubtitle": "Find answers to common questions about our services, procedures, and how we can help your dental health.",
-    "heroImageAlt": "Frequently asked questions",
     "seoTitle": "Dental Treatment FAQs - Dubai JLT Clinic",
     "seoDescription": "Common questions about veneers, implants, Invisalign, whitening, and emergency care at Your Smile Advanced Dental Center in Dubai.",
     "heroTitleAccent": "Questions",
@@ -1400,18 +1349,10 @@
     ]
   },
   "footer": {
-    "address": "HDS Business Centre, Jumeirah Lake Towers, Dubai, UAE",
-    "emergency": "Emergency",
     "openingHours": "Opening Hours",
-    "saturday": "Saturday",
-    "sunday": "Sunday",
-    "closed": "Closed",
     "quickLinks": "Quick Links",
     "stayConnected": "Stay Connected",
-    "about": "About Us",
-    "blog": "Blog",
-    "contact": "Contact Us",
-    "emergencyOutsideHours": "Emergency line available outside these hours.",
+    "emergencyOutsideHours": "Emergency line available 24/7.",
     "emergencyLabel": "Emergency: {phone}",
     "googleMaps": "Google Maps",
     "ratingLine": "{rating} rating · {count} Google reviews",
@@ -1442,7 +1383,8 @@
     "breadcrumbAria": "Breadcrumb",
     "home": "Home",
     "learnMore": "Learn more",
-    "related": "Related:"
+    "related": "Related:",
+    "close": "Close"
   },
   "packages": {
     "defaultTitle": "Flexible Treatment Packages",
@@ -1489,7 +1431,6 @@
     ],
     "routineNote": "For routine appointments, consultations, or non-emergency inquiries, please use the regular booking options available on our website.",
     "numberLabel": "Emergency Number:",
-    "numberAria": "Emergency phone number {phone}",
     "callAria": "Call emergency number {phone}",
     "close": "Close",
     "closeAria": "Close emergency contact dialog"
@@ -1558,7 +1499,7 @@
     "colBraces": "Braces",
     "colVeneers": "Veneers",
     "ctaLead": "Not sure which treatment is right for you?",
-    "cta": "Book a Free Consultation",
+    "cta": "Book a Consultation",
     "rows": {
       "duration": {
         "feature": "Duration of treatment",
@@ -1599,7 +1540,9 @@
         "braces": "Any age",
         "veneers": "18+"
       }
-    }
+    },
+    "yes": "Yes",
+    "no": "No"
   },
   "search": {
     "dialogTitle": "Search the website",
@@ -1818,8 +1761,7 @@
       "Smile transformation with veneers",
       "Smile transformation with crowns & bridges"
     ],
-    "implantWarranty": "Lifetime warranty on {brand} implants, backed by our supplier agreement in Dubai.",
-    "tagline": "Specialists in complex cases: emergency care, Hollywood smiles and complete smile transformations."
+    "implantWarranty": "Lifetime warranty on {brand} implants, backed by our supplier agreement in Dubai."
   },
   "subService": {
     "whatItTreats": "{name}: What It Treats",
@@ -2464,5 +2406,14 @@
     "show": "Show map",
     "openInGoogle": "Open in Google Maps",
     "notice": "The map is loaded from Google, which may set cookies."
+  },
+  "images": {
+    "clinicSmile": "Smiling patient during a dental check-up with the Dubai skyline behind",
+    "implants": "Illustration of a dental implant with a ceramic crown between natural teeth",
+    "crowns": "Dental laboratory models with ceramic crowns and bridges",
+    "treatmentPlan": "Dentist explaining a digital treatment plan to a patient",
+    "handshake": "Dentist greeting a patient in a bright reception area",
+    "team": "Smiling dental team in white coats in a treatment room",
+    "reception": "Elegant reception area with navy armchairs and a marble desk"
   }
 }

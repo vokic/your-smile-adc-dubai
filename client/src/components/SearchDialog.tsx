@@ -117,6 +117,9 @@ export function SearchDialog({ open, onOpenChange }: SearchDialogProps) {
   useEffect(() => {
     if (!query.trim()) {
       setResults([]);
+      // The query can be cleared while a debounced search is pending; its
+      // cleanup cancels it, so the spinner has to be reset here.
+      setLoading(false);
       return;
     }
     let cancelled = false;
@@ -154,7 +157,7 @@ export function SearchDialog({ open, onOpenChange }: SearchDialogProps) {
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-xl p-0 overflow-hidden rounded-2xl" aria-describedby="search-description">
+      <DialogContent className="max-w-xl p-0 overflow-hidden rounded-2xl" aria-describedby="search-description" closeLabel={translate("common.close")}>
         <DialogHeader className="px-5 pt-5 pb-3 border-b border-border">
           <DialogTitle className="sr-only">{translate("search.dialogTitle")}</DialogTitle>
           <DialogDescription id="search-description" className="sr-only">
@@ -166,6 +169,8 @@ export function SearchDialog({ open, onOpenChange }: SearchDialogProps) {
               ref={inputRef}
               value={query}
               onChange={(e) => setQuery(e.target.value)}
+              type="search"
+              aria-label={translate("search.dialogTitle")}
               placeholder={translate("search.placeholder")}
               className="pl-10 h-12 rounded-xl text-base"
               data-testid="input-search"

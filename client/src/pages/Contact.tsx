@@ -118,6 +118,7 @@ export default function Contact() {
   });
 
   const handleEmergencyConfirm = () => {
+    setShowEmergencyModal(false);
     track("emergency_confirm", { source: "contact" });
     window.location.href = `tel:${EMERGENCY_PHONE}`;
   };
@@ -178,13 +179,13 @@ export default function Contact() {
 
       {/* 1. Hero Block */}
       <section className="relative min-h-[50vh] md:h-[60vh] w-full overflow-hidden bg-secondary pt-10 md:pt-0">
-        <img src={IMG.handshake.src} srcSet={IMG.handshake.srcSet} sizes="100vw" alt={IMG.handshake.alt} className="absolute inset-0 h-full w-full object-cover" loading="eager" />
+        <img src={IMG.handshake.src} srcSet={IMG.handshake.srcSet} sizes="100vw" alt={t(IMG.handshake.altKey)} className="absolute inset-0 h-full w-full object-cover" loading="eager" />
         <div className="absolute inset-0 bg-gradient-to-r from-secondary via-secondary/85 to-secondary/20" />
 
         <div className="container relative h-full mx-auto px-4 flex items-center py-12 md:py-0">
           <div className="max-w-3xl space-y-6">
             <h1 className="text-4xl md:text-6xl font-serif font-bold text-white leading-tight">
-              {t("contact.heroTitle")} <span className="text-primary">{t("contact.heroTitleAccent")}</span>
+              {t("contact.heroTitle")} <span className="text-primary-light">{t("contact.heroTitleAccent")}</span>
             </h1>
             {/* A paragraph, not an h2: every other hero subtitle is Lato light,
                 and h2 now carries the display serif. */}
@@ -232,8 +233,8 @@ export default function Contact() {
                     <Phone className="h-6 w-6 text-red-600 shrink-0 mt-1 group-hover:scale-110 transition-transform" />
                     <div className="text-left">
                       <p className="font-bold text-red-700">{t("contact.emergencyPhone")}</p>
-                      <p className="text-red-600 hover:text-red-700 transition-colors font-medium">{EMERGENCY_PHONE_DISPLAY}</p>
-                      <p className="text-xs text-red-500 mt-1">{t("contact.emergencyHint")}</p>
+                      <p className="text-red-700 hover:text-red-800 transition-colors font-medium">{EMERGENCY_PHONE_DISPLAY}</p>
+                      <p className="text-xs text-red-700 mt-1">{t("contact.emergencyHint")}</p>
                     </div>
                   </button>
                   <div className="flex items-start gap-4 p-5 bg-card rounded-xl border border-border hover:shadow-sm transition-all">
@@ -261,7 +262,7 @@ export default function Contact() {
                     {WORKING_HOURS.map((item) => (
                       <div key={item.key} className="flex justify-between items-center border-b border-border/50 last:border-0 pb-3 last:pb-0">
                         <span className="font-medium text-secondary">{t(`hours.days.${item.key}`)}</span>
-                        <span className={`text-sm font-medium ${"closed" in item ? "text-red-500" : "text-muted-foreground"}`}>
+                        <span className={`text-sm font-medium ${"closed" in item ? "text-red-700" : "text-muted-foreground"}`}>
                           {"closed" in item ? t("hours.closed") : formatHours(item.hours, language)}
                         </span>
                       </div>

@@ -20,6 +20,8 @@ export default defineConfig({
       "@assets": path.resolve(import.meta.dirname, "attached_assets"),
     },
   },
+  // Tailwind v4 runs as a Vite plugin; an empty inline PostCSS config stops
+  // Vite from picking up a stray postcss.config.* from a parent folder.
   css: {
     postcss: {
       plugins: [],
@@ -30,9 +32,10 @@ export default defineConfig({
     outDir: path.resolve(import.meta.dirname, "dist/public"),
     emptyOutDir: true,
   },
+  // Dev server on localhost only (the Replit-era 0.0.0.0 + allowedHosts: true
+  // exposed it to the whole network). To test on a phone over Wi-Fi, run
+  // `npm run dev -- --host` for that session.
   server: {
-    host: "0.0.0.0",
-    allowedHosts: true,
     fs: {
       strict: true,
       deny: ["**/.*"],

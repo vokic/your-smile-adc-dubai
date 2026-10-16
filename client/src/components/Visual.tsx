@@ -1,6 +1,7 @@
 import type { LucideIcon } from "lucide-react";
 import { Sparkles } from "lucide-react";
 import type { WebImage } from "@/lib/images";
+import { useLanguage } from "@/hooks/useLanguage";
 
 interface VisualProps {
   /** Real image when available (path or WebImage with srcset). */
@@ -18,8 +19,12 @@ interface VisualProps {
  * "HERO IMAGE" / "BEFORE & AFTER" text boxes so nothing unfinished ships.
  */
 export function Visual({ src, alt = "", icon: Icon = Sparkles, className = "", tone = "light" }: VisualProps) {
+  const { t } = useLanguage();
   if (src) {
-    const img = typeof src === "string" ? { src, srcSet: undefined, alt } : src;
+    const img =
+      typeof src === "string"
+        ? { src, srcSet: undefined, alt }
+        : { src: src.src, srcSet: src.srcSet, alt: t(src.altKey) };
     return (
       <div className={`overflow-hidden rounded-2xl border border-border shadow-sm ${className}`}>
         <img
@@ -44,7 +49,7 @@ export function Visual({ src, alt = "", icon: Icon = Sparkles, className = "", t
       <div className="absolute -right-10 -top-10 h-48 w-48 rounded-full border-[28px] border-primary/10" />
       <div className="absolute -left-12 -bottom-12 h-56 w-56 rounded-full bg-secondary/5" />
       <div className="absolute inset-0 flex items-center justify-center">
-        <div className={`rounded-full p-6 ${dark ? "bg-white/10 text-primary" : "bg-white/70 text-primary shadow-sm"}`}>
+        <div className={`rounded-full p-6 ${dark ? "bg-white/10 text-primary-light" : "bg-white/70 text-primary shadow-sm"}`}>
           <Icon className="h-10 w-10" strokeWidth={1.5} />
         </div>
       </div>

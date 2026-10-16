@@ -56,25 +56,25 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {/* 1. Contact */}
           <div className="space-y-4">
-            <h3 className="text-xl font-serif font-bold text-primary mb-4">{CLINIC_NAME}</h3>
+            <h2 className="text-xl font-serif font-bold text-primary-light mb-4">{CLINIC_NAME}</h2>
             <div className="flex items-start gap-3 text-sm opacity-90">
-              <MapPin className="h-5 w-5 shrink-0 text-primary" />
+              <MapPin className="h-5 w-5 shrink-0 text-primary-light" />
               <div>
                 <p>{CLINIC_ADDRESS}</p>
-                <a href={CLINIC_MAPS_URL} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline text-xs font-semibold">{t("footer.googleMaps")}</a>
+                <a href={CLINIC_MAPS_URL} target="_blank" rel="noopener noreferrer" className="text-primary-light hover:underline text-xs font-semibold">{t("footer.googleMaps")}</a>
               </div>
             </div>
             <div className="flex items-start gap-3 text-sm opacity-90">
-              <Phone className="h-5 w-5 shrink-0 text-primary" />
+              <Phone className="h-5 w-5 shrink-0 text-primary-light" />
               <div>
                 <p>
-                  <a href={`tel:${REGULAR_PHONE}`} className="hover:text-primary transition-colors" onClick={() => track("call_click", { source: "footer", line: "regular" })}>
+                  <a href={`tel:${REGULAR_PHONE}`} className="hover:text-primary-light transition-colors" onClick={() => track("call_click", { source: "footer", line: "regular" })}>
                     {REGULAR_PHONE_DISPLAY}
                   </a>
                 </p>
                 <button
                   onClick={() => setShowEmergencyModal(true)}
-                  className="text-xs text-red-400 mt-1 hover:text-red-300 transition-colors font-semibold underline cursor-pointer"
+                  className="text-xs text-red-200 mt-1 hover:text-white transition-colors font-semibold underline cursor-pointer"
                   data-testid="button-footer-emergency"
                 >
                   {t("footer.emergencyLabel", { phone: EMERGENCY_PHONE_DISPLAY })}
@@ -82,39 +82,39 @@ export function Footer() {
               </div>
             </div>
             <div className="flex items-center gap-3 text-sm opacity-90">
-              <Mail className="h-5 w-5 shrink-0 text-primary" />
-              <a href={`mailto:${CLINIC_EMAIL}`} className="hover:text-primary transition-colors">{CLINIC_EMAIL}</a>
+              <Mail className="h-5 w-5 shrink-0 text-primary-light" />
+              <a href={`mailto:${CLINIC_EMAIL}`} className="hover:text-primary-light transition-colors">{CLINIC_EMAIL}</a>
             </div>
           </div>
 
           {/* 2. Hours */}
           <div className="space-y-4">
-            <h4 className="text-lg font-bold mb-4">{t("footer.openingHours")}</h4>
+            <h2 className="text-lg font-sans font-bold mb-4">{t("footer.openingHours")}</h2>
             <div className="space-y-2 text-sm opacity-90">
               {WORKING_HOURS_SUMMARY.map((h, i) => (
                 <div
                   key={h.label}
                   className={`flex justify-between gap-4 ${i < WORKING_HOURS_SUMMARY.length - 1 ? "border-b border-white/10 pb-2" : ""} ${
-                    h.hours === "Closed" ? "text-primary font-medium" : ""
+                    h.hours === "Closed" ? "text-primary-light font-medium" : ""
                   }`}
                 >
                   <span>{t(`hours.summary.${h.key}`)}</span>
                   <span>{"closed" in h ? t("hours.closed") : formatHours(h.hours, language)}</span>
                 </div>
               ))}
-              <p className="text-xs opacity-70 pt-2">{t("footer.emergencyOutsideHours")}</p>
+              <p className="text-xs pt-2">{t("footer.emergencyOutsideHours")}</p>
             </div>
           </div>
 
           {/* 3. Quick links */}
           <div className="space-y-4">
-            <h4 className="text-lg font-bold mb-4">{t("footer.quickLinks")}</h4>
+            <h2 className="text-lg font-sans font-bold mb-4">{t("footer.quickLinks")}</h2>
             {/* Two columns on phones halves the list height; py-1.5 gives each
                 link a ~32px tap target instead of the bare 17px text line. */}
             <ul className="grid grid-cols-2 gap-x-4 md:grid-cols-1 md:gap-y-2 text-sm opacity-90">
               {QUICK_LINKS.map((l) => (
                 <li key={l.path}>
-                  <Link href={l.path} className="block py-1.5 md:py-0 hover:text-primary transition-colors cursor-pointer">{t(`footer.links.${l.key}`)}</Link>
+                  <Link href={l.path} className="block py-1.5 md:py-0 hover:text-primary-light transition-colors cursor-pointer">{t(`footer.links.${l.key}`)}</Link>
                 </li>
               ))}
             </ul>
@@ -123,7 +123,7 @@ export function Footer() {
           {/* 4. Social and rating */}
           <div className="space-y-6">
             <div className="space-y-4">
-              <h4 className="text-lg font-bold">{t("footer.stayConnected")}</h4>
+              <h2 className="text-lg font-sans font-bold">{t("footer.stayConnected")}</h2>
               <div className="flex gap-4">
                 <a href={SOCIAL_LINKS.instagram} target="_blank" rel="noopener noreferrer" className="bg-white/10 p-2 rounded-full hover:bg-primary hover:text-white transition-colors" aria-label="Instagram"><Instagram className="h-5 w-5" /></a>
                 <a href={SOCIAL_LINKS.facebook} target="_blank" rel="noopener noreferrer" className="bg-white/10 p-2 rounded-full hover:bg-primary hover:text-white transition-colors" aria-label="Facebook"><Facebook className="h-5 w-5" /></a>
@@ -139,7 +139,7 @@ export function Footer() {
               <div className="flex items-center gap-1 text-yellow-400 mb-2" aria-hidden="true">
                 {[1, 2, 3, 4, 5].map((i) => <Star key={i} className="fill-current h-4 w-4" />)}
               </div>
-              <p className="text-xs opacity-80 inline-flex items-center gap-1">
+              <p className="text-xs opacity-90 inline-flex items-center gap-1">
                 {t("footer.ratingLine", { rating: GOOGLE_REVIEW_RATING.toFixed(1), count: GOOGLE_REVIEW_COUNT })} <ExternalLink className="h-3 w-3" />
               </p>
             </a>
@@ -147,7 +147,7 @@ export function Footer() {
         </div>
 
         {/* Legal */}
-        <div className="border-t border-white/10 pt-8 space-y-4 text-xs opacity-60">
+        <div className="border-t border-white/10 pt-8 space-y-4 text-xs opacity-80">
           <p className="max-w-4xl">
             {t("footer.disclaimer")}
           </p>

@@ -118,12 +118,48 @@ function RouteFallback() {
   );
 }
 
+// Back/Forward return to where the visitor was on that page; every other
+// navigation starts at the top. The position lives in the history entry
+// itself (history.state), so the same path twice in the stack still works.
+let restoreScrollY: number | null = null;
+if (typeof window !== "undefined") {
+  window.history.scrollRestoration = "manual";
+  window.addEventListener("popstate", (event) => {
+    const y = (event.state as { scrollY?: unknown } | null)?.scrollY;
+    restoreScrollY = typeof y === "number" ? y : 0;
+  });
+  let timer: number | undefined;
+  const saveScroll = () => {
+    window.clearTimeout(timer);
+    try {
+      window.history.replaceState({ ...(window.history.state ?? {}), scrollY: window.scrollY }, "");
+    } catch {
+      /* rate-limited — the position just isn't remembered */
+    }
+  };
+  // Debounced: Safari throws if replaceState runs ~100 times in 30 s.
+  window.addEventListener(
+    "scroll",
+    () => {
+      window.clearTimeout(timer);
+      timer = window.setTimeout(saveScroll, 150);
+    },
+    { passive: true },
+  );
+  // A link click can land inside the debounce window. Saving first (capture
+  // phase, before wouter navigates) keeps the position on the page being
+  // left instead of letting the pending write land on the next entry.
+  document.addEventListener("click", saveScroll, true);
+}
+
 function Router() {
   const [location] = useLocation();
 
   useEffect(() => {
+    const top = restoreScrollY ?? 0;
+    restoreScrollY = null;
     // Instant: a smooth scroll from the footer visibly drags the new page up.
-    window.scrollTo({ top: 0, behavior: "instant" });
+    window.scrollTo({ top, behavior: "instant" });
   }, [location]);
 
   return (
@@ -149,12 +185,14 @@ function Router() {
 
 function App() {
   return (
-    <ErrorBoundary>
-      <LanguageProvider>
+    // The boundary sits inside the provider: its fallback screen is translated,
+    // and useLanguage() throws outside LanguageProvider.
+    <LanguageProvider>
+      <ErrorBoundary>
         <Toaster />
         <Router />
-      </LanguageProvider>
-    </ErrorBoundary>
+      </ErrorBoundary>
+    </LanguageProvider>
   );
 }
 

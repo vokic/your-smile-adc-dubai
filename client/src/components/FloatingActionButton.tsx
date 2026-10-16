@@ -13,7 +13,8 @@ import { useLanguage } from "@/hooks/useLanguage";
  * Owner brief: "people here are lazy — if they have to scroll to find a
  * phone number, forget it. The button has to chase them: click me."
  *
- * Left  = WhatsApp (green, brand colour)
+ * Left  = WhatsApp (green; a darker shade of the #25D366 brand green so the
+ *         white label keeps 4.5:1 contrast — the brand green is 2:1)
  * Right = Call (primary). On /emergency it dials the emergency line.
  * No toggle, no hidden menu. Labels stay visible on every screen size.
  */
@@ -37,16 +38,17 @@ export function FloatingActionButton() {
           target="_blank"
           rel="noopener noreferrer"
           onClick={() => track("whatsapp_click", { source: "fab", page: location })}
-          className="pointer-events-auto group inline-flex items-center gap-2 sm:gap-3 rounded-full bg-[#25D366] text-white pl-3 pr-4 sm:pl-4 sm:pr-6 h-14 sm:h-16 shadow-[0_10px_30px_-5px_rgba(37,211,102,0.55)] ring-4 ring-white/70 hover:bg-[#1ebe5b] hover:scale-[1.04] active:scale-[0.98] transition-transform motion-safe:animate-fab-nudge"
+          className="pointer-events-auto group relative inline-flex items-center gap-2 sm:gap-3 rounded-full bg-[#15803D] text-white pl-3 pr-4 sm:pl-4 sm:pr-6 h-14 sm:h-16 shadow-[0_10px_30px_-5px_rgba(21,128,61,0.55)] ring-4 ring-white/70 hover:bg-[#166534] hover:scale-[1.04] active:scale-[0.98] transition-transform motion-safe:animate-fab-nudge"
           aria-label={t("fab.whatsappAria")}
           data-testid="button-fab-whatsapp"
         >
-          <span className="relative flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-full bg-white/20">
+          {/* Ripple around the whole pill; -inset-1 starts it at the outer edge of ring-4 */}
+          <span className="pointer-events-none absolute -inset-1 rounded-full motion-safe:animate-fab-ripple" aria-hidden="true" />
+          <span className="flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-full bg-white/20">
             <MessageCircle className="h-5 w-5 sm:h-6 sm:w-6" />
-            <span className="absolute -top-0.5 -right-0.5 h-3 w-3 rounded-full bg-white motion-safe:animate-ping opacity-80" aria-hidden="true" />
           </span>
           <span className="flex flex-col leading-tight text-left">
-            <span className="text-[11px] sm:text-xs font-medium opacity-90">{t("fab.bookNow")}</span>
+            <span className="text-[11px] sm:text-xs font-medium">{t("fab.bookNow")}</span>
             <span className="text-sm sm:text-base font-bold">{t("fab.whatsapp")}</span>
           </span>
         </a>
@@ -73,7 +75,7 @@ export function FloatingActionButton() {
             <Phone className="h-5 w-5 sm:h-6 sm:w-6" />
           </span>
           <span className="flex flex-col leading-tight text-left">
-            <span className="text-[11px] sm:text-xs font-medium opacity-90">
+            <span className="text-[11px] sm:text-xs font-medium">
               {isEmergency ? t("fab.emergencyLine") : t("fab.talkToUs")}
             </span>
             <span className="text-sm sm:text-base font-bold">{t("fab.callNow")}</span>

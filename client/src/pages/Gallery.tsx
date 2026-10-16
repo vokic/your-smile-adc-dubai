@@ -38,7 +38,7 @@ export default function Gallery() {
       </section>
 
       {categoriesWithCases.length === 0 ? (
-        <SmileTransformations title={t("gallery.emptyTitle")} subtitle={t("gallery.emptySubtitle")} showViewAll={false} />
+        <SmileTransformations title={t("gallery.emptyTitle")} emptySubtitle={t("gallery.emptySubtitle")} showViewAll={false} />
       ) : (
         categoriesWithCases.map((cat, i) => (
           <SmileTransformations

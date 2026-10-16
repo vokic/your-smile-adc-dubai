@@ -37,7 +37,7 @@ export default function Veneers() {
     <div className="flex flex-col min-h-screen">
       <SEO
         title={t("veneers.seoTitle")}
-        description={t("veneers.seoDescription")}
+        description={t("veneers.seoDescription", founderVars)}
         path="/veneers"
         jsonLd={[
           jsonLdService({
@@ -85,7 +85,7 @@ export default function Veneers() {
               .map((Icon, idx) => ({ Icon, label: tList("veneers.noPrepLabels")[idx] ?? "" }))
               .map(({ Icon, label }) => (
               <div key={label} className="p-5 bg-white/10 rounded-xl border border-white/15 text-center space-y-2">
-                <Icon className="h-7 w-7 text-primary mx-auto" />
+                <Icon className="h-7 w-7 text-primary-light mx-auto" />
                 <p className="font-bold">{label}</p>
               </div>
             ))}

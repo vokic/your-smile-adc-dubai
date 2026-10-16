@@ -161,7 +161,7 @@ export default function Services() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {tList("services.why", { brand: IMPLANT_BRAND }).map((b) => (
               <div key={b} className="flex items-start gap-4 p-6 bg-white/5 rounded-xl border border-white/10">
-                <ShieldCheck className="h-7 w-7 text-primary shrink-0" />
+                <ShieldCheck className="h-7 w-7 text-primary-light shrink-0" />
                 <p className="font-medium leading-snug">{b}</p>
               </div>
             ))}

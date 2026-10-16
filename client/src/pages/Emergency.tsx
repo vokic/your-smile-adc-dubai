@@ -107,7 +107,7 @@ export default function Emergency() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {cases.map((e) => (
               <div key={e.title} className="p-6 bg-card rounded-xl border-2 border-red-200 hover:shadow-sm transition-all space-y-3">
-                <h3 className="text-lg font-bold text-red-600 flex items-center gap-2"><AlertCircle className="h-5 w-5" />{e.title}</h3>
+                <h3 className="text-lg font-bold text-red-700 flex items-center gap-2"><AlertCircle className="h-5 w-5" />{e.title}</h3>
                 <p className="text-muted-foreground">{e.desc}</p>
               </div>
             ))}
@@ -120,7 +120,7 @@ export default function Emergency() {
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center p-8 md:p-12 rounded-3xl bg-secondary text-white">
             <div className="space-y-5">
-              <p className="inline-flex items-center gap-2 text-primary font-semibold uppercase tracking-wider text-sm"><HomeIcon className="h-4 w-4" /> {t("emergency.atHomeEyebrow")}</p>
+              <p className="inline-flex items-center gap-2 text-primary-light font-semibold uppercase tracking-wider text-sm"><HomeIcon className="h-4 w-4" /> {t("emergency.atHomeEyebrow")}</p>
               <h2 className="text-3xl md:text-4xl font-serif font-bold">{t("emergency.atHomeTitle")}</h2>
               <p className="text-white/80 text-lg leading-relaxed">{t("emergency.atHomeBody")}</p>
               <Button asChild variant="outline" className="rounded-full border-white text-white hover:bg-white hover:text-secondary gap-2">
@@ -129,7 +129,7 @@ export default function Emergency() {
             </div>
             <ul className="space-y-3">
               {tList("emergency.atHomePoints").map((i) => (
-                <li key={i} className="flex items-start gap-3 p-4 bg-white/10 rounded-xl border border-white/15"><CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" /> {i}</li>
+                <li key={i} className="flex items-start gap-3 p-4 bg-white/10 rounded-xl border border-white/15"><CheckCircle2 className="h-5 w-5 text-primary-light shrink-0 mt-0.5" /> {i}</li>
               ))}
             </ul>
           </div>
@@ -154,7 +154,7 @@ export default function Emergency() {
             <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary">{t("emergency.ctaTitle")}</h2>
             <p className="text-muted-foreground text-lg">{t("emergency.ctaBody")}</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-              <Button className="bg-red-500 hover:bg-red-600 text-white gap-2 text-lg font-bold rounded-full" size="lg" onClick={() => setShowModal(true)}>
+              <Button className="bg-red-700 hover:bg-red-800 text-white gap-2 text-lg font-bold rounded-full" size="lg" onClick={() => setShowModal(true)}>
                 <Phone className="h-5 w-5" /> {t("emergency.callLine")}
               </Button>
               <Button asChild variant="outline" className="gap-2 border-2 border-red-300 rounded-full">

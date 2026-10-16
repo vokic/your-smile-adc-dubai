@@ -27,6 +27,7 @@
 
   --color-primary: hsl(var(--primary));
   --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-primary-light: hsl(var(--primary-light));
 
   --color-secondary: hsl(var(--secondary));
   --color-secondary-foreground: hsl(var(--secondary-foreground));
@@ -50,7 +51,7 @@
   --color-chart-4: hsl(var(--chart-4));
   --color-chart-5: hsl(var(--chart-5));
 
-  --font-sans: 'Lato', sans-serif;
+  --font-sans: 'Lato', 'Carlito', sans-serif;
   --font-serif: 'Playfair Display', serif;
 
   --radius: 1rem;
@@ -69,16 +70,23 @@
   --popover: 0 0% 100%;
   --popover-foreground: 219 32% 41%;
 
-  /* Primary: Vibrant Blue */
-  --primary: 201 72% 55%; /* #37A8E3 - Vibrant Blue */
+  /* Primary: brand blue. 37% lightness is the lightest shade that keeps
+     4.5:1 (WCAG AA) for white button text and for blue text on white, cream
+     and its own /10 tint. The original #37A8E3 (55%) was 2.75:1. */
+  --primary: 201 72% 37%; /* #1A73A2 */
   --primary-foreground: 0 0% 100%; /* White text on blue */
+  /* Light blue for text and accents on dark (secondary) surfaces, where the
+     darker primary would disappear. 5.6:1 on secondary, 4.9:1 on the
+     translucent white cards that sit on it. */
+  --primary-light: 201 72% 80%; /* #A7D7F1 */
 
-  /* Secondary: Dark Blue */
-  --secondary: 219 32% 41%; /* #394C6F - Dark Blue */
+  /* Secondary: Dark Blue. Was 41% lightness (#475F8A) — a mis-conversion of
+     the intended #394C6F, and too light for white/70 text on it. */
+  --secondary: 219 32% 33%; /* #394C6F - Dark Blue */
   --secondary-foreground: 0 0% 100%; /* White text on dark blue */
 
   --muted: 60 37% 94%; /* Cream background */
-  --muted-foreground: 219 32% 50%;
+  --muted-foreground: 219 32% 45%; /* body copy: 4.5:1 also on tinted (red-50, muted) panels */
 
   --accent: 201 72% 85%; /* Very light blue for hover states */
   --accent-foreground: 219 32% 41%;
@@ -88,7 +96,7 @@
 
   --border: 60 37% 88%; /* Light cream borders */
   --input: 60 37% 94%;
-  --ring: 201 72% 55%; /* Blue ring */
+  --ring: 201 72% 37%; /* Blue ring, same as primary (3:1 focus indicator) */
 
   --chart-1: 201 72% 55%;
   --chart-2: 219 32% 41%;
@@ -153,41 +161,39 @@
   }
 }
 
-/* Scroll Animations */
-@layer utilities {
-  .scroll-fade-in {
-    @apply opacity-0 animate-in fade-in slide-in-from-bottom-6 duration-700;
-  }
-
-  .scroll-slide-left {
-    @apply opacity-0 animate-in slide-in-from-right-10 duration-700;
-  }
-
-  .scroll-slide-right {
-    @apply opacity-0 animate-in slide-in-from-left-10 duration-700;
-  }
-
-  .hover-lift {
-    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-lg;
-  }
-
-  .gradient-primary {
-    @apply bg-gradient-to-r from-primary via-primary/90 to-primary/80;
-  }
-
-  .gradient-secondary {
-    @apply bg-gradient-to-b from-secondary to-secondary/90;
+/* Visitors who ask the OS for less motion get none: entry animations,
+   accordion slides, hover transitions and the FAB nudge all finish
+   instantly. (The FAB and carousel also check this in their own code.) */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
-/* Floating contact bar: a gentle nudge for the first few seconds after load,
-   then still. Disabled entirely under prefers-reduced-motion via the
-   motion-safe: variant on the element. */
-@keyframes fab-nudge {
-  0%, 70%, 100% { transform: translateY(0); }
-  76% { transform: translateY(-6px); }
-  82% { transform: translateY(0); }
-  88% { transform: translateY(-3px); }
-}
-.animate-fab-nudge {
-  animation: fab-nudge 4s ease-in-out 2;
+/* Floating contact bar animations. Registered as theme tokens (not plain
+   classes) so Tailwind generates `animate-fab-*` utilities and the
+   motion-safe: variant on the elements can switch them off under
+   prefers-reduced-motion. */
+@theme {
+  /* A gentle nudge for the first few seconds after load, then still. */
+  --animate-fab-nudge: fab-nudge 4s ease-in-out 2;
+  /* WhatsApp ripple: a ring that radiates from the whole pill. Animates the
+     box-shadow spread rather than scale so the ring grows by the same amount
+     on every side of the wide button. */
+  --animate-fab-ripple: fab-ripple 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+
+  @keyframes fab-nudge {
+    0%, 70%, 100% { transform: translateY(0); }
+    76% { transform: translateY(-6px); }
+    82% { transform: translateY(0); }
+    88% { transform: translateY(-3px); }
+  }
+  @keyframes fab-ripple {
+    0% { box-shadow: 0 0 0 0 rgba(21, 128, 61, 0.6); }
+    100% { box-shadow: 0 0 0 16px rgba(21, 128, 61, 0); }
+  }
 }

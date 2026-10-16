@@ -28,7 +28,7 @@ export const BLOG_ARTICLES: readonly BlogArticle[] = [
   {
     slug: "dental-veneers-guide",
     title: "The Complete Guide to Dental Veneers: Transform Your Smile",
-    seoTitle: "Complete Guide to Dental Veneers in Dubai",
+    seoTitle: "Dental Veneers: The Complete Patient Guide",
     seoDescription:
       "A guide to no-prep ceramic veneers in Dubai: no shaving, no injections, just two visits. How long veneers last, who they suit and how to look after them.",
     excerpt:
@@ -40,7 +40,7 @@ export const BLOG_ARTICLES: readonly BlogArticle[] = [
   {
     slug: "invisalign-vs-braces",
     title: "Invisalign vs Traditional Braces: Which Is Right for You?",
-    seoTitle: "Invisalign vs Braces in Dubai: Pros & Cons",
+    seoTitle: "Invisalign or Braces? How to Choose",
     seoDescription:
       "Invisalign or braces? Compare clear aligners with metal and ceramic braces on comfort, visibility, treatment time and results, with advice from Dubai JLT.",
     excerpt:
@@ -57,7 +57,7 @@ export const BLOG_ARTICLES: readonly BlogArticle[] = [
   {
     slug: "teeth-whitening-myths",
     title: "Professional Teeth Whitening: Myths vs Reality",
-    seoTitle: "Teeth Whitening in Dubai: Myths vs Reality",
+    seoTitle: "Teeth Whitening Myths: What Really Works",
     seoDescription:
       "Does whitening damage enamel? Do strips work? We separate teeth whitening myths from facts and compare laser, in-office and take-home options in Dubai.",
     excerpt:
@@ -86,7 +86,7 @@ export const BLOG_ARTICLES: readonly BlogArticle[] = [
   {
     slug: "dental-implants-missing-teeth",
     title: "Dental Implants: The Ultimate Solution for Missing Teeth",
-    seoTitle: "Dental Implants for Missing Teeth in Dubai",
+    seoTitle: "Missing Teeth? How Dental Implants Help",
     seoDescription:
       "How dental implants replace missing teeth: titanium or ceramic, each treatment step, bone grafting and the lifetime warranty on our implants in Dubai JLT.",
     excerpt:
@@ -132,7 +132,7 @@ export const BLOG_ARTICLES: readonly BlogArticle[] = [
   {
     slug: "digital-dental-xrays",
     title: "How Digital X-Rays Are Revolutionizing Dental Diagnostics",
-    seoTitle: "Digital Dental X-Rays, OPG & CBCT in Dubai",
+    seoTitle: "Digital Dental X-Rays: OPG and CBCT Explained",
     seoDescription:
       "How digital X-rays, OPG panoramic, 3D CBCT and cephalometric imaging improve dental diagnosis and treatment planning with low radiation, in Dubai JLT.",
     excerpt:
@@ -144,7 +144,7 @@ export const BLOG_ARTICLES: readonly BlogArticle[] = [
   {
     slug: "gum-disease-guide",
     title: "The Truth About Gum Disease: Symptoms, Treatment, and Prevention",
-    seoTitle: "Gum Disease Symptoms & Treatment in Dubai",
+    seoTitle: "Gum Disease: Early Signs and What to Do",
     seoDescription:
       "Bleeding gums? The warning signs of gum disease, how gingivitis and periodontitis are treated, and how to prevent gum problems. Expert advice in Dubai.",
     excerpt:

@@ -1,9 +1,9 @@
 // Post-build prerender for the static SPA.
 // Serves `dist/public` over HTTP, navigates a headless Chromium to each
 // route, waits for the React app + lazy chunks to settle, and writes the
-// rendered HTML to dist/public/<route>/index.html. Goal: every route ships
-// real first-byte HTML with the correct <title>/<meta>/og/JSON-LD instead
-// of the SPA shell.
+// rendered HTML to a flat file per route (/veneers → veneers.html, see
+// outputPathForRoute). Goal: every route ships real first-byte HTML with the
+// correct <title>/<meta>/og/JSON-LD instead of the SPA shell.
 
 import http from "node:http";
 import fs from "node:fs";

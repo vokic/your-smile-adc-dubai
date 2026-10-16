@@ -3,8 +3,6 @@ import enJson from '../locales/en.json';
 
 type Language = 'en' | 'ru' | 'de';
 
-export const LANGUAGES: readonly Language[] = ['en', 'ru', 'de'];
-
 /** A locale file is an arbitrarily nested tree of strings / string arrays. */
 type TranslationItem = Record<string, string>;
 type TranslationValue = string | string[] | TranslationItem[] | { [key: string]: TranslationValue };
@@ -211,6 +209,14 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     { value: { language, setLanguage: handleSetLanguage, t, tList, tItems, tOr, tListOr } },
     children,
   );
+}
+
+/**
+ * Lower-case a title-case label (a treatment or category name) for use
+ * mid-sentence. German capitalises every noun, so there it stays as is.
+ */
+export function inlineCase(text: string, language: string): string {
+  return language === 'de' ? text : text.toLowerCase();
 }
 
 export function useLanguage() {

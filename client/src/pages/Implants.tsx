@@ -126,7 +126,7 @@ export default function Implants() {
 
       <section className="py-16 md:py-24 bg-secondary text-white">
         <div className="container mx-auto px-4 max-w-4xl flex flex-col md:flex-row items-center gap-6">
-          <ShieldCheck className="h-14 w-14 text-primary shrink-0" />
+          <ShieldCheck className="h-14 w-14 text-primary-light shrink-0" />
           <div className="text-center md:text-left">
             <h2 className="text-2xl md:text-3xl font-serif font-bold mb-2">{t("implants.warrantyTitle")}</h2>
             <p className="text-white/80 text-lg">{t("implants.warrantyBody", vars)}</p>

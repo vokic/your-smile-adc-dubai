@@ -17,7 +17,10 @@ page renders an honest fallback instead of placeholder art or made-up data.
 | Hours | Mon/Wed/Sat 12–21, Tue/Thu/Sun 9–18, Fri closed | `WORKING_HOURS`, `WORKING_HOURS_SUMMARY` |
 | Doctors | 7 from the previous site, no years-of-experience figures, photos downloaded | `content.ts` DOCTORS, `attached_assets/doctors/` |
 | Social | Real Instagram + Facebook URLs | `SOCIAL_LINKS` |
-| Implants | JD Evolution Plus, lifetime warranty (clinic/supplier agreement) | `IMPLANT_BRAND`, `IMPLANT_WARRANTY` |
+| Implants | JD Evolution Plus, lifetime warranty (clinic/supplier agreement) | `IMPLANT_BRAND`, locale key `clinic.implantWarranty` |
+| Sedation | Offered (local anaesthesia as standard, sedation for anxious patients) — owner confirmed Oct 2026 | `content/services/dental-surgery.ts` |
+| Brand colours | Darker brand blue `#1A73A2` for buttons/text (owner approved Oct 2026; the old `#37A8E3` failed contrast), light blue `#A7D7F1` (`primary-light`) for text on navy, navy `#394C6F` | `client/src/index.css` |
+| Advertising wording | No comparisons with other clinics, no superlatives ("top-rated", "world-class"), no absolute "painless" claims — DHA advertising rules (owner, Oct 2026) | locale files |
 | Veneers | Ceramic only, no-prep, 2 visits (45–60 / 90–120 min), 3–10 days | `pages/Veneers.tsx` |
 | Prices | None anywhere; `PackagesCallout` instead | all treatment pages |
 | Tourism | Two packages: Treatment-Only / All-Inclusive | `pages/DentalTourism.tsx` |
@@ -31,15 +34,15 @@ page renders an honest fallback instead of placeholder art or made-up data.
 Search the repo for these markers to find the exact spot:
 
 1. **Before/after photos** → push entries into `TRANSFORMATIONS` in `client/src/lib/content.ts` (images under `attached_assets/gallery/<category>/`). Until then Home/Gallery/treatment pages show a "gallery coming soon → Instagram" card.
-2. **Clinic interior photos** → pass as `backgroundImage` to `<ServiceHero>` on About/Contact/At-Home and as `src` on `<Visual>` blocks. Until then a branded gradient renders.
+2. **Clinic interior photos** → replace the illustrative stock images (`lib/images.ts`: `team`, `reception`, `handshake`) used as `backgroundImage` on About/Doctors/Contact/At-Home/Tourism and as `src` on `<Visual>` blocks. Their alt texts are neutral (they never say "our clinic"); alt text lives in the locale files under `images.*`.
 3. **Patient video testimonials** → YouTube IDs into `VIDEO_TESTIMONIALS` in `client/src/components/VideoTestimonials.tsx`.
 4. **Google review texts** (8 best, with reviewer first name + initial) → `TESTIMONIALS` in `content.ts`. Currently the three testimonials carried over from the old site.
 5. **English logo** → replace `attached_assets/logo_1764501679029.png` and run `node script/optimize-images.mjs`; it regenerates the header logo, `logo.png` (JSON-LD), favicon, apple-touch-icon and `og-image.jpg`. Adjust `LOGO_WORDMARK_BOTTOM` / `TOOTH_BOX` in the script to the new file.
 6. **Dr. Youssef Saweres** — listed on our old draft but not on the previous website; removed until the owner confirms.
 7. **Ceramic implant brand** — owner still checking; copy says "metal-free ceramic implants available for selected cases" with no brand.
 8. **Analytics IDs** → Netlify env vars `VITE_GTM_ID` (GTM container) and `VITE_GSC_VERIFICATION` (Search Console HTML-tag token). GA4 + Meta Pixel are configured inside GTM, not in code. With the vars unset the snippets are stripped at build time. In GTM a plain Google tag (GA4 ID) and the Meta Pixel are enough for page views: both pick up SPA navigations themselves and the app sends no page_view of its own. Mark `whatsapp_click`, `call_click` and `form_submit` (dataLayer events) as GA4 key events.
-9. **Twitter/X** — none; `TWITTER_HANDLE` stays empty.
-10. **Languages** — owner wants RU + AR (+ IT instead of DE, undecided). URL-prefixed i18n is the next phase; DE switcher entry stays until decided.
+9. **Twitter/X** — none, so no `twitter:site` tag.
+10. **Languages** — owner wants RU + AR (+ IT instead of DE, undecided). URL-prefixed i18n is the next phase; DE switcher entry stays until decided. In RU/DE the 28 treatment sub-pages (`content/services/*.ts`) and the 9 blog article bodies are still English (only menus, titles and SEO tags are translated); owner said this is fine for now (Oct 2026).
 11. **Blog articles** — done: the 9 articles (`client/src/content/blog-bodies.ts`, `blog.ts`) were approved by the owner in Oct 2026. Do **not** add a "Medically reviewed by" line or `reviewedBy` schema: the owner explicitly does not want it.
 12. **Newsletter** — none for now (owner, Oct 2026). Signup form removed from Footer and Blog, the Netlify form from `index.html` and the newsletter lines from the privacy notice. To bring it back, restore all four from git history.
 13. **Real clinic photo** for the `image` field of the Dentist JSON-LD (`seo.ts`), which uses the logo until interior photos arrive.

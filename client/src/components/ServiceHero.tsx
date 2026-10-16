@@ -58,7 +58,7 @@ export function ServiceHero({
           src={typeof backgroundImage === "string" ? backgroundImage : backgroundImage.src}
           srcSet={typeof backgroundImage === "string" ? undefined : backgroundImage.srcSet}
           sizes="100vw"
-          alt={typeof backgroundImage === "string" ? imageAlt : backgroundImage.alt}
+          alt={typeof backgroundImage === "string" ? imageAlt : t(backgroundImage.altKey)}
           className="absolute inset-0 h-full w-full object-cover"
           loading="eager"
           fetchPriority="high"
@@ -79,7 +79,7 @@ export function ServiceHero({
       <div className="container relative h-full mx-auto px-4 flex items-center py-12 md:py-0">
         <div className="max-w-3xl space-y-6">
           {breadcrumbs && breadcrumbs.length > 0 && (
-            <nav aria-label={t("common.breadcrumbAria")} className="text-sm text-white/70">
+            <nav aria-label={t("common.breadcrumbAria")} className="text-sm text-white/90">
               <ol className="flex flex-wrap items-center gap-1">
                 {breadcrumbs.map((c, i) => (
                   <li key={c.path} className="flex items-center gap-1">
@@ -111,7 +111,7 @@ export function ServiceHero({
               size="lg"
               className={`gap-2 rounded-full ${
                 isEmergency
-                  ? "bg-yellow-400 text-red-700 hover:bg-yellow-300 font-bold"
+                  ? "bg-yellow-400 text-red-800 hover:bg-yellow-300 font-bold"
                   : "bg-primary text-primary-foreground hover:bg-primary/90"
               }`}
               data-testid="button-hero-primary"

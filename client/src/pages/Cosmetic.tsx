@@ -136,7 +136,7 @@ export default function Cosmetic() {
             <div className="flex flex-wrap justify-center gap-3">
               {tList("cosmetic.whyChips", founderVars).map((item) => (
                 <span key={item} className="inline-flex items-center gap-2 bg-white/10 border border-white/15 rounded-full px-4 py-2 text-sm">
-                  <CheckCircle2 className="h-4 w-4 text-primary" /> {item}
+                  <CheckCircle2 className="h-4 w-4 text-primary-light" /> {item}
                 </span>
               ))}
             </div>

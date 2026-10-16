@@ -13,25 +13,26 @@ export interface WebImage {
   src: string;
   /** `srcset` with width descriptors. */
   srcSet: string;
-  alt: string;
+  /** Translation key of the alt text (images.* in the locale files). */
+  altKey: string;
 }
 
-function hero(name: string, alt: string): WebImage {
+function hero(name: string, altKey: string): WebImage {
   return {
     src: `/images/hero/${name}-1920.webp`,
     srcSet: `/images/hero/${name}-828.webp 828w, /images/hero/${name}-1280.webp 1280w, /images/hero/${name}-1920.webp 1920w`,
-    alt,
+    altKey,
   };
 }
 
 export const IMG = {
-  clinicSmile: hero("hero-clinic-smile", "Smiling patient during a dental check-up with the Dubai skyline behind"),
-  implants: hero("hero-implants", "Illustration of a dental implant with a ceramic crown between natural teeth"),
-  crowns: hero("hero-crowns", "Dental laboratory models with ceramic crowns and bridges"),
-  treatmentPlan: hero("visual-treatment-plan", "Dentist explaining a digital treatment plan to a patient"),
-  handshake: hero("visual-handshake", "Dentist welcoming a patient at the clinic reception"),
-  team: hero("hero-team", "Dental team in a modern clinic"),
-  reception: hero("visual-reception", "Modern dental clinic reception area"),
+  clinicSmile: hero("hero-clinic-smile", "images.clinicSmile"),
+  implants: hero("hero-implants", "images.implants"),
+  crowns: hero("hero-crowns", "images.crowns"),
+  treatmentPlan: hero("visual-treatment-plan", "images.treatmentPlan"),
+  handshake: hero("visual-handshake", "images.handshake"),
+  team: hero("hero-team", "images.team"),
+  reception: hero("visual-reception", "images.reception"),
 } as const;
 
 /** Hero backdrop per treatment category (used by SubServicePage). */

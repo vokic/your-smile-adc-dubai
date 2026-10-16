@@ -124,7 +124,7 @@ export default function BlogPost() {
         <div className="absolute inset-0 bg-gradient-to-r from-secondary via-secondary/90 to-secondary/40" />
         <div className="container relative mx-auto px-4 py-14 md:py-20">
           <div className="max-w-3xl space-y-5">
-            <nav aria-label={t("common.breadcrumbAria")} className="text-sm text-white/70">
+            <nav aria-label={t("common.breadcrumbAria")} className="text-sm text-white/90">
               <ol className="flex flex-wrap items-center gap-1">
                 {crumbs.slice(0, -1).map((c, i) => (
                   <li key={c.path} className="flex items-center gap-1">
@@ -134,7 +134,7 @@ export default function BlogPost() {
                 ))}
               </ol>
             </nav>
-            <p className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-primary">
+            <p className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-primary-light">
               <Tag className="h-4 w-4" /> {article.category}
             </p>
             <h1 className="text-3xl md:text-5xl font-serif font-bold text-white leading-tight">{article.title}</h1>

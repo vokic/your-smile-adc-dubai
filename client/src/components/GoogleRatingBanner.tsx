@@ -21,7 +21,7 @@ export function GoogleRatingBanner() {
       <div className="absolute inset-0 opacity-[0.06] bg-[radial-gradient(circle_at_20%_20%,white,transparent_40%),radial-gradient(circle_at_80%_80%,white,transparent_40%)]" />
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col items-center text-center space-y-6 mb-14">
-          <div className="flex gap-1" aria-label={t("googleRating.starsAria", { rating })}>
+          <div className="flex gap-1" role="img" aria-label={t("googleRating.starsAria", { rating })}>
             {[1, 2, 3, 4, 5].map((i) => (
               <Star key={i} className="h-8 w-8 text-yellow-400 fill-current" />
             ))}
@@ -58,12 +58,12 @@ export function GoogleRatingBanner() {
               </div>
               <p className="italic text-white/90 leading-relaxed flex-1">"{t(`patientQuotes.${quote.key}.text`)}"</p>
               <footer className="mt-6 flex items-center gap-3">
-                <div className="h-10 w-10 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold text-sm">
+                <div className="h-10 w-10 rounded-full bg-primary-light/20 flex items-center justify-center text-white font-bold text-sm">
                   {quote.author.charAt(0)}
                 </div>
                 <div>
                   <p className="text-sm font-bold text-white">{quote.author}</p>
-                  <p className="text-xs text-white/60">{t(`patientQuotes.${quote.key}.meta`)}</p>
+                  <p className="text-xs text-white/80">{t(`patientQuotes.${quote.key}.meta`)}</p>
                 </div>
               </footer>
             </blockquote>

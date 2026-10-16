@@ -6,6 +6,7 @@ import { SEO } from "@/components/SEO";
 import { useLanguage } from "@/hooks/useLanguage";
 import { REGULAR_PHONE, whatsappLink } from "@/lib/constants";
 import { jsonLdBreadcrumb } from "@/lib/seo";
+import { track } from "@/lib/analytics";
 import {
   BLOG_ARTICLES,
   blogPath,
@@ -85,7 +86,8 @@ export default function Blog() {
             <div className="relative">
               <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 h-5 w-5 text-muted-foreground" />
               <input
-                type="text"
+                type="search"
+                aria-label={t("blog.searchPlaceholder")}
                 placeholder={t("blog.searchPlaceholder")}
                 value={searchTerm}
                 onChange={handleSearch}
@@ -239,13 +241,13 @@ export default function Blog() {
             <p className="text-muted-foreground text-lg">{t("blog.ctaBody")}</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
               <Button asChild className="bg-primary text-primary-foreground hover:bg-primary/90 gap-2 rounded-full">
-                <a href={whatsappLink(t("common.whatsappBookMessageGeneric"))} target="_blank" rel="noopener noreferrer">
+                <a href={whatsappLink(t("common.whatsappBookMessageGeneric"))} target="_blank" rel="noopener noreferrer" onClick={() => track("whatsapp_click", { source: "blog" })}>
                   <MessageCircle className="h-4 w-4" />
                   {t("common.bookOnWhatsapp")}
                 </a>
               </Button>
               <Button asChild variant="outline" className="gap-2 rounded-full">
-                <a href={`tel:${REGULAR_PHONE}`}>
+                <a href={`tel:${REGULAR_PHONE}`} onClick={() => track("call_click", { source: "blog", line: "regular" })}>
                   <Phone className="h-4 w-4" />
                   {t("common.callNow")}
                 </a>

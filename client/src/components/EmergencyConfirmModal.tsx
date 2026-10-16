@@ -25,7 +25,7 @@ export function EmergencyConfirmModal({
   const { t, tList } = useLanguage();
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="max-w-md rounded-xl p-8" aria-describedby="emergency-description">
+      <DialogContent className="max-w-md rounded-xl p-8" aria-describedby="emergency-description" closeLabel={t("common.close")}>
         <DialogHeader>
           <div className="flex items-center gap-3 mb-2">
             <AlertTriangle className="h-6 w-6 text-red-500" aria-hidden="true" />
@@ -53,7 +53,7 @@ export function EmergencyConfirmModal({
           </p>
           <p className="pt-4 font-bold text-foreground text-lg">
             {t("emergencyModal.numberLabel")}{" "}
-            <span className="text-red-600 text-xl" aria-label={t("emergencyModal.numberAria", { phone: phoneNumber })}>
+            <span className="text-red-700 text-xl">
               {phoneNumber}
             </span>
           </p>

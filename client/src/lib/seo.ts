@@ -3,6 +3,7 @@ import {
   CLINIC_CITY,
   CLINIC_EMAIL,
   CLINIC_FOUNDED_YEAR,
+  CLINIC_GEO,
   CLINIC_MAPS_URL,
   CLINIC_NAME,
   CLINIC_SHORT_NAME,
@@ -13,8 +14,10 @@ import {
   SOCIAL_LINKS,
   WORKING_HOURS,
 } from "./constants";
+import routesJson from "./routes.json";
 
-export const SITE_URL = "https://yoursmileadvanceddental.ae";
+/** Production origin, set once in routes.json (also used by sitemap/robots). */
+export const SITE_URL = routesJson.siteUrl;
 export const SITE_NAME = CLINIC_NAME;
 /**
  * Appended to every <title>. The short brand keeps titles near the ~60
@@ -27,8 +30,6 @@ export const DEFAULT_OG_IMAGE = "/og-image.jpg";
 export const DEFAULT_OG_IMAGE_SIZE = { width: 1200, height: 630 } as const;
 /** Wordmark generated from the logo; swap when the English logo arrives. */
 export const LOGO_URL = `${SITE_URL}/logo.png`;
-// The clinic has no X/Twitter account. Leave empty until it does.
-export const TWITTER_HANDLE = "";
 
 const CLINIC_ID = `${SITE_URL}/#clinic`;
 const WEBSITE_ID = `${SITE_URL}/#website`;
@@ -107,6 +108,7 @@ export function jsonLdLocalBusiness() {
     description:
       "Dental center in Dubai JLT specializing in complex cases: emergency care, Hollywood smiles, full-mouth implant rehabilitation, no-prep ceramic veneers, crowns, orthodontics and private at-home dental visits.",
     address: postalAddress(),
+    geo: { "@type": "GeoCoordinates", ...CLINIC_GEO },
     hasMap: CLINIC_MAPS_URL,
     telephone: REGULAR_PHONE,
     email: CLINIC_EMAIL,
@@ -189,8 +191,10 @@ export function jsonLdArticle(opts: {
     dateModified: opts.dateModified ?? opts.datePublished,
     image: opts.image ?? `${SITE_URL}${DEFAULT_OG_IMAGE}`,
     inLanguage: "en",
-    author: { "@type": "Organization", name: SITE_NAME, url: SITE_URL },
-    publisher: { "@type": "Organization", name: SITE_NAME, logo: { "@type": "ImageObject", url: LOGO_URL } },
+    // The clinic itself (same @id as the Dentist entity), not an anonymous
+    // Organization that Google could read as a different publisher.
+    author: clinicRef(),
+    publisher: { ...clinicRef(), logo: { "@type": "ImageObject", url: LOGO_URL } },
   };
 }
 

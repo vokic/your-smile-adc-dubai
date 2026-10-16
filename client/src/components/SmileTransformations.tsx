@@ -8,7 +8,7 @@ import {
   type Transformation,
   type TransformationCategory,
 } from "@/lib/content";
-import { useLanguage } from "@/hooks/useLanguage";
+import { inlineCase, useLanguage } from "@/hooks/useLanguage";
 
 interface SmileTransformationsProps {
   /** Show only one category (used on treatment pages). */
@@ -17,7 +17,10 @@ interface SmileTransformationsProps {
   limit?: number;
   /** Both default to the translated gallery heading / subheading. */
   title?: string;
+  /** Shown only once there are cases: it promises real results. */
   subtitle?: string;
+  /** Shown instead of the subtitle while the gallery is still empty. */
+  emptySubtitle?: string;
   showViewAll?: boolean;
   bgColor?: "bg-background" | "bg-muted/30";
 }
@@ -32,6 +35,7 @@ export function SmileTransformations({
   limit,
   title,
   subtitle,
+  emptySubtitle,
   showViewAll = true,
   bgColor = "bg-background",
 }: SmileTransformationsProps) {
@@ -46,7 +50,11 @@ export function SmileTransformations({
       <div className="container mx-auto px-4">
         <div className="text-center mb-14 space-y-4 max-w-3xl mx-auto">
           <h2 className="text-3xl md:text-5xl font-serif font-bold text-secondary">{title ?? t("transformations.defaultTitle")}</h2>
-          <p className="text-muted-foreground text-lg">{subtitle ?? t("transformations.defaultSubtitle")}</p>
+          {items.length > 0 ? (
+            <p className="text-muted-foreground text-lg">{subtitle ?? t("transformations.defaultSubtitle")}</p>
+          ) : (
+            emptySubtitle && <p className="text-muted-foreground text-lg">{emptySubtitle}</p>
+          )}
         </div>
 
         {items.length === 0 ? (
@@ -74,8 +82,8 @@ export function SmileTransformations({
 }
 
 function BeforeAfterPair({ item }: { item: Transformation }) {
-  const { t } = useLanguage();
-  const category = t(`transformationCategories.${item.category}`).toLowerCase();
+  const { t, language } = useLanguage();
+  const category = inlineCase(t(`transformationCategories.${item.category}`), language);
   return (
     <figure className="space-y-3">
       <div className="grid grid-cols-2 gap-3">
@@ -97,11 +105,13 @@ function BeforeAfterPair({ item }: { item: Transformation }) {
 }
 
 function ComingSoon() {
-  const { t } = useLanguage();
-  const categories = TRANSFORMATION_CATEGORIES.slice(0, 3)
-    .map((c) => t(`transformationCategories.${c}`))
-    .join(", ")
-    .toLowerCase();
+  const { t, language } = useLanguage();
+  const categories = inlineCase(
+    TRANSFORMATION_CATEGORIES.slice(0, 3)
+      .map((c) => t(`transformationCategories.${c}`))
+      .join(", "),
+    language,
+  );
   return (
     <div className="max-w-3xl mx-auto rounded-2xl border border-border bg-card p-10 text-center space-y-5">
       <p className="text-secondary text-lg font-medium">

@@ -32,7 +32,7 @@ export default function FAQ() {
         <div className="container relative h-full mx-auto px-4 flex items-center py-12 md:py-0">
           <div className="max-w-3xl space-y-6">
             <h1 className="text-4xl md:text-6xl font-serif font-bold text-white leading-tight">
-              {t("faq.heroTitle")} <span className="text-primary">{t("faq.heroTitleAccent")}</span>
+              {t("faq.heroTitle")} <span className="text-primary-light">{t("faq.heroTitleAccent")}</span>
             </h1>
             <p className="text-xl text-gray-200 font-light max-w-2xl">{t("faq.heroSubtitle")}</p>
             <div className="flex flex-col sm:flex-row gap-4 pt-4">

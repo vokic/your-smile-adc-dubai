@@ -81,6 +81,8 @@ export const CLINIC_AREA = "Jumeirah Lake Towers";
 export const CLINIC_CITY = "Dubai";
 export const CLINIC_ADDRESS = `${CLINIC_STREET}, ${CLINIC_AREA}, ${CLINIC_CITY}, UAE`;
 export const CLINIC_MAPS_URL = "https://maps.app.goo.gl/KrBurSoUigfgZ1df7";
+/** Pin of the clinic's Google Maps listing (the place behind CLINIC_MAPS_URL). */
+export const CLINIC_GEO = { latitude: 25.0641917, longitude: 55.1380504 } as const;
 
 /**
  * Source for the map iframes. Google geocodes the `q` parameter on its side,
@@ -112,21 +114,9 @@ export const FOUNDER = {
 } as const;
 
 // Implants
+// The warranty and positioning copy is translated, so it lives in the locale
+// files (clinic.implantWarranty, clinic.specialties).
 export const IMPLANT_BRAND = "JD Evolution Plus";
-export const IMPLANT_WARRANTY =
-  `Lifetime warranty on ${IMPLANT_BRAND} implants, backed by our supplier agreement in Dubai.`;
-
-// Positioning — the one line the whole site repeats
-export const CLINIC_TAGLINE =
-  "Specialists in complex cases: emergency care, Hollywood smiles and complete smile transformations.";
-export const CLINIC_SPECIALTIES = [
-  "Emergency dental care",
-  "Hollywood smile",
-  "Complete smile transformations",
-  "Smile transformation with implants",
-  "Smile transformation with veneers",
-  "Smile transformation with crowns & bridges",
-] as const;
 
 // Legal
 export const LEGAL_LAST_UPDATED = "14 October 2026";

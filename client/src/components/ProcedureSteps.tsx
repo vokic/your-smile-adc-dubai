@@ -83,7 +83,7 @@ export function ProcedureSteps({
                 <h3 className="text-lg sm:text-xl font-bold text-green-700 mb-2">
                   {t("procedure.completeTitle")}
                 </h3>
-                <p className="text-green-600">
+                <p className="text-green-700">
                   {t("procedure.completeBody")}
                 </p>
               </div>

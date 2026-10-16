@@ -4,13 +4,11 @@ import { Button } from "@/components/ui/button";
 import {
   REGULAR_PHONE,
   REGULAR_PHONE_DISPLAY,
-  WHATSAPP_PHONE,
+  whatsappLink,
 } from "@/lib/constants";
 import { SEO } from "@/components/SEO";
 import { track } from "@/lib/analytics";
 import { useLanguage } from "@/hooks/useLanguage";
-
-const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_PHONE.replace(/\D/g, "")}`;
 
 export default function Thanks() {
   const { t } = useLanguage();
@@ -41,7 +39,7 @@ export default function Thanks() {
             className="bg-primary text-primary-foreground hover:bg-primary/90 gap-2 rounded-full"
           >
             <a
-              href={WHATSAPP_LINK}
+              href={whatsappLink()}
               target="_blank"
               rel="noopener noreferrer"
               aria-label={t("thanks.whatsappAria")}

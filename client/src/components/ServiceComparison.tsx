@@ -39,10 +39,17 @@ export function ServiceComparison({
 
   const renderCell = (value: boolean | string) => {
     if (typeof value === "boolean") {
+      // The icons are aria-hidden, so the cell needs a text answer for screen readers.
       return value ? (
-        <CheckCircle2 className="h-6 w-6 text-primary mx-auto" />
+        <>
+          <CheckCircle2 className="h-6 w-6 text-primary mx-auto" />
+          <span className="sr-only">{t("comparison.yes")}</span>
+        </>
       ) : (
-        <X className="h-6 w-6 text-muted-foreground mx-auto opacity-30" />
+        <>
+          <X className="h-6 w-6 text-muted-foreground mx-auto opacity-30" />
+          <span className="sr-only">{t("comparison.no")}</span>
+        </>
       );
     }
     return value;

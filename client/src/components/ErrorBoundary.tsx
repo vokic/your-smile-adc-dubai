@@ -2,7 +2,6 @@ import React, { Component, ErrorInfo, ReactNode } from 'react';
 import { AlertCircle, RefreshCw, Home } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Link } from 'wouter';
 import { useLanguage } from '@/hooks/useLanguage';
 
 interface Props {
@@ -40,21 +39,17 @@ export class ErrorBoundary extends Component<Props, State> {
       console.error('ErrorBoundary caught an error:', error, errorInfo);
     }
 
-    // TODO: Log to error tracking service (e.g., Sentry, LogRocket)
-    // logErrorToService(error, errorInfo);
-
     this.setState({
       error,
       errorInfo,
     });
   }
 
+  // A full reload rather than clearing the error state: the usual cause in
+  // production is a page chunk that failed to load, and React.lazy caches
+  // that failure, so re-rendering would just throw again.
   handleReset = () => {
-    this.setState({
-      hasError: false,
-      error: null,
-      errorInfo: null,
-    });
+    window.location.reload();
   };
 
   render() {
@@ -113,10 +108,12 @@ function ErrorFallback({ error, errorInfo, onReset }: ErrorFallbackProps) {
               {t('errorBoundary.tryAgain')}
             </Button>
             <Button variant="outline" asChild className="flex-1">
-              <Link href="/">
+              {/* Plain link, not wouter's <Link>: a client-side navigation would
+                  keep the boundary in its error state. */}
+              <a href="/">
                 <Home className="mr-2 h-4 w-4" />
                 {t('errorBoundary.goHome')}
-              </Link>
+              </a>
             </Button>
           </div>
         </CardContent>

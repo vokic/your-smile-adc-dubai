@@ -137,7 +137,7 @@ export default function Doctors() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {CREDENTIAL_KEYS.map((c) => (
               <div key={c} className="p-6 bg-white/5 rounded-xl border border-white/10 hover:bg-white/10 transition-all space-y-3">
-                <ShieldCheck className="h-7 w-7 text-primary" />
+                <ShieldCheck className="h-7 w-7 text-primary-light" />
                 <h3 className="text-lg font-bold">{t(`doctors.credentials.${c}.title`)}</h3>
                 <p className="text-gray-200 text-sm leading-relaxed">{t(`doctors.credentials.${c}.desc`)}</p>
               </div>

@@ -16,7 +16,7 @@ import {
   ToothFilling, ToothProtection, ToothXray, Home as HomeIcon, Airplane, Gallery,
 } from "@/components/DentalIcons";
 import type { DentalIcon } from "@/components/DentalIcons";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { useState, useEffect, useRef, lazy, Suspense } from "react";
 import { useLanguage } from "@/hooks/useLanguage";
@@ -244,7 +244,8 @@ export function Header() {
                 <Menu className="h-6 w-6" />
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[300px] sm:w-[400px] flex flex-col p-0">
+            <SheetContent side="right" className="w-[300px] sm:w-[400px] flex flex-col p-0" aria-describedby={undefined} closeLabel={t("common.close")}>
+              <SheetTitle className="sr-only">{t("nav.menuTitle")}</SheetTitle>
               <div className="flex-1 overflow-y-auto">
                 <nav className="flex flex-col gap-1 mt-8 px-6 pb-8">
                   <div className="mb-4 pb-4 border-b border-border">

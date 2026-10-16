@@ -14,6 +14,7 @@ import {
   WORKING_HOURS_SUMMARY,
   formatHours,
   whatsappLink,
+  GOOGLE_REVIEW_RATING,
 } from "@/lib/constants";
 import { SERVICES, DOCTORS } from "@/lib/content";
 import { BLOG_ARTICLES, blogPath, localizeArticle } from "@/content/blog";
@@ -32,7 +33,7 @@ export default function Home() {
     <div className="flex flex-col min-h-screen">
       <SEO
         title={t("home.seoTitle")}
-        description={t("home.seoDescription")}
+        description={t("home.seoDescription", { rating: GOOGLE_REVIEW_RATING.toFixed(1) })}
         path="/"
         jsonLd={[jsonLdLocalBusiness(), jsonLdWebSite()]}
       />
@@ -43,7 +44,7 @@ export default function Home() {
           src={IMG.clinicSmile.src}
           srcSet={IMG.clinicSmile.srcSet}
           sizes="100vw"
-          alt={IMG.clinicSmile.alt}
+          alt={t(IMG.clinicSmile.altKey)}
           className="absolute inset-0 h-full w-full object-cover object-right"
           loading="eager"
           fetchPriority="high"
@@ -55,10 +56,10 @@ export default function Home() {
             {/* The H1 carries the search intent ("dental clinic in JLT,
                 Dubai"); the large positioning line below is display copy. */}
             <h1 className="self-start inline-flex items-center gap-2 rounded-full bg-white/10 border border-white/20 px-4 py-1.5 text-sm font-sans font-medium tracking-normal text-white">
-              <ShieldCheck className="h-4 w-4 text-primary" /> {t("home.heroBadge")}
+              <ShieldCheck className="h-4 w-4 text-primary-light" /> {t("home.heroBadge")}
             </h1>
             <p className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold tracking-tight text-white leading-tight">
-              {t("home.heroTitle")} <span className="text-primary italic">{t("home.heroTitleAccent")}</span>
+              {t("home.heroTitle")} <span className="text-primary-light italic">{t("home.heroTitleAccent")}</span>
             </p>
             <p className="text-lg md:text-2xl text-gray-200 font-light max-w-2xl leading-relaxed">
               {t("home.heroSubtitle")}
@@ -115,13 +116,13 @@ export default function Home() {
                   className="group rounded-xl border border-white/10 hover:border-primary/50 transition-all duration-300 cursor-pointer bg-white/5 hover:bg-white/10 p-6 md:p-7 flex flex-col gap-4"
                 >
                   <div className="flex items-start justify-between gap-4">
-                    <span className="rounded-full bg-primary/15 p-3 text-primary">
+                    <span className="rounded-full bg-primary-light/15 p-3 text-primary-light">
                       <Icon className="h-6 w-6" />
                     </span>
-                    <ArrowRight className="h-5 w-5 text-white/30 group-hover:text-primary group-hover:translate-x-1 transition-all shrink-0 mt-1" />
+                    <ArrowRight className="h-5 w-5 text-white/50 group-hover:text-primary-light group-hover:translate-x-1 transition-all shrink-0 mt-1" />
                   </div>
-                  <h3 className="text-lg md:text-xl font-bold text-primary group-hover:text-white transition-colors">{t(`homeServices.${service.key}.title`)}</h3>
-                  <p className="text-white/70 leading-relaxed text-sm">{t(`homeServices.${service.key}.desc`)}</p>
+                  <h3 className="text-lg md:text-xl font-bold text-primary-light group-hover:text-white transition-colors">{t(`homeServices.${service.key}.title`)}</h3>
+                  <p className="text-white/80 leading-relaxed text-sm">{t(`homeServices.${service.key}.desc`)}</p>
                 </Link>
               );
             })}
@@ -195,9 +196,9 @@ export default function Home() {
               const article = localizeArticle(source, { tOr, tListOr });
               return (
                 <Link key={source.slug} href={blogPath(source)} className="bg-white/5 border border-white/10 hover:bg-white/10 hover:border-primary/50 rounded-xl p-6 transition-all group cursor-pointer block">
-                  <span className="inline-block text-xs font-bold text-primary bg-primary/20 px-3 py-1 rounded-full mb-4">{article.category}</span>
-                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-primary transition-colors">{article.title}</h3>
-                  <p className="text-sm text-white/60 line-clamp-2">{article.excerpt}</p>
+                  <span className="inline-block text-xs font-bold text-white bg-primary-light/15 px-3 py-1 rounded-full mb-4">{article.category}</span>
+                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-primary-light transition-colors">{article.title}</h3>
+                  <p className="text-sm text-white/80 line-clamp-2">{article.excerpt}</p>
                 </Link>
               );
             })}
